@@ -13,8 +13,6 @@ Contents:
 
    authors
    contributing
-   history
-   index
    installation
    readme
    usage
