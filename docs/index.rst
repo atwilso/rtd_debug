@@ -17,7 +17,7 @@ Contents:
    readme
    usage
    Sphinx_Test
-
+   Linked_Notebook
 
 Indices and tables
 ==================
