@@ -16,7 +16,7 @@ Contents:
    installation
    readme
    usage
-
+   Sphinx_Test
 
 
 Indices and tables
