@@ -11,6 +11,15 @@ dependencies:
   - python>=3.10
   - pip
   - nbsphinx
+
+  - graphviz
+  - doxygen
+  - breathe
+  - sphinx_rtd_theme
+
+  - ipykernel
+  - jupyter
+
   - pip:
     - nbsphinx-link
 
