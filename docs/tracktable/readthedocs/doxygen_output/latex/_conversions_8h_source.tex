@@ -1,0 +1,111 @@
+\doxysection{Conversions.\+h}
+\hypertarget{_conversions_8h_source}{}\label{_conversions_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/Conversions.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/Conversions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_conversions\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_conversions\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }conversions\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }constants\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ PI\ =\ 3.141592653589793238462643383;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ EARTH\_RADIUS\_IN\_KM\ =\ 6371;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ EARTH\_RADIUS\_IN\_MI\ =\ 3959;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ EARTH\_RADIUS\_IN\_NM\ =\ 3440;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ DEGREES\_PER\_RADIAN\ =\ 57.29577951308232087679;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ RADIANS\_PER\_DEGREE\ =\ .01745329251994329576;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ SECONDS\_PER\_HOUR\ =\ 3600.0;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ HOURS\_PER\_SECOND\ =\ 0.0027777777777777;}
+\DoxyCodeLine{00046\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ METERS\_PER\_FOOT\ =\ 0.3048;\ \textcolor{comment}{//exact}}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ degrees(\textcolor{keywordtype}{double}\ \_rad)}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordflow}{return}\ \_rad\ *\ constants::DEGREES\_PER\_RADIAN;}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ radians(\textcolor{keywordtype}{double}\ \_deg)}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordflow}{return}\ \_deg\ *\ constants::RADIANS\_PER\_DEGREE;}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ hours\_to\_seconds(\textcolor{keywordtype}{double}\ \_hrs)}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordflow}{return}\ \_hrs\ *\ constants::SECONDS\_PER\_HOUR;}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ seconds\_to\_hours(\textcolor{keywordtype}{double}\ \_secs)}
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordflow}{return}\ \_secs\ *\ constants::HOURS\_PER\_SECOND;}
+\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ steradians\_to\_km2(\textcolor{keywordtype}{double}\ \_sr)}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordflow}{return}\ \_sr\ *\ constants::EARTH\_RADIUS\_IN\_KM\ *\ constants::EARTH\_RADIUS\_IN\_KM;}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ km2\_to\_steradians(\textcolor{keywordtype}{double}\ \_km2)}
+\DoxyCodeLine{00111\ \{}
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordflow}{return}\ \_km2\ /\ (constants::EARTH\_RADIUS\_IN\_KM\ *\ constants::EARTH\_RADIUS\_IN\_KM);}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ radians\_to\_km(\textcolor{keywordtype}{double}\ \_rad)}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordflow}{return}\ \_rad\ *\ constants::EARTH\_RADIUS\_IN\_KM;}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ km\_to\_radians(\textcolor{keywordtype}{double}\ \_km)}
+\DoxyCodeLine{00133\ \{}
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordflow}{return}\ \_km\ /\ constants::EARTH\_RADIUS\_IN\_KM;}
+\DoxyCodeLine{00135\ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ feet\_to\_meters(\textcolor{keywordtype}{double}\ \_feet)}
+\DoxyCodeLine{00144\ \{}
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordflow}{return}\ \_feet\ *\ constants::METERS\_PER\_FOOT;}
+\DoxyCodeLine{00146\ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \}\ \}\ \textcolor{comment}{//\ exit\ tracktable::conversions}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

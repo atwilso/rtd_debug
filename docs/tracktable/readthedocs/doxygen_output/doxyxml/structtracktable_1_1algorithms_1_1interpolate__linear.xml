@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1interpolate__linear" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::interpolate_linear</compoundname>
+    <derivedcompoundref refid="structtracktable_1_1algorithms_1_1interpolate_3_01_point_cartesian_3_01_dimension_01_4_01_4" prot="public" virt="non-virtual">tracktable::algorithms::interpolate&lt; PointCartesian&lt; Dimension &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structtracktable_1_1algorithms_1_1interpolate_3_01_point_lon_lat_01_4" prot="public" virt="non-virtual">tracktable::algorithms::interpolate&lt; PointLonLat &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structtracktable_1_1algorithms_1_1interpolate_3_01_property_map_01_4" prot="public" virt="non-virtual">tracktable::algorithms::interpolate&lt; PropertyMap &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4" prot="public" virt="non-virtual">tracktable::algorithms::interpolate&lt; Timestamp &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public" virt="non-virtual">tracktable::algorithms::interpolate&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structtracktable_1_1algorithms_1_1interpolate_3_01std_1_1string_01_4" prot="public" virt="non-virtual">tracktable::algorithms::interpolate&lt; std::string &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structtracktable_1_1algorithms_1_1interpolate" prot="public" virt="non-virtual">tracktable::algorithms::interpolate&lt; T &gt;</derivedcompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1interpolate__linear_1ab8002db0072dc50297fe4cd910716050" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T tracktable::algorithms::interpolate_linear&lt; T &gt;::apply</definition>
+        <argsstring>(T const &amp;start, T const &amp;end, double interpolant)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::interpolate_linear::apply</qualifiedname>
+        <param>
+          <type>T const &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>T const &amp;</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>interpolant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Interpolate.h" line="65" column="19" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Interpolate.h" bodystart="65" bodyend="81"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tracktable::algorithms::interpolate&lt; PointCartesian&lt; Dimension &gt; &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01_point_cartesian_3_01_dimension_01_4_01_4"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tracktable::algorithms::interpolate&lt; PointLonLat &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01_point_lon_lat_01_4"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tracktable::algorithms::interpolate&lt; PropertyMap &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01_property_map_01_4"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>tracktable::algorithms::interpolate&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tracktable::algorithms::interpolate&lt; Timestamp &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>tracktable::algorithms::interpolate&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>tracktable::algorithms::interpolate&lt; std::string &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01std_1_1string_01_4"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::algorithms::interpolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate__linear"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Interpolate.h" line="63" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Interpolate.h" bodystart="64" bodyend="82"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1interpolate__linear_1ab8002db0072dc50297fe4cd910716050" prot="public" virt="non-virtual"><scope>tracktable::algorithms::interpolate_linear</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_property_map_8h" kind="file" language="C++">
+    <compoundname>PropertyMap.h</compoundname>
+    <includes local="no">tracktable/Core/TracktableCoreWindowsHeader.h</includes>
+    <includes local="no">tracktable/Core/TracktableCommon.h</includes>
+    <includes local="no">tracktable/Core/PropertyValue.h</includes>
+    <includes local="no">map</includes>
+    <includes local="no">boost/serialization/map.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyMap.h</label>
+        <link refid="_property_map_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>boost/serialization/map.hpp</label>
+      </node>
+      <node id="5">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>tracktable/Core/PropertyValue.h</label>
+      </node>
+      <node id="3">
+        <label>tracktable/Core/TracktableCommon.h</label>
+      </node>
+      <node id="2">
+        <label>tracktable/Core/TracktableCoreWindowsHeader.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate_3_01_property_map_01_4" prot="public">tracktable::algorithms::interpolate&lt; PropertyMap &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_property_map_01_4" prot="public">tracktable::algorithms::extrapolate&lt; PropertyMap &gt;</innerclass>
+    <innernamespace refid="namespacetracktable">tracktable</innernamespace>
+    <innernamespace refid="namespacetracktable_1_1algorithms">tracktable::algorithms</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2023<sp/>National<sp/>Technology<sp/>and<sp/>Engineering</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC.<sp/>Under<sp/>the<sp/>terms<sp/>of<sp/>Contract<sp/>DE-NA0003525</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>with<sp/>National<sp/>Technology<sp/>and<sp/>Engineering<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC,</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>the<sp/>U.S.<sp/>Government<sp/>retains<sp/>certain<sp/>rights<sp/>in<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>PropertyMap<sp/>-<sp/>map<sp/>from<sp/>string<sp/>to<sp/>string,<sp/>double,<sp/>timestamp<sp/>or<sp/>null</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>Rather<sp/>than<sp/>clutter<sp/>the<sp/>point<sp/>classes&apos;<sp/>API<sp/>with<sp/>lots<sp/>of<sp/>properties</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>that<sp/>we<sp/>might<sp/>or<sp/>might<sp/>not<sp/>ever<sp/>use<sp/>we&apos;re<sp/>going<sp/>to<sp/>explicitly</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>define<sp/>a<sp/>few<sp/>essentials<sp/>and<sp/>leave<sp/>the<sp/>rest<sp/>in<sp/>a<sp/>property<sp/>map</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>defined<sp/>herein.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__tracktable_PropertyMap_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__tracktable_PropertyMap_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/TracktableCoreWindowsHeader.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/TracktableCommon.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/PropertyValue.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/serialization/map.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>PropertyValueT&gt;<sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a565d58600a2c21ca00c7b3f39984f402" kindref="member">has_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/>PropertyValueT<sp/><ref refid="namespacetracktable_1a03ceda2323963939b94d8d82e67d5052" kindref="member">property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>is_present=0);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/>string_type<sp/><ref refid="namespacetracktable_1a8c1f4fe9794b6b170a1b0b56467d6aeb" kindref="member">string_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>is_present=0);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1ad5e4d28ef7f22e6e0d0f4b31c8beff24" kindref="member">real_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>is_present=0);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/><ref refid="namespacetracktable_1a148d68ca8415703578fb7ee162023fb2" kindref="member">timestamp_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/><sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>is_present=0);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref><sp/><ref refid="namespacetracktable_1abc4cee72290a2cf445fcb1585ed37ee1" kindref="member">nullvalue_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/><sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>is_present=0);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1acb4a04cbbe10c0f9ed4370d28dd7238d" kindref="member">set_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1acb4a04cbbe10c0f9ed4370d28dd7238d" kindref="member">set_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1acb4a04cbbe10c0f9ed4370d28dd7238d" kindref="member">set_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1acb4a04cbbe10c0f9ed4370d28dd7238d" kindref="member">set_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1acb4a04cbbe10c0f9ed4370d28dd7238d" kindref="member">set_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/>int64_t<sp/>value);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1acb4a04cbbe10c0f9ed4370d28dd7238d" kindref="member">set_property</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/>PropertyValueT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/>PropertyValueT<sp/><ref refid="namespacetracktable_1a5b7d7a4b2e65520ccadbc79f361e4b63" kindref="member">property_with_default</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/>PropertyValueT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>default_value);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a2f9de743cfe526a56da8f265c50ac02c" kindref="member">real_property_with_default</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>default_value);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/>string_type<sp/><ref refid="namespacetracktable_1ab21994b2954997ce32361071fb34a6d1" kindref="member">string_property_with_default</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>default_value);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/><ref refid="namespacetracktable_1a3b8557907d36a6e588718542dac1684b" kindref="member">timestamp_property_with_default</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>default_value);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref><sp/><ref refid="namespacetracktable_1a8384407ced81ac29e37c7694816252ec" kindref="member">nullvalue_property_with_default</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties,<sp/>string_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>default_value);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/>string_type<sp/><ref refid="namespacetracktable_1a00e54925770f86a28d15e6142682bbde" kindref="member">property_map_to_string</ref>(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>properties);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal">TRACKTABLE_CORE_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a73853fb1816c05b8a0337695ef0de7be" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>pm1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>pm2);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>exit<sp/>namespace<sp/>tracktable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{<sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">algorithms<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="233" refid="structtracktable_1_1algorithms_1_1interpolate_3_01_property_map_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1interpolate" kindref="compound">interpolate</ref>&lt;<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&gt;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>apply(</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>first,</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>second,</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PropertyMap::const_iterator<sp/>first_iter,<sp/>second_iter;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/>result;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(first_iter<sp/>=<sp/>first.begin();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>first_iter<sp/>!=<sp/>first.end();</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++first_iter)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string_type<sp/>key((*first_iter).first);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>second_iter<sp/>=<sp/>second.find(key);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(second_iter<sp/>!=<sp/>second.end())</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result[key]<sp/>=<sp/>interpolate_property(</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*first_iter).second,</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*second_iter).second,</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(boost::bad_get&amp;<sp/></highlight><highlight class="comment">/*e*/</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TRACKTABLE_LOG(log::warning)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WARNING:<sp/>interpolate&lt;PropertyMap&gt;:<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>retrieve<sp/>property<sp/>&apos;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>key<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&apos;<sp/>(type<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="namespacetracktable_1acc66869025d3eba6afdee9e1a0b203aa" kindref="member">property_underlying_type</ref>((*first_iter).second)</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>from<sp/>second<sp/>map.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Property<sp/>is<sp/>present<sp/>but<sp/>has<sp/>type<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="namespacetracktable_1acc66869025d3eba6afdee9e1a0b203aa" kindref="member">property_underlying_type</ref>((*second_iter).second)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Re-using<sp/>value<sp/>from<sp/>first<sp/>point.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result[key]<sp/>=<sp/>(*first_iter).second;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="283" refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_property_map_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1extrapolate" kindref="compound">extrapolate</ref>&lt;<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&gt;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apply(</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>first,</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>second,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PropertyMap::const_iterator<sp/>first_iter,<sp/>second_iter;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/>result;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(first_iter<sp/>=<sp/>first.begin();</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>first_iter<sp/>!=<sp/>first.end();</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++first_iter)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string_type<sp/>key((*first_iter).first);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>second_iter<sp/>=<sp/>second.find(key);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(second_iter<sp/>!=<sp/>second.end())</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result[key]<sp/>=<sp/>extrapolate_property(</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*first_iter).second,</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*second_iter).second,</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(boost::bad_get&amp;<sp/></highlight><highlight class="comment">/*e*/</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TRACKTABLE_LOG(log::warning)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WARNING:<sp/>extrapolate&lt;PropertyMap&gt;:<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>retrieve<sp/>property<sp/>&apos;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>key<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&apos;<sp/>(type<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="namespacetracktable_1acc66869025d3eba6afdee9e1a0b203aa" kindref="member">property_underlying_type</ref>((*first_iter).second)</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>from<sp/>second<sp/>map.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Property<sp/>is<sp/>present<sp/>but<sp/>has<sp/>type<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="namespacetracktable_1acc66869025d3eba6afdee9e1a0b203aa" kindref="member">property_underlying_type</ref>((*second_iter).second)</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Re-using<sp/>value<sp/>from<sp/>first<sp/>point.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result[key]<sp/>=<sp/>(*first_iter).second;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal">}<sp/>}<sp/></highlight><highlight class="comment">//<sp/>exit<sp/>namespace<sp/>tracktable::algorithms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyMap.h"/>
+  </compounddef>
+</doxygen>

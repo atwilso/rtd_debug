@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::interpolate_nearest_neighbor</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor_1a054451afcc692159276bc16f2a773c15" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T tracktable::algorithms::interpolate_nearest_neighbor&lt; T &gt;::apply</definition>
+        <argsstring>(T const &amp;start, T const &amp;end, double interpolant)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::interpolate_nearest_neighbor::apply</qualifiedname>
+        <param>
+          <type>T const &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>T const &amp;</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>interpolant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Interpolate.h" line="49" column="19" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Interpolate.h" bodystart="49" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Interpolate.h" line="47" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Interpolate.h" bodystart="48" bodyend="60"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor_1a054451afcc692159276bc16f2a773c15" prot="public" virt="non-virtual"><scope>tracktable::algorithms::interpolate_nearest_neighbor</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

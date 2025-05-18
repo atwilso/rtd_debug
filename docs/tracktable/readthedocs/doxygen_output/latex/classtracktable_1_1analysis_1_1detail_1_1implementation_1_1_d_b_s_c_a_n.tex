@@ -1,0 +1,285 @@
+\doxysection{tracktable\+::analysis\+::detail\+::implementation\+::DBSCAN\texorpdfstring{$<$}{<} PointT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}\index{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}}
+
+
+Cluster points using the \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} algorithm.  
+
+
+
+
+{\ttfamily \#include $<$dbscan\+\_\+implementation.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910} 
+typedef PointT {\bfseries point\+\_\+type}
+\begin{DoxyCompactList}\small\item\em This is the point type we will be clustering. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a3320c141966e69bb5d9f41dde4676cef}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a3320c141966e69bb5d9f41dde4676cef} 
+typedef std\+::vector$<$ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} $>$ {\bfseries point\+\_\+vector\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Container for points -\/ convenience typedef only. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ad838175f2a17e0039ec0d9a5a4b35921}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ad838175f2a17e0039ec0d9a5a4b35921} 
+typedef \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1_indexed_point}{Indexed\+Point}}$<$ PointT $>$ {\bfseries indexed\+\_\+point\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Internal point type with cluster ID and point ID. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a267e84eeb33195ea9ba3ac43bb4cc786}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a267e84eeb33195ea9ba3ac43bb4cc786} 
+typedef std\+::vector$<$ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ad838175f2a17e0039ec0d9a5a4b35921}{indexed\+\_\+point\+\_\+type}} $>$ {\bfseries indexed\+\_\+point\+\_\+vector\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a2c63936869890bc9c9507f89751cf607}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a2c63936869890bc9c9507f89751cf607} 
+typedef \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1_d_b_s_c_a_n___index_by_iterator}{DBSCAN\+\_\+\+Index\+By\+Iterator}}$<$ indexed\+\_\+point\+\_\+vector\+\_\+type, \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} $>$ {\bfseries indexable\+\_\+getter\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Abstraction of index into list of points. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a7e773efc41f0687f55911980a8b8f47a}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a7e773efc41f0687f55911980a8b8f47a} 
+typedef bgi\+::quadratic$<$ 16 $>$ {\bfseries rtree\+\_\+parameter\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Balancing algorithm for rtree. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb} 
+typedef indexed\+\_\+point\+\_\+vector\+\_\+type\+::iterator {\bfseries rtree\+\_\+value\+\_\+type}
+\begin{DoxyCompactList}\small\item\em This is what will actually be stored in the nodes. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852} 
+typedef bgi\+::rtree$<$ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\+\_\+value\+\_\+type}}, \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a7e773efc41f0687f55911980a8b8f47a}{rtree\+\_\+parameter\+\_\+type}}, \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a2c63936869890bc9c9507f89751cf607}{indexable\+\_\+getter\+\_\+type}} $>$ {\bfseries rtree\+\_\+type}
+\begin{DoxyCompactList}\small\item\em ...And here\textquotesingle{}s the rtree itself \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ae785abec922b786086ee20a500cc7d21}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ae785abec922b786086ee20a500cc7d21} 
+typedef bg\+::model\+::box$<$ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} $>$ {\bfseries box\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Bounding box for nodes. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04} 
+typedef std\+::vector$<$ int $>$ {\bfseries int\+\_\+vector\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Container type for clustering results. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a394b53abb384c46b1c806477efa48f38}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a394b53abb384c46b1c806477efa48f38} 
+typedef std\+::vector$<$ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\+\_\+vector\+\_\+type}} $>$ {\bfseries int\+\_\+vector\+\_\+vector\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Container type for cluster membership lists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a648b7910eb2a6ccf1d5062815a696b99}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a648b7910eb2a6ccf1d5062815a696b99} 
+{\bfseries DBSCAN} ()
+\begin{DoxyCompactList}\small\item\em Initialize an empty clusterer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class IteratorT$>$ }\\int \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aba949ba51c0aa80e9466101d85b9af5f}{learn\+\_\+clusters}} (IteratorT point\+\_\+begin, IteratorT point\+\_\+end, \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} const \&epsilon\+\_\+box\+\_\+half\+\_\+span, unsigned int min\+\_\+cluster\+\_\+size, bool L2=false)
+\begin{DoxyCompactList}\small\item\em Learn cluster labels for a set of points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a255b8517cd09860bdeb25a06e067bf87}{cluster\+\_\+membership\+\_\+lists}} (\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a394b53abb384c46b1c806477efa48f38}{int\+\_\+vector\+\_\+vector\+\_\+type}} \&output)
+\begin{DoxyCompactList}\small\item\em Return the point IDs belonging to each cluster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aefdcaa766b5a29d59fb592f1d8633707}{point\+\_\+cluster\+\_\+labels}} (\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\+\_\+vector\+\_\+type}} \&out\+\_\+labels)
+\begin{DoxyCompactList}\small\item\em Return the cluster ID for each point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab29dbb43e9fc008b902f5ea2dd10560b}{compute\+\_\+cluster\+\_\+membership}} (indexed\+\_\+point\+\_\+vector\+\_\+type \&points, unsigned int min\+\_\+cluster\+\_\+size, const \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} \&epsilon\+\_\+box\+\_\+half\+\_\+span, \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}{rtree\+\_\+type}} \&rtree, bool L2)
+\begin{DoxyCompactList}\small\item\em Learn cluster assignments for all points. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9411c7355f7f7043c0fb695afa47eedc}{expand\+\_\+cluster}} (\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\+\_\+value\+\_\+type}} \&seed\+\_\+point, unsigned int min\+\_\+cluster\+\_\+size, const \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} \&epsilon\+\_\+box\+\_\+half\+\_\+span, unsigned int next\+\_\+cluster\+\_\+id, \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}{rtree\+\_\+type}} \&rtree, bool L2)
+\begin{DoxyCompactList}\small\item\em Discover a single cluster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a11b687d1438bfc83eae79313a4681c43}{build\+\_\+cluster\+\_\+membership\+\_\+lists}} (const indexed\+\_\+point\+\_\+vector\+\_\+type \&points, unsigned int max\+\_\+cluster\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Assemble cluster membership lists from points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a93415449b174e0869056a4b747cd395a}{ellipsoid\+\_\+filter}} (std\+::vector$<$ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\+\_\+value\+\_\+type}} $>$ \&points, const \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} \&box\+\_\+center, const \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} \&epsilon\+\_\+box\+\_\+half\+\_\+span)
+\begin{DoxyCompactList}\small\item\em Removes points from a box that are not in the ellipsoid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9} 
+\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a394b53abb384c46b1c806477efa48f38}{int\+\_\+vector\+\_\+vector\+\_\+type}} {\bfseries Cluster\+Membership}
+\begin{DoxyCompactList}\small\item\em List of points belonging to each cluster. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9cd649bd33a92f3d2dc4e5736f4b3293}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9cd649bd33a92f3d2dc4e5736f4b3293} 
+int {\bfseries num\+\_\+range\+\_\+queries}
+\begin{DoxyCompactList}\small\item\em How many range queries we make (performance statistic) \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aa91427603df48072c76f4c46a9302b46}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aa91427603df48072c76f4c46a9302b46} 
+int {\bfseries num\+\_\+points\+\_\+processed}
+\begin{DoxyCompactList}\small\item\em How many points we\textquotesingle{}ve processed so far (progress statistic) \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b} 
+\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\+\_\+vector\+\_\+type}} {\bfseries num\+\_\+core\+\_\+points}
+\begin{DoxyCompactList}\small\item\em How many points are on the interiors of the clusters. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a517b74e616a5cc010f16af790e75b075}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a517b74e616a5cc010f16af790e75b075} 
+\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\+\_\+vector\+\_\+type}} {\bfseries core\+\_\+point\+\_\+avg\+\_\+num\+\_\+neighbors}
+\begin{DoxyCompactList}\small\item\em How many neighbors each core point has (performance statistic) \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a6151b8bb2c87adb4871a885e5dd2fe0f}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a6151b8bb2c87adb4871a885e5dd2fe0f} 
+\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\+\_\+vector\+\_\+type}} {\bfseries total\+\_\+num\+\_\+neighbors}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9fd5573534d2aa67a93105724f7a8278}\label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9fd5573534d2aa67a93105724f7a8278} 
+std\+::size\+\_\+t {\bfseries Input\+Point\+Count}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class PointT$>$\newline
+class tracktable\+::analysis\+::detail\+::implementation\+::\+DBSCAN$<$ Point\+T $>$}
+Cluster points using the \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} algorithm. 
+
+\doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} is a non-\/parametric clustering algorithm that defines a point in a cluster as "{}a point with more than N neighbors inside a search radius R"{}. N and R are user-\/specified parameters. The consequence of this definition is that areas of points with a certain minimum density form clusters regardless of their shape.
+
+In order to use \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} you must supply the following parameters\+:
+
+
+\begin{DoxyItemize}
+\item A list of points to cluster. These can be in any coordinate system supported by {\ttfamily boost\+::geometry} and any container that provides begin() and end() iterators.
+\item A search box\+: the distance that a point can be in any dimension in order to count as "{}nearby"{}. Note that we use a search box instead of the sphere that the original \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} implementation requires. This helps when you have a space where different dimensions have different meaning such as longitude/latitude (sensible values are on the order of 0-\/200 in each dimension) and altitude (sensible values are up to 15000 meters).
+\item A minimum cluster size\+: Any point that has at least this many points within its search box is part of a cluster.
+\end{DoxyItemize}
+
+If you would rather use a slightly more convenient interface please refer to the functions in {\ttfamily \doxylink{_compute_d_b_s_c_a_n_clustering_8h_source}{Analysis/\+Compute\+DBSCANClustering.\+h}}.
+
+For more information about the \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} algorithm please refer to the original paper\+: Ester, Martin; Kriegel, Hans-\/\+Peter; Sander, Jörg; Xu, Xiaowei (1996). "{}\+A density-\/based algorithm for discovering clusters in large spatial databases with noise"{}. In Simoudis, Evangelos; Han, Jiawei; Fayyad, Usama M. "{}\+Proceedings of the Second \+International Conference on Knowledge Discovery and Data Mining (\+KDD-\/96)"{}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a11b687d1438bfc83eae79313a4681c43}\index{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}!build\_cluster\_membership\_lists@{build\_cluster\_membership\_lists}}
+\index{build\_cluster\_membership\_lists@{build\_cluster\_membership\_lists}!tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{build\_cluster\_membership\_lists()}{build\_cluster\_membership\_lists()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a11b687d1438bfc83eae79313a4681c43} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{tracktable\+::analysis\+::detail\+::implementation\+::\+DBSCAN}}$<$ PointT $>$\+::build\+\_\+cluster\+\_\+membership\+\_\+lists (\begin{DoxyParamCaption}\item[{const indexed\+\_\+point\+\_\+vector\+\_\+type \&}]{points}{, }\item[{unsigned int}]{max\+\_\+cluster\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Assemble cluster membership lists from points. 
+
+The clustering algorithm stores its results in the indexed point list. This function extracts those results and builds cluster membership lists that are more useful to the user.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em points} & Points labeled with cluster IDs \\
+\hline
+ & {\em \mbox{[}in\mbox{[}} & max\+\_\+cluster\+\_\+id ID of last cluster found \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a255b8517cd09860bdeb25a06e067bf87}\index{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}!cluster\_membership\_lists@{cluster\_membership\_lists}}
+\index{cluster\_membership\_lists@{cluster\_membership\_lists}!tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{cluster\_membership\_lists()}{cluster\_membership\_lists()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a255b8517cd09860bdeb25a06e067bf87} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{tracktable\+::analysis\+::detail\+::implementation\+::\+DBSCAN}}$<$ PointT $>$\+::cluster\+\_\+membership\+\_\+lists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a394b53abb384c46b1c806477efa48f38}{int\+\_\+vector\+\_\+vector\+\_\+type}} \&}]{output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the point IDs belonging to each cluster. 
+
+This method is the first of two ways to get clustering results back from \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN}. Given a \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} run that detected C clusters, this method will return a std\+::vector of C std\+::vector$<$int$>$. Each vector lists the points that belong to a single cluster.
+
+Clusters 1 through C-\/1 are the "{}real"{} clusters. Cluster 0 is the noise cluster comprising all points that (1) did not have enough nearby neighbors to qualify as cluster points in their own right and (2) were not neighbors of any points that did.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em output} & Cluster membership lists. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab29dbb43e9fc008b902f5ea2dd10560b}\index{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}!compute\_cluster\_membership@{compute\_cluster\_membership}}
+\index{compute\_cluster\_membership@{compute\_cluster\_membership}!tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{compute\_cluster\_membership()}{compute\_cluster\_membership()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab29dbb43e9fc008b902f5ea2dd10560b} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{tracktable\+::analysis\+::detail\+::implementation\+::\+DBSCAN}}$<$ PointT $>$\+::compute\+\_\+cluster\+\_\+membership (\begin{DoxyParamCaption}\item[{indexed\+\_\+point\+\_\+vector\+\_\+type \&}]{points}{, }\item[{unsigned int}]{min\+\_\+cluster\+\_\+size}{, }\item[{const \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} \&}]{epsilon\+\_\+box\+\_\+half\+\_\+span}{, }\item[{\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}{rtree\+\_\+type}} \&}]{rtree}{, }\item[{bool}]{L2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Learn cluster assignments for all points. 
+
+This is the driver method that implements the skeleton of \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em points} & Points with indices attached \\
+\hline
+\mbox{\texttt{ in}}  & {\em min\+\_\+cluster\+\_\+size} & Minimum number of points in neighborhood required to define a core point \\
+\hline
+\mbox{\texttt{ in}}  & {\em epsilon\+\_\+box\+\_\+half\+\_\+span} & Search range in each direction \\
+\hline
+\mbox{\texttt{ in}}  & {\em rtree} & Boost \doxylink{classtracktable_1_1_r_tree}{RTree} to accelerate neighborhood queries \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a93415449b174e0869056a4b747cd395a}\index{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}!ellipsoid\_filter@{ellipsoid\_filter}}
+\index{ellipsoid\_filter@{ellipsoid\_filter}!tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{ellipsoid\_filter()}{ellipsoid\_filter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a93415449b174e0869056a4b747cd395a} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{tracktable\+::analysis\+::detail\+::implementation\+::\+DBSCAN}}$<$ PointT $>$\+::ellipsoid\+\_\+filter (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\+\_\+value\+\_\+type}} $>$ \&}]{points}{, }\item[{const \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} \&}]{box\+\_\+center}{, }\item[{const \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} \&}]{epsilon\+\_\+box\+\_\+half\+\_\+span}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Removes points from a box that are not in the ellipsoid. 
+
+This is essentially allow an extension to a more traditional \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} by taking points from an ellipsoid that essentially has axes that are the length of the epsilon\+\_\+box\+\_\+half\+\_\+span parameters. If they are all the same, you just a sphere, and a traditional \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em points} & Points labeled with cluster IDs \\
+\hline
+\mbox{\texttt{ in}}  & {\em epsilon\+\_\+box\+\_\+half\+\_\+span} & Scaling parameters for ellipsoid \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9411c7355f7f7043c0fb695afa47eedc}\index{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}!expand\_cluster@{expand\_cluster}}
+\index{expand\_cluster@{expand\_cluster}!tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{expand\_cluster()}{expand\_cluster()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9411c7355f7f7043c0fb695afa47eedc} 
+template$<$class PointT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{tracktable\+::analysis\+::detail\+::implementation\+::\+DBSCAN}}$<$ PointT $>$\+::expand\+\_\+cluster (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\+\_\+value\+\_\+type}} \&}]{seed\+\_\+point}{, }\item[{unsigned int}]{min\+\_\+cluster\+\_\+size}{, }\item[{const \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} \&}]{epsilon\+\_\+box\+\_\+half\+\_\+span}{, }\item[{unsigned int}]{next\+\_\+cluster\+\_\+id}{, }\item[{\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}{rtree\+\_\+type}} \&}]{rtree}{, }\item[{bool}]{L2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Discover a single cluster. 
+
+This method contains the heart of \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN}\+: searching the neighborhood of a single point to discover whether it is in the interior of a cluster and, if so, discovering the rest of that cluster.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em seed\+\_\+point} & Point to examine for cluster-\/ness \\
+\hline
+\mbox{\texttt{ in}}  & {\em min\+\_\+cluster\+\_\+size} & Minimum neighbor count for core points \\
+\hline
+\mbox{\texttt{ in}}  & {\em epsilon\+\_\+box\+\_\+half\+\_\+span} & Search range in each direction \\
+\hline
+\mbox{\texttt{ in}}  & {\em next\+\_\+cluster\+\_\+id} & Numeric ID for new cluster \\
+\hline
+\mbox{\texttt{ in}}  & {\em rtree} & Search structure for neighbor queries \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean -\/ whether or not a new cluster was discovered 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aba949ba51c0aa80e9466101d85b9af5f}\index{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}!learn\_clusters@{learn\_clusters}}
+\index{learn\_clusters@{learn\_clusters}!tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{learn\_clusters()}{learn\_clusters()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aba949ba51c0aa80e9466101d85b9af5f} 
+template$<$class PointT$>$ \\
+template$<$class IteratorT$>$ \\
+int \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{tracktable\+::analysis\+::detail\+::implementation\+::\+DBSCAN}}$<$ PointT $>$\+::learn\+\_\+clusters (\begin{DoxyParamCaption}\item[{IteratorT}]{point\+\_\+begin}{, }\item[{IteratorT}]{point\+\_\+end}{, }\item[{\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\+\_\+type}} const \&}]{epsilon\+\_\+box\+\_\+half\+\_\+span}{, }\item[{unsigned int}]{min\+\_\+cluster\+\_\+size}{, }\item[{bool}]{L2}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Learn cluster labels for a set of points. 
+
+This is the method that you will call to run \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN}.
+
+You will need to call \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a255b8517cd09860bdeb25a06e067bf87}{cluster\+\_\+membership\+\_\+lists()} or \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aefdcaa766b5a29d59fb592f1d8633707}{point\+\_\+cluster\+\_\+labels()} to get the results back.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point\+\_\+begin} & Iterator for beginning of input points \\
+\hline
+\mbox{\texttt{ in}}  & {\em point\+\_\+end} & Iterator past end of input points \\
+\hline
+\mbox{\texttt{ in}}  & {\em epsilon\+\_\+box\+\_\+half\+\_\+span} & "{}\+Nearby"{} distance in each dimension \\
+\hline
+\mbox{\texttt{ in}}  & {\em min\+\_\+cluster\+\_\+size} & Minimum number of points for a cluster \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of clusters detected (cluster 0 is noise) 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aefdcaa766b5a29d59fb592f1d8633707}\index{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}!point\_cluster\_labels@{point\_cluster\_labels}}
+\index{point\_cluster\_labels@{point\_cluster\_labels}!tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$@{tracktable::analysis::detail::implementation::DBSCAN$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{point\_cluster\_labels()}{point\_cluster\_labels()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aefdcaa766b5a29d59fb592f1d8633707} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{tracktable\+::analysis\+::detail\+::implementation\+::\+DBSCAN}}$<$ PointT $>$\+::point\+\_\+cluster\+\_\+labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\+\_\+vector\+\_\+type}} \&}]{out\+\_\+labels}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the cluster ID for each point. 
+
+This method is the second of two ways to get clustering results back from \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN}. Given a \doxylink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{DBSCAN} run on P points that detected C clusters, this method will return a std\+::vector$<$int$>$ with P elements. Each element will have a value between 0 and C-\/1 inclusive.
+
+Clusters 1 through C-\/1 are the "{}real"{} clusters. Cluster 0 is the noise cluster comprising all the points that (1) did not have enough nearby neighbors to qualify as cluster points in their own right and (2) were not neighbors of any points that did.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em cluster\+\_\+labels} & Labels for each point in the input. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Analysis/detail/dbscan\+\_\+implementation.\+h\end{DoxyCompactItemize}

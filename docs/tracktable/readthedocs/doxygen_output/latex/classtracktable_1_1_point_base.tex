@@ -1,0 +1,300 @@
+\doxysection{tracktable\+::Point\+Base\texorpdfstring{$<$}{<} Dimension \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_point_base}{}\label{classtracktable_1_1_point_base}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+
+
+Base class for all points in Tracktable.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Base.\+h$>$}
+
+Inheritance diagram for tracktable\+::Point\+Base\texorpdfstring{$<$}{<} Dimension \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.971831cm]{classtracktable_1_1_point_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_base_a2b5d66d132636bb41831a09667f6e640}\label{classtracktable_1_1_point_base_a2b5d66d132636bb41831a09667f6e640} 
+typedef tracktable\+::settings\+::point\+\_\+coordinate\+\_\+type {\bfseries element\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}\label{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096} 
+{\bfseries Point\+Base} ()
+\begin{DoxyCompactList}\small\item\em Initialize an empty point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base_aab715197cb725a115bdbae588649f795}{Point\+Base}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a \doxylink{classtracktable_1_1_point_base}{Point\+Base} with a copy of another. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtracktable_1_1_point_base_af616577253186b1d80c7ab90338640e2}{\texorpdfstring{$\sim$}{\string~}\+Point\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for our descendants. \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t d$>$ }\\coordinate\+\_\+type const \& \mbox{\hyperlink{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5}{get}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of a particular coordinate. \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t d$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set}} (coordinate\+\_\+type const \&new\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the value of a particular coordinate. \end{DoxyCompactList}\item 
+coordinate\+\_\+type const \& \mbox{\hyperlink{classtracktable_1_1_point_base_a1c2237aff8b2b8dec8b934feb10d79c6}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t d) const
+\begin{DoxyCompactList}\small\item\em Get/set the value of a coordinate. \end{DoxyCompactList}\item 
+coordinate\+\_\+type \& \mbox{\hyperlink{classtracktable_1_1_point_base_a1ea12444b1425cf2462e2920cac1b499}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t d)
+\begin{DoxyCompactList}\small\item\em Get/set the value of a coordinate. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_base_a35cfaef9ac15a33040e2458d99d980e3}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check two points for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_base_ac225c66d4cfab081b67f95d4411b0fdd}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check two points for inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} \& \mbox{\hyperlink{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other)
+\begin{DoxyCompactList}\small\item\em Make this point a copy of a different one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_point_base_a00baacc4de3a9c9cf3f3f39af19aa7de}{size}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_point_base_a8829a6c52e157dd0a28ad3148d89d587}{serialize}} (Archive \&ar, const unsigned int)
+\begin{DoxyCompactList}\small\item\em Serialize the coordinates to an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_base_a2aba212a90c51c5f4e9fa76fe679146a}\label{classtracktable_1_1_point_base_a2aba212a90c51c5f4e9fa76fe679146a} 
+coordinate\+\_\+type {\bfseries Coordinates} \mbox{[}Dimension\mbox{]}
+\begin{DoxyCompactList}\small\item\em Storage for the coordinate values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$std\+::size\+\_\+t Dimension$>$\newline
+class tracktable\+::\+Point\+Base$<$ Dimension $>$}
+Base class for all points in Tracktable. 
+
+This class defines a point independent of the number of coordinates or the data type.
+
+\begin{DoxyNote}{Note}
+You will not use this directly. Instead, you\textquotesingle{}ll use one of the coordinate-\/specific versions like Point\+Base\+Cartesian or Point\+Base\+Lon\+Lat.
+\end{DoxyNote}
+\doxylink{classtracktable_1_1_point_base}{Point\+Base} and all of its subclasses will be registered with {\ttfamily boost\+::geometry} so that you can use all of the generic geometry algorithms. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_point_base_aab715197cb725a115bdbae588649f795}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!PointBase@{PointBase}}
+\index{PointBase@{PointBase}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{PointBase()}{PointBase()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_aab715197cb725a115bdbae588649f795} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::\+Point\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}}$<$ Dimension $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create a \doxylink{classtracktable_1_1_point_base}{Point\+Base} with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_base}{Point\+Base} to copy from \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_base_af616577253186b1d80c7ab90338640e2}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!````~PointBase@{\texorpdfstring{$\sim$}{\string~}PointBase}}
+\index{````~PointBase@{\texorpdfstring{$\sim$}{\string~}PointBase}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PointBase()}{\string~PointBase()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_af616577253186b1d80c7ab90338640e2} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+virtual \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor for our descendants. 
+
+Although \doxylink{classtracktable_1_1_point_base}{Point\+Base} itself only needs a trivial destructor, we know that subclasses are going to extend it one way or another. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!get@{get}}
+\index{get@{get}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+template$<$std\+::size\+\_\+t d$>$ \\
+coordinate\+\_\+type const  \& \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the value of a particular coordinate. 
+
+Since this is Boost, you set and get coordinates by specifying the coordinate at compile time\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ x\ =\ point.get<0>();}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The value of a particular coordinate 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_base_ac225c66d4cfab081b67f95d4411b0fdd}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_ac225c66d4cfab081b67f95d4411b0fdd} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}}$<$ Dimension $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check two points for inequality. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_base}{Point\+Base} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} \& \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}}$<$ Dimension $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Make this point a copy of a different one. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_base}{Point\+Base} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classtracktable_1_1_point_base}{Point\+Base} with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_base_a35cfaef9ac15a33040e2458d99d980e3}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_a35cfaef9ac15a33040e2458d99d980e3} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}}$<$ Dimension $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check two points for equality. 
+
+\begin{DoxyNote}{Note}
+This requires that the two points have the same dimension.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_base}{Point\+Base} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_base_a1ea12444b1425cf2462e2920cac1b499}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_a1ea12444b1425cf2462e2920cac1b499} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+coordinate\+\_\+type \& \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get/set the value of a coordinate. 
+
+You can use operator\mbox{[}\mbox{]} whether or not you know the coordinate you want ahead of time.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ x\ =\ point[0];}
+\DoxyCodeLine{point[0]\ =\ x;}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The value of the coordinate 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_base_a1c2237aff8b2b8dec8b934feb10d79c6}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_a1c2237aff8b2b8dec8b934feb10d79c6} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+coordinate\+\_\+type const  \& \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{d}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get/set the value of a coordinate. 
+
+You can use operator\mbox{[}\mbox{]} whether or not you know the coordinate you want ahead of time.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ x\ =\ point[0];}
+\DoxyCodeLine{point[0]\ =\ x;}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The value of the coordinate 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_base_a8829a6c52e157dd0a28ad3148d89d587}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_a8829a6c52e157dd0a28ad3148d89d587} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+template$<$class Archive$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar}{, }\item[{const unsigned int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Serialize the coordinates to an archive. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ar} & Archive to serialize to \\
+\hline
+\mbox{\texttt{ in}}  & {\em version} & Version of the archive \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!set@{set}}
+\index{set@{set}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+template$<$std\+::size\+\_\+t d$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::set (\begin{DoxyParamCaption}\item[{coordinate\+\_\+type const \&}]{new\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the value of a particular coordinate. 
+
+Since this is Boost, you set and get coordinates by specifying the coordinate at compile time\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{point.set<0>(new\_value);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+value} & The value to assign to the coordinate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_base_a00baacc4de3a9c9cf3f3f39af19aa7de}\index{tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}!size@{size}}
+\index{size@{size}!tracktable::PointBase$<$ Dimension $>$@{tracktable::PointBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_base_a00baacc4de3a9c9cf3f3f39af19aa7de} 
+template$<$std\+::size\+\_\+t Dimension$>$ \\
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base}}$<$ Dimension $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Returns}
+The number of dimensions in this point 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Point\+Base.\+h\end{DoxyCompactItemize}

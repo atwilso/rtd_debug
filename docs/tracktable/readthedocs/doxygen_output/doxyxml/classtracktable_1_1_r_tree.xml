@@ -1,0 +1,2090 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_r_tree" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::RTree</compoundname>
+    <includes refid="_r_tree_8h" local="no">RTree.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename value_type</type>
+      </param>
+      <param>
+        <type>typename rtree_algorithm_type</type>
+        <defval>bgi::quadratic&lt;16&gt;</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_r_tree_1a180434c72ab5c8817dabdba552233633" prot="public" static="no">
+        <type>bgi::rtree&lt; value_type, rtree_algorithm_type &gt;</type>
+        <definition>typedef bgi::rtree&lt;value_type, rtree_algorithm_type&gt; tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::rtree_type</definition>
+        <argsstring></argsstring>
+        <name>rtree_type</name>
+        <qualifiedname>tracktable::RTree::rtree_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="111" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_r_tree_1a460c489389b918f9acdca708a5cdae61" prot="public" static="no">
+        <type>rtree_type::const_query_iterator</type>
+        <definition>typedef rtree_type::const_query_iterator tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::query_result_iterator_type</definition>
+        <argsstring></argsstring>
+        <name>query_result_iterator_type</name>
+        <qualifiedname>tracktable::RTree::query_result_iterator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="112" column="53" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_r_tree_1a48695e243d15da86d47eafb28f8e00e6" prot="public" static="no">
+        <type>std::pair&lt; query_result_iterator_type, query_result_iterator_type &gt;</type>
+        <definition>typedef std::pair&lt;query_result_iterator_type, query_result_iterator_type&gt; tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::query_result_range_type</definition>
+        <argsstring></argsstring>
+        <name>query_result_range_type</name>
+        <qualifiedname>tracktable::RTree::query_result_range_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="113" column="21" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_r_tree_1a9268e7e14cb8100433d92e375a7a90ad" prot="public" static="no">
+        <type>rtree_type::size_type</type>
+        <definition>typedef rtree_type::size_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::size_type</definition>
+        <argsstring></argsstring>
+        <name>size_type</name>
+        <qualifiedname>tracktable::RTree::size_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="114" column="42" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_r_tree_1a0e76aa164442178cff231db3524ab45c" prot="private" static="no" mutable="no">
+        <type>rtree_type</type>
+        <definition>rtree_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_RTree</definition>
+        <argsstring></argsstring>
+        <name>_RTree</name>
+        <qualifiedname>tracktable::RTree::_RTree</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="823" column="14" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="823" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::RTree</definition>
+        <argsstring>()</argsstring>
+        <name>RTree</name>
+        <qualifiedname>tracktable::RTree::RTree</qualifiedname>
+        <briefdescription>
+<para>Instantiate an empty <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="118" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a7c22f1b748713b8134a5c11932770a0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::~RTree</definition>
+        <argsstring>()</argsstring>
+        <name>~RTree</name>
+        <qualifiedname>tracktable::RTree::~RTree</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="121" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a7630549cb78849e4ecee30b40ebffa7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::RTree</definition>
+        <argsstring>(RTree const &amp;other)</argsstring>
+        <name>RTree</name>
+        <qualifiedname>tracktable::RTree::RTree</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create an <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="127" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="127" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a92542c35d882c293b1a57727e47c8d28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> &amp;</type>
+        <definition>RTree &amp; tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::operator=</definition>
+        <argsstring>(RTree const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::RTree::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="136" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="136" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1acde0305c32820f1d9a6b349340e36c33" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::operator==</definition>
+        <argsstring>(RTree const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::RTree::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> is equal to another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="147" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="147" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a5439cc51e315c8e7bed034e4ff7f22a0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::operator!=</definition>
+        <argsstring>(RTree const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::RTree::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two RTrees are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="157" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="157" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a9a8babe8e6e6f16665fb9a318df3a71c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename value_iterator_type</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::RTree</definition>
+        <argsstring>(value_iterator_type range_begin, value_iterator_type range_end)</argsstring>
+        <name>RTree</name>
+        <qualifiedname>tracktable::RTree::RTree</qualifiedname>
+        <param>
+          <type>value_iterator_type</type>
+          <declname>range_begin</declname>
+        </param>
+        <param>
+          <type>value_iterator_type</type>
+          <declname>range_end</declname>
+        </param>
+        <briefdescription>
+<para>Create and populate an <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> from a range of elements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If you have a container of points you can use this constructor to create and populate the tree in one swell foop instead of adding elements one at a time.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">range_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator pointing to beginning of input points </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator pointing past end of input points </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="172" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="172" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a1c0d28fa8b5ab6e1bed885c61608d5a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::insert</definition>
+        <argsstring>(value_type const &amp;value)</argsstring>
+        <name>insert</name>
+        <qualifiedname>tracktable::RTree::insert</qualifiedname>
+        <param>
+          <type>value_type const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Insert a single element into an <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element to insert (will be copied) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="182" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1af3cc4c4d0d3da06b02d1ecc1c09ab479" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename value_iterator_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::insert</definition>
+        <argsstring>(value_iterator_type range_begin, value_iterator_type range_end)</argsstring>
+        <name>insert</name>
+        <qualifiedname>tracktable::RTree::insert</qualifiedname>
+        <param>
+          <type>value_iterator_type</type>
+          <declname>range_begin</declname>
+        </param>
+        <param>
+          <type>value_iterator_type</type>
+          <declname>range_end</declname>
+        </param>
+        <briefdescription>
+<para>Insert multiple elements into an RTRee. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">range_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator pointing to beginning of input points </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator pointing past end of input points </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="193" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="193" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1ad5378e07e120012a956938277ecf3583" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_type</type>
+        <definition>size_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::remove</definition>
+        <argsstring>(value_type const &amp;value)</argsstring>
+        <name>remove</name>
+        <qualifiedname>tracktable::RTree::remove</qualifiedname>
+        <param>
+          <type>value_type const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Remove a single element from the <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element to remove </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 if the element was removed, 0 otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="203" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="203" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a61b36d7dcf65e847c435e55b6a3ae437" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename value_iterator_type</type>
+          </param>
+        </templateparamlist>
+        <type>size_type</type>
+        <definition>size_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::remove</definition>
+        <argsstring>(value_iterator_type range_begin, value_iterator_type range_end)</argsstring>
+        <name>remove</name>
+        <qualifiedname>tracktable::RTree::remove</qualifiedname>
+        <param>
+          <type>value_iterator_type</type>
+          <declname>range_begin</declname>
+        </param>
+        <param>
+          <type>value_iterator_type</type>
+          <declname>range_end</declname>
+        </param>
+        <briefdescription>
+<para>Remove many elements from the <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">range_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First element to remove </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Past last element to remove </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of removed values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="215" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="215" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1ab40f76380d04533bb877ff2ddcd885ba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>tracktable::RTree::size</qualifiedname>
+        <briefdescription>
+<para>Return number of elements in <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Non-negative integer (number of elements) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="225" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="225" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1af35a8e17379c378537fd8ef99e4591c2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>tracktable::RTree::empty</qualifiedname>
+        <briefdescription>
+<para>Check whether an rtree is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Boolean explaining whether or not <ref refid="classtracktable_1_1_r_tree_1ab40f76380d04533bb877ff2ddcd885ba" kindref="member">size()</ref> == 0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="234" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="234" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1af37c8a3e169e5959bbe7c9dfcdfc2377" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>tracktable::RTree::clear</qualifiedname>
+        <briefdescription>
+<para>Empty out an rtree. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will completely reset an rtree to its un-populated state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="244" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="244" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1ad9db01644b2fc6f4624c4b97a13eb0da" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_inside_box</definition>
+        <argsstring>(corner_type const &amp;min_corner, corner_type const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>find_points_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_inside_box</qualifiedname>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+<para>Find points inside a search box (output sink version) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds points inside a box specified as two corners. You must provide an InsertIterator as the third argument. This iterator will be used to save the results.</para>
+<para>Example:</para>
+<para><programlisting><codeline><highlight class="normal">my_point<sp/>min_corner,<sp/>max_corner;</highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point&gt;<sp/>results;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">my_tree.find_points_inside_box(min_corner,<sp/>max_corner,<sp/>std::back_inserter(results));</highlight></codeline>
+</programlisting></para>
+<para>Note that this function will return points that are exactly on the boundary of the search box as well as those in the interior. If you want only the points in the interior, use <computeroutput>find_points_strictly_inside_box</computeroutput>.</para>
+<para>As with all the other <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> functions, you can use a point type, a <computeroutput>std::pair&lt;point_type, X&gt;</computeroutput> or a <computeroutput>boost::tuple&lt;point, type, [other stuff]&gt;</computeroutput> for your searches. In the case of a <computeroutput>std::pair</computeroutput> or <computeroutput>boost::tuple</computeroutput>, your geometry type must be the first element.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">min_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at minimum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at maximum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">result_sink</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>InsertIterator where results will be stored </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="283" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="283" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1ac10179eb32a9dbd675e852aa4819963f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_inside_box</definition>
+        <argsstring>(std::pair&lt; corner_type, T2 &gt; const &amp;min_corner, std::pair&lt; corner_type, T2 &gt; const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>find_points_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_inside_box</qualifiedname>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="295" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="295" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a70cf89c2cfb56a0770643a40f2814904" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename T4</type>
+          </param>
+          <param>
+            <type>typename T5</type>
+          </param>
+          <param>
+            <type>typename T6</type>
+          </param>
+          <param>
+            <type>typename T7</type>
+          </param>
+          <param>
+            <type>typename T8</type>
+          </param>
+          <param>
+            <type>typename T9</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_inside_box</definition>
+        <argsstring>(boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &amp;min_corner, boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>find_points_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_inside_box</qualifiedname>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="311" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="311" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a9ad92501b4d73c3f5b14adeef74ad51a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_inside_box</definition>
+        <argsstring>(corner_type const &amp;min_corner, corner_type const &amp;max_corner) const</argsstring>
+        <name>find_points_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_inside_box</qualifiedname>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+<para>Find points inside a search box (iterator range version) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds points inside a box specified as a <ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box</ref> (also known as a tracktable::RTree&lt;point_type&gt;::box_type).</para>
+<para>Example:</para>
+<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>tracktable::RTree&lt;my_point&gt;::query_result_range_type<sp/>query_result_type;</highlight></codeline>
+<codeline><highlight class="normal">my_point<sp/>min_corner,<sp/>max_corner;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">query_result_type<sp/>result_range<sp/>=</highlight></codeline>
+<codeline><highlight class="normal">my_tree.find_points_inside_box(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point&gt;<sp/>results(result_range.first,<sp/>result_range.second);</highlight></codeline>
+</programlisting></para>
+<para>Note that this function will return points that are exactly on the boundary of the search box as well as those in the interior. If you want only the points in the interior, use <computeroutput>find_points_strictly_inside_box</computeroutput>.</para>
+<para>As with all the other <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> functions, you can use a point type, a <computeroutput>std::pair&lt;point_type, X&gt;</computeroutput> or a <computeroutput>boost::tuple&lt;point, type, [other stuff]&gt;</computeroutput> for your searches. In the case of a <computeroutput>std::pair</computeroutput> or <computeroutput>boost::tuple</computeroutput>, your geometry type must be the first element.</para>
+<para><simplesect kind="warning"><para>This function is sensitive to numerical imprecision issues when points are (allegedly) right on the border of the search box. This is especially problematic in the terrestrial domain (longitude/latitude points) since we have to do trigonometry to compute point-in-polygon results.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">min_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at minimum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at maximum end of search box </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pair of iterators pointing to query result range </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="366" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="366" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1aae269c86d534f5033059a35b761c0528" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_inside_box</definition>
+        <argsstring>(std::pair&lt; corner_type, T2 &gt; const &amp;min_corner, std::pair&lt; corner_type, T2 &gt; const &amp;max_corner) const</argsstring>
+        <name>find_points_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_inside_box</qualifiedname>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="378" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="378" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a8dbad2eb78a96bf893e76008f6c46575" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename T4</type>
+          </param>
+          <param>
+            <type>typename T5</type>
+          </param>
+          <param>
+            <type>typename T6</type>
+          </param>
+          <param>
+            <type>typename T7</type>
+          </param>
+          <param>
+            <type>typename T8</type>
+          </param>
+          <param>
+            <type>typename T9</type>
+          </param>
+          <param>
+            <type>typename T10</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_inside_box</definition>
+        <argsstring>(boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;min_corner, boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;max_corner)</argsstring>
+        <name>find_points_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_inside_box</qualifiedname>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="391" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="391" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a8f8468f8f1eb87db589344e56f7e92d6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_strictly_inside_box</definition>
+        <argsstring>(corner_type const &amp;min_corner, corner_type const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>find_points_strictly_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_strictly_inside_box</qualifiedname>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+<para>Find points strictly inside a search box. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds points inside a box specified as two corners. You must provide an InsertIterator as the third argument. This iterator will be used to save the results.</para>
+<para>Example:</para>
+<para><programlisting><codeline><highlight class="normal">my_point<sp/>min_corner,<sp/>max_corner;</highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point&gt;<sp/>results;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">my_tree.find_points_strictly_inside_box(min_corner,<sp/>max_corner,<sp/>std::back_inserter(results));</highlight></codeline>
+</programlisting></para>
+<para>Note that this function will return points that are strictly within the box. Points on the border will not be returned. If you want points on the border, use <computeroutput>find_points_inside_box</computeroutput>.</para>
+<para>As with all the other <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> functions, you can use a point type, a <computeroutput>std::pair&lt;point_type, X&gt;</computeroutput> or a <computeroutput>boost::tuple&lt;point, type, [other stuff]&gt;</computeroutput> for your searches. In the case of a <computeroutput>std::pair</computeroutput> or <computeroutput>boost::tuple</computeroutput>, your geometry type must be the first element.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">min_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at minimum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at maximum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">result_sink</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>InsertIterator where results will be stored </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="434" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="434" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1ae8384a976db2a41d4683ad937aee4e9e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_strictly_inside_box</definition>
+        <argsstring>(std::pair&lt; corner_type, T2 &gt; const &amp;min_corner, std::pair&lt; corner_type, T2 &gt; const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>find_points_strictly_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_strictly_inside_box</qualifiedname>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="446" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="446" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1aefe7f59745f329e4d68a687212eb7806" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename T4</type>
+          </param>
+          <param>
+            <type>typename T5</type>
+          </param>
+          <param>
+            <type>typename T6</type>
+          </param>
+          <param>
+            <type>typename T7</type>
+          </param>
+          <param>
+            <type>typename T8</type>
+          </param>
+          <param>
+            <type>typename T9</type>
+          </param>
+          <param>
+            <type>typename T10</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_strictly_inside_box</definition>
+        <argsstring>(boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;min_corner, boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>find_points_strictly_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_strictly_inside_box</qualifiedname>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="462" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="462" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1ac97005693221725362d07039764bf007" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_strictly_inside_box</definition>
+        <argsstring>(corner_type const &amp;min_corner, corner_type const &amp;max_corner) const</argsstring>
+        <name>find_points_strictly_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_strictly_inside_box</qualifiedname>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+<para>Find points inside a search box (iterator range version) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds points inside a box specified as a <ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box</ref> (also known as a tracktable::RTree&lt;point_type&gt;::box_type).</para>
+<para>Example:</para>
+<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>tracktable::RTree&lt;my_point&gt;::query_result_range_type<sp/>query_result_type;</highlight></codeline>
+<codeline><highlight class="normal">my_point<sp/>min_corner,<sp/>max_corner;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">query_result_type<sp/>result_range<sp/>=</highlight></codeline>
+<codeline><highlight class="normal">my_tree.find_points_strictly_inside_box(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point&gt;<sp/>results(result_range.first,<sp/>result_range.second);</highlight></codeline>
+</programlisting></para>
+<para>Note that this function will return points that are strictly within the box. Points on the border will not be returned. If you want points on the border, use <computeroutput>find_points_inside_box</computeroutput>.</para>
+<para>As with all the other <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> functions, you can use a point type, a <computeroutput>std::pair&lt;point_type, X&gt;</computeroutput> or a <computeroutput>boost::tuple&lt;point, type, [other stuff]&gt;</computeroutput> for your searches. In the case of a <computeroutput>std::pair</computeroutput> or <computeroutput>boost::tuple</computeroutput>, your geometry type must be the first element.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">min_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at minimum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at maximum end of search box </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pair of iterators pointing to query result range </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="509" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="509" bodyend="514"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a2b985ccc874035c6b94641236804c98d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_strictly_inside_box</definition>
+        <argsstring>(std::pair&lt; corner_type, T2 &gt; const &amp;min_corner, std::pair&lt; corner_type, T2 &gt; const &amp;max_corner) const</argsstring>
+        <name>find_points_strictly_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_strictly_inside_box</qualifiedname>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="522" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="522" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1aeb4fb879eda067f10d194279dba7916f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename T4</type>
+          </param>
+          <param>
+            <type>typename T5</type>
+          </param>
+          <param>
+            <type>typename T6</type>
+          </param>
+          <param>
+            <type>typename T7</type>
+          </param>
+          <param>
+            <type>typename T8</type>
+          </param>
+          <param>
+            <type>typename T9</type>
+          </param>
+          <param>
+            <type>typename T10</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_points_strictly_inside_box</definition>
+        <argsstring>(boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;min_corner, boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;max_corner)</argsstring>
+        <name>find_points_strictly_inside_box</name>
+        <qualifiedname>tracktable::RTree::find_points_strictly_inside_box</qualifiedname>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="536" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="536" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a64f627d50b35af0ea65a9996c776f8d5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::intersects</definition>
+        <argsstring>(corner_type const &amp;min_corner, corner_type const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>intersects</name>
+        <qualifiedname>tracktable::RTree::intersects</qualifiedname>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+<para>Find points inside a search box (output sink version) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds points/objects that are not disjoint from the box You must provide an InsertIterator as the third argument. This iterator will be used to save the results.</para>
+<para>Example:</para>
+<para><programlisting><codeline><highlight class="normal">my_point<sp/>min_corner,<sp/>max_corner;</highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point&gt;<sp/>results;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">my_tree.intersects(min_corner,<sp/>max_corner,<sp/>std::back_inserter(results));</highlight></codeline>
+</programlisting></para>
+<para>Note that this function will return points that are exactly on the boundary of the search box as well as those in the interior. If you want only the points in the interior, use <computeroutput>find_points_strictly_inside_box</computeroutput>.</para>
+<para>As with all the other <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> functions, you can use a point type, a <computeroutput>std::pair&lt;point_type, X&gt;</computeroutput> or a <computeroutput>boost::tuple&lt;point, type, [other stuff]&gt;</computeroutput> for your searches. In the case of a <computeroutput>std::pair</computeroutput> or <computeroutput>boost::tuple</computeroutput>, your geometry type must be the first element.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">min_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at minimum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at maximum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">result_sink</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>InsertIterator where results will be stored </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="580" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="580" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1aea5798afd6953685f0ceefd42b8806f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::intersects</definition>
+        <argsstring>(std::pair&lt; corner_type, T2 &gt; const &amp;min_corner, std::pair&lt; corner_type, T2 &gt; const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>intersects</name>
+        <qualifiedname>tracktable::RTree::intersects</qualifiedname>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="592" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="592" bodyend="598"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1adb9aea469ca3de53694d33a0ae1cc0d4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename T4</type>
+          </param>
+          <param>
+            <type>typename T5</type>
+          </param>
+          <param>
+            <type>typename T6</type>
+          </param>
+          <param>
+            <type>typename T7</type>
+          </param>
+          <param>
+            <type>typename T8</type>
+          </param>
+          <param>
+            <type>typename T9</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::intersects</definition>
+        <argsstring>(boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &amp;min_corner, boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &amp;max_corner, insert_iter_type result_sink) const</argsstring>
+        <name>intersects</name>
+        <qualifiedname>tracktable::RTree::intersects</qualifiedname>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="608" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="608" bodyend="617"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1addb090a79f95f583e4439952b6f772fb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::intersects</definition>
+        <argsstring>(corner_type const &amp;min_corner, corner_type const &amp;max_corner) const</argsstring>
+        <name>intersects</name>
+        <qualifiedname>tracktable::RTree::intersects</qualifiedname>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>corner_type const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+<para>Find points inside a search box (iterator range version) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds points inside a box specified as a <ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box</ref> (also known as a tracktable::RTree&lt;point_type&gt;::box_type).</para>
+<para>Example:</para>
+<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>tracktable::RTree&lt;my_point&gt;::query_result_range_type<sp/>query_result_type;</highlight></codeline>
+<codeline><highlight class="normal">my_point<sp/>min_corner,<sp/>max_corner;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">query_result_type<sp/>result_range<sp/>=</highlight></codeline>
+<codeline><highlight class="normal">my_tree.intersects(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point&gt;<sp/>results(result_range.first,<sp/>result_range.second);</highlight></codeline>
+</programlisting></para>
+<para>Note that this function will return points that are exactly on the boundary of the search box as well as those in the interior. If you want only the points in the interior, use <computeroutput>find_points_strictly_inside_box</computeroutput>.</para>
+<para>As with all the other <ref refid="classtracktable_1_1_r_tree" kindref="compound">RTree</ref> functions, you can use a point type, a <computeroutput>std::pair&lt;point_type, X&gt;</computeroutput> or a <computeroutput>boost::tuple&lt;point, type, [other stuff]&gt;</computeroutput> for your searches. In the case of a <computeroutput>std::pair</computeroutput> or <computeroutput>boost::tuple</computeroutput>, your geometry type must be the first element.</para>
+<para><simplesect kind="warning"><para>This function is sensitive to numerical imprecision issues when points are (allegedly) right on the border of the search box. This is especially problematic in the terrestrial domain (longitude/latitude points) since we have to do trigonometry to compute point-in-polygon results.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">min_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at minimum end of search box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corner at maximum end of search box </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pair of iterators pointing to query result range </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="663" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="663" bodyend="668"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a86ea20f84e89e90fb22c185d998a5ccd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::intersects</definition>
+        <argsstring>(std::pair&lt; corner_type, T2 &gt; const &amp;min_corner, std::pair&lt; corner_type, T2 &gt; const &amp;max_corner) const</argsstring>
+        <name>intersects</name>
+        <qualifiedname>tracktable::RTree::intersects</qualifiedname>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; corner_type, T2 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="675" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="675" bodyend="680"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1ae42382e204da0b0f067bfef3f601ef92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename corner_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename T4</type>
+          </param>
+          <param>
+            <type>typename T5</type>
+          </param>
+          <param>
+            <type>typename T6</type>
+          </param>
+          <param>
+            <type>typename T7</type>
+          </param>
+          <param>
+            <type>typename T8</type>
+          </param>
+          <param>
+            <type>typename T9</type>
+          </param>
+          <param>
+            <type>typename T10</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::intersects</definition>
+        <argsstring>(boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;min_corner, boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;max_corner)</argsstring>
+        <name>intersects</name>
+        <qualifiedname>tracktable::RTree::intersects</qualifiedname>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>min_corner</declname>
+        </param>
+        <param>
+          <type>boost::tuple&lt; corner_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>max_corner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="688" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="688" bodyend="696"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1af4e6525ed1833f4f1275c8121ffac9e3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename search_point_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_nearest_neighbors</definition>
+        <argsstring>(search_point_type const &amp;search_point, unsigned int num_neighbors, insert_iter_type result_sink) const</argsstring>
+        <name>find_nearest_neighbors</name>
+        <qualifiedname>tracktable::RTree::find_nearest_neighbors</qualifiedname>
+        <param>
+          <type>search_point_type const &amp;</type>
+          <declname>search_point</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_neighbors</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+<para>Find points near a search point (output iterator version) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds the K nearest neighbors to a search point. Note that if the search point is already present in the R-tree then it will be one of the results returned.</para>
+<para>You must provide an output iterator as a place to store the results.</para>
+<para>Example:</para>
+<para><programlisting><codeline><highlight class="normal">tracktable::RTree&lt;my_point&gt;<sp/>tree;</highlight></codeline>
+<codeline><highlight class="normal">my_point<sp/>search_point;</highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point&gt;<sp/>neighbors;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">tree.<ref refid="classtracktable_1_1_r_tree_1af4e6525ed1833f4f1275c8121ffac9e3" kindref="member">find_nearest_neighbors</ref>(search_point,<sp/>10,<sp/>std::back_inserter(neighbors));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">search_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point whose neighbors you want to find </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_neighbors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How many neighbors to find </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">result_sink</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where to write the results </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="726" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="726" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a3b94b5ec1d1eeee17ffda25cef4e714e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename search_point_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_nearest_neighbors</definition>
+        <argsstring>(std::pair&lt; search_point_type, T2 &gt; const &amp;search_point, unsigned int num_neighbors, insert_iter_type result_sink) const</argsstring>
+        <name>find_nearest_neighbors</name>
+        <qualifiedname>tracktable::RTree::find_nearest_neighbors</qualifiedname>
+        <param>
+          <type>std::pair&lt; search_point_type, T2 &gt; const &amp;</type>
+          <declname>search_point</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_neighbors</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="737" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="737" bodyend="742"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1adfa3a4052e640452c2f9506cf060bdd4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename search_point_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename T4</type>
+          </param>
+          <param>
+            <type>typename T5</type>
+          </param>
+          <param>
+            <type>typename T6</type>
+          </param>
+          <param>
+            <type>typename T7</type>
+          </param>
+          <param>
+            <type>typename T8</type>
+          </param>
+          <param>
+            <type>typename T9</type>
+          </param>
+          <param>
+            <type>typename T10</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_nearest_neighbors</definition>
+        <argsstring>(boost::tuple&lt; search_point_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;search_point, unsigned int num_neighbors, insert_iter_type result_sink) const</argsstring>
+        <name>find_nearest_neighbors</name>
+        <qualifiedname>tracktable::RTree::find_nearest_neighbors</qualifiedname>
+        <param>
+          <type>boost::tuple&lt; search_point_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>search_point</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_neighbors</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="750" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="750" bodyend="757"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a11bc832e8ba5836f8a8ae0d050833d97" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename search_point_type</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_nearest_neighbors</definition>
+        <argsstring>(search_point_type const &amp;search_point, unsigned int num_neighbors) const</argsstring>
+        <name>find_nearest_neighbors</name>
+        <qualifiedname>tracktable::RTree::find_nearest_neighbors</qualifiedname>
+        <param>
+          <type>search_point_type const &amp;</type>
+          <declname>search_point</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_neighbors</declname>
+        </param>
+        <briefdescription>
+<para>Find points near a search point (iterator range version) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds the K nearest neighbors to a search point. Note that if the search point is already present in the R-tree then it will be one of the results returned.</para>
+<para>The result is returned as a pair of iterators.</para>
+<para>Example:</para>
+<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>tracktable::RTree&lt;my_point&gt;::query_result_range_type<sp/>query_result_type;</highlight></codeline>
+<codeline><highlight class="normal">tracktable::RTree&lt;my_point&gt;<sp/>tree;</highlight></codeline>
+<codeline><highlight class="normal">my_point<sp/>search_point;</highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point&gt;<sp/>neighbors;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">query_result_type<sp/>result_range<sp/>=</highlight></codeline>
+<codeline><highlight class="normal">my_tree.find_nearest_neighbors(search_point,<sp/>10);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">neighbors.assign(result_range.first,<sp/>result_range.second);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">search_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point whose neighbors you want to find </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_neighbors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How many neighbors to find </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pair of iterators pointing to neighboring points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="791" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="791" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1aa11bb09355a975de9bf8f94d1dfe8bb4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename search_point_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_nearest_neighbors</definition>
+        <argsstring>(std::pair&lt; search_point_type, T2 &gt; const &amp;search_point, unsigned int num_neighbors) const</argsstring>
+        <name>find_nearest_neighbors</name>
+        <qualifiedname>tracktable::RTree::find_nearest_neighbors</qualifiedname>
+        <param>
+          <type>std::pair&lt; search_point_type, T2 &gt; const &amp;</type>
+          <declname>search_point</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_neighbors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="802" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="802" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1af4dbc5cfd097519d52e43ae94ee292fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename search_point_type</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename T4</type>
+          </param>
+          <param>
+            <type>typename T5</type>
+          </param>
+          <param>
+            <type>typename T6</type>
+          </param>
+          <param>
+            <type>typename T7</type>
+          </param>
+          <param>
+            <type>typename T8</type>
+          </param>
+          <param>
+            <type>typename T9</type>
+          </param>
+          <param>
+            <type>typename T10</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::find_nearest_neighbors</definition>
+        <argsstring>(boost::tuple&lt; search_point_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;search_point, unsigned int num_neighbors)</argsstring>
+        <name>find_nearest_neighbors</name>
+        <qualifiedname>tracktable::RTree::find_nearest_neighbors</qualifiedname>
+        <param>
+          <type>boost::tuple&lt; search_point_type, T2, T3, T4, T5, T6, T7, T8, T9, T10 &gt; const &amp;</type>
+          <declname>search_point</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_neighbors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="814" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="814" bodyend="820"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a7c60bf9b26e88792ed1421704f1a8c7e" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename box_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_find_points_inside_box</definition>
+        <argsstring>(box_type const &amp;search_box, insert_iter_type result_sink) const</argsstring>
+        <name>_find_points_inside_box</name>
+        <qualifiedname>tracktable::RTree::_find_points_inside_box</qualifiedname>
+        <param>
+          <type>box_type const &amp;</type>
+          <declname>search_box</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="828" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="828" bodyend="832"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a0ed8e4c4012b74e5c235ce125ccc048e" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename box_type</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_find_points_inside_box</definition>
+        <argsstring>(box_type const &amp;search_box) const</argsstring>
+        <name>_find_points_inside_box</name>
+        <qualifiedname>tracktable::RTree::_find_points_inside_box</qualifiedname>
+        <param>
+          <type>box_type const &amp;</type>
+          <declname>search_box</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="837" column="27" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="837" bodyend="843"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1adcd5f7c6347ea156c9a2c9b2297a0a6a" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename box_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_intersects</definition>
+        <argsstring>(box_type const &amp;search_box, insert_iter_type result_sink) const</argsstring>
+        <name>_intersects</name>
+        <qualifiedname>tracktable::RTree::_intersects</qualifiedname>
+        <param>
+          <type>box_type const &amp;</type>
+          <declname>search_box</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>result_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="848" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="848" bodyend="852"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a0044a4b2c3917b06d27f14d57eda57f0" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename box_type</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_intersects</definition>
+        <argsstring>(box_type const &amp;search_box) const</argsstring>
+        <name>_intersects</name>
+        <qualifiedname>tracktable::RTree::_intersects</qualifiedname>
+        <param>
+          <type>box_type const &amp;</type>
+          <declname>search_box</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="857" column="27" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="857" bodyend="863"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a04ebf4e9465baf0a81b7b367ec8cab0a" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename box_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_find_points_strictly_inside_box</definition>
+        <argsstring>(box_type const &amp;search_box, insert_iter_type output_sink) const</argsstring>
+        <name>_find_points_strictly_inside_box</name>
+        <qualifiedname>tracktable::RTree::_find_points_strictly_inside_box</qualifiedname>
+        <param>
+          <type>box_type const &amp;</type>
+          <declname>search_box</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>output_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="868" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="868" bodyend="872"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1ab9fd20e1ca5b842a70796b4ae7aaa1ce" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename box_type</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_find_points_strictly_inside_box</definition>
+        <argsstring>(box_type const &amp;search_box) const</argsstring>
+        <name>_find_points_strictly_inside_box</name>
+        <qualifiedname>tracktable::RTree::_find_points_strictly_inside_box</qualifiedname>
+        <param>
+          <type>box_type const &amp;</type>
+          <declname>search_box</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="878" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="878" bodyend="882"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a6c5c6bbcaddc0f0563a6c27f2f0cc528" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename search_point_type</type>
+          </param>
+          <param>
+            <type>typename insert_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_find_nearest_neighbors</definition>
+        <argsstring>(search_point_type const &amp;search_point, unsigned int num_neighbors, insert_iter_type output_sink) const</argsstring>
+        <name>_find_nearest_neighbors</name>
+        <qualifiedname>tracktable::RTree::_find_nearest_neighbors</qualifiedname>
+        <param>
+          <type>search_point_type const &amp;</type>
+          <declname>search_point</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_neighbors</declname>
+        </param>
+        <param>
+          <type>insert_iter_type</type>
+          <declname>output_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="887" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="887" bodyend="893"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a4ef27f2a8d00a0153db0b775083865af" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename search_point_type</type>
+          </param>
+        </templateparamlist>
+        <type>query_result_range_type</type>
+        <definition>query_result_range_type tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_find_nearest_neighbors</definition>
+        <argsstring>(search_point_type const &amp;search_point, unsigned int num_neighbors) const</argsstring>
+        <name>_find_nearest_neighbors</name>
+        <qualifiedname>tracktable::RTree::_find_nearest_neighbors</qualifiedname>
+        <param>
+          <type>search_point_type const &amp;</type>
+          <declname>search_point</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_neighbors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="898" column="27" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="898" bodyend="903"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_r_tree_1a9cf22046c2e4cc50699a928d90529ff3" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename iterator_range_type</type>
+          </param>
+          <param>
+            <type>typename output_iterator_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::RTree&lt; value_type, rtree_algorithm_type &gt;::_copy_range_to_output</definition>
+        <argsstring>(iterator_range_type range, output_iterator_type output_sink) const</argsstring>
+        <name>_copy_range_to_output</name>
+        <qualifiedname>tracktable::RTree::_copy_range_to_output</qualifiedname>
+        <param>
+          <type>iterator_range_type</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>output_iterator_type</type>
+          <declname>output_sink</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="909" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="909" bodyend="918"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This is a wrapper for the Boost rtree implementation in boost::geometry::index. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Its purpose is to insulate you, the user, from having to care about all the complexity (and power) involved in boost::geometry::index::rtree. You supply a value type (which can be a point, a pair or a tuple) and we do the rest.</para>
+<para>The disadvantage is that you&apos;re restricted from using some of the more powerful query capabilities, including user-defined predicates and query combination.</para>
+<para>Quick Start:</para>
+<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>tracktable::RTree&lt;my_point_type&gt;<sp/>rtree_type;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">rtree_type<sp/>my_tree;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>my_points.size();<sp/>++i)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>my_tree.insert(my_points[i]);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;my_point_type&gt;<sp/>results;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">my_tree.find_points_inside_box(min_corner,<sp/>max_corner,<sp/>std::back_inserter(results));</highlight></codeline>
+</programlisting></para>
+<para>(your results vector now contains all the points inside the box)</para>
+<para>You can populate this R-tree with any point type known to Tracktable / boost::geometry. This includes base_point_type and trajectory_point_type from all the domains as well as any other point that you have registered with boost::geometry.</para>
+<para>You can also populate the R-tree with <computeroutput>std::pair&lt;&gt;</computeroutput>s and <computeroutput>boost::tuple&lt;&gt;</computeroutput>s where the first element of the pair / tuple is one of the point types listed above. Note that when you query the r-tree, <emphasis>only</emphasis> the geometry will be used in the query: the auxiliary information is preserved but never compared.</para>
+<para>When querying the r-tree, you must use the same geometric point type that you used to populate it. Like the values stored in the tree, you can specify the search point(s) as a point type, a <computeroutput>std::pair&lt;&gt;</computeroutput> or a <computeroutput>boost::tuple&lt;&gt;</computeroutput> whose first element is the geometry. This is just for convenience: the only part that will be used for the search is the geometry.</para>
+<para>You may only modify the contents of the R-tree with <computeroutput><ref refid="classtracktable_1_1_r_tree_1a1c0d28fa8b5ab6e1bed885c61608d5a4" kindref="member">insert()</ref></computeroutput>, <computeroutput><ref refid="classtracktable_1_1_r_tree_1ad5378e07e120012a956938277ecf3583" kindref="member">remove()</ref></computeroutput> and <computeroutput><ref refid="classtracktable_1_1_r_tree_1af37c8a3e169e5959bbe7c9dfcdfc2377" kindref="member">clear()</ref></computeroutput>. There is no way to get a reference to an internal element and modify it directly as you can do with std::vector, std::map and friends. Doing so would break the search structure. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" line="108" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h" bodystart="109" bodyend="919"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_r_tree_1a9cf22046c2e4cc50699a928d90529ff3" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_copy_range_to_output</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a6c5c6bbcaddc0f0563a6c27f2f0cc528" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_find_nearest_neighbors</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a4ef27f2a8d00a0153db0b775083865af" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_find_nearest_neighbors</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a7c60bf9b26e88792ed1421704f1a8c7e" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_find_points_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a0ed8e4c4012b74e5c235ce125ccc048e" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_find_points_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a04ebf4e9465baf0a81b7b367ec8cab0a" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_find_points_strictly_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1ab9fd20e1ca5b842a70796b4ae7aaa1ce" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_find_points_strictly_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1adcd5f7c6347ea156c9a2c9b2297a0a6a" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_intersects</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a0044a4b2c3917b06d27f14d57eda57f0" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_intersects</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a0e76aa164442178cff231db3524ab45c" prot="private" virt="non-virtual"><scope>tracktable::RTree</scope><name>_RTree</name></member>
+      <member refid="classtracktable_1_1_r_tree_1af37c8a3e169e5959bbe7c9dfcdfc2377" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>clear</name></member>
+      <member refid="classtracktable_1_1_r_tree_1af35a8e17379c378537fd8ef99e4591c2" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>empty</name></member>
+      <member refid="classtracktable_1_1_r_tree_1af4e6525ed1833f4f1275c8121ffac9e3" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_nearest_neighbors</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a3b94b5ec1d1eeee17ffda25cef4e714e" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_nearest_neighbors</name></member>
+      <member refid="classtracktable_1_1_r_tree_1adfa3a4052e640452c2f9506cf060bdd4" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_nearest_neighbors</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a11bc832e8ba5836f8a8ae0d050833d97" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_nearest_neighbors</name></member>
+      <member refid="classtracktable_1_1_r_tree_1aa11bb09355a975de9bf8f94d1dfe8bb4" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_nearest_neighbors</name></member>
+      <member refid="classtracktable_1_1_r_tree_1af4dbc5cfd097519d52e43ae94ee292fd" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_nearest_neighbors</name></member>
+      <member refid="classtracktable_1_1_r_tree_1ad9db01644b2fc6f4624c4b97a13eb0da" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1ac10179eb32a9dbd675e852aa4819963f" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a70cf89c2cfb56a0770643a40f2814904" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a9ad92501b4d73c3f5b14adeef74ad51a" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1aae269c86d534f5033059a35b761c0528" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a8dbad2eb78a96bf893e76008f6c46575" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a8f8468f8f1eb87db589344e56f7e92d6" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_strictly_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1ae8384a976db2a41d4683ad937aee4e9e" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_strictly_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1aefe7f59745f329e4d68a687212eb7806" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_strictly_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1ac97005693221725362d07039764bf007" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_strictly_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a2b985ccc874035c6b94641236804c98d" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_strictly_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1aeb4fb879eda067f10d194279dba7916f" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>find_points_strictly_inside_box</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a1c0d28fa8b5ab6e1bed885c61608d5a4" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>insert</name></member>
+      <member refid="classtracktable_1_1_r_tree_1af3cc4c4d0d3da06b02d1ecc1c09ab479" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>insert</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a64f627d50b35af0ea65a9996c776f8d5" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>intersects</name></member>
+      <member refid="classtracktable_1_1_r_tree_1aea5798afd6953685f0ceefd42b8806f6" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>intersects</name></member>
+      <member refid="classtracktable_1_1_r_tree_1adb9aea469ca3de53694d33a0ae1cc0d4" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>intersects</name></member>
+      <member refid="classtracktable_1_1_r_tree_1addb090a79f95f583e4439952b6f772fb" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>intersects</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a86ea20f84e89e90fb22c185d998a5ccd" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>intersects</name></member>
+      <member refid="classtracktable_1_1_r_tree_1ae42382e204da0b0f067bfef3f601ef92" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>intersects</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a5439cc51e315c8e7bed034e4ff7f22a0" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a92542c35d882c293b1a57727e47c8d28" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_r_tree_1acde0305c32820f1d9a6b349340e36c33" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a460c489389b918f9acdca708a5cdae61" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>query_result_iterator_type</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a48695e243d15da86d47eafb28f8e00e6" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>query_result_range_type</name></member>
+      <member refid="classtracktable_1_1_r_tree_1ad5378e07e120012a956938277ecf3583" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>remove</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a61b36d7dcf65e847c435e55b6a3ae437" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>remove</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>RTree</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a7630549cb78849e4ecee30b40ebffa7c" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>RTree</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a9a8babe8e6e6f16665fb9a318df3a71c" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>RTree</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a180434c72ab5c8817dabdba552233633" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>rtree_type</name></member>
+      <member refid="classtracktable_1_1_r_tree_1ab40f76380d04533bb877ff2ddcd885ba" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>size</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a9268e7e14cb8100433d92e375a7a90ad" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>size_type</name></member>
+      <member refid="classtracktable_1_1_r_tree_1a7c22f1b748713b8134a5c11932770a0b" prot="public" virt="non-virtual"><scope>tracktable::RTree</scope><name>~RTree</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

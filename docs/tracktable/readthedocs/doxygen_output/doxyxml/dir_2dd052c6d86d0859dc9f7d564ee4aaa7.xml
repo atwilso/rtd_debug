@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_2dd052c6d86d0859dc9f7d564ee4aaa7" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core</compoundname>
+    <innerdir refid="dir_a99fbc3eb76e5a9b26457852858fc2df">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail</innerdir>
+    <innerdir refid="dir_1b1cb657403c0f197cb5ba770f79ca39">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/WarningGuards</innerdir>
+    <innerfile refid="_box_8h">Box.h</innerfile>
+    <innerfile refid="_conversions_8h">Conversions.h</innerfile>
+    <innerfile refid="_floating_point_comparison_8h">FloatingPointComparison.h</innerfile>
+    <innerfile refid="_geometric_mean_8h">GeometricMean.h</innerfile>
+    <innerfile refid="_geometric_median_8h">GeometricMedian.h</innerfile>
+    <innerfile refid="_geometry_8h">Geometry.h</innerfile>
+    <innerfile refid="_guarded_boost_geometry_headers_8h">GuardedBoostGeometryHeaders.h</innerfile>
+    <innerfile refid="_logging_8cpp">Logging.cpp</innerfile>
+    <innerfile refid="_logging_8h">Logging.h</innerfile>
+    <innerfile refid="_memory_use_8cpp">MemoryUse.cpp</innerfile>
+    <innerfile refid="_memory_use_8h">MemoryUse.h</innerfile>
+    <innerfile refid="_platform_detect_8h">PlatformDetect.h</innerfile>
+    <innerfile refid="_point_arithmetic_8h">PointArithmetic.h</innerfile>
+    <innerfile refid="_point_base_8h">PointBase.h</innerfile>
+    <innerfile refid="_point_cartesian_8h">PointCartesian.h</innerfile>
+    <innerfile refid="_point_lon_lat_8cpp">PointLonLat.cpp</innerfile>
+    <innerfile refid="_point_lon_lat_8h">PointLonLat.h</innerfile>
+    <innerfile refid="_point_traits_8h">PointTraits.h</innerfile>
+    <innerfile refid="_property_converter_8cpp">PropertyConverter.cpp</innerfile>
+    <innerfile refid="_property_converter_8h">PropertyConverter.h</innerfile>
+    <innerfile refid="_property_map_8cpp">PropertyMap.cpp</innerfile>
+    <innerfile refid="_property_map_8h">PropertyMap.h</innerfile>
+    <innerfile refid="_property_value_8cpp">PropertyValue.cpp</innerfile>
+    <innerfile refid="_property_value_8h">PropertyValue.h</innerfile>
+    <innerfile refid="_timestamp_8cpp">Timestamp.cpp</innerfile>
+    <innerfile refid="_timestamp_8h">Timestamp.h</innerfile>
+    <innerfile refid="_timestamp_converter_8cpp">TimestampConverter.cpp</innerfile>
+    <innerfile refid="_timestamp_converter_8h">TimestampConverter.h</innerfile>
+    <innerfile refid="_tracktable_common_8h">TracktableCommon.h</innerfile>
+    <innerfile refid="_trajectory_8h">Trajectory.h</innerfile>
+    <innerfile refid="_trajectory_point_8h">TrajectoryPoint.h</innerfile>
+    <innerfile refid="_unfortunate_workarounds_8h">UnfortunateWorkarounds.h</innerfile>
+    <innerfile refid="_u_u_i_d_8cpp">UUID.cpp</innerfile>
+    <innerfile refid="_u_u_i_d_8h">UUID.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/"/>
+  </compounddef>
+</doxygen>

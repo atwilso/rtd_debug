@@ -1,0 +1,645 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_token_writer" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::TokenWriter</compoundname>
+    <includes refid="_token_writer_8h" local="no">TokenWriter.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_token_writer_1a3ca256ec9b9a4564a00fc7327487e8b8" prot="public" static="no">
+        <type>string_type::value_type</type>
+        <definition>typedef string_type::value_type tracktable::TokenWriter::char_type</definition>
+        <argsstring></argsstring>
+        <name>char_type</name>
+        <qualifiedname>tracktable::TokenWriter::char_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="57" column="44" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_token_writer_1a783a43d29d44c111d2048a555909b0fc" prot="public" static="no">
+        <type>boost::basic_regex&lt; char_type &gt;</type>
+        <definition>typedef boost::basic_regex&lt;char_type&gt; tracktable::TokenWriter::regex_type</definition>
+        <argsstring></argsstring>
+        <name>regex_type</name>
+        <qualifiedname>tracktable::TokenWriter::regex_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="58" column="33" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_token_writer_1a25eab9ddbdec638e53a8e1dafc790291" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::TokenWriter::FieldDelimiter</definition>
+        <argsstring></argsstring>
+        <name>FieldDelimiter</name>
+        <qualifiedname>tracktable::TokenWriter::FieldDelimiter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="329" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_token_writer_1a0a02dad869a94bbdb80d90f6c0cfc1bd" prot="private" static="no" mutable="no">
+        <type>std::ostream *</type>
+        <definition>std::ostream* tracktable::TokenWriter::OutputStream</definition>
+        <argsstring></argsstring>
+        <name>OutputStream</name>
+        <qualifiedname>tracktable::TokenWriter::OutputStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="330" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_token_writer_1a08e194e5990f765a1243f45b585f59db" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::TokenWriter::QuoteCharacter</definition>
+        <argsstring></argsstring>
+        <name>QuoteCharacter</name>
+        <qualifiedname>tracktable::TokenWriter::QuoteCharacter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="331" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_token_writer_1a17089da1c229e137e0785f8f49972df0" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::TokenWriter::RecordDelimiter</definition>
+        <argsstring></argsstring>
+        <name>RecordDelimiter</name>
+        <qualifiedname>tracktable::TokenWriter::RecordDelimiter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="332" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_token_writer_1aa26c496c325117150f0f2c55e50f9b53" prot="private" static="no" mutable="no">
+        <type>regex_type</type>
+        <definition>regex_type tracktable::TokenWriter::DelimiterRegex</definition>
+        <argsstring></argsstring>
+        <name>DelimiterRegex</name>
+        <qualifiedname>tracktable::TokenWriter::DelimiterRegex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="333" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="333" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a051b36aeade0ac6e20ada96e6bec5072" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TokenWriter::TokenWriter</definition>
+        <argsstring>()</argsstring>
+        <name>TokenWriter</name>
+        <qualifiedname>tracktable::TokenWriter::TokenWriter</qualifiedname>
+        <briefdescription>
+<para>Instantiate a default token writer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="61" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="61" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1af0d50dc2a07a024c84029573b9af8a04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TokenWriter::TokenWriter</definition>
+        <argsstring>(std::ostream &amp;_output)</argsstring>
+        <name>TokenWriter</name>
+        <qualifiedname>tracktable::TokenWriter::TokenWriter</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_output</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a writer using a <computeroutput>std::ostream</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream to output to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="75" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="75" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1afd7795f8d7c07aa2ffb1aa230386ed69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TokenWriter::TokenWriter</definition>
+        <argsstring>(TokenWriter const &amp;other)</argsstring>
+        <name>TokenWriter</name>
+        <qualifiedname>tracktable::TokenWriter::TokenWriter</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a writer with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="89" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="89" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a1409d41d072c9af3be57e20d50baaa01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TokenWriter::~TokenWriter</definition>
+        <argsstring>()</argsstring>
+        <name>~TokenWriter</name>
+        <qualifiedname>tracktable::TokenWriter::~TokenWriter</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="99" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="99" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a39ca31cb68780a0837c8b1797d2fb2b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> &amp;</type>
+        <definition>TokenWriter &amp; tracktable::TokenWriter::operator=</definition>
+        <argsstring>(TokenWriter const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::TokenWriter::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Writer with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="106" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="106" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a8dba8d761741c8d65f190a4be20e26f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TokenWriter::operator==</definition>
+        <argsstring>(TokenWriter const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::TokenWriter::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one writer is equal to another by comparing all the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two writers are equal if all of their streams are properties.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="123" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="123" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a5cf1697a3a2c3a43ea9bed98520e3f29" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TokenWriter::operator!=</definition>
+        <argsstring>(TokenWriter const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::TokenWriter::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two <ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="138" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a5dc8404f3a0405306af2b085db9e5ae3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TokenWriter::set_output</definition>
+        <argsstring>(std::ostream &amp;out)</argsstring>
+        <name>set_output</name>
+        <qualifiedname>tracktable::TokenWriter::set_output</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+<para>Set the stream where tokens will be written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be any <computeroutput>std::ostream</computeroutput>.</para>
+<para><simplesect kind="note"><para>You are resposible for ensuring that the stream does not go out of scope until you are done writing tokens.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream where tokens will be written </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="153" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1adfe583f270a2defb9f79bd6d5d293620" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; tracktable::TokenWriter::output</definition>
+        <argsstring>() const</argsstring>
+        <name>output</name>
+        <qualifiedname>tracktable::TokenWriter::output</qualifiedname>
+        <briefdescription>
+<para>Return the stream where tokens will be written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>output stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="162" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1ad06fd1125d82ea3afb6b804a85864234" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TokenWriter::set_field_delimiter</definition>
+        <argsstring>(string_type const &amp;delimiter)</argsstring>
+        <name>set_field_delimiter</name>
+        <qualifiedname>tracktable::TokenWriter::set_field_delimiter</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+<para>Set the field delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This string will be inserted between each field as tokens are written.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delimiter string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="174" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="174" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a5c17d7d30c6cde224f548e373fd717eb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TokenWriter::field_delimiter</definition>
+        <argsstring>() const</argsstring>
+        <name>field_delimiter</name>
+        <qualifiedname>tracktable::TokenWriter::field_delimiter</qualifiedname>
+        <briefdescription>
+<para>Return the field delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Field delimiter </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="184" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="184" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1abf54b30a14b002767022d700846e3b2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TokenWriter::set_record_delimiter</definition>
+        <argsstring>(string_type const &amp;end_of_line)</argsstring>
+        <name>set_record_delimiter</name>
+        <qualifiedname>tracktable::TokenWriter::set_record_delimiter</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>end_of_line</declname>
+        </param>
+        <briefdescription>
+<para>Set the record separator (end-of-line string) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This string will be written after each token. By default it&apos;s <computeroutput>std::endl</computeroutput> (the newline string).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String separator </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="196" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="196" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a811e1be4cefb9afe422e2bfa3db88ca1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TokenWriter::record_delimiter</definition>
+        <argsstring>() const</argsstring>
+        <name>record_delimiter</name>
+        <qualifiedname>tracktable::TokenWriter::record_delimiter</qualifiedname>
+        <briefdescription>
+<para>Retrieve the record separator (end-of-line string) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Return the record separator (end-of-line string) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="206" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="206" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a410be8a4f1591a3837157d51e0185122" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TokenWriter::set_quote_character</definition>
+        <argsstring>(string_type const &amp;quotes)</argsstring>
+        <name>set_quote_character</name>
+        <qualifiedname>tracktable::TokenWriter::set_quote_character</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>quotes</declname>
+        </param>
+        <briefdescription>
+<para>Set the quote character. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This character <emphasis>may</emphasis> be used to enclose a field containing lots of characters that would otherwise need to be escaped. We have to know what it is so that we can escape it ourselves when we encounter the quote character inside fields.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">quotes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Zero or one character to be used as quotation marks </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="221" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="221" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a37909fa013c4d60bc3e50c1a2aa00e3b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TokenWriter::quote_character</definition>
+        <argsstring>() const</argsstring>
+        <name>quote_character</name>
+        <qualifiedname>tracktable::TokenWriter::quote_character</qualifiedname>
+        <briefdescription>
+<para>Return the current quote characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current quote character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="231" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="231" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a11542f82a90de1f8638e574bc25d2846" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename token_iter_t</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::TokenWriter::write_record</definition>
+        <argsstring>(token_iter_t begin, token_iter_t end)</argsstring>
+        <name>write_record</name>
+        <qualifiedname>tracktable::TokenWriter::write_record</qualifiedname>
+        <param>
+          <type>token_iter_t</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>token_iter_t</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>Write the tokens to the ouput stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to start writing at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to stop writing at </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="242" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="242" bodyend="258"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a582b74151db2dfc6cc60674ba80199bc" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TokenWriter::escape_delimiters</definition>
+        <argsstring>(string_type const &amp;string_to_escape) const</argsstring>
+        <name>escape_delimiters</name>
+        <qualifiedname>tracktable::TokenWriter::escape_delimiters</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>string_to_escape</declname>
+        </param>
+        <briefdescription>
+<para>Escape delimiters when writing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string_to_escape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delimiter to escape </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The escaped delimiter </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="266" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="266" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a79bc35e254295b67494c24fb6c6f860f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TokenWriter::rebuild_delimiter_regex</definition>
+        <argsstring>()</argsstring>
+        <name>rebuild_delimiter_regex</name>
+        <qualifiedname>tracktable::TokenWriter::rebuild_delimiter_regex</qualifiedname>
+        <briefdescription>
+<para>Build the delimiter regex with the field, record and quote delimiters. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="277" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="277" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_token_writer_1a1959c55acf61b83cfcaa9de1a990e489" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TokenWriter::escape_characters_for_set</definition>
+        <argsstring>(string_type const &amp;in_string)</argsstring>
+        <name>escape_characters_for_set</name>
+        <qualifiedname>tracktable::TokenWriter::escape_characters_for_set</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>in_string</declname>
+        </param>
+        <briefdescription>
+<para>Escape characters for a given set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">in_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to escape character from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="297" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="297" bodyend="327"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Write tokens to a stream. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Supply your tokens in a form that can be converted to strings. Set your record delimiter (usually newline or similar) and your field delimiter (tab, comma or similar). Done. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" line="54" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TokenWriter.h" bodystart="55" bodyend="337"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_token_writer_1a3ca256ec9b9a4564a00fc7327487e8b8" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>char_type</name></member>
+      <member refid="classtracktable_1_1_token_writer_1aa26c496c325117150f0f2c55e50f9b53" prot="private" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>DelimiterRegex</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a1959c55acf61b83cfcaa9de1a990e489" prot="private" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>escape_characters_for_set</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a582b74151db2dfc6cc60674ba80199bc" prot="private" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>escape_delimiters</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a5c17d7d30c6cde224f548e373fd717eb" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>field_delimiter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a25eab9ddbdec638e53a8e1dafc790291" prot="private" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>FieldDelimiter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a5cf1697a3a2c3a43ea9bed98520e3f29" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a39ca31cb68780a0837c8b1797d2fb2b6" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a8dba8d761741c8d65f190a4be20e26f6" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_token_writer_1adfe583f270a2defb9f79bd6d5d293620" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>output</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a0a02dad869a94bbdb80d90f6c0cfc1bd" prot="private" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>OutputStream</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a37909fa013c4d60bc3e50c1a2aa00e3b" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>quote_character</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a08e194e5990f765a1243f45b585f59db" prot="private" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>QuoteCharacter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a79bc35e254295b67494c24fb6c6f860f" prot="private" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>rebuild_delimiter_regex</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a811e1be4cefb9afe422e2bfa3db88ca1" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>record_delimiter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a17089da1c229e137e0785f8f49972df0" prot="private" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>RecordDelimiter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a783a43d29d44c111d2048a555909b0fc" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>regex_type</name></member>
+      <member refid="classtracktable_1_1_token_writer_1ad06fd1125d82ea3afb6b804a85864234" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>set_field_delimiter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a5dc8404f3a0405306af2b085db9e5ae3" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>set_output</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a410be8a4f1591a3837157d51e0185122" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>set_quote_character</name></member>
+      <member refid="classtracktable_1_1_token_writer_1abf54b30a14b002767022d700846e3b2b" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>set_record_delimiter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a051b36aeade0ac6e20ada96e6bec5072" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>TokenWriter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1af0d50dc2a07a024c84029573b9af8a04" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>TokenWriter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1afd7795f8d7c07aa2ffb1aa230386ed69" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>TokenWriter</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a11542f82a90de1f8638e574bc25d2846" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>write_record</name></member>
+      <member refid="classtracktable_1_1_token_writer_1a1409d41d072c9af3be57e20d50baaa01" prot="public" virt="non-virtual"><scope>tracktable::TokenWriter</scope><name>~TokenWriter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

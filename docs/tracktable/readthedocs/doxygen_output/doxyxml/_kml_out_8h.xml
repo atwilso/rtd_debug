@@ -1,0 +1,699 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_kml_out_8h" kind="file" language="C++">
+    <compoundname>KmlOut.h</compoundname>
+    <includes local="no">tracktable/Domain/Terrestrial.h</includes>
+    <includes local="no">tracktable/RW/TracktableRWWindowsHeader.h</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">ostream</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="_kml_out_8cpp" local="yes">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h</label>
+        <link refid="_kml_out_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="5">
+        <label>ostream</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>tracktable/Domain/Terrestrial.h</label>
+      </node>
+      <node id="3">
+        <label>tracktable/RW/TracktableRWWindowsHeader.h</label>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtracktable_1_1kml" prot="public">tracktable::kml</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1linestring" prot="public">tracktable::kml::linestring</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1multipoint" prot="public">tracktable::kml::multipoint</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1linepoints" prot="public">tracktable::kml::linepoints</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1point" prot="public">tracktable::kml::point</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1box" prot="public">tracktable::kml::box</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1time__span" prot="public">tracktable::kml::time_span</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1name" prot="public">tracktable::kml::name</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1width" prot="public">tracktable::kml::width</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1color" prot="public">tracktable::kml::color</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1style" prot="public">tracktable::kml::style</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1style__id" prot="public">tracktable::kml::style_id</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1startpm" prot="public">tracktable::kml::startpm</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1stoppm" prot="public">tracktable::kml::stoppm</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1startmulti" prot="public">tracktable::kml::startmulti</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1stopmulti" prot="public">tracktable::kml::stopmulti</innerclass>
+    <innernamespace refid="namespacetracktable">tracktable</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_kml_out_8h_1abb8a10f5e15d6b85d662ef7ab35cd5d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ofstream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ofstream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ofstream &amp;_o, const tracktable::kml &amp;_k)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ofstream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1kml" kindref="compound">tracktable::kml</ref> &amp;</type>
+          <declname>_k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="46" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="238" bodyend="243" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="46" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1ad78f7072bc9b2f562c7b662488e68c51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml &amp;_k)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1kml" kindref="compound">tracktable::kml</ref> &amp;</type>
+          <declname>_k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="47" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="245" bodyend="257" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="47" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1abb6ab63100a4a7814d237c4a8b71512d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::linestring &amp;_l)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1linestring" kindref="compound">tracktable::kml::linestring</ref> &amp;</type>
+          <declname>_l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="449" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="259" bodyend="262" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="449" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1aacab7348d14dfd33fc7b72f1d35ea8be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::multipoint &amp;_mp)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1multipoint" kindref="compound">tracktable::kml::multipoint</ref> &amp;</type>
+          <declname>_mp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="450" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="264" bodyend="267" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="450" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1abce9bb325ebedf5405fb25679843f356" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::point &amp;_p)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1point" kindref="compound">tracktable::kml::point</ref> &amp;</type>
+          <declname>_p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="451" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="269" bodyend="272" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="451" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1a55c4e5b42c4103bfdca44fb3ab189852" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::linepoints &amp;_lp)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1linepoints" kindref="compound">tracktable::kml::linepoints</ref> &amp;</type>
+          <declname>_lp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="452" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="274" bodyend="277" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="452" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1a9c3184cfe04003af9dba79cd8621f97b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::box &amp;_b)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1box" kindref="compound">tracktable::kml::box</ref> &amp;</type>
+          <declname>_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="454" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="279" bodyend="282" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="454" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1a1deb62ab5088c9f2975314b13efb61e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::style &amp;_s)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1style" kindref="compound">tracktable::kml::style</ref> &amp;</type>
+          <declname>_s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="455" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="284" bodyend="287" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="455" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1aaea9030bb86095c4ef4ee1c2e5a28ff3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::width &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1width" kindref="compound">tracktable::kml::width</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="457" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="289" bodyend="289" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="457" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1a24d3bf43ff74062994953cfb9928d02a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::color &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1color" kindref="compound">tracktable::kml::color</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="458" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="290" bodyend="290" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="458" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1ad0077c921820923fd93cd0e2e6658971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::name &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1name" kindref="compound">tracktable::kml::name</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="459" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="291" bodyend="291" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="459" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1ae9e99b72a800793e96bab1d54e4d6eee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::style_id &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1style__id" kindref="compound">tracktable::kml::style_id</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="460" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="292" bodyend="292" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="460" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1af7da520b8113dbfbe5195b73dbe94c3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::time_span &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1time__span" kindref="compound">tracktable::kml::time_span</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="461" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="293" bodyend="293" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="461" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1a42b18621ef7dc86132107cf7f1d5f8d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::startpm &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1startpm" kindref="compound">tracktable::kml::startpm</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="463" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="295" bodyend="298" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="463" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1a6bc5037d3026c3699e5072aaa1c3649e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::stoppm &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1stoppm" kindref="compound">tracktable::kml::stoppm</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="464" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="300" bodyend="303" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="464" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1aee12421d4897aa88ea0680695918b6f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::startmulti &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1startmulti" kindref="compound">tracktable::kml::startmulti</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="465" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="305" bodyend="308" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="465" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="_kml_out_8h_1a2b98e042389d1e7b46fc8a86f0f3f1cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TRACKTABLE_RW_EXPORT std::ostream &amp;</type>
+        <definition>TRACKTABLE_RW_EXPORT std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml::stopmulti &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1stopmulti" kindref="compound">tracktable::kml::stopmulti</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="466" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="310" bodyend="313" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" declline="466" declcolumn="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2023<sp/>National<sp/>Technology<sp/>and<sp/>Engineering</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC.<sp/>Under<sp/>the<sp/>terms<sp/>of<sp/>Contract<sp/>DE-NA0003525</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>with<sp/>National<sp/>Technology<sp/>and<sp/>Engineering<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC,</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>the<sp/>U.S.<sp/>Government<sp/>retains<sp/>certain<sp/>rights<sp/>in<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>KmlOut_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KmlOut_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Domain/Terrestrial.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/RW/TracktableRWWindowsHeader.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtracktable_1_1kml" kindref="compound">kml</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ofstream<sp/>&amp;operator&lt;&lt;(std::ofstream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml" kindref="compound">tracktable::kml</ref><sp/>&amp;_k);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml" kindref="compound">tracktable::kml</ref><sp/>&amp;_k);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classtracktable_1_1kml" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>kml<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TrajectoryT<sp/>=<sp/>tracktable::domain::terrestrial::trajectory_type;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TrajectoryVectorT<sp/>=<sp/>std::vector&lt;TrajectoryT&gt;;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">PointerT<sp/>=<sp/>std::shared_ptr&lt;TrajectoryT&gt;;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">PointerVectorT<sp/>=<sp/>std::vector&lt;PointerT&gt;;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">VectorT<sp/>=<sp/>std::vector&lt;TrajectoryT&gt;;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">PointT<sp/>=<sp/><ref refid="classtracktable_1_1_trajectory_1a8d3edcdda8ce1ad416c7daa81b016320" kindref="member">TrajectoryT::point_type</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="structtracktable_1_1kml_1_1linestring" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">linestring<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linestring()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linestring(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_t)<sp/>:<sp/>trajectory(&amp;_t)<sp/>{}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TrajectoryT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>trajectory;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="structtracktable_1_1kml_1_1multipoint" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">multipoint<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>multipoint()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>multipoint(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_t)<sp/>:<sp/>trajectory(&amp;_t)<sp/>{}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TrajectoryT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>trajectory;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="structtracktable_1_1kml_1_1linepoints" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">linepoints<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linepoints()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linepoints(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_t)<sp/>:<sp/>trajectory(&amp;_t)<sp/>{}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TrajectoryT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>trajectory;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="structtracktable_1_1kml_1_1point" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">point<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>point()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>point(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointT<sp/>&amp;_t)<sp/>:<sp/>trajectory(&amp;_t)<sp/>{}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>trajectory;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>kml(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_t)<sp/>:<sp/>trajectoryPtr(&amp;_t)<sp/>{}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1kml" kindref="compound">kml</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryVectorT<sp/>&amp;_v)<sp/>:<sp/>trajectoryListPtr(&amp;_v)<sp/>{}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>kml(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointerT<sp/>&amp;_p)<sp/>:<sp/>trajectoryPtr(_p.get())<sp/>{}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>kml(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointerVectorT<sp/>&amp;_vp)<sp/>:<sp/>trajectorySmartListPtr(&amp;_vp)<sp/>{}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="structtracktable_1_1kml_1_1box" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">box<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>box()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>box(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointT<sp/>&amp;_c1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointT<sp/>&amp;_c2)<sp/>:<sp/>corner1(&amp;_c1),<sp/>corner2(&amp;_c2)<sp/>{}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>corner1;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>corner2;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="structtracktable_1_1kml_1_1time__span" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">time_span<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_span()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_span(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">tracktable::Timestamp</ref><sp/>&amp;_start,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">tracktable::Timestamp</ref><sp/>&amp;_stop)<sp/>{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kml::_start<sp/>=<sp/>_start;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kml::_stop<sp/>=<sp/>_stop;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="structtracktable_1_1kml_1_1name" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">name<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_name)<sp/>{<sp/>kml::_name<sp/>=<sp/>_name;<sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>std::string()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>kml::_name;<sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="structtracktable_1_1kml_1_1width" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">width<sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_w)<sp/>{<sp/>kml::_width<sp/>=<sp/>_w;<sp/>}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>double()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>kml::_width;<sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="structtracktable_1_1kml_1_1color" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">color<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>color(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_c)<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_c.length()<sp/>!=<sp/>8)<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>Color<sp/>String&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kml::_color<sp/>=<sp/>_c;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>std::string()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>kml::_color;<sp/>}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="structtracktable_1_1kml_1_1style" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">style<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>style(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_id,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_c,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;_w)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>id(_id),<sp/>color(_c),<sp/>width(_w)<sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kml::_styleid<sp/>=<sp/>_id;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;id;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;color;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>width;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="structtracktable_1_1kml_1_1style__id" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">style_id<sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>style_id(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_id)<sp/>{<sp/>kml::_styleid<sp/>=<sp/>_id;<sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>std::string()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>kml::_styleid;<sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267" refid="structtracktable_1_1kml_1_1startpm" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">startpm<sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startpm()<sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(kml::_isInsidePlacemark)<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>Start<sp/>Placemark<sp/>inside<sp/>a<sp/>Placemark&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kml::_isInsidePlacemark<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="structtracktable_1_1kml_1_1stoppm" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">stoppm<sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stoppm()<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!kml::_isInsidePlacemark)<sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;not<sp/>inside<sp/>a<sp/>placemark&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kml::_isInsidePlacemark<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291" refid="structtracktable_1_1kml_1_1startmulti" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">startmulti<sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startmulti()<sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!kml::_isInsidePlacemark)<sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>start<sp/>Multigeometry<sp/>outside<sp/>a<sp/>Placemark&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(kml::_isInsideMultiGeometry)<sp/>{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>Start<sp/>MultiGeometry<sp/>inside<sp/>a<sp/>MultiGeometry&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kml::_isInsideMultiGeometry<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306" refid="structtracktable_1_1kml_1_1stopmulti" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">stopmulti<sp/>{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stopmulti()<sp/>{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!kml::_isInsideMultiGeometry)<sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;not<sp/>inside<sp/>a<sp/>MultiGeometry&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kml::_isInsideMultiGeometry<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Doxygen<sp/>gets<sp/>confused<sp/>by<sp/>the<sp/>inline<sp/>XML</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(DOXYGEN_SHOULD_SKIP_THIS)</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>header[]<sp/>=</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;?xml<sp/>version=\&quot;1.0\&quot;<sp/>encoding=\&quot;UTF-8\&quot;?&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;kml<sp/>xmlns=\&quot;http://www.opengis.net/kml/2.2\&quot;<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;xmlns:gx=\&quot;http://www.google.com/kml/ext/2.2\&quot;<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;xmlns:kml=\&quot;http://www.opengis.net/kml/2.2\&quot;&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;Document&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;Style<sp/>id=\&quot;tracktable_style\&quot;&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&lt;LineStyle&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&lt;gx:labelVisibility&gt;1&lt;/gx:labelVisibility&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&lt;width&gt;3&lt;/width&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&lt;color&gt;\&quot;FFFFFFFF\&quot;&lt;/color&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&lt;/LineStyle&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;/Style&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>footer[]<sp/>=</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;/Document&gt;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;/kml&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream<sp/>&amp;(::operator&lt;&lt;)(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml" kindref="compound">tracktable::kml</ref><sp/>&amp;_kml);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ofstream<sp/>&amp;(::operator&lt;&lt;)(std::ofstream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml" kindref="compound">tracktable::kml</ref><sp/>&amp;_kml);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>*trajectoryPtr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryVectorT<sp/>*trajectoryListPtr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointerVectorT<sp/>*trajectorySmartListPtr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>generateColorString();</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryVectorT<sp/>&amp;_trajectories);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryVectorT<sp/>&amp;_trajectories);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointerVectorT<sp/>&amp;_trajectories);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_trajectory);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_trajectory,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_color,</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;_width);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_trajectory,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_color,</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;_width);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1a876063afd20e0a26d4ac9688802d3be9" kindref="member">writeStyle</ref>(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_id,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_color,</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_width);</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1a58248de374580ffb43a09f070bc349ce" kindref="member">writeLinestring</ref>(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_trajectory);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1ab3993c25dc56d8bc6841eb0af8d5ffc1" kindref="member">writeMultipoint</ref>(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_trajectory);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1adb54d5157195d9171387c9b02e183b19" kindref="member">writePoint</ref>(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointT<sp/>&amp;_point);</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1af263bc25d67503441ab88b37ef492092" kindref="member">writeLineAndPoints</ref>(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryT<sp/>&amp;_trajectory);</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1a531795b5bd22489da0615820706dd653" kindref="member">writeBox</ref>(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1box" kindref="compound">box</ref><sp/>&amp;_box);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1a9be99c2dbf0c469e1e7e2aa6d09db7eb" kindref="member">writeCoords</ref>(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PointT<sp/>&amp;_point);</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1aab53b1fec355a02d7e8d9ab602275806" kindref="member">writeToSeparateKmls</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrajectoryVectorT<sp/>&amp;_trajectories,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;_output_dir);</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1aef665959137e55d25ed582ced8386f58" kindref="member">writePlacemarkHeader</ref>(std::ostream<sp/>&amp;_o);</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1a18350f54d3201816a54150339969015b" kindref="member">writePlacemarkFooter</ref>(std::ostream<sp/>&amp;_o);</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1aac2d31ca24cd114be2e698453c18a76a" kindref="member">writeMultiGeometryHeader</ref>(std::ostream<sp/>&amp;_o);</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1kml_1a8c3b42a0edf3b3058ce805febfe44f85" kindref="member">writeMultiGeometryFooter</ref>(std::ostream<sp/>&amp;_o);</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_width;</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>_color;</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>_name;</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>_styleid;</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_isInsidePlacemark;</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_isInsideMultiGeometry;</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">tracktable::Timestamp</ref><sp/>_start;</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">tracktable::Timestamp</ref><sp/>_stop;</highlight></codeline>
+<codeline lineno="445"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>tracktable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="449"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1linestring" kindref="compound">tracktable::kml::linestring</ref><sp/>&amp;_l);</highlight></codeline>
+<codeline lineno="450"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1multipoint" kindref="compound">tracktable::kml::multipoint</ref><sp/>&amp;_mp);</highlight></codeline>
+<codeline lineno="451"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1point" kindref="compound">tracktable::kml::point</ref><sp/>&amp;_p);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1linepoints" kindref="compound">tracktable::kml::linepoints</ref><sp/>&amp;_lp);</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1box" kindref="compound">tracktable::kml::box</ref><sp/>&amp;_b);</highlight></codeline>
+<codeline lineno="455"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1style" kindref="compound">tracktable::kml::style</ref><sp/>&amp;_s);</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"></highlight></codeline>
+<codeline lineno="457"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1width" kindref="compound">tracktable::kml::width</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_w*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="458"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1color" kindref="compound">tracktable::kml::color</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_c*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="459"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1name" kindref="compound">tracktable::kml::name</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_n*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="460"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1style__id" kindref="compound">tracktable::kml::style_id</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_s*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="461"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1time__span" kindref="compound">tracktable::kml::time_span</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_t*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1startpm" kindref="compound">tracktable::kml::startpm</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_s*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="464"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1stoppm" kindref="compound">tracktable::kml::stoppm</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_s*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="465"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1startmulti" kindref="compound">tracktable::kml::startmulti</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_s*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="466"><highlight class="normal">TRACKTABLE_RW_EXPORT<sp/>std::ostream<sp/>&amp;operator&lt;&lt;(std::ostream<sp/>&amp;_o,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtracktable_1_1kml_1_1stopmulti" kindref="compound">tracktable::kml::stopmulti</ref><sp/>&amp;<sp/></highlight><highlight class="comment">/*_s*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"></highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1traits_1_1timestamp__is__member" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::traits::timestamp_is_member</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1traits_1_1timestamp__is__member_1a50d50a7dfd781eb0da78f5abcf8f5177" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></type>
+        <definition>static Timestamp tracktable::traits::timestamp_is_member&lt; T &gt;::get</definition>
+        <argsstring>(T const &amp;thing)</argsstring>
+        <name>get</name>
+        <qualifiedname>tracktable::traits::timestamp_is_member::get</qualifiedname>
+        <param>
+          <type>T const &amp;</type>
+          <declname>thing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Timestamp.h" line="75" column="27" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Timestamp.h" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="structtracktable_1_1traits_1_1timestamp__is__member_1af412910cca5522d5f6f89abbe57c61e8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tracktable::traits::timestamp_is_member&lt; T &gt;::set</definition>
+        <argsstring>(T &amp;thing, Timestamp const &amp;value)</argsstring>
+        <name>set</name>
+        <qualifiedname>tracktable::traits::timestamp_is_member::set</qualifiedname>
+        <param>
+          <type>T &amp;</type>
+          <declname>thing</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Timestamp.h" line="79" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Timestamp.h" bodystart="79" bodyend="82"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Timestamp.h" line="73" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Timestamp.h" bodystart="74" bodyend="83"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1traits_1_1timestamp__is__member_1a50d50a7dfd781eb0da78f5abcf8f5177" prot="public" virt="non-virtual"><scope>tracktable::traits::timestamp_is_member</scope><name>get</name></member>
+      <member refid="structtracktable_1_1traits_1_1timestamp__is__member_1af412910cca5522d5f6f89abbe57c61e8" prot="public" virt="non-virtual"><scope>tracktable::traits::timestamp_is_member</scope><name>set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

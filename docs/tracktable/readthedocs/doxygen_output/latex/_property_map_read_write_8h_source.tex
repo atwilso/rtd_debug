@@ -1,0 +1,292 @@
+\doxysection{Property\+Map\+Read\+Write.\+h}
+\hypertarget{_property_map_read_write_8h_source}{}\label{_property_map_read_write_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ Typesafe\ code\ for\ writing\ out\ the\ property\ map\ from\ a\ point\ or}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ trajectory.\ \ Uses\ tag\ dispatch\ on\ tracktable::traits::HasProperties}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ so\ that\ we\ can\ call\ it\ on\ whatever\ we\ need\ to.}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_rw\_PropertyMapReadWrite\_h}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_rw\_PropertyMapReadWrite\_h}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PropertyMap.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PropertyConverter.h>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }rw\ \{\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ settings::string\_type\ string\_type;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }ColumnTypeAssignment}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ ColumnTypeAssignment()}
+\DoxyCodeLine{00052\ \ \ \ \ :\ column(0),\ type(TYPE\_UNKNOWN)}
+\DoxyCodeLine{00053\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ ColumnTypeAssignment(std::size\_t\ \_column,\ PropertyUnderlyingType\ \_type)}
+\DoxyCodeLine{00056\ \ \ \ \ :\ column(\_column),\ type(\_type)}
+\DoxyCodeLine{00057\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{static}\ ColumnTypeAssignment\ real(std::size\_t\ \_column)}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ColumnTypeAssignment(\_column,\ TYPE\_REAL);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{static}\ ColumnTypeAssignment\ string(std::size\_t\ \_column)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ColumnTypeAssignment(\_column,\ TYPE\_STRING);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{static}\ ColumnTypeAssignment\ timestamp(std::size\_t\ \_column)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ColumnTypeAssignment(\_column,\ TYPE\_TIMESTAMP);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ std::size\_t\ column;}
+\DoxyCodeLine{00075\ \ \ PropertyUnderlyingType\ type;}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{typedef}\ std::map<std::string,\ ColumnTypeAssignment>\ PropertyAssignmentMap;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{template}<\textcolor{keywordtype}{bool}\ has\_properties>}
+\DoxyCodeLine{00081\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__map__values}{write\_property\_map\_values}}}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_or\_trajectory\_t,\ \textcolor{keyword}{typename}\ out\_iter\_t>}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(point\_or\_trajectory\_t\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*thing*/},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_property_converter}{PropertyConverter}}\&\ \textcolor{comment}{/*formatter*/},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_t\ \textcolor{comment}{/*where\_to\_write*/},}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ \textcolor{comment}{/*num\_properties\_expected*/})}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ default\ version\ -\/\ there\ are\ no\ properties\ to}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{comment}{//\ write}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00096\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__map__values}{write\_property\_map\_values}}<true>}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_or\_trajectory\_t,\ \textcolor{keyword}{typename}\ out\_iter\_t>}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(point\_or\_trajectory\_t\ \textcolor{keyword}{const}\&\ thing,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_property_converter}{PropertyConverter}}\&\ formatter,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_t\ where\_to\_write,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ num\_properties\_expected)}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (PropertyMap::const\_iterator\ property\_iter\ =\ thing.\_\_properties().begin();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ property\_iter\ !=\ thing.\_\_properties().end();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ ++property\_iter)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ (*where\_to\_write++)\ =\ formatter.\mbox{\hyperlink{classtracktable_1_1_property_converter_a30569e719232ca74f1df6b1a78708ca6}{property\_to\_string}}((*property\_iter).second);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ thing.\_\_properties().size();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ i\ <\ num\_properties\_expected;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ ++i)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (*where\_to\_write++)\ =\ string\_type(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{template}<\textcolor{keywordtype}{bool}\ has\_properties>}
+\DoxyCodeLine{00120\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__map__header}{write\_property\_map\_header}}}
+\DoxyCodeLine{00121\ \{}
+\DoxyCodeLine{00122\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ thing\_t,\ \textcolor{keyword}{typename}\ out\_iter\_t>}
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(thing\_t\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*thing*/},\ out\_iter\_t\ \textcolor{comment}{/*dest1*/},\ out\_iter\_t\ \textcolor{comment}{/*dest2*/})}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ default\ version\ -\/\ no\ properties\ to\ write}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00131\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__map__header}{write\_property\_map\_header}}<true>}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ thing\_t,\ \textcolor{keyword}{typename}\ out\_iter\_t>}
+\DoxyCodeLine{00134\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(thing\_t\ \textcolor{keyword}{const}\&\ thing\_with\_properties,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_t\ name\_destination,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_t\ type\_destination)}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (PropertyMap::const\_iterator\ iter(thing\_with\_properties.\_\_properties().begin());}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ iter\ !=\ thing\_with\_properties.\_\_properties().end();}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ (*name\_destination++)\ =\ (*iter).first;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ PropertyUnderlyingType\ value\_type(\mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*iter).second));}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\_type\ !=\ TYPE\_NULL)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ (*type\_destination++)\ =\ boost::lexical\_cast<string\_type>(value\_type);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ PropertyUnderlyingType\ expected\_type\ =\ boost::get<NullValue>((*iter).second).ExpectedType;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ (*type\_destination++)\ =\ boost::lexical\_cast<string\_type>(expected\_type);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{template}<\textcolor{keywordtype}{bool}\ has\_properties>}
+\DoxyCodeLine{00159\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__map}{write\_property\_map}}}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_or\_trajectory\_t,\ \textcolor{keyword}{typename}\ out\_iter\_t>}
+\DoxyCodeLine{00162\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(}
+\DoxyCodeLine{00163\ \ \ \ \ point\_or\_trajectory\_t\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*thing*/},}
+\DoxyCodeLine{00164\ \ \ \ \ out\_iter\_t\ \textcolor{comment}{/*where\_to\_write*/}}
+\DoxyCodeLine{00165\ \ \ \ \ )}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ default\ version\ -\/\ there\ are\ no\ properties\ to}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \textcolor{comment}{//\ write}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00174\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__map}{write\_property\_map}}<true>}
+\DoxyCodeLine{00175\ \{}
+\DoxyCodeLine{00176\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_or\_trajectory\_t,\ \textcolor{keyword}{typename}\ out\_iter\_t>}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(point\_or\_trajectory\_t\ \textcolor{keyword}{const}\&\ thing,\ out\_iter\_t\ where\_to\_write)}
+\DoxyCodeLine{00178\ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (PropertyMap::const\_iterator\ property\_iter\ =\ thing.\_\_properties().begin();}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ property\_iter\ !=\ thing.\_\_properties().end();}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ ++property\_iter)}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ (*where\_to\_write++)\ =\ boost::lexical\_cast<string\_type>((*property\_iter).first);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ PropertyUnderlyingType\ value\_type(\mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*property\_iter).second));}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\_type\ !=\ TYPE\_NULL)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ (*where\_to\_write++)\ =\ boost::lexical\_cast<string\_type>(value\_type);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ PropertyUnderlyingType\ expected\_type\ =\ boost::get<NullValue>((*property\_iter).second).ExpectedType;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ (*where\_to\_write++)\ =\ boost::lexical\_cast<string\_type>(expected\_type);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ (*where\_to\_write++)\ =\ boost::lexical\_cast<string\_type>((*property\_iter).second);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{template}<\textcolor{keywordtype}{bool}\ has\_properties>}
+\DoxyCodeLine{00201\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__info__to__header}{write\_property\_info\_to\_header}}}
+\DoxyCodeLine{00202\ \{}
+\DoxyCodeLine{00203\ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{typename}\ point\_type,}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{typename}\ out\_iter\_type1,}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keyword}{typename}\ out\_iter\_type2}
+\DoxyCodeLine{00207\ \ \ \ \ >}
+\DoxyCodeLine{00208\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(}
+\DoxyCodeLine{00209\ \ \ \ \ point\_type\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*point*/},}
+\DoxyCodeLine{00210\ \ \ \ \ out\_iter\_type1\ \textcolor{comment}{/*dest1*/},}
+\DoxyCodeLine{00211\ \ \ \ \ out\_iter\_type2\ \textcolor{comment}{/*dest2*/}}
+\DoxyCodeLine{00212\ \ \ \ \ )}
+\DoxyCodeLine{00213\ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00219\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__info__to__header}{write\_property\_info\_to\_header}}<true>}
+\DoxyCodeLine{00220\ \{}
+\DoxyCodeLine{00221\ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{typename}\ point\_type,}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{typename}\ out\_iter\_name\_type,}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keyword}{typename}\ out\_iter\_type\_type}
+\DoxyCodeLine{00225\ \ \ \ \ >}
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(point\_type\ \textcolor{keyword}{const}\&\ point,}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_name\_type\ names,}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_type\_type\ types)}
+\DoxyCodeLine{00229\ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (PropertyMap::const\_iterator\ iter\ =\ point.\_\_properties().begin();}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ iter\ !=\ point.\_\_properties().end();}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ (*names++)\ =\ (*iter).first;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*iter).second)\ !=\ TYPE\_NULL)}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ (*types++)\ =\ \mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*iter).second);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ PropertyUnderlyingType\ expected\_type\ =\ boost::get<NullValue>((*iter).second).ExpectedType;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ (*types++)\ =\ expected\_type;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{keyword}{template}<\textcolor{keywordtype}{bool}\ has\_properties>}
+\DoxyCodeLine{00249\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1read__property__info__from__tokens}{read\_property\_info\_from\_tokens}}}
+\DoxyCodeLine{00250\ \{}
+\DoxyCodeLine{00251\ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{typename}\ in\_iter\_type,}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keyword}{typename}\ out\_iter\_type1,}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keyword}{typename}\ out\_iter\_type2}
+\DoxyCodeLine{00255\ \ \ \ \ >}
+\DoxyCodeLine{00256\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(in\_iter\_type\ \textcolor{comment}{/*tokens*/},}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ \textcolor{comment}{/*num\_expected*/},}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_type1\ \textcolor{comment}{/*output1*/},}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_type2\ \textcolor{comment}{/*output2*/})}
+\DoxyCodeLine{00260\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00261\ \};}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00264\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1read__property__info__from__tokens}{read\_property\_info\_from\_tokens}}<true>}
+\DoxyCodeLine{00265\ \{}
+\DoxyCodeLine{00266\ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{typename}\ in\_iter\_type,}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keyword}{typename}\ out\_iter\_name\_type,}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{typename}\ out\_iter\_type\_type}
+\DoxyCodeLine{00270\ \ \ \ \ >}
+\DoxyCodeLine{00271\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(in\_iter\_type\ tokens,}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ num\_expected,}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_name\_type\ names,}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_iter\_type\_type\ types)}
+\DoxyCodeLine{00275\ \ \ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ num\_expected;\ ++i)}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ (*names++)\ =\ (*tokens++);}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ (*types++)\ =\ \mbox{\hyperlink{namespacetracktable_a56356945c2bca38b921dd7ef7a75f538}{string\_to\_property\_type}}(*tokens++);}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \};}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \}\ \}\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable::rw::detail}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

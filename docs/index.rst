@@ -9,7 +9,7 @@ Welcome to Read the Docs Template's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
 
    authors
    contributing
@@ -18,6 +18,8 @@ Contents:
    usage
    Sphinx_Test
    Linked_Notebook
+   tracktable/index
+
 
 Indices and tables
 ==================

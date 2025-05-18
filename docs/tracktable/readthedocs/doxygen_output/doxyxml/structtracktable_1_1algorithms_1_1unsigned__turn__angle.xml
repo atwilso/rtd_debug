@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1unsigned__turn__angle" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::unsigned_turn_angle</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1unsigned__turn__angle_1a8b4a23c719ebdbbada1a468ec0a8a4bd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double tracktable::algorithms::unsigned_turn_angle&lt; T &gt;::apply</definition>
+        <argsstring>(T const &amp;a, T const &amp;b, T const &amp;c)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::unsigned_turn_angle::apply</qualifiedname>
+        <param>
+          <type>T const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>T const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>T const &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/TurnAngle.h" line="65" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/TurnAngle.h" bodystart="65" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/TurnAngle.h" line="63" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/TurnAngle.h" bodystart="64" bodyend="69"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1unsigned__turn__angle_1a8b4a23c719ebdbbada1a468ec0a8a4bd" prot="public" virt="non-virtual"><scope>tracktable::algorithms::unsigned_turn_angle</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

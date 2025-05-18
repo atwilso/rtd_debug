@@ -1,0 +1,468 @@
+\doxysection{tracktable\+::Point\+Writer Class Reference}
+\hypertarget{classtracktable_1_1_point_writer}{}\label{classtracktable_1_1_point_writer}\index{tracktable::PointWriter@{tracktable::PointWriter}}
+
+
+Write points of any type as delimited text.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Writer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtracktable_1_1_point_writer_a957008e7125156b8fa0358a9eb684bd8}{Point\+Writer}} ()
+\begin{DoxyCompactList}\small\item\em Instantiate \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} using a default configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_writer_a01019ec8920ecb300aff8276bd4318e7}{Point\+Writer}} (\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} with a copy of another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_writer_a5090008ec9ed242889424566bed44c75}{Point\+Writer}} (std\+::ostream \&\+\_\+output)
+\begin{DoxyCompactList}\small\item\em Instantiate a \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} using a {\ttfamily std\+::ostream} and default configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} \& \mbox{\hyperlink{classtracktable_1_1_point_writer_a4a1a020bfbb8d5a878fcdce58518bde0}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_writer_a4c68059c02604c2b1eb32b1d44fb8093}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} is equal to another by comparing the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_writer_adc2cc53a862e1804c1ecdb6fcf7319f1}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} are unequal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_writer_a534eae204732d8b6b3a03944dbf659f5}{set\+\_\+output}} (std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Set the stream where points will be written. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classtracktable_1_1_point_writer_aca0b05528608e9c0d6ac841789b2bb19}{output}} () const
+\begin{DoxyCompactList}\small\item\em Return the stream where points will be written. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_writer_ac0aca27fffbd805461ec7cf584d2cb7a}{set\+\_\+field\+\_\+delimiter}} (string\+\_\+type const \&delim)
+\begin{DoxyCompactList}\small\item\em Set the field delimiter. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_writer_a523d7845d1940a257b1ea68e4a62f0b5}{field\+\_\+delimiter}} () const
+\begin{DoxyCompactList}\small\item\em Return the field delimiter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_writer_a264c58caa014175546fb432b30932bb6}{set\+\_\+record\+\_\+delimiter}} (string\+\_\+type const \&sep)
+\begin{DoxyCompactList}\small\item\em Set the record separator (end-\/of-\/line string) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_writer_a4ab2e0b93d8a78661484ff820c46d5b5}{set\+\_\+timestamp\+\_\+format}} (string\+\_\+type const \&format)
+\begin{DoxyCompactList}\small\item\em Set format for writing timestamps. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_writer_a63015327c516523f19eaeac3d9f1b9e3}{timestamp\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the timestamp format. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_writer_acd06560ec03550620a216dffe5250b74}{record\+\_\+delimiter}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the record separator (end-\/of-\/line string) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_writer_a93d4c234af9f3cce86306af20cb0923f}{set\+\_\+quote\+\_\+character}} (string\+\_\+type const \&quotes)
+\begin{DoxyCompactList}\small\item\em Set the quote character. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_writer_aa7b979b6bf10c071ad71b10a4d29ab1a}{quote\+\_\+character}} () const
+\begin{DoxyCompactList}\small\item\em Return the current quote characters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_writer_a2bde8e3c541c5092ce028d370e19477b}{set\+\_\+write\+\_\+header}} (bool onoff)
+\begin{DoxyCompactList}\small\item\em Set whether or not to write a header. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_writer_ab3a954cac81e5ca71c4cd7ba46e32284}{write\+\_\+header}} () const
+\begin{DoxyCompactList}\small\item\em Return whether or not the header will be written. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename point\+\_\+iter\+\_\+type$>$ }\\int \mbox{\hyperlink{classtracktable_1_1_point_writer_a133853de43a3633501dbeb81d216658b}{write}} (point\+\_\+iter\+\_\+type point\+\_\+begin, point\+\_\+iter\+\_\+type point\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Write out the points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_writer_ae1b33f94e049673ba38496b3a3bdf28e}{set\+\_\+coordinate\+\_\+precision}} (std\+::size\+\_\+t num\+\_\+digits)
+\begin{DoxyCompactList}\small\item\em Set the decimal precision for writing coordinates. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_point_writer_a981fbdacda8f121a522a49bbb3b4abca}{coordinate\+\_\+precision}} () const
+\begin{DoxyCompactList}\small\item\em Retreive the coordinate decimal precision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_writer_a55d6bacf54a64a2c3d7cf41181fea04b}{set\+\_\+null\+\_\+value}} (string\+\_\+type const \&\+\_\+null\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the string representation for nulls. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_writer_af50112bd2e202d7269ce0ca95ee31163}{null\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Retreive the null value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_writer_a05042e52380b35f4fbbaf5ef0e36e021}\label{classtracktable_1_1_point_writer_a05042e52380b35f4fbbaf5ef0e36e021} 
+class {\bfseries Trajectory\+Writer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Write points of any type as delimited text. 
+
+This class writes a sequence of points to a file in delimited text format. You can control the destination, the delimiter, the record separator (usually newline) and whether or not a header line is written.
+
+The header line contains information about the point\textquotesingle{}s dimension, coordinate system, object ID and timestamp (for trajectory points) and custom properties (if any). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_point_writer_a957008e7125156b8fa0358a9eb684bd8}\index{tracktable::PointWriter@{tracktable::PointWriter}!PointWriter@{PointWriter}}
+\index{PointWriter@{PointWriter}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{PointWriter()}{PointWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a957008e7125156b8fa0358a9eb684bd8} 
+tracktable\+::\+Point\+Writer\+::\+Point\+Writer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} using a default configuration. 
+
+Set the default configuration values of the writer.   
+
+Defaults\+:
+\begin{DoxyItemize}
+\item coordinate\+\_\+precision = 8
+\item field\+\_\+delimiter = "{},"{}
+\item null\+\_\+value = "{}"{}
+\item quote\+\_\+character = "{}"{}"{}    \texorpdfstring{$\ast$}{*} record\+\_\+delimiter = "{}\textbackslash{}n"{}    \texorpdfstring{$\ast$}{*} timestamp\+\_\+format = "{}Y-\/m-\/d H\+:M\+:S"{}
+\item write\+\_\+header = true    
+\end{DoxyItemize}\Hypertarget{classtracktable_1_1_point_writer_a01019ec8920ecb300aff8276bd4318e7}\index{tracktable::PointWriter@{tracktable::PointWriter}!PointWriter@{PointWriter}}
+\index{PointWriter@{PointWriter}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{PointWriter()}{PointWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a01019ec8920ecb300aff8276bd4318e7} 
+tracktable\+::\+Point\+Writer\+::\+Point\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} to copy from \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_a5090008ec9ed242889424566bed44c75}\index{tracktable::PointWriter@{tracktable::PointWriter}!PointWriter@{PointWriter}}
+\index{PointWriter@{PointWriter}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{PointWriter()}{PointWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a5090008ec9ed242889424566bed44c75} 
+tracktable\+::\+Point\+Writer\+::\+Point\+Writer (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate a \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} using a {\ttfamily std\+::ostream} and default configuration. 
+
+Set the default configuration values of the writer.   
+
+Defaults\+:
+\begin{DoxyItemize}
+\item coordinate\+\_\+precision = 8
+\item field\+\_\+delimiter = "{},"{}
+\item null\+\_\+value = "{}"{}
+\item quote\+\_\+character = "{}"{}"{}    \texorpdfstring{$\ast$}{*} record\+\_\+delimiter = "{}\textbackslash{}n"{}    \texorpdfstring{$\ast$}{*} timestamp\+\_\+format = "{}Y-\/m-\/d H\+:M\+:S"{}
+\item write\+\_\+header = true   
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ostream} & Output to write points to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_point_writer_a981fbdacda8f121a522a49bbb3b4abca}\index{tracktable::PointWriter@{tracktable::PointWriter}!coordinate\_precision@{coordinate\_precision}}
+\index{coordinate\_precision@{coordinate\_precision}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{coordinate\_precision()}{coordinate\_precision()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a981fbdacda8f121a522a49bbb3b4abca} 
+std\+::size\+\_\+t tracktable\+::\+Point\+Writer\+::coordinate\+\_\+precision (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retreive the coordinate decimal precision. 
+
+\begin{DoxyReturn}{Returns}
+The decimal precision 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_a523d7845d1940a257b1ea68e4a62f0b5}\index{tracktable::PointWriter@{tracktable::PointWriter}!field\_delimiter@{field\_delimiter}}
+\index{field\_delimiter@{field\_delimiter}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{field\_delimiter()}{field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a523d7845d1940a257b1ea68e4a62f0b5} 
+string\+\_\+type tracktable\+::\+Point\+Writer\+::field\+\_\+delimiter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the field delimiter. 
+
+\begin{DoxyReturn}{Returns}
+Field delimiter 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_af50112bd2e202d7269ce0ca95ee31163}\index{tracktable::PointWriter@{tracktable::PointWriter}!null\_value@{null\_value}}
+\index{null\_value@{null\_value}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{null\_value()}{null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_af50112bd2e202d7269ce0ca95ee31163} 
+string\+\_\+type tracktable\+::\+Point\+Writer\+::null\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retreive the null value. 
+
+\begin{DoxyReturn}{Returns}
+The representation of the null value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_adc2cc53a862e1804c1ecdb6fcf7319f1}\index{tracktable::PointWriter@{tracktable::PointWriter}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_adc2cc53a862e1804c1ecdb6fcf7319f1} 
+bool tracktable\+::\+Point\+Writer\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_a4a1a020bfbb8d5a878fcdce58518bde0}\index{tracktable::PointWriter@{tracktable::PointWriter}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a4a1a020bfbb8d5a878fcdce58518bde0} 
+\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} \& tracktable\+::\+Point\+Writer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classtracktable_1_1_point_writer}{Point\+Writer} with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_a4c68059c02604c2b1eb32b1d44fb8093}\index{tracktable::PointWriter@{tracktable::PointWriter}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a4c68059c02604c2b1eb32b1d44fb8093} 
+bool tracktable\+::\+Point\+Writer\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_writer}{Point\+Writer}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} is equal to another by comparing the properties. 
+
+Two items are equal if all of their properties are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_writer}{Point\+Writer} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_aca0b05528608e9c0d6ac841789b2bb19}\index{tracktable::PointWriter@{tracktable::PointWriter}!output@{output}}
+\index{output@{output}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_aca0b05528608e9c0d6ac841789b2bb19} 
+std\+::ostream \& tracktable\+::\+Point\+Writer\+::output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the stream where points will be written. 
+
+\begin{DoxyReturn}{Returns}
+output stream 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_aa7b979b6bf10c071ad71b10a4d29ab1a}\index{tracktable::PointWriter@{tracktable::PointWriter}!quote\_character@{quote\_character}}
+\index{quote\_character@{quote\_character}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{quote\_character()}{quote\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_aa7b979b6bf10c071ad71b10a4d29ab1a} 
+string\+\_\+type tracktable\+::\+Point\+Writer\+::quote\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the current quote characters. 
+
+\begin{DoxyReturn}{Returns}
+Current quote character 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_acd06560ec03550620a216dffe5250b74}\index{tracktable::PointWriter@{tracktable::PointWriter}!record\_delimiter@{record\_delimiter}}
+\index{record\_delimiter@{record\_delimiter}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{record\_delimiter()}{record\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_acd06560ec03550620a216dffe5250b74} 
+string\+\_\+type tracktable\+::\+Point\+Writer\+::record\+\_\+delimiter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the record separator (end-\/of-\/line string) 
+
+\begin{DoxyReturn}{Returns}
+Return the record separator (end-\/of-\/line string) 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_ae1b33f94e049673ba38496b3a3bdf28e}\index{tracktable::PointWriter@{tracktable::PointWriter}!set\_coordinate\_precision@{set\_coordinate\_precision}}
+\index{set\_coordinate\_precision@{set\_coordinate\_precision}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{set\_coordinate\_precision()}{set\_coordinate\_precision()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_ae1b33f94e049673ba38496b3a3bdf28e} 
+void tracktable\+::\+Point\+Writer\+::set\+\_\+coordinate\+\_\+precision (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+\_\+digits}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the decimal precision for writing coordinates. 
+
+Internally, Tracktable stores coordinates as double-\/precision floating numbers. It is highly unlikely that trajectory data needs absolutely all of that precision. Since it takes up lots of space when we write data to disk, it is useful to be able to ask for reduced (or increased) precision.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+\_\+digits} & Number of digits of precision \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_ac0aca27fffbd805461ec7cf584d2cb7a}\index{tracktable::PointWriter@{tracktable::PointWriter}!set\_field\_delimiter@{set\_field\_delimiter}}
+\index{set\_field\_delimiter@{set\_field\_delimiter}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{set\_field\_delimiter()}{set\_field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_ac0aca27fffbd805461ec7cf584d2cb7a} 
+void tracktable\+::\+Point\+Writer\+::set\+\_\+field\+\_\+delimiter (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{delim}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the field delimiter. 
+
+This string will be inserted between each field as points are written.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em delim} & Delimiter string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_a55d6bacf54a64a2c3d7cf41181fea04b}\index{tracktable::PointWriter@{tracktable::PointWriter}!set\_null\_value@{set\_null\_value}}
+\index{set\_null\_value@{set\_null\_value}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{set\_null\_value()}{set\_null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a55d6bacf54a64a2c3d7cf41181fea04b} 
+void tracktable\+::\+Point\+Writer\+::set\+\_\+null\+\_\+value (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{\+\_\+null\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the string representation for nulls. 
+
+Property values that were never set are considered to hold a null value. This method lets you set how nulls will be written to disk. The default value is the empty string "{}"{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+null\+\_\+value} & Desired string representation of nulls \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_a534eae204732d8b6b3a03944dbf659f5}\index{tracktable::PointWriter@{tracktable::PointWriter}!set\_output@{set\_output}}
+\index{set\_output@{set\_output}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{set\_output()}{set\_output()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a534eae204732d8b6b3a03944dbf659f5} 
+void tracktable\+::\+Point\+Writer\+::set\+\_\+output (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the stream where points will be written. 
+
+This can be any {\ttfamily std\+::ostream}.
+
+\begin{DoxyNote}{Note}
+You are resposible for ensuring that the stream does not go out of scope until you are done writing points.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out} & Stream where points will be written \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_a93d4c234af9f3cce86306af20cb0923f}\index{tracktable::PointWriter@{tracktable::PointWriter}!set\_quote\_character@{set\_quote\_character}}
+\index{set\_quote\_character@{set\_quote\_character}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{set\_quote\_character()}{set\_quote\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a93d4c234af9f3cce86306af20cb0923f} 
+void tracktable\+::\+Point\+Writer\+::set\+\_\+quote\+\_\+character (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{quotes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quote character. 
+
+This character {\itshape may} be used to enclose a field containing lots of characters that would otherwise need to be escaped. We have to know what it is so that we can escape it ourselves when we encounter the quote character inside fields.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em quotes} & Zero or one character to be used as quotation marks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_a264c58caa014175546fb432b30932bb6}\index{tracktable::PointWriter@{tracktable::PointWriter}!set\_record\_delimiter@{set\_record\_delimiter}}
+\index{set\_record\_delimiter@{set\_record\_delimiter}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{set\_record\_delimiter()}{set\_record\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a264c58caa014175546fb432b30932bb6} 
+void tracktable\+::\+Point\+Writer\+::set\+\_\+record\+\_\+delimiter (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{sep}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the record separator (end-\/of-\/line string) 
+
+This string will be written after each point. By default it\textquotesingle{}s {\ttfamily std\+::endl} (the newline string).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sep} & String separator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_a4ab2e0b93d8a78661484ff820c46d5b5}\index{tracktable::PointWriter@{tracktable::PointWriter}!set\_timestamp\_format@{set\_timestamp\_format}}
+\index{set\_timestamp\_format@{set\_timestamp\_format}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{set\_timestamp\_format()}{set\_timestamp\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a4ab2e0b93d8a78661484ff820c46d5b5} 
+void tracktable\+::\+Point\+Writer\+::set\+\_\+timestamp\+\_\+format (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set format for writing timestamps. 
+
+There are as many ways to write timestamps as there are programs to write them. We have our default (YYYY-\/\+MM-\/\+DD HH\+:\+MM\+:SS) but sometimes you will need to specify some other format for interoperability.
+
+This method sets a format string for timestamps using the flags in {\ttfamily boost\+::date\+\_\+time\+::time\+\_\+facet}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & Format string for timestamps \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_a2bde8e3c541c5092ce028d370e19477b}\index{tracktable::PointWriter@{tracktable::PointWriter}!set\_write\_header@{set\_write\_header}}
+\index{set\_write\_header@{set\_write\_header}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{set\_write\_header()}{set\_write\_header()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a2bde8e3c541c5092ce028d370e19477b} 
+void tracktable\+::\+Point\+Writer\+::set\+\_\+write\+\_\+header (\begin{DoxyParamCaption}\item[{bool}]{onoff}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set whether or not to write a header. 
+
+The header string describes the contents of a point\+: coordinate system, properties (if any), number of coordinates. By default it will be written at the beginning of a sequence of points. You can turn it off with this function.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em onoff} & Boolean flag \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_writer_a63015327c516523f19eaeac3d9f1b9e3}\index{tracktable::PointWriter@{tracktable::PointWriter}!timestamp\_format@{timestamp\_format}}
+\index{timestamp\_format@{timestamp\_format}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{timestamp\_format()}{timestamp\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a63015327c516523f19eaeac3d9f1b9e3} 
+string\+\_\+type tracktable\+::\+Point\+Writer\+::timestamp\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the timestamp format. 
+
+\begin{DoxyReturn}{Returns}
+The time timestamp format 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_a133853de43a3633501dbeb81d216658b}\index{tracktable::PointWriter@{tracktable::PointWriter}!write@{write}}
+\index{write@{write}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_a133853de43a3633501dbeb81d216658b} 
+template$<$typename point\+\_\+iter\+\_\+type$>$ \\
+int tracktable\+::\+Point\+Writer\+::write (\begin{DoxyParamCaption}\item[{point\+\_\+iter\+\_\+type}]{point\+\_\+begin}{, }\item[{point\+\_\+iter\+\_\+type}]{point\+\_\+end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write out the points. 
+
+The difference between {\ttfamily \doxylink{classtracktable_1_1_point_writer_a133853de43a3633501dbeb81d216658b}{write()}} and {\ttfamily write\+\_\+point\+\_\+header\+\_\+tokens()} is that {\ttfamily \doxylink{classtracktable_1_1_point_writer_a133853de43a3633501dbeb81d216658b}{write()}} inserts a record seperator after the header and after each point
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point\+\_\+begin} & Point to start writing from \\
+\hline
+\mbox{\texttt{ in}}  & {\em point\+\_\+end} & Last point to write out \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of points written 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_writer_ab3a954cac81e5ca71c4cd7ba46e32284}\index{tracktable::PointWriter@{tracktable::PointWriter}!write\_header@{write\_header}}
+\index{write\_header@{write\_header}!tracktable::PointWriter@{tracktable::PointWriter}}
+\doxysubsubsection{\texorpdfstring{write\_header()}{write\_header()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_writer_ab3a954cac81e5ca71c4cd7ba46e32284} 
+bool tracktable\+::\+Point\+Writer\+::write\+\_\+header (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return whether or not the header will be written. 
+
+\begin{DoxyReturn}{Returns}
+The flag indicating to write the header or not 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Point\+Writer.\+h\end{DoxyCompactItemize}

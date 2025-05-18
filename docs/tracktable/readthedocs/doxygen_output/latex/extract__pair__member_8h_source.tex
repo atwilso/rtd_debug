@@ -1,0 +1,35 @@
+\doxysection{extract\+\_\+pair\+\_\+member.\+h}
+\hypertarget{extract__pair__member_8h_source}{}\label{extract__pair__member_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/extract\_pair\_member.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/extract\_pair\_member.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_extract\_pair\_member\_h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_extract\_pair\_member\_h}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ pair\_type>}
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1_extract_first}{ExtractFirst}}\ }
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{typename}\ pair\_type::first\_type\ operator()(pair\_type\ \textcolor{keyword}{const}\&\ input)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{return}\ input.first;}
+\DoxyCodeLine{00015\ \ \ \}}
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ pair\_type>}
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1_extract_second}{ExtractSecond}}\ }
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{typename}\ pair\_type::second\_type\ operator()(pair\_type\ \textcolor{keyword}{const}\&\ input)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ input.second;}
+\DoxyCodeLine{00024\ \ \ \}}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}\ \textcolor{comment}{//\ namespace\ tracktable}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

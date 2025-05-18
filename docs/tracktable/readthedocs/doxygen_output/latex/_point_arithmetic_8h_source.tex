@@ -1,0 +1,217 @@
+\doxysection{Point\+Arithmetic.\+h}
+\hypertarget{_point_arithmetic_8h_source}{}\label{_point_arithmetic_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PointArithmetic.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PointArithmetic.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_BasicPointMath\_h}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_BasicPointMath\_h}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <boost/geometry/arithmetic/arithmetic.hpp>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <boost/geometry/arithmetic/cross\_product.hpp>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <boost/geometry/arithmetic/dot\_product.hpp>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <boost/type\_traits/is\_base\_of.hpp>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable_1_1arithmetic}{arithmetic}}\ \{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00064\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a13b5723e0b27add384afb9634212ff47}{add}}(PointT\ \textcolor{keyword}{const}\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ PointT\ result(left);}
+\DoxyCodeLine{00067\ \ \ boost::geometry::add\_point(result,\ right);}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00080\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ae9bfcfbefc7ddb42b19b5c3b27687aaf}{add\_in\_place}}(PointT\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00081\ \{}
+\DoxyCodeLine{00082\ \ \ boost::geometry::add\_point(left,\ right);}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00095\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a1b5177e895f1986f3ee6da9f0bcb8765}{subtract}}(PointT\ \textcolor{keyword}{const}\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ PointT\ result(left);}
+\DoxyCodeLine{00098\ \ \ boost::geometry::subtract\_point(result,\ right);}
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00111\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a7fe53e45d0b0073a82d0c98fd41950c2}{subtract\_in\_place}}(PointT\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ boost::geometry::subtract\_point(left,\ right);}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00126\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a7c71588aaa0745ed1d92fd471b3f4c5a}{multiply}}(PointT\ \textcolor{keyword}{const}\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ PointT\ result(left);}
+\DoxyCodeLine{00129\ \ \ boost::geometry::multiply\_point(result,\ right);}
+\DoxyCodeLine{00130\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00142\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aaaec43825f930ec47f1f80f1728c50e6}{multiply\_in\_place}}(PointT\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ boost::geometry::multiply\_point(left,\ right);}
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00146\ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T,\ \textcolor{keyword}{typename}\ ScalarT>}
+\DoxyCodeLine{00157\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aeeed551f1737041ad3248ff471aa0d69}{multiply\_scalar}}(PointT\ \textcolor{keyword}{const}\&\ left,\ ScalarT\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00158\ \{}
+\DoxyCodeLine{00159\ \ \ PointT\ result(left);}
+\DoxyCodeLine{00160\ \ \ boost::geometry::multiply\_value(result,\ value);}
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00162\ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T,\ \textcolor{keyword}{typename}\ ScalarT>}
+\DoxyCodeLine{00173\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a41ddc2b0d0664a6e086950f74ce141be}{multiply\_scalar\_in\_place}}(PointT\&\ left,\ ScalarT\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00174\ \{}
+\DoxyCodeLine{00175\ \ \ boost::geometry::multiply\_value(left,\ value);}
+\DoxyCodeLine{00176\ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00177\ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00188\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_af80393fd93f2f52abfa9fb5e8a20697b}{divide}}(PointT\ \textcolor{keyword}{const}\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00189\ \{}
+\DoxyCodeLine{00190\ \ \ PointT\ result(left);}
+\DoxyCodeLine{00191\ \ \ boost::geometry::divide\_point(result,\ right);}
+\DoxyCodeLine{00192\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00193\ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00204\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_adba5a13ec1361ec771ce5f3e7f74e988}{divide\_in\_place}}(PointT\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00205\ \{}
+\DoxyCodeLine{00206\ \ \ boost::geometry::divide\_point(left,\ right);}
+\DoxyCodeLine{00207\ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00208\ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T,\ \textcolor{keyword}{typename}\ ScalarT>}
+\DoxyCodeLine{00219\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a5e36e2d6f59f3294bbf6dfc2e8eafa75}{divide\_scalar}}(PointT\ \textcolor{keyword}{const}\&\ left,\ ScalarT\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00220\ \{}
+\DoxyCodeLine{00221\ \ \ PointT\ result(left);}
+\DoxyCodeLine{00222\ \ \ boost::geometry::divide\_value(result,\ value);}
+\DoxyCodeLine{00223\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00224\ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T,\ \textcolor{keyword}{typename}\ ScalarT>}
+\DoxyCodeLine{00235\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ad43c067c45b1e30f203e4671ad399aae}{divide\_scalar\_in\_place}}(PointT\&\ left,\ ScalarT\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00236\ \{}
+\DoxyCodeLine{00237\ \ \ boost::geometry::divide\_value(left,\ value);}
+\DoxyCodeLine{00238\ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00239\ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00250\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a36188ac4575d9b4a07551acfe15bb82f}{dot}}(PointT\ \textcolor{keyword}{const}\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00251\ \{}
+\DoxyCodeLine{00252\ \ \ \textcolor{keywordflow}{return}\ boost::geometry::dot\_product(left,\ right);}
+\DoxyCodeLine{00253\ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00262\ \textcolor{comment}{//TODO:\ python\ binding}}
+\DoxyCodeLine{00263\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00264\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a6597a20000678630a53cc30abe062be0}{cross\_product}}(PointT\ \textcolor{keyword}{const}\&\ left,\ PointT\ \textcolor{keyword}{const}\&\ right)\ \{}
+\DoxyCodeLine{00265\ \ \ \textcolor{keywordflow}{return}\ boost::geometry::cross\_product(left,\ right);}
+\DoxyCodeLine{00266\ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00276\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a27f00d531645f9c176cd87a5101fe520}{norm\_squared}}(PointT\ \textcolor{keyword}{const}\&\ left)}
+\DoxyCodeLine{00277\ \{}
+\DoxyCodeLine{00278\ \ \ \textcolor{keywordflow}{return}\ boost::geometry::dot\_product(left,\ left);}
+\DoxyCodeLine{00279\ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00289\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aef3dd337b69af60555ba8d576fb8bc05}{norm}}(PointT\ \textcolor{keyword}{const}\&\ left)}
+\DoxyCodeLine{00290\ \{}
+\DoxyCodeLine{00291\ \ \ \textcolor{keywordflow}{return}\ sqrt(\mbox{\hyperlink{namespacetracktable_1_1arithmetic_a27f00d531645f9c176cd87a5101fe520}{norm\_squared}}(left));}
+\DoxyCodeLine{00292\ \}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00300\ \textcolor{comment}{//TODO:\ Python\ binding}}
+\DoxyCodeLine{00301\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00302\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a679813262775274a1ada18e3fb3cb297}{normalize\_in\_place}}(PointT\&\ \_p)\ \{}
+\DoxyCodeLine{00303\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ad43c067c45b1e30f203e4671ad399aae}{divide\_scalar\_in\_place}}(\_p,\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aef3dd337b69af60555ba8d576fb8bc05}{norm}}(\_p));}
+\DoxyCodeLine{00304\ \}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00312\ \textcolor{comment}{//TODO:\ Python\ binding}}
+\DoxyCodeLine{00313\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00314\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a9157db9730b7e9a0e9ed33837e97e6da}{normalize}}(PointT\ \textcolor{keyword}{const}\&\ \_p)\ \{}
+\DoxyCodeLine{00315\ \ \ PointT\ result(\_p);}
+\DoxyCodeLine{00316\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a679813262775274a1ada18e3fb3cb297}{normalize\_in\_place}}(result);}
+\DoxyCodeLine{00317\ \}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00325\ PointT\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a059bd4cb9293d460f98b089a402b116e}{zero}}()}
+\DoxyCodeLine{00326\ \{}
+\DoxyCodeLine{00327\ \ \ PointT\ result;}
+\DoxyCodeLine{00328\ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ result.size();\ ++i)}
+\DoxyCodeLine{00329\ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ result[i]\ =\ 0;}
+\DoxyCodeLine{00331\ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00333\ \}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00339\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_adaea8f209e766874b917a5fb95fc8b38}{zeroize}}(PointT\&\ \_p)\ \{}
+\DoxyCodeLine{00340\ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ \_p.size();\ ++i)\ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \_p[i]\ =\ 0;}
+\DoxyCodeLine{00342\ \ \ \}}
+\DoxyCodeLine{00343\ \}}
+\DoxyCodeLine{00344\ \}\ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

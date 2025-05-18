@@ -1,0 +1,1061 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1arithmetic" kind="namespace" language="C++">
+    <compoundname>tracktable::arithmetic</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1ae72858352d309ed946e2e61b5f59a1da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename forward_iterator_type</type>
+          </param>
+        </templateparamlist>
+        <type>std::iterator_traits&lt; forward_iterator_type &gt;::value_type</type>
+        <definition>std::iterator_traits&lt; forward_iterator_type &gt;::value_type tracktable::arithmetic::geometric_mean</definition>
+        <argsstring>(forward_iterator_type input_begin, forward_iterator_type input_end)</argsstring>
+        <name>geometric_mean</name>
+        <qualifiedname>tracktable::arithmetic::geometric_mean</qualifiedname>
+        <param>
+          <type>forward_iterator_type</type>
+          <declname>input_begin</declname>
+        </param>
+        <param>
+          <type>forward_iterator_type</type>
+          <declname>input_end</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the mean for the un-weighted input points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function requires a ForwardIterator as its argument. A ForwardIterator is one that can be traversed and dereferenced more than once.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">input_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start point for mean calculation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End point for mean calculation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/GeometricMean.h" line="60" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/GeometricMean.h" bodystart="60" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a0398c0539a5b1cb52dcd11e52a093df7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_iterator_type</type>
+          </param>
+          <param>
+            <type>typename weight_iterator_type</type>
+          </param>
+        </templateparamlist>
+        <type>std::iterator_traits&lt; point_iterator_type &gt;::value_type</type>
+        <definition>std::iterator_traits&lt; point_iterator_type &gt;::value_type tracktable::arithmetic::weighted_sum</definition>
+        <argsstring>(point_iterator_type point_begin, point_iterator_type point_end, weight_iterator_type weight_begin, weight_iterator_type weight_end)</argsstring>
+        <name>weighted_sum</name>
+        <qualifiedname>tracktable::arithmetic::weighted_sum</qualifiedname>
+        <param>
+          <type>point_iterator_type</type>
+          <declname>point_begin</declname>
+        </param>
+        <param>
+          <type>point_iterator_type</type>
+          <declname>point_end</declname>
+        </param>
+        <param>
+          <type>weight_iterator_type</type>
+          <declname>weight_begin</declname>
+        </param>
+        <param>
+          <type>weight_iterator_type</type>
+          <declname>weight_end</declname>
+        </param>
+        <briefdescription>
+<para>Weighted sum of points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>You are responsible for ensuring that <computeroutput>point_iterator_type::value_type</computeroutput> is a Tracktable point and that <computeroutput>weight_iterator_type::value_type</computeroutput> is a scalar. Also, <computeroutput>point_iterator_type</computeroutput> and <computeroutput>weight_iterator_type</computeroutput> must both be ForwardIterators.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">point_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start point for sum calculation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End point for sum calculation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start of the point weights </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End of the point weights </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/GeometricMean.h" line="106" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/GeometricMean.h" bodystart="106" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1aa0118fe069513e917ecc5b82f9d93de3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename forward_iterator_type</type>
+          </param>
+        </templateparamlist>
+        <type>std::iterator_traits&lt; forward_iterator_type &gt;::value_type</type>
+        <definition>std::iterator_traits&lt; forward_iterator_type &gt;::value_type tracktable::arithmetic::geometric_median</definition>
+        <argsstring>(forward_iterator_type input_begin, forward_iterator_type input_end)</argsstring>
+        <name>geometric_median</name>
+        <qualifiedname>tracktable::arithmetic::geometric_median</qualifiedname>
+        <param>
+          <type>forward_iterator_type</type>
+          <declname>input_begin</declname>
+        </param>
+        <param>
+          <type>forward_iterator_type</type>
+          <declname>input_end</declname>
+        </param>
+        <briefdescription>
+<para>L1 multivariate median for all point types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The L1 multivariate median generalizes the concept of the familiar 1-dimensional median. Given a set of points x_i, the median y = M(x_i) is the point that minimizes the sum of the distances to the points x_i.</para>
+<para>There is no closed-form expression for the L1 median so we compute it with an iterative algorithm.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">input_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start point for median calculation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End point for median calculation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/GeometricMedian.h" line="66" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/GeometricMedian.h" bodystart="66" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a13b5723e0b27add384afb9634212ff47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::add</definition>
+        <argsstring>(PointT const &amp;left, PointT const &amp;right)</argsstring>
+        <name>add</name>
+        <qualifiedname>tracktable::arithmetic::add</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Add two points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to add </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to add</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Sum of points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="64" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="64" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1ae9bfcfbefc7ddb42b19b5c3b27687aaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::add_in_place</definition>
+        <argsstring>(PointT &amp;left, PointT const &amp;right)</argsstring>
+        <name>add_in_place</name>
+        <qualifiedname>tracktable::arithmetic::add_in_place</qualifiedname>
+        <param>
+          <type>PointT &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Add two points in place. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to add </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to add</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Sum of points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="80" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="80" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a1b5177e895f1986f3ee6da9f0bcb8765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::subtract</definition>
+        <argsstring>(PointT const &amp;left, PointT const &amp;right)</argsstring>
+        <name>subtract</name>
+        <qualifiedname>tracktable::arithmetic::subtract</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Subtract two points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to subtract </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to subtract</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Difference of points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="95" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="95" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a7fe53e45d0b0073a82d0c98fd41950c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::subtract_in_place</definition>
+        <argsstring>(PointT &amp;left, PointT const &amp;right)</argsstring>
+        <name>subtract_in_place</name>
+        <qualifiedname>tracktable::arithmetic::subtract_in_place</qualifiedname>
+        <param>
+          <type>PointT &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Subtract two points in place. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to subtract </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to subtract</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Difference of points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="111" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="111" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a7c71588aaa0745ed1d92fd471b3f4c5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::multiply</definition>
+        <argsstring>(PointT const &amp;left, PointT const &amp;right)</argsstring>
+        <name>multiply</name>
+        <qualifiedname>tracktable::arithmetic::multiply</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Multiply two points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to multiply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to multiply</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Product of points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="126" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="126" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1aaaec43825f930ec47f1f80f1728c50e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::multiply_in_place</definition>
+        <argsstring>(PointT &amp;left, PointT const &amp;right)</argsstring>
+        <name>multiply_in_place</name>
+        <qualifiedname>tracktable::arithmetic::multiply_in_place</qualifiedname>
+        <param>
+          <type>PointT &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Multiply two points in place. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to multiply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to multiply</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Product of points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="142" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="142" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1aeeed551f1737041ad3248ff471aa0d69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+          <param>
+            <type>typename ScalarT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::multiply_scalar</definition>
+        <argsstring>(PointT const &amp;left, ScalarT const &amp;value)</argsstring>
+        <name>multiply_scalar</name>
+        <qualifiedname>tracktable::arithmetic::multiply_scalar</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>ScalarT const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Multiply a point by a scalar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to multiply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar to multiply point by</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scaled point product </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="157" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="157" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a41ddc2b0d0664a6e086950f74ce141be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+          <param>
+            <type>typename ScalarT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::multiply_scalar_in_place</definition>
+        <argsstring>(PointT &amp;left, ScalarT const &amp;value)</argsstring>
+        <name>multiply_scalar_in_place</name>
+        <qualifiedname>tracktable::arithmetic::multiply_scalar_in_place</qualifiedname>
+        <param>
+          <type>PointT &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>ScalarT const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Multiply a point by a scalar in place. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to multiply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar to multiply point by</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scaled point product </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="173" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="173" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1af80393fd93f2f52abfa9fb5e8a20697b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::divide</definition>
+        <argsstring>(PointT const &amp;left, PointT const &amp;right)</argsstring>
+        <name>divide</name>
+        <qualifiedname>tracktable::arithmetic::divide</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Divide two points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to divide </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to divide</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Quotient of point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="188" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="188" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1adba5a13ec1361ec771ce5f3e7f74e988" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::divide_in_place</definition>
+        <argsstring>(PointT &amp;left, PointT const &amp;right)</argsstring>
+        <name>divide_in_place</name>
+        <qualifiedname>tracktable::arithmetic::divide_in_place</qualifiedname>
+        <param>
+          <type>PointT &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Divide two points in place. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to divide </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to divide</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Quotient of point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="204" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="204" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a5e36e2d6f59f3294bbf6dfc2e8eafa75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+          <param>
+            <type>typename ScalarT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::divide_scalar</definition>
+        <argsstring>(PointT const &amp;left, ScalarT const &amp;value)</argsstring>
+        <name>divide_scalar</name>
+        <qualifiedname>tracktable::arithmetic::divide_scalar</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>ScalarT const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Divide a point by a scalar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to divide </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar to divide point by</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scaled point quotient </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="219" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="219" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1ad43c067c45b1e30f203e4671ad399aae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+          <param>
+            <type>typename ScalarT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::divide_scalar_in_place</definition>
+        <argsstring>(PointT &amp;left, ScalarT const &amp;value)</argsstring>
+        <name>divide_scalar_in_place</name>
+        <qualifiedname>tracktable::arithmetic::divide_scalar_in_place</qualifiedname>
+        <param>
+          <type>PointT &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>ScalarT const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Divide a point by a scalar in place. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to divide </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar to divide point by</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scaled point quotient </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="235" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="235" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a36188ac4575d9b4a07551acfe15bb82f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>double</type>
+        <definition>double tracktable::arithmetic::dot</definition>
+        <argsstring>(PointT const &amp;left, PointT const &amp;right)</argsstring>
+        <name>dot</name>
+        <qualifiedname>tracktable::arithmetic::dot</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Compute dot product of two points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to use during computation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to use during computation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Sum of point products </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="250" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="250" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a6597a20000678630a53cc30abe062be0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::cross_product</definition>
+        <argsstring>(PointT const &amp;left, PointT const &amp;right)</argsstring>
+        <name>cross_product</name>
+        <qualifiedname>tracktable::arithmetic::cross_product</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Compute Cross Product. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to cross </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to cross</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cross product </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="264" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="264" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a27f00d531645f9c176cd87a5101fe520" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>double</type>
+        <definition>double tracktable::arithmetic::norm_squared</definition>
+        <argsstring>(PointT const &amp;left)</argsstring>
+        <name>norm_squared</name>
+        <qualifiedname>tracktable::arithmetic::norm_squared</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <briefdescription>
+<para>Square the given point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to square</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Squared value of point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="276" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="276" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1aef3dd337b69af60555ba8d576fb8bc05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>double</type>
+        <definition>double tracktable::arithmetic::norm</definition>
+        <argsstring>(PointT const &amp;left)</argsstring>
+        <name>norm</name>
+        <qualifiedname>tracktable::arithmetic::norm</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>left</declname>
+        </param>
+        <briefdescription>
+<para>Square root the given point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to take the square root of</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Square root value of point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="289" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="289" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a679813262775274a1ada18e3fb3cb297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::normalize_in_place</definition>
+        <argsstring>(PointT &amp;_p)</argsstring>
+        <name>normalize_in_place</name>
+        <qualifiedname>tracktable::arithmetic::normalize_in_place</qualifiedname>
+        <param>
+          <type>PointT &amp;</type>
+          <declname>_p</declname>
+        </param>
+        <briefdescription>
+<para>Normalize a point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point to normalize</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Normalized point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="302" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="302" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a9157db9730b7e9a0e9ed33837e97e6da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::normalize</definition>
+        <argsstring>(PointT const &amp;_p)</argsstring>
+        <name>normalize</name>
+        <qualifiedname>tracktable::arithmetic::normalize</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>_p</declname>
+        </param>
+        <briefdescription>
+<para>Normalize a point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point to normalize</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Normalized point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="314" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="314" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1a059bd4cb9293d460f98b089a402b116e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>PointT</type>
+        <definition>PointT tracktable::arithmetic::zero</definition>
+        <argsstring>()</argsstring>
+        <name>zero</name>
+        <qualifiedname>tracktable::arithmetic::zero</qualifiedname>
+        <briefdescription>
+<para>Get a Zeroized point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Zeroized point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="325" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="325" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetracktable_1_1arithmetic_1adaea8f209e766874b917a5fb95fc8b38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PointT</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::arithmetic::zeroize</definition>
+        <argsstring>(PointT &amp;_p)</argsstring>
+        <name>zeroize</name>
+        <qualifiedname>tracktable::arithmetic::zeroize</qualifiedname>
+        <param>
+          <type>PointT &amp;</type>
+          <declname>_p</declname>
+        </param>
+        <briefdescription>
+<para>zeroize a point </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" line="339" column="6" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h" bodystart="339" bodyend="343"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Basic arithmetic operations for all point types. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>These operations are wrappers around <computeroutput>boost::geometry</computeroutput>&apos;s point arithmetic operations. You can (obviously) call <computeroutput>boost::geometry</computeroutput> directly if you want but this will also let you use more natural arithmetic operations on points. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/GeometricMean.h" line="45" column="20"/>
+  </compounddef>
+</doxygen>

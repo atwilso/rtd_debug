@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1extrapolate_3_01_timestamp_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::extrapolate&lt; Timestamp &gt;</compoundname>
+    <basecompoundref refid="structtracktable_1_1algorithms_1_1extrapolate__linear" prot="public" virt="non-virtual">tracktable::algorithms::extrapolate_linear&lt; Timestamp &gt;</basecompoundref>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1extrapolate_3_01_timestamp_01_4_1a694ffe140249b450ed623e440aa0da3e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></type>
+        <definition>static Timestamp tracktable::algorithms::extrapolate&lt; Timestamp &gt;::apply</definition>
+        <argsstring>(Timestamp const &amp;first, Timestamp const &amp;second, double t)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::extrapolate&lt; Timestamp &gt;::apply</qualifiedname>
+        <param>
+          <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> const &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> const &amp;</type>
+          <declname>second</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Timestamp.h" line="372" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Timestamp.h" bodystart="372" bodyend="380"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tracktable::algorithms::extrapolate&lt; Timestamp &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_timestamp_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::algorithms::extrapolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1extrapolate__linear"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tracktable::algorithms::extrapolate&lt; Timestamp &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_timestamp_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::algorithms::extrapolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1extrapolate__linear"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Timestamp.h" line="369" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Timestamp.h" bodystart="370" bodyend="381"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_timestamp_01_4_1a694ffe140249b450ed623e440aa0da3e" prot="public" virt="non-virtual"><scope>tracktable::algorithms::extrapolate&lt; Timestamp &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1extrapolate__linear_1a714352af4b15f0b5ffc74a7ea10eb211" prot="public" virt="non-virtual" ambiguityscope="tracktable::algorithms::extrapolate_linear::"><scope>tracktable::algorithms::extrapolate&lt; Timestamp &gt;</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

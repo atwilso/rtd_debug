@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1rw_1_1detail_1_1write__property__map__header_3_01true_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::rw::detail::write_property_map_header&lt; true &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1rw_1_1detail_1_1write__property__map__header_3_01true_01_4_1a2c562c536103a9179119bdd023f836ba" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename thing_t</type>
+          </param>
+          <param>
+            <type>typename out_iter_t</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void tracktable::rw::detail::write_property_map_header&lt; true &gt;::apply</definition>
+        <argsstring>(thing_t const &amp;thing_with_properties, out_iter_t name_destination, out_iter_t type_destination)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::rw::detail::write_property_map_header&lt; true &gt;::apply</qualifiedname>
+        <param>
+          <type>thing_t const &amp;</type>
+          <declname>thing_with_properties</declname>
+        </param>
+        <param>
+          <type>out_iter_t</type>
+          <declname>name_destination</declname>
+        </param>
+        <param>
+          <type>out_iter_t</type>
+          <declname>type_destination</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="134" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="134" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="structtracktable_1_1rw_1_1detail_1_1write__property__map__header_1a3072de58c7de5d34e3e83136451a5614" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tracktable::rw::detail::write_property_map_header&lt; has_properties &gt;::apply</definition>
+        <argsstring>(thing_t const &amp;, out_iter_t, out_iter_t)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::rw::detail::write_property_map_header&lt; true &gt;::apply</qualifiedname>
+        <param>
+          <type>thing_t const &amp;</type>
+        </param>
+        <param>
+          <type>out_iter_t</type>
+        </param>
+        <param>
+          <type>out_iter_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="123" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="123" bodyend="127"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="131" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="132" bodyend="155"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1rw_1_1detail_1_1write__property__map__header_3_01true_01_4_1a2c562c536103a9179119bdd023f836ba" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::write_property_map_header&lt; true &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1rw_1_1detail_1_1write__property__map__header_1a3072de58c7de5d34e3e83136451a5614" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::write_property_map_header&lt; true &gt;</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

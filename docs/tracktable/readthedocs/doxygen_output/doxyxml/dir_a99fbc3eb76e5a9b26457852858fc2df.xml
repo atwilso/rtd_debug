@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_a99fbc3eb76e5a9b26457852858fc2df" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail</compoundname>
+    <innerdir refid="dir_52d67c3adaec672b3adf704616b2f519">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures</innerdir>
+    <innerdir refid="dir_d8c497e6bf7a3369b8dbb60cae544c6c">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points</innerdir>
+    <innerdir refid="dir_65bc4fc3f74b92b22de49961336b75c7">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/"/>
+  </compounddef>
+</doxygen>

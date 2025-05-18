@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1detail_1_1_transfer_point_coordinates" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::detail::TransferPointCoordinates</compoundname>
+    <includes refid="transfer__point__coordinates_8h" local="no">transfer_point_coordinates.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class InputPointT</type>
+      </param>
+      <param>
+        <type>class OutputPointT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1detail_1_1_transfer_point_coordinates_1a9052039787098f4a92dfdd0b3a91b0c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>OutputPointT</type>
+        <definition>OutputPointT tracktable::detail::TransferPointCoordinates&lt; InputPointT, OutputPointT &gt;::operator()</definition>
+        <argsstring>(InputPointT const &amp;input_point) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>tracktable::detail::TransferPointCoordinates::operator()</qualifiedname>
+        <param>
+          <type>InputPointT const &amp;</type>
+          <declname>input_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/transfer_point_coordinates.h" line="48" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/transfer_point_coordinates.h" bodystart="48" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Convert points from one coordinate system to another. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>We take advantage of the fact that boost::geometry::assign only cares whether two points have the same number of dimensions. This function object will be used with boost::transform_iterator. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/transfer_point_coordinates.h" line="47" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/transfer_point_coordinates.h" bodystart="47" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1detail_1_1_transfer_point_coordinates_1a9052039787098f4a92dfdd0b3a91b0c7" prot="public" virt="non-virtual"><scope>tracktable::detail::TransferPointCoordinates</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

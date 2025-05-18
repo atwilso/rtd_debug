@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::domain::feature_vectors::FeatureVector</compoundname>
+    <basecompoundref refid="classtracktable_1_1_point_cartesian" prot="public" virt="non-virtual">tracktable::PointCartesian&lt; dim &gt;</basecompoundref>
+    <includes refid="_feature_vectors_8h" local="no">FeatureVectors.h</includes>
+    <templateparamlist>
+      <param>
+        <type>std::size_t</type>
+        <declname>dim</declname>
+        <defname>dim</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1afcacdeee4d2d48d9ac39db825f591576" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_point_cartesian" kindref="compound">PointCartesian</ref>&lt; dim &gt;</type>
+        <definition>typedef PointCartesian&lt;dim&gt; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;::Superclass</definition>
+        <argsstring></argsstring>
+        <name>Superclass</name>
+        <qualifiedname>tracktable::domain::feature_vectors::FeatureVector::Superclass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="75" column="26" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1ac267b8f62e5f877cdb67dbbfaee1414d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;::FeatureVector</definition>
+        <argsstring>()</argsstring>
+        <name>FeatureVector</name>
+        <qualifiedname>tracktable::domain::feature_vectors::FeatureVector::FeatureVector</qualifiedname>
+        <briefdescription>
+<para>Create an uninitialized vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="78" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1a87ac057b5ecdf2e459e19e05bee453ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;::~FeatureVector</definition>
+        <argsstring>()</argsstring>
+        <name>~FeatureVector</name>
+        <qualifiedname>tracktable::domain::feature_vectors::FeatureVector::~FeatureVector</qualifiedname>
+        <briefdescription>
+<para>Empty destructor - nothing to do here. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="81" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1a52f0707498c90d95017c82491d029ea7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;::FeatureVector</definition>
+        <argsstring>(FeatureVector const &amp;other)</argsstring>
+        <name>FeatureVector</name>
+        <qualifiedname>tracktable::domain::feature_vectors::FeatureVector::FeatureVector</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector" kindref="compound">FeatureVector</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate coordinates from the given feature vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Feature vector to use for initialization </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="87" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1afa061c8c935150bc225328d81e110a0f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;::FeatureVector</definition>
+        <argsstring>(const double *coords)</argsstring>
+        <name>FeatureVector</name>
+        <qualifiedname>tracktable::domain::feature_vectors::FeatureVector::FeatureVector</qualifiedname>
+        <param>
+          <type>const double *</type>
+          <declname>coords</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate coordinates from the given coordinate list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordinates to use for initialization </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="96" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1af9ec866e369508453025462a26abc937" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector" kindref="compound">FeatureVector</ref> &amp;</type>
+        <definition>FeatureVector &amp; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;::operator=</definition>
+        <argsstring>(FeatureVector const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::domain::feature_vectors::FeatureVector::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector" kindref="compound">FeatureVector</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="101" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1a9bc9be5a7ea8817dfb23a6c7550ed807" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Archive</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;::serialize</definition>
+        <argsstring>(Archive &amp;ar, const unsigned int)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>tracktable::domain::feature_vectors::FeatureVector::serialize</qualifiedname>
+        <param>
+          <type>Archive &amp;</type>
+          <declname>ar</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+        </param>
+        <briefdescription>
+<para>Serialize the points to an archive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Archive to serialize to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Version of the archive </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="113" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="113" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1add21ae49d4b8387b0277bae2ab772278" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;::to_string</definition>
+        <argsstring>() const</argsstring>
+        <name>to_string</name>
+        <qualifiedname>tracktable::domain::feature_vectors::FeatureVector::to_string</qualifiedname>
+        <briefdescription>
+<para>Convert point coordinates to a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Coordinates string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="123" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="123" bodyend="128"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Point type for feature vectors. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A feature vector is a list of numbers that collectively describe properties of some entity, generally a trajectory. We typically treat feature vectors as a kind of fingerprint: we don&apos;t want to modify them or do arithmetic with them, but instead look at the structure of a larger collection of feature vectors.</para>
+<para>In Tracktable we use the <computeroutput><ref refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector" kindref="compound">FeatureVector</ref></computeroutput> template for such things. You can specify any dimension you want from 1 on up. Algorithms such as <computeroutput>DBSCAN</computeroutput> and the <computeroutput>R-tree</computeroutput> are templated on point type so that you can use them with any kind of feature vector you want. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>tracktable::PointBase&lt; Dimension &gt;</label>
+        <link refid="classtracktable_1_1_point_base"/>
+      </node>
+      <node id="2">
+        <label>tracktable::PointCartesian&lt; dim &gt;</label>
+        <link refid="classtracktable_1_1_point_cartesian"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;</label>
+        <link refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>tracktable::PointBase&lt; Dimension &gt;</label>
+        <link refid="classtracktable_1_1_point_base"/>
+      </node>
+      <node id="2">
+        <label>tracktable::PointCartesian&lt; dim &gt;</label>
+        <link refid="classtracktable_1_1_point_cartesian"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt;</label>
+        <link refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="72" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="73" bodyend="129"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_point_base_1a2aba212a90c51c5f4e9fa76fe679146a" prot="protected" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>Coordinates</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2b5d66d132636bb41831a09667f6e640" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>element_type</name></member>
+      <member refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1ac267b8f62e5f877cdb67dbbfaee1414d" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>FeatureVector</name></member>
+      <member refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1a52f0707498c90d95017c82491d029ea7" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>FeatureVector</name></member>
+      <member refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1afa061c8c935150bc225328d81e110a0f" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>FeatureVector</name></member>
+      <member refid="classtracktable_1_1_point_base_1a7918dde3ef618e4497d9949e515a5fd5" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>get</name></member>
+      <member refid="classtracktable_1_1_point_base_1ac225c66d4cfab081b67f95d4411b0fdd" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1af9ec866e369508453025462a26abc937" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_base_1a236bf3c4a5a1128bea753ad59f7d2594" prot="public" virt="non-virtual" ambiguityscope="tracktable::PointCartesian&lt; dim &gt;::"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_base_1a35cfaef9ac15a33040e2458d99d980e3" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1c2237aff8b2b8dec8b934feb10d79c6" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1ea12444b1425cf2462e2920cac1b499" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1ae25b06b76872599f16950c866529d096" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1aab715197cb725a115bdbae588649f795" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a1ffa5d8bbba92af933da04fe02ce64b9" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a4bf68e44702546c3949721ba6bbda4c4" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a547d746df83a24e5fcde725f59a77939" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a1ffa5d8bbba92af933da04fe02ce64b9" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a4bf68e44702546c3949721ba6bbda4c4" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a547d746df83a24e5fcde725f59a77939" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1a9bc9be5a7ea8817dfb23a6c7550ed807" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>serialize</name></member>
+      <member refid="classtracktable_1_1_point_base_1aece26ecf39982722de53187fe0e1531b" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>set</name></member>
+      <member refid="classtracktable_1_1_point_base_1a00baacc4de3a9c9cf3f3f39af19aa7de" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>size</name></member>
+      <member refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1afcacdeee4d2d48d9ac39db825f591576" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>Superclass</name></member>
+      <member refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1add21ae49d4b8387b0277bae2ab772278" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>to_string</name></member>
+      <member refid="classtracktable_1_1domain_1_1feature__vectors_1_1_feature_vector_1a87ac057b5ecdf2e459e19e05bee453ab" prot="public" virt="virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>~FeatureVector</name></member>
+      <member refid="classtracktable_1_1_point_base_1af616577253186b1d80c7ab90338640e2" prot="public" virt="virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>~PointBase</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a3f7c08c9543abc2efd592cc11e7e735e" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>~PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a3f7c08c9543abc2efd592cc11e7e735e" prot="public" virt="non-virtual"><scope>tracktable::domain::feature_vectors::FeatureVector</scope><name>~PointCartesian</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

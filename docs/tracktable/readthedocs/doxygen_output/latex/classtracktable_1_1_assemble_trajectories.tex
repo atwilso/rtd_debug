@@ -1,0 +1,385 @@
+\doxysection{tracktable\+::Assemble\+Trajectories\texorpdfstring{$<$}{<} TrajectoryT, Point\+IteratorT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_assemble_trajectories}{}\label{classtracktable_1_1_assemble_trajectories}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+
+
+Assemble time-\/sorted points into trajectories.  
+
+
+
+
+{\ttfamily \#include $<$Assemble\+Trajectories.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_assemble_trajectories_ac41a2a561b54a59112686ef29734ff54}\label{classtracktable_1_1_assemble_trajectories_ac41a2a561b54a59112686ef29734ff54} 
+typedef \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} {\bfseries trajectory\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a420a83504f8290c0eaa612671b31d891}\label{classtracktable_1_1_assemble_trajectories_a420a83504f8290c0eaa612671b31d891} 
+typedef \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{trajectory\+\_\+type\+::point\+\_\+type}} {\bfseries point\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_assemble_trajectories_ae0cae60e53154bb7c3459821cfdefde4}\label{classtracktable_1_1_assemble_trajectories_ae0cae60e53154bb7c3459821cfdefde4} 
+typedef \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_iterator}{Assemble\+Trajectories\+Iterator}}$<$ point\+\_\+type, Point\+IteratorT, \mbox{\hyperlink{classtracktable_1_1_trajectory}{trajectory\+\_\+type}} $>$ {\bfseries iterator}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a47d9c687b4c276bd1d547c417d64a2ab}{Assemble\+Trajectories}} ()
+\begin{DoxyCompactList}\small\item\em Instantiate \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} using the default assembly configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a008fd3559e62607c97968cdd630cd4c7}{Assemble\+Trajectories}} (Point\+IteratorT range\+Begin, Point\+IteratorT range\+End)
+\begin{DoxyCompactList}\small\item\em Instantiate \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} from a range of elements and default configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a1ddf1890c774016617d7a57c91ec24ec}{Assemble\+Trajectories}} (\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy Constructor, create \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} with trajectory data from another trajectory. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_assemble_trajectories_ada5f688ec4e8077908f91646a088a4d9}\label{classtracktable_1_1_assemble_trajectories_ada5f688ec4e8077908f91646a088a4d9} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Assemble\+Trajectories} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}} \& \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a2ab2b6d8e2d5dd09b4598c33ac5ba7e5}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_aa33f2d21059d76c043a880b75a3b95bd}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} is equal to another by comparing the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a1557994eb6ace2fb307dd46c6c2d92e5}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} are unequal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_iterator}{iterator}} \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a086a677e38c69b6c9ed6dc46646f45f6}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator to the first parsed point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_iterator}{iterator}} \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a780a74a65c1b74f6e716c1c60f6d9c7a}{end}} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator to detect when parsing has ended. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a0ec3a3555ad1c585e469380da64a16c1}{set\+\_\+input}} (Point\+IteratorT const \&forefront, Point\+IteratorT const \&rearguard)
+\begin{DoxyCompactList}\small\item\em Set the start and end points of the trajectory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a0d834b1235d78b82ddfd6529fc605cc7}{set\+\_\+separation\+\_\+time}} (Duration const \&d)
+\begin{DoxyCompactList}\small\item\em Set the time between each point in the trajectory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_aabbde5c51172292a7d0b503119f64252}{set\+\_\+separation\+\_\+distance}} (double d)
+\begin{DoxyCompactList}\small\item\em Set the distance between each point in the trajectory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a4baac5d167777264efbd83d65b0a73e8}{set\+\_\+minimum\+\_\+trajectory\+\_\+length}} (std\+::size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Set the minimum length a trajectory can be. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a9b3c4a6c5bf11dc2fee2a2296dcda3e6}{set\+\_\+cleanup\+\_\+interval}} (int points\+\_\+between\+\_\+cleanup)
+\begin{DoxyCompactList}\small\item\em Set the interval that the trajectory points will be cleaned up. \end{DoxyCompactList}\item 
+Duration \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a1b76a4a12d813f370c10c04e093f30a2}{separation\+\_\+time}} () const
+\item 
+double \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a21c661b5fdf285666b0c8580283b96af}{separation\+\_\+distance}} () const
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_a988b271e6b2c02741814ae880a421336}{minimum\+\_\+trajectory\+\_\+length}} () const
+\item 
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a078fc7ecda941bacd25ba16328253217}\label{classtracktable_1_1_assemble_trajectories_a078fc7ecda941bacd25ba16328253217} 
+int {\bfseries cleanup\+\_\+interval} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_abdff905c62af0b38131932641370a212}{set\+\_\+default\+\_\+configuration}} ()
+\begin{DoxyCompactList}\small\item\em Set the default values for a trajectory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$\newline
+class tracktable\+::\+Assemble\+Trajectories$<$ Trajectory\+T, Point\+Iterator\+T $>$}
+Assemble time-\/sorted points into trajectories. 
+
+We often receive input data as sequences of points sorted by timestamp. In order to manipulate these data sets as trajectories instead of as isolated points we must perform some sort of connect-\/the-\/dots operation to group them together. This class implements that operation.
+
+Suppose for the sake of argument that our input is sorted first by object ID and second by increasing timestamp. Now consider the block of points corresponding to a single object ID. We divide that into one or more trajectories as follows\+:
+
+
+\begin{DoxyItemize}
+\item If too much time (as specified by the separation\+\_\+time parameter) has elapsed between one point and the next, one trajectory has ended and another begins.
+\item If too much distance (as specifide by the separation\+\_\+distance parameter) lies between one point and the next, one trajectory has ended and another begins.
+\end{DoxyItemize}
+
+We implement \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} as an iterator. It consumes an input stream of points sorted by timestamp ({\itshape not} by object ID) and produces complete trajectories. Internally, it keeps track of all the object IDs seen recently and applies the process above to identify and emit complete trajectories.
+
+We can also set a third parameter (minimum\+\_\+trajectory\+\_\+length) that silently rejects trajectories that do not contain enough points to be interesting. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a47d9c687b4c276bd1d547c417d64a2ab}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!AssembleTrajectories@{AssembleTrajectories}}
+\index{AssembleTrajectories@{AssembleTrajectories}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{AssembleTrajectories()}{AssembleTrajectories()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a47d9c687b4c276bd1d547c417d64a2ab} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::\+Assemble\+Trajectories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} using the default assembly configuration. 
+
+Set the default values for a trajectory.   
+
+Default configuration is\+:
+\begin{DoxyItemize}
+\item Separation\+Distance = 100
+\item Separation\+Time = Duration(minutes(30))
+\item Minimum\+Trajectory\+Length = 2
+\item Cleanup\+Interval = 10000    
+\end{DoxyItemize}\Hypertarget{classtracktable_1_1_assemble_trajectories_a008fd3559e62607c97968cdd630cd4c7}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!AssembleTrajectories@{AssembleTrajectories}}
+\index{AssembleTrajectories@{AssembleTrajectories}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{AssembleTrajectories()}{AssembleTrajectories()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a008fd3559e62607c97968cdd630cd4c7} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::\+Assemble\+Trajectories (\begin{DoxyParamCaption}\item[{Point\+IteratorT}]{range\+Begin}{, }\item[{Point\+IteratorT}]{range\+End}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} from a range of elements and default configuration. 
+
+If you have a container of points you can use this constructor to create and populate the tree in one swell foop instead of adding elements one at a time.
+
+Set the default values for a trajectory.   
+
+Default configuration is\+:
+\begin{DoxyItemize}
+\item Separation\+Distance = 100
+\item Separation\+Time = Duration(minutes(30))
+\item Minimum\+Trajectory\+Length = 2
+\item Cleanup\+Interval = 10000   
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em range\+\_\+begin} & Iterator pointing to beginning of input points \\
+\hline
+\mbox{\texttt{ in}}  & {\em range\+\_\+end} & Iterator pointing past end of input points \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a1ddf1890c774016617d7a57c91ec24ec}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!AssembleTrajectories@{AssembleTrajectories}}
+\index{AssembleTrajectories@{AssembleTrajectories}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{AssembleTrajectories()}{AssembleTrajectories()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a1ddf1890c774016617d7a57c91ec24ec} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::\+Assemble\+Trajectories (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy Constructor, create \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} with trajectory data from another trajectory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} instance \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a086a677e38c69b6c9ed6dc46646f45f6}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!begin@{begin}}
+\index{begin@{begin}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a086a677e38c69b6c9ed6dc46646f45f6} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_iterator}{iterator}} \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator to the first parsed point. 
+
+\begin{DoxyNote}{Note}
+that any changes you make to the parser configuration will invalidate existing iterators.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Iterator to first parsed point 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a780a74a65c1b74f6e716c1c60f6d9c7a}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!end@{end}}
+\index{end@{end}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a780a74a65c1b74f6e716c1c60f6d9c7a} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories_iterator}{iterator}} \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator to detect when parsing has ended. 
+
+This iterator is guaranteed to not point at any valid \doxylink{classtracktable_1_1_trajectory_point}{Trajectory\+Point}. The only time when {\ttfamily \doxylink{classtracktable_1_1_assemble_trajectories_a086a677e38c69b6c9ed6dc46646f45f6}{begin()} == \doxylink{classtracktable_1_1_assemble_trajectories_a780a74a65c1b74f6e716c1c60f6d9c7a}{end()}} will be when all points have been parsed from the input stream.
+
+\begin{DoxyReturn}{Returns}
+Iterator past end of point sequence 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a988b271e6b2c02741814ae880a421336}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!minimum\_trajectory\_length@{minimum\_trajectory\_length}}
+\index{minimum\_trajectory\_length@{minimum\_trajectory\_length}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{minimum\_trajectory\_length()}{minimum\_trajectory\_length()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a988b271e6b2c02741814ae880a421336} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::minimum\+\_\+trajectory\+\_\+length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The minimum length a trajectory can be 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a1557994eb6ace2fb307dd46c6c2d92e5}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a1557994eb6ace2fb307dd46c6c2d92e5} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a2ab2b6d8e2d5dd09b4598c33ac5ba7e5}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a2ab2b6d8e2d5dd09b4598c33ac5ba7e5} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}} \& \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_aa33f2d21059d76c043a880b75a3b95bd}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_aa33f2d21059d76c043a880b75a3b95bd} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} is equal to another by comparing the properties. 
+
+Two items are equal if all of their properties are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_assemble_trajectories}{Assemble\+Trajectories} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a21c661b5fdf285666b0c8580283b96af}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!separation\_distance@{separation\_distance}}
+\index{separation\_distance@{separation\_distance}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{separation\_distance()}{separation\_distance()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a21c661b5fdf285666b0c8580283b96af} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+double \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::separation\+\_\+distance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The separation distance of the trajectory points 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a1b76a4a12d813f370c10c04e093f30a2}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!separation\_time@{separation\_time}}
+\index{separation\_time@{separation\_time}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{separation\_time()}{separation\_time()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a1b76a4a12d813f370c10c04e093f30a2} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+Duration \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::separation\+\_\+time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The separation time of the trajectory points 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a9b3c4a6c5bf11dc2fee2a2296dcda3e6}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!set\_cleanup\_interval@{set\_cleanup\_interval}}
+\index{set\_cleanup\_interval@{set\_cleanup\_interval}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_cleanup\_interval()}{set\_cleanup\_interval()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a9b3c4a6c5bf11dc2fee2a2296dcda3e6} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::set\+\_\+cleanup\+\_\+interval (\begin{DoxyParamCaption}\item[{int}]{points\+\_\+between\+\_\+cleanup}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the interval that the trajectory points will be cleaned up. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em points\+\_\+between\+\_\+cleanup} & Number of points to clean up \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_abdff905c62af0b38131932641370a212}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!set\_default\_configuration@{set\_default\_configuration}}
+\index{set\_default\_configuration@{set\_default\_configuration}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_default\_configuration()}{set\_default\_configuration()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_abdff905c62af0b38131932641370a212} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+virtual void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::set\+\_\+default\+\_\+configuration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Set the default values for a trajectory. 
+
+Default configuration is\+:
+\begin{DoxyItemize}
+\item Separation\+Distance = 100
+\item Separation\+Time = Duration(minutes(30))
+\item Minimum\+Trajectory\+Length = 2
+\item Cleanup\+Interval = 10000 
+\end{DoxyItemize}\Hypertarget{classtracktable_1_1_assemble_trajectories_a0ec3a3555ad1c585e469380da64a16c1}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!set\_input@{set\_input}}
+\index{set\_input@{set\_input}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_input()}{set\_input()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a0ec3a3555ad1c585e469380da64a16c1} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::set\+\_\+input (\begin{DoxyParamCaption}\item[{Point\+IteratorT const \&}]{forefront}{, }\item[{Point\+IteratorT const \&}]{rearguard}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the start and end points of the trajectory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em forefront} & Start point \\
+\hline
+\mbox{\texttt{ in}}  & {\em rearguard} & End point \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a4baac5d167777264efbd83d65b0a73e8}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!set\_minimum\_trajectory\_length@{set\_minimum\_trajectory\_length}}
+\index{set\_minimum\_trajectory\_length@{set\_minimum\_trajectory\_length}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_minimum\_trajectory\_length()}{set\_minimum\_trajectory\_length()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a4baac5d167777264efbd83d65b0a73e8} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::set\+\_\+minimum\+\_\+trajectory\+\_\+length (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{len}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the minimum length a trajectory can be. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em len} & Length of the trajectory \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_aabbde5c51172292a7d0b503119f64252}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!set\_separation\_distance@{set\_separation\_distance}}
+\index{set\_separation\_distance@{set\_separation\_distance}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_separation\_distance()}{set\_separation\_distance()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_aabbde5c51172292a7d0b503119f64252} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::set\+\_\+separation\+\_\+distance (\begin{DoxyParamCaption}\item[{double}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the distance between each point in the trajectory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em d} & Distance between each point in the trajectory \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_assemble_trajectories_a0d834b1235d78b82ddfd6529fc605cc7}\index{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}!set\_separation\_time@{set\_separation\_time}}
+\index{set\_separation\_time@{set\_separation\_time}!tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$@{tracktable::AssembleTrajectories$<$ TrajectoryT, PointIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_separation\_time()}{set\_separation\_time()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_assemble_trajectories_a0d834b1235d78b82ddfd6529fc605cc7} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, typename Point\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_assemble_trajectories}{tracktable\+::\+Assemble\+Trajectories}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}, Point\+IteratorT $>$\+::set\+\_\+separation\+\_\+time (\begin{DoxyParamCaption}\item[{Duration const \&}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the time between each point in the trajectory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em d} & Time duration between each point in the trajectory \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Analysis/Assemble\+Trajectories.\+h\end{DoxyCompactItemize}

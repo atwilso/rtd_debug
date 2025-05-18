@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::rw::detail::TrajectoryHeader</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a5a90721269c116abc3aa5fc3783406e8" prot="public" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::rw::detail::TrajectoryHeader::MagicString</definition>
+        <argsstring></argsstring>
+        <name>MagicString</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::MagicString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="52" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a37c8eb3eba9c8ca68c7df5318253c533" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacetracktable_1a1b220fef4a0f524b45d526c61a5fea6a" kindref="member">uuid_type</ref></type>
+        <definition>uuid_type tracktable::rw::detail::TrajectoryHeader::UUID</definition>
+        <argsstring></argsstring>
+        <name>UUID</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::UUID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="53" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1af072cfaf5f8c17bd7452cad0d7b9171d" prot="public" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::rw::detail::TrajectoryHeader::Domain</definition>
+        <argsstring></argsstring>
+        <name>Domain</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::Domain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="54" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a1d5f9fa4f275f0386ce4590bad9ed92a" prot="public" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::rw::detail::TrajectoryHeader::NumPoints</definition>
+        <argsstring></argsstring>
+        <name>NumPoints</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::NumPoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="55" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a1f3337d9087298023239b2814c9e2565" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref></type>
+        <definition>PropertyMap tracktable::rw::detail::TrajectoryHeader::Properties</definition>
+        <argsstring></argsstring>
+        <name>Properties</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::Properties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="56" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a5869c7bb511080cbf91a22d1ea1ce810" prot="public" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref></type>
+        <definition>PropertyConverter tracktable::rw::detail::TrajectoryHeader::PropertyReadWrite</definition>
+        <argsstring></argsstring>
+        <name>PropertyReadWrite</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::PropertyReadWrite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="57" column="21" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1ab46ae5895bf09b8a03cbe352f6f30e32" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::rw::detail::TrajectoryHeader::TrajectoryHeader</definition>
+        <argsstring>()</argsstring>
+        <name>TrajectoryHeader</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::TrajectoryHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="59" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a833db809a35752074820abd31b44b68b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::rw::detail::TrajectoryHeader::TrajectoryHeader</definition>
+        <argsstring>(TrajectoryHeader const &amp;other)</argsstring>
+        <name>TrajectoryHeader</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::TrajectoryHeader</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header" kindref="compound">TrajectoryHeader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="65" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="65" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1af55e1803ad38a6f26b9bd250bc788bdf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::rw::detail::TrajectoryHeader::~TrajectoryHeader</definition>
+        <argsstring>()</argsstring>
+        <name>~TrajectoryHeader</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::~TrajectoryHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="73" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a6be71af9e03efc5a2f78055436695d1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header" kindref="compound">TrajectoryHeader</ref> &amp;</type>
+        <definition>TrajectoryHeader &amp; tracktable::rw::detail::TrajectoryHeader::operator=</definition>
+        <argsstring>(TrajectoryHeader const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header" kindref="compound">TrajectoryHeader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="75" column="20" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="75" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a0601d78468cd90b7a25051e923706b3f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::rw::detail::TrajectoryHeader::operator==</definition>
+        <argsstring>(TrajectoryHeader const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header" kindref="compound">TrajectoryHeader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="86" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="86" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a504d11129465316e56466719277f354d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::rw::detail::TrajectoryHeader::operator!=</definition>
+        <argsstring>(TrajectoryHeader const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header" kindref="compound">TrajectoryHeader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="98" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a4325a565af8b217305b0ece1ba50896b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::rw::detail::TrajectoryHeader::set_timestamp_input_format</definition>
+        <argsstring>(string_type const &amp;format)</argsstring>
+        <name>set_timestamp_input_format</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::set_timestamp_input_format</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="103" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="103" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1afd94657b4953ebfa18b868d2f9ac259a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::rw::detail::TrajectoryHeader::set_timestamp_output_format</definition>
+        <argsstring>(string_type const &amp;format)</argsstring>
+        <name>set_timestamp_output_format</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::set_timestamp_output_format</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="108" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a0a28e3d59d144e867969650eded76f7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::rw::detail::TrajectoryHeader::set_decimal_precision</definition>
+        <argsstring>(std::size_t digits)</argsstring>
+        <name>set_decimal_precision</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::set_decimal_precision</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>digits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="113" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a82949ad8024683d16e2acb9967add73a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::rw::detail::TrajectoryHeader::set_null_value</definition>
+        <argsstring>(string_type const &amp;value)</argsstring>
+        <name>set_null_value</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::set_null_value</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="118" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="118" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a18cae0d7430ce2dbd0a3f64f7ec98b9a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::rw::detail::TrajectoryHeader::null_value</definition>
+        <argsstring>() const</argsstring>
+        <name>null_value</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::null_value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="123" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="123" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1af20a2aa46a87af02596d276f65b406e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename trajectory_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::rw::detail::TrajectoryHeader::populate_from_trajectory</definition>
+        <argsstring>(trajectory_type const &amp;trajectory)</argsstring>
+        <name>populate_from_trajectory</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::populate_from_trajectory</qualifiedname>
+        <param>
+          <type>trajectory_type const &amp;</type>
+          <declname>trajectory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="129" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="129" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1ac7cb6ab2503b12178867012dd5a5275c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename out_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::rw::detail::TrajectoryHeader::write_as_tokens</definition>
+        <argsstring>(out_iter_type destination)</argsstring>
+        <name>write_as_tokens</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::write_as_tokens</qualifiedname>
+        <param>
+          <type>out_iter_type</type>
+          <declname>destination</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="138" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="138" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a388fba3374fb601eef34348cec608d88" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename in_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::rw::detail::TrajectoryHeader::read_from_tokens</definition>
+        <argsstring>(in_iter_type current_token, in_iter_type)</argsstring>
+        <name>read_from_tokens</name>
+        <qualifiedname>tracktable::rw::detail::TrajectoryHeader::read_from_tokens</qualifiedname>
+        <param>
+          <type>in_iter_type</type>
+          <declname>current_token</declname>
+        </param>
+        <param>
+          <type>in_iter_type</type>
+        </param>
+        <briefdescription>
+<para>Reads the header from a stream of tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of tokens consumed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="162" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="162" bodyend="202"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>tracktable::PropertyConverter</label>
+        <link refid="classtracktable_1_1_property_converter"/>
+      </node>
+      <node id="1">
+        <label>tracktable::rw::detail::TrajectoryHeader</label>
+        <link refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>PropertyReadWrite</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" line="49" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h" bodystart="50" bodyend="203"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1af072cfaf5f8c17bd7452cad0d7b9171d" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>Domain</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a5a90721269c116abc3aa5fc3783406e8" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>MagicString</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a18cae0d7430ce2dbd0a3f64f7ec98b9a" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>null_value</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a1d5f9fa4f275f0386ce4590bad9ed92a" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>NumPoints</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a504d11129465316e56466719277f354d" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a6be71af9e03efc5a2f78055436695d1a" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a0601d78468cd90b7a25051e923706b3f" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1af20a2aa46a87af02596d276f65b406e7" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>populate_from_trajectory</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a1f3337d9087298023239b2814c9e2565" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>Properties</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a5869c7bb511080cbf91a22d1ea1ce810" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>PropertyReadWrite</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a388fba3374fb601eef34348cec608d88" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>read_from_tokens</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a0a28e3d59d144e867969650eded76f7c" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>set_decimal_precision</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a82949ad8024683d16e2acb9967add73a" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>set_null_value</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a4325a565af8b217305b0ece1ba50896b" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>set_timestamp_input_format</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1afd94657b4953ebfa18b868d2f9ac259a" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>set_timestamp_output_format</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1ab46ae5895bf09b8a03cbe352f6f30e32" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>TrajectoryHeader</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a833db809a35752074820abd31b44b68b" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>TrajectoryHeader</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1a37c8eb3eba9c8ca68c7df5318253c533" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>UUID</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1ac7cb6ab2503b12178867012dd5a5275c" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>write_as_tokens</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header_1af55e1803ad38a6f26b9bd250bc788bdf" prot="public" virt="virtual"><scope>tracktable::rw::detail::TrajectoryHeader</scope><name>~TrajectoryHeader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

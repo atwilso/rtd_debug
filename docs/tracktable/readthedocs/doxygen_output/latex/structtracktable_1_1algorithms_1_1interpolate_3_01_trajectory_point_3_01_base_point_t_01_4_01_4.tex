@@ -1,0 +1,46 @@
+\doxysection{tracktable\+::algorithms\+::interpolate\texorpdfstring{$<$}{<} Trajectory\+Point\texorpdfstring{$<$}{<} Base\+PointT \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4}{}\label{structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4}\index{tracktable::algorithms::interpolate$<$ TrajectoryPoint$<$ BasePointT $>$ $>$@{tracktable::algorithms::interpolate$<$ TrajectoryPoint$<$ BasePointT $>$ $>$}}
+
+
+Interpolate between two points.  
+
+
+
+
+{\ttfamily \#include $<$Trajectory\+Point.\+h$>$}
+
+Inheritance diagram for tracktable\+::algorithms\+::interpolate\texorpdfstring{$<$}{<} Trajectory\+Point\texorpdfstring{$<$}{<} Base\+PointT \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4_aed76a7b0d8402a13388fa512a1e6541f}\label{structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4_aed76a7b0d8402a13388fa512a1e6541f} 
+typedef Base\+PointT {\bfseries Superclass}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4_a037008989b343f1d97f3f88735b72c16}\label{structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4_a037008989b343f1d97f3f88735b72c16} 
+{\footnotesize template$<$class trajectory\+\_\+point\+\_\+type$>$ }\\static trajectory\+\_\+point\+\_\+type {\bfseries apply} (trajectory\+\_\+point\+\_\+type const \&left, trajectory\+\_\+point\+\_\+type const \&right, double t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate__linear}{tracktable\+::algorithms\+::interpolate\+\_\+linear$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static T {\bfseries apply} (T const \&start, T const \&end, double interpolant)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Base\+PointT$>$\newline
+struct tracktable\+::algorithms\+::interpolate$<$ Trajectory\+Point$<$ Base\+Point\+T $>$ $>$}
+Interpolate between two points. 
+
+Interpolate between two different points in a trajectory. At t \texorpdfstring{$<$}{<}= 0 you\textquotesingle{}ll get the first point back. At t \texorpdfstring{$>$}{>}= 1 you\textquotesingle{}ll get the second point. At any value in between you\textquotesingle{}ll get a combination of the two. Coordinates and timestamp will be interpolated linearly. Numeric properties will be interpolated linearly. String properties will be taken from the first point if t \texorpdfstring{$<$}{<}= 0.\+5 and the second point otherwise. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Trajectory\+Point.\+h\end{DoxyCompactItemize}

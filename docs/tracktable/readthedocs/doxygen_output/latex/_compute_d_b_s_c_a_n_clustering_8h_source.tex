@@ -1,0 +1,152 @@
+\doxysection{Compute\+DBSCANClustering.\+h}
+\hypertarget{_compute_d_b_s_c_a_n_clustering_8h_source}{}\label{_compute_d_b_s_c_a_n_clustering_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/ComputeDBSCANClustering.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/ComputeDBSCANClustering.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ ComputeDBSCANClustering\ -\/\ Convenient\ driver\ functions\ for\ DBSCAN}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ ================================================================}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ Overview}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ We\ have\ two\ goals\ here.\ First,\ give\ you\ a\ one-\/function\ interface}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ to\ DBSCAN:\ pass\ in\ a\ list\ of\ points,\ a\ search\ box\ and\ a\ minimum}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ cluster\ size,\ get\ back\ a\ vector\ of\ (vertex\ ID,\ cluster\ ID)\ labels.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ Second,\ make\ it\ easy\ to\ say\ "{}These\ points\ are\ actually\ on\ the}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ surface\ of\ a\ sphere\ but\ I\ want\ you\ to\ pretend\ that\ they're\ in}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *\ Cartesian\ space."{}}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *\ Rationale}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ *\ Our\ implementation\ of\ DBSCAN\ is\ templated\ on\ point\ type\ and\ uses}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ boost::geometry\ for\ all\ of\ its\ distance\ math.\ This\ means\ that\ it}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *\ will\ automatically\ adapt\ to\ whatever\ coordinate\ system\ you're\ using}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *\ for\ your\ points\ as\ long\ as\ Boost\ knows\ what\ to\ do\ with\ it.}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ This\ is\ usually\ great.\ However,\ there\ are\ times\ when\ it\ will\ slow}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ you\ down\ tremendously.\ For\ example,\ if\ you're\ clustering\ a\ bunch}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ of\ points\ that\ are\ very\ close\ together\ on\ the\ surface\ of\ a\ sphere,}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ you\ might\ do\ just\ fine\ by\ pretending\ that\ the\ space\ is\ Cartesian}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ (flat)\ instead\ of\ spherical.\ That\ will\ run\ dramatically\ more}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ *\ quickly\ and\ with\ greater\ precision\ than\ the\ trigonometry\ necessary}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *\ for\ doing\ distance\ computations\ on\ a\ sphere.}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_COMPUTE\_DBSCAN\_CLUSTERING\_h}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_COMPUTE\_DBSCAN\_CLUSTERING\_h}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <tracktable/Analysis/detail/dbscan\_drivers.h>}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ <tracktable/Analysis/detail/point\_converter.h>}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ <boost/iterator/transform\_iterator.hpp>}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ SearchBoxT,\ \textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}IteratorT,\ \textcolor{keyword}{class}\ OutputIteratorT>}
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacetracktable_a79d16c21e46fc8557e8cdb75f860b7e8}{cluster\_with\_dbscan}}(}
+\DoxyCodeLine{00126\ \ \ PointIteratorT\ input\_begin,}
+\DoxyCodeLine{00127\ \ \ PointIteratorT\ input\_end,}
+\DoxyCodeLine{00128\ \ \ SearchBoxT\ search\_box\_half\_span,}
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{int}\ minimum\_cluster\_size,}
+\DoxyCodeLine{00130\ \ \ OutputIteratorT\ output\_sink}
+\DoxyCodeLine{00131\ \ \ )}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ PointIteratorT::value\_type\ input\_point\_type;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ Dispatch\ on\ the\ input\ point\ type\ will\ happen\ here\ so\ that\ we\ can}}
+\DoxyCodeLine{00136\ \ \ \textcolor{comment}{//\ handle\ bare\ points\ or\ std::pair<metadata,\ point>\ instances.}}
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{structtracktable_1_1analysis_1_1detail_1_1_d_b_s_c_a_n___driver}{analysis::detail::DBSCAN\_Driver<input\_point\_type>}}\ dbscan;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \textcolor{keywordtype}{int}\ num\_clusters\ =\ dbscan(}
+\DoxyCodeLine{00140\ \ \ \ \ input\_begin,}
+\DoxyCodeLine{00141\ \ \ \ \ input\_end,}
+\DoxyCodeLine{00142\ \ \ \ \ search\_box\_half\_span,}
+\DoxyCodeLine{00143\ \ \ \ \ minimum\_cluster\_size,}
+\DoxyCodeLine{00144\ \ \ \ \ output\_sink}
+\DoxyCodeLine{00145\ \ \ \ \ );}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \textcolor{keywordflow}{return}\ num\_clusters;}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ ClusterLabelIteratorT,\ \textcolor{keyword}{typename}\ OutputIteratorT>}
+\DoxyCodeLine{00193\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacetracktable_af2efd19849e0ceccacfc7ffb7a0e31fa}{build\_cluster\_membership\_lists}}(}
+\DoxyCodeLine{00194\ \ \ ClusterLabelIteratorT\ label\_begin,}
+\DoxyCodeLine{00195\ \ \ ClusterLabelIteratorT\ label\_end,}
+\DoxyCodeLine{00196\ \ \ OutputIteratorT\ output\_membership\_lists}
+\DoxyCodeLine{00197\ )}
+\DoxyCodeLine{00198\ \{}
+\DoxyCodeLine{00199\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ ClusterLabelIteratorT::value\_type::first\_type\ vertex\_id\_type;}
+\DoxyCodeLine{00200\ \ \ \textcolor{keyword}{typedef}\ std::vector<vertex\_id\_type>\ vertex\_id\_vector\_type;}
+\DoxyCodeLine{00201\ \ \ \textcolor{keyword}{typedef}\ std::map<int,\ vertex\_id\_vector\_type>\ member\_map\_type;}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ member\_map\_type\ membership\_lists;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \textcolor{keywordflow}{while}\ (label\_begin\ !=\ label\_end)}
+\DoxyCodeLine{00206\ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{int}\ cluster\_id\ =\ label\_begin-\/>second;}
+\DoxyCodeLine{00208\ \ \ \ \ vertex\_id\_type\ vertex\_id\ =\ label\_begin-\/>first;}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{if}\ (membership\_lists.find(cluster\_id)\ ==\ membership\_lists.end())}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ membership\_lists[cluster\_id]\ =\ vertex\_id\_vector\_type();}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ membership\_lists[cluster\_id].push\_back(vertex\_id);}
+\DoxyCodeLine{00215\ \ \ \ \ ++label\_begin;}
+\DoxyCodeLine{00216\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{comment}{//\ Since\ std::map\ keeps\ its\ contents\ sorted\ by\ the\ key\ (in\ this\ case}}
+\DoxyCodeLine{00219\ \ \ \textcolor{comment}{//\ the\ cluster\ ID)\ we\ get\ them\ back\ in\ order\ here.}}
+\DoxyCodeLine{00220\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{typename}\ member\_map\_type::const\_iterator\ iter\ =\ membership\_lists.begin();}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ iter\ !=\ membership\_lists.end();}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00223\ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ *output\_membership\_lists\ =\ iter-\/>second;}
+\DoxyCodeLine{00225\ \ \ \ \ ++output\_membership\_lists;}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \textcolor{keywordflow}{return}\ boost::numeric\_cast<int>(membership\_lists.size());}
+\DoxyCodeLine{00229\ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

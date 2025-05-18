@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1speed__between_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</compoundname>
+    <includes refid="_trajectory_point_8h" local="no">TrajectoryPoint.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class BasePointT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structtracktable_1_1algorithms_1_1speed__between_3_01_trajectory_point_3_01_base_point_t_01_4_01_4_1ab21260b007df548e0729db1e88a8d38f" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt; BasePointT &gt;</type>
+        <definition>typedef TrajectoryPoint&lt;BasePointT&gt; tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;::point_type</definition>
+        <argsstring></argsstring>
+        <name>point_type</name>
+        <qualifiedname>tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;::point_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="621" column="27" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="621" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1speed__between_3_01_trajectory_point_3_01_base_point_t_01_4_01_4_1a86691c4b4ee8d655dad27a50d90fb75e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;::apply</definition>
+        <argsstring>(point_type const &amp;start, point_type const &amp;finish)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;::apply</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">point_type</ref> const &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">point_type</ref> const &amp;</type>
+          <declname>finish</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="622" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="622" bodyend="634"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1speed__between_1aed1a460d7a1e9cfe93289deed72beeeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;::BOOST_MPL_ASSERT_MSG</definition>
+        <argsstring>(sizeof(TrajectoryPoint&lt; BasePointT &gt;)==0, SPEED_NOT_DEFINED_FOR_THIS_POINT_TYPE,(types&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;))</argsstring>
+        <name>BOOST_MPL_ASSERT_MSG</name>
+        <qualifiedname>tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;::BOOST_MPL_ASSERT_MSG</qualifiedname>
+        <param>
+          <type>sizeof(<ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt; BasePointT &gt;)</type>
+          <defval>=0</defval>
+        </param>
+        <param>
+          <type>SPEED_NOT_DEFINED_FOR_THIS_POINT_TYPE</type>
+        </param>
+        <param>
+          <type>(types&lt; <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt; BasePointT &gt; &gt;)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/SpeedBetween.h" line="47" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Speed between two points in native units per second. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="619" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="620" bodyend="635"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1speed__between_3_01_trajectory_point_3_01_base_point_t_01_4_01_4_1a86691c4b4ee8d655dad27a50d90fb75e" prot="public" virt="non-virtual"><scope>tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1speed__between_1aed1a460d7a1e9cfe93289deed72beeeb" prot="public" virt="non-virtual"><scope>tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</scope><name>BOOST_MPL_ASSERT_MSG</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1speed__between_3_01_trajectory_point_3_01_base_point_t_01_4_01_4_1ab21260b007df548e0729db1e88a8d38f" prot="public" virt="non-virtual"><scope>tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</scope><name>point_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

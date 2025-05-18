@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1rw" kind="namespace" language="C++">
+    <compoundname>tracktable::rw</compoundname>
+    <innernamespace refid="namespacetracktable_1_1rw_1_1detail">tracktable::rw::detail</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/CountProperties.h" line="34" column="20"/>
+  </compounddef>
+</doxygen>

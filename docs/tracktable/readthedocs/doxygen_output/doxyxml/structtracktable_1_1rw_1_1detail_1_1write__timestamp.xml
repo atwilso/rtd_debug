@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1rw_1_1detail_1_1write__timestamp" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::rw::detail::write_timestamp</compoundname>
+    <templateparamlist>
+      <param>
+        <type>bool</type>
+        <declname>has_timestamp</declname>
+        <defname>has_timestamp</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1rw_1_1detail_1_1write__timestamp_1a37d5e9f9b6740605efbf9b7852011871" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_t</type>
+          </param>
+          <param>
+            <type>typename out_iter_t</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void tracktable::rw::detail::write_timestamp&lt; has_timestamp &gt;::apply</definition>
+        <argsstring>(point_t const &amp;, TimestampConverter &amp;, out_iter_t &amp;)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::rw::detail::write_timestamp::apply</qualifiedname>
+        <param>
+          <type>point_t const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classtracktable_1_1_timestamp_converter" kindref="compound">TimestampConverter</ref> &amp;</type>
+        </param>
+        <param>
+          <type>out_iter_t &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" line="46" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" bodystart="46" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" line="43" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" bodystart="44" bodyend="56"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1rw_1_1detail_1_1write__timestamp_1a37d5e9f9b6740605efbf9b7852011871" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::write_timestamp</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

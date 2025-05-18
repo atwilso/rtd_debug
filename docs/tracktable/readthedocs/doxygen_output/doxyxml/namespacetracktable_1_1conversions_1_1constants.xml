@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1conversions_1_1constants" kind="namespace" language="C++">
+    <compoundname>tracktable::conversions::constants</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="_conversions_8h_1a3980bb6ad829f0e857035ea1d370c91d" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::PI</definition>
+        <argsstring></argsstring>
+        <name>PI</name>
+        <qualifiedname>tracktable::conversions::constants::PI</qualifiedname>
+        <initializer>= 3.141592653589793238462643383</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="38" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_conversions_8h_1a1f8acbd63cf2711a1c1e72d017a97fd5" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::EARTH_RADIUS_IN_KM</definition>
+        <argsstring></argsstring>
+        <name>EARTH_RADIUS_IN_KM</name>
+        <qualifiedname>tracktable::conversions::constants::EARTH_RADIUS_IN_KM</qualifiedname>
+        <initializer>= 6371</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="39" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_conversions_8h_1aba5d291f40d7fe10178de08f5cf183c8" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::EARTH_RADIUS_IN_MI</definition>
+        <argsstring></argsstring>
+        <name>EARTH_RADIUS_IN_MI</name>
+        <qualifiedname>tracktable::conversions::constants::EARTH_RADIUS_IN_MI</qualifiedname>
+        <initializer>= 3959</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="40" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_conversions_8h_1afae02b63090f0f4ac9121c8b2d8cd2d8" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::EARTH_RADIUS_IN_NM</definition>
+        <argsstring></argsstring>
+        <name>EARTH_RADIUS_IN_NM</name>
+        <qualifiedname>tracktable::conversions::constants::EARTH_RADIUS_IN_NM</qualifiedname>
+        <initializer>= 3440</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="41" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_conversions_8h_1a38cf9e84841518fd82501ca1d8ce3779" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::DEGREES_PER_RADIAN</definition>
+        <argsstring></argsstring>
+        <name>DEGREES_PER_RADIAN</name>
+        <qualifiedname>tracktable::conversions::constants::DEGREES_PER_RADIAN</qualifiedname>
+        <initializer>= 57.29577951308232087679</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="42" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_conversions_8h_1a38688fdcb1a7e027dedbfe3324a5dc1b" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::RADIANS_PER_DEGREE</definition>
+        <argsstring></argsstring>
+        <name>RADIANS_PER_DEGREE</name>
+        <qualifiedname>tracktable::conversions::constants::RADIANS_PER_DEGREE</qualifiedname>
+        <initializer>= .01745329251994329576</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="43" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_conversions_8h_1aeb16706bdb7a816a30dc77fc8069a404" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::SECONDS_PER_HOUR</definition>
+        <argsstring></argsstring>
+        <name>SECONDS_PER_HOUR</name>
+        <qualifiedname>tracktable::conversions::constants::SECONDS_PER_HOUR</qualifiedname>
+        <initializer>= 3600.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="44" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_conversions_8h_1a8c90098d3963d8f5712a6d0bf78b6a15" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::HOURS_PER_SECOND</definition>
+        <argsstring></argsstring>
+        <name>HOURS_PER_SECOND</name>
+        <qualifiedname>tracktable::conversions::constants::HOURS_PER_SECOND</qualifiedname>
+        <initializer>= 0.0027777777777777</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="45" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_conversions_8h_1a75da8e9758277355ba8da58ca3f2bac8" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::conversions::constants::METERS_PER_FOOT</definition>
+        <argsstring></argsstring>
+        <name>METERS_PER_FOOT</name>
+        <qualifiedname>tracktable::conversions::constants::METERS_PER_FOOT</qualifiedname>
+        <initializer>= 0.3048</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="46" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="37" column="1"/>
+  </compounddef>
+</doxygen>

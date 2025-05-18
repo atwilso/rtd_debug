@@ -1,0 +1,40 @@
+\doxysection{tracktable\+::algorithms\+::interpolate\texorpdfstring{$<$}{<} Timestamp \texorpdfstring{$>$}{>} Struct Reference}
+\hypertarget{structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4}{}\label{structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4}\index{tracktable::algorithms::interpolate$<$ Timestamp $>$@{tracktable::algorithms::interpolate$<$ Timestamp $>$}}
+
+
+Interpolate between two timestamps.  
+
+
+
+
+{\ttfamily \#include $<$Timestamp.\+h$>$}
+
+Inheritance diagram for tracktable\+::algorithms\+::interpolate\texorpdfstring{$<$}{<} Timestamp \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4_a9ff0b63f430c03872e2408b977a523df}\label{structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4_a9ff0b63f430c03872e2408b977a523df} 
+static \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} {\bfseries apply} (\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} const \&first, \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} const \&second, double t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate__linear}{tracktable\+::algorithms\+::interpolate\+\_\+linear$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static T {\bfseries apply} (T const \&start, T const \&end, double interpolant)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interpolate between two timestamps. 
+
+Standard linear interpolation. At {\ttfamily t \texorpdfstring{$<$}{<}= 0} you get back the first value. At {\ttfamily t \texorpdfstring{$>$}{>}= 1} you get the second value. Anywhere in between, you get {\ttfamily (1-\/t) \texorpdfstring{$\ast$}{*} first + t \texorpdfstring{$\ast$}{*} second}.
+
+This specializes the template in tracktable/\+Core/detail/algorithm\+\_\+signatures/\+Interpolate.\+h. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Timestamp.\+h\end{DoxyCompactItemize}

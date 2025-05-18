@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1traits" kind="namespace" language="C++">
+    <compoundname>tracktable::traits</compoundname>
+    <innerclass refid="structtracktable_1_1traits_1_1base__point__tag" prot="public">tracktable::traits::base_point_tag</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1domain" prot="public">tracktable::traits::domain</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1domain_3_01_point_base_3_01_dimension_01_4_01_4" prot="public">tracktable::traits::domain&lt; PointBase&lt; Dimension &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1domain_3_01std_1_1vector_3_01point__type_01_4_01_4" prot="public">tracktable::traits::domain&lt; std::vector&lt; point_type &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1domain_3_01tracktable_1_1_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::domain&lt; tracktable::TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1domain_3_01_trajectory_3_01point__type_01_4_01_4" prot="public">tracktable::traits::domain&lt; Trajectory&lt; point_type &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__object__id" prot="public">tracktable::traits::has_object_id</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__object__id_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::has_object_id&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__properties" prot="public">tracktable::traits::has_properties</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__properties_3_01_trajectory_3_01point__type_01_4_01_4" prot="public">tracktable::traits::has_properties&lt; Trajectory&lt; point_type &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__properties_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::has_properties&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__timestamp" prot="public">tracktable::traits::has_timestamp</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::has_timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1object__id" prot="public">tracktable::traits::object_id</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1object__id_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::object_id&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1object__id__is__member" prot="public">tracktable::traits::object_id_is_member</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1object__id__is__named__property" prot="public">tracktable::traits::object_id_is_named_property</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1point__domain__name" prot="public">tracktable::traits::point_domain_name</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1point__domain__name_3_01tracktable_1_1domain_1_1feature__vectors_1da9e8c2518005e55833092365405e601" prot="public">tracktable::traits::point_domain_name&lt; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1point__domain__name_3_01_trajectory_3_01point__type_01_4_01_4" prot="public">tracktable::traits::point_domain_name&lt; Trajectory&lt; point_type &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1point__domain__name_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::point_domain_name&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1timestamp" prot="public">tracktable::traits::timestamp</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1timestamp__is__member" prot="public">tracktable::traits::timestamp_is_member</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1timestamp__is__named__property" prot="public">tracktable::traits::timestamp_is_named_property</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1trajectory__point__tag" prot="public">tracktable::traits::trajectory_point_tag</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1trajectory__tag" prot="public">tracktable::traits::trajectory_tag</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1undecorated__point" prot="public">tracktable::traits::undecorated_point</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1undecorated__point_3_01_point_base_3_01_dimension_01_4_01_4" prot="public">tracktable::traits::undecorated_point&lt; PointBase&lt; Dimension &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1undecorated__point_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::undecorated_point&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innernamespace refid="namespacetracktable_1_1traits_1_1domains">tracktable::traits::domains</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Dimension.h" line="45" column="20"/>
+  </compounddef>
+</doxygen>

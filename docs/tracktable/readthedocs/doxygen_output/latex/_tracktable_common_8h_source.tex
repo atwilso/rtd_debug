@@ -1,0 +1,107 @@
+\doxysection{Tracktable\+Common.\+h}
+\hypertarget{_tracktable_common_8h_source}{}\label{_tracktable_common_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/TracktableCommon.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/TracktableCommon.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ \(\backslash\)defgroup\ Tracktable\_CPP\ C++\ components\ of\ Tracktable}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifndef\ \_\_TRACKTABLE\_COMMON\_H}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \_\_TRACKTABLE\_COMMON\_H}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <boost/cstdint.hpp>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Logging.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <tracktable/Core/UnfortunateWorkarounds.h>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Interpolate.h>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#if\ defined(WIN32)}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ This\ warning\ shows\ up\ when\ you\ call\ std::copy\ with\ pointer}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ arguments.\ The\ Visual\ C++\ compiler\ is\ being\ extra\ careful\ because}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ it\ can't\ do\ range\ checking\ on\ bare\ pointers\ the\ way\ it\ might\ be}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ able\ to\ with\ iterators.\ Caution\ is\ well\ and\ good\ but\ this\ idiom}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ shows\ up\ in\ many\ places\ in\ Boost...\ leading\ to\ a\ great\ many}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ spurious\ warnings\ that\ make\ it\ hard\ to\ find\ the\ real\ problems.}}
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ Hence\ this\ change.}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#\ pragma\ warning(\ push\ )}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#\ pragma\ warning(\ disable\ :\ 4996\ )}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{namespace\ }settings\ \{}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ point\_coordinate\_type;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ std::string\ string\_type;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ settings::string\_type\ string\_type;}
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ std::vector<string\_type>\ string\_vector\_type;}
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ std::basic\_ostringstream<string\_type::value\_type>\ ostringstream\_type;}
+\DoxyCodeLine{00077\ \textcolor{keyword}{typedef}\ std::basic\_istringstream<string\_type::value\_type>\ istringstream\_type;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{typedef}\ std::map<int,\ int>\ IntIntMap;}
+\DoxyCodeLine{00080\ \textcolor{keyword}{typedef}\ std::map<std::size\_t,\ std::size\_t>\ SizeSizeMap;}
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ std::map<string\_type,\ int>\ StringIntMap;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#ifndef\ BEGIN\_NAMESPACE}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#\ define\ BEGIN\_NAMESPACE(x)\ namespace\ x\ \{}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#\ define\ END\_NAMESPACE(x)\ \}}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ This\ is\ so\ basic\ as\ to\ be\ needed\ everywhere.}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00095\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate}{interpolate}}<std::string>\ :\ \mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor}{interpolate\_nearest\_neighbor}}<std::string>}
+\DoxyCodeLine{00096\ \{\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \}\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable::algorithms}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

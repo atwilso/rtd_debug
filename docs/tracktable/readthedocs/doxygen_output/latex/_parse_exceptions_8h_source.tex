@@ -1,0 +1,134 @@
+\doxysection{Parse\+Exceptions.\+h}
+\hypertarget{_parse_exceptions_8h_source}{}\label{_parse_exceptions_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/ParseExceptions.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/ParseExceptions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_rw\_ParseExceptions\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_rw\_ParseExceptions\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_parse_error_a1dec1250728a70f7eee5f6eb6e5b388b}{ParseError}}\ :\ \textcolor{keyword}{public}\ std::runtime\_error}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classtracktable_1_1_parse_error_a1dec1250728a70f7eee5f6eb6e5b388b}{ParseError}}()}
+\DoxyCodeLine{00048\ \ \ \ \ :\ std::runtime\_error(\textcolor{stringliteral}{"{}unspecified\ parse\ error"{}})}
+\DoxyCodeLine{00049\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{classtracktable_1_1_parse_error_a185edc5f368ad836229e13bf754c4cc8}{ParseError}}(std::string\ \textcolor{keyword}{const}\&\ err)}
+\DoxyCodeLine{00056\ \ \ \ \ :\ std::runtime\_error(err)}
+\DoxyCodeLine{00057\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{classtracktable_1_1_parse_error_a2221b72cfb33b0506eca2b6923d77430}{ParseError}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ err)}
+\DoxyCodeLine{00064\ \ \ \ \ :\ std::runtime\_error(err)}
+\DoxyCodeLine{00065\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_empty_coordinate_error_ad97574de64e922abcc5e3c8a7c2c50dc}{EmptyCoordinateError}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_parse_error_a1dec1250728a70f7eee5f6eb6e5b388b}{ParseError}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classtracktable_1_1_empty_coordinate_error_ad97574de64e922abcc5e3c8a7c2c50dc}{EmptyCoordinateError}}(std::size\_t\ which\_coordinate)}
+\DoxyCodeLine{00081\ \ \ \ \ :\ \mbox{\hyperlink{classtracktable_1_1_parse_error_a1dec1250728a70f7eee5f6eb6e5b388b}{ParseError}}(format\_empty\_coordinate\_message(which\_coordinate))}
+\DoxyCodeLine{00082\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{static}\ std::string\ format\_empty\_coordinate\_message(std::size\_t\ which\_coordinate)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ std::ostringstream\ errbuf;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ errbuf\ <<\ \textcolor{stringliteral}{"{}Parse\ failure:\ String\ for\ coordinate\ "{}}\ <<\ which\_coordinate\ <<\ \textcolor{stringliteral}{"{}\ is\ empty."{}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ errbuf.str();}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_empty_field_error_a751b400381416cc8d7870f44fd2c2e29}{EmptyFieldError}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_parse_error_a1dec1250728a70f7eee5f6eb6e5b388b}{ParseError}}}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{classtracktable_1_1_empty_field_error_a751b400381416cc8d7870f44fd2c2e29}{EmptyFieldError}}(std::string\ \textcolor{keyword}{const}\&\ field\_name)}
+\DoxyCodeLine{00109\ \ \ \ \ :\ \mbox{\hyperlink{classtracktable_1_1_parse_error_a1dec1250728a70f7eee5f6eb6e5b388b}{ParseError}}(format\_empty\_field\_message(field\_name))}
+\DoxyCodeLine{00110\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{static}\ std::string\ format\_empty\_field\_message(std::string\ \textcolor{keyword}{const}\&\ field\_name)}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ std::ostringstream\ errbuf;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ errbuf\ <<\ \textcolor{stringliteral}{"{}Parse\ failure:\ String\ for\ coordinate\ "{}}\ <<\ field\_name\ <<\ \textcolor{stringliteral}{"{}\ is\ empty."{}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ errbuf.str();}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_lexical_cast_error_aefe5cb762fbca1018e3bd68ee056fd7f}{LexicalCastError}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_parse_error_a1dec1250728a70f7eee5f6eb6e5b388b}{ParseError}}}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00140\ \ \ \mbox{\hyperlink{classtracktable_1_1_lexical_cast_error_aefe5cb762fbca1018e3bd68ee056fd7f}{LexicalCastError}}(}
+\DoxyCodeLine{00141\ \ \ \ \ std::string\ \textcolor{keyword}{const}\&\ field\_name,}
+\DoxyCodeLine{00142\ \ \ \ \ std::string\ \textcolor{keyword}{const}\&\ string\_value,}
+\DoxyCodeLine{00143\ \ \ \ \ std::string\ \textcolor{keyword}{const}\&\ expected\_type}
+\DoxyCodeLine{00144\ \ \ \ \ )}
+\DoxyCodeLine{00145\ \ \ \ \ :\ \mbox{\hyperlink{classtracktable_1_1_parse_error_a1dec1250728a70f7eee5f6eb6e5b388b}{ParseError}}(format\_convert\_error\_message(field\_name,\ string\_value,\ expected\_type))}
+\DoxyCodeLine{00146\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{static}\ std::string\ format\_convert\_error\_message(}
+\DoxyCodeLine{00156\ \ \ \ \ std::string\ \textcolor{keyword}{const}\&\ field\_name,}
+\DoxyCodeLine{00157\ \ \ \ \ std::string\ \textcolor{keyword}{const}\&\ string\_value,}
+\DoxyCodeLine{00158\ \ \ \ \ std::string\ \textcolor{keyword}{const}\&\ expected\_type}
+\DoxyCodeLine{00159\ \ \ \ \ )}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ std::ostringstream\ errbuf;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ errbuf\ <<\ \textcolor{stringliteral}{"{}Parse\ failure:\ Couldn't\ convert\ string\ '"{}}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ string\_value\ <<\ \textcolor{stringliteral}{"{}'\ to\ type\ "{}}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ expected\_type}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ for\ field\ "{}}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ field\_name;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ errbuf.str();}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

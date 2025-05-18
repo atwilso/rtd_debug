@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</compoundname>
+    <basecompoundref refid="classtracktable_1_1_trajectory_point" prot="public" virt="non-virtual">tracktable::TrajectoryPoint&lt; CartesianPoint3D &gt;</basecompoundref>
+    <includes refid="_cartesian3_d_8h" local="no">Cartesian3D.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1a352d1e5f53322213248d6ce38350ba6a" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt; <ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d" kindref="compound">CartesianPoint3D</ref> &gt;</type>
+        <definition>typedef TrajectoryPoint&lt; CartesianPoint3D &gt; tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::Superclass</definition>
+        <argsstring></argsstring>
+        <name>Superclass</name>
+        <qualifiedname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::Superclass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="189" column="27" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1a6600517d5ee8011bc666a7826af0e0d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::CartesianTrajectoryPoint3D</definition>
+        <argsstring>()</argsstring>
+        <name>CartesianTrajectoryPoint3D</name>
+        <qualifiedname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::CartesianTrajectoryPoint3D</qualifiedname>
+        <briefdescription>
+<para>Create an uninitialized point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assume that the coordinates will be initialized to garbage values when you use this constructor. The object ID, timestamp and properties will all be empty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="197" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="197" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1ae6f820a635874fc81f973dc2d889843a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::CartesianTrajectoryPoint3D</definition>
+        <argsstring>(double x, double y, double z)</argsstring>
+        <name>CartesianTrajectoryPoint3D</name>
+        <qualifiedname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::CartesianTrajectoryPoint3D</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Initialize a point with x, y, z coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The coordinates will be initialized to whatever values you specify.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X value to use for the point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y value to use for the point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Z value to use for the point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="207" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="207" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1ad3b63d7b37d7526a6d2ae97e6a206db7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::CartesianTrajectoryPoint3D</definition>
+        <argsstring>(CartesianTrajectoryPoint3D const &amp;other)</argsstring>
+        <name>CartesianTrajectoryPoint3D</name>
+        <qualifiedname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::CartesianTrajectoryPoint3D</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d" kindref="compound">CartesianTrajectoryPoint3D</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor: make this point like another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to make a copy of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="218" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="218" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1a58b34032d84c97ef01c25b434f6a6b61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::CartesianTrajectoryPoint3D</definition>
+        <argsstring>(Superclass const &amp;other)</argsstring>
+        <name>CartesianTrajectoryPoint3D</name>
+        <qualifiedname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::CartesianTrajectoryPoint3D</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">Superclass</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Initialize this point from its superclass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If you happen to have <computeroutput><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;<ref refid="classtracktable_1_1_point_cartesian" kindref="compound">PointCartesian</ref>&lt;3&gt;&gt;</computeroutput> instances sitting around, this is where you use them. This is more for the compiler&apos;s benefit than the user&apos;s.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superclass to use as if it were a <ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d" kindref="compound">CartesianTrajectoryPoint3D</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="230" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="230" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1ac1606fcafbc8323fa1dab9d699f90add" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::~CartesianTrajectoryPoint3D</definition>
+        <argsstring>()</argsstring>
+        <name>~CartesianTrajectoryPoint3D</name>
+        <qualifiedname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::~CartesianTrajectoryPoint3D</qualifiedname>
+        <briefdescription>
+<para>Empty destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All of our resources are on the stack. We don&apos;t have any real work to do here. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="239" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="239" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1ab285f4fd383d8f071c20bc42f64729a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d" kindref="compound">CartesianTrajectoryPoint3D</ref> &amp;</type>
+        <definition>CartesianTrajectoryPoint3D &amp; tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::operator=</definition>
+        <argsstring>(CartesianTrajectoryPoint3D const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d" kindref="compound">CartesianTrajectoryPoint3D</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We delegate this explicitly to the superclass so that the compiler won&apos;t try to do anything clever like copying pointers. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="246" column="30" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="246" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1afc89168d672f5667f28d840e724f82be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Archive</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::serialize</definition>
+        <argsstring>(Archive &amp;ar, const unsigned int)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D::serialize</qualifiedname>
+        <param>
+          <type>Archive &amp;</type>
+          <declname>ar</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+        </param>
+        <briefdescription>
+<para>Serialize the points to an archive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Archive to serialize to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Version of the archive </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="259" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="259" bodyend="262"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> point in flat 3D space. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class defines a point in 3D Euclidean space along with an object ID, timestamp and named properties. Units have no real-world interpretation and (unlike the surface of the globe) space is isotropic.</para>
+<para>Use this class instead of instantiating the <computeroutput><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref></computeroutput> template yourself. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>CartesianPoint3D</label>
+        <link refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tracktable::PointBase&lt; Dimension &gt;</label>
+        <link refid="classtracktable_1_1_point_base"/>
+      </node>
+      <node id="4">
+        <label>tracktable::PointCartesian&lt; 3 &gt;</label>
+        <link refid="classtracktable_1_1_point_cartesian"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::TrajectoryPoint&lt; CartesianPoint3D &gt;</label>
+        <link refid="classtracktable_1_1_trajectory_point"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</label>
+        <link refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>CartesianPoint3D</label>
+        <link refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tracktable::PointBase&lt; Dimension &gt;</label>
+        <link refid="classtracktable_1_1_point_base"/>
+      </node>
+      <node id="4">
+        <label>tracktable::PointCartesian&lt; 3 &gt;</label>
+        <link refid="classtracktable_1_1_point_cartesian"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::TrajectoryPoint&lt; CartesianPoint3D &gt;</label>
+        <link refid="classtracktable_1_1_trajectory_point"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</label>
+        <link refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" line="186" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian3D.h" bodystart="187" bodyend="266"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_trajectory_point_1a6c7dc24c8f61daf7cbbc057f5d1628da" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>__non_const_properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a6c7dc24c8f61daf7cbbc057f5d1628da" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>__non_const_properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a20cdf3edd825c961e5a163c35df4c3f8" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>__properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a20cdf3edd825c961e5a163c35df4c3f8" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>__properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ac0e4b29e46206b3f7a698e3a11ce5aa4" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>__set_properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ac0e4b29e46206b3f7a698e3a11ce5aa4" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>__set_properties</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_1a5e537e0fa6ec121a774f74f0c12d2d22" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CartesianPoint3D</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_1a1ee930ceb3171223560c919e38b4e02d" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CartesianPoint3D</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_1ad71d9949387cbb8b8ef28d96336f1add" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CartesianPoint3D</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_1ad8dc97932c0c84d18a5189ef22755f0b" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CartesianPoint3D</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1a6600517d5ee8011bc666a7826af0e0d3" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CartesianTrajectoryPoint3D</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1ae6f820a635874fc81f973dc2d889843a" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CartesianTrajectoryPoint3D</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1ad3b63d7b37d7526a6d2ae97e6a206db7" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CartesianTrajectoryPoint3D</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1a58b34032d84c97ef01c25b434f6a6b61" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CartesianTrajectoryPoint3D</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2aba212a90c51c5f4e9fa76fe679146a" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>Coordinates</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a57d67138ca4ad62e9f0fd0c0a336b3aa" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>current_length</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a57d67138ca4ad62e9f0fd0c0a336b3aa" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>current_length</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ab32c1d5c07b77856065c529c0d6f3dd8" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>current_length_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ab32c1d5c07b77856065c529c0d6f3dd8" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>current_length_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a02bed94d3ff14b5511e40e784937aff1" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>current_time_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a02bed94d3ff14b5511e40e784937aff1" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>current_time_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CurrentLength</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CurrentLength</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aeedbb5b51924c0b6989db6cb180a02ab" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CurrentLengthFraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aeedbb5b51924c0b6989db6cb180a02ab" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CurrentLengthFraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a5cbe94298c39d457a27e5473e4d07d6b" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CurrentTimeFraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a5cbe94298c39d457a27e5473e4d07d6b" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>CurrentTimeFraction</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2b5d66d132636bb41831a09667f6e640" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>element_type</name></member>
+      <member refid="classtracktable_1_1_point_base_1a7918dde3ef618e4497d9949e515a5fd5" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>get</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a9f4c9195e6de83a5a80f0d1da42cad58" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>has_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a9f4c9195e6de83a5a80f0d1da42cad58" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>has_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aa8affe83ef9703be33610b22b2bacc26" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>object_id</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aa8affe83ef9703be33610b22b2bacc26" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>object_id</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>ObjectId</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>ObjectId</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a22ddaffccd5df1b2e486686ff0f1be4f" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a22ddaffccd5df1b2e486686ff0f1be4f" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_point_base_1ac225c66d4cfab081b67f95d4411b0fdd" prot="public" virt="non-virtual" ambiguityscope="tracktable::domain::cartesian3d::CartesianPoint3D::"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1ab285f4fd383d8f071c20bc42f64729a3" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ac2e2ca3f1c11138a5ec2594d2a7efaca" prot="public" virt="non-virtual" ambiguityscope="tracktable::TrajectoryPoint&lt; CartesianPoint3D &gt;::"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_1aa77baffcffb5c8f42fbd223798121abd" prot="public" virt="non-virtual" ambiguityscope="tracktable::domain::cartesian3d::CartesianPoint3D::"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_base_1a236bf3c4a5a1128bea753ad59f7d2594" prot="public" virt="non-virtual" ambiguityscope="tracktable::PointCartesian&lt; 3 &gt;::"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a6096611658ea18df80b5454ac0388d0c" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a6096611658ea18df80b5454ac0388d0c" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_base_1a35cfaef9ac15a33040e2458d99d980e3" prot="public" virt="non-virtual" ambiguityscope="tracktable::domain::cartesian3d::CartesianPoint3D::"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1c2237aff8b2b8dec8b934feb10d79c6" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1ea12444b1425cf2462e2920cac1b499" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1ae25b06b76872599f16950c866529d096" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1aab715197cb725a115bdbae588649f795" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a1ffa5d8bbba92af933da04fe02ce64b9" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a4bf68e44702546c3949721ba6bbda4c4" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a547d746df83a24e5fcde725f59a77939" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a1ffa5d8bbba92af933da04fe02ce64b9" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a4bf68e44702546c3949721ba6bbda4c4" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a547d746df83a24e5fcde725f59a77939" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>PointCartesian</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>Properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>Properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1af5a93c754e028116f6c01278b417cf57" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a84c92f4397228ae99159e5e3ac33284b" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1af5a93c754e028116f6c01278b417cf57" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a84c92f4397228ae99159e5e3ac33284b" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1adbef9f3e71509e47416985b54ee11812" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>property_without_checking</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1adbef9f3e71509e47416985b54ee11812" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>property_without_checking</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a530d7ec9f72a870e18d4885be12d2f3a" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>real_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a530d7ec9f72a870e18d4885be12d2f3a" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>real_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a2b878d8adc203d2c3c535eaf605823a8" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>real_property_with_default</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a2b878d8adc203d2c3c535eaf605823a8" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>real_property_with_default</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1afc89168d672f5667f28d840e724f82be" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>serialize</name></member>
+      <member refid="classtracktable_1_1_point_base_1aece26ecf39982722de53187fe0e1531b" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a12a681d6781e7d00f3712b641a30be01" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_current_length</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a12a681d6781e7d00f3712b641a30be01" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_current_length</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a503c43a983051c1494d336e92cb40e7f" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_current_length_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a503c43a983051c1494d336e92cb40e7f" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_current_length_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a297785acfb3b1ff62bce46b8d0f261a4" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_current_time_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a297785acfb3b1ff62bce46b8d0f261a4" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_current_time_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a7820570b2aee1ec50afb3e9292f52cc3" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_object_id</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a7820570b2aee1ec50afb3e9292f52cc3" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_object_id</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a25ed78c6fe86cf5584c38d0d23e51dd7" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a25ed78c6fe86cf5584c38d0d23e51dd7" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ae4ca21c7f35bdffc0fa821107b780ae2" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_timestamp</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ae4ca21c7f35bdffc0fa821107b780ae2" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>set_timestamp</name></member>
+      <member refid="classtracktable_1_1_point_base_1a00baacc4de3a9c9cf3f3f39af19aa7de" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>size</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a03fe1bd5e6a7cf7c485befeefef4c4f3" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>string_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a03fe1bd5e6a7cf7c485befeefef4c4f3" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>string_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a981da2fabb228ab1f6ba3d55596e532b" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>string_property_with_default</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a981da2fabb228ab1f6ba3d55596e532b" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>string_property_with_default</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1a352d1e5f53322213248d6ce38350ba6a" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>Superclass</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>timestamp</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>timestamp</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a48603e1015c8ab64a7a8691cdb9b37df" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>timestamp_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a48603e1015c8ab64a7a8691cdb9b37df" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>timestamp_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a68a6f44cbd16f7ef7d0d29514750a9e1" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>timestamp_property_with_default</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a68a6f44cbd16f7ef7d0d29514750a9e1" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>timestamp_property_with_default</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a43424c218646d0952b111fd16e63201b" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>to_string</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a43424c218646d0952b111fd16e63201b" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>to_string</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1acd0a4b6aa3d2d4624f82d54c753eef1a" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a1af139c66f2b92233123a382a4bdeca6" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a1ba3d96ae654750b1254eeb1e9b8131e" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1acd0a4b6aa3d2d4624f82d54c753eef1a" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a1af139c66f2b92233123a382a4bdeca6" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a1ba3d96ae654750b1254eeb1e9b8131e" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>UpdateTime</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" prot="protected" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>UpdateTime</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_1a4c8e5323584c831760039a8a75d73d08" prot="public" virt="virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>~CartesianPoint3D</name></member>
+      <member refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_1ac1606fcafbc8323fa1dab9d699f90add" prot="public" virt="virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>~CartesianTrajectoryPoint3D</name></member>
+      <member refid="classtracktable_1_1_point_base_1af616577253186b1d80c7ab90338640e2" prot="public" virt="virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>~PointBase</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a3f7c08c9543abc2efd592cc11e7e735e" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>~PointCartesian</name></member>
+      <member refid="classtracktable_1_1_point_cartesian_1a3f7c08c9543abc2efd592cc11e7e735e" prot="public" virt="non-virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>~PointCartesian</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a18f9b530bb921e646eac0699bd624d12" prot="public" virt="virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>~TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a18f9b530bb921e646eac0699bd624d12" prot="public" virt="virtual"><scope>tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D</scope><name>~TrajectoryPoint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

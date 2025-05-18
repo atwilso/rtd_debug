@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_grid_point_generator" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::GridPointGenerator</compoundname>
+    <basecompoundref refid="classtracktable_1_1_constant_speed_point_generator" prot="public" virt="non-virtual">tracktable::ConstantSpeedPointGenerator</basecompoundref>
+    <includes refid="_point_generator_8h" local="no">PointGenerator.h</includes>
+    <sectiondef kind="protected-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_grid_point_generator_1a0c023d7361114b9d65174b495a21b8f4" prot="protected" static="no">
+        <type><ref refid="classtracktable_1_1_grid_point_generator" kindref="compound">GridPointGenerator</ref></type>
+        <definition>using tracktable::GridPointGenerator::ThisType =  GridPointGenerator</definition>
+        <argsstring></argsstring>
+        <name>ThisType</name>
+        <qualifiedname>tracktable::GridPointGenerator::ThisType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="337" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_grid_point_generator_1a0e46344b4a66d175f9b5ab6233118eb7" prot="protected" static="no">
+        <type><ref refid="classtracktable_1_1_constant_speed_point_generator" kindref="compound">ConstantSpeedPointGenerator</ref></type>
+        <definition>using tracktable::GridPointGenerator::BaseType =  ConstantSpeedPointGenerator</definition>
+        <argsstring></argsstring>
+        <name>BaseType</name>
+        <qualifiedname>tracktable::GridPointGenerator::BaseType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="338" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_grid_point_generator_1a3c2231f5c46a93e870d02c498152b675" prot="public" static="no">
+        <type>BaseType::DurationT</type>
+        <definition>using tracktable::GridPointGenerator::DurationT =  BaseType::DurationT</definition>
+        <argsstring></argsstring>
+        <name>DurationT</name>
+        <qualifiedname>tracktable::GridPointGenerator::DurationT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="341" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_grid_point_generator_1a2c82c6be6a1fde6533926fb1591c679c" prot="public" static="no">
+        <type>BaseType::PointT</type>
+        <definition>using tracktable::GridPointGenerator::PointT =  BaseType::PointT</definition>
+        <argsstring></argsstring>
+        <name>PointT</name>
+        <qualifiedname>tracktable::GridPointGenerator::PointT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="342" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_grid_point_generator_1adfd6e916424b9662124c3f91076c7dcd" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t tracktable::GridPointGenerator::current</definition>
+        <argsstring></argsstring>
+        <name>current</name>
+        <qualifiedname>tracktable::GridPointGenerator::current</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="421" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="421" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_grid_point_generator_1a4bc1fb01a957780a5c8f858a3f3df7c5" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t tracktable::GridPointGenerator::gridCount</definition>
+        <argsstring></argsstring>
+        <name>gridCount</name>
+        <qualifiedname>tracktable::GridPointGenerator::gridCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="422" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_grid_point_generator_1a059675d68ff4acfcea5cf9ab35c60b0c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::GridPointGenerator::turnRate</definition>
+        <argsstring></argsstring>
+        <name>turnRate</name>
+        <qualifiedname>tracktable::GridPointGenerator::turnRate</qualifiedname>
+        <initializer>= .6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="423" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="423" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_grid_point_generator_1ad0f23c8a876e2bcbbd99e4babf4d1ec7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; tracktable::GridPointGenerator::lengths</definition>
+        <argsstring></argsstring>
+        <name>lengths</name>
+        <qualifiedname>tracktable::GridPointGenerator::lengths</qualifiedname>
+        <initializer>= {10}</initializer>
+        <briefdescription>
+<para>deg/s == circle per 10 min </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="424" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="424" bodyend="424"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_grid_point_generator_1a0761a1ba8c84996ba7c2ab808d620da6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::GridPointGenerator::GridPointGenerator</definition>
+        <argsstring>()</argsstring>
+        <name>GridPointGenerator</name>
+        <qualifiedname>tracktable::GridPointGenerator::GridPointGenerator</qualifiedname>
+        <briefdescription>
+<para>Instantiate an empty grid point generator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="348" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="348" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_grid_point_generator_1a61d47ece6199fdbb7909783892de9933" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::GridPointGenerator::GridPointGenerator</definition>
+        <argsstring>(const PointT &amp;_position)</argsstring>
+        <name>GridPointGenerator</name>
+        <qualifiedname>tracktable::GridPointGenerator::GridPointGenerator</qualifiedname>
+        <param>
+          <type>const PointT &amp;</type>
+          <declname>_position</declname>
+        </param>
+        <briefdescription>
+<para>Sets the initial point to <computeroutput>_position</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial point to use, including all metadata </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="353" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="353" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_grid_point_generator_1a20b668084e50716155d87bfe02cc6b67" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::GridPointGenerator::GridPointGenerator</definition>
+        <argsstring>(const PointT &amp;_position, const DurationT &amp;_interval)</argsstring>
+        <name>GridPointGenerator</name>
+        <qualifiedname>tracktable::GridPointGenerator::GridPointGenerator</qualifiedname>
+        <param>
+          <type>const PointT &amp;</type>
+          <declname>_position</declname>
+        </param>
+        <param>
+          <type>const DurationT &amp;</type>
+          <declname>_interval</declname>
+        </param>
+        <briefdescription>
+<para>Sets the initial point to <computeroutput>_position</computeroutput>, and the time interval to <computeroutput>_interval</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial point to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interval to increase timestamp by </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="360" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="360" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_grid_point_generator_1aef018457d13b0de937792f619d5a8455" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::GridPointGenerator::GridPointGenerator</definition>
+        <argsstring>(const PointT &amp;_position, const DurationT &amp;_interval, const double &amp;_speed, const double &amp;_heading)</argsstring>
+        <name>GridPointGenerator</name>
+        <qualifiedname>tracktable::GridPointGenerator::GridPointGenerator</qualifiedname>
+        <param>
+          <type>const PointT &amp;</type>
+          <declname>_position</declname>
+        </param>
+        <param>
+          <type>const DurationT &amp;</type>
+          <declname>_interval</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>_speed</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>_heading</declname>
+        </param>
+        <briefdescription>
+<para>Sets the initial speed to <computeroutput>_speed</computeroutput>, and the heading to <computeroutput>_heading</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial point to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interval to increase timestamp by </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial speed to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_heading</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial heading to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="369" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="369" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_grid_point_generator_1aee10fec01122f74c19c60a83014d925c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::GridPointGenerator::GridPointGenerator</definition>
+        <argsstring>(const PointT &amp;_position, const DurationT &amp;_interval, const double &amp;_speed, const double &amp;_heading, std::vector&lt; int &gt; _lengths)</argsstring>
+        <name>GridPointGenerator</name>
+        <qualifiedname>tracktable::GridPointGenerator::GridPointGenerator</qualifiedname>
+        <param>
+          <type>const PointT &amp;</type>
+          <declname>_position</declname>
+        </param>
+        <param>
+          <type>const DurationT &amp;</type>
+          <declname>_interval</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>_speed</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>_heading</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>_lengths</declname>
+        </param>
+        <briefdescription>
+<para>Sets the initial lengths rate to <computeroutput>_lengths</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial point to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interval to increase timestamp by </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial speed to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_heading</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial heading to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial length to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="381" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="381" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_grid_point_generator_1aa71b27ec947cdf2999f82c2fd859aa46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>PointT</type>
+        <definition>PointT tracktable::GridPointGenerator::next</definition>
+        <argsstring>() override</argsstring>
+        <name>next</name>
+        <qualifiedname>tracktable::GridPointGenerator::next</qualifiedname>
+        <reimplements refid="classtracktable_1_1_constant_speed_point_generator_1aa18f661298741ceedd6a5f0030ff0c31">next</reimplements>
+        <briefdescription>
+<para>Updates position and returns the new position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>new position </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="389" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="389" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_grid_point_generator_1aeca36f6d46b756bdc7839f3dc0027005" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::GridPointGenerator::getTurnRate</definition>
+        <argsstring>() const</argsstring>
+        <name>getTurnRate</name>
+        <qualifiedname>tracktable::GridPointGenerator::getTurnRate</qualifiedname>
+        <briefdescription>
+<para>Retrieve the turn rate of the points in the generator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Turn rate of the points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="413" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="413" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_grid_point_generator_1a9190e8833d9d50cbd9546803a3ed2c79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::GridPointGenerator::setTurnRate</definition>
+        <argsstring>(const double &amp;_rate)</argsstring>
+        <name>setTurnRate</name>
+        <qualifiedname>tracktable::GridPointGenerator::setTurnRate</qualifiedname>
+        <param>
+          <type>const double &amp;</type>
+          <declname>_rate</declname>
+        </param>
+        <briefdescription>
+<para>Set the heading of the points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="417" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="417" bodyend="417"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Generator for generating boxes, snakes, or anything else on a grid. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Take a length vector that tell how long each side is. if the length is negative, then it will turn left afterwards, otherwise it will turn right</para>
+<para>Use a length vector of <computeroutput>{10}</computeroutput> to create a box with 10 points on each side. Use a length vector of <computeroutput>{10,2,-10,-2}</computeroutput> to create a mapping flight </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tracktable::ConstantSpeedPointGenerator</label>
+        <link refid="classtracktable_1_1_constant_speed_point_generator"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::GridPointGenerator</label>
+        <link refid="classtracktable_1_1_grid_point_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tracktable::PointGenerator&lt; tracktable::domain::terrestrial::trajectory_type::point_type &gt;</label>
+        <link refid="classtracktable_1_1_point_generator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>tracktable::ConstantSpeedPointGenerator</label>
+        <link refid="classtracktable_1_1_constant_speed_point_generator"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::GridPointGenerator</label>
+        <link refid="classtracktable_1_1_grid_point_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tracktable::PointGenerator&lt; tracktable::domain::terrestrial::trajectory_type::point_type &gt;</label>
+        <link refid="classtracktable_1_1_point_generator"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="335" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="335" bodyend="425"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_grid_point_generator_1a0e46344b4a66d175f9b5ab6233118eb7" prot="protected" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>BaseType</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1a8f8f9df20775fb52cee53199c3dd44ae" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>ConstantSpeedPointGenerator</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1ae6a4ac201ac2d4a056fe362f05cc4c46" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>ConstantSpeedPointGenerator</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1ad7dd400c0ae1ea36737136862a96e36a" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>ConstantSpeedPointGenerator</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1ad3ab170eebb2494a8c1a5dbd366e45de" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>ConstantSpeedPointGenerator</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a1e2ebe6afd720d55387e7df12b50bace" prot="protected" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>count</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a1e2ebe6afd720d55387e7df12b50bace" prot="protected" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>count</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1adfd6e916424b9662124c3f91076c7dcd" prot="private" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>current</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a3c2231f5c46a93e870d02c498152b675" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>DurationT</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1ac5faa0d4e5ff36cb142184a6f62cce55" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>getHeading</name></member>
+      <member refid="classtracktable_1_1_point_generator_1aa291abc32990ef10fc0bf7d65dda75c2" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>getInterval</name></member>
+      <member refid="classtracktable_1_1_point_generator_1aa291abc32990ef10fc0bf7d65dda75c2" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>getInterval</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a424a7ae1ced68046bbef5edc9aa29d55" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>getObjectId</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a424a7ae1ced68046bbef5edc9aa29d55" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>getObjectId</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1acdeb0379497c5a16898f6a3c0675eea5" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>getSpeed</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1aeca36f6d46b756bdc7839f3dc0027005" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>getTurnRate</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a4bc1fb01a957780a5c8f858a3f3df7c5" prot="private" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>gridCount</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a0761a1ba8c84996ba7c2ab808d620da6" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>GridPointGenerator</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a61d47ece6199fdbb7909783892de9933" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>GridPointGenerator</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a20b668084e50716155d87bfe02cc6b67" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>GridPointGenerator</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1aef018457d13b0de937792f619d5a8455" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>GridPointGenerator</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1aee10fec01122f74c19c60a83014d925c" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>GridPointGenerator</name></member>
+      <member refid="classtracktable_1_1_point_generator_1abd8d8b844e62e23a398828c49119071a" prot="protected" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>interval</name></member>
+      <member refid="classtracktable_1_1_point_generator_1abd8d8b844e62e23a398828c49119071a" prot="protected" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>interval</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1ad0f23c8a876e2bcbbd99e4babf4d1ec7" prot="private" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>lengths</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1aa71b27ec947cdf2999f82c2fd859aa46" prot="public" virt="virtual"><scope>tracktable::GridPointGenerator</scope><name>next</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a7d25517db0e8a1f2c2e9cbe2a0dcc561" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>PointGenerator</name></member>
+      <member refid="classtracktable_1_1_point_generator_1ad6fd794557403ea49baefe22bdf6c006" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>PointGenerator</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a49834831409348f9d3fcd243c3e9c9e1" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>PointGenerator</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a7d25517db0e8a1f2c2e9cbe2a0dcc561" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>PointGenerator</name></member>
+      <member refid="classtracktable_1_1_point_generator_1ad6fd794557403ea49baefe22bdf6c006" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>PointGenerator</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a49834831409348f9d3fcd243c3e9c9e1" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>PointGenerator</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a2c82c6be6a1fde6533926fb1591c679c" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>PointT</name></member>
+      <member refid="classtracktable_1_1_point_generator_1ad6fd1aaa40f1535b7c07191cfae01ab7" prot="protected" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>position</name></member>
+      <member refid="classtracktable_1_1_point_generator_1ad6fd1aaa40f1535b7c07191cfae01ab7" prot="protected" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>position</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1ac98516185e80982ce279dc289d3655b9" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>reckon</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1a4523e000bab74be2491b496788c3004e" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>reckon2</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1a91fbb43ef9ca94f8efba00a38caa1422" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>setHeading</name></member>
+      <member refid="classtracktable_1_1_point_generator_1adc799f7c47a6916ed7f141653be654c9" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>setInterval</name></member>
+      <member refid="classtracktable_1_1_point_generator_1adc799f7c47a6916ed7f141653be654c9" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>setInterval</name></member>
+      <member refid="classtracktable_1_1_point_generator_1ae6fa66422a88e3fb99d34154a531e38f" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>setObjectId</name></member>
+      <member refid="classtracktable_1_1_point_generator_1ae6fa66422a88e3fb99d34154a531e38f" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>setObjectId</name></member>
+      <member refid="classtracktable_1_1_constant_speed_point_generator_1a70db0c8186b19febdf72c3262006aa50" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>setSpeed</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a9190e8833d9d50cbd9546803a3ed2c79" prot="public" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>setTurnRate</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a0c023d7361114b9d65174b495a21b8f4" prot="protected" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>ThisType</name></member>
+      <member refid="classtracktable_1_1_grid_point_generator_1a059675d68ff4acfcea5cf9ab35c60b0c" prot="private" virt="non-virtual"><scope>tracktable::GridPointGenerator</scope><name>turnRate</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a2aee3fa116b225ae9fac35c9d64d038f" prot="public" virt="virtual"><scope>tracktable::GridPointGenerator</scope><name>~PointGenerator</name></member>
+      <member refid="classtracktable_1_1_point_generator_1a2aee3fa116b225ae9fac35c9d64d038f" prot="public" virt="virtual"><scope>tracktable::GridPointGenerator</scope><name>~PointGenerator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

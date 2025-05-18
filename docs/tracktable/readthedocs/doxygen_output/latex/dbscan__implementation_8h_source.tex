@@ -1,0 +1,478 @@
+\doxysection{dbscan\+\_\+implementation.\+h}
+\hypertarget{dbscan__implementation_8h_source}{}\label{dbscan__implementation_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/dbscan\_implementation.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/dbscan\_implementation.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ This\ is\ a\ simple\ implementation\ of\ the\ DBSCAN\ clustering\ algorithm}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ that\ uses\ axis-\/aligned\ bounding\ boxes\ to\ find\ nearby\ points\ instead}}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ of\ spheres.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ The\ file\ ComputeDBSCANClustering.h\ provides\ a\ set\ of\ convenient}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ interfaces\ to\ this\ module.}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_DBSCAN\_implementation\_h}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_DBSCAN\_implementation\_h}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ This\ \#define\ causes\ Boost\ timers\ to\ be\ instantiated\ around\ the}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ expensive\ steps\ of\ clustering.\ \ If\ this\ is\ problematic\ on\ your}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ system\ or\ you\ just\ don't\ want\ to\ bother\ then\ change\ \#define\ to}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ \#undef.}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#undef\ TIME\_CLUSTERING\_STEPS}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <boost/bind/bind.hpp>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <boost/mpl/assert.hpp>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <boost/tuple/tuple.hpp>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <tracktable/Core/WarningGuards/PushWarningState.h>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <tracktable/Core/WarningGuards/CommonBoostWarnings.h>}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ We\ need\ this\ in\ order\ to\ pull\ in\ boost/geometry/strategies/strategies.hpp\ -\/-\/}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ consider\ investigating\ what\ we\ can\ trim\ down}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometry.hpp>}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/point\_xy.hpp>}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/register/point.hpp>}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/adapted/boost\_tuple.hpp>}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ <tracktable/Core/WarningGuards/PopWarningState.h>}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ <tracktable/Analysis/GuardedBoostGeometryRTreeHeader.h>}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#if\ defined(TIME\_CLUSTERING\_STEPS)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#\ include\ <boost/timer/timer.hpp>}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#include\ <tracktable/Analysis/detail/dbscan\_points.h>}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointArithmetic.h>}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{namespace\ }bgi\ =\ boost::geometry::index;}
+\DoxyCodeLine{00082\ \textcolor{keyword}{namespace\ }bg\ =\ boost::geometry;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }analysis\ \{\ \textcolor{keyword}{namespace\ }detail\ \{\ \textcolor{keyword}{namespace\ }implementation\ \{}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00126\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a648b7910eb2a6ccf1d5062815a696b99}{DBSCAN}}}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00130\ \ \ \textcolor{keyword}{typedef}\ PointT\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}};}
+\DoxyCodeLine{00132\ \ \ \textcolor{keyword}{typedef}\ std::vector<point\_type>\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a3320c141966e69bb5d9f41dde4676cef}{point\_vector\_type}};}
+\DoxyCodeLine{00134\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1_indexed_point}{IndexedPoint<PointT>}}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ad838175f2a17e0039ec0d9a5a4b35921}{indexed\_point\_type}};}
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{typedef}\ std::vector<indexed\_point\_type>\ indexed\_point\_vector\_type;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00139\ \ \ \textcolor{comment}{//\ The\ Boost\ r-\/tree\ implementation\ keeps\ points\ around\ as\ a}}
+\DoxyCodeLine{00140\ \ \ \textcolor{comment}{//\ combination\ of\ point\ and\ index\ -\/-\/\ a\ glorified\ pointer\ by\ another}}
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{//\ name.\ This\ class\ handles\ the\ 'dereference'\ operation\ (actually}}
+\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ operator())\ to\ turn\ an\ Indexable\ back\ into\ a\ point.}}
+\DoxyCodeLine{00143\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1_d_b_s_c_a_n___index_by_iterator}{DBSCAN\_IndexByIterator}}<}
+\DoxyCodeLine{00144\ \ \ \ \ indexed\_point\_vector\_type,\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}}}
+\DoxyCodeLine{00145\ \ \ \ \ >\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a2c63936869890bc9c9507f89751cf607}{indexable\_getter\_type}};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \ \ \textcolor{keyword}{typedef}\ bgi::quadratic<16>\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a7e773efc41f0687f55911980a8b8f47a}{rtree\_parameter\_type}};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ indexed\_point\_vector\_type::iterator\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\_value\_type}};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \ \ \textcolor{keyword}{typedef}\ bgi::rtree<}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\_value\_type}},}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a7e773efc41f0687f55911980a8b8f47a}{rtree\_parameter\_type}},}
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a2c63936869890bc9c9507f89751cf607}{indexable\_getter\_type}}}
+\DoxyCodeLine{00158\ \ \ \ \ >\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}{rtree\_type}};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{typedef}\ bg::model::box<point\_type>\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ae785abec922b786086ee20a500cc7d21}{box\_type}};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{typedef}\ std::vector<int>\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\_vector\_type}};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00167\ \ \ \textcolor{keyword}{typedef}\ std::vector<int\_vector\_type>\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a394b53abb384c46b1c806477efa48f38}{int\_vector\_vector\_type}};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00174\ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a648b7910eb2a6ccf1d5062815a696b99}{DBSCAN}}()}
+\DoxyCodeLine{00175\ \ \ \ \ :\ InputPointCount(0)}
+\DoxyCodeLine{00176\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00177\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{\string~DBSCAN}}()\ \{\ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ IteratorT>}
+\DoxyCodeLine{00194\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aba949ba51c0aa80e9466101d85b9af5f}{learn\_clusters}}(IteratorT\ point\_begin,\ IteratorT\ point\_end,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}}\ \textcolor{keyword}{const}\&\ epsilon\_box\_half\_span,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ min\_cluster\_size,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ L2=\textcolor{keyword}{false})}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ points\ into\ a\ format\ that\ we\ can\ use\ in\ the\ R-\/tree}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ indexed\_point\_vector\_type\ indexed\_points;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ IteratorT\ here(point\_begin);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ ;\ here\ !=\ point\_end;\ ++here,\ ++i)}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ad838175f2a17e0039ec0d9a5a4b35921}{indexed\_point\_type}}\ i\_point\ =\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ad838175f2a17e0039ec0d9a5a4b35921}{indexed\_point\_type}}(*here,\ i);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ indexed\_points.push\_back(i\_point);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ this-\/>InputPointCount\ =\ indexed\_points.size();}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a7e773efc41f0687f55911980a8b8f47a}{rtree\_parameter\_type}}\ params;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}{rtree\_type}}\ rtree(params,\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a2c63936869890bc9c9507f89751cf607}{indexable\_getter\_type}}(indexed\_points));}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (1)}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#if\ defined(TIME\_CLUSTERING\_STEPS)}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ boost::timer::auto\_cpu\_timer\ t;}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\_value\_type}}\ iter\ =\ indexed\_points.begin();}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ iter\ !=\ indexed\_points.end();}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ rtree.insert(iter);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9cd649bd33a92f3d2dc4e5736f4b3293}{num\_range\_queries}}\ =\ 0;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (1)}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#if\ defined(TIME\_CLUSTERING\_STEPS)}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ boost::timer::auto\_cpu\_timer\ t;}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab29dbb43e9fc008b902f5ea2dd10560b}{compute\_cluster\_membership}}(indexed\_points,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ min\_cluster\_size,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ epsilon\_box\_half\_span,}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rtree,}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ L2);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ boost::numeric\_cast<int>(this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}.size());}
+\DoxyCodeLine{00240\ \ \ \ \ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a255b8517cd09860bdeb25a06e067bf87}{cluster\_membership\_lists}}(\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a394b53abb384c46b1c806477efa48f38}{int\_vector\_vector\_type}}\&\ output)}
+\DoxyCodeLine{00258\ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ output\ =\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}};}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aefdcaa766b5a29d59fb592f1d8633707}{point\_cluster\_labels}}(\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\_vector\_type}}\&\ out\_labels)}
+\DoxyCodeLine{00279\ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ out\_labels.resize(this-\/>InputPointCount,\ 0);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (int\_vector\_vector\_type::size\_type\ cluster\_id\ =\ 0;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ cluster\_id\ <\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}.size();}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ ++cluster\_id)}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (int\_vector\_type::size\_type\ i\ =\ 0;}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ <\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}[cluster\_id].size();}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ ++i)}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ int\_vector\_type::value\_type\ point\_id\ =}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}[cluster\_id][i];}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ out\_labels[point\_id]\ =\ boost::numeric\_cast<int>(cluster\_id);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \}}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \textcolor{keywordtype}{int}\ get\_cluster\_id(\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\_value\_type}}\ \textcolor{keyword}{const}\&\ iter)}
+\DoxyCodeLine{00305\ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iter-\/>cluster\_id();}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00313\ \ \ \textcolor{keywordtype}{void}\ set\_cluster\_id(\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\_value\_type}}\&\ iter,\ \textcolor{keywordtype}{int}\ new\_id)}
+\DoxyCodeLine{00314\ \ \ \ \ \{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ iter-\/>set\_cluster\_id(new\_id);}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab29dbb43e9fc008b902f5ea2dd10560b}{compute\_cluster\_membership}}(indexed\_point\_vector\_type\&\ points,}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ min\_cluster\_size,}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}}\&\ epsilon\_box\_half\_span,}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}{rtree\_type}}\&\ rtree,}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ L2)}
+\DoxyCodeLine{00337\ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ it.\ \ Assigns\ all\ points\ to\ a\ cluster,\ with\ cluster\ 0\ =\ noise}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \textcolor{comment}{//\ At\ the\ end,\ next\_cluster\_id\ is\ the\ number\ of\ clusters,\ *counting*\ the}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \textcolor{comment}{//\ noise\ cluster.\ \ So,\ the\ clusters\ are\ numbered\ 0\ to\ next\_cluster\_id-\/1.}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ next\_cluster\_id\ =\ 1;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \textcolor{comment}{//\ Walk\ through\ the\ list\ of\ points.\ \ When\ we\ find\ a\ point\ we}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \textcolor{comment}{//\ haven't\ yet\ assigned\ to\ a\ cluster,\ search\ its\ neighborhood}}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \textcolor{comment}{//\ to\ see\ if\ there\ are\ enough\ points\ to\ merit\ declaring\ a\ new}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \textcolor{comment}{//\ cluster.}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ num\_points\_processed\_in\_cluster\ =\ 0;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\_value\_type}}\ iter\ =\ points.begin();}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ iter\ !=\ points.end();}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ ++num\_points\_processed\_in\_cluster;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*iter).cluster\_id()\ ==\ 0\ \&\&\ (*iter).visited()\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ new\_cluster\_found\ =\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9411c7355f7f7043c0fb695afa47eedc}{expand\_cluster}}(}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ iter,}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ min\_cluster\_size,}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ epsilon\_box\_half\_span,}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ next\_cluster\_id,}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ rtree,}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ L2}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_cluster\_found)}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ ++next\_cluster\_id;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a11b687d1438bfc83eae79313a4681c43}{build\_cluster\_membership\_lists}}(points,\ next\_cluster\_id);}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#if\ defined(COMPUTE\_CLUSTER\_STATISTICS)}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ TRACKTABLE\_LOG(log::info)\ <<\ \textcolor{stringliteral}{"{}Constructing\ cluster\ statistics..."{}};}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b}{num\_core\_points}}.resize(next\_cluster\_id,\ 0);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a517b74e616a5cc010f16af790e75b075}{core\_point\_avg\_num\_neighbors}}.resize(next\_cluster\_id,\ 0);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ this-\/>total\_num\_neighbors.resize(next\_cluster\_id,\ 0);}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ cluster\_id\ =\ 0;\ cluster\_id\ <\ next\_cluster\_id;\ ++cluster\_id)}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (int\_vector\_type::iterator\ piter\ =}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}[cluster\_id].begin();}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ piter\ !=\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}[cluster\_id].end();}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ ++piter)}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}}\ box\_center((points[*piter]).point());}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ae785abec922b786086ee20a500cc7d21}{box\_type}}\ epsilon\_box(detail::make\_box(box\_center,}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ epsilon\_box\_half\_span));}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ all\ points\ near\ the\ seed}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ std::vector<rtree\_value\_type>\ points\_in\_neighborhood;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ rtree.query(boost::geometry::index::within(epsilon\_box),}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::back\_inserter(points\_in\_neighborhood));}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ doing\ sphere/ellipsoid,\ remove\ points\ in\ box\ outside\ sphere}}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (L2)}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a93415449b174e0869056a4b747cd395a}{ellipsoid\_filter}}(points\_in\_neighborhood,}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ box\_center,}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ epsilon\_box\_half\_span);}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (points\_in\_neighborhood.size()\ >=\ min\_cluster\_size)}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ ++\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b}{num\_core\_points}}[cluster\_id];}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a517b74e616a5cc010f16af790e75b075}{core\_point\_avg\_num\_neighbors}}[cluster\_id]\ +=}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ points\_in\_neighborhood.size();}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ total\_num\_neighbors[cluster\_id]\ +=\ points\_in\_neighborhood.size();}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b}{num\_core\_points}}[cluster\_id])}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a517b74e616a5cc010f16af790e75b075}{core\_point\_avg\_num\_neighbors}}[cluster\_id]\ /=}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b}{num\_core\_points}}[cluster\_id]);}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ TRACKTABLE\_LOG(log::info)\ <<\ \textcolor{stringliteral}{"{}Cluster\ statistics:"{}};}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b}{num\_core\_points}}.size();\ ++i)}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::info)}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}C\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}[i].size()\ <<\ \textcolor{stringliteral}{"{}\ points,\ "{}}}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b}{num\_core\_points}}[i]\ <<\ \textcolor{stringliteral}{"{}\ core\ points,\ "{}}}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a517b74e616a5cc010f16af790e75b075}{core\_point\_avg\_num\_neighbors}}[i]}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ avg\ neighbors\ per\ core\ point,\ "{}}}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>total\_num\_neighbors[i]}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ neighbors\ for\ all\ points\ in\ cluster\(\backslash\)n"{}};}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00430\ \ \ \ \ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9411c7355f7f7043c0fb695afa47eedc}{expand\_cluster}}(\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ac0eb1a05b1df3451774537cbe9a2dcdb}{rtree\_value\_type}}\&\ seed\_point,}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ min\_cluster\_size,}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}}\&\ epsilon\_box\_half\_span,}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ next\_cluster\_id,}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aacbc69331e52bb1d0980d3e305c6c852}{rtree\_type}}\&\ rtree,}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ L2)}
+\DoxyCodeLine{00455\ \ \ \ \ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }boost::placeholders;}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ std::list<rtree\_value\_type>\ seed\_point\_queue;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ seed\_point\_queue.push\_back(seed\_point);}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ core\_point\_found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{typename}\ std::list<rtree\_value\_type>::iterator\ query\_point\ =}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ seed\_point\_queue.begin();}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ query\_point\ !=\ seed\_point\_queue.end();}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ ++query\_point)}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*query\_point)-\/>visited())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ (*query\_point)-\/>set\_visited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ a\ box\ describing\ the\ epsilon-\/neighborhood\ of\ the\ point}}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ being\ considered}}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}}\ box\_center((*query\_point)-\/>point());}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ae785abec922b786086ee20a500cc7d21}{box\_type}}\ epsilon\_box(}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ make\_box(box\_center,\ epsilon\_box\_half\_span)}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ all\ points\ near\ the\ seed}}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ std::vector<rtree\_value\_type>\ points\_in\_neighborhood;}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ rtree.query(boost::geometry::index::within(epsilon\_box),}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::back\_inserter(points\_in\_neighborhood));}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ doing\ sphere/ellipsoid,\ remove\ points\ in\ box\ outside\ sphere}}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (L2)}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a93415449b174e0869056a4b747cd395a}{ellipsoid\_filter}}(points\_in\_neighborhood,}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ box\_center,}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ epsilon\_box\_half\_span);}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ ++\ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9cd649bd33a92f3d2dc4e5736f4b3293}{num\_range\_queries}};}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Have\ we\ found\ a\ new\ core\ point?\ \ If\ so,\ assign\ the\ current}}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cluster\ ID\ to\ all\ points\ in\ the\ query\ box\ (which\ will}}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ necessarily\ include\ the\ query\ point).}}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (points\_in\_neighborhood.size()\ >=\ min\_cluster\_size)}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ core\_point\_found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ all\ the\ points\ that\ already\ belong\ to\ another\ cluster}}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ points\_in\_neighborhood.erase(}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ std::remove\_if(}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ points\_in\_neighborhood.begin(),\ points\_in\_neighborhood.end(),}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::bind(\&DBSCAN::get\_cluster\_id,\ \textcolor{keyword}{this},\ \_1)\ !=\ 0}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ points\_in\_neighborhood.end()}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ cluster\ ID\ of\ all\ neighboring\ points\ to\ the\ new}}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cluster\ ID}}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ std::for\_each(}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ points\_in\_neighborhood.begin(),}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ points\_in\_neighborhood.end(),}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ boost::bind(}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&DBSCAN::set\_cluster\_id,}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_1,}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_cluster\_id}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ the\ new\ seed\ points\ to\ the\ queue}}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ std::copy(}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ points\_in\_neighborhood.begin(),}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ points\_in\_neighborhood.end(),}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ std::back\_inserter(seed\_point\_queue)}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Done\ processing\ new\ core\ point}}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Done\ looping\ over\ seed\ point\ queue}}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ core\_point\_found;}
+\DoxyCodeLine{00534\ \ \ \ \ \}}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00536\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00547\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a11b687d1438bfc83eae79313a4681c43}{build\_cluster\_membership\_lists}}(\textcolor{keyword}{const}\ indexed\_point\_vector\_type\&\ points,}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_cluster\_id)}
+\DoxyCodeLine{00549\ \ \ \ \ \{}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}.resize(max\_cluster\_id);}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{typename}\ indexed\_point\_vector\_type::const\_iterator\ iter\ =}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ points.begin();}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ iter\ !=\ points.end();}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ cluster\_id\ =\ (*iter).cluster\_id();}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ original\_point\_id\ =\ (*iter).point\_id();}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}}[cluster\_id].push\_back(original\_point\_id);}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00560\ \ \ \ \ \}}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00574\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a93415449b174e0869056a4b747cd395a}{ellipsoid\_filter}}(std::vector<rtree\_value\_type>\&\ points,}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}}\&\ box\_center,}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ab52a759378e7adb7111dea3ecfeeb910}{point\_type}}\&\ epsilon\_box\_half\_span)}
+\DoxyCodeLine{00577\ \ \ \ \ \{}
+\DoxyCodeLine{00578\ }
+\DoxyCodeLine{00579\ \ \ \textcolor{comment}{//\ Okay.\ \ This\ code\ looks\ a\ little\ obfuscated,\ but\ I\ hate\ to\ remove\ things}}
+\DoxyCodeLine{00580\ \ \ \textcolor{comment}{//\ from\ a\ vector\ without\ using\ the\ erase/remove\_if\ idiom.\ \ The\ code\ below}}
+\DoxyCodeLine{00581\ \ \ \textcolor{comment}{//\ allows\ this\ to\ be\ done\ without\ changing\ other\ parts\ of\ the\ code.}}
+\DoxyCodeLine{00582\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00583\ \ \ \textcolor{comment}{//\ Essentiall,\ parsing\ from\ the\ inside\ out,\ do\ operator*\ on\ the}}
+\DoxyCodeLine{00584\ \ \ \textcolor{comment}{//\ rtree\_value\_type\ to\ get\ an\ indexed\_point\_type.\ \ Then,\ do\ the\ point}}
+\DoxyCodeLine{00585\ \ \ \textcolor{comment}{//\ method\ to\ get\ out\ a\ point\_type.\ \ Take\ that\ point,\ and\ subtract\ off}}
+\DoxyCodeLine{00586\ \ \ \textcolor{comment}{//\ the\ point\ that\ it\ is\ in\ the\ neigborhood\ of\ to\ get\ an\ offset\ vector.}}
+\DoxyCodeLine{00587\ \ \ \textcolor{comment}{//\ Divide\ the\ elements\ of\ the\ offset\ vector\ by\ the\ values\ in\ the}}
+\DoxyCodeLine{00588\ \ \ \textcolor{comment}{//\ epsilon\_box\_half\_span,\ to\ get\ the\ relative\ contributions\ of\ the}}
+\DoxyCodeLine{00589\ \ \ \textcolor{comment}{//\ directions\ to\ figure\ out\ if\ it\ is\ in\ the\ ellipsoid.\ \ Then,\ take\ the\ norm,}}
+\DoxyCodeLine{00590\ \ \ \textcolor{comment}{//\ and\ it\ should\ be\ less\ than\ 1.\ \ Erase\ all\ offending\ elements.}}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }boost::placeholders;}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ points.erase(}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ std::remove\_if(points.begin(),points.end(),}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ boost::bind(\&\mbox{\hyperlink{namespacetracktable_1_1arithmetic_a27f00d531645f9c176cd87a5101fe520}{tracktable::arithmetic::norm\_squared<point\_type>}},}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ boost::bind(\&\mbox{\hyperlink{namespacetracktable_1_1arithmetic_af80393fd93f2f52abfa9fb5e8a20697b}{tracktable::arithmetic::divide<point\_type>}},}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ boost::bind(\&\mbox{\hyperlink{namespacetracktable_1_1arithmetic_a1b5177e895f1986f3ee6da9f0bcb8765}{tracktable::arithmetic::subtract<point\_type>}},}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ boost::bind(\&indexed\_point\_type::point,}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ boost::bind(\&rtree\_value\_type::operator*,\_1)),}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ box\_center),}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ epsilon\_box\_half\_span))\ >\ 1.0),}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ points.end());}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00604\ \ \ \ \ \}}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00608\ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a394b53abb384c46b1c806477efa48f38}{int\_vector\_vector\_type}}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_ace16666f49d1ac46b4c08269e55493a9}{ClusterMembership}};}
+\DoxyCodeLine{00610\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9cd649bd33a92f3d2dc4e5736f4b3293}{num\_range\_queries}};}
+\DoxyCodeLine{00612\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aa91427603df48072c76f4c46a9302b46}{num\_points\_processed}};}
+\DoxyCodeLine{00614\ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\_vector\_type}}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a064ba262a99fccc2a3b21a8ec85f1c9b}{num\_core\_points}};}
+\DoxyCodeLine{00616\ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\_vector\_type}}\ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a517b74e616a5cc010f16af790e75b075}{core\_point\_avg\_num\_neighbors}};}
+\DoxyCodeLine{00617\ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_a9c3451df97912d86b542bff17a17cb04}{int\_vector\_type}}\ total\_num\_neighbors;}
+\DoxyCodeLine{00618\ \ \ std::size\_t\ InputPointCount;}
+\DoxyCodeLine{00619\ \};}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00621\ \}\ \}\ \}\ \}\ \textcolor{comment}{//\ namespace\ tracktable::analysis::detail::implementation}}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,517 @@
+\doxysection{tracktable\+::arithmetic Namespace Reference}
+\hypertarget{namespacetracktable_1_1arithmetic}{}\label{namespacetracktable_1_1arithmetic}\index{tracktable::arithmetic@{tracktable::arithmetic}}
+
+
+Basic arithmetic operations for all point types.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename forward\+\_\+iterator\+\_\+type$>$ }\\std\+::iterator\+\_\+traits$<$ forward\+\_\+iterator\+\_\+type $>$\+::value\+\_\+type \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ae72858352d309ed946e2e61b5f59a1da}{geometric\+\_\+mean}} (forward\+\_\+iterator\+\_\+type input\+\_\+begin, forward\+\_\+iterator\+\_\+type input\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Calculate the mean for the un-\/weighted input points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename point\+\_\+iterator\+\_\+type, typename weight\+\_\+iterator\+\_\+type$>$ }\\std\+::iterator\+\_\+traits$<$ point\+\_\+iterator\+\_\+type $>$\+::value\+\_\+type \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a0398c0539a5b1cb52dcd11e52a093df7}{weighted\+\_\+sum}} (point\+\_\+iterator\+\_\+type point\+\_\+begin, point\+\_\+iterator\+\_\+type point\+\_\+end, weight\+\_\+iterator\+\_\+type weight\+\_\+begin, weight\+\_\+iterator\+\_\+type weight\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Weighted sum of points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename forward\+\_\+iterator\+\_\+type$>$ }\\std\+::iterator\+\_\+traits$<$ forward\+\_\+iterator\+\_\+type $>$\+::value\+\_\+type \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aa0118fe069513e917ecc5b82f9d93de3}{geometric\+\_\+median}} (forward\+\_\+iterator\+\_\+type input\+\_\+begin, forward\+\_\+iterator\+\_\+type input\+\_\+end)
+\begin{DoxyCompactList}\small\item\em L1 multivariate median for all point types. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a13b5723e0b27add384afb9634212ff47}{add}} (PointT const \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Add two points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ae9bfcfbefc7ddb42b19b5c3b27687aaf}{add\+\_\+in\+\_\+place}} (PointT \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Add two points in place. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a1b5177e895f1986f3ee6da9f0bcb8765}{subtract}} (PointT const \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Subtract two points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a7fe53e45d0b0073a82d0c98fd41950c2}{subtract\+\_\+in\+\_\+place}} (PointT \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Subtract two points in place. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a7c71588aaa0745ed1d92fd471b3f4c5a}{multiply}} (PointT const \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Multiply two points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aaaec43825f930ec47f1f80f1728c50e6}{multiply\+\_\+in\+\_\+place}} (PointT \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Multiply two points in place. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT, typename ScalarT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aeeed551f1737041ad3248ff471aa0d69}{multiply\+\_\+scalar}} (PointT const \&left, ScalarT const \&value)
+\begin{DoxyCompactList}\small\item\em Multiply a point by a scalar. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT, typename ScalarT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a41ddc2b0d0664a6e086950f74ce141be}{multiply\+\_\+scalar\+\_\+in\+\_\+place}} (PointT \&left, ScalarT const \&value)
+\begin{DoxyCompactList}\small\item\em Multiply a point by a scalar in place. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_af80393fd93f2f52abfa9fb5e8a20697b}{divide}} (PointT const \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Divide two points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_adba5a13ec1361ec771ce5f3e7f74e988}{divide\+\_\+in\+\_\+place}} (PointT \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Divide two points in place. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT, typename ScalarT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a5e36e2d6f59f3294bbf6dfc2e8eafa75}{divide\+\_\+scalar}} (PointT const \&left, ScalarT const \&value)
+\begin{DoxyCompactList}\small\item\em Divide a point by a scalar. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT, typename ScalarT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ad43c067c45b1e30f203e4671ad399aae}{divide\+\_\+scalar\+\_\+in\+\_\+place}} (PointT \&left, ScalarT const \&value)
+\begin{DoxyCompactList}\small\item\em Divide a point by a scalar in place. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\double \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a36188ac4575d9b4a07551acfe15bb82f}{dot}} (PointT const \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Compute dot product of two points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a6597a20000678630a53cc30abe062be0}{cross\+\_\+product}} (PointT const \&left, PointT const \&right)
+\begin{DoxyCompactList}\small\item\em Compute Cross Product. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\double \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a27f00d531645f9c176cd87a5101fe520}{norm\+\_\+squared}} (PointT const \&left)
+\begin{DoxyCompactList}\small\item\em Square the given point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\double \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aef3dd337b69af60555ba8d576fb8bc05}{norm}} (PointT const \&left)
+\begin{DoxyCompactList}\small\item\em Square root the given point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a679813262775274a1ada18e3fb3cb297}{normalize\+\_\+in\+\_\+place}} (PointT \&\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Normalize a point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a9157db9730b7e9a0e9ed33837e97e6da}{normalize}} (PointT const \&\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Normalize a point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class PointT$>$ }\\PointT \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a059bd4cb9293d460f98b089a402b116e}{zero}} ()
+\begin{DoxyCompactList}\small\item\em Get a Zeroized point. \end{DoxyCompactList}\item 
+\Hypertarget{namespacetracktable_1_1arithmetic_adaea8f209e766874b917a5fb95fc8b38}\label{namespacetracktable_1_1arithmetic_adaea8f209e766874b917a5fb95fc8b38} 
+{\footnotesize template$<$class PointT$>$ }\\void {\bfseries zeroize} (PointT \&\+\_\+p)
+\begin{DoxyCompactList}\small\item\em zeroize a point \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic arithmetic operations for all point types. 
+
+These operations are wrappers around {\ttfamily boost\+::geometry}\textquotesingle{}s point arithmetic operations. You can (obviously) call {\ttfamily boost\+::geometry} directly if you want but this will also let you use more natural arithmetic operations on points. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacetracktable_1_1arithmetic_a13b5723e0b27add384afb9634212ff47}\index{tracktable::arithmetic@{tracktable::arithmetic}!add@{add}}
+\index{add@{add}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a13b5723e0b27add384afb9634212ff47} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::add (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Add two points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to add \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum of points 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_ae9bfcfbefc7ddb42b19b5c3b27687aaf}\index{tracktable::arithmetic@{tracktable::arithmetic}!add\_in\_place@{add\_in\_place}}
+\index{add\_in\_place@{add\_in\_place}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{add\_in\_place()}{add\_in\_place()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_ae9bfcfbefc7ddb42b19b5c3b27687aaf} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::add\+\_\+in\+\_\+place (\begin{DoxyParamCaption}\item[{PointT \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Add two points in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to add \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum of points 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a6597a20000678630a53cc30abe062be0}\index{tracktable::arithmetic@{tracktable::arithmetic}!cross\_product@{cross\_product}}
+\index{cross\_product@{cross\_product}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{cross\_product()}{cross\_product()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a6597a20000678630a53cc30abe062be0} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::cross\+\_\+product (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Compute Cross Product. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to cross \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to cross\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cross product 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_af80393fd93f2f52abfa9fb5e8a20697b}\index{tracktable::arithmetic@{tracktable::arithmetic}!divide@{divide}}
+\index{divide@{divide}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{divide()}{divide()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_af80393fd93f2f52abfa9fb5e8a20697b} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::divide (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Divide two points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to divide \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to divide\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Quotient of point 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_adba5a13ec1361ec771ce5f3e7f74e988}\index{tracktable::arithmetic@{tracktable::arithmetic}!divide\_in\_place@{divide\_in\_place}}
+\index{divide\_in\_place@{divide\_in\_place}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{divide\_in\_place()}{divide\_in\_place()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_adba5a13ec1361ec771ce5f3e7f74e988} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::divide\+\_\+in\+\_\+place (\begin{DoxyParamCaption}\item[{PointT \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Divide two points in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to divide \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to divide\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Quotient of point 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a5e36e2d6f59f3294bbf6dfc2e8eafa75}\index{tracktable::arithmetic@{tracktable::arithmetic}!divide\_scalar@{divide\_scalar}}
+\index{divide\_scalar@{divide\_scalar}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{divide\_scalar()}{divide\_scalar()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a5e36e2d6f59f3294bbf6dfc2e8eafa75} 
+template$<$class PointT, typename ScalarT$>$ \\
+PointT tracktable\+::arithmetic\+::divide\+\_\+scalar (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{, }\item[{ScalarT const \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Divide a point by a scalar. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to divide \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Scalar to divide point by\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scaled point quotient 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_ad43c067c45b1e30f203e4671ad399aae}\index{tracktable::arithmetic@{tracktable::arithmetic}!divide\_scalar\_in\_place@{divide\_scalar\_in\_place}}
+\index{divide\_scalar\_in\_place@{divide\_scalar\_in\_place}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{divide\_scalar\_in\_place()}{divide\_scalar\_in\_place()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_ad43c067c45b1e30f203e4671ad399aae} 
+template$<$class PointT, typename ScalarT$>$ \\
+PointT tracktable\+::arithmetic\+::divide\+\_\+scalar\+\_\+in\+\_\+place (\begin{DoxyParamCaption}\item[{PointT \&}]{left}{, }\item[{ScalarT const \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Divide a point by a scalar in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to divide \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Scalar to divide point by\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scaled point quotient 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a36188ac4575d9b4a07551acfe15bb82f}\index{tracktable::arithmetic@{tracktable::arithmetic}!dot@{dot}}
+\index{dot@{dot}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a36188ac4575d9b4a07551acfe15bb82f} 
+template$<$class PointT$>$ \\
+double tracktable\+::arithmetic\+::dot (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Compute dot product of two points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to use during computation \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to use during computation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum of point products 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_ae72858352d309ed946e2e61b5f59a1da}\index{tracktable::arithmetic@{tracktable::arithmetic}!geometric\_mean@{geometric\_mean}}
+\index{geometric\_mean@{geometric\_mean}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{geometric\_mean()}{geometric\_mean()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_ae72858352d309ed946e2e61b5f59a1da} 
+template$<$typename forward\+\_\+iterator\+\_\+type$>$ \\
+std\+::iterator\+\_\+traits$<$ forward\+\_\+iterator\+\_\+type $>$\+::value\+\_\+type tracktable\+::arithmetic\+::geometric\+\_\+mean (\begin{DoxyParamCaption}\item[{forward\+\_\+iterator\+\_\+type}]{input\+\_\+begin}{, }\item[{forward\+\_\+iterator\+\_\+type}]{input\+\_\+end}{}\end{DoxyParamCaption})}
+
+
+
+Calculate the mean for the un-\/weighted input points. 
+
+\begin{DoxyNote}{Note}
+This function requires a Forward\+Iterator as its argument. A Forward\+Iterator is one that can be traversed and dereferenced more than once.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+\_\+begin} & Start point for mean calculation \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+end} & End point for mean calculation \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacetracktable_1_1arithmetic_aa0118fe069513e917ecc5b82f9d93de3}\index{tracktable::arithmetic@{tracktable::arithmetic}!geometric\_median@{geometric\_median}}
+\index{geometric\_median@{geometric\_median}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{geometric\_median()}{geometric\_median()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_aa0118fe069513e917ecc5b82f9d93de3} 
+template$<$typename forward\+\_\+iterator\+\_\+type$>$ \\
+std\+::iterator\+\_\+traits$<$ forward\+\_\+iterator\+\_\+type $>$\+::value\+\_\+type tracktable\+::arithmetic\+::geometric\+\_\+median (\begin{DoxyParamCaption}\item[{forward\+\_\+iterator\+\_\+type}]{input\+\_\+begin}{, }\item[{forward\+\_\+iterator\+\_\+type}]{input\+\_\+end}{}\end{DoxyParamCaption})}
+
+
+
+L1 multivariate median for all point types. 
+
+The L1 multivariate median generalizes the concept of the familiar 1-\/dimensional median. Given a set of points x\+\_\+i, the median y = M(x\+\_\+i) is the point that minimizes the sum of the distances to the points x\+\_\+i.
+
+There is no closed-\/form expression for the L1 median so we compute it with an iterative algorithm.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+\_\+begin} & Start point for median calculation \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+end} & End point for median calculation \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacetracktable_1_1arithmetic_a7c71588aaa0745ed1d92fd471b3f4c5a}\index{tracktable::arithmetic@{tracktable::arithmetic}!multiply@{multiply}}
+\index{multiply@{multiply}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a7c71588aaa0745ed1d92fd471b3f4c5a} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::multiply (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Multiply two points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to multiply \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to multiply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Product of points 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_aaaec43825f930ec47f1f80f1728c50e6}\index{tracktable::arithmetic@{tracktable::arithmetic}!multiply\_in\_place@{multiply\_in\_place}}
+\index{multiply\_in\_place@{multiply\_in\_place}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{multiply\_in\_place()}{multiply\_in\_place()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_aaaec43825f930ec47f1f80f1728c50e6} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::multiply\+\_\+in\+\_\+place (\begin{DoxyParamCaption}\item[{PointT \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Multiply two points in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to multiply \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to multiply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Product of points 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_aeeed551f1737041ad3248ff471aa0d69}\index{tracktable::arithmetic@{tracktable::arithmetic}!multiply\_scalar@{multiply\_scalar}}
+\index{multiply\_scalar@{multiply\_scalar}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{multiply\_scalar()}{multiply\_scalar()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_aeeed551f1737041ad3248ff471aa0d69} 
+template$<$class PointT, typename ScalarT$>$ \\
+PointT tracktable\+::arithmetic\+::multiply\+\_\+scalar (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{, }\item[{ScalarT const \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Multiply a point by a scalar. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to multiply \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Scalar to multiply point by\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scaled point product 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a41ddc2b0d0664a6e086950f74ce141be}\index{tracktable::arithmetic@{tracktable::arithmetic}!multiply\_scalar\_in\_place@{multiply\_scalar\_in\_place}}
+\index{multiply\_scalar\_in\_place@{multiply\_scalar\_in\_place}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{multiply\_scalar\_in\_place()}{multiply\_scalar\_in\_place()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a41ddc2b0d0664a6e086950f74ce141be} 
+template$<$class PointT, typename ScalarT$>$ \\
+PointT tracktable\+::arithmetic\+::multiply\+\_\+scalar\+\_\+in\+\_\+place (\begin{DoxyParamCaption}\item[{PointT \&}]{left}{, }\item[{ScalarT const \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Multiply a point by a scalar in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to multiply \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Scalar to multiply point by\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scaled point product 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_aef3dd337b69af60555ba8d576fb8bc05}\index{tracktable::arithmetic@{tracktable::arithmetic}!norm@{norm}}
+\index{norm@{norm}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_aef3dd337b69af60555ba8d576fb8bc05} 
+template$<$class PointT$>$ \\
+double tracktable\+::arithmetic\+::norm (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{}\end{DoxyParamCaption})}
+
+
+
+Square root the given point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to take the square root of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Square root value of point 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a27f00d531645f9c176cd87a5101fe520}\index{tracktable::arithmetic@{tracktable::arithmetic}!norm\_squared@{norm\_squared}}
+\index{norm\_squared@{norm\_squared}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{norm\_squared()}{norm\_squared()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a27f00d531645f9c176cd87a5101fe520} 
+template$<$class PointT$>$ \\
+double tracktable\+::arithmetic\+::norm\+\_\+squared (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{}\end{DoxyParamCaption})}
+
+
+
+Square the given point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to square\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Squared value of point 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a9157db9730b7e9a0e9ed33837e97e6da}\index{tracktable::arithmetic@{tracktable::arithmetic}!normalize@{normalize}}
+\index{normalize@{normalize}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a9157db9730b7e9a0e9ed33837e97e6da} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::normalize (\begin{DoxyParamCaption}\item[{PointT const \&}]{\+\_\+p}{}\end{DoxyParamCaption})}
+
+
+
+Normalize a point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+p} & point to normalize\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized point 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a679813262775274a1ada18e3fb3cb297}\index{tracktable::arithmetic@{tracktable::arithmetic}!normalize\_in\_place@{normalize\_in\_place}}
+\index{normalize\_in\_place@{normalize\_in\_place}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{normalize\_in\_place()}{normalize\_in\_place()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a679813262775274a1ada18e3fb3cb297} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::normalize\+\_\+in\+\_\+place (\begin{DoxyParamCaption}\item[{PointT \&}]{\+\_\+p}{}\end{DoxyParamCaption})}
+
+
+
+Normalize a point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+p} & point to normalize\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized point 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a1b5177e895f1986f3ee6da9f0bcb8765}\index{tracktable::arithmetic@{tracktable::arithmetic}!subtract@{subtract}}
+\index{subtract@{subtract}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{subtract()}{subtract()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a1b5177e895f1986f3ee6da9f0bcb8765} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::subtract (\begin{DoxyParamCaption}\item[{PointT const \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Subtract two points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to subtract \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to subtract\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Difference of points 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a7fe53e45d0b0073a82d0c98fd41950c2}\index{tracktable::arithmetic@{tracktable::arithmetic}!subtract\_in\_place@{subtract\_in\_place}}
+\index{subtract\_in\_place@{subtract\_in\_place}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{subtract\_in\_place()}{subtract\_in\_place()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a7fe53e45d0b0073a82d0c98fd41950c2} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::subtract\+\_\+in\+\_\+place (\begin{DoxyParamCaption}\item[{PointT \&}]{left}{, }\item[{PointT const \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Subtract two points in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em left} & Point to subtract \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & Point to subtract\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Difference of points 
+\end{DoxyReturn}
+\Hypertarget{namespacetracktable_1_1arithmetic_a0398c0539a5b1cb52dcd11e52a093df7}\index{tracktable::arithmetic@{tracktable::arithmetic}!weighted\_sum@{weighted\_sum}}
+\index{weighted\_sum@{weighted\_sum}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{weighted\_sum()}{weighted\_sum()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a0398c0539a5b1cb52dcd11e52a093df7} 
+template$<$typename point\+\_\+iterator\+\_\+type, typename weight\+\_\+iterator\+\_\+type$>$ \\
+std\+::iterator\+\_\+traits$<$ point\+\_\+iterator\+\_\+type $>$\+::value\+\_\+type tracktable\+::arithmetic\+::weighted\+\_\+sum (\begin{DoxyParamCaption}\item[{point\+\_\+iterator\+\_\+type}]{point\+\_\+begin}{, }\item[{point\+\_\+iterator\+\_\+type}]{point\+\_\+end}{, }\item[{weight\+\_\+iterator\+\_\+type}]{weight\+\_\+begin}{, }\item[{weight\+\_\+iterator\+\_\+type}]{weight\+\_\+end}{}\end{DoxyParamCaption})}
+
+
+
+Weighted sum of points. 
+
+\begin{DoxyNote}{Note}
+You are responsible for ensuring that {\ttfamily point\+\_\+iterator\+\_\+type\+::value\+\_\+type} is a Tracktable point and that {\ttfamily weight\+\_\+iterator\+\_\+type\+::value\+\_\+type} is a scalar. Also, {\ttfamily point\+\_\+iterator\+\_\+type} and {\ttfamily weight\+\_\+iterator\+\_\+type} must both be Forward\+Iterators.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point\+\_\+begin} & Start point for sum calculation \\
+\hline
+\mbox{\texttt{ in}}  & {\em point\+\_\+end} & End point for sum calculation \\
+\hline
+\mbox{\texttt{ in}}  & {\em weight\+\_\+begin} & Start of the point weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em weight\+\_\+end} & End of the point weights \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacetracktable_1_1arithmetic_a059bd4cb9293d460f98b089a402b116e}\index{tracktable::arithmetic@{tracktable::arithmetic}!zero@{zero}}
+\index{zero@{zero}!tracktable::arithmetic@{tracktable::arithmetic}}
+\doxysubsubsection{\texorpdfstring{zero()}{zero()}}
+{\footnotesize\ttfamily \label{namespacetracktable_1_1arithmetic_a059bd4cb9293d460f98b089a402b116e} 
+template$<$class PointT$>$ \\
+PointT tracktable\+::arithmetic\+::zero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get a Zeroized point. 
+
+\begin{DoxyReturn}{Returns}
+Zeroized point 
+\end{DoxyReturn}

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1signed__turn__angle_3_01_point_lon_lat_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::signed_turn_angle&lt; PointLonLat &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1signed__turn__angle_3_01_point_lon_lat_01_4_1a56617dfd0daca5bd33018d0b84f4d997" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double tracktable::algorithms::signed_turn_angle&lt; PointLonLat &gt;::apply</definition>
+        <argsstring>(PointLonLat const &amp;a, PointLonLat const &amp;b, PointLonLat const &amp;c)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::signed_turn_angle&lt; PointLonLat &gt;::apply</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">PointLonLat</ref> const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">PointLonLat</ref> const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">PointLonLat</ref> const &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="265" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="265" bodyend="271"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1signed__turn__angle_1aadcf9b56dec88c33925ede87df7f0f73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::algorithms::signed_turn_angle&lt; PointLonLat &gt;::BOOST_MPL_ASSERT_MSG</definition>
+        <argsstring>(sizeof(PointLonLat)==0, SIGNED_TURN_ANGLE_NOT_DEFINED_FOR_THIS_TYPE,(types&lt; PointLonLat &gt;))</argsstring>
+        <name>BOOST_MPL_ASSERT_MSG</name>
+        <qualifiedname>tracktable::algorithms::signed_turn_angle&lt; PointLonLat &gt;::BOOST_MPL_ASSERT_MSG</qualifiedname>
+        <param>
+          <type>sizeof(<ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">PointLonLat</ref>)</type>
+          <defval>=0</defval>
+        </param>
+        <param>
+          <type>SIGNED_TURN_ANGLE_NOT_DEFINED_FOR_THIS_TYPE</type>
+        </param>
+        <param>
+          <type>(types&lt; <ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">PointLonLat</ref> &gt;)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/TurnAngle.h" line="49" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="263" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="264" bodyend="272"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1signed__turn__angle_3_01_point_lon_lat_01_4_1a56617dfd0daca5bd33018d0b84f4d997" prot="public" virt="non-virtual"><scope>tracktable::algorithms::signed_turn_angle&lt; PointLonLat &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1signed__turn__angle_1aadcf9b56dec88c33925ede87df7f0f73" prot="public" virt="non-virtual"><scope>tracktable::algorithms::signed_turn_angle&lt; PointLonLat &gt;</scope><name>BOOST_MPL_ASSERT_MSG</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

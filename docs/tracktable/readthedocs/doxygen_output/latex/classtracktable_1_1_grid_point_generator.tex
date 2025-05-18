@@ -1,0 +1,274 @@
+\doxysection{tracktable\+::Grid\+Point\+Generator Class Reference}
+\hypertarget{classtracktable_1_1_grid_point_generator}{}\label{classtracktable_1_1_grid_point_generator}\index{tracktable::GridPointGenerator@{tracktable::GridPointGenerator}}
+
+
+Generator for generating boxes, snakes, or anything else on a grid.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Generator.\+h$>$}
+
+Inheritance diagram for tracktable\+::Grid\+Point\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtracktable_1_1_grid_point_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_grid_point_generator_a3c2231f5c46a93e870d02c498152b675}\label{classtracktable_1_1_grid_point_generator_a3c2231f5c46a93e870d02c498152b675} 
+using {\bfseries DurationT} = Base\+Type\+::\+DurationT
+\item 
+\Hypertarget{classtracktable_1_1_grid_point_generator_a2c82c6be6a1fde6533926fb1591c679c}\label{classtracktable_1_1_grid_point_generator_a2c82c6be6a1fde6533926fb1591c679c} 
+using {\bfseries PointT} = Base\+Type\+::\+PointT
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator}{tracktable\+::\+Constant\+Speed\+Point\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries DurationT} = Base\+Type\+::\+DurationT
+\item 
+using {\bfseries PointT} = Base\+Type\+::\+PointT
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_point_generator}{tracktable\+::\+Point\+Generator$<$ tracktable\+::domain\+::terrestrial\+::trajectory\+\_\+type\+::point\+\_\+type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries PointT}
+\item 
+using {\bfseries DurationT}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_grid_point_generator_a0761a1ba8c84996ba7c2ab808d620da6}\label{classtracktable_1_1_grid_point_generator_a0761a1ba8c84996ba7c2ab808d620da6} 
+{\bfseries Grid\+Point\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty grid point generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_grid_point_generator_a61d47ece6199fdbb7909783892de9933}{Grid\+Point\+Generator}} (const PointT \&\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_grid_point_generator_a20b668084e50716155d87bfe02cc6b67}{Grid\+Point\+Generator}} (const PointT \&\+\_\+position, const DurationT \&\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position}, and the time interval to {\ttfamily \+\_\+interval} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aef018457d13b0de937792f619d5a8455}{Grid\+Point\+Generator}} (const PointT \&\+\_\+position, const DurationT \&\+\_\+interval, const double \&\+\_\+speed, const double \&\+\_\+heading)
+\begin{DoxyCompactList}\small\item\em Sets the initial speed to {\ttfamily \+\_\+speed}, and the heading to {\ttfamily \+\_\+heading} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aee10fec01122f74c19c60a83014d925c}{Grid\+Point\+Generator}} (const PointT \&\+\_\+position, const DurationT \&\+\_\+interval, const double \&\+\_\+speed, const double \&\+\_\+heading, std\+::vector$<$ int $>$ \+\_\+lengths)
+\begin{DoxyCompactList}\small\item\em Sets the initial lengths rate to {\ttfamily \+\_\+lengths} \end{DoxyCompactList}\item 
+PointT \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aa71b27ec947cdf2999f82c2fd859aa46}{next}} () override
+\begin{DoxyCompactList}\small\item\em Updates position and returns the new position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aeca36f6d46b756bdc7839f3dc0027005}{get\+Turn\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the turn rate of the points in the generator. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_grid_point_generator_a9190e8833d9d50cbd9546803a3ed2c79}\label{classtracktable_1_1_grid_point_generator_a9190e8833d9d50cbd9546803a3ed2c79} 
+void {\bfseries set\+Turn\+Rate} (const double \&\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Set the heading of the points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator}{tracktable\+::\+Constant\+Speed\+Point\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Constant\+Speed\+Point\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty constant speed point generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ae6a4ac201ac2d4a056fe362f05cc4c46}{Constant\+Speed\+Point\+Generator}} (const PointT \&\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ad7dd400c0ae1ea36737136862a96e36a}{Constant\+Speed\+Point\+Generator}} (const PointT \&\+\_\+position, const DurationT \&\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position}, and the time interval to {\ttfamily \+\_\+interval} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ad3ab170eebb2494a8c1a5dbd366e45de}{Constant\+Speed\+Point\+Generator}} (const PointT \&\+\_\+position, const DurationT \&\+\_\+interval, const double \&\+\_\+speed, const double \&\+\_\+heading)
+\begin{DoxyCompactList}\small\item\em Sets the initial speed to {\ttfamily \+\_\+speed}, and the heading to {\ttfamily \+\_\+heading} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_acdeb0379497c5a16898f6a3c0675eea5}{get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the spped of the points in the generator. \end{DoxyCompactList}\item 
+void {\bfseries set\+Speed} (const double \&\+\_\+speed)
+\begin{DoxyCompactList}\small\item\em Set the speed of the points. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ac5faa0d4e5ff36cb142184a6f62cce55}{get\+Heading}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the heading of the points in the generator. \end{DoxyCompactList}\item 
+void {\bfseries set\+Heading} (const double \&\+\_\+heading)
+\begin{DoxyCompactList}\small\item\em Set the heading of the points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_generator}{tracktable\+::\+Point\+Generator$<$ tracktable\+::domain\+::terrestrial\+::trajectory\+\_\+type\+::point\+\_\+type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Point\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty point generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd794557403ea49baefe22bdf6c006}{Point\+Generator}} (const PointT \&\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_generator_a49834831409348f9d3fcd243c3e9c9e1}{Point\+Generator}} (const PointT \&\+\_\+position, const DurationT \&\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position}, and the time interval to {\ttfamily \+\_\+interval} \end{DoxyCompactList}\item 
+DurationT \mbox{\hyperlink{classtracktable_1_1_point_generator_aa291abc32990ef10fc0bf7d65dda75c2}{get\+Interval}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the interval of the points in the generator. \end{DoxyCompactList}\item 
+void {\bfseries set\+Interval} (const DurationT \&\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Set the interval of the points. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtracktable_1_1_point_generator_a424a7ae1ced68046bbef5edc9aa29d55}{get\+Object\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the object ID at the given position. \end{DoxyCompactList}\item 
+void {\bfseries set\+Object\+Id} (const std\+::string \&\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Set the object at a given position. \end{DoxyCompactList}\item 
+{\bfseries Point\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty point generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd794557403ea49baefe22bdf6c006}{Point\+Generator}} (const PointT \&\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_generator_a49834831409348f9d3fcd243c3e9c9e1}{Point\+Generator}} (const PointT \&\+\_\+position, const DurationT \&\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position}, and the time interval to {\ttfamily \+\_\+interval} \end{DoxyCompactList}\item 
+DurationT \mbox{\hyperlink{classtracktable_1_1_point_generator_aa291abc32990ef10fc0bf7d65dda75c2}{get\+Interval}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the interval of the points in the generator. \end{DoxyCompactList}\item 
+void {\bfseries set\+Interval} (const DurationT \&\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Set the interval of the points. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtracktable_1_1_point_generator_a424a7ae1ced68046bbef5edc9aa29d55}{get\+Object\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the object ID at the given position. \end{DoxyCompactList}\item 
+void {\bfseries set\+Object\+Id} (const std\+::string \&\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Set the object at a given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_grid_point_generator_a0c023d7361114b9d65174b495a21b8f4}\label{classtracktable_1_1_grid_point_generator_a0c023d7361114b9d65174b495a21b8f4} 
+using {\bfseries This\+Type} = \mbox{\hyperlink{classtracktable_1_1_grid_point_generator}{Grid\+Point\+Generator}}
+\item 
+\Hypertarget{classtracktable_1_1_grid_point_generator_a0e46344b4a66d175f9b5ab6233118eb7}\label{classtracktable_1_1_grid_point_generator_a0e46344b4a66d175f9b5ab6233118eb7} 
+using {\bfseries Base\+Type} = \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator}{Constant\+Speed\+Point\+Generator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types inherited from \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator}{tracktable\+::\+Constant\+Speed\+Point\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries This\+Type} = \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator}{Constant\+Speed\+Point\+Generator}}
+\item 
+using {\bfseries Base\+Type} = \mbox{\hyperlink{classtracktable_1_1_point_generator}{Point\+Generator}}$<$\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{tracktable\+::domain\+::terrestrial\+::trajectory\+\_\+type\+::point\+\_\+type}}$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator}{tracktable\+::\+Constant\+Speed\+Point\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static PointT \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ac98516185e80982ce279dc289d3655b9}{reckon}} (PointT \+\_\+origin, double \+\_\+distance, double \+\_\+heading)
+\begin{DoxyCompactList}\small\item\em Calculates a new lat/lon based on a point, distance, and direction method is trig based, centered around transforms back and forth to cartesian. \end{DoxyCompactList}\item 
+static PointT \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a4523e000bab74be2491b496788c3004e}{reckon2}} (const PointT \&\+\_\+origin, const double \&\+\_\+speed, const double \&\+\_\+heading, const DurationT \&\+\_\+dt)
+\begin{DoxyCompactList}\small\item\em Calculates a new lat/lon based on an initial point, speed, heading, and duration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtracktable_1_1_point_generator}{tracktable\+::\+Point\+Generator$<$ tracktable\+::domain\+::terrestrial\+::trajectory\+\_\+type\+::point\+\_\+type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+DurationT {\bfseries interval}
+\begin{DoxyCompactList}\small\item\em Update Interval. \end{DoxyCompactList}\item 
+size\+\_\+t {\bfseries count}
+\begin{DoxyCompactList}\small\item\em Count of points generated. \end{DoxyCompactList}\item 
+PointT {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Last point generated. \end{DoxyCompactList}\item 
+DurationT {\bfseries interval}
+\begin{DoxyCompactList}\small\item\em Update Interval. \end{DoxyCompactList}\item 
+size\+\_\+t {\bfseries count}
+\begin{DoxyCompactList}\small\item\em Count of points generated. \end{DoxyCompactList}\item 
+PointT {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Last point generated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generator for generating boxes, snakes, or anything else on a grid. 
+
+Take a length vector that tell how long each side is. if the length is negative, then it will turn left afterwards, otherwise it will turn right
+
+Use a length vector of {\ttfamily \{10\}} to create a box with 10 points on each side. Use a length vector of {\ttfamily \{10,2,-\/10,-\/2\}} to create a mapping flight 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_grid_point_generator_a61d47ece6199fdbb7909783892de9933}\index{tracktable::GridPointGenerator@{tracktable::GridPointGenerator}!GridPointGenerator@{GridPointGenerator}}
+\index{GridPointGenerator@{GridPointGenerator}!tracktable::GridPointGenerator@{tracktable::GridPointGenerator}}
+\doxysubsubsection{\texorpdfstring{GridPointGenerator()}{GridPointGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_grid_point_generator_a61d47ece6199fdbb7909783892de9933} 
+tracktable\+::\+Grid\+Point\+Generator\+::\+Grid\+Point\+Generator (\begin{DoxyParamCaption}\item[{const PointT \&}]{\+\_\+position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the initial point to {\ttfamily \+\_\+position} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+position} & Initial point to use, including all metadata \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_grid_point_generator_a20b668084e50716155d87bfe02cc6b67}\index{tracktable::GridPointGenerator@{tracktable::GridPointGenerator}!GridPointGenerator@{GridPointGenerator}}
+\index{GridPointGenerator@{GridPointGenerator}!tracktable::GridPointGenerator@{tracktable::GridPointGenerator}}
+\doxysubsubsection{\texorpdfstring{GridPointGenerator()}{GridPointGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_grid_point_generator_a20b668084e50716155d87bfe02cc6b67} 
+tracktable\+::\+Grid\+Point\+Generator\+::\+Grid\+Point\+Generator (\begin{DoxyParamCaption}\item[{const PointT \&}]{\+\_\+position}{, }\item[{const DurationT \&}]{\+\_\+interval}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the initial point to {\ttfamily \+\_\+position}, and the time interval to {\ttfamily \+\_\+interval} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+position} & Initial point to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+interval} & Interval to increase timestamp by \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_grid_point_generator_aef018457d13b0de937792f619d5a8455}\index{tracktable::GridPointGenerator@{tracktable::GridPointGenerator}!GridPointGenerator@{GridPointGenerator}}
+\index{GridPointGenerator@{GridPointGenerator}!tracktable::GridPointGenerator@{tracktable::GridPointGenerator}}
+\doxysubsubsection{\texorpdfstring{GridPointGenerator()}{GridPointGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_grid_point_generator_aef018457d13b0de937792f619d5a8455} 
+tracktable\+::\+Grid\+Point\+Generator\+::\+Grid\+Point\+Generator (\begin{DoxyParamCaption}\item[{const PointT \&}]{\+\_\+position}{, }\item[{const DurationT \&}]{\+\_\+interval}{, }\item[{const double \&}]{\+\_\+speed}{, }\item[{const double \&}]{\+\_\+heading}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the initial speed to {\ttfamily \+\_\+speed}, and the heading to {\ttfamily \+\_\+heading} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+position} & Initial point to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+interval} & Interval to increase timestamp by \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+speed} & Initial speed to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+heading} & Initial heading to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_grid_point_generator_aee10fec01122f74c19c60a83014d925c}\index{tracktable::GridPointGenerator@{tracktable::GridPointGenerator}!GridPointGenerator@{GridPointGenerator}}
+\index{GridPointGenerator@{GridPointGenerator}!tracktable::GridPointGenerator@{tracktable::GridPointGenerator}}
+\doxysubsubsection{\texorpdfstring{GridPointGenerator()}{GridPointGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_grid_point_generator_aee10fec01122f74c19c60a83014d925c} 
+tracktable\+::\+Grid\+Point\+Generator\+::\+Grid\+Point\+Generator (\begin{DoxyParamCaption}\item[{const PointT \&}]{\+\_\+position}{, }\item[{const DurationT \&}]{\+\_\+interval}{, }\item[{const double \&}]{\+\_\+speed}{, }\item[{const double \&}]{\+\_\+heading}{, }\item[{std\+::vector$<$ int $>$}]{\+\_\+lengths}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the initial lengths rate to {\ttfamily \+\_\+lengths} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+position} & Initial point to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+interval} & Interval to increase timestamp by \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+speed} & Initial speed to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+heading} & Initial heading to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+lengths} & Initial length to use \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_grid_point_generator_aeca36f6d46b756bdc7839f3dc0027005}\index{tracktable::GridPointGenerator@{tracktable::GridPointGenerator}!getTurnRate@{getTurnRate}}
+\index{getTurnRate@{getTurnRate}!tracktable::GridPointGenerator@{tracktable::GridPointGenerator}}
+\doxysubsubsection{\texorpdfstring{getTurnRate()}{getTurnRate()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_grid_point_generator_aeca36f6d46b756bdc7839f3dc0027005} 
+double tracktable\+::\+Grid\+Point\+Generator\+::get\+Turn\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the turn rate of the points in the generator. 
+
+\begin{DoxyReturn}{Returns}
+Turn rate of the points 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_grid_point_generator_aa71b27ec947cdf2999f82c2fd859aa46}\index{tracktable::GridPointGenerator@{tracktable::GridPointGenerator}!next@{next}}
+\index{next@{next}!tracktable::GridPointGenerator@{tracktable::GridPointGenerator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_grid_point_generator_aa71b27ec947cdf2999f82c2fd859aa46} 
+PointT tracktable\+::\+Grid\+Point\+Generator\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates position and returns the new position. 
+
+\begin{DoxyReturn}{Returns}
+new position 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_aa18f661298741ceedd6a5f0030ff0c31}{tracktable\+::\+Constant\+Speed\+Point\+Generator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Data\+Generators/Point\+Generator.\+h\end{DoxyCompactItemize}

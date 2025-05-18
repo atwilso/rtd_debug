@@ -1,0 +1,436 @@
+\doxysection{tracktable\+::Trajectory\+Reader\texorpdfstring{$<$}{<} TrajectoryT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_trajectory_reader}{}\label{classtracktable_1_1_trajectory_reader}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+
+
+Read trajectories from files.  
+
+
+
+
+{\ttfamily \#include $<$Trajectory\+Reader.\+h$>$}
+
+Inheritance diagram for tracktable\+::Trajectory\+Reader\texorpdfstring{$<$}{<} TrajectoryT \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtracktable_1_1_trajectory_reader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}{Trajectory\+Reader}} ()
+\begin{DoxyCompactList}\small\item\em Instantiate \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} using a default configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a8d8a8515d21cdc08fc6a0b92047a0d3b}{Trajectory\+Reader}} (std\+::istream \&infile)
+\begin{DoxyCompactList}\small\item\em Instantiate a \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} using a {\ttfamily std\+::istream} and default configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ace26101b693d64deceabdb0a07fd0406}{Trajectory\+Reader}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a reader with a copy of another. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_reader_a12801913430f707ffdd4d050fdfa98fc}\label{classtracktable_1_1_trajectory_reader_a12801913430f707ffdd4d050fdfa98fc} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Trajectory\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aaf4c933d5cc7aa9c5f286b040d6f5c0c}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aa4105b799acf5e8c5ed588d97bbf0c63}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one reader is equal to another by comparing all the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a6bbc692224484e396b64224e2bbe5559}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two Trajectory\+Readers are unequal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a2872374653b51d30f48b458d4d86e19b}{set\+\_\+default\+\_\+configuration}} ()
+\begin{DoxyCompactList}\small\item\em Default reader configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aa7fe312ba51efb87668caafa4cec6ab3}{set\+\_\+comment\+\_\+character}} (string\+\_\+type const \&comment)
+\begin{DoxyCompactList}\small\item\em Specify comment character for skipping lines. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_acfc86cf112e208e2fcc8c49562ccfd68}{comment\+\_\+character}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve current value of comment character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ac54c383499544189b711a6a5ce8c84b1}{set\+\_\+null\+\_\+value}} (string\+\_\+type const \&\+\_\+null\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Specify string value to be interpreted as null. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_acc9fde9efd2f212cf0d3decb801e6680}{null\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Get string value for nulls. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aa8019fa8c541a4880b0c8ab03787238b}{set\+\_\+input}} (std\+::istream \&\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Supply input stream from delimited text source. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a9da4fdcfe6eb712498752d0e00333e3d}{input}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the current input stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a6a4b0b4132b0ac549e63cdd1454c1841}{set\+\_\+warnings\+\_\+enabled}} (bool onoff)
+\begin{DoxyCompactList}\small\item\em Enable/disable warnings during parsing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ac3ca0d39335ba326e0d3c4139c47b0f7}{warnings\+\_\+enabled}} () const
+\begin{DoxyCompactList}\small\item\em Check whether warnings are enable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ad8b8912bc589d9cfb809e47906668509}{set\+\_\+field\+\_\+delimiter}} (string\+\_\+type const \&delimiters)
+\begin{DoxyCompactList}\small\item\em Set one or more characters as field delimiters. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_afa411c4e323291ab4aa82c2c80083452}{field\+\_\+delimiter}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the current set of delimiter characters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a58edb5570e581ecb0b7a2b56c49efb1a}{set\+\_\+timestamp\+\_\+format}} (string\+\_\+type const \&format)
+\begin{DoxyCompactList}\small\item\em Set the format of the timestamp. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a32219219fcb4ed2f16eba714f8401d75}{timestamp\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the format of the timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_generic_reader}{tracktable\+::\+Generic\+Reader$<$ Trajectory\+T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Generic\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty reader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_generic_reader_a539fe1509e67ae1b2581c1d7da3c8c85}{Generic\+Reader}} (\mbox{\hyperlink{classtracktable_1_1_generic_reader}{Generic\+Reader}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a reader with a copy of another. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generic\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Destructor for a generic reader. \end{DoxyCompactList}\item 
+Generic\+Input\+Iterator \mbox{\hyperlink{classtracktable_1_1_generic_reader_a13329272db0aded06cbc9dd85ed0f32d}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing to the current sequence. \end{DoxyCompactList}\item 
+Generic\+Input\+Iterator \mbox{\hyperlink{classtracktable_1_1_generic_reader_a91506b62c3fbcb3f747a70e621a921f9}{end}} ()
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing past the end of the sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_generic_reader}{tracktable\+::\+Generic\+Reader$<$ Trajectory\+T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef Generic\+Input\+Iterator {\bfseries iterator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$\newline
+class tracktable\+::\+Trajectory\+Reader$<$ Trajectory\+T $>$}
+Read trajectories from files. 
+
+This reader wraps the following pipeline\+:
+
+
+\begin{DoxyItemize}
+\item Read lines from a text file
+\item Skip any lines that begin with a designated comment character (\textquotesingle{}\#\textquotesingle{} by default)
+\item Tokenize each line using specified delimiters (whitespace by default)
+\item Create a trajectory (user-\/specified type) from each tokenized line
+\item Return the resulting points via a C++ iterator
+\end{DoxyItemize}
+
+You will use \doxylink{classtracktable_1_1_trajectory_reader_aa8019fa8c541a4880b0c8ab03787238b}{set\+\_\+input()} to supply an input stream, \doxylink{classtracktable_1_1_trajectory_reader_aa7fe312ba51efb87668caafa4cec6ab3}{set\+\_\+comment\+\_\+character()} to configure which lines to skip, \doxylink{classtracktable_1_1_trajectory_reader_ad8b8912bc589d9cfb809e47906668509}{set\+\_\+field\+\_\+delimiter()} to specify how to turn lines into fields. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!TrajectoryReader@{TrajectoryReader}}
+\index{TrajectoryReader@{TrajectoryReader}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{TrajectoryReader()}{TrajectoryReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::\+Trajectory\+Reader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} using a default configuration. 
+
+Default reader configuration.   
+
+If you are reading Base\+Points, this sets coordinates 0 to d-\/1 (D is the point\textquotesingle{}s dimension) using columns 0 to d-\/1.
+
+If you are reading Trajectory\+Points, column 0 is the object ID, column 1 is the timestamp, and columns 2 through D+1 (inclusive) are the coordinates.
+
+These are the default settings. You can override any or all of them after you instantiate the reader.    \Hypertarget{classtracktable_1_1_trajectory_reader_a8d8a8515d21cdc08fc6a0b92047a0d3b}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!TrajectoryReader@{TrajectoryReader}}
+\index{TrajectoryReader@{TrajectoryReader}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{TrajectoryReader()}{TrajectoryReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_a8d8a8515d21cdc08fc6a0b92047a0d3b} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::\+Trajectory\+Reader (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{infile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate a \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} using a {\ttfamily std\+::istream} and default configuration. 
+
+Default reader configuration.   
+
+If you are reading Base\+Points, this sets coordinates 0 to d-\/1 (D is the point\textquotesingle{}s dimension) using columns 0 to d-\/1.
+
+If you are reading Trajectory\+Points, column 0 is the object ID, column 1 is the timestamp, and columns 2 through D+1 (inclusive) are the coordinates.
+
+These are the default settings. You can override any or all of them after you instantiate the reader.   
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em infile} & Stream to read input from \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_reader_ace26101b693d64deceabdb0a07fd0406}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!TrajectoryReader@{TrajectoryReader}}
+\index{TrajectoryReader@{TrajectoryReader}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{TrajectoryReader()}{TrajectoryReader()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_ace26101b693d64deceabdb0a07fd0406} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::\+Trajectory\+Reader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create a reader with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_trajectory_reader_acfc86cf112e208e2fcc8c49562ccfd68}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!comment\_character@{comment\_character}}
+\index{comment\_character@{comment\_character}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{comment\_character()}{comment\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_acfc86cf112e208e2fcc8c49562ccfd68} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::comment\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve current value of comment character. 
+
+This function invalidates any outstanding iterators.
+
+\begin{DoxyReturn}{Returns}
+Current value of comment character 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_reader_afa411c4e323291ab4aa82c2c80083452}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!field\_delimiter@{field\_delimiter}}
+\index{field\_delimiter@{field\_delimiter}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{field\_delimiter()}{field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_afa411c4e323291ab4aa82c2c80083452} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::field\+\_\+delimiter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the current set of delimiter characters. 
+
+\begin{DoxyReturn}{Returns}
+String containing all delimiters 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_reader_a9da4fdcfe6eb712498752d0e00333e3d}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!input@{input}}
+\index{input@{input}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{input()}{input()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_a9da4fdcfe6eb712498752d0e00333e3d} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+std\+::istream \& \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the current input stream. 
+
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]We currently have no way to indicate whether the stream is valid.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+Stream being used for input. 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_reader_acc9fde9efd2f212cf0d3decb801e6680}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!null\_value@{null\_value}}
+\index{null\_value@{null\_value}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{null\_value()}{null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_acc9fde9efd2f212cf0d3decb801e6680} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::null\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get string value for nulls. 
+
+\begin{DoxyReturn}{Returns}
+Current string that will be interpreted as null 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_reader_a6bbc692224484e396b64224e2bbe5559}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_a6bbc692224484e396b64224e2bbe5559} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two Trajectory\+Readers are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_reader_aaf4c933d5cc7aa9c5f286b040d6f5c0c}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_aaf4c933d5cc7aa9c5f286b040d6f5c0c} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reader with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_reader_aa4105b799acf5e8c5ed588d97bbf0c63}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_aa4105b799acf5e8c5ed588d97bbf0c63} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one reader is equal to another by comparing all the properties. 
+
+Two readers are equal if all of their properties are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_trajectory_reader}{Trajectory\+Reader} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_reader_aa7fe312ba51efb87668caafa4cec6ab3}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!set\_comment\_character@{set\_comment\_character}}
+\index{set\_comment\_character@{set\_comment\_character}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_comment\_character()}{set\_comment\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_aa7fe312ba51efb87668caafa4cec6ab3} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::set\+\_\+comment\+\_\+character (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{comment}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Specify comment character for skipping lines. 
+
+A line is a comment if and only if its first non-\/whitespace character is the comment character (\textquotesingle{}\#\textquotesingle{} by default). We will skip such lines entirely. We do not handle inline or trailing comments\+: a line will either be included in its entirety or skipped completely.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em comment} & Single character \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_reader_a2872374653b51d30f48b458d4d86e19b}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!set\_default\_configuration@{set\_default\_configuration}}
+\index{set\_default\_configuration@{set\_default\_configuration}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_default\_configuration()}{set\_default\_configuration()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_a2872374653b51d30f48b458d4d86e19b} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::set\+\_\+default\+\_\+configuration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default reader configuration. 
+
+If you are reading Base\+Points, this sets coordinates 0 to d-\/1 (D is the point\textquotesingle{}s dimension) using columns 0 to d-\/1.
+
+If you are reading Trajectory\+Points, column 0 is the object ID, column 1 is the timestamp, and columns 2 through D+1 (inclusive) are the coordinates.
+
+These are the default settings. You can override any or all of them after you instantiate the reader. \Hypertarget{classtracktable_1_1_trajectory_reader_ad8b8912bc589d9cfb809e47906668509}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!set\_field\_delimiter@{set\_field\_delimiter}}
+\index{set\_field\_delimiter@{set\_field\_delimiter}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_field\_delimiter()}{set\_field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_ad8b8912bc589d9cfb809e47906668509} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::set\+\_\+field\+\_\+delimiter (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{delimiters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set one or more characters as field delimiters. 
+
+Each character in the argument to this function will be treated as a potential field delimiter. If you supply {\ttfamily "{},\texorpdfstring{$\vert$}{|}"{}} as your delimiter then both the comma and the exclamation point will be used to tokenize field.
+
+This function invalidates any outstanding iterators.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em delimiters} & String containing all desired delimiter characters \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_reader_aa8019fa8c541a4880b0c8ab03787238b}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!set\_input@{set\_input}}
+\index{set\_input@{set\_input}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_input()}{set\_input()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_aa8019fa8c541a4880b0c8ab03787238b} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::set\+\_\+input (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{\+\_\+input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Supply input stream from delimited text source. 
+
+We read our input from C++ std\+::istreams. The stream you supply will be traversed exactly once.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+input} & Stream from which we will read points \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_reader_ac54c383499544189b711a6a5ce8c84b1}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!set\_null\_value@{set\_null\_value}}
+\index{set\_null\_value@{set\_null\_value}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_null\_value()}{set\_null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_ac54c383499544189b711a6a5ce8c84b1} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::set\+\_\+null\+\_\+value (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{\+\_\+null\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Specify string value to be interpreted as null. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+null\+\_\+value} & String to interpret as null \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_reader_a58edb5570e581ecb0b7a2b56c49efb1a}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!set\_timestamp\_format@{set\_timestamp\_format}}
+\index{set\_timestamp\_format@{set\_timestamp\_format}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_timestamp\_format()}{set\_timestamp\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_a58edb5570e581ecb0b7a2b56c49efb1a} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::set\+\_\+timestamp\+\_\+format (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the format of the timestamp. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & String containing the format of the time stamp \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_reader_a6a4b0b4132b0ac549e63cdd1454c1841}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!set\_warnings\_enabled@{set\_warnings\_enabled}}
+\index{set\_warnings\_enabled@{set\_warnings\_enabled}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_warnings\_enabled()}{set\_warnings\_enabled()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_a6a4b0b4132b0ac549e63cdd1454c1841} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::set\+\_\+warnings\+\_\+enabled (\begin{DoxyParamCaption}\item[{bool}]{onoff}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/disable warnings during parsing. 
+
+We may run into type mismatches and bad casts while we\textquotesingle{}re parsing headers and data. This flag determines whether or not warnings will be printed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em onoff} & Warnings are on / off \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_reader_a32219219fcb4ed2f16eba714f8401d75}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!timestamp\_format@{timestamp\_format}}
+\index{timestamp\_format@{timestamp\_format}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{timestamp\_format()}{timestamp\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_a32219219fcb4ed2f16eba714f8401d75} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::timestamp\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the format of the timestamp. 
+
+\begin{DoxyReturn}{Returns}
+The timestamp format 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_reader_ac3ca0d39335ba326e0d3c4139c47b0f7}\index{tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}!warnings\_enabled@{warnings\_enabled}}
+\index{warnings\_enabled@{warnings\_enabled}!tracktable::TrajectoryReader$<$ TrajectoryT $>$@{tracktable::TrajectoryReader$<$ TrajectoryT $>$}}
+\doxysubsubsection{\texorpdfstring{warnings\_enabled()}{warnings\_enabled()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_reader_ac3ca0d39335ba326e0d3c4139c47b0f7} 
+template$<$typename \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{tracktable\+::\+Trajectory\+Reader}}$<$ \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} $>$\+::warnings\+\_\+enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether warnings are enable. 
+
+\begin{DoxyReturn}{Returns}
+Whether or not warnings are on 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Trajectory\+Reader.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,33 @@
+\doxysection{tracktable\+::detail\+::Point\+Converter\texorpdfstring{$<$}{<} Input\+PointT, Output\+PointT \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structtracktable_1_1detail_1_1_point_converter}{}\label{structtracktable_1_1detail_1_1_point_converter}\index{tracktable::detail::PointConverter$<$ InputPointT, OutputPointT $>$@{tracktable::detail::PointConverter$<$ InputPointT, OutputPointT $>$}}
+
+
+Convert points from one coordinate system to another.  
+
+
+
+
+{\ttfamily \#include $<$coordinate\+\_\+transfer\+\_\+converter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structtracktable_1_1detail_1_1_point_converter_a245c499a2ee140deaf3e56b30684a6ba}\label{structtracktable_1_1detail_1_1_point_converter_a245c499a2ee140deaf3e56b30684a6ba} 
+Output\+PointT {\bfseries operator()} (Input\+PointT const \&input\+\_\+point) const
+\item 
+\Hypertarget{structtracktable_1_1detail_1_1_point_converter_a245c499a2ee140deaf3e56b30684a6ba}\label{structtracktable_1_1detail_1_1_point_converter_a245c499a2ee140deaf3e56b30684a6ba} 
+Output\+PointT {\bfseries operator()} (Input\+PointT const \&input\+\_\+point) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Input\+PointT, class Output\+PointT$>$\newline
+struct tracktable\+::detail\+::\+Point\+Converter$<$ Input\+Point\+T, Output\+Point\+T $>$}
+Convert points from one coordinate system to another. 
+
+We take advantage of the fact that boost\+::geometry\+::assign only cares whether two points have the same number of dimensions. This function object will be used with boost\+::transform\+\_\+iterator. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Analysis/detail/coordinate\+\_\+transfer\+\_\+converter.\+h\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Analysis/detail/point\+\_\+converter.\+h\end{DoxyCompactItemize}

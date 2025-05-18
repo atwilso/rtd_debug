@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1rw_1_1detail_1_1_point_header" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::rw::detail::PointHeader</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1af024e4fd0e79324ed3d4e43af35340c6" prot="public" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::rw::detail::PointHeader::MagicString</definition>
+        <argsstring></argsstring>
+        <name>MagicString</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::MagicString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="49" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a07509387fe55d47b5cb7aa70d717eff6" prot="public" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::rw::detail::PointHeader::Domain</definition>
+        <argsstring></argsstring>
+        <name>Domain</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::Domain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="50" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1aaeff1ab924f190be314f3fb6b2500719" prot="public" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::rw::detail::PointHeader::Dimension</definition>
+        <argsstring></argsstring>
+        <name>Dimension</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::Dimension</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="51" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a230c717594cb11d5cb76f292f2703fd8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::rw::detail::PointHeader::HasObjectId</definition>
+        <argsstring></argsstring>
+        <name>HasObjectId</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::HasObjectId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="52" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a82f0948caea4caa879a14062b31c2aa6" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::rw::detail::PointHeader::HasTimestamp</definition>
+        <argsstring></argsstring>
+        <name>HasTimestamp</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::HasTimestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="53" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1adeccbbff49293cb94f8fd3b089022275" prot="public" static="no" mutable="no">
+        <type>string_vector_type</type>
+        <definition>string_vector_type tracktable::rw::detail::PointHeader::PropertyNames</definition>
+        <argsstring></argsstring>
+        <name>PropertyNames</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::PropertyNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="54" column="39" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a0884026a963a7b0d1f7836303513e24f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; PropertyUnderlyingType &gt;</type>
+        <definition>std::vector&lt;PropertyUnderlyingType&gt; tracktable::rw::detail::PointHeader::PropertyTypes</definition>
+        <argsstring></argsstring>
+        <name>PropertyTypes</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::PropertyTypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="55" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1af2c87872fb55487acf6332bcc22426ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::rw::detail::PointHeader::PointHeader</definition>
+        <argsstring>()</argsstring>
+        <name>PointHeader</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::PointHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="57" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="57" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a0df0fe4d7398430231202c60b47b6c71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::rw::detail::PointHeader::PointHeader</definition>
+        <argsstring>(PointHeader const &amp;other)</argsstring>
+        <name>PointHeader</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::PointHeader</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_point_header" kindref="compound">PointHeader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="65" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="65" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1ac68d7b2d81c4670b92a3e2a918a96728" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::rw::detail::PointHeader::~PointHeader</definition>
+        <argsstring>()</argsstring>
+        <name>~PointHeader</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::~PointHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="75" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a3eb7fe316338552042b86945237a9e98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_point_header" kindref="compound">PointHeader</ref> &amp;</type>
+        <definition>PointHeader &amp; tracktable::rw::detail::PointHeader::operator=</definition>
+        <argsstring>(PointHeader const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_point_header" kindref="compound">PointHeader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="77" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="77" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a32b6bd7a227bc8f5bfa692fc55eb1767" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::rw::detail::PointHeader::operator==</definition>
+        <argsstring>(PointHeader const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_point_header" kindref="compound">PointHeader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="89" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="89" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a856935d2e7e48665b2cc4479dbe32424" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::rw::detail::PointHeader::operator!=</definition>
+        <argsstring>(PointHeader const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_point_header" kindref="compound">PointHeader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="102" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="102" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a5ca7aac46a4e717b0f55c1e5d39336d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::rw::detail::PointHeader::populate_from_point</definition>
+        <argsstring>(point_type const &amp;example_point)</argsstring>
+        <name>populate_from_point</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::populate_from_point</qualifiedname>
+        <param>
+          <type>point_type const &amp;</type>
+          <declname>example_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="108" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="108" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a3fa6dc280d0d5c3dcadbd7b41cd2f1a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::rw::detail::PointHeader::populate_properties</definition>
+        <argsstring>(point_type const &amp;example_point)</argsstring>
+        <name>populate_properties</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::populate_properties</qualifiedname>
+        <param>
+          <type>point_type const &amp;</type>
+          <declname>example_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="118" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="118" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1a8e26994371ba80e9ccfdbf1f4409f02f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename out_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::rw::detail::PointHeader::write_as_tokens</definition>
+        <argsstring>(out_iter_type destination) const</argsstring>
+        <name>write_as_tokens</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::write_as_tokens</qualifiedname>
+        <param>
+          <type>out_iter_type</type>
+          <declname>destination</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="129" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="129" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_point_header_1abc6967ac01ad33e4a4f5ca2ca4b770b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename in_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::rw::detail::PointHeader::read_from_tokens</definition>
+        <argsstring>(in_iter_type current_token, in_iter_type)</argsstring>
+        <name>read_from_tokens</name>
+        <qualifiedname>tracktable::rw::detail::PointHeader::read_from_tokens</qualifiedname>
+        <param>
+          <type>in_iter_type</type>
+          <declname>current_token</declname>
+        </param>
+        <param>
+          <type>in_iter_type</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="146" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="146" bodyend="170"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" line="46" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PointHeader.h" bodystart="47" bodyend="171"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1aaeff1ab924f190be314f3fb6b2500719" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>Dimension</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a07509387fe55d47b5cb7aa70d717eff6" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>Domain</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a230c717594cb11d5cb76f292f2703fd8" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>HasObjectId</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a82f0948caea4caa879a14062b31c2aa6" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>HasTimestamp</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1af024e4fd0e79324ed3d4e43af35340c6" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>MagicString</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a856935d2e7e48665b2cc4479dbe32424" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a3eb7fe316338552042b86945237a9e98" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a32b6bd7a227bc8f5bfa692fc55eb1767" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1af2c87872fb55487acf6332bcc22426ff" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>PointHeader</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a0df0fe4d7398430231202c60b47b6c71" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>PointHeader</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a5ca7aac46a4e717b0f55c1e5d39336d5" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>populate_from_point</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a3fa6dc280d0d5c3dcadbd7b41cd2f1a3" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>populate_properties</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1adeccbbff49293cb94f8fd3b089022275" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>PropertyNames</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a0884026a963a7b0d1f7836303513e24f" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>PropertyTypes</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1abc6967ac01ad33e4a4f5ca2ca4b770b1" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>read_from_tokens</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1a8e26994371ba80e9ccfdbf1f4409f02f" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>write_as_tokens</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_point_header_1ac68d7b2d81c4670b92a3e2a918a96728" prot="public" virt="virtual"><scope>tracktable::rw::detail::PointHeader</scope><name>~PointHeader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

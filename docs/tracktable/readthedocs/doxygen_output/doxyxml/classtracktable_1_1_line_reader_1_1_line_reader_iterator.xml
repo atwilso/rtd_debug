@@ -1,0 +1,440 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kind="class" language="C++" prot="protected">
+    <compoundname>tracktable::LineReader::LineReaderIterator</compoundname>
+    <includes refid="_line_reader_8h" local="no">LineReader.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad417d805ffcf5f7a549f4e1a1e008f3a" prot="public" static="no">
+        <type>std::input_iterator_tag</type>
+        <definition>using tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::iterator_category =  std::input_iterator_tag</definition>
+        <argsstring></argsstring>
+        <name>iterator_category</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::iterator_category</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="159" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a134b6e4d29d1b1bc2d4bf347c263a9c0" prot="public" static="no">
+        <type>StringT</type>
+        <definition>using tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::value_type =  StringT</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::value_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="160" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a8c5fa4b323ecf6fccdbf5df6e67cfa4e" prot="public" static="no">
+        <type>std::ptrdiff_t</type>
+        <definition>using tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::difference_type =  std::ptrdiff_t</definition>
+        <argsstring></argsstring>
+        <name>difference_type</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::difference_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="161" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a6f4175a5b6bd94fdd202c6245ec9c381" prot="public" static="no">
+        <type>StringT *</type>
+        <definition>using tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::pointer =  StringT*</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::pointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="162" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad9138eb66ca5d02d09f09826649d0a71" prot="public" static="no">
+        <type>StringT &amp;</type>
+        <definition>using tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::reference =  StringT&amp;</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::reference</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="163" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad64aa77ed94320cc993a75345568a4f3" prot="public" static="no">
+        <type>typename StringT::value_type</type>
+        <definition>using tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::char_type =  typename StringT::value_type</definition>
+        <argsstring></argsstring>
+        <name>char_type</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::char_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="164" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a20460a4c734f1cfbcead615ad69e63be" prot="public" static="no">
+        <type>typename StringT::traits_type</type>
+        <definition>using tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::traits_type =  typename StringT::traits_type</definition>
+        <argsstring></argsstring>
+        <name>traits_type</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::traits_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="165" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1afd632793ca305b87f961e0edf0557e4a" prot="public" static="no" mutable="no">
+        <type>istream_type *</type>
+        <definition>istream_type* tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::Stream</definition>
+        <argsstring></argsstring>
+        <name>Stream</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::Stream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="301" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a4f3c905771b78950645403ccd81a96cd" prot="public" static="no" mutable="no">
+        <type>value_type</type>
+        <definition>value_type tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::Value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="302" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a9c48060cec5173ad7ebc897080f0e0b2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::Counter</definition>
+        <argsstring></argsstring>
+        <name>Counter</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::Counter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="303" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a1a954ff8ddf59a31384158da30d9b670" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::LineReaderIterator</definition>
+        <argsstring>()</argsstring>
+        <name>LineReaderIterator</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::LineReaderIterator</qualifiedname>
+        <briefdescription>
+<para>Instantiate an empty reader iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="168" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="168" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a41c1593cc534f1ef0c2e73ccc8cfcc29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::LineReaderIterator</definition>
+        <argsstring>(istream_type *stream)</argsstring>
+        <name>LineReaderIterator</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::LineReaderIterator</qualifiedname>
+        <param>
+          <type>istream_type *</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a line reader iterator with a copy of a <computeroutput>std::basic_istream</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="175" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="175" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a02893e475c48879275f197dd84e395aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::LineReaderIterator</definition>
+        <argsstring>(LineReaderIterator const &amp;other)</argsstring>
+        <name>LineReaderIterator</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::LineReaderIterator</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a line reader iterator with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="191" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="191" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a0da931074e271ca4d8d8eea47fc99daf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::~LineReaderIterator</definition>
+        <argsstring>()</argsstring>
+        <name>~LineReaderIterator</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::~LineReaderIterator</qualifiedname>
+        <briefdescription>
+<para>Destructor for a line reader iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="199" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="199" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad5314b75a73363247776e8e17ce2a562" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> &amp;</type>
+        <definition>LineReaderIterator &amp; tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::operator=</definition>
+        <argsstring>(LineReaderIterator const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Iterator with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="207" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="207" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a10512795d327ce8afaa7e7a3b89f1b66" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>value_type const &amp;</type>
+        <definition>value_type const  &amp; tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::operator*</qualifiedname>
+        <briefdescription>
+<para>Multiply an iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Result of the multiplication </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="219" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="219" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a3799053f3cd9cc5f71b6d9a614e6d981" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>value_type *</type>
+        <definition>value_type * tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::operator-&gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-&gt;</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::operator-&gt;</qualifiedname>
+        <briefdescription>
+<para>Get the current iterator value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current iterator value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="228" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="228" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1aa70759dbcc3dbb0eb952f6137708572a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> &amp;</type>
+        <definition>LineReaderIterator &amp; tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::operator++</qualifiedname>
+        <briefdescription>
+<para>Advance the iterator to the next line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the next line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="237" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="237" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad286954ad62e362ea2cf47b5fa2032ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> &amp;</type>
+        <definition>LineReaderIterator &amp; tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::operator++</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator++</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::operator++</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>Advance the iterator to the next line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the next line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="254" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="254" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a98103c9fec08fa65076f772ab50f3ec7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::operator==</definition>
+        <argsstring>(LineReaderIterator const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one iterator is equal to another by comparing the values and streams. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two items are equal if all of their values and streams are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="268" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="268" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a861af9149ee71258dd5c81c39191e87b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::operator!=</definition>
+        <argsstring>(LineReaderIterator const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">LineReaderIterator</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two iterators are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="279" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="279" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a00d93294c19c3d5e7edcd5c8003c5ca9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>value_type</type>
+        <definition>value_type tracktable::LineReader&lt; StringT &gt;::LineReaderIterator::get_value</definition>
+        <argsstring>() const</argsstring>
+        <name>get_value</name>
+        <qualifiedname>tracktable::LineReader::LineReaderIterator::get_value</qualifiedname>
+        <briefdescription>
+<para>Get the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is to handle the case where the stream is NULL but there wasn&apos;t a new line at the end of the file. In that case we return an empty value so that comparisons evaluate properly.</para>
+<para><simplesect kind="return"><para>Value unless the Stream is Null, in which case we return an empty value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="294" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="294" bodyend="298"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Line Reader iterator class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Generates a iterator that can traverse the given parent <ref refid="classtracktable_1_1_line_reader" kindref="compound">LineReader</ref> </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" line="156" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/LineReader.h" bodystart="157" bodyend="304"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad64aa77ed94320cc993a75345568a4f3" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>char_type</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a9c48060cec5173ad7ebc897080f0e0b2" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>Counter</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a8c5fa4b323ecf6fccdbf5df6e67cfa4e" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>difference_type</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a00d93294c19c3d5e7edcd5c8003c5ca9" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>get_value</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad417d805ffcf5f7a549f4e1a1e008f3a" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>iterator_category</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a1a954ff8ddf59a31384158da30d9b670" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>LineReaderIterator</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a41c1593cc534f1ef0c2e73ccc8cfcc29" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>LineReaderIterator</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a02893e475c48879275f197dd84e395aa" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>LineReaderIterator</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a861af9149ee71258dd5c81c39191e87b" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a10512795d327ce8afaa7e7a3b89f1b66" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>operator*</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1aa70759dbcc3dbb0eb952f6137708572a" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>operator++</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad286954ad62e362ea2cf47b5fa2032ac" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>operator++</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a3799053f3cd9cc5f71b6d9a614e6d981" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>operator-&gt;</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad5314b75a73363247776e8e17ce2a562" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a98103c9fec08fa65076f772ab50f3ec7" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a6f4175a5b6bd94fdd202c6245ec9c381" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>pointer</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1ad9138eb66ca5d02d09f09826649d0a71" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>reference</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1afd632793ca305b87f961e0edf0557e4a" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>Stream</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a20460a4c734f1cfbcead615ad69e63be" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>traits_type</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a4f3c905771b78950645403ccd81a96cd" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>Value</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a134b6e4d29d1b1bc2d4bf347c263a9c0" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>value_type</name></member>
+      <member refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator_1a0da931074e271ca4d8d8eea47fc99daf" prot="public" virt="non-virtual"><scope>tracktable::LineReader::LineReaderIterator</scope><name>~LineReaderIterator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

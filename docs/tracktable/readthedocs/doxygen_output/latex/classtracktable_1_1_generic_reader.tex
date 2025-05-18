@@ -1,0 +1,129 @@
+\doxysection{tracktable\+::Generic\+Reader\texorpdfstring{$<$}{<} sequence\+\_\+object\+\_\+type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_generic_reader}{}\label{classtracktable_1_1_generic_reader}\index{tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}}
+
+
+Generic reader that exposes an {\ttfamily Input\+Iterator}  
+
+
+
+
+{\ttfamily \#include $<$Generic\+Reader.\+h$>$}
+
+Inheritance diagram for tracktable\+::Generic\+Reader\texorpdfstring{$<$}{<} sequence\+\_\+object\+\_\+type \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.746667cm]{classtracktable_1_1_generic_reader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_generic_reader_af4768991a46fa7e5434b13a9deae971d}\label{classtracktable_1_1_generic_reader_af4768991a46fa7e5434b13a9deae971d} 
+typedef Generic\+Input\+Iterator {\bfseries iterator}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_generic_reader_a3f6a790b8f1937222c8694696d3791fd}\label{classtracktable_1_1_generic_reader_a3f6a790b8f1937222c8694696d3791fd} 
+{\bfseries Generic\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty reader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_generic_reader_a539fe1509e67ae1b2581c1d7da3c8c85}{Generic\+Reader}} (\mbox{\hyperlink{classtracktable_1_1_generic_reader}{Generic\+Reader}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a reader with a copy of another. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_generic_reader_a4dafc916191825cbbef2d67d500135b6}\label{classtracktable_1_1_generic_reader_a4dafc916191825cbbef2d67d500135b6} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generic\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Destructor for a generic reader. \end{DoxyCompactList}\item 
+Generic\+Input\+Iterator \mbox{\hyperlink{classtracktable_1_1_generic_reader_a13329272db0aded06cbc9dd85ed0f32d}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing to the current sequence. \end{DoxyCompactList}\item 
+Generic\+Input\+Iterator \mbox{\hyperlink{classtracktable_1_1_generic_reader_a91506b62c3fbcb3f747a70e621a921f9}{end}} ()
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing past the end of the sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual sequence\+\_\+object\+\_\+ptr \mbox{\hyperlink{classtracktable_1_1_generic_reader_a0d92677380ac73f7b919c323b8115608}{next\+\_\+item}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the next item in the sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename sequence\+\_\+object\+\_\+type$>$\newline
+class tracktable\+::\+Generic\+Reader$<$ sequence\+\_\+object\+\_\+type $>$}
+Generic reader that exposes an {\ttfamily Input\+Iterator} 
+
+This reader implements a pattern where new objects can be retrieved one at a time and exposes the resulting sequence as an {\ttfamily Input\+Iterator}. You must implement the following method\+:
+
+{\ttfamily sequence\+\_\+object\+\_\+type\texorpdfstring{$\ast$}{*} \doxylink{classtracktable_1_1_generic_reader_a0d92677380ac73f7b919c323b8115608}{next\+\_\+item()}}\+: Retrieve and return the next item in the sequence (or {\ttfamily NULL} if the sequence has terminated).
+
+The template takes care of the mechanics of exposing the objects and maintaining references for as long as necessary.
+
+You must also implement whatever machinery you need to set up the input source to the reader. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_generic_reader_a539fe1509e67ae1b2581c1d7da3c8c85}\index{tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}!GenericReader@{GenericReader}}
+\index{GenericReader@{GenericReader}!tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}}
+\doxysubsubsection{\texorpdfstring{GenericReader()}{GenericReader()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_generic_reader_a539fe1509e67ae1b2581c1d7da3c8c85} 
+template$<$typename sequence\+\_\+object\+\_\+type$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_generic_reader}{tracktable\+::\+Generic\+Reader}}$<$ sequence\+\_\+object\+\_\+type $>$\+::\+Generic\+Reader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_generic_reader}{Generic\+Reader}}$<$ sequence\+\_\+object\+\_\+type $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create a reader with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Reader to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_generic_reader_a13329272db0aded06cbc9dd85ed0f32d}\index{tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}!begin@{begin}}
+\index{begin@{begin}!tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_generic_reader_a13329272db0aded06cbc9dd85ed0f32d} 
+template$<$typename sequence\+\_\+object\+\_\+type$>$ \\
+Generic\+Input\+Iterator \mbox{\hyperlink{classtracktable_1_1_generic_reader}{tracktable\+::\+Generic\+Reader}}$<$ sequence\+\_\+object\+\_\+type $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an iterator pointing to the current sequence. 
+
+\begin{DoxyNote}{Note}
+We assume that {\ttfamily \doxylink{classtracktable_1_1_generic_reader_a13329272db0aded06cbc9dd85ed0f32d}{begin()}} will usually be called just once in order to iterate over the entire sequence from beginning to end. Since this is an {\ttfamily Input\+Iterator}, we do not guarantee that calling {\ttfamily \doxylink{classtracktable_1_1_generic_reader_a13329272db0aded06cbc9dd85ed0f32d}{begin()}} a second time will yield a new iterator that will reproduce the sequence. (In fact, we can almost guarantee the opposite.)
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Iterator pointing to current sequence 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_generic_reader_a91506b62c3fbcb3f747a70e621a921f9}\index{tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}!end@{end}}
+\index{end@{end}!tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_generic_reader_a91506b62c3fbcb3f747a70e621a921f9} 
+template$<$typename sequence\+\_\+object\+\_\+type$>$ \\
+Generic\+Input\+Iterator \mbox{\hyperlink{classtracktable_1_1_generic_reader}{tracktable\+::\+Generic\+Reader}}$<$ sequence\+\_\+object\+\_\+type $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an iterator pointing past the end of the sequence. 
+
+\begin{DoxyReturn}{Returns}
+Iterator pointing to end of sequence 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_generic_reader_a0d92677380ac73f7b919c323b8115608}\index{tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}!next\_item@{next\_item}}
+\index{next\_item@{next\_item}!tracktable::GenericReader$<$ sequence\_object\_type $>$@{tracktable::GenericReader$<$ sequence\_object\_type $>$}}
+\doxysubsubsection{\texorpdfstring{next\_item()}{next\_item()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_generic_reader_a0d92677380ac73f7b919c323b8115608} 
+template$<$typename sequence\+\_\+object\+\_\+type$>$ \\
+virtual sequence\+\_\+object\+\_\+ptr \mbox{\hyperlink{classtracktable_1_1_generic_reader}{tracktable\+::\+Generic\+Reader}}$<$ sequence\+\_\+object\+\_\+type $>$\+::next\+\_\+item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the next item in the sequence. 
+
+
+
+Implemented in \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ad3fef0262393b316e536ee16ce9088f2}{tracktable\+::\+Point\+From\+Tokens\+Reader$<$ Point\+T, Source\+Iter\+T $>$}}, \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ad3fef0262393b316e536ee16ce9088f2}{tracktable\+::\+Point\+From\+Tokens\+Reader$<$ point\+\_\+type, string\+\_\+tokenizer\+\_\+type\+::iterator $>$}}, \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ad3fef0262393b316e536ee16ce9088f2}{tracktable\+::\+Point\+From\+Tokens\+Reader$<$ point\+\_\+type, string\+\_\+tokenizer\+\_\+type\+::iterator $>$}}, \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ad3fef0262393b316e536ee16ce9088f2}{tracktable\+::\+Point\+From\+Tokens\+Reader$<$ point\+\_\+type, token\+\_\+range\+\_\+vector\+\_\+type\+::iterator $>$}}, and \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ad3fef0262393b316e536ee16ce9088f2}{tracktable\+::\+Point\+From\+Tokens\+Reader$<$ point\+\_\+type, token\+\_\+range\+\_\+vector\+\_\+type\+::iterator $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Generic\+Reader.\+h\end{DoxyCompactItemize}

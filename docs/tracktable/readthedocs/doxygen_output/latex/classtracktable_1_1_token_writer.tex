@@ -1,0 +1,300 @@
+\doxysection{tracktable\+::Token\+Writer Class Reference}
+\hypertarget{classtracktable_1_1_token_writer}{}\label{classtracktable_1_1_token_writer}\index{tracktable::TokenWriter@{tracktable::TokenWriter}}
+
+
+Write tokens to a stream.  
+
+
+
+
+{\ttfamily \#include $<$Token\+Writer.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_token_writer_a3ca256ec9b9a4564a00fc7327487e8b8}\label{classtracktable_1_1_token_writer_a3ca256ec9b9a4564a00fc7327487e8b8} 
+typedef string\+\_\+type\+::value\+\_\+type {\bfseries char\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_token_writer_a783a43d29d44c111d2048a555909b0fc}\label{classtracktable_1_1_token_writer_a783a43d29d44c111d2048a555909b0fc} 
+typedef boost\+::basic\+\_\+regex$<$ char\+\_\+type $>$ {\bfseries regex\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072}\label{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072} 
+{\bfseries Token\+Writer} ()
+\begin{DoxyCompactList}\small\item\em Instantiate a default token writer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_token_writer_af0d50dc2a07a024c84029573b9af8a04}{Token\+Writer}} (std\+::ostream \&\+\_\+output)
+\begin{DoxyCompactList}\small\item\em Instantiate a writer using a {\ttfamily std\+::ostream} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_token_writer_afd7795f8d7c07aa2ffb1aa230386ed69}{Token\+Writer}} (\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a writer with a copy of another. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_token_writer_a1409d41d072c9af3be57e20d50baaa01}\label{classtracktable_1_1_token_writer_a1409d41d072c9af3be57e20d50baaa01} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Token\+Writer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} \& \mbox{\hyperlink{classtracktable_1_1_token_writer_a39ca31cb68780a0837c8b1797d2fb2b6}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_token_writer}{Token\+Writer} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_token_writer_a8dba8d761741c8d65f190a4be20e26f6}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one writer is equal to another by comparing all the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_token_writer_a5cf1697a3a2c3a43ea9bed98520e3f29}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two \doxylink{classtracktable_1_1_token_writer}{Token\+Writer} are unequal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_token_writer_a5dc8404f3a0405306af2b085db9e5ae3}{set\+\_\+output}} (std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Set the stream where tokens will be written. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classtracktable_1_1_token_writer_adfe583f270a2defb9f79bd6d5d293620}{output}} () const
+\begin{DoxyCompactList}\small\item\em Return the stream where tokens will be written. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_token_writer_ad06fd1125d82ea3afb6b804a85864234}{set\+\_\+field\+\_\+delimiter}} (string\+\_\+type const \&delimiter)
+\begin{DoxyCompactList}\small\item\em Set the field delimiter. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_token_writer_a5c17d7d30c6cde224f548e373fd717eb}{field\+\_\+delimiter}} () const
+\begin{DoxyCompactList}\small\item\em Return the field delimiter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_token_writer_abf54b30a14b002767022d700846e3b2b}{set\+\_\+record\+\_\+delimiter}} (string\+\_\+type const \&end\+\_\+of\+\_\+line)
+\begin{DoxyCompactList}\small\item\em Set the record separator (end-\/of-\/line string) \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_token_writer_a811e1be4cefb9afe422e2bfa3db88ca1}{record\+\_\+delimiter}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the record separator (end-\/of-\/line string) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_token_writer_a410be8a4f1591a3837157d51e0185122}{set\+\_\+quote\+\_\+character}} (string\+\_\+type const \&quotes)
+\begin{DoxyCompactList}\small\item\em Set the quote character. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_token_writer_a37909fa013c4d60bc3e50c1a2aa00e3b}{quote\+\_\+character}} () const
+\begin{DoxyCompactList}\small\item\em Return the current quote characters. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename token\+\_\+iter\+\_\+t$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_token_writer_a11542f82a90de1f8638e574bc25d2846}{write\+\_\+record}} (token\+\_\+iter\+\_\+t begin, token\+\_\+iter\+\_\+t end)
+\begin{DoxyCompactList}\small\item\em Write the tokens to the ouput stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Write tokens to a stream. 
+
+Supply your tokens in a form that can be converted to strings. Set your record delimiter (usually newline or similar) and your field delimiter (tab, comma or similar). Done. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_token_writer_af0d50dc2a07a024c84029573b9af8a04}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!TokenWriter@{TokenWriter}}
+\index{TokenWriter@{TokenWriter}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{TokenWriter()}{TokenWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_af0d50dc2a07a024c84029573b9af8a04} 
+tracktable\+::\+Token\+Writer\+::\+Token\+Writer (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate a writer using a {\ttfamily std\+::ostream} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+output} & Stream to output to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_token_writer_afd7795f8d7c07aa2ffb1aa230386ed69}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!TokenWriter@{TokenWriter}}
+\index{TokenWriter@{TokenWriter}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{TokenWriter()}{TokenWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_afd7795f8d7c07aa2ffb1aa230386ed69} 
+tracktable\+::\+Token\+Writer\+::\+Token\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create a writer with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_token_writer}{Token\+Writer} to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_token_writer_a5c17d7d30c6cde224f548e373fd717eb}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!field\_delimiter@{field\_delimiter}}
+\index{field\_delimiter@{field\_delimiter}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{field\_delimiter()}{field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a5c17d7d30c6cde224f548e373fd717eb} 
+string\+\_\+type tracktable\+::\+Token\+Writer\+::field\+\_\+delimiter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the field delimiter. 
+
+\begin{DoxyReturn}{Returns}
+Field delimiter 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_token_writer_a5cf1697a3a2c3a43ea9bed98520e3f29}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a5cf1697a3a2c3a43ea9bed98520e3f29} 
+bool tracktable\+::\+Token\+Writer\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two \doxylink{classtracktable_1_1_token_writer}{Token\+Writer} are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_token_writer}{Token\+Writer} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_token_writer_a39ca31cb68780a0837c8b1797d2fb2b6}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a39ca31cb68780a0837c8b1797d2fb2b6} 
+\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} \& tracktable\+::\+Token\+Writer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_token_writer}{Token\+Writer} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_token_writer}{Token\+Writer} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Writer with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_token_writer_a8dba8d761741c8d65f190a4be20e26f6}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a8dba8d761741c8d65f190a4be20e26f6} 
+bool tracktable\+::\+Token\+Writer\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_token_writer}{Token\+Writer}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one writer is equal to another by comparing all the properties. 
+
+Two writers are equal if all of their streams are properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_token_writer}{Token\+Writer} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_token_writer_adfe583f270a2defb9f79bd6d5d293620}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!output@{output}}
+\index{output@{output}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_adfe583f270a2defb9f79bd6d5d293620} 
+std\+::ostream \& tracktable\+::\+Token\+Writer\+::output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the stream where tokens will be written. 
+
+\begin{DoxyReturn}{Returns}
+output stream 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_token_writer_a37909fa013c4d60bc3e50c1a2aa00e3b}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!quote\_character@{quote\_character}}
+\index{quote\_character@{quote\_character}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{quote\_character()}{quote\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a37909fa013c4d60bc3e50c1a2aa00e3b} 
+string\+\_\+type tracktable\+::\+Token\+Writer\+::quote\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the current quote characters. 
+
+\begin{DoxyReturn}{Returns}
+Current quote character 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_token_writer_a811e1be4cefb9afe422e2bfa3db88ca1}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!record\_delimiter@{record\_delimiter}}
+\index{record\_delimiter@{record\_delimiter}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{record\_delimiter()}{record\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a811e1be4cefb9afe422e2bfa3db88ca1} 
+string\+\_\+type tracktable\+::\+Token\+Writer\+::record\+\_\+delimiter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the record separator (end-\/of-\/line string) 
+
+\begin{DoxyReturn}{Returns}
+Return the record separator (end-\/of-\/line string) 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_token_writer_ad06fd1125d82ea3afb6b804a85864234}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!set\_field\_delimiter@{set\_field\_delimiter}}
+\index{set\_field\_delimiter@{set\_field\_delimiter}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{set\_field\_delimiter()}{set\_field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_ad06fd1125d82ea3afb6b804a85864234} 
+void tracktable\+::\+Token\+Writer\+::set\+\_\+field\+\_\+delimiter (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{delimiter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the field delimiter. 
+
+This string will be inserted between each field as tokens are written.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em delim} & Delimiter string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_token_writer_a5dc8404f3a0405306af2b085db9e5ae3}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!set\_output@{set\_output}}
+\index{set\_output@{set\_output}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{set\_output()}{set\_output()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a5dc8404f3a0405306af2b085db9e5ae3} 
+void tracktable\+::\+Token\+Writer\+::set\+\_\+output (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the stream where tokens will be written. 
+
+This can be any {\ttfamily std\+::ostream}.
+
+\begin{DoxyNote}{Note}
+You are resposible for ensuring that the stream does not go out of scope until you are done writing tokens.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out} & Stream where tokens will be written \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_token_writer_a410be8a4f1591a3837157d51e0185122}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!set\_quote\_character@{set\_quote\_character}}
+\index{set\_quote\_character@{set\_quote\_character}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{set\_quote\_character()}{set\_quote\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a410be8a4f1591a3837157d51e0185122} 
+void tracktable\+::\+Token\+Writer\+::set\+\_\+quote\+\_\+character (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{quotes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quote character. 
+
+This character {\itshape may} be used to enclose a field containing lots of characters that would otherwise need to be escaped. We have to know what it is so that we can escape it ourselves when we encounter the quote character inside fields.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em quotes} & Zero or one character to be used as quotation marks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_token_writer_abf54b30a14b002767022d700846e3b2b}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!set\_record\_delimiter@{set\_record\_delimiter}}
+\index{set\_record\_delimiter@{set\_record\_delimiter}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{set\_record\_delimiter()}{set\_record\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_abf54b30a14b002767022d700846e3b2b} 
+void tracktable\+::\+Token\+Writer\+::set\+\_\+record\+\_\+delimiter (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{end\+\_\+of\+\_\+line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the record separator (end-\/of-\/line string) 
+
+This string will be written after each token. By default it\textquotesingle{}s {\ttfamily std\+::endl} (the newline string).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sep} & String separator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_token_writer_a11542f82a90de1f8638e574bc25d2846}\index{tracktable::TokenWriter@{tracktable::TokenWriter}!write\_record@{write\_record}}
+\index{write\_record@{write\_record}!tracktable::TokenWriter@{tracktable::TokenWriter}}
+\doxysubsubsection{\texorpdfstring{write\_record()}{write\_record()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_token_writer_a11542f82a90de1f8638e574bc25d2846} 
+template$<$typename token\+\_\+iter\+\_\+t$>$ \\
+void tracktable\+::\+Token\+Writer\+::write\+\_\+record (\begin{DoxyParamCaption}\item[{token\+\_\+iter\+\_\+t}]{begin}{, }\item[{token\+\_\+iter\+\_\+t}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write the tokens to the ouput stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em begin} & Point to start writing at \\
+\hline
+\mbox{\texttt{ in}}  & {\em end} & Point to stop writing at \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Token\+Writer.\+h\end{DoxyCompactItemize}

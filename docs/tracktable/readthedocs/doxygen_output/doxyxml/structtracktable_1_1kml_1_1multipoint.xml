@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1kml_1_1multipoint" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::kml::multipoint</compoundname>
+    <includes refid="_kml_out_8h" local="no">KmlOut.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtracktable_1_1kml_1_1multipoint_1a5bbe2c04c6f7827efd89964cfc71a71e" prot="public" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> const  *const</type>
+        <definition>TrajectoryT const* const tracktable::kml::multipoint::trajectory</definition>
+        <argsstring></argsstring>
+        <name>trajectory</name>
+        <qualifiedname>tracktable::kml::multipoint::trajectory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="127" column="33" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1kml_1_1multipoint_1a54b497a19beea6b9698ecafc6c889347" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::multipoint::multipoint</definition>
+        <argsstring>()=delete</argsstring>
+        <name>multipoint</name>
+        <qualifiedname>tracktable::kml::multipoint::multipoint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="125" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structtracktable_1_1kml_1_1multipoint_1ab3a3e3b8fa3f0c3550422c8031be5011" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::multipoint::multipoint</definition>
+        <argsstring>(const TrajectoryT &amp;_t)</argsstring>
+        <name>multipoint</name>
+        <qualifiedname>tracktable::kml::multipoint::multipoint</qualifiedname>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &amp;</type>
+          <declname>_t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="126" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="126" bodyend="126"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper struct that allows for for. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">out<sp/>&lt;&lt;<sp/>multipoint(t)</highlight></codeline>
+</programlisting></para>
+<para>which will render as set of points. This will be missing some header/footer information neccesary for full kml rendering. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>tracktable::Trajectory&lt; trajectory_point_type &gt;</label>
+        <link refid="classtracktable_1_1_trajectory"/>
+      </node>
+      <node id="1">
+        <label>tracktable::kml::multipoint</label>
+        <link refid="structtracktable_1_1kml_1_1multipoint"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>trajectory</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="124" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="124" bodyend="128"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1kml_1_1multipoint_1a54b497a19beea6b9698ecafc6c889347" prot="public" virt="non-virtual"><scope>tracktable::kml::multipoint</scope><name>multipoint</name></member>
+      <member refid="structtracktable_1_1kml_1_1multipoint_1ab3a3e3b8fa3f0c3550422c8031be5011" prot="public" virt="non-virtual"><scope>tracktable::kml::multipoint</scope><name>multipoint</name></member>
+      <member refid="structtracktable_1_1kml_1_1multipoint_1a5bbe2c04c6f7827efd89964cfc71a71e" prot="public" virt="non-virtual"><scope>tracktable::kml::multipoint</scope><name>trajectory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

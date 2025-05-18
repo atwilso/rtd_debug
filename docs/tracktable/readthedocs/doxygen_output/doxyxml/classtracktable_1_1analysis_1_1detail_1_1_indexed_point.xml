@@ -1,0 +1,369 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::analysis::detail::IndexedPoint</compoundname>
+    <includes refid="dbscan__points_8h" local="no">dbscan_points.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class PointT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a6c9e4484caa4b344b7173cbf324fc6d2" prot="public" static="no">
+        <type>PointT</type>
+        <definition>typedef PointT tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::point_type</definition>
+        <argsstring></argsstring>
+        <name>point_type</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::point_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="77" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a1d029799c4df5782d526da775262e256" prot="protected" static="no" mutable="no">
+        <type>PointT</type>
+        <definition>PointT tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::Point</definition>
+        <argsstring></argsstring>
+        <name>Point</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::Point</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="132" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1aeec5d5ad3e6ce49da80afe833c5a7f48" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::PointId</definition>
+        <argsstring></argsstring>
+        <name>PointId</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::PointId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="133" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a7ea9de913c9cabb84d20171851e9fa95" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::ClusterId</definition>
+        <argsstring></argsstring>
+        <name>ClusterId</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::ClusterId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="134" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ad67170df57a3840bfc51141350eded7f" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::Visited</definition>
+        <argsstring></argsstring>
+        <name>Visited</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::Visited</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="135" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ac53788f89efdeaaaf45fec3d3e16cb22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::IndexedPoint</definition>
+        <argsstring>()</argsstring>
+        <name>IndexedPoint</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::IndexedPoint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="79" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="79" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ab6239445aa6f6ff6aebf1a955a5bd002" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::IndexedPoint</definition>
+        <argsstring>(PointT const &amp;point_to_index)</argsstring>
+        <name>IndexedPoint</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::IndexedPoint</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>point_to_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="80" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="80" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1aef1ad25536a12082c7b2f327378b991d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::IndexedPoint</definition>
+        <argsstring>(PointT const &amp;point_to_index, int index)</argsstring>
+        <name>IndexedPoint</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::IndexedPoint</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>point_to_index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="86" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a26db3a9d4d99725dff4e546aab6b95d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::~IndexedPoint</definition>
+        <argsstring>()</argsstring>
+        <name>~IndexedPoint</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::~IndexedPoint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="92" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="92" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a870ce8d095099b6739548527ed56efad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::IndexedPoint</definition>
+        <argsstring>(IndexedPoint const &amp;other)</argsstring>
+        <name>IndexedPoint</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::IndexedPoint</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point" kindref="compound">IndexedPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="94" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="94" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a82512772eeaeda5fa416925a831689ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point" kindref="compound">IndexedPoint</ref> &amp;</type>
+        <definition>IndexedPoint &amp; tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::operator=</definition>
+        <argsstring>(IndexedPoint const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point" kindref="compound">IndexedPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="102" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="102" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1af099ceeb89520c5b1f23f7c578edec70" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::operator==</definition>
+        <argsstring>(IndexedPoint const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point" kindref="compound">IndexedPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="111" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="111" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ad55467302a22548972c00f7d103b3e18" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>PointT const &amp;</type>
+        <definition>PointT const  &amp; tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::point</definition>
+        <argsstring>() const</argsstring>
+        <name>point</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::point</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="121" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a6e47fe467c06664e0e04999653e0ce6a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::point_id</definition>
+        <argsstring>() const</argsstring>
+        <name>point_id</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::point_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="122" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1aeafe7da339d3562b1ac233bd34da6e1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::cluster_id</definition>
+        <argsstring>() const</argsstring>
+        <name>cluster_id</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::cluster_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="123" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a204f09f2bee408cfeb05077ed950c0b5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::visited</definition>
+        <argsstring>() const</argsstring>
+        <name>visited</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::visited</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="124" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1af80fc8427f069f9e21a30476d8cf9786" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::set_point</definition>
+        <argsstring>(PointT const &amp;pt)</argsstring>
+        <name>set_point</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::set_point</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>pt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="126" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="126" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1aba22592dfe7516160aea8cb6b6b175a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::set_point_id</definition>
+        <argsstring>(int id)</argsstring>
+        <name>set_point_id</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::set_point_id</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="127" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="127" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ad037a008270dd8256a44d8042366a35a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::set_cluster_id</definition>
+        <argsstring>(int id)</argsstring>
+        <name>set_cluster_id</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::set_cluster_id</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="128" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="128" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1abf679d372fae6a9a876e21b48d2b8aea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::analysis::detail::IndexedPoint&lt; PointT &gt;::set_visited</definition>
+        <argsstring>(bool v)</argsstring>
+        <name>set_visited</name>
+        <qualifiedname>tracktable::analysis::detail::IndexedPoint::set_visited</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="129" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="129" bodyend="129"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Point plus index and cluster ID. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>We keep our own list of points internally in DBSCAN along with an index into the original list, a cluster ID (if set) and a flag to use while building clusters. This class encapsulates that function.</para>
+<para>It would take less memory to use pointers into the original list of points but at the cost of lots more places to trip ourselves up with layers of indirection. In the interest of working code, we&apos;ll take the simpler-and-more-memory approach for now.</para>
+<para>Note that there is no particular intelligence in this class. It&apos;s just a container. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" line="74" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/dbscan_points.h" bodystart="75" bodyend="136"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1aeafe7da339d3562b1ac233bd34da6e1a" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>cluster_id</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a7ea9de913c9cabb84d20171851e9fa95" prot="protected" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>ClusterId</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ac53788f89efdeaaaf45fec3d3e16cb22" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>IndexedPoint</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ab6239445aa6f6ff6aebf1a955a5bd002" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>IndexedPoint</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1aef1ad25536a12082c7b2f327378b991d" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>IndexedPoint</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a870ce8d095099b6739548527ed56efad" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>IndexedPoint</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a82512772eeaeda5fa416925a831689ad" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1af099ceeb89520c5b1f23f7c578edec70" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a1d029799c4df5782d526da775262e256" prot="protected" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>Point</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ad55467302a22548972c00f7d103b3e18" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>point</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a6e47fe467c06664e0e04999653e0ce6a" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>point_id</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a6c9e4484caa4b344b7173cbf324fc6d2" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>point_type</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1aeec5d5ad3e6ce49da80afe833c5a7f48" prot="protected" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>PointId</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ad037a008270dd8256a44d8042366a35a" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>set_cluster_id</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1af80fc8427f069f9e21a30476d8cf9786" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>set_point</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1aba22592dfe7516160aea8cb6b6b175a5" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>set_point_id</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1abf679d372fae6a9a876e21b48d2b8aea" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>set_visited</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1ad67170df57a3840bfc51141350eded7f" prot="protected" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>Visited</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a204f09f2bee408cfeb05077ed950c0b5" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>visited</name></member>
+      <member refid="classtracktable_1_1analysis_1_1detail_1_1_indexed_point_1a26db3a9d4d99725dff4e546aab6b95d6" prot="public" virt="non-virtual"><scope>tracktable::analysis::detail::IndexedPoint</scope><name>~IndexedPoint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

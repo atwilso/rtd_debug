@@ -1,0 +1,92 @@
+\doxysection{tracktable\+::Multiple\+Generator\+Collator\texorpdfstring{$<$}{<} Point\+\_\+T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_multiple_generator_collator}{}\label{classtracktable_1_1_multiple_generator_collator}\index{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$@{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$}}
+
+
+The collator lets you put together multiple generators and create a stream of points that is in chronological order.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Generator.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_multiple_generator_collator_a8b8752a73510fdf5fb91f252c311a324}\label{classtracktable_1_1_multiple_generator_collator_a8b8752a73510fdf5fb91f252c311a324} 
+void {\bfseries add\+Generator} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtracktable_1_1_point_generator}{Point\+Generator}}$<$ PointT $>$ $>$ \+\_\+generator)
+\begin{DoxyCompactList}\small\item\em Add a generator to the list of generators. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_adffbedecd5bf9133851733a5ba355427}{get\+Generator\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the number of created generators. \end{DoxyCompactList}\item 
+PointT \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_a42bee66ccaee4e8679b03f5bcafeef90}{next}} ()
+\begin{DoxyCompactList}\small\item\em Updates position and returns a point. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_multiple_generator_collator_ae53519b714ac494bbbf02fd19aec14f7}\label{classtracktable_1_1_multiple_generator_collator_ae53519b714ac494bbbf02fd19aec14f7} 
+void {\bfseries generate} ()
+\begin{DoxyCompactList}\small\item\em Generate a generator with 10 points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_a7c802c256cb01acea0352a75181440ea}{generate}} (const size\+\_\+t \+\_\+count)
+\begin{DoxyCompactList}\small\item\em Generate a generator with n points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Point\+\_\+T$>$\newline
+class tracktable\+::\+Multiple\+Generator\+Collator$<$ Point\+\_\+\+T $>$}
+The collator lets you put together multiple generators and create a stream of points that is in chronological order. 
+
+
+\begin{DoxyItemize}
+\item Use {\ttfamily \doxylink{classtracktable_1_1_multiple_generator_collator_a8b8752a73510fdf5fb91f252c311a324}{add\+Generator()}} to add generators.
+\item Use {\ttfamily generate(\+COUNT)} to generate COUNT points for each generator and sort them.
+\item Use {\ttfamily \doxylink{classtracktable_1_1_multiple_generator_collator_a42bee66ccaee4e8679b03f5bcafeef90}{next()}} to access each point as they come out.
+\end{DoxyItemize}
+
+Subsequent calls to generate will have the new points sorted into the list, but there are no rule that the {\ttfamily next} point is after any points retrieved prior to the call 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_multiple_generator_collator_a7c802c256cb01acea0352a75181440ea}\index{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$@{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$}!generate@{generate}}
+\index{generate@{generate}!tracktable::MultipleGeneratorCollator$<$ Point\_T $>$@{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_multiple_generator_collator_a7c802c256cb01acea0352a75181440ea} 
+template$<$typename Point\+\_\+T$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator}{tracktable\+::\+Multiple\+Generator\+Collator}}$<$ Point\+\_\+T $>$\+::generate (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{\+\_\+count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generate a generator with n points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+count} & Number of points to create generator with \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_multiple_generator_collator_adffbedecd5bf9133851733a5ba355427}\index{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$@{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$}!getGeneratorCount@{getGeneratorCount}}
+\index{getGeneratorCount@{getGeneratorCount}!tracktable::MultipleGeneratorCollator$<$ Point\_T $>$@{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$}}
+\doxysubsubsection{\texorpdfstring{getGeneratorCount()}{getGeneratorCount()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_multiple_generator_collator_adffbedecd5bf9133851733a5ba355427} 
+template$<$typename Point\+\_\+T$>$ \\
+size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator}{tracktable\+::\+Multiple\+Generator\+Collator}}$<$ Point\+\_\+T $>$\+::get\+Generator\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the number of created generators. 
+
+\begin{DoxyReturn}{Returns}
+The numbers of generators 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_multiple_generator_collator_a42bee66ccaee4e8679b03f5bcafeef90}\index{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$@{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$}!next@{next}}
+\index{next@{next}!tracktable::MultipleGeneratorCollator$<$ Point\_T $>$@{tracktable::MultipleGeneratorCollator$<$ Point\_T $>$}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_multiple_generator_collator_a42bee66ccaee4e8679b03f5bcafeef90} 
+template$<$typename Point\+\_\+T$>$ \\
+PointT \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator}{tracktable\+::\+Multiple\+Generator\+Collator}}$<$ Point\+\_\+T $>$\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates position and returns a point. 
+
+\begin{DoxyReturn}{Returns}
+new point 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Data\+Generators/Point\+Generator.\+h\end{DoxyCompactItemize}

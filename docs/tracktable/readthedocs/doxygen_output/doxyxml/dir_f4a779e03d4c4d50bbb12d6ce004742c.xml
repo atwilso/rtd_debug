@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_f4a779e03d4c4d50bbb12d6ce004742c" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp</compoundname>
+    <innerdir refid="dir_2933931fc93329aa8b8efbf80bfc6866">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis</innerdir>
+    <innerdir refid="dir_2dd052c6d86d0859dc9f7d564ee4aaa7">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core</innerdir>
+    <innerdir refid="dir_9c424ce6b8e89325ba8abcbd8e99f36b">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators</innerdir>
+    <innerdir refid="dir_bc0707c30d6ca25c03c4c4289c3ab79e">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain</innerdir>
+    <innerdir refid="dir_cb67a804209b7942b94963489c089a6d">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/"/>
+  </compounddef>
+</doxygen>

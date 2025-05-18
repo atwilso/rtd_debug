@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1traits_1_1has__properties_3_01_trajectory_3_01point__type_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::traits::has_properties&lt; Trajectory&lt; point_type &gt; &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">boost::mpl::bool_&lt; false &gt;</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">boost::mpl::bool_&lt; true &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename point_type</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::mpl::bool_&lt; false &gt;</label>
+      </node>
+      <node id="3">
+        <label>boost::mpl::bool_&lt; true &gt;</label>
+      </node>
+      <node id="1">
+        <label>tracktable::traits::has_properties&lt; Trajectory&lt; point_type &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1has__properties_3_01_trajectory_3_01point__type_01_4_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::mpl::bool_&lt; false &gt;</label>
+      </node>
+      <node id="3">
+        <label>boost::mpl::bool_&lt; true &gt;</label>
+      </node>
+      <node id="1">
+        <label>tracktable::traits::has_properties&lt; Trajectory&lt; point_type &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1has__properties_3_01_trajectory_3_01point__type_01_4_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" line="909" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" bodystart="909" bodyend="909"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

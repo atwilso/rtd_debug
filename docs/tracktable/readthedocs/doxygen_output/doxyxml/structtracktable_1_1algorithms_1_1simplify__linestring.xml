@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1simplify__linestring" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::simplify_linestring</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename point_type</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1simplify__linestring_1a789f1aad9e84cf5531680222f9e0eacc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename linestring_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void tracktable::algorithms::simplify_linestring&lt; point_type &gt;::apply</definition>
+        <argsstring>(linestring_type const &amp;input, linestring_type &amp;output, double error_tolerance)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::simplify_linestring::apply</qualifiedname>
+        <param>
+          <type>linestring_type const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>linestring_type &amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>error_tolerance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/SimplifyLinestring.h" line="61" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/SimplifyLinestring.h" bodystart="61" bodyend="66"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/SimplifyLinestring.h" line="58" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/SimplifyLinestring.h" bodystart="59" bodyend="67"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1simplify__linestring_1a789f1aad9e84cf5531680222f9e0eacc" prot="public" virt="non-virtual"><scope>tracktable::algorithms::simplify_linestring</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

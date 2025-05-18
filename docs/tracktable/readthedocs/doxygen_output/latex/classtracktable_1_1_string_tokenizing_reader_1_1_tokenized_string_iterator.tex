@@ -1,0 +1,230 @@
+\doxysection{tracktable\+::String\+Tokenizing\+Reader\texorpdfstring{$<$}{<} Input\+Line\+IteratorT \texorpdfstring{$>$}{>}\+::Tokenized\+String\+Iterator Class Reference}
+\hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+
+
+Class for the tokenized string iterator.  
+
+
+
+
+{\ttfamily \#include $<$String\+Tokenizing\+Reader.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aeade1a208625a866b1c4c69847236977}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aeade1a208625a866b1c4c69847236977} 
+using {\bfseries iterator\+\_\+category} = std\+::input\+\_\+iterator\+\_\+tag
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ab2a00d6d60bedace1940db7f49b52023}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ab2a00d6d60bedace1940db7f49b52023} 
+using {\bfseries value\+\_\+type} = token\+\_\+iterator\+\_\+pair
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_abb6043402d5071308f909f2a2d01b607}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_abb6043402d5071308f909f2a2d01b607} 
+using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a3727f3d5293d7b89d925a6c51845bf74}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a3727f3d5293d7b89d925a6c51845bf74} 
+using {\bfseries pointer} = token\+\_\+iterator\+\_\+pair \texorpdfstring{$\ast$}{*}
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a619f73bc7c99da429ee594c11f742bc1}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a619f73bc7c99da429ee594c11f742bc1} 
+using {\bfseries reference} = token\+\_\+iterator\+\_\+pair\&
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a8cff6b80041ceb8990bca13b9dae2489}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a8cff6b80041ceb8990bca13b9dae2489} 
+using {\bfseries iterator} = typename tokenizer\+\_\+type\+::iterator
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8} 
+{\bfseries Tokenized\+String\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate a default \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a557db86c032e811786310eacffd8d301}\label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a557db86c032e811786310eacffd8d301} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Tokenized\+String\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a4e25e4af4d121076d4291300447d553f}{Tokenized\+String\+Iterator}} (input\+\_\+line\+\_\+iter\+\_\+type Begin, input\+\_\+line\+\_\+iter\+\_\+type End, string\+\_\+type const \&Delim, string\+\_\+type const \&Escape, string\+\_\+type const \&Quote)
+\begin{DoxyCompactList}\small\item\em Instantiate a \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} using specified properties. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a7b4e359c8d8267224db2ad4cdf48e930}{Tokenized\+String\+Iterator}} (\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} with a copy of another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a771b79247863f36f9ed5cd149d0d13b9}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} to the value of another. \end{DoxyCompactList}\item 
+token\+\_\+iterator\+\_\+pair const \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa72c1d2cf6896a42400beae1de1544a4}{operator\texorpdfstring{$\ast$}{*}}} () const
+\begin{DoxyCompactList}\small\item\em Multiply an iterator. \end{DoxyCompactList}\item 
+token\+\_\+iterator\+\_\+pair const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ad0d1c42fbf1afd4f4fd5d30b438dfb13}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Get the current iterator object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af8f870ea96e8ccc0e7fa328e9bde518c}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Advance the iterator to the next position in the sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ae274cec3faff1fb010b6062aeae657c5}{operator++}} (int)
+\begin{DoxyCompactList}\small\item\em Advance the iterator to the next position in the sequence. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af2cafc30d8a7f9033c99f79db66b00dd}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} is equal to another by comparing all the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ad04d7f31f61b48118739cbc3244c5b94}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two iterators are unequal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Line\+IteratorT$>$\newline
+class tracktable\+::\+String\+Tokenizing\+Reader$<$ Input\+Line\+Iterator\+T $>$\+::\+Tokenized\+String\+Iterator}
+Class for the tokenized string iterator. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a4e25e4af4d121076d4291300447d553f}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!TokenizedStringIterator@{TokenizedStringIterator}}
+\index{TokenizedStringIterator@{TokenizedStringIterator}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{TokenizedStringIterator()}{TokenizedStringIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a4e25e4af4d121076d4291300447d553f} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::\+Tokenized\+String\+Iterator (\begin{DoxyParamCaption}\item[{input\+\_\+line\+\_\+iter\+\_\+type}]{Begin}{, }\item[{input\+\_\+line\+\_\+iter\+\_\+type}]{End}{, }\item[{string\+\_\+type const \&}]{Delim}{, }\item[{string\+\_\+type const \&}]{Escape}{, }\item[{string\+\_\+type const \&}]{Quote}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate a \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} using specified properties. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Begin} & Iterator to start at \\
+\hline
+\mbox{\texttt{ in}}  & {\em End} & Iterator to end at \\
+\hline
+\mbox{\texttt{ in}}  & {\em Delim} & Character to use for delimiting \\
+\hline
+\mbox{\texttt{ in}}  & {\em Escape} & Character to use for escaping \\
+\hline
+\mbox{\texttt{ in}}  & {\em Quote} & Character to use for quoting \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a7b4e359c8d8267224db2ad4cdf48e930}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!TokenizedStringIterator@{TokenizedStringIterator}}
+\index{TokenizedStringIterator@{TokenizedStringIterator}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{TokenizedStringIterator()}{TokenizedStringIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a7b4e359c8d8267224db2ad4cdf48e930} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::\+Tokenized\+String\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create a \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ad04d7f31f61b48118739cbc3244c5b94}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ad04d7f31f61b48118739cbc3244c5b94} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two iterators are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Iterator for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa72c1d2cf6896a42400beae1de1544a4}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa72c1d2cf6896a42400beae1de1544a4} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+token\+\_\+iterator\+\_\+pair const  \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply an iterator. 
+
+\begin{DoxyReturn}{Returns}
+Result of the multiplication 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af8f870ea96e8ccc0e7fa328e9bde518c}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af8f870ea96e8ccc0e7fa328e9bde518c} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advance the iterator to the next position in the sequence. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next iterator in the sequence 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ae274cec3faff1fb010b6062aeae657c5}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ae274cec3faff1fb010b6062aeae657c5} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advance the iterator to the next position in the sequence. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next iterator in the sequence 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ad0d1c42fbf1afd4f4fd5d30b438dfb13}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ad0d1c42fbf1afd4f4fd5d30b438dfb13} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+token\+\_\+iterator\+\_\+pair const  \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current iterator object. 
+
+\begin{DoxyReturn}{Returns}
+Current iterator 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a771b79247863f36f9ed5cd149d0d13b9}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a771b79247863f36f9ed5cd149d0d13b9} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af2cafc30d8a7f9033c99f79db66b00dd}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$::TokenizedStringIterator}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af2cafc30d8a7f9033c99f79db66b00dd} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::\+Tokenized\+String\+Iterator\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} is equal to another by comparing all the properties. 
+
+Two Tokenized\+String\+Iterators are equal if all of their properties are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/String\+Tokenizing\+Reader.\+h\end{DoxyCompactItemize}

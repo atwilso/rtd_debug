@@ -1,0 +1,337 @@
+\doxysection{String\+Tokenizing\+Reader.\+h}
+\hypertarget{_string_tokenizing_reader_8h_source}{}\label{_string_tokenizing_reader_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/StringTokenizingReader.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/StringTokenizingReader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_TRACKTABLE\_STRING\_TOKENIZING\_READER\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_TRACKTABLE\_STRING\_TOKENIZING\_READER\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <boost/tokenizer.hpp>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputLineIteratorT>}
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa}{StringTokenizingReader}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{typedef}\ InputLineIteratorT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\_line\_iter\_type;}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ InputLineIteratorT::value\_type\ string\_type;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa}{StringTokenizingReader}}()}
+\DoxyCodeLine{00067\ \ \ \ \ :\ FieldDelimiter(\textcolor{stringliteral}{"{},"{}})}
+\DoxyCodeLine{00068\ \ \ \ \ ,\ EscapeCharacter(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}})}
+\DoxyCodeLine{00069\ \ \ \ \ ,\ QuoteCharacter(\textcolor{stringliteral}{"{}\(\backslash\)"{}"{}})}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_ac408549c6963d46731fd41918412e6da}{StringTokenizingReader}}(input\_line\_iter\_type\ Start,\ input\_line\_iter\_type\ Finish)}
+\DoxyCodeLine{00076\ \ \ \ \ :\ InputLinesBegin(Start)}
+\DoxyCodeLine{00077\ \ \ \ \ ,\ InputLinesEnd(Finish)}
+\DoxyCodeLine{00078\ \ \ \ \ ,\ FieldDelimiter(\textcolor{stringliteral}{"{},"{}})}
+\DoxyCodeLine{00079\ \ \ \ \ ,\ EscapeCharacter(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}})}
+\DoxyCodeLine{00080\ \ \ \ \ ,\ QuoteCharacter(\textcolor{stringliteral}{"{}\(\backslash\)"{}"{}})}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a4e7ec4a2910a0d0f2c6cbc01e0e88b36}{StringTokenizingReader}}(}
+\DoxyCodeLine{00087\ \ \ \ \ input\_line\_iter\_type\ Start,}
+\DoxyCodeLine{00088\ \ \ \ \ input\_line\_iter\_type\ Finish,}
+\DoxyCodeLine{00089\ \ \ \ \ string\_type\ \textcolor{keyword}{const}\&\ Delim}
+\DoxyCodeLine{00090\ \ \ )}
+\DoxyCodeLine{00091\ \ \ \ \ :\ InputLinesBegin(Start)}
+\DoxyCodeLine{00092\ \ \ \ \ ,\ InputLinesEnd(Finish)}
+\DoxyCodeLine{00093\ \ \ \ \ ,\ FieldDelimiter(Delim)}
+\DoxyCodeLine{00094\ \ \ \ \ ,\ EscapeCharacter(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}})}
+\DoxyCodeLine{00095\ \ \ \ \ ,\ QuoteCharacter(\textcolor{stringliteral}{"{}\(\backslash\)"{}"{}})}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a3c8b8538f0742d3e12a320415e6ebe08}{StringTokenizingReader}}(\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa}{StringTokenizingReader}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00102\ \ \ \ \ :\ InputLinesBegin(other.InputLinesBegin)}
+\DoxyCodeLine{00103\ \ \ \ \ ,\ InputLinesEnd(other.InputLinesEnd)}
+\DoxyCodeLine{00104\ \ \ \ \ ,\ FieldDelimiter(other.FieldDelimiter)}
+\DoxyCodeLine{00105\ \ \ \ \ ,\ EscapeCharacter(other.EscapeCharacter)}
+\DoxyCodeLine{00106\ \ \ \ \ ,\ QuoteCharacter(other.QuoteCharacter)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a9d8b8490b187cee9e0497dde3161562c}{\string~StringTokenizingReader}}()}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a8eae929bc9222f47a9c95ec374bb585f}{set\_field\_delimiter}}(string\_type\ \textcolor{keyword}{const}\&\ delim)}
+\DoxyCodeLine{00123\ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ this-\/>FieldDelimiter\ =\ delim;}
+\DoxyCodeLine{00125\ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00129\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a29b7cef3f45f43a812c8b4850613cafb}{field\_delimiter}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>FieldDelimiter;}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00143\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a8c0ad03f9082c6654837376d53670f36}{set\_escape\_character}}(string\_type\ \textcolor{keyword}{const}\&\ escape)}
+\DoxyCodeLine{00144\ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ this-\/>EscapeCharacter\ =\ escape;}
+\DoxyCodeLine{00146\ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00150\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a1be07a13fe38dd1c7445011b1d259723}{escape\_character}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00151\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>EscapeCharacter;}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_aba9df9bf4af3787d46af59032ad24e6f}{set\_quote\_character}}(string\_type\ \textcolor{keyword}{const}\&\ quote)}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ this-\/>QuoteCharacter\ =\ quote;}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00172\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a6579ae289362c0f78bc8057101bdf1df}{quote\_character}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00173\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>QuoteCharacter;}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa}{StringTokenizingReader}}\&\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a8333d4d20d296b765374813928c7c5d0}{operator=}}(\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa}{StringTokenizingReader}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ this-\/>InputLinesBegin\ \ =\ other.InputLinesBegin;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ this-\/>InputLinesEnd\ \ \ \ =\ other.InputLinesEnd;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ this-\/>FieldDelimiter\ \ \ =\ other.FieldDelimiter;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ this-\/>EscapeCharacter\ \ =\ other.EscapeCharacter;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ this-\/>QuoteCharacter\ \ \ =\ other.QuoteCharacter;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00199\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a005c819200db166e8d7b5d30c618f665}{operator==}}(\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa}{StringTokenizingReader}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00200\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ this-\/>InputLinesBegin\ \ \ \ ==\ other.InputLinesBegin}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \&\&\ this-\/>InputLinesEnd\ \ \ ==\ other.InputLinesEnd}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \&\&\ this-\/>FieldDelimiter\ \ ==\ other.FieldDelimiter}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \&\&\ this-\/>EscapeCharacter\ ==\ other.EscapeCharacter}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \&\&\ this-\/>QuoteCharacter\ \ ==\ other.QuoteCharacter}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00215\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a38b06bf1823aa1e28f04cd20a7d09e73}{operator!=}}(\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa}{StringTokenizingReader}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00216\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00218\ \ \ \ \ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a0e1cddf9acc864855effcf0beac9f22c}{set\_input\_range}}(input\_line\_iter\_type\ \textcolor{keyword}{const}\&\ start,}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\_line\_iter\_type\ \textcolor{keyword}{const}\&\ finish)}
+\DoxyCodeLine{00227\ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ this-\/>InputLinesBegin\ =\ start;}
+\DoxyCodeLine{00229\ \ \ \ \ this-\/>InputLinesEnd\ =\ finish;}
+\DoxyCodeLine{00230\ \ \ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00233\ \ \ input\_line\_iter\_type\ InputLinesBegin;}
+\DoxyCodeLine{00234\ \ \ input\_line\_iter\_type\ InputLinesEnd;}
+\DoxyCodeLine{00235\ \ \ string\_type\ \ \ \ \ \ \ \ \ \ FieldDelimiter;}
+\DoxyCodeLine{00236\ \ \ string\_type\ \ \ \ \ \ \ \ \ \ EscapeCharacter;}
+\DoxyCodeLine{00237\ \ \ string\_type\ \ \ \ \ \ \ \ \ \ QuoteCharacter;}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \textcolor{keyword}{typedef}\ boost::escaped\_list\_separator<typename\ input\_line\_iter\_type::value\_type::value\_type>\ separator\_type;}
+\DoxyCodeLine{00240\ \ \ \textcolor{keyword}{typedef}\ boost::tokenizer<separator\_type>\ tokenizer\_type;}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \textcolor{keyword}{typedef}\ std::pair<}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{typename}\ tokenizer\_type::iterator,}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keyword}{typename}\ tokenizer\_type::iterator}
+\DoxyCodeLine{00245\ \ \ \ \ >\ token\_iterator\_pair;}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}}
+\DoxyCodeLine{00253\ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{using\ }iterator\_category\ =\ std::input\_iterator\_tag;}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keyword}{using\ }value\_type\ \ \ \ \ \ \ \ =\ token\_iterator\_pair;}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{using\ }difference\_type\ \ \ =\ std::ptrdiff\_t;}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keyword}{using\ }pointer\ \ \ \ \ \ \ \ \ \ \ =\ token\_iterator\_pair\ *;}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keyword}{using\ }reference\ \ \ \ \ \ \ \ \ =\ token\_iterator\_pair\&;}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keyword}{using\ }iterator\ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{typename}\ tokenizer\_type::iterator;}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00263\ \ \ \ \ tokenizer\_type*\ Tokenizer;}
+\DoxyCodeLine{00264\ \ \ \ \ token\_iterator\_pair\ TokenRangeCurrentString;}
+\DoxyCodeLine{00265\ \ \ \ \ input\_line\_iter\_type\ InputLinesBegin;}
+\DoxyCodeLine{00266\ \ \ \ \ input\_line\_iter\_type\ InputLinesEnd;}
+\DoxyCodeLine{00267\ \ \ \ \ string\_type\ FieldDelimiter;}
+\DoxyCodeLine{00268\ \ \ \ \ string\_type\ EscapeCharacter;}
+\DoxyCodeLine{00269\ \ \ \ \ string\_type\ QuoteCharacter;}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ \_tokenize\_this\_line()}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>InputLinesBegin\ ==\ this-\/>InputLinesEnd)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ separator\_type\ separator(this-\/>EscapeCharacter,}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>FieldDelimiter,}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>QuoteCharacter);}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ this-\/>Tokenizer\ =\ \textcolor{keyword}{new}\ tokenizer\_type(*(this-\/>InputLinesBegin),\ separator);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ this-\/>TokenRangeCurrentString.first\ =\ this-\/>Tokenizer-\/>begin();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ this-\/>TokenRangeCurrentString.second\ =\ this-\/>Tokenizer-\/>end();}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}()}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ :\ Tokenizer(0)}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a557db86c032e811786310eacffd8d301}{\string~TokenizedStringIterator}}()}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \textcolor{keyword}{delete}\ this-\/>Tokenizer;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00305\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a4e25e4af4d121076d4291300447d553f}{TokenizedStringIterator}}(}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ input\_line\_iter\_type\ Begin,}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ input\_line\_iter\_type\ End,}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ string\_type\ \textcolor{keyword}{const}\&\ Delim,}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ string\_type\ \textcolor{keyword}{const}\&\ Escape,}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ string\_type\ \textcolor{keyword}{const}\&\ Quote}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ )}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ :\ Tokenizer(0),}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ InputLinesBegin(Begin),}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ InputLinesEnd(End),}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ FieldDelimiter(Delim),}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ EscapeCharacter(Escape),}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ QuoteCharacter(Quote)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ this-\/>\_tokenize\_this\_line();}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00326\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a7b4e359c8d8267224db2ad4cdf48e930}{TokenizedStringIterator}}(\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ :\ Tokenizer(0),}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ TokenRangeCurrentString(other.TokenRangeCurrentString),}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ InputLinesBegin(other.InputLinesBegin),}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ InputLinesEnd(other.InputLinesEnd),}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ FieldDelimiter(other.FieldDelimiter),}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ EscapeCharacter(other.EscapeCharacter),}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ QuoteCharacter(other.QuoteCharacter)}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ set\ up\ our\ own\ tokenization\ because\ otherwise\ we\ will\ have}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ shared\ pointer\ to\ the\ tokenizer\ with\ no\ way\ to\ resolve\ who}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ gets\ to\ delete\ it\ and\ who\ has\ to\ stay\ away.}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ this-\/>\_tokenize\_this\_line();}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00346\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}\&\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_a771b79247863f36f9ed5cd149d0d13b9}{operator=}}(\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ this-\/>InputLinesBegin\ \ =\ other.InputLinesBegin;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ this-\/>InputLinesEnd\ \ \ \ =\ other.InputLinesEnd;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ this-\/>FieldDelimiter\ \ \ =\ other.FieldDelimiter;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ this-\/>EscapeCharacter\ \ =\ other.EscapeCharacter;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ this-\/>QuoteCharacter\ \ \ =\ other.QuoteCharacter;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ this-\/>\_tokenize\_this\_line();}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00361\ \ \ \ \ token\_iterator\_pair\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa72c1d2cf6896a42400beae1de1544a4}{operator*}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00362\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>TokenRangeCurrentString;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00370\ \ \ \ \ token\_iterator\_pair\ \textcolor{keyword}{const}*\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ad0d1c42fbf1afd4f4fd5d30b438dfb13}{operator-\/>}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00371\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&(this-\/>TokenRangeCurrentString);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00379\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}\&\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af8f870ea96e8ccc0e7fa328e9bde518c}{operator++}}()}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ assert(this-\/>InputLinesBegin\ !=\ this-\/>InputLinesEnd);}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ this-\/>Tokenizer;}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ this-\/>Tokenizer\ =\ 0;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ ++\ (this-\/>InputLinesBegin);}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ this-\/>\_tokenize\_this\_line();}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00393\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}\&\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ae274cec3faff1fb010b6062aeae657c5}{operator++}}(\textcolor{keywordtype}{int})}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}\ prev(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af8f870ea96e8ccc0e7fa328e9bde518c}{operator++}}();}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prev;}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_af2cafc30d8a7f9033c99f79db66b00dd}{operator==}}(\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00408\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>InputLinesBegin\ \ ==\ other.InputLinesBegin\ \&\&}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>InputLinesEnd\ \ \ \ ==\ other.InputLinesEnd\ \&\&}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>FieldDelimiter\ \ \ ==\ other.FieldDelimiter\ \&\&}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>EscapeCharacter\ \ ==\ other.EscapeCharacter\ \&\&}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>QuoteCharacter\ \ \ ==\ other.QuoteCharacter);}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_ad04d7f31f61b48118739cbc3244c5b94}{operator!=}}(\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_aa6d2930c3db751dcc6eb717a23d70ad8}{TokenizedStringIterator}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00422\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\ !(*\textcolor{keyword}{this}\ ==\ other)\ );}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00425\ \ \ \};}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \textcolor{comment}{//\ End\ of\ iterator\ class;\ now\ back\ to\ StringTokenizingReader}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00430\ \ \ \textcolor{keyword}{typedef}\ TokenizedStringIterator\ iterator;}
+\DoxyCodeLine{00431\ \ \ \textcolor{keyword}{typedef}\ TokenizedStringIterator\ \textcolor{keyword}{const}\ const\_iterator;}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00446\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a03a5003d1ebb990599534d157b4c3840}{begin}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00447\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TokenizedStringIterator(this-\/>InputLinesBegin,\ this-\/>InputLinesEnd,\ this-\/>FieldDelimiter,\ this-\/>EscapeCharacter,\ this-\/>QuoteCharacter);}
+\DoxyCodeLine{00449\ \ \ \ \ \}}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00459\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a75267a61fad060bf9c6676ac9e76fb33}{end}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00460\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TokenizedStringIterator(this-\/>InputLinesEnd,\ this-\/>InputLinesEnd,\ this-\/>FieldDelimiter,\ this-\/>EscapeCharacter,\ this-\/>QuoteCharacter);}
+\DoxyCodeLine{00462\ \ \ \ \ \}}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00468\ \ \ const\_iterator\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a7956e50ca9949fe6e8d17d872a3a0567}{const\_begin}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00469\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a03a5003d1ebb990599534d157b4c3840}{begin}}();}
+\DoxyCodeLine{00471\ \ \ \ \ \}}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00477\ \ \ const\_iterator\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a2224bed36a3e9dfaa4ad27a458257b0d}{const\_end}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00478\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a75267a61fad060bf9c6676ac9e76fb33}{end}}();}
+\DoxyCodeLine{00480\ \ \ \ \ \}}
+\DoxyCodeLine{00481\ \};\ \textcolor{comment}{//\ End\ of\ StringTokenizingReader}}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_compute_d_b_s_c_a_n_clustering_8h" kind="file" language="C++">
+    <compoundname>ComputeDBSCANClustering.h</compoundname>
+    <includes local="no">tracktable/Core/TracktableCommon.h</includes>
+    <includes local="no">tracktable/Analysis/detail/dbscan_drivers.h</includes>
+    <includes local="no">tracktable/Analysis/detail/point_converter.h</includes>
+    <includes local="no">boost/iterator/transform_iterator.hpp</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/ComputeDBSCANClustering.h</label>
+        <link refid="_compute_d_b_s_c_a_n_clustering_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>boost/iterator/transform_iterator.hpp</label>
+      </node>
+      <node id="7">
+        <label>map</label>
+      </node>
+      <node id="3">
+        <label>tracktable/Analysis/detail/dbscan_drivers.h</label>
+      </node>
+      <node id="4">
+        <label>tracktable/Analysis/detail/point_converter.h</label>
+      </node>
+      <node id="2">
+        <label>tracktable/Core/TracktableCommon.h</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacetracktable">tracktable</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2023<sp/>National<sp/>Technology<sp/>and<sp/>Engineering</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC.<sp/>Under<sp/>the<sp/>terms<sp/>of<sp/>Contract<sp/>DE-NA0003525</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>with<sp/>National<sp/>Technology<sp/>and<sp/>Engineering<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC,</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>the<sp/>U.S.<sp/>Government<sp/>retains<sp/>certain<sp/>rights<sp/>in<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>ComputeDBSCANClustering<sp/>-<sp/>Convenient<sp/>driver<sp/>functions<sp/>for<sp/>DBSCAN</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>================================================================</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>Overview</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>--------</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>We<sp/>have<sp/>two<sp/>goals<sp/>here.<sp/>First,<sp/>give<sp/>you<sp/>a<sp/>one-function<sp/>interface</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>to<sp/>DBSCAN:<sp/>pass<sp/>in<sp/>a<sp/>list<sp/>of<sp/>points,<sp/>a<sp/>search<sp/>box<sp/>and<sp/>a<sp/>minimum</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>cluster<sp/>size,<sp/>get<sp/>back<sp/>a<sp/>vector<sp/>of<sp/>(vertex<sp/>ID,<sp/>cluster<sp/>ID)<sp/>labels.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>Second,<sp/>make<sp/>it<sp/>easy<sp/>to<sp/>say<sp/>&quot;These<sp/>points<sp/>are<sp/>actually<sp/>on<sp/>the</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>surface<sp/>of<sp/>a<sp/>sphere<sp/>but<sp/>I<sp/>want<sp/>you<sp/>to<sp/>pretend<sp/>that<sp/>they&apos;re<sp/>in</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>Cartesian<sp/>space.&quot;</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>Rationale</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>---------</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>Our<sp/>implementation<sp/>of<sp/>DBSCAN<sp/>is<sp/>templated<sp/>on<sp/>point<sp/>type<sp/>and<sp/>uses</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>boost::geometry<sp/>for<sp/>all<sp/>of<sp/>its<sp/>distance<sp/>math.<sp/>This<sp/>means<sp/>that<sp/>it</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>will<sp/>automatically<sp/>adapt<sp/>to<sp/>whatever<sp/>coordinate<sp/>system<sp/>you&apos;re<sp/>using</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>for<sp/>your<sp/>points<sp/>as<sp/>long<sp/>as<sp/>Boost<sp/>knows<sp/>what<sp/>to<sp/>do<sp/>with<sp/>it.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>usually<sp/>great.<sp/>However,<sp/>there<sp/>are<sp/>times<sp/>when<sp/>it<sp/>will<sp/>slow</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>you<sp/>down<sp/>tremendously.<sp/>For<sp/>example,<sp/>if<sp/>you&apos;re<sp/>clustering<sp/>a<sp/>bunch</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>of<sp/>points<sp/>that<sp/>are<sp/>very<sp/>close<sp/>together<sp/>on<sp/>the<sp/>surface<sp/>of<sp/>a<sp/>sphere,</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>you<sp/>might<sp/>do<sp/>just<sp/>fine<sp/>by<sp/>pretending<sp/>that<sp/>the<sp/>space<sp/>is<sp/>Cartesian</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>(flat)<sp/>instead<sp/>of<sp/>spherical.<sp/>That<sp/>will<sp/>run<sp/>dramatically<sp/>more</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>quickly<sp/>and<sp/>with<sp/>greater<sp/>precision<sp/>than<sp/>the<sp/>trigonometry<sp/>necessary</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>for<sp/>doing<sp/>distance<sp/>computations<sp/>on<sp/>a<sp/>sphere.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__tracktable_COMPUTE_DBSCAN_CLUSTERING_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__tracktable_COMPUTE_DBSCAN_CLUSTERING_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/TracktableCommon.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Analysis/detail/dbscan_drivers.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Analysis/detail/point_converter.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/iterator/transform_iterator.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>SearchBoxT,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">IteratorT,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>OutputIteratorT&gt;</highlight></codeline>
+<codeline lineno="125" refid="namespacetracktable_1a79d16c21e46fc8557e8cdb75f860b7e8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a79d16c21e46fc8557e8cdb75f860b7e8" kindref="member">cluster_with_dbscan</ref>(</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>PointIteratorT<sp/>input_begin,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>PointIteratorT<sp/>input_end,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>SearchBoxT<sp/>search_box_half_span,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minimum_cluster_size,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>OutputIteratorT<sp/>output_sink</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>PointIteratorT::value_type<sp/>input_point_type;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Dispatch<sp/>on<sp/>the<sp/>input<sp/>point<sp/>type<sp/>will<sp/>happen<sp/>here<sp/>so<sp/>that<sp/>we<sp/>can</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>handle<sp/>bare<sp/>points<sp/>or<sp/>std::pair&lt;metadata,<sp/>point&gt;<sp/>instances.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><ref refid="structtracktable_1_1analysis_1_1detail_1_1_d_b_s_c_a_n___driver" kindref="compound">analysis::detail::DBSCAN_Driver&lt;input_point_type&gt;</ref><sp/>dbscan;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_clusters<sp/>=<sp/>dbscan(</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>input_begin,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>input_end,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>search_box_half_span,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>minimum_cluster_size,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>output_sink</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>num_clusters;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ClusterLabelIteratorT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>OutputIteratorT&gt;</highlight></codeline>
+<codeline lineno="193" refid="namespacetracktable_1af2efd19849e0ceccacfc7ffb7a0e31fa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1af2efd19849e0ceccacfc7ffb7a0e31fa" kindref="member">build_cluster_membership_lists</ref>(</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>ClusterLabelIteratorT<sp/>label_begin,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>ClusterLabelIteratorT<sp/>label_end,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>OutputIteratorT<sp/>output_membership_lists</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ClusterLabelIteratorT::value_type::first_type<sp/>vertex_id_type;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::vector&lt;vertex_id_type&gt;<sp/>vertex_id_vector_type;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::map&lt;int,<sp/>vertex_id_vector_type&gt;<sp/>member_map_type;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>member_map_type<sp/>membership_lists;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(label_begin<sp/>!=<sp/>label_end)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cluster_id<sp/>=<sp/>label_begin-&gt;second;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>vertex_id_type<sp/>vertex_id<sp/>=<sp/>label_begin-&gt;first;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(membership_lists.find(cluster_id)<sp/>==<sp/>membership_lists.end())</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>membership_lists[cluster_id]<sp/>=<sp/>vertex_id_vector_type();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>membership_lists[cluster_id].push_back(vertex_id);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>++label_begin;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Since<sp/>std::map<sp/>keeps<sp/>its<sp/>contents<sp/>sorted<sp/>by<sp/>the<sp/>key<sp/>(in<sp/>this<sp/>case</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>cluster<sp/>ID)<sp/>we<sp/>get<sp/>them<sp/>back<sp/>in<sp/>order<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>member_map_type::const_iterator<sp/>iter<sp/>=<sp/>membership_lists.begin();</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iter<sp/>!=<sp/>membership_lists.end();</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++iter)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>*output_membership_lists<sp/>=<sp/>iter-&gt;second;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>++output_membership_lists;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::numeric_cast&lt;int&gt;(membership_lists.size());</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>exit<sp/>namespace<sp/>tracktable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/ComputeDBSCANClustering.h"/>
+  </compounddef>
+</doxygen>

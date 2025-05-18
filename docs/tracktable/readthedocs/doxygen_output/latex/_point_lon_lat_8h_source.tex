@@ -1,0 +1,327 @@
+\doxysection{Point\+Lon\+Lat.\+h}
+\hypertarget{_point_lon_lat_8h_source}{}\label{_point_lon_lat_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PointLonLat.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PointLonLat.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_PointLonLat\_h}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_PointLonLat\_h}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCoreWindowsHeader.h>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointBase.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointCartesian.h>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Distance.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Interpolate.h>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Bearing.h>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Extrapolate.h>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/SimplifyLinestring.h>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/SphericalCoordinateAccess.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/TurnAngle.h>}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/implementations/GenericDistance.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/implementations/TurnAngle.h>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/implementations/GreatCircleInterpolation.h>}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/register/point.hpp>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <boost/geometry/strategies/strategies.hpp>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ @ingroup\ C++}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ @\{}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{class\ }TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a32518d4d3231e491bace6b70eeb3901d}{PointLonLat}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase}}<2>}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }boost::serialization::access;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase<2>}}\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ade511104466c74d766fdc9c376c87f25}{Superclass}};}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{typedef}\ Superclass::coordinate\_type\ coord\_type;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a32518d4d3231e491bace6b70eeb3901d}{PointLonLat}}()\ \{\ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a79da0e5c26f50ec1afb818dfd8f17a14}{PointLonLat}}(coord\_type\ \textcolor{keyword}{const}\&\ a,\ coord\_type\ \textcolor{keyword}{const}\&\ b)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<0>}}(a);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<1>}}(b);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a8b4e30e32c3bfa6a9e0b1cfb4f1cd0ef}{PointLonLat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}*\ coordinates)}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<0>}}(coordinates[0]);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<1>}}(coordinates[1]);}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_aeac3a38ec37f736cf2dfbb6d2f2cb1ec}{\string~PointLonLat}}()\ \{\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a888bdb157648a9a3dff763b37f88928d}{PointLonLat}}(\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ade511104466c74d766fdc9c376c87f25}{Superclass}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates_a1048f11c8888a25cda776403fb3af9e9}{detail::assign\_coordinates<2>::apply}}(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a28d6f1ff21f6df387a6cf1099495b548}{PointLonLat}}(\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a32518d4d3231e491bace6b70eeb3901d}{PointLonLat}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ad73365869fdd0bcc96c918ce7d66490d}{set\_latitude}}(other.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a71577e3a60ae41e63bccfeb5a9695317}{latitude}}());}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a403df11f0c49a8d0d02ac3cdb1635ffa}{set\_longitude}}(other.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ac9c21d5063b716c783b3b1acffa3d624}{longitude}}());}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ coord\_type\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ac9c21d5063b716c783b3b1acffa3d624}{longitude}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5}{get<0>}}();\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a403df11f0c49a8d0d02ac3cdb1635ffa}{set\_longitude}}(coord\_type\ \textcolor{keyword}{const}\&\ new\_longitude)}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<0>}}(new\_longitude);}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \ \ coord\_type\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a71577e3a60ae41e63bccfeb5a9695317}{latitude}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5}{get<1>}}();\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ad73365869fdd0bcc96c918ce7d66490d}{set\_latitude}}(coord\_type\ \textcolor{keyword}{const}\&\ new\_latitude)}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<1>}}(new\_latitude);}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \ \ std::string\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a379153b44191c37a93f4514814cd19e7}{to\_string}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00164\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00165\ \ \ \ \ std::ostringstream\ outbuf;}
+\DoxyCodeLine{00166\ \ \ \ \ outbuf\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ac9c21d5063b716c783b3b1acffa3d624}{longitude}}()\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a71577e3a60ae41e63bccfeb5a9695317}{latitude}}()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ outbuf.str();}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00176\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00177\ \ \ \textcolor{keywordtype}{void}\ serialize(Archive\&\ ar,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00178\ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ ar\ \&\ boost::serialization::make\_nvp(\textcolor{stringliteral}{"{}Coordinates"{}},\ this-\/>Coordinates);}
+\DoxyCodeLine{00180\ \ \ \}}
+\DoxyCodeLine{00181\ \};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \}\ \textcolor{comment}{//\ namespace\ tracktable}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00191\ TRACKTABLE\_CORE\_EXPORT\ std::ostream\&}
+\DoxyCodeLine{00192\ operator<<(std::ostream\&\ os,\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{tracktable::PointLonLat}}\ \textcolor{keyword}{const}\&\ pt);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ This\ macro\ call\ registers\ this\ point\ class\ for\ use\ with}}
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ boost::geometry.\ We\ have\ to\ do\ this\ before\ we\ define\ any\ of\ our}}
+\DoxyCodeLine{00196\ \textcolor{comment}{//\ own\ traits.}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ BOOST\_GEOMETRY\_REGISTER\_POINT\_2D\_GET\_SET(}
+\DoxyCodeLine{00199\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{tracktable::PointLonLat}},}
+\DoxyCodeLine{00200\ \ \ tracktable::settings::point\_coordinate\_type,}
+\DoxyCodeLine{00201\ \ \ boost::geometry::cs::spherical\_equatorial<boost::geometry::degree>,}
+\DoxyCodeLine{00202\ \ \ longitude,\ latitude,}
+\DoxyCodeLine{00203\ \ \ set\_longitude,\ set\_latitude}
+\DoxyCodeLine{00204\ )}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }traits\ \{}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00210\ \textcolor{keyword}{struct\ }tag<tracktable::PointLonLat>}
+\DoxyCodeLine{00211\ \{}
+\DoxyCodeLine{00212\ \ \ \textcolor{keyword}{typedef}\ base\_point\_tag\ type;}
+\DoxyCodeLine{00213\ \};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00216\ \textcolor{keyword}{struct\ }dimension<PointLonLat>\ :\ dimension<PointLonLat::Superclass>\ \{\};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00219\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1point__domain__name}{point\_domain\_name}}<PointLonLat>}
+\DoxyCodeLine{00220\ \{}
+\DoxyCodeLine{00221\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ string\_type\ apply()}
+\DoxyCodeLine{00222\ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}generic\_lonlat"{}};}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00228\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1undecorated__point}{undecorated\_point}}<PointLonLat>}
+\DoxyCodeLine{00229\ \{}
+\DoxyCodeLine{00230\ \ \ \textcolor{keyword}{typedef}\ PointLonLat\ type;}
+\DoxyCodeLine{00231\ \};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00234\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1domain}{domain}}<PointLonLat>}
+\DoxyCodeLine{00235\ \{}
+\DoxyCodeLine{00236\ \ \ \textcolor{keyword}{typedef}\ domains::generic\ type;}
+\DoxyCodeLine{00237\ \};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \}\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable::traits}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00246\ \textcolor{comment}{//}}
+\DoxyCodeLine{00247\ \textcolor{comment}{//\ ALGORITHMS}}
+\DoxyCodeLine{00248\ \textcolor{comment}{//}}
+\DoxyCodeLine{00249\ \textcolor{comment}{//\ Here\ are\ the\ implementations\ for\ the\ common\ algorithms\ we\ want\ to}}
+\DoxyCodeLine{00250\ \textcolor{comment}{//\ run\ on\ points.\ These\ are\ set\ up\ by\ the\ \#includes\ at\ the\ top\ of\ the}}
+\DoxyCodeLine{00251\ \textcolor{comment}{//\ file\ that\ reach\ into\ detail/algorithm\_signatures.}}
+\DoxyCodeLine{00252\ \textcolor{comment}{//}}
+\DoxyCodeLine{00253\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{comment}{//\ Distance\ is\ not\ defined\ here\ because\ as\ a\ member\ of\ the\ generic}}
+\DoxyCodeLine{00258\ \textcolor{comment}{//\ point\ domain\ we\ inherit\ the\ definition\ in\ PointBase.h.}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{comment}{//\ The\ signed\ turn\ angle\ is\ defined\ so\ that\ a\ right\ turn\ is\ positive.}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00263\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1signed__turn__angle}{signed\_turn\_angle}}<\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}>}
+\DoxyCodeLine{00264\ \{}
+\DoxyCodeLine{00265\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ apply(}
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}\ \textcolor{keyword}{const}\&\ a,\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}\ \textcolor{keyword}{const}\&\ b,\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}\ \textcolor{keyword}{const}\&\ c}
+\DoxyCodeLine{00267\ \ \ \ \ )}
+\DoxyCodeLine{00268\ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ boost::geometry::coordinate\_system<PointLonLat>::type\ coordinate\_system;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ implementations::signed\_turn\_angle<coordinate\_system,\ 2>::apply(a,\ b,\ c);}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \};}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \textcolor{comment}{//\ You\ may\ well\ ask\ why\ we've\ got\ a\ templated\ apply\ method\ here\ when}}
+\DoxyCodeLine{00275\ \textcolor{comment}{//\ we're\ talking\ about\ the\ PointLonLat\ class.\ The\ reason\ is\ that}}
+\DoxyCodeLine{00276\ \textcolor{comment}{//\ we're\ not\ just\ implementing\ this\ for\ PointLonLat\ but\ for\ subclasses}}
+\DoxyCodeLine{00277\ \textcolor{comment}{//\ that\ behave\ like\ PointLonLat.\ The\ template\ lets\ us\ construct\ and}}
+\DoxyCodeLine{00278\ \textcolor{comment}{//\ turn\ whatever\ point\ type\ we're\ asked\ for\ instead\ of\ just}}
+\DoxyCodeLine{00279\ \textcolor{comment}{//\ PointLonLat.}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00282\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate}{interpolate}}<\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}>\ :\ implementations::great\_circle\_interpolate}
+\DoxyCodeLine{00283\ \{\ \};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00286\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1extrapolate}{extrapolate}}<\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}>\ :\ implementations::great\_circle\_interpolate}
+\DoxyCodeLine{00287\ \{\ \};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00292\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1bearing}{bearing}}<\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}>}
+\DoxyCodeLine{00293\ \{}
+\DoxyCodeLine{00294\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ apply(\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}\ \textcolor{keyword}{const}\&\ from,\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}\ \textcolor{keyword}{const}\&\ to)}
+\DoxyCodeLine{00295\ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ boost::geometry::traits::coordinate\_system<PointLonLat>::type\ coord\_system;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ implementations::bearing<coord\_system>::apply(from,\ to);}
+\DoxyCodeLine{00298\ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00302\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1simplify__linestring}{simplify\_linestring}}<\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}>}
+\DoxyCodeLine{00303\ \{}
+\DoxyCodeLine{00304\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ line\textcolor{keywordtype}{string}\_type>}
+\DoxyCodeLine{00305\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ apply(linestring\_type\ \textcolor{keyword}{const}\&\ input,}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ linestring\_type\&\ result,}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tolerance)}
+\DoxyCodeLine{00308\ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \textcolor{comment}{//\ Since\ we\ measure\ distances\ for\ PointLonLat\ in\ kilometers,\ we}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \textcolor{comment}{//\ have\ to\ convert\ back\ to\ degrees\ before\ we\ call\ the\ real}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \textcolor{comment}{//\ simplify().\ Note\ that\ here\ we\ use\ degrees\ and\ NOT\ radians}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \textcolor{comment}{//\ since\ the\ coordinate\ system\ is}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \textcolor{comment}{//\ boost::geometry::cs<spherical\_equatorial<degree>>.}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tolerance\_in\_radians\ =\ tolerance\ /\ tracktable::conversions::constants::EARTH\_RADIUS\_IN\_KM;}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tolerance\_in\_degrees\ =\ tolerance\_in\_radians\ *\ tracktable::conversions::constants::DEGREES\_PER\_RADIAN;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ boost::geometry::simplify(input,\ result,\ tolerance\_in\_degrees);}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00323\ \textcolor{comment}{//}}
+\DoxyCodeLine{00324\ \textcolor{comment}{//\ Coordinate\ access\ for\ spherical\ point}}
+\DoxyCodeLine{00325\ \textcolor{comment}{//}}
+\DoxyCodeLine{00326\ \textcolor{comment}{//\ PointLonLat\ stores\ its\ coordinates\ in\ degrees.}}
+\DoxyCodeLine{00327\ \textcolor{comment}{//}}
+\DoxyCodeLine{00328\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00331\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1spherical__coordinate__access}{spherical\_coordinate\_access}}<\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}>}
+\DoxyCodeLine{00332\ \{}
+\DoxyCodeLine{00333\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{PointLonLat}}\ point\_type;}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ longitude\_as\_degrees(point\_type\ \textcolor{keyword}{const}\&\ p)}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ac9c21d5063b716c783b3b1acffa3d624}{longitude}}();}
+\DoxyCodeLine{00338\ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ latitude\_as\_degrees(point\_type\ \textcolor{keyword}{const}\&\ p)}
+\DoxyCodeLine{00340\ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a71577e3a60ae41e63bccfeb5a9695317}{latitude}}();}
+\DoxyCodeLine{00342\ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ longitude\_as\_radians(point\_type\ \textcolor{keyword}{const}\&\ p)}
+\DoxyCodeLine{00344\ \ \ \ \ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ conversions::radians(p.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ac9c21d5063b716c783b3b1acffa3d624}{longitude}}());}
+\DoxyCodeLine{00346\ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ latitude\_as\_radians(point\_type\ \textcolor{keyword}{const}\&\ p)}
+\DoxyCodeLine{00348\ \ \ \ \ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ conversions::radians(p.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a71577e3a60ae41e63bccfeb5a9695317}{latitude}}());}
+\DoxyCodeLine{00350\ \ \ \ \ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ set\_longitude\_from\_degrees(point\_type\ \&\ p,\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00353\ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ p.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a403df11f0c49a8d0d02ac3cdb1635ffa}{set\_longitude}}(value);}
+\DoxyCodeLine{00355\ \ \ \ \ \}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ set\_latitude\_from\_degrees(point\_type\ \&\ p,\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00358\ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ p.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ad73365869fdd0bcc96c918ce7d66490d}{set\_latitude}}(value);}
+\DoxyCodeLine{00360\ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ set\_longitude\_from\_radians(point\_type\ \&\ p,\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00363\ \ \ \ \ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ p.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a403df11f0c49a8d0d02ac3cdb1635ffa}{set\_longitude}}(conversions::degrees(value));}
+\DoxyCodeLine{00365\ \ \ \ \ \}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ set\_latitude\_from\_radians(point\_type\ \&\ p,\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00368\ \ \ \ \ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ p.\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ad73365869fdd0bcc96c918ce7d66490d}{set\_latitude}}(conversions::degrees(value));}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \};}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \}\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable::algorithms}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

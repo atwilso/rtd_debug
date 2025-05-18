@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_domain_macros_8h" kind="file" language="C++">
+    <compoundname>DomainMacros.h</compoundname>
+    <includes local="no">tracktable/Core/PointTraits.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h</label>
+        <link refid="_domain_macros_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable/Core/PointTraits.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="_domain_macros_8h_1ae13355d4170db08f9bae2346b7536ab2" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE</name>
+        <param><defname>NEW_CLASS</defname></param>
+        <param><defname>DELEGATE_CLASS</defname></param>
+        <param><defname>TRAIT</defname></param>
+        <initializer>  template&lt;&gt;                                                    \
+  struct TRAIT &lt; NEW_CLASS &gt; : TRAIT &lt; DELEGATE_CLASS &gt; { };</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="42" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="define" id="_domain_macros_8h_1a50d18f94f35f052bebae33be271fb578" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE_COORDINATE_ACCESS</name>
+        <param><defname>NEW_POINT</defname></param>
+        <param><defname>DELEGATE_POINT</defname></param>
+        <initializer>  template&lt;size_t dim&gt;                                                  \
+struct access&lt; NEW_POINT, dim &gt; : access&lt; DELEGATE_POINT, dim &gt; { };</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="46" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="define" id="_domain_macros_8h_1a7e9b2cf5d98f9094d2bc4741b8938ba5" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE_BOOST_POINT_TRAITS</name>
+        <param><defname>NEW_POINT</defname></param>
+        <param><defname>DELEGATE_POINT</defname></param>
+        <initializer>  namespace boost { namespace geometry { namespace traits {             \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, tag )                 \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, coordinate_type )     \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, dimension )           \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, coordinate_system )   \
+  TRACKTABLE_DELEGATE_COORDINATE_ACCESS( NEW_POINT, DELEGATE_POINT )    \
+  } } }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="51" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="51" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="define" id="_domain_macros_8h_1a507081a6852855e8b1dba96516ab08e7" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE_TRAJECTORY_ALGORITHMS</name>
+        <param><defname>NEW_CLASS</defname></param>
+        <param><defname>DELEGATE</defname></param>
+        <initializer>  namespace tracktable { namespace algorithms {                         \
+  TRACKTABLE_DELEGATE( NEW_CLASS, DELEGATE, subset_during_interval )    \
+  TRACKTABLE_DELEGATE( NEW_CLASS, DELEGATE, point_at_fraction )         \
+  TRACKTABLE_DELEGATE( NEW_CLASS, DELEGATE, point_at_time )             \
+  } }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="61" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="61" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="define" id="_domain_macros_8h_1a0ac7329495cc179f1d2ece99f7622a23" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE_POINT_ALGORITHMS</name>
+        <param><defname>NEW_POINT</defname></param>
+        <param><defname>DELEGATE_POINT</defname></param>
+        <initializer>  namespace tracktable { namespace algorithms {                           \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, distance )              \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, bearing )               \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, interpolate )           \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, signed_turn_angle )     \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, unsigned_turn_angle )   \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, convex_hull_perimeter ) \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, convex_hull_area )      \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, convex_hull_centroid )  \
+  } }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="69" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="69" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="define" id="_domain_macros_8h_1a544f29b5369d60f214a62dbd784f340d" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE_BASE_POINT_TRAITS</name>
+        <param><defname>NEW_POINT</defname></param>
+        <param><defname>DELEGATE_POINT</defname></param>
+        <initializer>  namespace tracktable { namespace traits {                             \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, tag )                 \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, has_properties )      \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, dimension )           \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, undecorated_point )   \
+  } }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="81" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="81" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="define" id="_domain_macros_8h_1a58376f0e786aed0af0a0d241f5c677c2" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE_TRAJECTORY_POINT_TRAITS</name>
+        <param><defname>NEW_POINT</defname></param>
+        <param><defname>DELEGATE_POINT</defname></param>
+        <initializer>  namespace tracktable { namespace traits {                             \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, tag )                 \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, dimension )           \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, has_object_id )       \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, has_properties )      \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, has_timestamp )       \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, object_id )           \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, timestamp )           \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, undecorated_point )   \
+  TRACKTABLE_DELEGATE( NEW_POINT, DELEGATE_POINT, point_domain_name )   \
+  } }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="89" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="89" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="define" id="_domain_macros_8h_1a81a8b6259c28d47df5a4f183b5a47bda" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE_DOMAIN_TRAIT</name>
+        <param><defname>DOMAIN_NS</defname></param>
+        <param><defname>DOMAIN_TAG</defname></param>
+        <initializer>  namespace tracktable { namespace traits {                             \
+      template&lt;&gt; struct domain&lt;DOMAIN_NS::base_point_type&gt;  { typedef DOMAIN_TAG type; }; \
+      template&lt;&gt; struct domain&lt;DOMAIN_NS::trajectory_point_type&gt; : domain&lt;DOMAIN_NS::base_point_type&gt; {}; \
+      template&lt;&gt; struct domain&lt;DOMAIN_NS::trajectory_type&gt; : domain&lt;DOMAIN_NS::trajectory_point_type&gt; {}; \
+      template&lt;&gt; struct domain&lt;DOMAIN_NS::linestring_type&gt; : domain&lt;DOMAIN_NS::base_point_type&gt; {}; \
+  } }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="102" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="102" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="define" id="_domain_macros_8h_1a0a3ba1e748205c47337d55c78dffac78" prot="public" static="no">
+        <name>TRACKTABLE_DELEGATE_POINT_DOMAIN_NAME_TRAIT</name>
+        <param><defname>DOMAIN_NS</defname></param>
+        <initializer>  namespace tracktable { namespace traits {                                 \
+    template&lt;&gt; struct point_domain_name&lt;DOMAIN_NS::box_type&gt; : point_domain_name&lt;DOMAIN_NS::base_point_type&gt; {};       \
+  } }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" line="110" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h" bodystart="110" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2023<sp/>National<sp/>Technology<sp/>and<sp/>Engineering</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC.<sp/>Under<sp/>the<sp/>terms<sp/>of<sp/>Contract<sp/>DE-NA0003525</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>with<sp/>National<sp/>Technology<sp/>and<sp/>Engineering<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC,</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>the<sp/>U.S.<sp/>Government<sp/>retains<sp/>certain<sp/>rights<sp/>in<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>These<sp/>macros<sp/>make<sp/>it<sp/>simple<sp/>for<sp/>us<sp/>to<sp/>say<sp/>to<sp/>the<sp/>compiler<sp/>&quot;Treat</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>MyPointClass<sp/>just<sp/>like<sp/>ThisOtherPointClass<sp/>when<sp/>you<sp/>want<sp/>to<sp/>do<sp/>math</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>on<sp/>it.&quot;</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__tracktable_DomainMacros_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__tracktable_DomainMacros_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/PointTraits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE(<sp/>NEW_CLASS,<sp/>DELEGATE_CLASS,<sp/>TRAIT<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"><sp/><sp/>template&lt;&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"><sp/><sp/>struct<sp/>TRAIT<sp/>&lt;<sp/>NEW_CLASS<sp/>&gt;<sp/>:<sp/>TRAIT<sp/>&lt;<sp/>DELEGATE_CLASS<sp/>&gt;<sp/>{<sp/>};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE_COORDINATE_ACCESS(<sp/>NEW_POINT,<sp/>DELEGATE_POINT<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"><sp/><sp/>template&lt;size_t<sp/>dim&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor">struct<sp/>access&lt;<sp/>NEW_POINT,<sp/>dim<sp/>&gt;<sp/>:<sp/>access&lt;<sp/>DELEGATE_POINT,<sp/>dim<sp/>&gt;<sp/>{<sp/>};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE_BOOST_POINT_TRAITS(<sp/>NEW_POINT,<sp/>DELEGATE_POINT<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"><sp/><sp/>namespace<sp/>boost<sp/>{<sp/>namespace<sp/>geometry<sp/>{<sp/>namespace<sp/>traits<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>tag<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>coordinate_type<sp/>)<sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>dimension<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>coordinate_system<sp/>)<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE_COORDINATE_ACCESS(<sp/>NEW_POINT,<sp/>DELEGATE_POINT<sp/>)<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"><sp/><sp/>}<sp/>}<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE_TRAJECTORY_ALGORITHMS(<sp/>NEW_CLASS,<sp/>DELEGATE<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/>namespace<sp/>tracktable<sp/>{<sp/>namespace<sp/>algorithms<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_CLASS,<sp/>DELEGATE,<sp/>subset_during_interval<sp/>)<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_CLASS,<sp/>DELEGATE,<sp/>point_at_fraction<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_CLASS,<sp/>DELEGATE,<sp/>point_at_time<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"><sp/><sp/>}<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE_POINT_ALGORITHMS(<sp/>NEW_POINT,<sp/>DELEGATE_POINT<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"><sp/><sp/>namespace<sp/>tracktable<sp/>{<sp/>namespace<sp/>algorithms<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>distance<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>bearing<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>interpolate<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>signed_turn_angle<sp/>)<sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>unsigned_turn_angle<sp/>)<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>convex_hull_perimeter<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>convex_hull_area<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>convex_hull_centroid<sp/>)<sp/><sp/>\</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"><sp/><sp/>}<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE_BASE_POINT_TRAITS(<sp/>NEW_POINT,<sp/>DELEGATE_POINT<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"><sp/><sp/>namespace<sp/>tracktable<sp/>{<sp/>namespace<sp/>traits<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>tag<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>has_properties<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>dimension<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>undecorated_point<sp/>)<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"><sp/><sp/>}<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE_TRAJECTORY_POINT_TRAITS(<sp/>NEW_POINT,<sp/>DELEGATE_POINT<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/>namespace<sp/>tracktable<sp/>{<sp/>namespace<sp/>traits<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>tag<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>dimension<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>has_object_id<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="94"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>has_properties<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="95"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>has_timestamp<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>object_id<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>timestamp<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>undecorated_point<sp/>)<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"><sp/><sp/>TRACKTABLE_DELEGATE(<sp/>NEW_POINT,<sp/>DELEGATE_POINT,<sp/>point_domain_name<sp/>)<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"><sp/><sp/>}<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE_DOMAIN_TRAIT(DOMAIN_NS,<sp/>DOMAIN_TAG)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="103"><highlight class="preprocessor"><sp/><sp/>namespace<sp/>tracktable<sp/>{<sp/>namespace<sp/>traits<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;&gt;<sp/>struct<sp/>domain&lt;DOMAIN_NS::base_point_type&gt;<sp/><sp/>{<sp/>typedef<sp/>DOMAIN_TAG<sp/>type;<sp/>};<sp/>\</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;&gt;<sp/>struct<sp/>domain&lt;DOMAIN_NS::trajectory_point_type&gt;<sp/>:<sp/>domain&lt;DOMAIN_NS::base_point_type&gt;<sp/>{};<sp/>\</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;&gt;<sp/>struct<sp/>domain&lt;DOMAIN_NS::trajectory_type&gt;<sp/>:<sp/>domain&lt;DOMAIN_NS::trajectory_point_type&gt;<sp/>{};<sp/>\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;&gt;<sp/>struct<sp/>domain&lt;DOMAIN_NS::linestring_type&gt;<sp/>:<sp/>domain&lt;DOMAIN_NS::base_point_type&gt;<sp/>{};<sp/>\</highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor"><sp/><sp/>}<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACKTABLE_DELEGATE_POINT_DOMAIN_NAME_TRAIT(DOMAIN_NS)<sp/>\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/>namespace<sp/>tracktable<sp/>{<sp/>namespace<sp/>traits<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>template&lt;&gt;<sp/>struct<sp/>point_domain_name&lt;DOMAIN_NS::box_type&gt;<sp/>:<sp/>point_domain_name&lt;DOMAIN_NS::base_point_type&gt;<sp/>{};<sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"><sp/><sp/>}<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/DomainMacros.h"/>
+  </compounddef>
+</doxygen>

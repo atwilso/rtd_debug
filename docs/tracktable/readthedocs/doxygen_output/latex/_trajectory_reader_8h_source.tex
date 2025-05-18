@@ -1,0 +1,411 @@
+\doxysection{Trajectory\+Reader.\+h}
+\hypertarget{_trajectory_reader_8h_source}{}\label{_trajectory_reader_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/TrajectoryReader.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/TrajectoryReader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_TrajectoryReader\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_TrajectoryReader\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <tracktable/RW/GenericReader.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <tracktable/RW/LineReader.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tracktable/RW/SkipCommentsReader.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <tracktable/RW/StringTokenizingReader.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <tracktable/RW/PointFromTokensReader.h>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <tracktable/RW/detail/TrajectoryHeader.h>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <tracktable/RW/detail/PointHeader.h>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TrajectoryT>}
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}{TrajectoryReader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_generic_reader_a3f6a790b8f1937222c8694696d3791fd}{GenericReader}}<TrajectoryT>}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{typedef}\ TrajectoryT\ trajectory\_type;}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{trajectory\_type::point\_type}}\ point\_type;}
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable::LineReader<>}}\ line\_reader\_type;}
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable::SkipCommentsReader<line\_reader\_type::iterator>}}\ skip\_comments\_reader\_type;}
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable::StringTokenizingReader<skip\_comments\_reader\_type::iterator>}}\ string\_tokenizer\_type;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}{TrajectoryReader}}()}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a2872374653b51d30f48b458d4d86e19b}{set\_default\_configuration}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a8d8a8515d21cdc08fc6a0b92047a0d3b}{TrajectoryReader}}(std::istream\&\ infile)}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aa8019fa8c541a4880b0c8ab03787238b}{set\_input}}(infile);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a2872374653b51d30f48b458d4d86e19b}{set\_default\_configuration}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ace26101b693d64deceabdb0a07fd0406}{TrajectoryReader}}(\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}{TrajectoryReader}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00112\ \ \ \ \ :\ LineReader(other.LineReader)}
+\DoxyCodeLine{00113\ \ \ \ \ ,\ PointReader(other.PointReader)}
+\DoxyCodeLine{00114\ \ \ \ \ ,\ SkipCommentsReader(other.SkipCommentsReader)}
+\DoxyCodeLine{00115\ \ \ \ \ ,\ StringTokenizer(other.StringTokenizer)}
+\DoxyCodeLine{00116\ \ \ \ \ ,\ TimestampFormat(other.TimestampFormat)}
+\DoxyCodeLine{00117\ \ \ \ \ ,\ WarningsEnabled(other.WarningsEnabled)}
+\DoxyCodeLine{00118\ \ \ \ \ ,\ TrajectoriesRead(other.TrajectoriesRead)}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a12801913430f707ffdd4d050fdfa98fc}{\string~TrajectoryReader}}()}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}{TrajectoryReader}}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aaf4c933d5cc7aa9c5f286b040d6f5c0c}{operator=}}(\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}{TrajectoryReader}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ this-\/>LineReader\ \ \ \ \ \ \ \ \ =\ other.LineReader;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ this-\/>PointReader\ \ \ \ \ \ \ \ =\ other.PointReader;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ this-\/>SkipCommentsReader\ =\ other.SkipCommentsReader;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ this-\/>StringTokenizer\ \ \ \ =\ other.StringTokenizer;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ this-\/>TimestampFormat\ \ \ \ =\ other.TimestampFormat;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ this-\/>WarningsEnabled\ \ \ \ =\ other.WarningsEnabled;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ this-\/>TrajectoriesRead\ \ \ =\ other.TrajectoriesRead;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aa4105b799acf5e8c5ed588d97bbf0c63}{operator==}}(\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}{TrajectoryReader}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00152\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ this-\/>LineReader\ \ \ \ \ \ \ \ \ \ \ \ ==\ other.LineReader}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \&\&\ this-\/>SkipCommentsReader\ ==\ other.SkipCommentsReader}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \&\&\ this-\/>StringTokenizer\ \ \ \ ==\ other.StringTokenizer}
+\DoxyCodeLine{00157\ \ \ \ \ \&\&\ this-\/>TimestampFormat\ \ \ \ ==\ other.TimestampFormat}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \&\&\ this-\/>WarningsEnabled\ \ \ \ ==\ other.WarningsEnabled}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \&\&\ this-\/>TrajectoriesRead\ \ \ ==\ other.TrajectoriesRead}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a6bbc692224484e396b64224e2bbe5559}{operator!=}}(\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a697088cd5b41071b55cf7c4c10639959}{TrajectoryReader}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00169\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a2872374653b51d30f48b458d4d86e19b}{set\_default\_configuration}}()}
+\DoxyCodeLine{00188\ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ac54c383499544189b711a6a5ce8c84b1}{set\_null\_value}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ad8b8912bc589d9cfb809e47906668509}{set\_field\_delimiter}}(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aa7fe312ba51efb87668caafa4cec6ab3}{set\_comment\_character}}(\textcolor{stringliteral}{"{}\#"{}});}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a6a4b0b4132b0ac549e63cdd1454c1841}{set\_warnings\_enabled}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a58edb5570e581ecb0b7a2b56c49efb1a}{set\_timestamp\_format}}(\textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}});}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ this-\/>PointReader.set\_point\_count\_log\_enabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00208\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aa7fe312ba51efb87668caafa4cec6ab3}{set\_comment\_character}}(string\_type\ \textcolor{keyword}{const}\&\ comment)}
+\DoxyCodeLine{00209\ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ this-\/>SkipCommentsReader.set\_comment\_character(comment);}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00219\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_acfc86cf112e208e2fcc8c49562ccfd68}{comment\_character}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00220\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>SkipCommentsReader.comment\_character();}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00228\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ac54c383499544189b711a6a5ce8c84b1}{set\_null\_value}}(string\_type\ \textcolor{keyword}{const}\&\ \_null\_value)}
+\DoxyCodeLine{00229\ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ this-\/>ParseTrajectoryHeader.set\_null\_value(\_null\_value);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ this-\/>PointReader.set\_null\_value(\_null\_value);}
+\DoxyCodeLine{00232\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_acc9fde9efd2f212cf0d3decb801e6680}{null\_value}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00240\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointReader.null\_value();}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00251\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_aa8019fa8c541a4880b0c8ab03787238b}{set\_input}}(std::istream\&\ \_input)}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ this-\/>LineReader.set\_input(\_input);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ this-\/>SkipCommentsReader.set\_input\_range(this-\/>LineReader.begin(),}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>LineReader.end());}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ this-\/>StringTokenizer.set\_input\_range(this-\/>SkipCommentsReader.begin(),}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>SkipCommentsReader.end());}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ this-\/>TokenizedInputBegin\ =\ this-\/>StringTokenizer.begin();}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ this-\/>TokenizedInputEnd\ \ \ =\ this-\/>StringTokenizer.end();}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \ \ this-\/>ParseTrajectoryHeader.set\_timestamp\_input\_format(this-\/>TimestampFormat);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ this-\/>TrajectoriesRead\ =\ 0;}
+\DoxyCodeLine{00263\ \ \ \ \ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00272\ \ \ std::istream\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a9da4fdcfe6eb712498752d0e00333e3d}{input}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00273\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>LineReader.input();}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a6a4b0b4132b0ac549e63cdd1454c1841}{set\_warnings\_enabled}}(\textcolor{keywordtype}{bool}\ onoff)}
+\DoxyCodeLine{00287\ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ this-\/>WarningsEnabled\ =\ onoff;}
+\DoxyCodeLine{00289\ \ \ \ \ \}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ac3ca0d39335ba326e0d3c4139c47b0f7}{warnings\_enabled}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00297\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>WarningsEnabled;}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_ad8b8912bc589d9cfb809e47906668509}{set\_field\_delimiter}}(string\_type\ \textcolor{keyword}{const}\&\ delimiters)}
+\DoxyCodeLine{00314\ \ \ \ \ \{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ this-\/>StringTokenizer.set\_field\_delimiter(delimiters);}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00322\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_afa411c4e323291ab4aa82c2c80083452}{field\_delimiter}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00323\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>StringTokenizer.field\_delimiter();}
+\DoxyCodeLine{00325\ \ \ \ \ \}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00331\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a58edb5570e581ecb0b7a2b56c49efb1a}{set\_timestamp\_format}}(string\_type\ \textcolor{keyword}{const}\&\ format)}
+\DoxyCodeLine{00332\ \ \ \{}
+\DoxyCodeLine{00333\ \ \ \ \ this-\/>TimestampFormat\ =\ format;}
+\DoxyCodeLine{00334\ \ \ \ \ this-\/>PointReader.set\_timestamp\_format(this-\/>TimestampFormat);}
+\DoxyCodeLine{00335\ \ \ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00341\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader_a32219219fcb4ed2f16eba714f8401d75}{timestamp\_format}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00342\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>TimestampFormat;}
+\DoxyCodeLine{00344\ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00347\ \ \ \textcolor{keyword}{typedef}\ boost::shared\_ptr<trajectory\_type>\ trajectory\_shared\_ptr\_type;}
+\DoxyCodeLine{00348\ \ \ \textcolor{keyword}{typedef}\ string\_vector\_type::const\_iterator\ token\_iter\_type;}
+\DoxyCodeLine{00349\ \ \ \textcolor{keyword}{typedef}\ std::pair<token\_iter\_type,\ token\_iter\_type>\ token\_range\_type;}
+\DoxyCodeLine{00350\ \ \ \textcolor{keyword}{typedef}\ std::vector<token\_range\_type>\ token\_range\_vector\_type;}
+\DoxyCodeLine{00351\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{PointFromTokensReader<point\_type,\ token\_range\_vector\_type::iterator>}}\ point\_reader\_type;}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \ \ line\_reader\_type\ \mbox{\hyperlink{classtracktable_1_1_line_reader}{LineReader}};}
+\DoxyCodeLine{00354\ \ \ point\_reader\_type\ \mbox{\hyperlink{classtracktable_1_1_point_reader}{PointReader}};}
+\DoxyCodeLine{00355\ \ \ skip\_comments\_reader\_type\ \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{SkipCommentsReader}};}
+\DoxyCodeLine{00356\ \ \ string\_tokenizer\_type\ StringTokenizer;}
+\DoxyCodeLine{00357\ \ \ string\_type\ TimestampFormat;}
+\DoxyCodeLine{00358\ \ \ string\_tokenizer\_type::iterator\ TokenizedInputBegin;}
+\DoxyCodeLine{00359\ \ \ string\_tokenizer\_type::iterator\ TokenizedInputEnd;}
+\DoxyCodeLine{00360\ \ \ \textcolor{keywordtype}{bool}\ WarningsEnabled;}
+\DoxyCodeLine{00361\ \ \ \textcolor{keywordtype}{int}\ TrajectoriesRead;}
+\DoxyCodeLine{00362\ \ \ \mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_trajectory_header}{rw::detail::TrajectoryHeader}}\ ParseTrajectoryHeader;}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00368\ \ \ trajectory\_shared\_ptr\_type\ next\_item()}
+\DoxyCodeLine{00369\ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (this-\/>TokenizedInputBegin\ !=\ this-\/>TokenizedInputEnd)}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ string\_vector\_type\ tokens((*this-\/>TokenizedInputBegin).first,}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*this-\/>TokenizedInputBegin).second);}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[0]\ ==\ rw::detail::TrajectoryFileMagicString)}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ trajectory\_shared\_ptr\_type\ NextTrajectory\ =}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>parse\_trajectory(tokens);}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NextTrajectory)}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ ++\ this-\/>TokenizedInputBegin;}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ ++\ this-\/>TrajectoriesRead;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NextTrajectory;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ ++\ this-\/>TokenizedInputBegin;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ plural\_trajectory\ =\ [](\textcolor{keywordtype}{int}\ discriminator)\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (discriminator\ ==\ 1)\ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(\textcolor{stringliteral}{"{}trajectory"{}});}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(\textcolor{stringliteral}{"{}trajectories"{}});}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \ \ TRACKTABLE\_LOG(log::info)\ <<\ \textcolor{stringliteral}{"{}Read\ a\ total\ of\ "{}}}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>TrajectoriesRead\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ <<\ plural\_trajectory(this-\/>TrajectoriesRead)}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ trajectory\_shared\_ptr\_type();}
+\DoxyCodeLine{00405\ \ \ \ \ \}}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00411\ \ \ trajectory\_shared\_ptr\_type}
+\DoxyCodeLine{00412\ \ \ parse\_trajectory(string\_vector\_type\ \textcolor{keyword}{const}\&\ tokens)}
+\DoxyCodeLine{00413\ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ new\ trajectory\ object,\ but\ we\ won't\ spend\ time\ generating\ a\ uuid}}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ trajectory\_shared\_ptr\_type\ trajectory(\textcolor{keyword}{new}\ trajectory\_type(\textcolor{keyword}{false}));}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ rw::detail::TrajectoryHeader\ header(this-\/>PropertyReadWrite);}}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ this-\/>ParseTrajectoryHeader.set\_timestamp\_input\_format(this-\/>TimestampFormat);}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ std::size\_t\ tokens\_consumed\_by\_header\ =\ this-\/>ParseTrajectoryHeader.read\_from\_tokens(tokens.begin(),\ tokens.end());}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ trajectory-\/>set\_uuid(this-\/>ParseTrajectoryHeader.UUID);}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ trajectory-\/>\_\_set\_properties(this-\/>ParseTrajectoryHeader.Properties);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ string\_vector\_type::const\_iterator\ points\_begin\ =\ tokens.begin();}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ string\_vector\_type::const\_iterator\ points\_end\ =\ tokens.end();}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Advance\ past\ all\ the\ things\ in\ the\ header}}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ std::advance(points\_begin,\ tokens\_consumed\_by\_header+1);}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ this-\/>populate\_trajectory\_points(points\_begin,\ points\_end,}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>ParseTrajectoryHeader.NumPoints,}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trajectory);}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ assert(trajectory\ !=\ 0);}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (trajectory-\/>size()\ ==\ 0)}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ trajectory\_shared\_ptr\_type();}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ trajectory;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Error\ parsing\ trajectory:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ trajectory\_shared\_ptr\_type();}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00448\ \ \ \ \ \}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00459\ \ \ \textcolor{keywordtype}{void}\ populate\_trajectory\_points(token\_iter\_type\ token\_begin,}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ token\_iter\_type\ token\_end,}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ num\_points,}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trajectory\_shared\_ptr\_type\ trajectory)}
+\DoxyCodeLine{00463\ \ \ \ \ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \textcolor{comment}{//\ We\ already\ have\ the\ parsed\ tokens\ so\ we\ can\ skip\ the\ first}}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \textcolor{comment}{//\ several\ stages\ of\ the\ point\ reader.\ However,\ the\ token}}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \textcolor{comment}{//\ reader\ expects\ its\ input\ one\ line\ at\ a\ time.\ In\ order\ to}}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \textcolor{comment}{//\ separate\ those\ out\ we\ need\ to\ read\ the\ point\ header.}}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ rw::detail::PointHeader\ header;}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ header.read\_from\_tokens(token\_begin,\ token\_end);}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ TRACKTABLE\_LOG(log::trace)}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}DEBUG:\ Point\ header\ says\ that\ we\ have\ "{}}}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ <<\ header.PropertyNames.size()\ <<\ \textcolor{stringliteral}{"{}\ properties\ per\ point"{}};}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<token\_iter\_type,\ token\_iter\_type>\ token\_range\_type;}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<token\_range\_type>\ token\_range\_vector\_type;}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \ \ token\_range\_vector\_type\ token\_ranges;}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \textcolor{comment}{//\ First\ token\ range\ is\ the\ header}}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ token\_iter\_type\ header\_end\_token\ =\ token\_begin;}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ std::advance(header\_end\_token,}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ +\ 2\ *\ header.PropertyNames.size());}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ token\_range\_type\ header\_tokens(token\_begin,\ header\_end\_token);}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ token\_ranges.push\_back(header\_tokens);}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \ \ \ \ \ \ token\_iter\_type\ point\_range\_begin\ =\ header\_end\_token;}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ std::size\_t\ num\_tokens\_in\_point\_record\ =\ header.Dimension}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ +\ header.HasObjectId}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ +\ header.HasTimestamp}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ +\ header.PropertyNames.size();}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (point\_range\_begin\ !=\ token\_end)}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ token\_iter\_type\ point\_range\_end\ =\ point\_range\_begin;}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ d\ =\ std::distance(point\_range\_end,\ token\_end);}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ assert(d>=0);\textcolor{comment}{//TODO:\ consider\ a\ nother\ warning\ in\ the\ event\ of\ too\ many\ tokens?}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{static\_cast<}std::make\_unsigned<decltype(d)\textcolor{keyword}{>}::type>(std::abs(d))\ <\ num\_tokens\_in\_point\_record)}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Trajectory\ reader\ fell\ off\ the\ end\ of\ tokens\ for\ points.\ "{}}}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}There\ is\ probably\ a\ missing\ property\ value\ in\ one\ of\ the\ point\ records.\(\backslash\)n"{}};}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ outbuf;}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ outbuf\ <<\ \textcolor{stringliteral}{"{}Trajectory\ tokens:\ "{}};}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ point\_range\_begin\ !=\ token\_end;\ ++point\_range\_begin)}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ outbuf\ <<\ *point\_range\_begin\ <<\ \textcolor{stringliteral}{"{}\ |||\ "{}};}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::debug)\ <<\ outbuf.str();}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ trajectory-\/>clear();}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ std::advance(point\_range\_end,\ num\_tokens\_in\_point\_record);}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ token\_range\_type\ line\_range(point\_range\_begin,\ point\_range\_end);}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ token\_ranges.push\_back(line\_range);}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ point\_range\_begin\ =\ point\_range\_end;}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ \ \ \ \ this-\/>populate\_trajectory\_points\_from\_token\_ranges(token\_ranges.begin(),}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ token\_ranges.end(),}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trajectory);}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (trajectory\ !=\ 0\ \&\&\ trajectory-\/>size()\ !=\ num\_points)}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::error)}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Trajectory\ reader\ tried\ to\ populate\ a\ new\ trajectory\ from\ tokens\ but\ got\ "{}}}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ trajectory-\/>size()}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ points.\ We\ were\ expecting\ "{}}}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ num\_points\ <<\ \textcolor{stringliteral}{"{}.\(\backslash\)n"{}};}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00531\ \ \ \ \ \}}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00533\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00534\ }
+\DoxyCodeLine{00541\ \ \ \textcolor{keywordtype}{void}\ populate\_trajectory\_points\_from\_token\_ranges(}
+\DoxyCodeLine{00542\ \ \ \ \ token\_range\_vector\_type::iterator\ input\_range\_begin,}
+\DoxyCodeLine{00543\ \ \ \ \ token\_range\_vector\_type::iterator\ input\_range\_end,}
+\DoxyCodeLine{00544\ \ \ \ \ trajectory\_shared\_ptr\_type\ trajectory}
+\DoxyCodeLine{00545\ \ \ \ \ )}
+\DoxyCodeLine{00546\ \ \ \ \ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ this-\/>PointReader.set\_input\_range(input\_range\_begin,}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\_range\_end);}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ trajectory-\/>assign(this-\/>PointReader.begin(),\ this-\/>PointReader.end());}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ TRACKTABLE\_LOG(log::trace)}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}populate\_trajectory\_points:\ Trajectory\ now\ contains\ "{}}}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ trajectory-\/>size()\ <<\ \textcolor{stringliteral}{"{}\ points\(\backslash\)n"{}};}
+\DoxyCodeLine{00553\ \ \ \ \ \}}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ }
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \};}
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00560\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

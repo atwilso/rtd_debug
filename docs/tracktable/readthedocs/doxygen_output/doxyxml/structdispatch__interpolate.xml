@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structdispatch__interpolate" kind="struct" language="C++" prot="public">
+    <compoundname>dispatch_interpolate</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename value_type</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structdispatch__interpolate_1a236dfaaded5332038a5e31dff84a97cc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>tracktable::PropertyValueT</type>
+        <definition>static tracktable::PropertyValueT dispatch_interpolate&lt; value_type &gt;::apply</definition>
+        <argsstring>(tracktable::PropertyValueT const &amp;first, tracktable::PropertyValueT const &amp;second, double interpolant)</argsstring>
+        <name>apply</name>
+        <qualifiedname>dispatch_interpolate::apply</qualifiedname>
+        <param>
+          <type>tracktable::PropertyValueT const &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>tracktable::PropertyValueT const &amp;</type>
+          <declname>second</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>interpolant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="113" column="44" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="113" bodyend="134"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="111" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="112" bodyend="135"/>
+    <listofallmembers>
+      <member refid="structdispatch__interpolate_1a236dfaaded5332038a5e31dff84a97cc" prot="public" virt="non-virtual"><scope>dispatch_interpolate</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

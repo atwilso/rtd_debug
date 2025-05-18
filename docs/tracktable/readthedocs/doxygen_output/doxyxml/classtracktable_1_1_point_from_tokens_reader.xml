@@ -1,0 +1,1675 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_point_from_tokens_reader" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::PointFromTokensReader</compoundname>
+    <basecompoundref refid="classtracktable_1_1_generic_reader" prot="public" virt="non-virtual">tracktable::GenericReader&lt; PointT &gt;</basecompoundref>
+    <includes refid="_point_from_tokens_reader_8h" local="no">PointFromTokensReader.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename PointT</type>
+      </param>
+      <param>
+        <type>typename SourceIterT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_point_from_tokens_reader_1a927353483076657a72dbdd28a6e704a3" prot="public" static="no">
+        <type>PointT</type>
+        <definition>typedef PointT tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::point_type</definition>
+        <argsstring></argsstring>
+        <name>point_type</name>
+        <qualifiedname>tracktable::PointFromTokensReader::point_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="79" column="49" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_point_from_tokens_reader_1ab61b46a6bea4dbcf2f11505537846424" prot="public" static="no">
+        <type>SourceIterT</type>
+        <definition>typedef SourceIterT tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::source_iterator_type</definition>
+        <argsstring></argsstring>
+        <name>source_iterator_type</name>
+        <qualifiedname>tracktable::PointFromTokensReader::source_iterator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="80" column="49" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_point_from_tokens_reader_1a462d629481f3608d5b6dc700220e5dba" prot="public" static="no">
+        <type>boost::shared_ptr&lt; point_type &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;point_type&gt; tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::point_shared_ptr_type</definition>
+        <argsstring></argsstring>
+        <name>point_shared_ptr_type</name>
+        <qualifiedname>tracktable::PointFromTokensReader::point_shared_ptr_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="81" column="37" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_point_from_tokens_reader_1a7e2aa26408333bde0f0ad6690a39eb2a" prot="protected" static="no">
+        <type>rw::detail::PropertyAssignmentMap</type>
+        <definition>typedef rw::detail::PropertyAssignmentMap tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::PropertyAssignmentMap</definition>
+        <argsstring></argsstring>
+        <name>PropertyAssignmentMap</name>
+        <qualifiedname>tracktable::PointFromTokensReader::PropertyAssignmentMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="649" column="45" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="649" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_point_from_tokens_reader_1a7464481b19ff66805466890c1d90a4cd" prot="protected" static="no">
+        <type>std::vector&lt; settings::string_type &gt;</type>
+        <definition>typedef std::vector&lt;settings::string_type&gt; tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::string_vector_type</definition>
+        <argsstring></argsstring>
+        <name>string_vector_type</name>
+        <qualifiedname>tracktable::PointFromTokensReader::string_vector_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="650" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="650" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1ab6a12922c7f5c428e3b229c802aad769" prot="protected" static="no" mutable="no">
+        <type>IntIntMap</type>
+        <definition>IntIntMap tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::CoordinateMap</definition>
+        <argsstring></argsstring>
+        <name>CoordinateMap</name>
+        <qualifiedname>tracktable::PointFromTokensReader::CoordinateMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="652" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="652" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1ae5bb680249e176613916bdc820391019" prot="protected" static="no" mutable="no">
+        <type>PropertyAssignmentMap</type>
+        <definition>PropertyAssignmentMap tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::FieldMap</definition>
+        <argsstring></argsstring>
+        <name>FieldMap</name>
+        <qualifiedname>tracktable::PointFromTokensReader::FieldMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="653" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="653" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1a2f0a61db5d1084a3368af4adbf695edd" prot="protected" static="no" mutable="no">
+        <type>source_iterator_type</type>
+        <definition>source_iterator_type tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::SourceBegin</definition>
+        <argsstring></argsstring>
+        <name>SourceBegin</name>
+        <qualifiedname>tracktable::PointFromTokensReader::SourceBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="655" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="655" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1a8a17c486d3294d3e8109ada9d385d38f" prot="protected" static="no" mutable="no">
+        <type>source_iterator_type</type>
+        <definition>source_iterator_type tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::SourceEnd</definition>
+        <argsstring></argsstring>
+        <name>SourceEnd</name>
+        <qualifiedname>tracktable::PointFromTokensReader::SourceEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="656" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="656" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1a9da7c4abc756dcce2529161f67f2088c" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::ObjectIdColumn</definition>
+        <argsstring></argsstring>
+        <name>ObjectIdColumn</name>
+        <qualifiedname>tracktable::PointFromTokensReader::ObjectIdColumn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="658" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="658" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1a84ed21511755776e6eb8d16919e9621b" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::TimestampColumn</definition>
+        <argsstring></argsstring>
+        <name>TimestampColumn</name>
+        <qualifiedname>tracktable::PointFromTokensReader::TimestampColumn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="659" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="659" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1acba513bda006ad159845364ea0407deb" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::IgnoreHeader</definition>
+        <argsstring></argsstring>
+        <name>IgnoreHeader</name>
+        <qualifiedname>tracktable::PointFromTokensReader::IgnoreHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="661" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="661" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1a31f43d939e7c1d4c0f8b5cbac6132338" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::WarningsEnabled</definition>
+        <argsstring></argsstring>
+        <name>WarningsEnabled</name>
+        <qualifiedname>tracktable::PointFromTokensReader::WarningsEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="662" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="662" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1ac9455e90d31f80c8f938814d5d72e49e" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::PointCountLogEnabled</definition>
+        <argsstring></argsstring>
+        <name>PointCountLogEnabled</name>
+        <qualifiedname>tracktable::PointFromTokensReader::PointCountLogEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="663" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="663" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1a959ce069e482c274af228425c4369652" prot="protected" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref></type>
+        <definition>PropertyConverter tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::PropertyReadWrite</definition>
+        <argsstring></argsstring>
+        <name>PropertyReadWrite</name>
+        <qualifiedname>tracktable::PointFromTokensReader::PropertyReadWrite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="665" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="665" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1accd09992b0a36e6cd97c43ad85d9ff6a" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::NumPoints</definition>
+        <argsstring></argsstring>
+        <name>NumPoints</name>
+        <qualifiedname>tracktable::PointFromTokensReader::NumPoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="667" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="667" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_from_tokens_reader_1aabd564ee32621ad76daf9129738eeb7f" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::NumParseErrors</definition>
+        <argsstring></argsstring>
+        <name>NumParseErrors</name>
+        <qualifiedname>tracktable::PointFromTokensReader::NumParseErrors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="668" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="668" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1ad6187b6da048f7abbb470b470d1aec91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::PointFromTokensReader</definition>
+        <argsstring>()</argsstring>
+        <name>PointFromTokensReader</name>
+        <qualifiedname>tracktable::PointFromTokensReader::PointFromTokensReader</qualifiedname>
+        <briefdescription>
+<para>Instantiate a default <ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="84" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="84" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a754612e361d2ceb4e053a8922e665283" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::PointFromTokensReader</definition>
+        <argsstring>(const PointFromTokensReader &amp;other)</argsstring>
+        <name>PointFromTokensReader</name>
+        <qualifiedname>tracktable::PointFromTokensReader::PointFromTokensReader</qualifiedname>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a reader with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="99" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="99" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1ac6cda4679a117dad64e3df606209aac5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::PointFromTokensReader</definition>
+        <argsstring>(source_iterator_type const &amp;start, source_iterator_type const &amp;finish)</argsstring>
+        <name>PointFromTokensReader</name>
+        <qualifiedname>tracktable::PointFromTokensReader::PointFromTokensReader</qualifiedname>
+        <param>
+          <type>source_iterator_type const &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>source_iterator_type const &amp;</type>
+          <declname>finish</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a reader with a start and finish points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to start from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">finish</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to end at </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="119" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="119" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a6bfb33f6bca74c4eaf5099a50b62e09e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::~PointFromTokensReader</definition>
+        <argsstring>()</argsstring>
+        <name>~PointFromTokensReader</name>
+        <qualifiedname>tracktable::PointFromTokensReader::~PointFromTokensReader</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="132" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="132" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a54907cf57205c8d92098d5424260d5de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> &amp;</type>
+        <definition>PointFromTokensReader &amp; tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::operator=</definition>
+        <argsstring>(PointFromTokensReader const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::PointFromTokensReader::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reader with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="141" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="141" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a0b3a48649ce724c2ad0035f15f9516fb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::operator==</definition>
+        <argsstring>(PointFromTokensReader const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::PointFromTokensReader::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one reader is equal to another by comparing all the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two readers are equal if all of their properties are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="166" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="166" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1aa825e42f2ceb4ad39ea1bc139cf351d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::operator!=</definition>
+        <argsstring>(PointFromTokensReader const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::PointFromTokensReader::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two <ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="187" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a4c1e7d91726e9129c9ccacc6cdce044a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_object_id_column</definition>
+        <argsstring>(int column)</argsstring>
+        <name>set_object_id_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_object_id_column</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Set the column that will be used for object IDs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This column in the input stream will be used to populate the <computeroutput>object_id</computeroutput> field in trajectory points. Column indices start at zero.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Which column contains object IDs </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="200" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="200" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a46a3dca5669a85c788818bc1303e58a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_timestamp_column</definition>
+        <argsstring>(int column)</argsstring>
+        <name>set_timestamp_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_timestamp_column</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Set the column that will be used for timestamps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This column in the input stream will be used to populate the timestamp field in trajectory points. Column indices start at zero.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Which column contains timestamps </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="213" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="213" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a12b735e22cc5e81de67042f07b4d5bef" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::object_id_column</definition>
+        <argsstring>() const</argsstring>
+        <name>object_id_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::object_id_column</qualifiedname>
+        <briefdescription>
+<para>Identify the column that will be used for object IDs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Column indices start at zero.</para>
+<para><simplesect kind="return"><para>The column containing the object ID </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="224" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="224" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1ad8dc5db6521746bb522c751c18850f27" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::timestamp_column</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::timestamp_column</qualifiedname>
+        <briefdescription>
+<para>Identify the column that will be used for timestamps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Column indices start at zero.</para>
+<para><simplesect kind="return"><para>The column containing the timestamo </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="235" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="235" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a2c74adc415f96c6f3d1cb61bfcc76b30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_coordinate_column</definition>
+        <argsstring>(int coordinate, int column)</argsstring>
+        <name>set_coordinate_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_coordinate_column</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>coordinate</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Configure the mapping from columns to coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the lowest-level interface to setting coordinates in the reader. Use <computeroutput>set_x_coordinate_column</computeroutput>/<computeroutput>set_longitude_column</computeroutput> and friends if possible (i.e. if you&apos;re in the terrestrial or 2D Cartesian domain).</para>
+<para>Let&apos;s suppose that your X coordinate is in column 12 of your file, your Y coordinate is in column 20 and your Z coordinate is in column 32. The following code snippet illustrates how to set this up in the reader:</para>
+<para><programlisting><codeline><highlight class="normal">tracktable::PointReader&lt;MyPoint3D&gt;<sp/>reader;</highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a8e70adc0c1ded127fcc5e8dd15543ae5" kindref="member">set_coordinate_column</ref>(0,<sp/>12);<sp/></highlight><highlight class="comment">//<sp/>X<sp/>coordinate</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a8e70adc0c1ded127fcc5e8dd15543ae5" kindref="member">set_coordinate_column</ref>(1,<sp/>20);<sp/></highlight><highlight class="comment">//<sp/>Y<sp/>coordinate</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a8e70adc0c1ded127fcc5e8dd15543ae5" kindref="member">set_coordinate_column</ref>(2,<sp/>32);<sp/></highlight><highlight class="comment">//<sp/>Z<sp/>coordinate</highlight></codeline>
+</programlisting></para>
+<para>Calling this function invalidates any outstanding iterators.</para>
+<para><simplesect kind="note"><para>Column and coordinate indices start at zero.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">coordinate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of coordinate to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of column in list of tokens </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="269" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="269" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a61a9ee3f0f701af991fb3529cde6ebf2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_real_field_column</definition>
+        <argsstring>(std::string const &amp;field, int column)</argsstring>
+        <name>set_real_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_real_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Configure the mapping from columns to data fields. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Some points have the ability to store named properties. Use this method to assign columns in the data file to named properties on points.</para>
+<para>The following lines of code show an example.</para>
+<para><programlisting><codeline><highlight class="normal">tracktable::PointReader&lt;MyPointType&gt;<sp/>reader;</highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a306a3a531b7c17ea809d8e75927c5fc8" kindref="member">set_object_id_column</ref>(0);</highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a11b9b725dbb5157202752e9de3c06a1e" kindref="member">set_real_field_column</ref>(</highlight><highlight class="stringliteral">&quot;mileage&quot;</highlight><highlight class="normal">,<sp/>4);</highlight></codeline>
+</programlisting></para>
+<para>This function invalidates any outstanding iterators.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of field to populate on point object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of column in list of tokens </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="295" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="295" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a2e5ba7348f5d5a31bc2f14b13ecae535" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_time_field_column</definition>
+        <argsstring>(std::string const &amp;field, int column)</argsstring>
+        <name>set_time_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_time_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Configure the mapping from columns to data fields. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Some points have the ability to store named properties. Use this method to assign columns in the data file to named properties on points.</para>
+<para>The following lines of code show an example.</para>
+<para><programlisting><codeline><highlight class="normal">tracktable::PointReader&lt;MyPointType&gt;<sp/>reader;</highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a306a3a531b7c17ea809d8e75927c5fc8" kindref="member">set_object_id_column</ref>(0);</highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a251d483cbec9163592cf8cff170187f9" kindref="member">set_time_field_column</ref>(</highlight><highlight class="stringliteral">&quot;last_seen&quot;</highlight><highlight class="normal">,<sp/>2);</highlight></codeline>
+</programlisting></para>
+<para>This function invalidates any outstanding iterators.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of field to populate on point object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of column in list of tokens </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="328" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="328" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1aef992da112fcb471446d1eb8103066e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_string_field_column</definition>
+        <argsstring>(std::string const &amp;field, int column)</argsstring>
+        <name>set_string_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_string_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Configure the mapping from columns to data fields. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Some points have the ability to store named properties. Use this method to assign columns in the data file to named properties on points.</para>
+<para>The following lines of code show an example.</para>
+<para><programlisting><codeline><highlight class="normal">tracktable::PointReader&lt;MyPointType&gt;<sp/>reader;</highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a306a3a531b7c17ea809d8e75927c5fc8" kindref="member">set_object_id_column</ref>(0);</highlight></codeline>
+<codeline><highlight class="normal">reader.<ref refid="classtracktable_1_1_point_reader_1a3ece3b3c6764b2a1a14bebf8c985b8c3" kindref="member">set_string_field_column</ref>(</highlight><highlight class="stringliteral">&quot;model_name&quot;</highlight><highlight class="normal">,<sp/>3);</highlight></codeline>
+</programlisting></para>
+<para>This function invalidates any outstanding iterators.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of field to populate on point object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of column in list of tokens </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="354" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="354" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a90deb27f205b2375f36b1b6a5f0bfdd8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::coordinate_column</definition>
+        <argsstring>(int coordinate) const</argsstring>
+        <name>coordinate_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::coordinate_column</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>coordinate</declname>
+        </param>
+        <briefdescription>
+<para>Return which column has the given corrdinate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Column that contains the given coordinate </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="363" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="363" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a1f3d76004028cbfaba20ac4a09d7982d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::real_field_column</definition>
+        <argsstring>(std::string const &amp;field) const</argsstring>
+        <name>real_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::real_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the column assignment for a real-valued field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String name of field </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Integer column index for field or -1 if not present </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="381" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="381" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a2e61f1d077715d435927ccc95a4cea81" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::string_field_column</definition>
+        <argsstring>(std::string const &amp;field) const</argsstring>
+        <name>string_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::string_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the column assignment for a string field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String name of field </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Integer column index for field or -1 if not present </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="414" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="414" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a8d1cdef919ddf14e988e551b263f6860" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::time_field_column</definition>
+        <argsstring>(std::string const &amp;field) const</argsstring>
+        <name>time_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::time_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the column assignment for a time field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String name of field </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Integer column index for field or -1 if not present </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="432" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="432" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a06037a975d2db338f0ebcdfa3662b4b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::has_coordinate_column</definition>
+        <argsstring>(int coordinate) const</argsstring>
+        <name>has_coordinate_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::has_coordinate_column</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>coordinate</declname>
+        </param>
+        <briefdescription>
+<para>Check to see if there is a coordindate column. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Boolean indicating that there exists a coordinate column </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="449" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="449" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a7ae462902f457ca8a76aa9c8b3395caa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::has_real_field_column</definition>
+        <argsstring>(std::string const &amp;field) const</argsstring>
+        <name>has_real_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::has_real_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+<para>Check to see where a real field is present in the field map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String name of field </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>True</computeroutput>/<computeroutput>False</computeroutput> depending on whether field is present or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="459" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="459" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a04069a50d3423035942edd9e15fef744" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::has_string_field_column</definition>
+        <argsstring>(std::string const &amp;field) const</argsstring>
+        <name>has_string_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::has_string_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+<para>Check to see where a string field is present in the field map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String name of field </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>True</computeroutput>/<computeroutput>False</computeroutput> depending on whether field is present or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="480" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="480" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a0e15c818439fda24984027c073903503" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::has_time_field_column</definition>
+        <argsstring>(std::string const &amp;field) const</argsstring>
+        <name>has_time_field_column</name>
+        <qualifiedname>tracktable::PointFromTokensReader::has_time_field_column</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+<para>Check to see where a time field is present in the field map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String name of field </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>True</computeroutput>/<computeroutput>False</computeroutput> depending on whether field is present or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="492" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="492" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a21e3c9e7e7c1125aa6dd7d4ed6d49a4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::clear_coordinate_assignments</definition>
+        <argsstring>()</argsstring>
+        <name>clear_coordinate_assignments</name>
+        <qualifiedname>tracktable::PointFromTokensReader::clear_coordinate_assignments</qualifiedname>
+        <briefdescription>
+<para>Clear all of the coordinate assignments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="501" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="501" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1afa11cdec34c31f48e83460edf2fd3944" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_warnings_enabled</definition>
+        <argsstring>(bool onoff)</argsstring>
+        <name>set_warnings_enabled</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_warnings_enabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>onoff</declname>
+        </param>
+        <briefdescription>
+<para>Enable/disable warnings during parsing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We may run into type mismatches and bad casts while we&apos;re parsing headers and data. This flag determines whether or not warnings will be printed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">onoff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Warnings are on / off </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="514" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="514" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a32d68f57d75ec4b0902fed0625f86bdd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::warnings_enabled</definition>
+        <argsstring>() const</argsstring>
+        <name>warnings_enabled</name>
+        <qualifiedname>tracktable::PointFromTokensReader::warnings_enabled</qualifiedname>
+        <briefdescription>
+<para>Check whether warnings are enable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether or not warnings are on </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="523" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="523" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1aaace277fbb902127c583eb9700f061b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::ignore_header</definition>
+        <argsstring>() const</argsstring>
+        <name>ignore_header</name>
+        <qualifiedname>tracktable::PointFromTokensReader::ignore_header</qualifiedname>
+        <briefdescription>
+<para>Check whether to see if the header should be ignored when reading input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Boolean whether or not the header should be ignored </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="532" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="532" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a8961455161100693c2b9b3421f26611f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_ignore_header</definition>
+        <argsstring>(bool onoff)</argsstring>
+        <name>set_ignore_header</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_ignore_header</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>onoff</declname>
+        </param>
+        <briefdescription>
+<para>Enable/disable ignoring the header during parsing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">onoff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Header parsing on / off </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="541" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="541" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a4ebdd7f2184a371aec657574b0538adc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_input_range</definition>
+        <argsstring>(source_iterator_type my_begin, source_iterator_type my_end)</argsstring>
+        <name>set_input_range</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_input_range</qualifiedname>
+        <param>
+          <type>source_iterator_type</type>
+          <declname>my_begin</declname>
+        </param>
+        <param>
+          <type>source_iterator_type</type>
+          <declname>my_end</declname>
+        </param>
+        <briefdescription>
+<para>Set the beginning and the end of the input range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">my_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iterator to use for the start of input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">my_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iterator to use for the end of input </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="551" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="551" bodyend="555"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1ac5eeccbba60d6bc820a8a4ed8a83681c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_timestamp_format</definition>
+        <argsstring>(string_type const &amp;format)</argsstring>
+        <name>set_timestamp_format</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_timestamp_format</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+<para>Set the format of the timestamp. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String containing the format of the time stamp </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="561" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="561" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1aaf5643d3adf986ec203b1e833f51b0fb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::timestamp_format</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp_format</name>
+        <qualifiedname>tracktable::PointFromTokensReader::timestamp_format</qualifiedname>
+        <briefdescription>
+<para>Retrieve the format of the timestamp. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The timestamp format </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="570" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="570" bodyend="573"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a96c4fd3eeb80b5a1d8328e7052cc7240" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_null_value</definition>
+        <argsstring>(string_type const &amp;value)</argsstring>
+        <name>set_null_value</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_null_value</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set the format of the timestamp. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String value to use for NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="579" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="579" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1af83d03b02e9b940e2f3e052c3a384347" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::null_value</definition>
+        <argsstring>() const</argsstring>
+        <name>null_value</name>
+        <qualifiedname>tracktable::PointFromTokensReader::null_value</qualifiedname>
+        <briefdescription>
+<para>Retrieve the null value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The null value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="588" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="588" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a5f1fb3d391dbef207d36d24ce0e95556" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>tracktable::IntIntMap &amp;</type>
+        <definition>tracktable::IntIntMap &amp; tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::__coordinate_assignments</definition>
+        <argsstring>()</argsstring>
+        <name>__coordinate_assignments</name>
+        <qualifiedname>tracktable::PointFromTokensReader::__coordinate_assignments</qualifiedname>
+        <briefdescription>
+<para>This method is for the Python wrappers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In C++-land this explicitly breaks encapsulation. DON&apos;T USE IT!</para>
+<para>In Python-land it make for a much more Pythonic interface. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="599" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="599" bodyend="602"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a98c0f8e5096fe87c341a2520005311c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::__set_coordinate_assignments</definition>
+        <argsstring>(tracktable::IntIntMap const &amp;cmap)</argsstring>
+        <name>__set_coordinate_assignments</name>
+        <qualifiedname>tracktable::PointFromTokensReader::__set_coordinate_assignments</qualifiedname>
+        <param>
+          <type>tracktable::IntIntMap const &amp;</type>
+          <declname>cmap</declname>
+        </param>
+        <briefdescription>
+<para>This method is for the Python wrappers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In C++-land this explicitly breaks encapsulation. DON&apos;T USE IT!</para>
+<para>In Python-land it make for a much more Pythonic interface. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="610" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="610" bodyend="613"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1abc415c991701d1244e55167d832a79d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::set_point_count_log_enabled</definition>
+        <argsstring>(bool onoff)</argsstring>
+        <name>set_point_count_log_enabled</name>
+        <qualifiedname>tracktable::PointFromTokensReader::set_point_count_log_enabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>onoff</declname>
+        </param>
+        <briefdescription>
+<para>Enable/disable logging of point count on read. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When set to true (the default), the point reader will print out the number of points successfully read and the number of errors to the info log channel when the end of the input is reached.</para>
+<para>This function is provided because there are cases like the trajectory reader where this results in thousands of lines of spam because the reader is invoked for every trajectory separately.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">onoff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean flag: &apos;true&apos; means &apos;yes, log statistics&apos; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="629" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="629" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a7eb3bffe4e1855e94fd1faae1f9ffdec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::point_count_log_enabled</definition>
+        <argsstring>() const</argsstring>
+        <name>point_count_log_enabled</name>
+        <qualifiedname>tracktable::PointFromTokensReader::point_count_log_enabled</qualifiedname>
+        <briefdescription>
+<para>Get the status of the point count log. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve PointCountLogEnabled. When set to true, this flag will print out how many points are read successfully and how many are lost due to error.</para>
+<para><simplesect kind="return"><para>Whether or not point count logging is enabled </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="643" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="643" bodyend="646"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1ad3fef0262393b316e536ee16ce9088f2" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>point_shared_ptr_type</type>
+        <definition>point_shared_ptr_type tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::next_item</definition>
+        <argsstring>()</argsstring>
+        <name>next_item</name>
+        <qualifiedname>tracktable::PointFromTokensReader::next_item</qualifiedname>
+        <reimplements refid="classtracktable_1_1_generic_reader_1a0d92677380ac73f7b919c323b8115608">next_item</reimplements>
+        <briefdescription>
+<para>Increment the iterator the next item to be read in. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The next item </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="674" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="674" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1ac29c6686bf0a34dea5d371d0a86b4e28" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::configure_reader_from_header</definition>
+        <argsstring>(string_vector_type const &amp;tokens)</argsstring>
+        <name>configure_reader_from_header</name>
+        <qualifiedname>tracktable::PointFromTokensReader::configure_reader_from_header</qualifiedname>
+        <param>
+          <type>string_vector_type const &amp;</type>
+          <declname>tokens</declname>
+        </param>
+        <briefdescription>
+<para>Configure the reader based on information contained in the input header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tokens</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tokens from the header to be read in </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="814" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="814" bodyend="858"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1af8cefab055ae9cff09a378fbf8df2af8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::configure_coordinate_assignments</definition>
+        <argsstring>(bool object_id_present, bool timestamp_present, std::size_t expected_dimension)</argsstring>
+        <name>configure_coordinate_assignments</name>
+        <qualifiedname>tracktable::PointFromTokensReader::configure_coordinate_assignments</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>object_id_present</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>timestamp_present</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>expected_dimension</declname>
+        </param>
+        <briefdescription>
+<para>Configure the coordinates based on information parsed from the input header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">object_id_present</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean indicating if object ID is present </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timestamp_present</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean indicating if timestamp is present </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">expected_dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension coordinates are expected to be in </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="868" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="868" bodyend="881"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1af6d73e4bf537ccf9e1b9e21e38147fa3" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::configure_field_assignments</definition>
+        <argsstring>(rw::detail::PointHeader const &amp;header, std::size_t first_property_column)</argsstring>
+        <name>configure_field_assignments</name>
+        <qualifiedname>tracktable::PointFromTokensReader::configure_field_assignments</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_point_header" kindref="compound">rw::detail::PointHeader</ref> const &amp;</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>first_property_column</declname>
+        </param>
+        <briefdescription>
+<para>Configure the fields based on information parsed from the input header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Header containing the field information </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">first_property_column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First column containing a property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="890" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="890" bodyend="904"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a780a76227c472e1c2d9033258b3d6808" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::get_tokens_from_input</definition>
+        <argsstring>(string_vector_type &amp;tokens)</argsstring>
+        <name>get_tokens_from_input</name>
+        <qualifiedname>tracktable::PointFromTokensReader::get_tokens_from_input</qualifiedname>
+        <param>
+          <type>string_vector_type &amp;</type>
+          <declname>tokens</declname>
+        </param>
+        <briefdescription>
+<para>Get specified tokens from the input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tokens</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tokens to get from input </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="912" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="912" bodyend="923"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a8a8464ddd85a3de5b78a8be48dd5d1f8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::populate_coordinates_from_tokens</definition>
+        <argsstring>(string_vector_type const &amp;tokens, point_shared_ptr_type point)</argsstring>
+        <name>populate_coordinates_from_tokens</name>
+        <qualifiedname>tracktable::PointFromTokensReader::populate_coordinates_from_tokens</qualifiedname>
+        <param>
+          <type>string_vector_type const &amp;</type>
+          <declname>tokens</declname>
+        </param>
+        <param>
+          <type>point_shared_ptr_type</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Populated the coordinates from input tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tokens</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tokens to use for population </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point containing coordinates </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="932" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="932" bodyend="959"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_from_tokens_reader_1a83dc546c91be93bf72739888b85853c3" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;::populate_properties_from_tokens</definition>
+        <argsstring>(string_vector_type const &amp;tokens, point_shared_ptr_type point)</argsstring>
+        <name>populate_properties_from_tokens</name>
+        <qualifiedname>tracktable::PointFromTokensReader::populate_properties_from_tokens</qualifiedname>
+        <param>
+          <type>string_vector_type const &amp;</type>
+          <declname>tokens</declname>
+        </param>
+        <param>
+          <type>point_shared_ptr_type</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Populated the properties from input tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tokens</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tokens to use for population </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point containing properties </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="968" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="968" bodyend="991"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Read points from lists of tokens. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> expects as its input an iterator that will yield iterator ranges. That is, each value of the iterator is a (begin, end) pair of iterators that will produce a set of tokens for one point.</para>
+<para>Think of it with this common use case. Somewhere upstream you are reading lines from a text file. Your reader takes lines from the file and separates each line into a list of tokens using some delimiter. <ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref> takes each of those lists of tokens, one list at a time, and turns it into a point of some user-requested type. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tracktable::GenericReader&lt; PointT &gt;</label>
+        <link refid="classtracktable_1_1_generic_reader"/>
+      </node>
+      <node id="1">
+        <label>tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;</label>
+        <link refid="classtracktable_1_1_point_from_tokens_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>tracktable::GenericReader&lt; PointT &gt;</label>
+        <link refid="classtracktable_1_1_generic_reader"/>
+      </node>
+      <node id="1">
+        <label>tracktable::PointFromTokensReader&lt; PointT, SourceIterT &gt;</label>
+        <link refid="classtracktable_1_1_point_from_tokens_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>PropertyReadWrite</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tracktable::PropertyConverter</label>
+        <link refid="classtracktable_1_1_property_converter"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" line="76" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointFromTokensReader.h" bodystart="77" bodyend="992"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a5f1fb3d391dbef207d36d24ce0e95556" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>__coordinate_assignments</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a98c0f8e5096fe87c341a2520005311c2" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>__set_coordinate_assignments</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a13329272db0aded06cbc9dd85ed0f32d" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>begin</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a21e3c9e7e7c1125aa6dd7d4ed6d49a4f" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>clear_coordinate_assignments</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1af8cefab055ae9cff09a378fbf8df2af8" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>configure_coordinate_assignments</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1af6d73e4bf537ccf9e1b9e21e38147fa3" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>configure_field_assignments</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ac29c6686bf0a34dea5d371d0a86b4e28" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>configure_reader_from_header</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a90deb27f205b2375f36b1b6a5f0bfdd8" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>coordinate_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ab6a12922c7f5c428e3b229c802aad769" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>CoordinateMap</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a91506b62c3fbcb3f747a70e621a921f9" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>end</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ae5bb680249e176613916bdc820391019" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>FieldMap</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a3f6a790b8f1937222c8694696d3791fd" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>GenericReader</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a539fe1509e67ae1b2581c1d7da3c8c85" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>GenericReader</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a780a76227c472e1c2d9033258b3d6808" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>get_tokens_from_input</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a06037a975d2db338f0ebcdfa3662b4b4" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>has_coordinate_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a7ae462902f457ca8a76aa9c8b3395caa" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>has_real_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a04069a50d3423035942edd9e15fef744" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>has_string_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a0e15c818439fda24984027c073903503" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>has_time_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1aaace277fbb902127c583eb9700f061b4" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>ignore_header</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1acba513bda006ad159845364ea0407deb" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>IgnoreHeader</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1af4768991a46fa7e5434b13a9deae971d" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>iterator</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ad3fef0262393b316e536ee16ce9088f2" prot="protected" virt="virtual"><scope>tracktable::PointFromTokensReader</scope><name>next_item</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1af83d03b02e9b940e2f3e052c3a384347" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>null_value</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1aabd564ee32621ad76daf9129738eeb7f" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>NumParseErrors</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1accd09992b0a36e6cd97c43ad85d9ff6a" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>NumPoints</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a12b735e22cc5e81de67042f07b4d5bef" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>object_id_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a9da7c4abc756dcce2529161f67f2088c" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>ObjectIdColumn</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1aa825e42f2ceb4ad39ea1bc139cf351d0" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a54907cf57205c8d92098d5424260d5de" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a0b3a48649ce724c2ad0035f15f9516fb" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a7eb3bffe4e1855e94fd1faae1f9ffdec" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>point_count_log_enabled</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a462d629481f3608d5b6dc700220e5dba" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>point_shared_ptr_type</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a927353483076657a72dbdd28a6e704a3" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>point_type</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ac9455e90d31f80c8f938814d5d72e49e" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>PointCountLogEnabled</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ad6187b6da048f7abbb470b470d1aec91" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>PointFromTokensReader</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a754612e361d2ceb4e053a8922e665283" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>PointFromTokensReader</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ac6cda4679a117dad64e3df606209aac5" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>PointFromTokensReader</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a8a8464ddd85a3de5b78a8be48dd5d1f8" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>populate_coordinates_from_tokens</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a83dc546c91be93bf72739888b85853c3" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>populate_properties_from_tokens</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a7e2aa26408333bde0f0ad6690a39eb2a" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>PropertyAssignmentMap</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a959ce069e482c274af228425c4369652" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>PropertyReadWrite</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a1f3d76004028cbfaba20ac4a09d7982d" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>real_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a2c74adc415f96c6f3d1cb61bfcc76b30" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_coordinate_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a8961455161100693c2b9b3421f26611f" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_ignore_header</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a4ebdd7f2184a371aec657574b0538adc" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_input_range</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a96c4fd3eeb80b5a1d8328e7052cc7240" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_null_value</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a4c1e7d91726e9129c9ccacc6cdce044a" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_object_id_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1abc415c991701d1244e55167d832a79d3" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_point_count_log_enabled</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a61a9ee3f0f701af991fb3529cde6ebf2" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_real_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1aef992da112fcb471446d1eb8103066e7" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_string_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a2e5ba7348f5d5a31bc2f14b13ecae535" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_time_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a46a3dca5669a85c788818bc1303e58a2" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_timestamp_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ac5eeccbba60d6bc820a8a4ed8a83681c" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_timestamp_format</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1afa11cdec34c31f48e83460edf2fd3944" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>set_warnings_enabled</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ab61b46a6bea4dbcf2f11505537846424" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>source_iterator_type</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a2f0a61db5d1084a3368af4adbf695edd" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>SourceBegin</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a8a17c486d3294d3e8109ada9d385d38f" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>SourceEnd</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a2e61f1d077715d435927ccc95a4cea81" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>string_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a7464481b19ff66805466890c1d90a4cd" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>string_vector_type</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a8d1cdef919ddf14e988e551b263f6860" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>time_field_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1ad8dc5db6521746bb522c751c18850f27" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>timestamp_column</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1aaf5643d3adf986ec203b1e833f51b0fb" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>timestamp_format</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a84ed21511755776e6eb8d16919e9621b" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>TimestampColumn</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a32d68f57d75ec4b0902fed0625f86bdd" prot="public" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>warnings_enabled</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a31f43d939e7c1d4c0f8b5cbac6132338" prot="protected" virt="non-virtual"><scope>tracktable::PointFromTokensReader</scope><name>WarningsEnabled</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a4dafc916191825cbbef2d67d500135b6" prot="public" virt="virtual"><scope>tracktable::PointFromTokensReader</scope><name>~GenericReader</name></member>
+      <member refid="classtracktable_1_1_point_from_tokens_reader_1a6bfb33f6bca74c4eaf5099a50b62e09e" prot="public" virt="virtual"><scope>tracktable::PointFromTokensReader</scope><name>~PointFromTokensReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

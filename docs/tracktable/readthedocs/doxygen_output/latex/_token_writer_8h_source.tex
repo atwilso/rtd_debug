@@ -1,0 +1,248 @@
+\doxysection{Token\+Writer.\+h}
+\hypertarget{_token_writer_8h_source}{}\label{_token_writer_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/TokenWriter.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/TokenWriter.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_TokenWriter\_h}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_TokenWriter\_h}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <boost/regex.hpp>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <boost/throw\_exception.hpp>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072}{TokenWriter}}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{typedef}\ string\_type::value\_type\ \ \ \ \ \ \ \ \ \ char\_type;}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{typedef}\ boost::basic\_regex<char\_type>\ \ \ \ regex\_type;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072}{TokenWriter}}()}
+\DoxyCodeLine{00062\ \ \ \ \ :}
+\DoxyCodeLine{00063\ \ \ \ \ FieldDelimiter(\textcolor{stringliteral}{"{}\(\backslash\)t"{}}),}
+\DoxyCodeLine{00064\ \ \ \ \ OutputStream(0),}
+\DoxyCodeLine{00065\ \ \ \ \ QuoteCharacter(\textcolor{stringliteral}{"{}\(\backslash\)"{}"{}}),}
+\DoxyCodeLine{00066\ \ \ \ \ RecordDelimiter(\textcolor{stringliteral}{"{}\(\backslash\)n"{}})}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ this-\/>rebuild\_delimiter\_regex();}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{classtracktable_1_1_token_writer_af0d50dc2a07a024c84029573b9af8a04}{TokenWriter}}(std::ostream\&\ \_output)}
+\DoxyCodeLine{00076\ \ \ \ \ :}
+\DoxyCodeLine{00077\ \ \ \ \ FieldDelimiter(\textcolor{stringliteral}{"{}\(\backslash\)t"{}}),}
+\DoxyCodeLine{00078\ \ \ \ \ OutputStream(\&\_output),}
+\DoxyCodeLine{00079\ \ \ \ \ QuoteCharacter(\textcolor{stringliteral}{"{}\(\backslash\)"{}"{}}),}
+\DoxyCodeLine{00080\ \ \ \ \ RecordDelimiter(\textcolor{stringliteral}{"{}\(\backslash\)n"{}})}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ this-\/>rebuild\_delimiter\_regex();}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classtracktable_1_1_token_writer_afd7795f8d7c07aa2ffb1aa230386ed69}{TokenWriter}}(\mbox{\hyperlink{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072}{TokenWriter}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00090\ \ \ \ \ :\ FieldDelimiter(other.FieldDelimiter)}
+\DoxyCodeLine{00091\ \ \ \ \ ,\ OutputStream(other.OutputStream)}
+\DoxyCodeLine{00092\ \ \ \ \ ,\ QuoteCharacter(other.QuoteCharacter)}
+\DoxyCodeLine{00093\ \ \ \ \ ,\ RecordDelimiter(other.RecordDelimiter)}
+\DoxyCodeLine{00094\ \ \ \ \ ,\ DelimiterRegex(other.DelimiterRegex)}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{classtracktable_1_1_token_writer_a1409d41d072c9af3be57e20d50baaa01}{\string~TokenWriter}}()\ \{\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072}{TokenWriter}}\&\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a39ca31cb68780a0837c8b1797d2fb2b6}{operator=}}(\mbox{\hyperlink{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072}{TokenWriter}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ this-\/>FieldDelimiter\ =\ other.FieldDelimiter;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ this-\/>OutputStream\ =\ other.OutputStream;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ this-\/>QuoteCharacter\ =\ other.QuoteCharacter;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ this-\/>RecordDelimiter\ =\ other.RecordDelimiter;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ this-\/>DelimiterRegex\ =\ other.DelimiterRegex;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a8dba8d761741c8d65f190a4be20e26f6}{operator==}}(\mbox{\hyperlink{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072}{TokenWriter}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00124\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ this-\/>OutputStream\ ==\ other.OutputStream}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \&\&\ this-\/>FieldDelimiter\ ==\ other.FieldDelimiter}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \&\&\ this-\/>RecordDelimiter\ ==\ other.RecordDelimiter}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \&\&\ this-\/>QuoteCharacter\ ==\ other.QuoteCharacter}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a5cf1697a3a2c3a43ea9bed98520e3f29}{operator!=}}(\mbox{\hyperlink{classtracktable_1_1_token_writer_a051b36aeade0ac6e20ada96e6bec5072}{TokenWriter}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00139\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00153\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a5dc8404f3a0405306af2b085db9e5ae3}{set\_output}}(std::ostream\&\ out)}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ this-\/>OutputStream\ =\ \&out;}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \ \ std::ostream\&\ \mbox{\hyperlink{classtracktable_1_1_token_writer_adfe583f270a2defb9f79bd6d5d293620}{output}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00163\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *(this-\/>OutputStream);}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_token_writer_ad06fd1125d82ea3afb6b804a85864234}{set\_field\_delimiter}}(string\_type\ \textcolor{keyword}{const}\&\ delimiter)}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ this-\/>FieldDelimiter\ =\ delimiter;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ this-\/>rebuild\_delimiter\_regex();}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00184\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a5c17d7d30c6cde224f548e373fd717eb}{field\_delimiter}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00185\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>FieldDelimiter;}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00196\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_token_writer_abf54b30a14b002767022d700846e3b2b}{set\_record\_delimiter}}(string\_type\ \textcolor{keyword}{const}\&\ end\_of\_line)}
+\DoxyCodeLine{00197\ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ this-\/>RecordDelimiter\ =\ end\_of\_line;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ this-\/>rebuild\_delimiter\_regex();}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00206\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a811e1be4cefb9afe422e2bfa3db88ca1}{record\_delimiter}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00207\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>RecordDelimiter;}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00221\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a410be8a4f1591a3837157d51e0185122}{set\_quote\_character}}(string\_type\ \textcolor{keyword}{const}\&\ quotes)}
+\DoxyCodeLine{00222\ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ this-\/>QuoteCharacter\ =\ quotes;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ this-\/>rebuild\_delimiter\_regex();}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00231\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a37909fa013c4d60bc3e50c1a2aa00e3b}{quote\_character}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00232\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>QuoteCharacter;}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00241\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ token\_iter\_t>}
+\DoxyCodeLine{00242\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_token_writer_a11542f82a90de1f8638e574bc25d2846}{write\_record}}(token\_iter\_t\ begin,\ token\_iter\_t\ end)}
+\DoxyCodeLine{00243\ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ std::basic\_ostringstream<char\_type>\ outbuf;}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (token\_iter\_t\ here\ =\ begin;\ here\ !=\ end;\ ++here)}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (here\ !=\ begin)}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ outbuf\ <<\ this-\/>FieldDelimiter;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ outbuf\ <<\ escape\_delimiters(*here);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ outbuf\ <<\ this-\/>RecordDelimiter;}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ (*this-\/>OutputStream)\ <<\ outbuf.str();}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ this-\/>OutputStream-\/>flush();}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00266\ \ \ string\_type\ escape\_delimiters(string\_type\ \textcolor{keyword}{const}\&\ string\_to\_escape)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00267\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \textcolor{keyword}{const}\ string\_type\ replacement(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)\&"{}});}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \ \ \ \ string\_type\ result\ =\ boost::regex\_replace(string\_to\_escape,\ this-\/>DelimiterRegex,\ replacement,}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::match\_default\ |\ boost::format\_sed);}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00273\ \ \ \ \ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00277\ \ \ \textcolor{keywordtype}{void}\ rebuild\_delimiter\_regex()}
+\DoxyCodeLine{00278\ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ std::basic\_ostringstream<string\_type::value\_type>\ outbuf;}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ outbuf\ <<\ \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ outbuf\ <<\ this-\/>escape\_characters\_for\_set(this-\/>FieldDelimiter);}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ outbuf\ <<\ this-\/>escape\_characters\_for\_set(this-\/>RecordDelimiter);}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ outbuf\ <<\ this-\/>escape\_characters\_for\_set(this-\/>QuoteCharacter);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ outbuf\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \ \ this-\/>DelimiterRegex\ =\ regex\_type(outbuf.str());}
+\DoxyCodeLine{00290\ \ \ \ \ \}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00296\ \ \ string\_type}
+\DoxyCodeLine{00297\ \ \ escape\_characters\_for\_set(string\_type\ \textcolor{keyword}{const}\&\ in\_string)}
+\DoxyCodeLine{00298\ \ \ \ \ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ std::basic\_ostringstream<string\_type::value\_type>\ frontbuf,\ mainbuf,\ rearbuf;}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (string\_type::const\_iterator\ char\_iter\ =\ in\_string.begin();}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ char\_iter\ !=\ in\_string.end();}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ ++char\_iter)}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (*char\_iter)}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0a:\ \textcolor{comment}{//\ newline}}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ mainbuf\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)n"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x09:\ \textcolor{comment}{//\ tab}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ mainbuf\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)t"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ frontbuf\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)-\/"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'['}:}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ rearbuf\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)["{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{']'}:}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ rearbuf\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)]"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\string^'}:}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ rearbuf\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)\string^"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ mainbuf\ <<\ *char\_iter;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ frontbuf\ <<\ mainbuf.str();}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ frontbuf\ <<\ rearbuf.str();}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ frontbuf.str();}
+\DoxyCodeLine{00327\ \ \ \ \ \}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ string\_type\ \ \ FieldDelimiter;}
+\DoxyCodeLine{00330\ \ \ std::ostream*\ OutputStream;}
+\DoxyCodeLine{00331\ \ \ string\_type\ \ \ QuoteCharacter;}
+\DoxyCodeLine{00332\ \ \ string\_type\ \ \ RecordDelimiter;}
+\DoxyCodeLine{00333\ \ \ regex\_type\ \ \ \ DelimiterRegex;}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

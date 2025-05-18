@@ -1,0 +1,123 @@
+\doxysection{Domain\+Macros.\+h}
+\hypertarget{_domain_macros_8h_source}{}\label{_domain_macros_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Domain/DomainMacros.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Domain/DomainMacros.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ These\ macros\ make\ it\ simple\ for\ us\ to\ say\ to\ the\ compiler\ "{}Treat}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ MyPointClass\ just\ like\ ThisOtherPointClass\ when\ you\ want\ to\ do\ math}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ on\ it."{}}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_DomainMacros\_h}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_DomainMacros\_h}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointTraits.h>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE(\ NEW\_CLASS,\ DELEGATE\_CLASS,\ TRAIT\ )\ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ template<>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ struct\ TRAIT\ <\ NEW\_CLASS\ >\ :\ TRAIT\ <\ DELEGATE\_CLASS\ >\ \{\ \};}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE\_COORDINATE\_ACCESS(\ NEW\_POINT,\ DELEGATE\_POINT\ )\ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ template<size\_t\ dim>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{struct\ access<\ NEW\_POINT,\ dim\ >\ :\ access<\ DELEGATE\_POINT,\ dim\ >\ \{\ \};}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE\_BOOST\_POINT\_TRAITS(\ NEW\_POINT,\ DELEGATE\_POINT\ )\ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ namespace\ boost\ \{\ namespace\ geometry\ \{\ namespace\ traits\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ tag\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ coordinate\_type\ )\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ dimension\ )\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ coordinate\_system\ )\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE\_COORDINATE\_ACCESS(\ NEW\_POINT,\ DELEGATE\_POINT\ )\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \}\ \}\ \}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE\_TRAJECTORY\_ALGORITHMS(\ NEW\_CLASS,\ DELEGATE\ )\ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ namespace\ tracktable\ \{\ namespace\ algorithms\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_CLASS,\ DELEGATE,\ subset\_during\_interval\ )\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_CLASS,\ DELEGATE,\ point\_at\_fraction\ )\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_CLASS,\ DELEGATE,\ point\_at\_time\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \}\ \}}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE\_POINT\_ALGORITHMS(\ NEW\_POINT,\ DELEGATE\_POINT\ )\ \(\backslash\)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ namespace\ tracktable\ \{\ namespace\ algorithms\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ distance\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ bearing\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ interpolate\ )\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ signed\_turn\_angle\ )\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ unsigned\_turn\_angle\ )\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ convex\_hull\_perimeter\ )\ \(\backslash\)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ convex\_hull\_area\ )\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ convex\_hull\_centroid\ )\ \ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \}\ \}}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE\_BASE\_POINT\_TRAITS(\ NEW\_POINT,\ DELEGATE\_POINT\ )\ \(\backslash\)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ namespace\ tracktable\ \{\ namespace\ traits\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ tag\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ has\_properties\ )\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ dimension\ )\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ undecorated\_point\ )\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \}\ \}}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE\_TRAJECTORY\_POINT\_TRAITS(\ NEW\_POINT,\ DELEGATE\_POINT\ )\ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ namespace\ tracktable\ \{\ namespace\ traits\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ tag\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ dimension\ )\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ has\_object\_id\ )\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ has\_properties\ )\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ has\_timestamp\ )\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ object\_id\ )\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ timestamp\ )\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ undecorated\_point\ )\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ NEW\_POINT,\ DELEGATE\_POINT,\ point\_domain\_name\ )\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \}\ \}}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE\_DOMAIN\_TRAIT(DOMAIN\_NS,\ DOMAIN\_TAG)\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ namespace\ tracktable\ \{\ namespace\ traits\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ \ \ \ template<>\ struct\ domain<DOMAIN\_NS::base\_point\_type>\ \ \{\ typedef\ DOMAIN\_TAG\ type;\ \};\ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ \ \ \ template<>\ struct\ domain<DOMAIN\_NS::trajectory\_point\_type>\ :\ domain<DOMAIN\_NS::base\_point\_type>\ \{\};\ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ template<>\ struct\ domain<DOMAIN\_NS::trajectory\_type>\ :\ domain<DOMAIN\_NS::trajectory\_point\_type>\ \{\};\ \(\backslash\)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ \ \ \ \ template<>\ struct\ domain<DOMAIN\_NS::linestring\_type>\ :\ domain<DOMAIN\_NS::base\_point\_type>\ \{\};\ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \}\ \}}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ TRACKTABLE\_DELEGATE\_POINT\_DOMAIN\_NAME\_TRAIT(DOMAIN\_NS)\ \(\backslash\)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ namespace\ tracktable\ \{\ namespace\ traits\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ template<>\ struct\ point\_domain\_name<DOMAIN\_NS::box\_type>\ :\ point\_domain\_name<DOMAIN\_NS::base\_point\_type>\ \{\};\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \}\ \}}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

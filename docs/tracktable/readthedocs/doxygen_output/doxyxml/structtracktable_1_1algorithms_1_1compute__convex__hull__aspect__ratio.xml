@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1compute__convex__hull__aspect__ratio" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::compute_convex_hull_aspect_ratio</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename coord_sys</type>
+      </param>
+      <param>
+        <type>std::size_t</type>
+        <declname>dimension</declname>
+        <defname>dimension</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1compute__convex__hull__aspect__ratio_1ab1cb21e73958553aa123b4d78ad21e4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::algorithms::compute_convex_hull_aspect_ratio&lt; coord_sys, dimension &gt;::BOOST_MPL_ASSERT_MSG</definition>
+        <argsstring>(sizeof(coord_sys)==0, CONVEX_HULL_ASPECT_RATIO_NOT_IMPLEMENTED_FOR_THIS_COORDINATE_SYSTEM,(types&lt; coord_sys &gt;))</argsstring>
+        <name>BOOST_MPL_ASSERT_MSG</name>
+        <qualifiedname>tracktable::algorithms::compute_convex_hull_aspect_ratio::BOOST_MPL_ASSERT_MSG</qualifiedname>
+        <param>
+          <type>sizeof(coord_sys)</type>
+          <defval>=0</defval>
+        </param>
+        <param>
+          <type>CONVEX_HULL_ASPECT_RATIO_NOT_IMPLEMENTED_FOR_THIS_COORDINATE_SYSTEM</type>
+        </param>
+        <param>
+          <type>(types&lt; coord_sys &gt;)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/ConvexHull.h" line="49" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/ConvexHull.h" line="47" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/ConvexHull.h" bodystart="48" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1compute__convex__hull__aspect__ratio_1ab1cb21e73958553aa123b4d78ad21e4c" prot="public" virt="non-virtual"><scope>tracktable::algorithms::compute_convex_hull_aspect_ratio</scope><name>BOOST_MPL_ASSERT_MSG</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

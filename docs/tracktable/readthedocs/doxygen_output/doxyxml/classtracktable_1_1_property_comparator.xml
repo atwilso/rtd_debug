@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_property_comparator" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::PropertyComparator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">boost::static_visitor&lt; int &gt;</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_property_comparator_1add230645ea6165204797ef77335876f0" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::PropertyComparator::difference</definition>
+        <argsstring></argsstring>
+        <name>difference</name>
+        <qualifiedname>tracktable::PropertyComparator::difference</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="278" column="12" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_property_comparator_1a9bad1aed4a427898ee35f38f63c64760" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::PropertyComparator::is_epsilon_difference</definition>
+        <argsstring></argsstring>
+        <name>is_epsilon_difference</name>
+        <qualifiedname>tracktable::PropertyComparator::is_epsilon_difference</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="279" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="279" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_property_comparator_1af710d84927fc9c2fdd96efe7053f5903" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PropertyComparator::PropertyComparator</definition>
+        <argsstring>(double difference=1.0, bool is_epsilon_difference=true)</argsstring>
+        <name>PropertyComparator</name>
+        <qualifiedname>tracktable::PropertyComparator::PropertyComparator</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>difference</declname>
+          <defval>1.0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_epsilon_difference</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="281" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="281" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_comparator_1a482a36b224a200bb0b9b1701c19c0a96" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PropertyComparator::operator()</definition>
+        <argsstring>(double v1, double v2) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>tracktable::PropertyComparator::operator()</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="287" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="287" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_comparator_1affeb9fe6bc2fb64291ad87edc7264c8f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PropertyComparator::operator()</definition>
+        <argsstring>(const Timestamp &amp;v1, const Timestamp &amp;v2) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>tracktable::PropertyComparator::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> &amp;</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="297" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="297" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_comparator_1a0cf2ed03e98210b101d3a69b9ebd6806" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PropertyComparator::operator()</definition>
+        <argsstring>(const std::string &amp;v1, const std::string &amp;v2) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>tracktable::PropertyComparator::operator()</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="304" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="304" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_comparator_1a606b5396b244ead3808ed645f8bca85b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::PropertyComparator::operator()</definition>
+        <argsstring>(const NullValue &amp;, const NullValue &amp;) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>tracktable::PropertyComparator::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="309" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="309" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_comparator_1a757a9c17a9a0c1a92bdb84c4be33e60c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int tracktable::PropertyComparator::operator()</definition>
+        <argsstring>(const T1 &amp;v1, const T2 &amp;v2) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>tracktable::PropertyComparator::operator()</qualifiedname>
+        <param>
+          <type>const T1 &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const T2 &amp;</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="319" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="319" bodyend="321"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implements a static binary visitor for comparing two property values. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class imposes a total ordering on all property comparisons.</para>
+<para>Logical comparisons are only performed between variants of the same type, although it would be possible to extend this class with comparisons between Timestamps and strings by supplying the appropriate overloaded operator().</para>
+<para>For each of the logical comparisons an overload of the binary operator() is supplied. For all other forms without a specific overload the template form will be selected that will use enums of the underlying types.</para>
+<para>Some local storage is necessary to allow for customization of the epsilon closeness or actual distance between two doubles. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::static_visitor&lt; int &gt;</label>
+      </node>
+      <node id="1">
+        <label>tracktable::PropertyComparator</label>
+        <link refid="classtracktable_1_1_property_comparator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::static_visitor&lt; int &gt;</label>
+      </node>
+      <node id="1">
+        <label>tracktable::PropertyComparator</label>
+        <link refid="classtracktable_1_1_property_comparator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="275" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="276" bodyend="323"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_property_comparator_1add230645ea6165204797ef77335876f0" prot="public" virt="non-virtual"><scope>tracktable::PropertyComparator</scope><name>difference</name></member>
+      <member refid="classtracktable_1_1_property_comparator_1a9bad1aed4a427898ee35f38f63c64760" prot="public" virt="non-virtual"><scope>tracktable::PropertyComparator</scope><name>is_epsilon_difference</name></member>
+      <member refid="classtracktable_1_1_property_comparator_1a482a36b224a200bb0b9b1701c19c0a96" prot="public" virt="non-virtual"><scope>tracktable::PropertyComparator</scope><name>operator()</name></member>
+      <member refid="classtracktable_1_1_property_comparator_1affeb9fe6bc2fb64291ad87edc7264c8f" prot="public" virt="non-virtual"><scope>tracktable::PropertyComparator</scope><name>operator()</name></member>
+      <member refid="classtracktable_1_1_property_comparator_1a0cf2ed03e98210b101d3a69b9ebd6806" prot="public" virt="non-virtual"><scope>tracktable::PropertyComparator</scope><name>operator()</name></member>
+      <member refid="classtracktable_1_1_property_comparator_1a606b5396b244ead3808ed645f8bca85b" prot="public" virt="non-virtual"><scope>tracktable::PropertyComparator</scope><name>operator()</name></member>
+      <member refid="classtracktable_1_1_property_comparator_1a757a9c17a9a0c1a92bdb84c4be33e60c" prot="public" virt="non-virtual"><scope>tracktable::PropertyComparator</scope><name>operator()</name></member>
+      <member refid="classtracktable_1_1_property_comparator_1af710d84927fc9c2fdd96efe7053f5903" prot="public" virt="non-virtual"><scope>tracktable::PropertyComparator</scope><name>PropertyComparator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

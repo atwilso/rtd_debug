@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_deeb21ea95611d5e387619e67bce8191" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable</compoundname>
+    <innerdir refid="dir_f4a779e03d4c4d50bbb12d6ce004742c">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/"/>
+  </compounddef>
+</doxygen>

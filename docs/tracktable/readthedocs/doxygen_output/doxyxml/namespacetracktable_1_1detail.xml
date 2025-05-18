@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1detail" kind="namespace" language="C++">
+    <compoundname>tracktable::detail</compoundname>
+    <innerclass refid="structtracktable_1_1detail_1_1assign__coordinates" prot="public">tracktable::detail::assign_coordinates</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1assign__coordinates_3_010_01_4" prot="public">tracktable::detail::assign_coordinates&lt; 0 &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1assign__coordinates__from__array" prot="public">tracktable::detail::assign_coordinates_from_array</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1assign__coordinates__from__array_3_010_01_4" prot="public">tracktable::detail::assign_coordinates_from_array&lt; 0 &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1check__coordinate__equality" prot="public">tracktable::detail::check_coordinate_equality</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1check__coordinate__equality_3_010_01_4" prot="public">tracktable::detail::check_coordinate_equality&lt; 0 &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1interpolate__coordinates" prot="public">tracktable::detail::interpolate_coordinates</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1interpolate__coordinates_3_010_01_4" prot="public">tracktable::detail::interpolate_coordinates&lt; 0 &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1_point_converter" prot="public">tracktable::detail::PointConverter</innerclass>
+    <innerclass refid="structtracktable_1_1detail_1_1_transfer_point_coordinates" prot="public">tracktable::detail::TransferPointCoordinates</innerclass>
+    <innernamespace refid="namespacetracktable_1_1detail_1_1algorithm__signatures">tracktable::detail::algorithm_signatures</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_almost_equal_8h_1aa48e0121d262b9ee4c4a8b506a17061a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class number_type</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool tracktable::detail::almost_equal</definition>
+        <argsstring>(number_type const &amp;a, number_type const &amp;b, number_type const &amp;epsilon)</argsstring>
+        <name>almost_equal</name>
+        <qualifiedname>tracktable::detail::almost_equal</qualifiedname>
+        <param>
+          <type>number_type const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>number_type const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>number_type const &amp;</type>
+          <declname>epsilon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points/AlmostEqual.h" line="42" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points/AlmostEqual.h" bodystart="42" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Intersects.h" line="39" column="20"/>
+  </compounddef>
+</doxygen>

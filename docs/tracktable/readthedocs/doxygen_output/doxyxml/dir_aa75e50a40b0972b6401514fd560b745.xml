@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_aa75e50a40b0972b6401514fd560b745" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail</compoundname>
+    <innerfile refid="_count_properties_8h">CountProperties.h</innerfile>
+    <innerfile refid="_header_strings_8h">HeaderStrings.h</innerfile>
+    <innerfile refid="_point_header_8h">PointHeader.h</innerfile>
+    <innerfile refid="_point_reader_default_configuration_8h">PointReaderDefaultConfiguration.h</innerfile>
+    <innerfile refid="_property_map_read_write_8h">PropertyMapReadWrite.h</innerfile>
+    <innerfile refid="_set_properties_8h">SetProperties.h</innerfile>
+    <innerfile refid="_trajectory_header_8h">TrajectoryHeader.h</innerfile>
+    <innerfile refid="_write_object_id_8h">WriteObjectId.h</innerfile>
+    <innerfile refid="_write_timestamp_8h">WriteTimestamp.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/"/>
+  </compounddef>
+</doxygen>

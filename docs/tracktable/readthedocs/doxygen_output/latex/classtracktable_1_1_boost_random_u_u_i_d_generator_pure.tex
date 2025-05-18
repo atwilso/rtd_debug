@@ -1,0 +1,108 @@
+\doxysection{tracktable\+::Boost\+Random\+UUIDGenerator\+Pure Class Reference}
+\hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_pure}{}\label{classtracktable_1_1_boost_random_u_u_i_d_generator_pure}\index{tracktable::BoostRandomUUIDGeneratorPure@{tracktable::BoostRandomUUIDGeneratorPure}}
+
+
+Wraps a boost uuid pure generator to act as a Random\+UUIDGenerator.  
+
+
+
+
+{\ttfamily \#include $<$UUID.\+h$>$}
+
+Inheritance diagram for tracktable\+::Boost\+Random\+UUIDGenerator\+Pure\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtracktable_1_1_boost_random_u_u_i_d_generator_pure}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a62c279638f1b0446a904fdcff9ebee98}\label{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a62c279638f1b0446a904fdcff9ebee98} 
+typedef boost\+::uuids\+::random\+\_\+generator {\bfseries random\+\_\+generator\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator}{tracktable\+::\+UUIDGenerator}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator}{UUIDGenerator}} $>$ {\bfseries pointer}
+\begin{DoxyCompactList}\small\item\em A convenience typedef for a smart pointer to a generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a6d98ce2fea02909fd68dde5c44d603ff}\label{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a6d98ce2fea02909fd68dde5c44d603ff} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Boost\+Random\+UUIDGenerator\+Pure} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the UUID Generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\+\_\+type}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a2a471d3deca5d775e8d6871bbf4de8de}{generate\+\_\+uuid}} ()
+\begin{DoxyCompactList}\small\item\em Generate a UUID for the given generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator}{tracktable\+::\+UUIDGenerator}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UUIDGenerator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an uninitialized UUID generator. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+UUIDGenerator} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the UUID Generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator\+::pointer}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a1f51b940cd66f49c444cc9fc9f15400f}{create}} ()
+\begin{DoxyCompactList}\small\item\em Static method to create an instance using the default uniform random number generator type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator}{tracktable\+::\+UUIDGenerator}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries lock\+\_\+mutex} ()
+\begin{DoxyCompactList}\small\item\em Lock the mutex for generator. \end{DoxyCompactList}\item 
+void {\bfseries unlock\+\_\+mutex} ()
+\begin{DoxyCompactList}\small\item\em Unlock the mutex for generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wraps a boost uuid pure generator to act as a Random\+UUIDGenerator. 
+
+The boost uuid pure generator is a lighter weight generator with less entropy, but as stated in the boost documentation it "{}will satisfy the majority of use cases."{} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a1f51b940cd66f49c444cc9fc9f15400f}\index{tracktable::BoostRandomUUIDGeneratorPure@{tracktable::BoostRandomUUIDGeneratorPure}!create@{create}}
+\index{create@{create}!tracktable::BoostRandomUUIDGeneratorPure@{tracktable::BoostRandomUUIDGeneratorPure}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a1f51b940cd66f49c444cc9fc9f15400f} 
+static \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator\+::pointer}} tracktable\+::\+Boost\+Random\+UUIDGenerator\+Pure\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Static method to create an instance using the default uniform random number generator type. 
+
+Example setting a new default uuid generator\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacetracktable_a619756d3896d84d4e6e8293fb58889fa}{::tracktable::set\_automatic\_uuid\_generator}}(\mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a1f51b940cd66f49c444cc9fc9f15400f}{::tracktable::BoostRandomUUIDGeneratorPure::create}}());}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Pointer to the new pure Boost random UUID generator 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a2a471d3deca5d775e8d6871bbf4de8de}\index{tracktable::BoostRandomUUIDGeneratorPure@{tracktable::BoostRandomUUIDGeneratorPure}!generate\_uuid@{generate\_uuid}}
+\index{generate\_uuid@{generate\_uuid}!tracktable::BoostRandomUUIDGeneratorPure@{tracktable::BoostRandomUUIDGeneratorPure}}
+\doxysubsubsection{\texorpdfstring{generate\_uuid()}{generate\_uuid()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a2a471d3deca5d775e8d6871bbf4de8de} 
+\mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\+\_\+type}} tracktable\+::\+Boost\+Random\+UUIDGenerator\+Pure\+::generate\+\_\+uuid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generate a UUID for the given generator. 
+
+\begin{DoxyReturn}{Returns}
+The generated UUID 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_aac98e7815be4c78b3491a8df09026b37}{tracktable\+::\+UUIDGenerator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/UUID.\+h\end{DoxyCompactItemize}

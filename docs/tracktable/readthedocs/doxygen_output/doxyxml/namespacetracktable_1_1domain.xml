@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1domain" kind="namespace" language="C++">
+    <compoundname>tracktable::domain</compoundname>
+    <innernamespace refid="namespacetracktable_1_1domain_1_1cartesian2d">tracktable::domain::cartesian2d</innernamespace>
+    <innernamespace refid="namespacetracktable_1_1domain_1_1cartesian3d">tracktable::domain::cartesian3d</innernamespace>
+    <innernamespace refid="namespacetracktable_1_1domain_1_1feature__vectors">tracktable::domain::feature_vectors</innernamespace>
+    <innernamespace refid="namespacetracktable_1_1domain_1_1terrestrial">tracktable::domain::terrestrial</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Cartesian2D.h" line="58" column="20"/>
+  </compounddef>
+</doxygen>

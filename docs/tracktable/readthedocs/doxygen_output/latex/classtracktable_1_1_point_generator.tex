@@ -1,0 +1,152 @@
+\doxysection{tracktable\+::Point\+Generator\texorpdfstring{$<$}{<} Point\+\_\+T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_point_generator}{}\label{classtracktable_1_1_point_generator}\index{tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}}
+
+
+Point Generator for terrestrial points The is a basic point generator used as a base for all others.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Generator.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_generator_a6a96a89596bdbdae9dd0b5f692a48584}\label{classtracktable_1_1_point_generator_a6a96a89596bdbdae9dd0b5f692a48584} 
+using {\bfseries PointT} = Point\+\_\+T
+\item 
+\Hypertarget{classtracktable_1_1_point_generator_a5b746abed246f09f3fc805441308311d}\label{classtracktable_1_1_point_generator_a5b746abed246f09f3fc805441308311d} 
+using {\bfseries DurationT} = tracktable\+::\+Duration
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_generator_a7d25517db0e8a1f2c2e9cbe2a0dcc561}\label{classtracktable_1_1_point_generator_a7d25517db0e8a1f2c2e9cbe2a0dcc561} 
+{\bfseries Point\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty point generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd794557403ea49baefe22bdf6c006}{Point\+Generator}} (const PointT \&\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_generator_a49834831409348f9d3fcd243c3e9c9e1}{Point\+Generator}} (const PointT \&\+\_\+position, const DurationT \&\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Sets the initial point to {\ttfamily \+\_\+position}, and the time interval to {\ttfamily \+\_\+interval} \end{DoxyCompactList}\item 
+virtual PointT \mbox{\hyperlink{classtracktable_1_1_point_generator_acbfb85c761c3930dce74ff1b9c25340c}{next}} ()
+\begin{DoxyCompactList}\small\item\em Updates position and returns a point. \end{DoxyCompactList}\item 
+DurationT \mbox{\hyperlink{classtracktable_1_1_point_generator_aa291abc32990ef10fc0bf7d65dda75c2}{get\+Interval}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the interval of the points in the generator. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_point_generator_adc799f7c47a6916ed7f141653be654c9}\label{classtracktable_1_1_point_generator_adc799f7c47a6916ed7f141653be654c9} 
+void {\bfseries set\+Interval} (const DurationT \&\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Set the interval of the points. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtracktable_1_1_point_generator_a424a7ae1ced68046bbef5edc9aa29d55}{get\+Object\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the object ID at the given position. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_point_generator_ae6fa66422a88e3fb99d34154a531e38f}\label{classtracktable_1_1_point_generator_ae6fa66422a88e3fb99d34154a531e38f} 
+void {\bfseries set\+Object\+Id} (const std\+::string \&\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Set the object at a given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a}\label{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a} 
+DurationT {\bfseries interval}
+\begin{DoxyCompactList}\small\item\em Update Interval. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_point_generator_a1e2ebe6afd720d55387e7df12b50bace}\label{classtracktable_1_1_point_generator_a1e2ebe6afd720d55387e7df12b50bace} 
+size\+\_\+t {\bfseries count} = 0
+\begin{DoxyCompactList}\small\item\em Count of points generated. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}\label{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7} 
+PointT {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Last point generated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Point\+\_\+T$>$\newline
+class tracktable\+::\+Point\+Generator$<$ Point\+\_\+\+T $>$}
+Point Generator for terrestrial points The is a basic point generator used as a base for all others. 
+
+It will just keep incrementing points for a stationary object forever. Each call to next will increment the timestamp of the returned point by the set interval 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_point_generator_ad6fd794557403ea49baefe22bdf6c006}\index{tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}!PointGenerator@{PointGenerator}}
+\index{PointGenerator@{PointGenerator}!tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}}
+\doxysubsubsection{\texorpdfstring{PointGenerator()}{PointGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_generator_ad6fd794557403ea49baefe22bdf6c006} 
+template$<$typename Point\+\_\+T$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_point_generator}{tracktable\+::\+Point\+Generator}}$<$ Point\+\_\+T $>$\+::\+Point\+Generator (\begin{DoxyParamCaption}\item[{const PointT \&}]{\+\_\+position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the initial point to {\ttfamily \+\_\+position} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+position} & Initial point to use, including all metadata \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_generator_a49834831409348f9d3fcd243c3e9c9e1}\index{tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}!PointGenerator@{PointGenerator}}
+\index{PointGenerator@{PointGenerator}!tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}}
+\doxysubsubsection{\texorpdfstring{PointGenerator()}{PointGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_generator_a49834831409348f9d3fcd243c3e9c9e1} 
+template$<$typename Point\+\_\+T$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_point_generator}{tracktable\+::\+Point\+Generator}}$<$ Point\+\_\+T $>$\+::\+Point\+Generator (\begin{DoxyParamCaption}\item[{const PointT \&}]{\+\_\+position}{, }\item[{const DurationT \&}]{\+\_\+interval}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the initial point to {\ttfamily \+\_\+position}, and the time interval to {\ttfamily \+\_\+interval} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+position} & Initial point to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+interval} & Interval to increase timestamp by \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_point_generator_aa291abc32990ef10fc0bf7d65dda75c2}\index{tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}!getInterval@{getInterval}}
+\index{getInterval@{getInterval}!tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}}
+\doxysubsubsection{\texorpdfstring{getInterval()}{getInterval()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_generator_aa291abc32990ef10fc0bf7d65dda75c2} 
+template$<$typename Point\+\_\+T$>$ \\
+DurationT \mbox{\hyperlink{classtracktable_1_1_point_generator}{tracktable\+::\+Point\+Generator}}$<$ Point\+\_\+T $>$\+::get\+Interval (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the interval of the points in the generator. 
+
+\begin{DoxyReturn}{Returns}
+Interval of the points 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_generator_a424a7ae1ced68046bbef5edc9aa29d55}\index{tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}!getObjectId@{getObjectId}}
+\index{getObjectId@{getObjectId}!tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}}
+\doxysubsubsection{\texorpdfstring{getObjectId()}{getObjectId()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_generator_a424a7ae1ced68046bbef5edc9aa29d55} 
+template$<$typename Point\+\_\+T$>$ \\
+std\+::string \mbox{\hyperlink{classtracktable_1_1_point_generator}{tracktable\+::\+Point\+Generator}}$<$ Point\+\_\+T $>$\+::get\+Object\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the object ID at the given position. 
+
+\begin{DoxyReturn}{Returns}
+ID of the object 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_generator_acbfb85c761c3930dce74ff1b9c25340c}\index{tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}!next@{next}}
+\index{next@{next}!tracktable::PointGenerator$<$ Point\_T $>$@{tracktable::PointGenerator$<$ Point\_T $>$}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_generator_acbfb85c761c3930dce74ff1b9c25340c} 
+template$<$typename Point\+\_\+T$>$ \\
+virtual PointT \mbox{\hyperlink{classtracktable_1_1_point_generator}{tracktable\+::\+Point\+Generator}}$<$ Point\+\_\+T $>$\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Updates position and returns a point. 
+
+\begin{DoxyReturn}{Returns}
+new point 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_abbdc3fac4a3814ae857d2f57d3137883}{tracktable\+::\+Circular\+Point\+Generator}}, \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_aa18f661298741ceedd6a5f0030ff0c31}{tracktable\+::\+Constant\+Speed\+Point\+Generator}}, and \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aa71b27ec947cdf2999f82c2fd859aa46}{tracktable\+::\+Grid\+Point\+Generator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Data\+Generators/Point\+Generator.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,156 @@
+\doxysection{tracktable\+::Timestamp\+Converter Class Reference}
+\hypertarget{classtracktable_1_1_timestamp_converter}{}\label{classtracktable_1_1_timestamp_converter}\index{tracktable::TimestampConverter@{tracktable::TimestampConverter}}
+
+
+\doxylink{classtracktable_1_1_timestamp_converter}{Timestamp\+Converter} -\/ timestamp to/from string.  
+
+
+
+
+{\ttfamily \#include $<$Timestamp\+Converter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_timestamp_converter_a9bb7b14136d8a62895419ac8a67d3257}\label{classtracktable_1_1_timestamp_converter_a9bb7b14136d8a62895419ac8a67d3257} 
+{\bfseries Timestamp\+Converter} (\mbox{\hyperlink{classtracktable_1_1_timestamp_converter}{Timestamp\+Converter}} const \&other)
+\item 
+\Hypertarget{classtracktable_1_1_timestamp_converter_a435def08620149b2f99fc64ecf5989d1}\label{classtracktable_1_1_timestamp_converter_a435def08620149b2f99fc64ecf5989d1} 
+\mbox{\hyperlink{classtracktable_1_1_timestamp_converter}{Timestamp\+Converter}} \& {\bfseries operator=} (\mbox{\hyperlink{classtracktable_1_1_timestamp_converter}{Timestamp\+Converter}} const \&other)
+\item 
+\Hypertarget{classtracktable_1_1_timestamp_converter_ab8677f26285efc1a5fa998344a816ffa}\label{classtracktable_1_1_timestamp_converter_ab8677f26285efc1a5fa998344a816ffa} 
+bool {\bfseries operator==} (\mbox{\hyperlink{classtracktable_1_1_timestamp_converter}{Timestamp\+Converter}} const \&other) const
+\item 
+\Hypertarget{classtracktable_1_1_timestamp_converter_af60d590d135c73d555950da9fe88e7df}\label{classtracktable_1_1_timestamp_converter_af60d590d135c73d555950da9fe88e7df} 
+bool {\bfseries operator!=} (\mbox{\hyperlink{classtracktable_1_1_timestamp_converter}{Timestamp\+Converter}} const \&other) const
+\item 
+void \mbox{\hyperlink{classtracktable_1_1_timestamp_converter_aaf42ae01feda67ae0c2cce293b99c8f8}{set\+\_\+input\+\_\+format}} (string\+\_\+type const \&format)
+\begin{DoxyCompactList}\small\item\em Set format string for parsing timestamps. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_timestamp_converter_a34add87bcee24afb3feef84aaea94467}{input\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Return the current input format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_timestamp_converter_ab4e802270fa9c9a56cf944d579914337}{set\+\_\+output\+\_\+format}} (string\+\_\+type const \&format)
+\begin{DoxyCompactList}\small\item\em Set format string for writing timestamps to strings. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_timestamp_converter_ae0e5fbe705ee411799f5935b36df2a4b}{output\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Return the current output format. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_timestamp_converter_aeee19b496c428e609f5d005a928c4f8c}{timestamp\+\_\+to\+\_\+string}} (\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} const \&timestamp) const
+\begin{DoxyCompactList}\small\item\em Convert a timestamp to a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} \mbox{\hyperlink{classtracktable_1_1_timestamp_converter_a533fba38ed9c63e95cc1fcb853305d00}{timestamp\+\_\+from\+\_\+string}} (string\+\_\+type const \&time\+\_\+string) const
+\begin{DoxyCompactList}\small\item\em Convert a string to a timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classtracktable_1_1_timestamp_converter}{Timestamp\+Converter} -\/ timestamp to/from string. 
+
+We need to be able to convert strings to {\ttfamily \doxylink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{tracktable\+::\+Timestamp}} instances and the reverse while using custom time input/output facets. There are enough differences in the way locales are implemented across platforms that I insist on encapsulating it in this class. We will use this in readers and writers. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_timestamp_converter_a34add87bcee24afb3feef84aaea94467}\index{tracktable::TimestampConverter@{tracktable::TimestampConverter}!input\_format@{input\_format}}
+\index{input\_format@{input\_format}!tracktable::TimestampConverter@{tracktable::TimestampConverter}}
+\doxysubsubsection{\texorpdfstring{input\_format()}{input\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_timestamp_converter_a34add87bcee24afb3feef84aaea94467} 
+string\+\_\+type tracktable\+::\+Timestamp\+Converter\+::input\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the current input format. 
+
+\begin{DoxyReturn}{Returns}
+Format string for timestamp parsing 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_timestamp_converter_ae0e5fbe705ee411799f5935b36df2a4b}\index{tracktable::TimestampConverter@{tracktable::TimestampConverter}!output\_format@{output\_format}}
+\index{output\_format@{output\_format}!tracktable::TimestampConverter@{tracktable::TimestampConverter}}
+\doxysubsubsection{\texorpdfstring{output\_format()}{output\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_timestamp_converter_ae0e5fbe705ee411799f5935b36df2a4b} 
+string\+\_\+type tracktable\+::\+Timestamp\+Converter\+::output\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the current output format. 
+
+\begin{DoxyReturn}{Returns}
+Format string for timestamp output 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_timestamp_converter_aaf42ae01feda67ae0c2cce293b99c8f8}\index{tracktable::TimestampConverter@{tracktable::TimestampConverter}!set\_input\_format@{set\_input\_format}}
+\index{set\_input\_format@{set\_input\_format}!tracktable::TimestampConverter@{tracktable::TimestampConverter}}
+\doxysubsubsection{\texorpdfstring{set\_input\_format()}{set\_input\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_timestamp_converter_aaf42ae01feda67ae0c2cce293b99c8f8} 
+void tracktable\+::\+Timestamp\+Converter\+::set\+\_\+input\+\_\+format (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{format}{}\end{DoxyParamCaption})}
+
+
+
+Set format string for parsing timestamps. 
+
+This format string must adhere to the guidelines in the documentation for Boost\textquotesingle{}s date/time input format. See the following page\+:
+
+\href{http://www.boost.org/doc/libs/master/doc/html/date_time/date_time_io.html}{\texttt{ http\+://www.\+boost.\+org/doc/libs/master/doc/html/date\+\_\+time/date\+\_\+time\+\_\+io.\+html}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & Format string for timestamp parsing \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_timestamp_converter_ab4e802270fa9c9a56cf944d579914337}\index{tracktable::TimestampConverter@{tracktable::TimestampConverter}!set\_output\_format@{set\_output\_format}}
+\index{set\_output\_format@{set\_output\_format}!tracktable::TimestampConverter@{tracktable::TimestampConverter}}
+\doxysubsubsection{\texorpdfstring{set\_output\_format()}{set\_output\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_timestamp_converter_ab4e802270fa9c9a56cf944d579914337} 
+void tracktable\+::\+Timestamp\+Converter\+::set\+\_\+output\+\_\+format (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{format}{}\end{DoxyParamCaption})}
+
+
+
+Set format string for writing timestamps to strings. 
+
+This format string must adhere to the guidelines in the documentation for Boost\textquotesingle{}s date/time input format. See the following page\+:
+
+\href{http://www.boost.org/doc/libs/master/doc/html/date_time/date_time_io.html}{\texttt{ http\+://www.\+boost.\+org/doc/libs/master/doc/html/date\+\_\+time/date\+\_\+time\+\_\+io.\+html}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & Format string for timestamp output \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_timestamp_converter_a533fba38ed9c63e95cc1fcb853305d00}\index{tracktable::TimestampConverter@{tracktable::TimestampConverter}!timestamp\_from\_string@{timestamp\_from\_string}}
+\index{timestamp\_from\_string@{timestamp\_from\_string}!tracktable::TimestampConverter@{tracktable::TimestampConverter}}
+\doxysubsubsection{\texorpdfstring{timestamp\_from\_string()}{timestamp\_from\_string()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_timestamp_converter_a533fba38ed9c63e95cc1fcb853305d00} 
+\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} tracktable\+::\+Timestamp\+Converter\+::timestamp\+\_\+from\+\_\+string (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{time\+\_\+string}{}\end{DoxyParamCaption}) const}
+
+
+
+Convert a string to a timestamp. 
+
+Parse a string to create a timestamp according to the current input format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em time\+\_\+string} & \doxylink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp} represented as string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp} parsed from string 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_timestamp_converter_aeee19b496c428e609f5d005a928c4f8c}\index{tracktable::TimestampConverter@{tracktable::TimestampConverter}!timestamp\_to\_string@{timestamp\_to\_string}}
+\index{timestamp\_to\_string@{timestamp\_to\_string}!tracktable::TimestampConverter@{tracktable::TimestampConverter}}
+\doxysubsubsection{\texorpdfstring{timestamp\_to\_string()}{timestamp\_to\_string()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_timestamp_converter_aeee19b496c428e609f5d005a928c4f8c} 
+string\+\_\+type tracktable\+::\+Timestamp\+Converter\+::timestamp\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} const \&}]{timestamp}{}\end{DoxyParamCaption}) const}
+
+
+
+Convert a timestamp to a string. 
+
+Convert a timestamp to a string according to the current output format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em timestamp} & \doxylink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp} to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of timestamp 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Timestamp\+Converter.\+h\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Timestamp\+Converter.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1kml_1_1point" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::kml::point</compoundname>
+    <includes refid="_kml_out_8h" local="no">KmlOut.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtracktable_1_1kml_1_1point_1a04e786994f0c1094a5c9d64a0a588bde" prot="public" static="no" mutable="no">
+        <type>PointT const  *const</type>
+        <definition>PointT const* const tracktable::kml::point::trajectory</definition>
+        <argsstring></argsstring>
+        <name>trajectory</name>
+        <qualifiedname>tracktable::kml::point::trajectory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="161" column="28" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1kml_1_1point_1a9a4344fc6089347ed386fe5220a55ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::point::point</definition>
+        <argsstring>()=delete</argsstring>
+        <name>point</name>
+        <qualifiedname>tracktable::kml::point::point</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="159" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structtracktable_1_1kml_1_1point_1a6d8e2088574e9e47cdde926e95560694" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::point::point</definition>
+        <argsstring>(const PointT &amp;_t)</argsstring>
+        <name>point</name>
+        <qualifiedname>tracktable::kml::point::point</qualifiedname>
+        <param>
+          <type>const PointT &amp;</type>
+          <declname>_t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="160" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="160" bodyend="160"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper struct that allows for for. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">out<sp/>&lt;&lt;<sp/>point(t)</highlight></codeline>
+</programlisting></para>
+<para>which will render as a single point This will be missing some header/footer neccesary for full kml rendering </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="158" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="158" bodyend="162"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1kml_1_1point_1a9a4344fc6089347ed386fe5220a55ad2" prot="public" virt="non-virtual"><scope>tracktable::kml::point</scope><name>point</name></member>
+      <member refid="structtracktable_1_1kml_1_1point_1a6d8e2088574e9e47cdde926e95560694" prot="public" virt="non-virtual"><scope>tracktable::kml::point</scope><name>point</name></member>
+      <member refid="structtracktable_1_1kml_1_1point_1a04e786994f0c1094a5c9d64a0a588bde" prot="public" virt="non-virtual"><scope>tracktable::kml::point</scope><name>trajectory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

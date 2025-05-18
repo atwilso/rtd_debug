@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_54c7857225d3ce680c3aac66a22c7bc0" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail</compoundname>
+    <innerfile refid="_assemble_trajectories_iterator_8h">AssembleTrajectoriesIterator.h</innerfile>
+    <innerfile refid="coordinate__transfer__converter_8h">coordinate_transfer_converter.h</innerfile>
+    <innerfile refid="dbscan__drivers_8h">dbscan_drivers.h</innerfile>
+    <innerfile refid="dbscan__implementation_8h">dbscan_implementation.h</innerfile>
+    <innerfile refid="dbscan__points_8h">dbscan_points.h</innerfile>
+    <innerfile refid="extract__pair__member_8h">extract_pair_member.h</innerfile>
+    <innerfile refid="point__converter_8h">point_converter.h</innerfile>
+    <innerfile refid="transfer__point__coordinates_8h">transfer_point_coordinates.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/"/>
+  </compounddef>
+</doxygen>

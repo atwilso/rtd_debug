@@ -1,0 +1,355 @@
+\doxysection{Assemble\+Trajectories\+Iterator.\+h}
+\hypertarget{_assemble_trajectories_iterator_8h_source}{}\label{_assemble_trajectories_iterator_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/AssembleTrajectoriesIterator.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/AssembleTrajectoriesIterator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_AssembleTrajectoriesIterator\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_AssembleTrajectoriesIterator\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Timestamp.h>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <boost/unordered\_map.hpp>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <typeinfo>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{typename}\ point\_type,}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{typename}\ source\_iterator\_type,}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{typename}\ trajectory\_type}
+\DoxyCodeLine{00053\ \ \ >}
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }AssembleTrajectoriesIterator}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ AssembleTrajectoriesIterator()}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ this-\/>MinimumTrajectoryLength\ =\ 0;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ this-\/>SeparationDistance\ =\ -\/1;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ this-\/>SeparationTime\ =\ \mbox{\hyperlink{namespacetracktable_a7f915c14e8fe5ac6b656336fbeb88d6f}{seconds}}(0);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ this-\/>ValidTrajectoryCount\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ this-\/>InvalidTrajectoryCount\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ this-\/>PointCount\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ this-\/>CleanupInterval\ =\ 10000;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ AssembleTrajectoriesIterator(source\_iterator\_type\ \textcolor{keyword}{const}\&\ input\_begin,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ source\_iterator\_type\ \textcolor{keyword}{const}\&\ input\_end,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ minimum\_length,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ separation\_distance,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Duration\ \textcolor{keyword}{const}\&\ separation\_time,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cleanup\_interval)}
+\DoxyCodeLine{00074\ \ \ \ \ :\ InputBegin(input\_begin),}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ InputEnd(input\_end),}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ MinimumTrajectoryLength(minimum\_length),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ SeparationDistance(separation\_distance),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ SeparationTime(separation\_time),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ CleanupInterval(cleanup\_interval)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ this-\/>ValidTrajectoryCount\ =\ 0;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ this-\/>InvalidTrajectoryCount\ =\ 0;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ this-\/>PointCount\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\_begin\ !=\ input\_end)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ this-\/>find\_next\_complete\_trajectory();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ AssembleTrajectoriesIterator(AssembleTrajectoriesIterator\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00092\ \ \ \ \ :\ InputBegin(other.InputBegin),}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ InputEnd(other.InputEnd),}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ MinimumTrajectoryLength(other.MinimumTrajectoryLength),}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ SeparationDistance(other.SeparationDistance),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ SeparationTime(other.SeparationTime),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ TrajectoriesInProgress(other.TrajectoriesInProgress),}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ ValidTrajectoryCount(other.ValidTrajectoryCount),}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ InvalidTrajectoryCount(other.InvalidTrajectoryCount),}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ PointCount(other.PointCount),}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ CleanupInterval(other.CleanupInterval)}
+\DoxyCodeLine{00102\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \string~AssembleTrajectoriesIterator()\ \{\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ AssembleTrajectoriesIterator\&\ operator=(AssembleTrajectoriesIterator\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ this-\/>InputBegin\ =\ other.InputBegin;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ this-\/>InputEnd\ =\ other.InputEnd;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ this-\/>MinimumTrajectoryLength\ =\ other.MinimumTrajectoryLength;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ this-\/>SeparationDistance\ =\ other.SeparationDistance;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ this-\/>SeparationTime\ =\ other.SeparationTime;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ this-\/>TrajectoriesInProgress\ =\ other.TrajectoriesInProgress;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ this-\/>ValidTrajectoryCount\ =\ other.ValidTrajectoryCount;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ this-\/>InvalidTrajectoryCount\ =\ other.InvalidTrajectoryCount;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ this-\/>PointCount\ =\ other.PointCount;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ this-\/>CleanupInterval\ =\ other.CleanupInterval;}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordtype}{bool}\ operator==(AssembleTrajectoriesIterator\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{comment}{//\ No,\ we're\ not\ going\ to\ compare\ the\ entire}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{comment}{//\ trajectories-\/in-\/progress\ array.\ \ Since\ the\ assembly\ algorithm}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{comment}{//\ is\ deterministic,\ it\ is\ enough\ to\ check\ whether\ they\ are\ the}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \textcolor{comment}{//\ same\ size.}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ this-\/>InputBegin\ ==\ other.InputBegin\ \&\&}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ this-\/>InputEnd\ ==\ other.InputEnd\ \&\&}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ this-\/>MinimumTrajectoryLength\ ==\ other.MinimumTrajectoryLength\ \&\&}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ this-\/>SeparationDistance\ ==\ other.SeparationDistance\ \&\&}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ this-\/>SeparationTime\ ==\ other.SeparationTime\ \&\&}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ this-\/>TrajectoriesInProgress.size()\ ==\ other.TrajectoriesInProgress.size()\ \&\&}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ this-\/>FinishedTrajectories.size()\ ==\ other.FinishedTrajectories.size()\ \&\&}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ this-\/>CleanupInterval\ ==\ other.CleanupInterval}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \textcolor{keywordtype}{bool}\ operator!=(AssembleTrajectoriesIterator\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00144\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((*\textcolor{keyword}{this}\ ==\ other)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \textcolor{keywordtype}{int}\ valid\_trajectory\_count()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00151\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>ValidTrajectoryCount;}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \textcolor{keywordtype}{int}\ invalid\_trajectory\_count()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00158\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>InvalidTrajectoryCount;}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \textcolor{keywordtype}{int}\ point\_count()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointCount;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ trajectory\_type\ operator*()}
+\DoxyCodeLine{00172\ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ assert(this-\/>FinishedTrajectories.empty()\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>FinishedTrajectories.front();}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ AssembleTrajectoriesIterator\&\ operator++()}
+\DoxyCodeLine{00180\ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ assert(this-\/>FinishedTrajectories.empty()\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ this-\/>FinishedTrajectories.pop\_front();}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>FinishedTrajectories.empty())}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ this-\/>find\_next\_complete\_trajectory();}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ AssembleTrajectoriesIterator\ operator++(\textcolor{keywordtype}{int})}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ AssembleTrajectoriesIterator\ current\_state(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ this-\/>operator++();}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\_state;}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00203\ \ \ \textcolor{keyword}{typedef}\ boost::unordered\_map<std::string,\ trajectory\_type>\ string\_trajectory\_map\_type;}
+\DoxyCodeLine{00204\ \ \ \textcolor{keyword}{typedef}\ std::list<trajectory\_type>\ \ \ \ \ trajectory\_list\_type;}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ source\_iterator\_type\ InputBegin;}
+\DoxyCodeLine{00207\ \ \ source\_iterator\_type\ InputEnd;}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ std::size\_t\ MinimumTrajectoryLength;}
+\DoxyCodeLine{00210\ \ \ \textcolor{keywordtype}{double}\ SeparationDistance;}
+\DoxyCodeLine{00211\ \ \ Duration\ SeparationTime;}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ string\_trajectory\_map\_type\ TrajectoriesInProgress;}
+\DoxyCodeLine{00214\ \ \ trajectory\_list\_type\ \ \ \ \ \ \ FinishedTrajectories;}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \textcolor{keywordtype}{int}\ ValidTrajectoryCount;}
+\DoxyCodeLine{00217\ \ \ \textcolor{keywordtype}{int}\ InvalidTrajectoryCount;}
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordtype}{int}\ PointCount;}
+\DoxyCodeLine{00219\ \ \ \textcolor{keywordtype}{int}\ CleanupInterval;}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \textcolor{keywordtype}{void}\ find\_next\_complete\_trajectory()}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ point\_type\ next\_point;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (this-\/>InputBegin\ !=\ this-\/>InputEnd)}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ ++\ this-\/>PointCount;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ next\_point\ =\ *(this-\/>InputBegin);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ string\_trajectory\_map\_type::iterator\ find\_iter\ =\ this-\/>TrajectoriesInProgress.find(next\_point.object\_id());}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (find\_iter\ ==\ this-\/>TrajectoriesInProgress.end())}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ are\ not\ currently\ tracking\ a\ trajectory\ with\ this}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ object\ ID.\ \ Start\ a\ new\ one.}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ trajectory\_type\ new\_traj;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ new\_traj.\mbox{\hyperlink{classtracktable_1_1_trajectory_a6365f4c2d2450fe0b2a00a828b6365bc}{push\_back}}(next\_point);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ this-\/>TrajectoriesInProgress[next\_point.object\_id()]\ =\ new\_traj;}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ have\ a\ partial\ trajectory\ for\ this\ object\ ID.}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>point\_belongs\_to\_trajectory(find\_iter,\ next\_point))}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ (*find\_iter).second.push\_back(next\_point);}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We're\ about\ to\ start\ a\ new\ trajectory.\ \ Clear\ out\ the}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ old\ one\ and\ announce\ its\ readiness.}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*find\_iter).second.size()\ >=\ this-\/>MinimumTrajectoryLength)}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>FinishedTrajectories.push\_back((*find\_iter).second);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>TrajectoriesInProgress.erase(find\_iter);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++\ this-\/>ValidTrajectoryCount;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>TrajectoriesInProgress.erase(find\_iter);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++\ this-\/>InvalidTrajectoryCount;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ the\ new\ trajectory.}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ trajectory\_type\ new\_traj;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ new\_traj.\mbox{\hyperlink{classtracktable_1_1_trajectory_a6365f4c2d2450fe0b2a00a828b6365bc}{push\_back}}(next\_point);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>TrajectoriesInProgress[next\_point.object\_id()]\ =\ new\_traj;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>CleanupInterval\ >\ 0\ \&\&\ this-\/>PointCount\ \%\ this-\/>CleanupInterval\ ==\ 0)}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ this-\/>cleanup\_trajectories\_in\_progress(next\_point.timestamp());}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ ++\ this-\/>InputBegin;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>FinishedTrajectories.empty()\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \textcolor{comment}{//\ Done\ iterating\ over\ all\ input\ points.}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>InputBegin\ ==\ this-\/>InputEnd\ \&\&}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ this-\/>TrajectoriesInProgress.size()\ >\ 0)}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ this-\/>cleanup\_trajectories\_in\_progress(next\_point.timestamp()\ +\ \mbox{\hyperlink{namespacetracktable_a35c0a2d0430b4e79a2d852882815f092}{days}}(10000));}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \textcolor{keywordtype}{void}\ cleanup\_trajectories\_in\_progress(\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ \textcolor{keyword}{const}\&\ current\_time)}
+\DoxyCodeLine{00296\ \ \ \ \ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ string\_trajectory\_map\_type::iterator\ traj\_iter(this-\/>TrajectoriesInProgress.begin());}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (traj\_iter\ !=\ this-\/>TrajectoriesInProgress.end())}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ Duration\ time\_since\_last\_point\ =\ current\_time\ -\/\ (*traj\_iter).second.back().timestamp();}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (time\_since\_last\_point\ >\ this-\/>SeparationTime)}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ trajectory\ is\ done\ and\ can\ either\ be\ published\ or}}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ discarded.}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*traj\_iter).second.size()\ >=\ this-\/>MinimumTrajectoryLength)}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>FinishedTrajectories.push\_back((*traj\_iter).second);}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ ++this-\/>ValidTrajectoryCount;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ ++this-\/>InvalidTrajectoryCount;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ traj\_iter\ =\ this-\/>TrajectoriesInProgress.erase(traj\_iter);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ trajectory\ is\ still\ a\ going\ concern.\ \ Move\ along.}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ ++\ traj\_iter;}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ trajectory\_iter\_t>}
+\DoxyCodeLine{00329\ \ \ \textcolor{keywordtype}{bool}\ point\_belongs\_to\_trajectory(trajectory\_iter\_t\ \textcolor{keyword}{const}\&\ iter,}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ point\_type\ \textcolor{keyword}{const}\&\ latest\_point)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00331\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*iter).second.size()\ ==\ 0)}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ within\_separation\_distance\ =\ (distance(latest\_point,\ (*iter).second.back())\ <\ this-\/>SeparationDistance);}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ within\_separation\_time\ =\ ((latest\_point.timestamp()\ -\/\ (*iter).second.back().timestamp())\ <\ this-\/>SeparationTime);}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (within\_separation\_distance\ \&\&\ within\_separation\_time);}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \ \ \}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \};}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1conversions" kind="namespace" language="C++">
+    <compoundname>tracktable::conversions</compoundname>
+    <innernamespace refid="namespacetracktable_1_1conversions_1_1constants">tracktable::conversions::constants</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_conversions_8h_1a57bd081ba651a6a4551d6b8aa74b28b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::degrees</definition>
+        <argsstring>(double _rad)</argsstring>
+        <name>degrees</name>
+        <qualifiedname>tracktable::conversions::degrees</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_rad</declname>
+        </param>
+        <briefdescription>
+<para>Convert radians to degrees. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angle to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Angle measured in degrees </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="55" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="_conversions_8h_1a3070992b40860a1bb4c5434c57a43245" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::radians</definition>
+        <argsstring>(double _deg)</argsstring>
+        <name>radians</name>
+        <qualifiedname>tracktable::conversions::radians</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_deg</declname>
+        </param>
+        <briefdescription>
+<para>Convert degrees to radians. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_deg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angle to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Angle measured in radians </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="66" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="_conversions_8h_1a471e80ed5cea97edc722fe2e85a00003" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::hours_to_seconds</definition>
+        <argsstring>(double _hrs)</argsstring>
+        <name>hours_to_seconds</name>
+        <qualifiedname>tracktable::conversions::hours_to_seconds</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_hrs</declname>
+        </param>
+        <briefdescription>
+<para>Convert hours to seconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_hrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hours to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Time measured in seconds </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="77" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="_conversions_8h_1a13f20438b65b3d8614dbe61fdb383a0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::seconds_to_hours</definition>
+        <argsstring>(double _secs)</argsstring>
+        <name>seconds_to_hours</name>
+        <qualifiedname>tracktable::conversions::seconds_to_hours</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_secs</declname>
+        </param>
+        <briefdescription>
+<para>Convert seconds to hours. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_secs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Seconds to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Time measured in hours </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="88" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="_conversions_8h_1a4d36f789b19e305d2b8d8471bf3e1314" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::steradians_to_km2</definition>
+        <argsstring>(double _sr)</argsstring>
+        <name>steradians_to_km2</name>
+        <qualifiedname>tracktable::conversions::steradians_to_km2</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_sr</declname>
+        </param>
+        <briefdescription>
+<para>Convert steradians to kilometers squared. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_sr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Steradians to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Distance measured in kilometers squared </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="99" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="_conversions_8h_1adfe68488bcf63fed0545087eca4807f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::km2_to_steradians</definition>
+        <argsstring>(double _km2)</argsstring>
+        <name>km2_to_steradians</name>
+        <qualifiedname>tracktable::conversions::km2_to_steradians</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_km2</declname>
+        </param>
+        <briefdescription>
+<para>Convert kilometers squared to steradians. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_km2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>kilometers squared to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Distance measured in steradians squared </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="110" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="_conversions_8h_1ae15a3e1c710aebf066170a22b3aba646" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::radians_to_km</definition>
+        <argsstring>(double _rad)</argsstring>
+        <name>radians_to_km</name>
+        <qualifiedname>tracktable::conversions::radians_to_km</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_rad</declname>
+        </param>
+        <briefdescription>
+<para>Convert radians to kilometer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angle to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Angle measured in kilometers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="121" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="_conversions_8h_1a8033ac041cd4bd65b4b75ede2f2cd306" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::km_to_radians</definition>
+        <argsstring>(double _km)</argsstring>
+        <name>km_to_radians</name>
+        <qualifiedname>tracktable::conversions::km_to_radians</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_km</declname>
+        </param>
+        <briefdescription>
+<para>Convert kilometers to radians. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_km</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angle to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Angle measured in radians </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="132" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="_conversions_8h_1a16cd117dfd4089cd9fbf912bffcabdc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::conversions::feet_to_meters</definition>
+        <argsstring>(double _feet)</argsstring>
+        <name>feet_to_meters</name>
+        <qualifiedname>tracktable::conversions::feet_to_meters</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_feet</declname>
+        </param>
+        <briefdescription>
+<para>Convert feet to meters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_feet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Feet to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Distance measured in meters </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="143" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" bodystart="143" bodyend="146"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Conversions.h" line="34" column="20"/>
+  </compounddef>
+</doxygen>

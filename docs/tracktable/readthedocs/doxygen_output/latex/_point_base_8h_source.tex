@@ -1,0 +1,236 @@
+\doxysection{Point\+Base.\+h}
+\hypertarget{_point_base_8h_source}{}\label{_point_base_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PointBase.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PointBase.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_PointBase\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_PointBase\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/points/AssignCoordinates.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/points/CheckCoordinateEquality.h>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/Dimension.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/Domain.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/HasObjectId.h>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/HasProperties.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/HasTimestamp.h>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/Tag.h>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/UndecoratedPoint.h>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/PointDomainName.h>}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Intersects.h>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Distance.h>}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/implementations/GenericDistance.h>}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <boost/geometry/core/coordinate\_dimension.hpp>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <boost/geometry/core/coordinate\_type.hpp>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/point.hpp>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/register/linestring.hpp>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/register/point.hpp>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <boost/mpl/int.hpp>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <boost/serialization/array.hpp>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <boost/serialization/base\_object.hpp>}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ Dimension>}
+\DoxyCodeLine{00083\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase}}}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }boost::serialization::access;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{typedef}\ tracktable::settings::point\_coordinate\_type\ coordinate\_type;}
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{typedef}\ tracktable::settings::point\_coordinate\_type\ element\_type;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase}}()\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(std::size\_t\ i\ =\ 0;\ i\ <\ Dimension;\ ++i)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a2aba212a90c51c5f4e9fa76fe679146a}{Coordinates}}[i]\ =\ 0;}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_base_aab715197cb725a115bdbae588649f795}{PointBase}}(\mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates_a1048f11c8888a25cda776403fb3af9e9}{detail::assign\_coordinates<Dimension>::apply}}(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_point_base_af616577253186b1d80c7ab90338640e2}{\string~PointBase}}()\ \{\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ d>}
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\_type}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5}{get}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00131\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ BOOST\_STATIC\_ASSERT(d\ >=\ 0);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ BOOST\_STATIC\_ASSERT(d\ <\ Dimension);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a2aba212a90c51c5f4e9fa76fe679146a}{Coordinates}}[d];}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ d>}
+\DoxyCodeLine{00152\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set}}(\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\_type}}\ \textcolor{keyword}{const}\&\ new\_value)}
+\DoxyCodeLine{00153\ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ BOOST\_STATIC\_ASSERT(d\ >=\ 0);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ BOOST\_STATIC\_ASSERT(d\ <\ Dimension);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a2aba212a90c51c5f4e9fa76fe679146a}{Coordinates}}[d]\ =\ new\_value;}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\_type}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classtracktable_1_1_point_base_a1c2237aff8b2b8dec8b934feb10d79c6}{operator[]}}(std::size\_t\ d)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00175\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ assert(d\ >=\ 0\ \&\&\ d\ <\ Dimension);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a2aba212a90c51c5f4e9fa76fe679146a}{Coordinates}}[d];}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\_type}}\&\ \mbox{\hyperlink{classtracktable_1_1_point_base_a1ea12444b1425cf2462e2920cac1b499}{operator[]}}(std::size\_t\ d)}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ assert(d\ >=\ 0\ \&\&\ d\ <\ Dimension);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a2aba212a90c51c5f4e9fa76fe679146a}{Coordinates}}[d];}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00209\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_point_base_a35cfaef9ac15a33040e2458d99d980e3}{operator==}}(\mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00210\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::check\_coordinate\_equality<Dimension>::apply(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00219\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_point_base_ac225c66d4cfab081b67f95d4411b0fdd}{operator!=}}(\mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00220\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((*\textcolor{keyword}{this}\ ==\ other)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00229\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase}}\&\ \mbox{\hyperlink{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594}{operator=}}(\mbox{\hyperlink{classtracktable_1_1_point_base_ae25b06b76872599f16950c866529d096}{PointBase}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00230\ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates_a1048f11c8888a25cda776403fb3af9e9}{detail::assign\_coordinates<Dimension>::apply}}(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::size\_t\ \mbox{\hyperlink{classtracktable_1_1_point_base_a00baacc4de3a9c9cf3f3f39af19aa7de}{size}}()}
+\DoxyCodeLine{00240\ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dimension;}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00246\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\_type}}\ \mbox{\hyperlink{classtracktable_1_1_point_base_a2aba212a90c51c5f4e9fa76fe679146a}{Coordinates}}[Dimension];}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00253\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00254\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_base_a8829a6c52e157dd0a28ad3148d89d587}{serialize}}(Archive\&\ ar,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00255\ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ ar\ \&\ boost::serialization::make\_nvp(\textcolor{stringliteral}{"{}Coordinates"{}},\ this-\/>Coordinates);}
+\DoxyCodeLine{00257\ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \};}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \textcolor{comment}{//\ We\ need\ to\ tell\ boost::geometry\ a\ few\ things\ about\ PointBase\ so}}
+\DoxyCodeLine{00264\ \textcolor{comment}{//\ that\ we\ can\ copy\ coordinates\ back\ and\ forth.\ This\ does\ not}}
+\DoxyCodeLine{00265\ \textcolor{comment}{//\ actually\ make\ the\ class\ usable\ with\ boost::geometry.\ Among\ other}}
+\DoxyCodeLine{00266\ \textcolor{comment}{//\ things,\ it's\ missing\ a\ coordinate\ system.}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{keyword}{namespace\ }boost\ \{\ \textcolor{keyword}{namespace\ }geometry\ \{\ \textcolor{keyword}{namespace\ }traits\ \{}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ Dimension>}
+\DoxyCodeLine{00271\ \textcolor{keyword}{struct\ }tag<\ tracktable::PointBase<Dimension>\ >}
+\DoxyCodeLine{00272\ \{}
+\DoxyCodeLine{00273\ \ \ \textcolor{keyword}{typedef}\ point\_tag\ type;}
+\DoxyCodeLine{00274\ \};}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ Dimension>}
+\DoxyCodeLine{00277\ \textcolor{keyword}{struct\ }coordinate\_type<\ tracktable::PointBase<Dimension>\ >}
+\DoxyCodeLine{00278\ \{}
+\DoxyCodeLine{00279\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ tracktable::PointBase<Dimension>::coordinate\_type\ type;}
+\DoxyCodeLine{00280\ \};}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ Dimension>}
+\DoxyCodeLine{00283\ \textcolor{keyword}{struct\ }dimension<\ tracktable::PointBase<Dimension>\ >\ :\ ::boost::mpl::int\_<Dimension>\ \{\};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \}\ \}\ \}\ \textcolor{comment}{//\ exit\ namespace\ boost::geometry::traits}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }traits\ \{}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ Dimension>}
+\DoxyCodeLine{00291\ \textcolor{keyword}{struct\ }dimension<\ tracktable::PointBase<Dimension>\ >\ :\ ::boost::mpl::size\_t<Dimension>\ \{\};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ Dimension>}
+\DoxyCodeLine{00294\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1undecorated__point}{undecorated\_point}}<\ \mbox{\hyperlink{classtracktable_1_1_point_base}{PointBase}}<Dimension>\ >}
+\DoxyCodeLine{00295\ \{}
+\DoxyCodeLine{00296\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_point_base}{PointBase<Dimension>}}\ type;}
+\DoxyCodeLine{00297\ \};}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ Dimension>}
+\DoxyCodeLine{00300\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1domain}{domain}}<\mbox{\hyperlink{classtracktable_1_1_point_base}{PointBase}}<Dimension>\ >}
+\DoxyCodeLine{00301\ \{}
+\DoxyCodeLine{00302\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtracktable_1_1traits_1_1domains_1_1generic}{domains::generic}}\ type;}
+\DoxyCodeLine{00303\ \};}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \}\ \}\ \textcolor{comment}{//\ exit\ tracktable::traits}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \textcolor{comment}{//\ This\ should\ cover\ anything\ in\ the\ generic\ domain\ anywhere\ since}}
+\DoxyCodeLine{00310\ \textcolor{comment}{//\ this\ file\ is\ so\ high\ up\ in\ the\ hierarchy.}}
+\DoxyCodeLine{00311\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00312\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1distance}{distance}}<\mbox{\hyperlink{namespacetracktable}{tracktable}}::\mbox{\hyperlink{structtracktable_1_1traits_1_1domains_1_1generic}{traits::domains::generic}}>\ :\ generic\_distance<tracktable::traits::domains::generic>\ \{\};}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#if\ 0}}
+\DoxyCodeLine{00315\ \{}
+\DoxyCodeLine{00316\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Geom1,\ \textcolor{keyword}{typename}\ Geom2>}
+\DoxyCodeLine{00317\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ apply(Geom1\ \textcolor{keyword}{const}\&\ from,\ Geom2\ \textcolor{keyword}{const}\&\ to)}
+\DoxyCodeLine{00318\ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordflow}{return}\ boost::geometry::distance(from,\ to);}
+\DoxyCodeLine{00320\ \ \ \}}
+\DoxyCodeLine{00321\ \};}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \}\ \}\ \textcolor{comment}{//\ exit\ tracktable::algorithms}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \textcolor{comment}{//\ This\ will\ make\ a\ std::vector\ of\ points\ usable\ as\ a\ linestring\ all\ through\ Tracktable.}}
+\DoxyCodeLine{00327\ BOOST\_GEOMETRY\_REGISTER\_LINESTRING\_TEMPLATED(std::vector)}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }traits\ \{}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00332\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1domain}{domain}}<std::vector<point\_type>\ >\ :\ \mbox{\hyperlink{structtracktable_1_1traits_1_1domain}{domain}}<point\_type>\ \{\};}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \}\ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

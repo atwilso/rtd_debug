@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1_extract_second" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::ExtractSecond</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class pair_type</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1_extract_second_1abe6bbe5edc066704106901f978dd4589" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>pair_type::second_type</type>
+        <definition>pair_type::second_type tracktable::ExtractSecond&lt; pair_type &gt;::operator()</definition>
+        <argsstring>(pair_type const &amp;input) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>tracktable::ExtractSecond::operator()</qualifiedname>
+        <param>
+          <type>pair_type const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/extract_pair_member.h" line="21" column="35" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/extract_pair_member.h" bodystart="21" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/extract_pair_member.h" line="19" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/extract_pair_member.h" bodystart="20" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1_extract_second_1abe6bbe5edc066704106901f978dd4589" prot="public" virt="non-virtual"><scope>tracktable::ExtractSecond</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

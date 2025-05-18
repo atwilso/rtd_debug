@@ -1,0 +1,148 @@
+\doxysection{tracktable\+::Boost\+Random\+UUIDGenerator\texorpdfstring{$<$}{<} Uniform\+Random\+Number\+Generator \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator}{}\label{classtracktable_1_1_boost_random_u_u_i_d_generator}\index{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}}
+
+
+Wraps a boost uuid random generator to act as a Random\+UUIDGenerator.  
+
+
+
+
+{\ttfamily \#include $<$UUID.\+h$>$}
+
+Inheritance diagram for tracktable\+::Boost\+Random\+UUIDGenerator\texorpdfstring{$<$}{<} Uniform\+Random\+Number\+Generator \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtracktable_1_1_boost_random_u_u_i_d_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_a381e27b1f357508b9c70af612a23bdba}\label{classtracktable_1_1_boost_random_u_u_i_d_generator_a381e27b1f357508b9c70af612a23bdba} 
+typedef boost\+::uuids\+::basic\+\_\+random\+\_\+generator$<$ Uniform\+Random\+Number\+Generator $>$ {\bfseries random\+\_\+generator\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator}{tracktable\+::\+UUIDGenerator}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator}{UUIDGenerator}} $>$ {\bfseries pointer}
+\begin{DoxyCompactList}\small\item\em A convenience typedef for a smart pointer to a generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_ad2642bfdba88e24a17f1d2ce20991fcc}\label{classtracktable_1_1_boost_random_u_u_i_d_generator_ad2642bfdba88e24a17f1d2ce20991fcc} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Boost\+Random\+UUIDGenerator} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the Boost Random UUID Generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\+\_\+type}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_ac513c28fa485e624e559a757d43a2d33}{generate\+\_\+uuid}} ()
+\begin{DoxyCompactList}\small\item\em Generate a UUID for the given generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator}{tracktable\+::\+UUIDGenerator}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UUIDGenerator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an uninitialized UUID generator. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+UUIDGenerator} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the UUID Generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator\+::pointer}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_ae650f39971837126d734a93a3fcfa6eb}{create}} ()
+\begin{DoxyCompactList}\small\item\em Static method to create an instance using the default uniform random number generator type. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator\+::pointer}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_a54561b25d81fd0b7d50e5a4f0008a239}{create}} (Uniform\+Random\+Number\+Generator \&gen)
+\begin{DoxyCompactList}\small\item\em Static method to create an instance using a supplied uniform random number generator type. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator\+::pointer}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_a9bf7db31c4159db232169e0a566f1775}{create}} (Uniform\+Random\+Number\+Generator \texorpdfstring{$\ast$}{*}p\+Gen)
+\begin{DoxyCompactList}\small\item\em Static method to create an instance using a supplied uniform random number generator type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator}{tracktable\+::\+UUIDGenerator}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries lock\+\_\+mutex} ()
+\begin{DoxyCompactList}\small\item\em Lock the mutex for generator. \end{DoxyCompactList}\item 
+void {\bfseries unlock\+\_\+mutex} ()
+\begin{DoxyCompactList}\small\item\em Unlock the mutex for generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Uniform\+Random\+Number\+Generator = boost\+::random\+::mt19937$>$\newline
+class tracktable\+::\+Boost\+Random\+UUIDGenerator$<$ Uniform\+Random\+Number\+Generator $>$}
+Wraps a boost uuid random generator to act as a Random\+UUIDGenerator. 
+
+The boost random number generator is templated to use various random number generation mechanisms. The default boost implementation is the mt19937 which is also the default template type of this class.
+
+However, any random number generator suitable for the boost classes can be used with this thin wrapper template.
+
+To create an instance of this class, use the various static {\ttfamily \doxylink{classtracktable_1_1_boost_random_u_u_i_d_generator_ae650f39971837126d734a93a3fcfa6eb}{create()}} methods that mimic the available boost random generator constructors. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_ae650f39971837126d734a93a3fcfa6eb}\index{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}!create@{create}}
+\index{create@{create}!tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_boost_random_u_u_i_d_generator_ae650f39971837126d734a93a3fcfa6eb} 
+template$<$typename Uniform\+Random\+Number\+Generator = boost\+::random\+::mt19937$>$ \\
+static \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator\+::pointer}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator}{tracktable\+::\+Boost\+Random\+UUIDGenerator}}$<$ Uniform\+Random\+Number\+Generator $>$\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Static method to create an instance using the default uniform random number generator type. 
+
+Example setting a new default uuid generator with mt19937\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacetracktable_a619756d3896d84d4e6e8293fb58889fa}{::tracktable::set\_automatic\_uuid\_generator}}(\mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_ae650f39971837126d734a93a3fcfa6eb}{::tracktable::BoostRandomUUIDGenerator<boost::random::mt19937>::create}}());}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Pointer to the new Boost random UUID generator 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_a54561b25d81fd0b7d50e5a4f0008a239}\index{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}!create@{create}}
+\index{create@{create}!tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_boost_random_u_u_i_d_generator_a54561b25d81fd0b7d50e5a4f0008a239} 
+template$<$typename Uniform\+Random\+Number\+Generator = boost\+::random\+::mt19937$>$ \\
+static \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator\+::pointer}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator}{tracktable\+::\+Boost\+Random\+UUIDGenerator}}$<$ Uniform\+Random\+Number\+Generator $>$\+::create (\begin{DoxyParamCaption}\item[{Uniform\+Random\+Number\+Generator \&}]{gen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Static method to create an instance using a supplied uniform random number generator type. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the new Boost random UUID generator 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_a9bf7db31c4159db232169e0a566f1775}\index{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}!create@{create}}
+\index{create@{create}!tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_boost_random_u_u_i_d_generator_a9bf7db31c4159db232169e0a566f1775} 
+template$<$typename Uniform\+Random\+Number\+Generator = boost\+::random\+::mt19937$>$ \\
+static \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator\+::pointer}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator}{tracktable\+::\+Boost\+Random\+UUIDGenerator}}$<$ Uniform\+Random\+Number\+Generator $>$\+::create (\begin{DoxyParamCaption}\item[{Uniform\+Random\+Number\+Generator \texorpdfstring{$\ast$}{*}}]{p\+Gen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Static method to create an instance using a supplied uniform random number generator type. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the new Boost random UUID generator 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_boost_random_u_u_i_d_generator_ac513c28fa485e624e559a757d43a2d33}\index{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}!generate\_uuid@{generate\_uuid}}
+\index{generate\_uuid@{generate\_uuid}!tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$@{tracktable::BoostRandomUUIDGenerator$<$ UniformRandomNumberGenerator $>$}}
+\doxysubsubsection{\texorpdfstring{generate\_uuid()}{generate\_uuid()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_boost_random_u_u_i_d_generator_ac513c28fa485e624e559a757d43a2d33} 
+template$<$typename Uniform\+Random\+Number\+Generator = boost\+::random\+::mt19937$>$ \\
+\mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\+\_\+type}} \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator}{tracktable\+::\+Boost\+Random\+UUIDGenerator}}$<$ Uniform\+Random\+Number\+Generator $>$\+::generate\+\_\+uuid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generate a UUID for the given generator. 
+
+\begin{DoxyReturn}{Returns}
+The generated UUID 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_aac98e7815be4c78b3491a8df09026b37}{tracktable\+::\+UUIDGenerator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/UUID.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,282 @@
+\doxysection{Kml\+Out.\+h}
+\hypertarget{_kml_out_8h_source}{}\label{_kml_out_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/KmlOut.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/KmlOut.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ KmlOut\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ KmlOut\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/Terrestrial.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/RW/TracktableRWWindowsHeader.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1kml}{kml}};}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ TRACKTABLE\_RW\_EXPORT\ std::ofstream\ \&operator<<(std::ofstream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1kml}{tracktable::kml}}\ \&\_k);}
+\DoxyCodeLine{00047\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1kml}{tracktable::kml}}\ \&\_k);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{class\ }TRACKTABLE\_RW\_EXPORT\ kml\ \{}
+\DoxyCodeLine{00088\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{using\ }TrajectoryT\ =\ tracktable::domain::terrestrial::trajectory\_type;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{using\ }TrajectoryVectorT\ =\ std::vector<TrajectoryT>;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{using\ }PointerT\ =\ std::shared\_ptr<TrajectoryT>;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{using\ }PointerVectorT\ =\ std::vector<PointerT>;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{using\ }VectorT\ =\ std::vector<TrajectoryT>;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{using\ }PointT\ =\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{TrajectoryT::point\_type}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{struct\ }linestring\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ linestring()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ linestring(\textcolor{keyword}{const}\ TrajectoryT\ \&\_t)\ :\ trajectory(\&\_t)\ \{\}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ TrajectoryT\ \textcolor{keyword}{const}\ *\textcolor{keyword}{const}\ trajectory;}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{struct\ }multipoint\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ multipoint()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ multipoint(\textcolor{keyword}{const}\ TrajectoryT\ \&\_t)\ :\ trajectory(\&\_t)\ \{\}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ TrajectoryT\ \textcolor{keyword}{const}\ *\textcolor{keyword}{const}\ trajectory;}
+\DoxyCodeLine{00128\ \ \ \ \ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{struct\ }linepoints\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ linepoints()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ linepoints(\textcolor{keyword}{const}\ TrajectoryT\ \&\_t)\ :\ trajectory(\&\_t)\ \{\}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ TrajectoryT\ \textcolor{keyword}{const}\ *\textcolor{keyword}{const}\ trajectory;}
+\DoxyCodeLine{00145\ \ \ \ \ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{struct\ }point\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ point()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ point(\textcolor{keyword}{const}\ PointT\ \&\_t)\ :\ trajectory(\&\_t)\ \{\}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ PointT\ \textcolor{keyword}{const}\ *\textcolor{keyword}{const}\ trajectory;}
+\DoxyCodeLine{00162\ \ \ \ \ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00171\ \ \ \ \ kml(\textcolor{keyword}{const}\ TrajectoryT\ \&\_t)\ :\ trajectoryPtr(\&\_t)\ \{\}}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1kml}{kml}}(\textcolor{keyword}{const}\ TrajectoryVectorT\ \&\_v)\ :\ trajectoryListPtr(\&\_v)\ \{\}}
+\DoxyCodeLine{00173\ \ \ \ \ kml(\textcolor{keyword}{const}\ PointerT\ \&\_p)\ :\ trajectoryPtr(\_p.get())\ \{\}}
+\DoxyCodeLine{00174\ \ \ \ \ kml(\textcolor{keyword}{const}\ PointerVectorT\ \&\_vp)\ :\ trajectorySmartListPtr(\&\_vp)\ \{\}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{struct\ }box\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ box()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ box(\textcolor{keyword}{const}\ PointT\ \&\_c1,\ \textcolor{keyword}{const}\ PointT\ \&\_c2)\ :\ corner1(\&\_c1),\ corner2(\&\_c2)\ \{\}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ PointT\ \textcolor{keyword}{const}\ *\textcolor{keyword}{const}\ corner1;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ PointT\ \textcolor{keyword}{const}\ *\textcolor{keyword}{const}\ corner2;}
+\DoxyCodeLine{00193\ \ \ \ \ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keyword}{struct\ }time\_span\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ time\_span()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ time\_span(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{tracktable::Timestamp}}\ \&\_start,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{tracktable::Timestamp}}\ \&\_stop)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ kml::\_start\ =\ \_start;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ kml::\_stop\ =\ \_stop;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{struct\ }name\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ name(\textcolor{keyword}{const}\ std::string\ \&\_name)\ \{\ kml::\_name\ =\ \_name;\ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\ \{\ \textcolor{keywordflow}{return}\ kml::\_name;\ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keyword}{struct\ }width\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ width(\textcolor{keywordtype}{double}\ \_w)\ \{\ kml::\_width\ =\ \_w;\ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ double()\ \{\ \textcolor{keywordflow}{return}\ kml::\_width;\ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \};}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{struct\ }color\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ color(\textcolor{keyword}{const}\ std::string\ \&\_c)\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_c.length()\ !=\ 8)\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Invalid\ Color\ String"{}});}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ kml::\_color\ =\ \_c;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\ \{\ \textcolor{keywordflow}{return}\ kml::\_color;\ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keyword}{struct\ }style\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ style(\textcolor{keyword}{const}\ std::string\ \&\_id,\ \textcolor{keyword}{const}\ std::string\ \&\_c,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&\_w)}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ :\ id(\_id),\ color(\_c),\ width(\_w)\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ kml::\_styleid\ =\ \_id;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&id;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&color;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ width;}
+\DoxyCodeLine{00254\ \ \ \ \ \};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keyword}{struct\ }style\_id\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ style\_id(\textcolor{keyword}{const}\ std::string\ \&\_id)\ \{\ kml::\_styleid\ =\ \_id;\ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\ \{\ \textcolor{keywordflow}{return}\ kml::\_styleid;\ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \};}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{struct\ }startpm\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ startpm()\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (kml::\_isInsidePlacemark)\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ Start\ Placemark\ inside\ a\ Placemark"{}});}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ kml::\_isInsidePlacemark\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ \};}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keyword}{struct\ }stoppm\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ stoppm()\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!kml::\_isInsidePlacemark)\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}not\ inside\ a\ placemark"{}});}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ kml::\_isInsidePlacemark\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keyword}{struct\ }startmulti\ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ startmulti()\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!kml::\_isInsidePlacemark)\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ start\ Multigeometry\ outside\ a\ Placemark"{}});}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (kml::\_isInsideMultiGeometry)\ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ Start\ MultiGeometry\ inside\ a\ MultiGeometry"{}});}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ kml::\_isInsideMultiGeometry\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00301\ \ \ \ \ \};}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{struct\ }stopmulti\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ stopmulti()\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!kml::\_isInsideMultiGeometry)\ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}not\ inside\ a\ MultiGeometry"{}});}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ kml::\_isInsideMultiGeometry\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \};}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{comment}{//\ Doxygen\ gets\ confused\ by\ the\ inline\ XML}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN\_SHOULD\_SKIP\_THIS)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ header[]\ =}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}<?xml\ version=\(\backslash\)"{}1.0\(\backslash\)"{}\ encoding=\(\backslash\)"{}UTF-\/8\(\backslash\)"{}?>\(\backslash\)n"{}}}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}<kml\ xmlns=\(\backslash\)"{}http://www.opengis.net/kml/2.2\(\backslash\)"{}\ "{}}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}xmlns:gx=\(\backslash\)"{}http://www.google.com/kml/ext/2.2\(\backslash\)"{}\ "{}}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}xmlns:kml=\(\backslash\)"{}http://www.opengis.net/kml/2.2\(\backslash\)"{}>\(\backslash\)n"{}}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}<Document>\(\backslash\)n"{}}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}<Style\ id=\(\backslash\)"{}tracktable\_style\(\backslash\)"{}>\(\backslash\)n"{}}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ <LineStyle>\(\backslash\)n"{}}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ <gx:labelVisibility>1</gx:labelVisibility>\(\backslash\)n"{}}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ <width>3</width>\(\backslash\)n"{}}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ <color>\(\backslash\)"{}FFFFFFFF\(\backslash\)"{}</color>\(\backslash\)n"{}}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ </LineStyle>\(\backslash\)n"{}}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}</Style>\(\backslash\)n"{}};}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ footer[]\ =}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}</Document>\(\backslash\)n"{}}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}</kml>"{}};}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&(::operator<<)(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1kml}{tracktable::kml}}\ \&\_kml);}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keyword}{friend}\ std::ofstream\ \&(::operator<<)(std::ofstream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1kml}{tracktable::kml}}\ \&\_kml);}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keyword}{const}\ TrajectoryT\ *trajectoryPtr\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keyword}{const}\ TrajectoryVectorT\ *trajectoryListPtr\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keyword}{const}\ PointerVectorT\ *trajectorySmartListPtr\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ generateColorString();}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ write(\textcolor{keyword}{const}\ std::string\ \&\_filename,\ \textcolor{keyword}{const}\ TrajectoryVectorT\ \&\_trajectories);}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ write(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ TrajectoryVectorT\ \&\_trajectories);}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ write(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ PointerVectorT\ \&\_trajectories);}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ write(\textcolor{keyword}{const}\ std::string\ \&\_filename,\ \textcolor{keyword}{const}\ TrajectoryT\ \&\_trajectory);}
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ write(\textcolor{keyword}{const}\ std::string\ \&\_filename,\ \textcolor{keyword}{const}\ TrajectoryT\ \&\_trajectory,\ \textcolor{keyword}{const}\ std::string\ \&\_color,}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&\_width);}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ write(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ TrajectoryT\ \&\_trajectory,\ \textcolor{keyword}{const}\ std::string\ \&\_color,}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&\_width);}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_a876063afd20e0a26d4ac9688802d3be9}{writeStyle}}(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ std::string\ \&\_id,\ \textcolor{keyword}{const}\ std::string\ \&\_color,}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_width);}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_a58248de374580ffb43a09f070bc349ce}{writeLinestring}}(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ TrajectoryT\ \&\_trajectory);}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_ab3993c25dc56d8bc6841eb0af8d5ffc1}{writeMultipoint}}(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ TrajectoryT\ \&\_trajectory);}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_adb54d5157195d9171387c9b02e183b19}{writePoint}}(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ PointT\ \&\_point);}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_af263bc25d67503441ab88b37ef492092}{writeLineAndPoints}}(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ TrajectoryT\ \&\_trajectory);}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_a531795b5bd22489da0615820706dd653}{writeBox}}(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1box}{box}}\ \&\_box);}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_a9be99c2dbf0c469e1e7e2aa6d09db7eb}{writeCoords}}(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ PointT\ \&\_point);}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_aab53b1fec355a02d7e8d9ab602275806}{writeToSeparateKmls}}(\textcolor{keyword}{const}\ TrajectoryVectorT\ \&\_trajectories,\ \textcolor{keyword}{const}\ std::string\ \&\_output\_dir);}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00419\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_aef665959137e55d25ed582ced8386f58}{writePlacemarkHeader}}(std::ostream\ \&\_o);}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_a18350f54d3201816a54150339969015b}{writePlacemarkFooter}}(std::ostream\ \&\_o);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_aac2d31ca24cd114be2e698453c18a76a}{writeMultiGeometryHeader}}(std::ostream\ \&\_o);}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1kml_a8c3b42a0edf3b3058ce805febfe44f85}{writeMultiGeometryFooter}}(std::ostream\ \&\_o);}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \_width;}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \_color;}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \_name;}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \_styleid;}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \_isInsidePlacemark;}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \_isInsideMultiGeometry;}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{tracktable::Timestamp}}\ \_start;}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{tracktable::Timestamp}}\ \_stop;}
+\DoxyCodeLine{00445\ \};}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \}\ \ \textcolor{comment}{//\ namespace\ tracktable}}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1linestring}{tracktable::kml::linestring}}\ \&\_l);}
+\DoxyCodeLine{00450\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1multipoint}{tracktable::kml::multipoint}}\ \&\_mp);}
+\DoxyCodeLine{00451\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1point}{tracktable::kml::point}}\ \&\_p);}
+\DoxyCodeLine{00452\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1linepoints}{tracktable::kml::linepoints}}\ \&\_lp);}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1box}{tracktable::kml::box}}\ \&\_b);}
+\DoxyCodeLine{00455\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1style}{tracktable::kml::style}}\ \&\_s);}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1width}{tracktable::kml::width}}\ \&\ \textcolor{comment}{/*\_w*/});}
+\DoxyCodeLine{00458\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1color}{tracktable::kml::color}}\ \&\ \textcolor{comment}{/*\_c*/});}
+\DoxyCodeLine{00459\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1name}{tracktable::kml::name}}\ \&\ \textcolor{comment}{/*\_n*/});}
+\DoxyCodeLine{00460\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1style__id}{tracktable::kml::style\_id}}\ \&\ \textcolor{comment}{/*\_s*/});}
+\DoxyCodeLine{00461\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1time__span}{tracktable::kml::time\_span}}\ \&\ \textcolor{comment}{/*\_t*/});}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1startpm}{tracktable::kml::startpm}}\ \&\ \textcolor{comment}{/*\_s*/});}
+\DoxyCodeLine{00464\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1stoppm}{tracktable::kml::stoppm}}\ \&\ \textcolor{comment}{/*\_s*/});}
+\DoxyCodeLine{00465\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1startmulti}{tracktable::kml::startmulti}}\ \&\ \textcolor{comment}{/*\_s*/});}
+\DoxyCodeLine{00466\ TRACKTABLE\_RW\_EXPORT\ std::ostream\ \&operator<<(std::ostream\ \&\_o,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtracktable_1_1kml_1_1stopmulti}{tracktable::kml::stopmulti}}\ \&\ \textcolor{comment}{/*\_s*/});}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

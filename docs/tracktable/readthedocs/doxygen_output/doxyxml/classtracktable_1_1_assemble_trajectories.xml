@@ -1,0 +1,688 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_assemble_trajectories" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::AssembleTrajectories</compoundname>
+    <includes refid="_assemble_trajectories_8h" local="no">AssembleTrajectories.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref></type>
+      </param>
+      <param>
+        <type>typename PointIteratorT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_assemble_trajectories_1ac41a2a561b54a59112686ef29734ff54" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref></type>
+        <definition>typedef TrajectoryT tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::trajectory_type</definition>
+        <argsstring></argsstring>
+        <name>trajectory_type</name>
+        <qualifiedname>tracktable::AssembleTrajectories::trajectory_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="78" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_assemble_trajectories_1a420a83504f8290c0eaa612671b31d891" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory_1a8d3edcdda8ce1ad416c7daa81b016320" kindref="member">trajectory_type::point_type</ref></type>
+        <definition>typedef trajectory_type::point_type tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::point_type</definition>
+        <argsstring></argsstring>
+        <name>point_type</name>
+        <qualifiedname>tracktable::AssembleTrajectories::point_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="79" column="48" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_assemble_trajectories_1ae0cae60e53154bb7c3459821cfdefde4" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_assemble_trajectories_iterator" kindref="compound">AssembleTrajectoriesIterator</ref>&lt; point_type, PointIteratorT, <ref refid="classtracktable_1_1_trajectory" kindref="compound">trajectory_type</ref> &gt;</type>
+        <definition>typedef AssembleTrajectoriesIterator&lt;point_type, PointIteratorT, trajectory_type&gt; tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::iterator</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>tracktable::AssembleTrajectories::iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="80" column="40" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_assemble_trajectories_1a25e9bb3bc385234b698cdfee9ee71494" prot="private" static="no" mutable="no">
+        <type>PointIteratorT</type>
+        <definition>PointIteratorT tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::PointBegin</definition>
+        <argsstring></argsstring>
+        <name>PointBegin</name>
+        <qualifiedname>tracktable::AssembleTrajectories::PointBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="291" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_assemble_trajectories_1a31b8501a7bb819182b8dfaa9a9c12fd0" prot="private" static="no" mutable="no">
+        <type>PointIteratorT</type>
+        <definition>PointIteratorT tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::PointEnd</definition>
+        <argsstring></argsstring>
+        <name>PointEnd</name>
+        <qualifiedname>tracktable::AssembleTrajectories::PointEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="292" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="292" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_assemble_trajectories_1ae288ea00f798d5945c8c2f960f802a22" prot="private" static="no" mutable="no">
+        <type>Duration</type>
+        <definition>Duration tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::SeparationTime</definition>
+        <argsstring></argsstring>
+        <name>SeparationTime</name>
+        <qualifiedname>tracktable::AssembleTrajectories::SeparationTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="293" column="12" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_assemble_trajectories_1ad528cd6f763270393c3ab7e840057eee" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::SeparationDistance</definition>
+        <argsstring></argsstring>
+        <name>SeparationDistance</name>
+        <qualifiedname>tracktable::AssembleTrajectories::SeparationDistance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="294" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_assemble_trajectories_1afbef34248a71b25cd5c1c652cfcbfc05" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::MinimumTrajectoryLength</definition>
+        <argsstring></argsstring>
+        <name>MinimumTrajectoryLength</name>
+        <qualifiedname>tracktable::AssembleTrajectories::MinimumTrajectoryLength</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="295" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_assemble_trajectories_1a9ee07491eb6ec83e023188c898976539" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::CleanupInterval</definition>
+        <argsstring></argsstring>
+        <name>CleanupInterval</name>
+        <qualifiedname>tracktable::AssembleTrajectories::CleanupInterval</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="296" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a47d9c687b4c276bd1d547c417d64a2ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::AssembleTrajectories</definition>
+        <argsstring>()</argsstring>
+        <name>AssembleTrajectories</name>
+        <qualifiedname>tracktable::AssembleTrajectories::AssembleTrajectories</qualifiedname>
+        <briefdescription>
+<para>Instantiate <ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> using the default assembly configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the default values for a trajectory.   </para>
+<para>Default configuration is:<itemizedlist>
+<listitem><para>SeparationDistance = 100</para>
+</listitem><listitem><para>SeparationTime = Duration(minutes(30))</para>
+</listitem><listitem><para>MinimumTrajectoryLength = 2</para>
+</listitem><listitem><para>CleanupInterval = 10000    </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="86" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a008fd3559e62607c97968cdd630cd4c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::AssembleTrajectories</definition>
+        <argsstring>(PointIteratorT rangeBegin, PointIteratorT rangeEnd)</argsstring>
+        <name>AssembleTrajectories</name>
+        <qualifiedname>tracktable::AssembleTrajectories::AssembleTrajectories</qualifiedname>
+        <param>
+          <type>PointIteratorT</type>
+          <declname>rangeBegin</declname>
+        </param>
+        <param>
+          <type>PointIteratorT</type>
+          <declname>rangeEnd</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate <ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> from a range of elements and default configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If you have a container of points you can use this constructor to create and populate the tree in one swell foop instead of adding elements one at a time.</para>
+<para>Set the default values for a trajectory.   </para>
+<para>Default configuration is:<itemizedlist>
+<listitem><para>SeparationDistance = 100</para>
+</listitem><listitem><para>SeparationTime = Duration(minutes(30))</para>
+</listitem><listitem><para>MinimumTrajectoryLength = 2</para>
+</listitem><listitem><para>CleanupInterval = 10000   </para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">range_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator pointing to beginning of input points </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator pointing past end of input points </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="102" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="102" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a1ddf1890c774016617d7a57c91ec24ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::AssembleTrajectories</definition>
+        <argsstring>(AssembleTrajectories const &amp;other)</argsstring>
+        <name>AssembleTrajectories</name>
+        <qualifiedname>tracktable::AssembleTrajectories::AssembleTrajectories</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy Constructor, create <ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> with trajectory data from another trajectory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="112" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="112" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1ada5f688ec4e8077908f91646a088a4d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::~AssembleTrajectories</definition>
+        <argsstring>()</argsstring>
+        <name>~AssembleTrajectories</name>
+        <qualifiedname>tracktable::AssembleTrajectories::~AssembleTrajectories</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="121" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a2ab2b6d8e2d5dd09b4598c33ac5ba7e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> &amp;</type>
+        <definition>AssembleTrajectories &amp; tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::operator=</definition>
+        <argsstring>(AssembleTrajectories const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::AssembleTrajectories::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="128" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="128" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1aa33f2d21059d76c043a880b75a3b95bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::operator==</definition>
+        <argsstring>(AssembleTrajectories const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::AssembleTrajectories::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one <ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> is equal to another by comparing the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two items are equal if all of their properties are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="144" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="144" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a1557994eb6ace2fb307dd46c6c2d92e5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::operator!=</definition>
+        <argsstring>(AssembleTrajectories const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::AssembleTrajectories::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two <ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="157" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="157" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a086a677e38c69b6c9ed6dc46646f45f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_assemble_trajectories_iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>tracktable::AssembleTrajectories::begin</qualifiedname>
+        <briefdescription>
+<para>Return an iterator to the first parsed point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>that any changes you make to the parser configuration will invalidate existing iterators.</para>
+</simplesect>
+<simplesect kind="return"><para>Iterator to first parsed point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="169" column="12" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="169" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a780a74a65c1b74f6e716c1c60f6d9c7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_assemble_trajectories_iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <qualifiedname>tracktable::AssembleTrajectories::end</qualifiedname>
+        <briefdescription>
+<para>Return an iterator to detect when parsing has ended. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This iterator is guaranteed to not point at any valid <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>. The only time when <computeroutput><ref refid="classtracktable_1_1_assemble_trajectories_1a086a677e38c69b6c9ed6dc46646f45f6" kindref="member">begin()</ref> == <ref refid="classtracktable_1_1_assemble_trajectories_1a780a74a65c1b74f6e716c1c60f6d9c7a" kindref="member">end()</ref></computeroutput> will be when all points have been parsed from the input stream.</para>
+<para><simplesect kind="return"><para>Iterator past end of point sequence </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="186" column="12" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="186" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a0ec3a3555ad1c585e469380da64a16c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::set_input</definition>
+        <argsstring>(PointIteratorT const &amp;forefront, PointIteratorT const &amp;rearguard)</argsstring>
+        <name>set_input</name>
+        <qualifiedname>tracktable::AssembleTrajectories::set_input</qualifiedname>
+        <param>
+          <type>PointIteratorT const &amp;</type>
+          <declname>forefront</declname>
+        </param>
+        <param>
+          <type>PointIteratorT const &amp;</type>
+          <declname>rearguard</declname>
+        </param>
+        <briefdescription>
+<para>Set the start and end points of the trajectory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">forefront</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rearguard</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="200" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="200" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a0d834b1235d78b82ddfd6529fc605cc7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::set_separation_time</definition>
+        <argsstring>(Duration const &amp;d)</argsstring>
+        <name>set_separation_time</name>
+        <qualifiedname>tracktable::AssembleTrajectories::set_separation_time</qualifiedname>
+        <param>
+          <type>Duration const &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>Set the time between each point in the trajectory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time duration between each point in the trajectory </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="211" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="211" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1aabbde5c51172292a7d0b503119f64252" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::set_separation_distance</definition>
+        <argsstring>(double d)</argsstring>
+        <name>set_separation_distance</name>
+        <qualifiedname>tracktable::AssembleTrajectories::set_separation_distance</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>Set the distance between each point in the trajectory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distance between each point in the trajectory </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="220" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a4baac5d167777264efbd83d65b0a73e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::set_minimum_trajectory_length</definition>
+        <argsstring>(std::size_t len)</argsstring>
+        <name>set_minimum_trajectory_length</name>
+        <qualifiedname>tracktable::AssembleTrajectories::set_minimum_trajectory_length</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>Set the minimum length a trajectory can be. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the trajectory </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="229" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="229" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a9b3c4a6c5bf11dc2fee2a2296dcda3e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::set_cleanup_interval</definition>
+        <argsstring>(int points_between_cleanup)</argsstring>
+        <name>set_cleanup_interval</name>
+        <qualifiedname>tracktable::AssembleTrajectories::set_cleanup_interval</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>points_between_cleanup</declname>
+        </param>
+        <briefdescription>
+<para>Set the interval that the trajectory points will be cleaned up. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">points_between_cleanup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of points to clean up </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="238" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a1b76a4a12d813f370c10c04e093f30a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Duration</type>
+        <definition>Duration tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::separation_time</definition>
+        <argsstring>() const</argsstring>
+        <name>separation_time</name>
+        <qualifiedname>tracktable::AssembleTrajectories::separation_time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The separation time of the trajectory points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="246" column="12" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a21c661b5fdf285666b0c8580283b96af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::separation_distance</definition>
+        <argsstring>() const</argsstring>
+        <name>separation_distance</name>
+        <qualifiedname>tracktable::AssembleTrajectories::separation_distance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The separation distance of the trajectory points </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="254" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="254" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a988b271e6b2c02741814ae880a421336" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::minimum_trajectory_length</definition>
+        <argsstring>() const</argsstring>
+        <name>minimum_trajectory_length</name>
+        <qualifiedname>tracktable::AssembleTrajectories::minimum_trajectory_length</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The minimum length a trajectory can be </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="262" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="262" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1a078fc7ecda941bacd25ba16328253217" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::cleanup_interval</definition>
+        <argsstring>() const</argsstring>
+        <name>cleanup_interval</name>
+        <qualifiedname>tracktable::AssembleTrajectories::cleanup_interval</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="267" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="267" bodyend="270"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classtracktable_1_1_assemble_trajectories_1abdff905c62af0b38131932641370a212" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void tracktable::AssembleTrajectories&lt; TrajectoryT, PointIteratorT &gt;::set_default_configuration</definition>
+        <argsstring>()</argsstring>
+        <name>set_default_configuration</name>
+        <qualifiedname>tracktable::AssembleTrajectories::set_default_configuration</qualifiedname>
+        <briefdescription>
+<para>Set the default values for a trajectory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Default configuration is:<itemizedlist>
+<listitem><para>SeparationDistance = 100</para>
+</listitem><listitem><para>SeparationTime = Duration(minutes(30))</para>
+</listitem><listitem><para>MinimumTrajectoryLength = 2</para>
+</listitem><listitem><para>CleanupInterval = 10000 </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="282" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="282" bodyend="288"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Assemble time-sorted points into trajectories. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>We often receive input data as sequences of points sorted by timestamp. In order to manipulate these data sets as trajectories instead of as isolated points we must perform some sort of connect-the-dots operation to group them together. This class implements that operation.</para>
+<para>Suppose for the sake of argument that our input is sorted first by object ID and second by increasing timestamp. Now consider the block of points corresponding to a single object ID. We divide that into one or more trajectories as follows:</para>
+<para><itemizedlist>
+<listitem><para>If too much time (as specified by the separation_time parameter) has elapsed between one point and the next, one trajectory has ended and another begins.</para>
+</listitem><listitem><para>If too much distance (as specifide by the separation_distance parameter) lies between one point and the next, one trajectory has ended and another begins.</para>
+</listitem></itemizedlist>
+</para>
+<para>We implement <ref refid="classtracktable_1_1_assemble_trajectories" kindref="compound">AssembleTrajectories</ref> as an iterator. It consumes an input stream of points sorted by timestamp (<emphasis>not</emphasis> by object ID) and produces complete trajectories. Internally, it keeps track of all the object IDs seen recently and applies the process above to identify and emit complete trajectories.</para>
+<para>We can also set a third parameter (minimum_trajectory_length) that silently rejects trajectories that do not contain enough points to be interesting. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" line="75" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/AssembleTrajectories.h" bodystart="76" bodyend="297"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a47d9c687b4c276bd1d547c417d64a2ab" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>AssembleTrajectories</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a008fd3559e62607c97968cdd630cd4c7" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>AssembleTrajectories</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a1ddf1890c774016617d7a57c91ec24ec" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>AssembleTrajectories</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a086a677e38c69b6c9ed6dc46646f45f6" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>begin</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a078fc7ecda941bacd25ba16328253217" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>cleanup_interval</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a9ee07491eb6ec83e023188c898976539" prot="private" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>CleanupInterval</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a780a74a65c1b74f6e716c1c60f6d9c7a" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>end</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1ae0cae60e53154bb7c3459821cfdefde4" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>iterator</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a988b271e6b2c02741814ae880a421336" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>minimum_trajectory_length</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1afbef34248a71b25cd5c1c652cfcbfc05" prot="private" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>MinimumTrajectoryLength</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a1557994eb6ace2fb307dd46c6c2d92e5" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a2ab2b6d8e2d5dd09b4598c33ac5ba7e5" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1aa33f2d21059d76c043a880b75a3b95bd" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a420a83504f8290c0eaa612671b31d891" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>point_type</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a25e9bb3bc385234b698cdfee9ee71494" prot="private" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>PointBegin</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a31b8501a7bb819182b8dfaa9a9c12fd0" prot="private" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>PointEnd</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a21c661b5fdf285666b0c8580283b96af" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>separation_distance</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a1b76a4a12d813f370c10c04e093f30a2" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>separation_time</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1ad528cd6f763270393c3ab7e840057eee" prot="private" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>SeparationDistance</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1ae288ea00f798d5945c8c2f960f802a22" prot="private" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>SeparationTime</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a9b3c4a6c5bf11dc2fee2a2296dcda3e6" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>set_cleanup_interval</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1abdff905c62af0b38131932641370a212" prot="protected" virt="virtual"><scope>tracktable::AssembleTrajectories</scope><name>set_default_configuration</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a0ec3a3555ad1c585e469380da64a16c1" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>set_input</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a4baac5d167777264efbd83d65b0a73e8" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>set_minimum_trajectory_length</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1aabbde5c51172292a7d0b503119f64252" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>set_separation_distance</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1a0d834b1235d78b82ddfd6529fc605cc7" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>set_separation_time</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1ac41a2a561b54a59112686ef29734ff54" prot="public" virt="non-virtual"><scope>tracktable::AssembleTrajectories</scope><name>trajectory_type</name></member>
+      <member refid="classtracktable_1_1_assemble_trajectories_1ada5f688ec4e8077908f91646a088a4d9" prot="public" virt="virtual"><scope>tracktable::AssembleTrajectories</scope><name>~AssembleTrajectories</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

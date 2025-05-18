@@ -1,0 +1,1057 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_trajectory_reader" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::TrajectoryReader</compoundname>
+    <basecompoundref refid="classtracktable_1_1_generic_reader" prot="public" virt="non-virtual">tracktable::GenericReader&lt; TrajectoryT &gt;</basecompoundref>
+    <includes refid="_trajectory_reader_8h" local="no">TrajectoryReader.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref></type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1a5e2434f3271abdeff65d500c397512fb" prot="private" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref></type>
+        <definition>typedef TrajectoryT tracktable::TrajectoryReader&lt; TrajectoryT &gt;::trajectory_type</definition>
+        <argsstring></argsstring>
+        <name>trajectory_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::trajectory_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="79" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1a11da544f25a2cd8bdb0c6e4349b744d2" prot="private" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory_1a8d3edcdda8ce1ad416c7daa81b016320" kindref="member">trajectory_type::point_type</ref></type>
+        <definition>typedef trajectory_type::point_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::point_type</definition>
+        <argsstring></argsstring>
+        <name>point_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::point_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="80" column="48" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1a5f81b970eb86a334b2dc9ce9c8b0f894" prot="private" static="no">
+        <type><ref refid="classtracktable_1_1_line_reader" kindref="compound">tracktable::LineReader</ref></type>
+        <definition>typedef tracktable::LineReader tracktable::TrajectoryReader&lt; TrajectoryT &gt;::line_reader_type</definition>
+        <argsstring></argsstring>
+        <name>line_reader_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::line_reader_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="81" column="12" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1aac9d954ddae3ac6df5325ceb00263dd8" prot="private" static="no">
+        <type><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">tracktable::SkipCommentsReader</ref>&lt; <ref refid="classtracktable_1_1_line_reader_1_1_line_reader_iterator" kindref="compound">line_reader_type::iterator</ref> &gt;</type>
+        <definition>typedef tracktable::SkipCommentsReader&lt;line_reader_type::iterator&gt; tracktable::TrajectoryReader&lt; TrajectoryT &gt;::skip_comments_reader_type</definition>
+        <argsstring></argsstring>
+        <name>skip_comments_reader_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::skip_comments_reader_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="82" column="42" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1afe861c4f3b01f2ebc920493c03f73728" prot="private" static="no">
+        <type><ref refid="classtracktable_1_1_string_tokenizing_reader" kindref="compound">tracktable::StringTokenizingReader</ref>&lt; skip_comments_reader_type::iterator &gt;</type>
+        <definition>typedef tracktable::StringTokenizingReader&lt;skip_comments_reader_type::iterator&gt; tracktable::TrajectoryReader&lt; TrajectoryT &gt;::string_tokenizer_type</definition>
+        <argsstring></argsstring>
+        <name>string_tokenizer_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::string_tokenizer_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="83" column="46" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1a3cfa328f406e91343e4dc74360cad1b5" prot="private" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classtracktable_1_1_trajectory" kindref="compound">trajectory_type</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;trajectory_type&gt; tracktable::TrajectoryReader&lt; TrajectoryT &gt;::trajectory_shared_ptr_type</definition>
+        <argsstring></argsstring>
+        <name>trajectory_shared_ptr_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::trajectory_shared_ptr_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="347" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1aad737222d0471618ec69d0a678688563" prot="private" static="no">
+        <type>string_vector_type::const_iterator</type>
+        <definition>typedef string_vector_type::const_iterator tracktable::TrajectoryReader&lt; TrajectoryT &gt;::token_iter_type</definition>
+        <argsstring></argsstring>
+        <name>token_iter_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::token_iter_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="348" column="46" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1a2b62f0dc0c9bf0f8893c29e36a5b88ea" prot="private" static="no">
+        <type>std::pair&lt; token_iter_type, token_iter_type &gt;</type>
+        <definition>typedef std::pair&lt;token_iter_type, token_iter_type&gt; tracktable::TrajectoryReader&lt; TrajectoryT &gt;::token_range_type</definition>
+        <argsstring></argsstring>
+        <name>token_range_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::token_range_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="349" column="21" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1a003d55bdcc9ad3e336f685410c66d9df" prot="private" static="no">
+        <type>std::vector&lt; token_range_type &gt;</type>
+        <definition>typedef std::vector&lt;token_range_type&gt; tracktable::TrajectoryReader&lt; TrajectoryT &gt;::token_range_vector_type</definition>
+        <argsstring></argsstring>
+        <name>token_range_vector_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::token_range_vector_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="350" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="350" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_reader_1aa2e09c9bd7695652511b350607c9dbf1" prot="private" static="no">
+        <type><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">PointFromTokensReader</ref>&lt; point_type, token_range_vector_type::iterator &gt;</type>
+        <definition>typedef PointFromTokensReader&lt;point_type, token_range_vector_type::iterator&gt; tracktable::TrajectoryReader&lt; TrajectoryT &gt;::point_reader_type</definition>
+        <argsstring></argsstring>
+        <name>point_reader_type</name>
+        <qualifiedname>tracktable::TrajectoryReader::point_reader_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="351" column="33" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="351" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1a5aa29010d3840af51c4f149a87a12e8d" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_line_reader" kindref="compound">line_reader_type</ref></type>
+        <definition>line_reader_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::LineReader</definition>
+        <argsstring></argsstring>
+        <name>LineReader</name>
+        <qualifiedname>tracktable::TrajectoryReader::LineReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="353" column="20" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="353" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1a843e466c650bade51a93565a6c38d739" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_point_from_tokens_reader" kindref="compound">point_reader_type</ref></type>
+        <definition>point_reader_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::PointReader</definition>
+        <argsstring></argsstring>
+        <name>PointReader</name>
+        <qualifiedname>tracktable::TrajectoryReader::PointReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="354" column="21" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1a1a0e481748d2facffd690cc03b0c99ae" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">skip_comments_reader_type</ref></type>
+        <definition>skip_comments_reader_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::SkipCommentsReader</definition>
+        <argsstring></argsstring>
+        <name>SkipCommentsReader</name>
+        <qualifiedname>tracktable::TrajectoryReader::SkipCommentsReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="355" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1af2beff4bc0c54122f9bfc8930ee121f3" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_string_tokenizing_reader" kindref="compound">string_tokenizer_type</ref></type>
+        <definition>string_tokenizer_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::StringTokenizer</definition>
+        <argsstring></argsstring>
+        <name>StringTokenizer</name>
+        <qualifiedname>tracktable::TrajectoryReader::StringTokenizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="356" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1a4361bdc8e0b0fff1cd3a334463d6c9da" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::TimestampFormat</definition>
+        <argsstring></argsstring>
+        <name>TimestampFormat</name>
+        <qualifiedname>tracktable::TrajectoryReader::TimestampFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="357" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1ac38b96808c019dbd8d254fa7242ce26f" prot="private" static="no" mutable="no">
+        <type>string_tokenizer_type::iterator</type>
+        <definition>string_tokenizer_type::iterator tracktable::TrajectoryReader&lt; TrajectoryT &gt;::TokenizedInputBegin</definition>
+        <argsstring></argsstring>
+        <name>TokenizedInputBegin</name>
+        <qualifiedname>tracktable::TrajectoryReader::TokenizedInputBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="358" column="35" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1a4ebb2e9b98f68840d2f296ae39f8cf77" prot="private" static="no" mutable="no">
+        <type>string_tokenizer_type::iterator</type>
+        <definition>string_tokenizer_type::iterator tracktable::TrajectoryReader&lt; TrajectoryT &gt;::TokenizedInputEnd</definition>
+        <argsstring></argsstring>
+        <name>TokenizedInputEnd</name>
+        <qualifiedname>tracktable::TrajectoryReader::TokenizedInputEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="359" column="35" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1a0a399211a1d3c26e5bf799588856e26a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryReader&lt; TrajectoryT &gt;::WarningsEnabled</definition>
+        <argsstring></argsstring>
+        <name>WarningsEnabled</name>
+        <qualifiedname>tracktable::TrajectoryReader::WarningsEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="360" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="360" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1a1301cb25295dd249e73960805fdd2700" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::TrajectoryReader&lt; TrajectoryT &gt;::TrajectoriesRead</definition>
+        <argsstring></argsstring>
+        <name>TrajectoriesRead</name>
+        <qualifiedname>tracktable::TrajectoryReader::TrajectoriesRead</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="361" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_reader_1a327fa929b3ab2af67776afbc7dec1e4d" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header" kindref="compound">rw::detail::TrajectoryHeader</ref></type>
+        <definition>rw::detail::TrajectoryHeader tracktable::TrajectoryReader&lt; TrajectoryT &gt;::ParseTrajectoryHeader</definition>
+        <argsstring></argsstring>
+        <name>ParseTrajectoryHeader</name>
+        <qualifiedname>tracktable::TrajectoryReader::ParseTrajectoryHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="362" column="32" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="362" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a697088cd5b41071b55cf7c4c10639959" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryReader&lt; TrajectoryT &gt;::TrajectoryReader</definition>
+        <argsstring>()</argsstring>
+        <name>TrajectoryReader</name>
+        <qualifiedname>tracktable::TrajectoryReader::TrajectoryReader</qualifiedname>
+        <briefdescription>
+<para>Instantiate <ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> using a default configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Default reader configuration.   </para>
+<para>If you are reading BasePoints, this sets coordinates 0 to d-1 (D is the point&apos;s dimension) using columns 0 to d-1.</para>
+<para>If you are reading TrajectoryPoints, column 0 is the object ID, column 1 is the timestamp, and columns 2 through D+1 (inclusive) are the coordinates.</para>
+<para>These are the default settings. You can override any or all of them after you instantiate the reader.    </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="90" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a8d8a8515d21cdc08fc6a0b92047a0d3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryReader&lt; TrajectoryT &gt;::TrajectoryReader</definition>
+        <argsstring>(std::istream &amp;infile)</argsstring>
+        <name>TrajectoryReader</name>
+        <qualifiedname>tracktable::TrajectoryReader::TrajectoryReader</qualifiedname>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>infile</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a <ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> using a <computeroutput>std::istream</computeroutput> and default configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Default reader configuration.   </para>
+<para>If you are reading BasePoints, this sets coordinates 0 to d-1 (D is the point&apos;s dimension) using columns 0 to d-1.</para>
+<para>If you are reading TrajectoryPoints, column 0 is the object ID, column 1 is the timestamp, and columns 2 through D+1 (inclusive) are the coordinates.</para>
+<para>These are the default settings. You can override any or all of them after you instantiate the reader.   </para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">infile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream to read input from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="101" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1ace26101b693d64deceabdb0a07fd0406" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryReader&lt; TrajectoryT &gt;::TrajectoryReader</definition>
+        <argsstring>(TrajectoryReader const &amp;other)</argsstring>
+        <name>TrajectoryReader</name>
+        <qualifiedname>tracktable::TrajectoryReader::TrajectoryReader</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a reader with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="111" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="111" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a12801913430f707ffdd4d050fdfa98fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::TrajectoryReader&lt; TrajectoryT &gt;::~TrajectoryReader</definition>
+        <argsstring>()</argsstring>
+        <name>~TrajectoryReader</name>
+        <qualifiedname>tracktable::TrajectoryReader::~TrajectoryReader</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="123" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="123" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1aaf4c933d5cc7aa9c5f286b040d6f5c0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> &amp;</type>
+        <definition>TrajectoryReader &amp; tracktable::TrajectoryReader&lt; TrajectoryT &gt;::operator=</definition>
+        <argsstring>(TrajectoryReader const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::TrajectoryReader::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reader with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="132" column="20" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="132" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1aa4105b799acf5e8c5ed588d97bbf0c63" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryReader&lt; TrajectoryT &gt;::operator==</definition>
+        <argsstring>(TrajectoryReader const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::TrajectoryReader::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one reader is equal to another by comparing all the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two readers are equal if all of their properties are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="151" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="151" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a6bbc692224484e396b64224e2bbe5559" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryReader&lt; TrajectoryT &gt;::operator!=</definition>
+        <argsstring>(TrajectoryReader const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::TrajectoryReader::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two TrajectoryReaders are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_reader" kindref="compound">TrajectoryReader</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="168" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a2872374653b51d30f48b458d4d86e19b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::set_default_configuration</definition>
+        <argsstring>()</argsstring>
+        <name>set_default_configuration</name>
+        <qualifiedname>tracktable::TrajectoryReader::set_default_configuration</qualifiedname>
+        <briefdescription>
+<para>Default reader configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If you are reading BasePoints, this sets coordinates 0 to d-1 (D is the point&apos;s dimension) using columns 0 to d-1.</para>
+<para>If you are reading TrajectoryPoints, column 0 is the object ID, column 1 is the timestamp, and columns 2 through D+1 (inclusive) are the coordinates.</para>
+<para>These are the default settings. You can override any or all of them after you instantiate the reader. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="187" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="187" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1aa7fe312ba51efb87668caafa4cec6ab3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::set_comment_character</definition>
+        <argsstring>(string_type const &amp;comment)</argsstring>
+        <name>set_comment_character</name>
+        <qualifiedname>tracktable::TrajectoryReader::set_comment_character</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>comment</declname>
+        </param>
+        <briefdescription>
+<para>Specify comment character for skipping lines. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A line is a comment if and only if its first non-whitespace character is the comment character (&apos;#&apos; by default). We will skip such lines entirely. We do not handle inline or trailing comments: a line will either be included in its entirety or skipped completely.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">comment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Single character </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="208" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1acfc86cf112e208e2fcc8c49562ccfd68" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::comment_character</definition>
+        <argsstring>() const</argsstring>
+        <name>comment_character</name>
+        <qualifiedname>tracktable::TrajectoryReader::comment_character</qualifiedname>
+        <briefdescription>
+<para>Retrieve current value of comment character. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function invalidates any outstanding iterators.</para>
+<para><simplesect kind="return"><para>Current value of comment character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="219" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="219" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1ac54c383499544189b711a6a5ce8c84b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::set_null_value</definition>
+        <argsstring>(string_type const &amp;_null_value)</argsstring>
+        <name>set_null_value</name>
+        <qualifiedname>tracktable::TrajectoryReader::set_null_value</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>_null_value</declname>
+        </param>
+        <briefdescription>
+<para>Specify string value to be interpreted as null. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_null_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to interpret as null </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="228" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="228" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1acc9fde9efd2f212cf0d3decb801e6680" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::null_value</definition>
+        <argsstring>() const</argsstring>
+        <name>null_value</name>
+        <qualifiedname>tracktable::TrajectoryReader::null_value</qualifiedname>
+        <briefdescription>
+<para>Get string value for nulls. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current string that will be interpreted as null </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="239" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="239" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1aa8019fa8c541a4880b0c8ab03787238b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::set_input</definition>
+        <argsstring>(std::istream &amp;_input)</argsstring>
+        <name>set_input</name>
+        <qualifiedname>tracktable::TrajectoryReader::set_input</qualifiedname>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>_input</declname>
+        </param>
+        <briefdescription>
+<para>Supply input stream from delimited text source. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We read our input from C++ std::istreams. The stream you supply will be traversed exactly once.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream from which we will read points </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="251" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="251" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a9da4fdcfe6eb712498752d0e00333e3d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::istream &amp;</type>
+        <definition>std::istream &amp; tracktable::TrajectoryReader&lt; TrajectoryT &gt;::input</definition>
+        <argsstring>() const</argsstring>
+        <name>input</name>
+        <qualifiedname>tracktable::TrajectoryReader::input</qualifiedname>
+        <briefdescription>
+<para>Retrieve the current input stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="bug_1_bug000002"><xreftitle>Bug</xreftitle><xrefdescription><para>We currently have no way to indicate whether the stream is valid.</para>
+</xrefdescription></xrefsect></para>
+<para><simplesect kind="return"><para>Stream being used for input. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="272" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="272" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a6a4b0b4132b0ac549e63cdd1454c1841" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::set_warnings_enabled</definition>
+        <argsstring>(bool onoff)</argsstring>
+        <name>set_warnings_enabled</name>
+        <qualifiedname>tracktable::TrajectoryReader::set_warnings_enabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>onoff</declname>
+        </param>
+        <briefdescription>
+<para>Enable/disable warnings during parsing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We may run into type mismatches and bad casts while we&apos;re parsing headers and data. This flag determines whether or not warnings will be printed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">onoff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Warnings are on / off </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="286" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="286" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1ac3ca0d39335ba326e0d3c4139c47b0f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryReader&lt; TrajectoryT &gt;::warnings_enabled</definition>
+        <argsstring>() const</argsstring>
+        <name>warnings_enabled</name>
+        <qualifiedname>tracktable::TrajectoryReader::warnings_enabled</qualifiedname>
+        <briefdescription>
+<para>Check whether warnings are enable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether or not warnings are on </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="296" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="296" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1ad8b8912bc589d9cfb809e47906668509" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::set_field_delimiter</definition>
+        <argsstring>(string_type const &amp;delimiters)</argsstring>
+        <name>set_field_delimiter</name>
+        <qualifiedname>tracktable::TrajectoryReader::set_field_delimiter</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>delimiters</declname>
+        </param>
+        <briefdescription>
+<para>Set one or more characters as field delimiters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each character in the argument to this function will be treated as a potential field delimiter. If you supply <computeroutput>&quot;,|&quot;</computeroutput> as your delimiter then both the comma and the exclamation point will be used to tokenize field.</para>
+<para>This function invalidates any outstanding iterators.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">delimiters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String containing all desired delimiter characters </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="313" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="313" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1afa411c4e323291ab4aa82c2c80083452" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::field_delimiter</definition>
+        <argsstring>() const</argsstring>
+        <name>field_delimiter</name>
+        <qualifiedname>tracktable::TrajectoryReader::field_delimiter</qualifiedname>
+        <briefdescription>
+<para>Retrieve the current set of delimiter characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String containing all delimiters </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="322" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="322" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a58edb5570e581ecb0b7a2b56c49efb1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::set_timestamp_format</definition>
+        <argsstring>(string_type const &amp;format)</argsstring>
+        <name>set_timestamp_format</name>
+        <qualifiedname>tracktable::TrajectoryReader::set_timestamp_format</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+<para>Set the format of the timestamp. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String containing the format of the time stamp </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="331" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="331" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a32219219fcb4ed2f16eba714f8401d75" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::timestamp_format</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp_format</name>
+        <qualifiedname>tracktable::TrajectoryReader::timestamp_format</qualifiedname>
+        <briefdescription>
+<para>Retrieve the format of the timestamp. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The timestamp format </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="341" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="341" bodyend="344"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1afad1dac93b02cb0a26916daf4d04cbf3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>trajectory_shared_ptr_type</type>
+        <definition>trajectory_shared_ptr_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::next_item</definition>
+        <argsstring>()</argsstring>
+        <name>next_item</name>
+        <qualifiedname>tracktable::TrajectoryReader::next_item</qualifiedname>
+        <reimplements refid="classtracktable_1_1_generic_reader_1a0d92677380ac73f7b919c323b8115608">next_item</reimplements>
+        <briefdescription>
+<para>Increment the iterator the next item to be read in. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The next item </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="368" column="30" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="368" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1a03b873418e5fbfe418cc36c73f4f6e22" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>trajectory_shared_ptr_type</type>
+        <definition>trajectory_shared_ptr_type tracktable::TrajectoryReader&lt; TrajectoryT &gt;::parse_trajectory</definition>
+        <argsstring>(string_vector_type const &amp;tokens)</argsstring>
+        <name>parse_trajectory</name>
+        <qualifiedname>tracktable::TrajectoryReader::parse_trajectory</qualifiedname>
+        <param>
+          <type>string_vector_type const &amp;</type>
+          <declname>tokens</declname>
+        </param>
+        <briefdescription>
+<para>Parse the read in trajectory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tokens</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tokens that are read in and parsed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="412" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="412" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1af567241e261dd1438bd88c2c7a921151" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::populate_trajectory_points</definition>
+        <argsstring>(token_iter_type token_begin, token_iter_type token_end, std::size_t num_points, trajectory_shared_ptr_type trajectory)</argsstring>
+        <name>populate_trajectory_points</name>
+        <qualifiedname>tracktable::TrajectoryReader::populate_trajectory_points</qualifiedname>
+        <param>
+          <type>token_iter_type</type>
+          <declname>token_begin</declname>
+        </param>
+        <param>
+          <type>token_iter_type</type>
+          <declname>token_end</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>num_points</declname>
+        </param>
+        <param>
+          <type>trajectory_shared_ptr_type</type>
+          <declname>trajectory</declname>
+        </param>
+        <briefdescription>
+<para>Populate the trajectorie&apos;s points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">token_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start of tokens read in </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">token_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End of tokens read in </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Num of points expected to be in trajectory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">trajectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> to populate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="459" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="459" bodyend="531"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_reader_1af959f3e9b2cf85b4ad1da06491f31e7c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryReader&lt; TrajectoryT &gt;::populate_trajectory_points_from_token_ranges</definition>
+        <argsstring>(token_range_vector_type::iterator input_range_begin, token_range_vector_type::iterator input_range_end, trajectory_shared_ptr_type trajectory)</argsstring>
+        <name>populate_trajectory_points_from_token_ranges</name>
+        <qualifiedname>tracktable::TrajectoryReader::populate_trajectory_points_from_token_ranges</qualifiedname>
+        <param>
+          <type>token_range_vector_type::iterator</type>
+          <declname>input_range_begin</declname>
+        </param>
+        <param>
+          <type>token_range_vector_type::iterator</type>
+          <declname>input_range_end</declname>
+        </param>
+        <param>
+          <type>trajectory_shared_ptr_type</type>
+          <declname>trajectory</declname>
+        </param>
+        <briefdescription>
+<para>Populate the trajectories points from token ranges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">input_range_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start of range to read in </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input_range_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End of range to read in </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">trajectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> to populate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="541" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="541" bodyend="553"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Read trajectories from files. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This reader wraps the following pipeline:</para>
+<para><itemizedlist>
+<listitem><para>Read lines from a text file</para>
+</listitem><listitem><para>Skip any lines that begin with a designated comment character (&apos;#&apos; by default)</para>
+</listitem><listitem><para>Tokenize each line using specified delimiters (whitespace by default)</para>
+</listitem><listitem><para>Create a trajectory (user-specified type) from each tokenized line</para>
+</listitem><listitem><para>Return the resulting points via a C++ iterator</para>
+</listitem></itemizedlist>
+</para>
+<para>You will use <ref refid="classtracktable_1_1_trajectory_reader_1aa8019fa8c541a4880b0c8ab03787238b" kindref="member">set_input()</ref> to supply an input stream, <ref refid="classtracktable_1_1_trajectory_reader_1aa7fe312ba51efb87668caafa4cec6ab3" kindref="member">set_comment_character()</ref> to configure which lines to skip, <ref refid="classtracktable_1_1_trajectory_reader_1ad8b8912bc589d9cfb809e47906668509" kindref="member">set_field_delimiter()</ref> to specify how to turn lines into fields. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tracktable::GenericReader&lt; TrajectoryT &gt;</label>
+        <link refid="classtracktable_1_1_generic_reader"/>
+      </node>
+      <node id="1">
+        <label>tracktable::TrajectoryReader&lt; TrajectoryT &gt;</label>
+        <link refid="classtracktable_1_1_trajectory_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>tracktable::GenericReader&lt; TrajectoryT &gt;</label>
+        <link refid="classtracktable_1_1_generic_reader"/>
+      </node>
+      <node id="1">
+        <label>tracktable::TrajectoryReader&lt; TrajectoryT &gt;</label>
+        <link refid="classtracktable_1_1_trajectory_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" line="76" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryReader.h" bodystart="77" bodyend="558"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_generic_reader_1a13329272db0aded06cbc9dd85ed0f32d" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>begin</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1acfc86cf112e208e2fcc8c49562ccfd68" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>comment_character</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a91506b62c3fbcb3f747a70e621a921f9" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>end</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1afa411c4e323291ab4aa82c2c80083452" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>field_delimiter</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a3f6a790b8f1937222c8694696d3791fd" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>GenericReader</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a539fe1509e67ae1b2581c1d7da3c8c85" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>GenericReader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a9da4fdcfe6eb712498752d0e00333e3d" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>input</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1af4768991a46fa7e5434b13a9deae971d" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>iterator</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a5f81b970eb86a334b2dc9ce9c8b0f894" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>line_reader_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a5aa29010d3840af51c4f149a87a12e8d" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>LineReader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1afad1dac93b02cb0a26916daf4d04cbf3" prot="private" virt="virtual"><scope>tracktable::TrajectoryReader</scope><name>next_item</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1acc9fde9efd2f212cf0d3decb801e6680" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>null_value</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a6bbc692224484e396b64224e2bbe5559" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1aaf4c933d5cc7aa9c5f286b040d6f5c0c" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1aa4105b799acf5e8c5ed588d97bbf0c63" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a03b873418e5fbfe418cc36c73f4f6e22" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>parse_trajectory</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a327fa929b3ab2af67776afbc7dec1e4d" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>ParseTrajectoryHeader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1aa2e09c9bd7695652511b350607c9dbf1" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>point_reader_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a11da544f25a2cd8bdb0c6e4349b744d2" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>point_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a843e466c650bade51a93565a6c38d739" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>PointReader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1af567241e261dd1438bd88c2c7a921151" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>populate_trajectory_points</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1af959f3e9b2cf85b4ad1da06491f31e7c" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>populate_trajectory_points_from_token_ranges</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1aa7fe312ba51efb87668caafa4cec6ab3" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>set_comment_character</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a2872374653b51d30f48b458d4d86e19b" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>set_default_configuration</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1ad8b8912bc589d9cfb809e47906668509" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>set_field_delimiter</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1aa8019fa8c541a4880b0c8ab03787238b" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>set_input</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1ac54c383499544189b711a6a5ce8c84b1" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>set_null_value</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a58edb5570e581ecb0b7a2b56c49efb1a" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>set_timestamp_format</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a6a4b0b4132b0ac549e63cdd1454c1841" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>set_warnings_enabled</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1aac9d954ddae3ac6df5325ceb00263dd8" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>skip_comments_reader_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a1a0e481748d2facffd690cc03b0c99ae" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>SkipCommentsReader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1afe861c4f3b01f2ebc920493c03f73728" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>string_tokenizer_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1af2beff4bc0c54122f9bfc8930ee121f3" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>StringTokenizer</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a32219219fcb4ed2f16eba714f8401d75" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>timestamp_format</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a4361bdc8e0b0fff1cd3a334463d6c9da" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>TimestampFormat</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1aad737222d0471618ec69d0a678688563" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>token_iter_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a2b62f0dc0c9bf0f8893c29e36a5b88ea" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>token_range_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a003d55bdcc9ad3e336f685410c66d9df" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>token_range_vector_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1ac38b96808c019dbd8d254fa7242ce26f" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>TokenizedInputBegin</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a4ebb2e9b98f68840d2f296ae39f8cf77" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>TokenizedInputEnd</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a1301cb25295dd249e73960805fdd2700" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>TrajectoriesRead</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a3cfa328f406e91343e4dc74360cad1b5" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>trajectory_shared_ptr_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a5e2434f3271abdeff65d500c397512fb" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>trajectory_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a697088cd5b41071b55cf7c4c10639959" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>TrajectoryReader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a8d8a8515d21cdc08fc6a0b92047a0d3b" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>TrajectoryReader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1ace26101b693d64deceabdb0a07fd0406" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>TrajectoryReader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1ac3ca0d39335ba326e0d3c4139c47b0f7" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>warnings_enabled</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a0a399211a1d3c26e5bf799588856e26a" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryReader</scope><name>WarningsEnabled</name></member>
+      <member refid="classtracktable_1_1_generic_reader_1a4dafc916191825cbbef2d67d500135b6" prot="public" virt="virtual"><scope>tracktable::TrajectoryReader</scope><name>~GenericReader</name></member>
+      <member refid="classtracktable_1_1_trajectory_reader_1a12801913430f707ffdd4d050fdfa98fc" prot="public" virt="virtual"><scope>tracktable::TrajectoryReader</scope><name>~TrajectoryReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

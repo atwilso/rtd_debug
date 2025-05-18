@@ -1,0 +1,450 @@
+\doxysection{Terrestrial.\+h}
+\hypertarget{_terrestrial_8h_source}{}\label{_terrestrial_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Domain/Terrestrial.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Domain/Terrestrial.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ Terrestrial\ Domain\ -\/\ objects\ on\ the\ surface\ of\ the\ Earth}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ When\ we\ reason\ about\ objects\ on\ the\ surface\ of\ the\ Earth\ we\ use}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ human-\/scale\ measurements\ such\ as\ kilometers\ for\ distance,\ square}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ kilometers\ for\ area,\ and\ km\ per\ hour\ for\ speed.\ Point\ and}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ trajectory\ types\ in\ the\ Terrestrial\ domain\ adhere\ to\ these}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ standards.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ TODO:\ The\ following\ statement\ implies\ that\ altitude\ is\ included\ whiich\ not\ accurate?}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ We\ also\ provide\ the\ 'altitude'\ trait\ for\ terrestrial\ trajectory}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ points.\ We\ recommend\ that\ you\ use\ altitude\ values\ measured\ in}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *\ meters\ wherever\ possible.\ However,\ we\ acknowledge\ that\ the}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *\ international\ standard\ of\ describing\ aircraft\ altitudes\ in\ feet\ (or}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *\ hundreds\ of\ feet)\ may\ make\ that\ a\ more\ convenient\ scale.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifndef\ tracktable\_domain\_Terrestrial\_h}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ tracktable\_domain\_Terrestrial\_h}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <tracktable/Core/FloatingPointComparison.h>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Conversions.h>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Box.h>}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointLonLat.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TrajectoryPoint.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Trajectory.h>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/DomainMacros.h>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/Cartesian3D.h>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <tracktable/RW/PointReader.h>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <tracktable/RW/TrajectoryReader.h>}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <boost/geometry/algorithms/length.hpp>}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/TracktableDomainWindowsHeader.h>}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d}{tracktable::domain::cartesian3d::CartesianPoint3D}}\ CartesianPoint3D;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ Part\ 1:\ Instantiate\ the\ classes\ for\ this\ domain.}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ These\ are\ TerrestrialPoint,\ TerrestrialTrajectoryPoint\ and}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ TerrestrialTrajectory.\ These\ classes\ are\ almost\ entirely}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ boilerplate.}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ Once\ we've\ defined\ them\ we\ alias\ them\ to\ base\_point\_type,}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ trajectory\_point\_type\ and\ trajectory\_type\ respectively.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }domain\ \{\ \textcolor{keyword}{namespace\ }terrestrial\ \{}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{enum\ class}\ AltitudeUnits\ \{}
+\DoxyCodeLine{00091\ \ \ FEET,}
+\DoxyCodeLine{00092\ \ \ METERS,}
+\DoxyCodeLine{00093\ \ \ KILOMETERS,}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{class\ }PropertyDoesNotExist\ :\ \textcolor{keyword}{public}\ std::runtime\_error\ \{}
+\DoxyCodeLine{00098\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ PropertyDoesNotExist(std::string\ \_property)\ :\ std::runtime\_error(\_property)\ \{\}}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a3a55e7a1165f109ca378defb2cd1761b}{TerrestrialPoint}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a32518d4d3231e491bace6b70eeb3901d}{PointLonLat}}}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }boost::serialization::access;}
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{using\ }Superclass\ =\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a32518d4d3231e491bace6b70eeb3901d}{PointLonLat}};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a3a55e7a1165f109ca378defb2cd1761b}{TerrestrialPoint}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_af9faca4e1aa26eff92575b8d481524c9}{TerrestrialPoint}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a3a55e7a1165f109ca378defb2cd1761b}{TerrestrialPoint}}\ \textcolor{keyword}{const}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a15bc351a0d14b61abc0a218394c88b8a}{TerrestrialPoint}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a3a55e7a1165f109ca378defb2cd1761b}{TerrestrialPoint}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a5d81b01851de5bc7afdd13987d8d9ef5}{TerrestrialPoint}}(Superclass\ \textcolor{keyword}{const}\&\ other)\ :\ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a32518d4d3231e491bace6b70eeb3901d}{PointLonLat}}(other)\ \{\}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_ab79761c0ad693465afa5070bf21ec1ed}{\string~TerrestrialPoint}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a3a55e7a1165f109ca378defb2cd1761b}{TerrestrialPoint}}\&\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a9c0b4f70c74a004e0a58155600679a91}{operator=}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a3a55e7a1165f109ca378defb2cd1761b}{TerrestrialPoint}}\ \textcolor{keyword}{const}\&\ other)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594}{Superclass::operator=}}(other);}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00148\ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{TerrestrialPoint}}\&\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a9c0b4f70c74a004e0a58155600679a91}{operator=}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{TerrestrialPoint}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00156\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_aebe7465964eb9b72017ef7202c1a30d9}{TerrestrialPoint}}(\textcolor{keywordtype}{double}\ \_longitude,\ \textcolor{keywordtype}{double}\ \_latitude)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a403df11f0c49a8d0d02ac3cdb1635ffa}{set\_longitude}}(\_longitude);}
+\DoxyCodeLine{00158\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ad73365869fdd0bcc96c918ce7d66490d}{set\_latitude}}(\_latitude);}
+\DoxyCodeLine{00159\ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00166\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00167\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a353ff67f7ce9ca4897d57cd4bee8054e}{serialize}}(Archive\&\ ar,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ ar\ \&\ BOOST\_SERIALIZATION\_BASE\_OBJECT\_NVP(Superclass);}
+\DoxyCodeLine{00169\ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00181\ \ \ \textcolor{keyword}{static}\ CartesianPoint3D\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a8c2a33c5713a138438ed32d3182d5b63}{ECEF\_from\_km}}(\textcolor{keyword}{const}\ coord\_type\ \_longitude,\ \textcolor{keyword}{const}\ coord\_type\ \_latitude,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_altitude)\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ a\ =\ 6378.137;}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ e2\ =\ 8.1819190842622e-\/2\ *\ 8.1819190842622e-\/2;}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ sinLatitude\ =\ sin(\_latitude);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ n\ =\ a\ /\ sqrt((1.0\ -\/\ e2\ *\ sinLatitude\ *\ sinLatitude));}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ NAC\ =\ (n\ +\ \_altitude)\ *\ cos(\_latitude);}
+\DoxyCodeLine{00188\ \ \ \ \ coord\_type\ pt[3];}
+\DoxyCodeLine{00189\ \ \ \ \ pt[0]\ =\ NAC\ *\ cos(\_longitude);}
+\DoxyCodeLine{00190\ \ \ \ \ pt[1]\ =\ NAC\ *\ sin(\_longitude);}
+\DoxyCodeLine{00191\ \ \ \ \ pt[2]\ =\ (n\ *\ (1.0\ -\/\ e2)\ +\ \_altitude)\ *\ sinLatitude;}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{return}\ CartesianPoint3D(pt);}
+\DoxyCodeLine{00193\ \ \ \}}
+\DoxyCodeLine{00194\ \};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{comment}{//\ If\ you\ write\ libraries\ for\ Microsoft\ platforms\ you\ will\ have\ to}}
+\DoxyCodeLine{00199\ \textcolor{comment}{//\ care\ about\ this\ warning\ sooner\ or\ later.\ Warning\ \#4251\ says}}
+\DoxyCodeLine{00200\ \textcolor{comment}{//\ "{}This\ type\ must\ have\ a\ DLL\ interface\ in\ order\ to\ be\ used\ by}}
+\DoxyCodeLine{00201\ \textcolor{comment}{//\ clients\ of\ <class>"{}.\ After\ you\ dig\ through\ the\ layers,\ this}}
+\DoxyCodeLine{00202\ \textcolor{comment}{//\ ends\ up\ meaning\ "{}You\ cannot\ use\ STL\ classes\ in\ the\ interface\ of\ a}}
+\DoxyCodeLine{00203\ \textcolor{comment}{//\ method\ or\ function\ if\ you\ expect\ your\ library\ to\ work\ with\ any}}
+\DoxyCodeLine{00204\ \textcolor{comment}{//\ compiler\ other\ than\ the\ one\ you're\ using\ right\ now."{}}}
+\DoxyCodeLine{00205\ \textcolor{comment}{//}}
+\DoxyCodeLine{00206\ \textcolor{comment}{//\ This\ is\ a\ symptom\ of\ a\ bigger\ problem.\ Since\ the\ STL\ does\ not\ have}}
+\DoxyCodeLine{00207\ \textcolor{comment}{//\ a\ single\ standard\ implementation\ (for\ good\ reason)\ you\ cannot\ assume}}
+\DoxyCodeLine{00208\ \textcolor{comment}{//\ that\ my\ std::map\ is\ the\ same\ on\ the\ inside\ as\ your\ std::map.\ Idioms}}
+\DoxyCodeLine{00209\ \textcolor{comment}{//\ such\ as\ PIMPL\ are\ one\ approach\ to\ minimizing\ the\ impact.}}
+\DoxyCodeLine{00210\ \textcolor{comment}{//}}
+\DoxyCodeLine{00211\ \textcolor{comment}{//\ The\ bottom\ line\ is\ that\ yea,\ verily,\ you\ cannot\ use\ STL\ classes\ as}}
+\DoxyCodeLine{00212\ \textcolor{comment}{//\ arguments\ or\ return\ values\ in\ your\ library's\ interface\ unless\ it\ will}}
+\DoxyCodeLine{00213\ \textcolor{comment}{//\ only\ ever\ be\ used\ by\ the\ same\ compiler\ that\ built\ it.\ We\ are\ going\ to}}
+\DoxyCodeLine{00214\ \textcolor{comment}{//\ proclaim\ that\ this\ is\ the\ case\ for\ Tracktable\ and\ put\ great\ big\ warnings}}
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ in\ the\ developer\ documentation\ to\ that\ effect.}}
+\DoxyCodeLine{00216\ \textcolor{comment}{//}}
+\DoxyCodeLine{00217\ \textcolor{comment}{//\ Meanwhile,\ we\ use\ \#pragma\ warning(disable)\ to\ hush\ the\ compiler\ up}}
+\DoxyCodeLine{00218\ \textcolor{comment}{//\ so\ that\ people\ who\ just\ want\ to\ use\ the\ library\ don't\ have\ to\ care}}
+\DoxyCodeLine{00219\ \textcolor{comment}{//\ about\ the\ arcana\ of\ \_\_declspec(dllimport)\ and\ friends.}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#if\ defined(WIN32)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#\ pragma\ warning(\ push\ )}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#\ pragma\ warning(\ disable\ :\ 4251\ )}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a568eac94ab31a2e25ea9e8c51fa4aabe}{TerrestrialTrajectoryPoint}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_point_a14b701595c0f394f9b99cb53d3e2bca5}{TrajectoryPoint}}<TerrestrialPoint>}
+\DoxyCodeLine{00227\ \{}
+\DoxyCodeLine{00228\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00229\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }boost::serialization::access;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \textcolor{keyword}{using\ }Superclass\ =\ \mbox{\hyperlink{classtracktable_1_1_trajectory_point_a14b701595c0f394f9b99cb53d3e2bca5}{TrajectoryPoint<TerrestrialPoint>}};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00234\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a568eac94ab31a2e25ea9e8c51fa4aabe}{TerrestrialTrajectoryPoint}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00240\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_ad9fbce3aa77ba769a451f6e95d0f365c}{TerrestrialTrajectoryPoint}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a568eac94ab31a2e25ea9e8c51fa4aabe}{TerrestrialTrajectoryPoint}}\ \textcolor{keyword}{const}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00246\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a372c00964c3480d0a6f830c49589c861}{TerrestrialTrajectoryPoint}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a568eac94ab31a2e25ea9e8c51fa4aabe}{TerrestrialTrajectoryPoint}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00252\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a2eb6728e742a37ca3e8e553c9b1672fe}{TerrestrialTrajectoryPoint}}(Superclass\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00253\ \ \ \ \ :\ Superclass(other)}
+\DoxyCodeLine{00254\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00257\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a5b03f1c1affc6fe75eeb7ce4215d16bb}{\string~TerrestrialTrajectoryPoint}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00260\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a568eac94ab31a2e25ea9e8c51fa4aabe}{TerrestrialTrajectoryPoint}}\&\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a2856517276fa6596122516f4eed5e241}{operator=}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a568eac94ab31a2e25ea9e8c51fa4aabe}{TerrestrialTrajectoryPoint}}\ \textcolor{keyword}{const}\&\ other)\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_point_ac2e2ca3f1c11138a5ec2594d2a7efaca}{Superclass::operator=}}(other);}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00263\ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point}{TerrestrialTrajectoryPoint}}\&\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a2856517276fa6596122516f4eed5e241}{operator=}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point}{TerrestrialTrajectoryPoint}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00271\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a6ec23232c1c220bdebc0138eafbbb670}{TerrestrialTrajectoryPoint}}(\textcolor{keywordtype}{double}\ \_longitude,\ \textcolor{keywordtype}{double}\ \_latitude)\ \{}
+\DoxyCodeLine{00272\ \ \ \ \ this-\/>set\_longitude(\_longitude);}
+\DoxyCodeLine{00273\ \ \ \ \ this-\/>set\_latitude(\_latitude);}
+\DoxyCodeLine{00274\ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00295\ \ \ \textcolor{comment}{//TODO:\ redo\ python\ binding}}
+\DoxyCodeLine{00296\ \ \ CartesianPoint3D\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a628d7264fd2de1026e63f6b0f678464d}{ECEF}}(\textcolor{keyword}{const}\ std::string\&\ \_altitudeString\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ AltitudeUnits\ \_unit\ =\ AltitudeUnits::KILOMETERS)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordflow}{if}\ (AltitudeUnits::KILOMETERS\ ==\ \_unit)\ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_ab850463b67f7fff190ad6d4c3ffa8c21}{ECEF\_from\_kilometers}}(\_altitudeString);}
+\DoxyCodeLine{00300\ \ \ \ \ \}}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{if}\ (AltitudeUnits::METERS\ ==\ \_unit)\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_ae71e7d1cb5bb319b691a85a46e5f8d8d}{ECEF\_from\_meters}}(\_altitudeString);}
+\DoxyCodeLine{00303\ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a0256bf665f3935afb252c5264bf3413f}{ECEF\_from\_feet}}(\_altitudeString);}
+\DoxyCodeLine{00305\ \ \ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00318\ \ \ CartesianPoint3D\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a2a90672fd7676ac6326a7cec82157635}{ECEF}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ ratio,\ \textcolor{keyword}{const}\ std::string\&\ \_altitudeString)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{double}\ altitude;}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{bool}\ ok\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_altitudeString.length()\ !=\ 0)}
+\DoxyCodeLine{00322\ \ \ \ \ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ altitude\ =\ ratio\ *\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_point_a530d7ec9f72a870e18d4885be12d2f3a}{real\_property}}(\_altitudeString,\ \&ok);}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ok)\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_property_does_not_exist}{PropertyDoesNotExist}}(\_altitudeString);}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ altitude\ =\ 0.0;}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \ \ \ \ coord\_type\ longitude\ =\ conversions::radians(this-\/>get<0>());}
+\DoxyCodeLine{00331\ \ \ \ \ coord\_type\ latitude\ =\ conversions::radians(this-\/>get<1>());}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a8c2a33c5713a138438ed32d3182d5b63}{TerrestrialPoint::ECEF\_from\_km}}(longitude,\ latitude,\ altitude);}
+\DoxyCodeLine{00333\ \ \ \}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00345\ \ \ CartesianPoint3D\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a0256bf665f3935afb252c5264bf3413f}{ECEF\_from\_feet}}(\textcolor{keyword}{const}\ std::string\&\ \_altitudeString\ =\ \textcolor{stringliteral}{"{}altitude"{}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{comment}{//\ NOTE:\ Potential\ for\ this\ number\ ratio\ to\ be\ slightly\ different\ between}}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{comment}{//\ machines\ of\ differing\ precisions.}}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ feetToKilometers\ =\ 1.0\ /\ 3280.839895013123;}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a628d7264fd2de1026e63f6b0f678464d}{ECEF}}(feetToKilometers,\ \_altitudeString);}
+\DoxyCodeLine{00350\ \ \ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00362\ \ \ CartesianPoint3D\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_ae71e7d1cb5bb319b691a85a46e5f8d8d}{ECEF\_from\_meters}}(\textcolor{keyword}{const}\ std::string\&\ \_altitudeString\ =\ \textcolor{stringliteral}{"{}altitude"{}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ metersToKilometers\ =\ 1.0\ /\ 1000.0;}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a628d7264fd2de1026e63f6b0f678464d}{ECEF}}(metersToKilometers,\ \_altitudeString);}
+\DoxyCodeLine{00365\ \ \ \}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00377\ \ \ \textcolor{comment}{//TODO:\ python\ binding}}
+\DoxyCodeLine{00378\ \ \ CartesianPoint3D\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_ab850463b67f7fff190ad6d4c3ffa8c21}{ECEF\_from\_kilometers}}(\textcolor{keyword}{const}\ std::string\&\ \_altitudeString\ =\ \textcolor{stringliteral}{"{}altitude"{}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_a628d7264fd2de1026e63f6b0f678464d}{ECEF}}(1.0,\ \_altitudeString);}
+\DoxyCodeLine{00380\ \ \ \}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00389\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00390\ \ \ \textcolor{keywordtype}{void}\ serialize(Archive\&\ ar,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00391\ \ \ \{}
+\DoxyCodeLine{00392\ \ \ \ \ ar\ \&\ BOOST\_SERIALIZATION\_BASE\_OBJECT\_NVP(Superclass);}
+\DoxyCodeLine{00393\ \ \ \}}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \};}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#if\ defined(WIN32)}}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#\ pragma\ warning(\ pop\ )}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \textcolor{keyword}{using\ }base\_point\_type\ =\ TerrestrialPoint;}
+\DoxyCodeLine{00402\ \textcolor{keyword}{using\ }linestring\_type\ =\ std::vector<base\_point\_type>;}
+\DoxyCodeLine{00403\ \textcolor{keyword}{using\ }trajectory\_point\_type\ =\ TerrestrialTrajectoryPoint;}
+\DoxyCodeLine{00404\ \textcolor{keyword}{using\ }trajectory\_type\ =\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory<trajectory\_point\_type>}};}
+\DoxyCodeLine{00405\ \textcolor{keyword}{using\ }base\_point\_reader\_type\ =\ \mbox{\hyperlink{classtracktable_1_1_point_reader}{PointReader<base\_point\_type>}};}
+\DoxyCodeLine{00406\ \textcolor{keyword}{using\ }trajectory\_point\_reader\_type\ =\ \mbox{\hyperlink{classtracktable_1_1_point_reader}{PointReader<trajectory\_point\_type>}};}
+\DoxyCodeLine{00407\ \textcolor{keyword}{using\ }trajectory\_reader\_type\ =\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{TrajectoryReader<trajectory\_type>}};}
+\DoxyCodeLine{00408\ \textcolor{keyword}{using\ }box\_type\ =\ boost::geometry::model::box<base\_point\_type>;}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ TRACKTABLE\_DOMAIN\_EXPORT\ std::ostream\&\ \mbox{\hyperlink{namespacetracktable_adede362c73ae0a3314510cfd9a748fea}{operator<<}}(std::ostream\&\ out,\ base\_point\_type\ \textcolor{keyword}{const}\&\ pt);}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ TRACKTABLE\_DOMAIN\_EXPORT\ std::ostream\&\ \mbox{\hyperlink{namespacetracktable_adede362c73ae0a3314510cfd9a748fea}{operator<<}}(std::ostream\&\ out,\ trajectory\_point\_type\ \textcolor{keyword}{const}\&\ pt);}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \}\ \}\ \}\ \textcolor{comment}{//\ namespace\ tracktable::domain::terrestrial}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#ifndef\ DOXYGEN\_SHOULD\_SKIP\_THIS}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00420\ \textcolor{comment}{//}}
+\DoxyCodeLine{00421\ \textcolor{comment}{//\ TRAITS\ FOR\ TERRESTRIAL\ OBJECTS}}
+\DoxyCodeLine{00422\ \textcolor{comment}{//}}
+\DoxyCodeLine{00423\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }traits\ \{}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \textcolor{keyword}{namespace\ }domains\ \{}
+\DoxyCodeLine{00429\ \ \ \textcolor{keyword}{struct\ }terrestrial\ \{\ \};}
+\DoxyCodeLine{00430\ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00433\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1point__domain__name}{point\_domain\_name}}<tracktable::domain::terrestrial::TerrestrialPoint>}
+\DoxyCodeLine{00434\ \{}
+\DoxyCodeLine{00435\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ string\_type\ apply()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}terrestrial"{}};\ \}}
+\DoxyCodeLine{00436\ \};}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \}\ \}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00441\ \textcolor{comment}{//\ BOOST\ GEOMETRY\ REGISTRATION}}
+\DoxyCodeLine{00442\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \textcolor{comment}{//\ boost::geometry}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ TRACKTABLE\_DELEGATE\_BOOST\_POINT\_TRAITS(}
+\DoxyCodeLine{00447\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{tracktable::domain::terrestrial::TerrestrialPoint}},}
+\DoxyCodeLine{00448\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{tracktable::PointLonLat}}}
+\DoxyCodeLine{00449\ \ \ )}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ TRACKTABLE\_DELEGATE\_BOOST\_POINT\_TRAITS(}
+\DoxyCodeLine{00452\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point}{tracktable::domain::terrestrial::TerrestrialTrajectoryPoint}},}
+\DoxyCodeLine{00453\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_point}{tracktable::TrajectoryPoint<\ tracktable::domain::terrestrial::TerrestrialPoint\ >}}}
+\DoxyCodeLine{00454\ \ \ )}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00456\ TRACKTABLE\_DELEGATE\_BASE\_POINT\_TRAITS(}
+\DoxyCodeLine{00457\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{tracktable::domain::terrestrial::TerrestrialPoint}},}
+\DoxyCodeLine{00458\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{tracktable::PointLonLat}}}
+\DoxyCodeLine{00459\ \ \ )}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ TRACKTABLE\_DELEGATE\_TRAJECTORY\_POINT\_TRAITS(}
+\DoxyCodeLine{00462\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point}{tracktable::domain::terrestrial::TerrestrialTrajectoryPoint}},}
+\DoxyCodeLine{00463\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_point}{tracktable::TrajectoryPoint<tracktable::domain::terrestrial::TerrestrialPoint>}}}
+\DoxyCodeLine{00464\ \ \ )}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00467\ \textcolor{comment}{//\ TRACKTABLE\ POINT\ ALGORITHMS\ FOR\ BASE\ POINT}}
+\DoxyCodeLine{00468\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \textcolor{comment}{//\ Distance\ between\ points\ is\ measured\ in\ km,\ not\ radians}}
+\DoxyCodeLine{00473\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00474\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1distance}{distance}}<}
+\DoxyCodeLine{00475\ \ \ ::tracktable::traits::domains::terrestrial}
+\DoxyCodeLine{00476\ \ \ >}
+\DoxyCodeLine{00477\ \{}
+\DoxyCodeLine{00478\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Geom1,\ \textcolor{keyword}{typename}\ Geom2>}
+\DoxyCodeLine{00479\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ apply(Geom1\ \textcolor{keyword}{const}\&\ from,\ Geom2\ \textcolor{keyword}{const}\&\ to)}
+\DoxyCodeLine{00480\ \ \ \ \ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ distance\_in\_radians\ =\ boost::geometry::distance(from,\ to);}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ conversions::radians\_to\_km(distance\_in\_radians);}
+\DoxyCodeLine{00483\ \ \ \ \ \}}
+\DoxyCodeLine{00484\ \};}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \textcolor{comment}{//\ Speed\ between\ points\ is\ measured\ in\ km/hr,\ not\ radians/sec}}
+\DoxyCodeLine{00488\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00489\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1speed__between}{speed\_between}}<tracktable::domain::terrestrial::TerrestrialTrajectoryPoint>}
+\DoxyCodeLine{00490\ \{}
+\DoxyCodeLine{00491\ \ \ \textcolor{keyword}{using\ }base\_point\_type\ =\ tracktable::domain::terrestrial::TerrestrialPoint;}
+\DoxyCodeLine{00492\ \ \ \textcolor{keyword}{using\ }point\_type\ =\ tracktable::domain::terrestrial::TerrestrialTrajectoryPoint;}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ apply(point\_type\ \textcolor{keyword}{const}\&\ from,\ point\_type\ \textcolor{keyword}{const}\&\ to)}
+\DoxyCodeLine{00495\ \ \ \ \ \{}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ distance\_traveled\ =\ tracktable::distance(from,\ to);}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ seconds\_elapsed\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}((to.timestamp()\ -\/\ from.timestamp()).total\_seconds());}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ 0\ if\ division\ by\ 0\ could\ be\ a\ problem}}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacetracktable_acb87c8fbc5ee252b33ffb70068548483}{tracktable::almost\_zero}}(seconds\_elapsed))}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3600.0\ *\ distance\_traveled\ /\ seconds\_elapsed;}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00507\ \ \ \ \ \}}
+\DoxyCodeLine{00508\ \};}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \textcolor{comment}{//\ All\ of\ the\ other\ algorithms\ are\ the\ defaults.\ These\ macros}}
+\DoxyCodeLine{00511\ \textcolor{comment}{//\ make\ it\ cleaner\ to\ express\ that.}}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ TT\_DOMAIN\ tracktable::domain::terrestrial}}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#define\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(ALGORITHM)\ \(\backslash\)}}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{TRACKTABLE\_DELEGATE(\ \(\backslash\)}}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\ \ TT\_DOMAIN::TerrestrialPoint,\ \(\backslash\)}}
+\DoxyCodeLine{00519\ \textcolor{preprocessor}{\ \ PointLonLat,\ \(\backslash\)}}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\ \ ALGORITHM\ \(\backslash\)}}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{)}}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#define\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(ALGORITHM)\ \(\backslash\)}}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{TRACKTABLE\_DELEGATE(\ \(\backslash\)}}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{TT\_DOMAIN::TerrestrialTrajectoryPoint,\ \(\backslash\)}}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{TrajectoryPoint<TT\_DOMAIN::TerrestrialPoint>,\ \(\backslash\)}}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{ALGORITHM\ \(\backslash\)}}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{)}}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ TT\_DELEGATE\_TRAJECTORY\_ALGORITHM(ALGORITHM)\ \(\backslash\)}}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{TRACKTABLE\_DELEGATE(\ \(\backslash\)}}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{TT\_DOMAIN::TerrestrialTrajectory,\ \(\backslash\)}}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{Trajectory<TT\_DOMAIN::TerrestrialTrajectoryPoint>,\ \(\backslash\)}}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{ALGORITHM\ \(\backslash\)}}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{)}}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate}{interpolate}})}
+\DoxyCodeLine{00538\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1extrapolate}{extrapolate}})}
+\DoxyCodeLine{00539\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1bearing}{bearing}})}
+\DoxyCodeLine{00540\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1signed__turn__angle}{signed\_turn\_angle}})}
+\DoxyCodeLine{00541\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1spherical__coordinate__access}{spherical\_coordinate\_access}})}
+\DoxyCodeLine{00542\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1unsigned__turn__angle}{unsigned\_turn\_angle}})}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00544\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate}{interpolate}})}
+\DoxyCodeLine{00545\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1extrapolate}{extrapolate}})}
+\DoxyCodeLine{00546\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1bearing}{bearing}})}
+\DoxyCodeLine{00547\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1signed__turn__angle}{signed\_turn\_angle}})}
+\DoxyCodeLine{00548\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1spherical__coordinate__access}{spherical\_coordinate\_access}})}
+\DoxyCodeLine{00549\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1unsigned__turn__angle}{unsigned\_turn\_angle}})}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00552\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1length}{length}}<tracktable::domain::terrestrial::trajectory\_type>}
+\DoxyCodeLine{00553\ \{}
+\DoxyCodeLine{00554\ \ \ \textcolor{keyword}{using\ }trajectory\_type\ =\ tracktable::domain::terrestrial::trajectory\_type;}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ apply(trajectory\_type\ \textcolor{keyword}{const}\&\ trajectory)}
+\DoxyCodeLine{00557\ \ \ \ \ \{}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tracktable::conversions::radians\_to\_km(boost::geometry::length(trajectory));}
+\DoxyCodeLine{00559\ \ \ \ \ \}}
+\DoxyCodeLine{00560\ \};}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \}\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable::algorithms}}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ TRACKTABLE\_DELEGATE\_POINT\_DOMAIN\_NAME\_TRAIT(tracktable::domain::terrestrial)}
+\DoxyCodeLine{00566\ TRACKTABLE\_DELEGATE\_DOMAIN\_TRAIT(tracktable::domain::terrestrial,\ tracktable::traits::domains::terrestrial)}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#undef\ TT\_DOMAIN}}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM}}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM}}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_TRAJECTORY\_ALGORITHM}}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_TRAJECTORY\_POINT\_TRAIT}}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOXYGEN\_SHOULD\_SKIP\_THIS}}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

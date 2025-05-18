@@ -1,0 +1,548 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_property_converter" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::PropertyConverter</compoundname>
+    <includes refid="_property_converter_8h" local="no">PropertyConverter.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_property_converter_1add67c6d6f97c11f9554f40775dbfc17c" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::PropertyConverter::DecimalPrecision</definition>
+        <argsstring></argsstring>
+        <name>DecimalPrecision</name>
+        <qualifiedname>tracktable::PropertyConverter::DecimalPrecision</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="191" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_property_converter_1ada2e7d39c7702991c78d2f1391c37855" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string tracktable::PropertyConverter::NullValue</definition>
+        <argsstring></argsstring>
+        <name>NullValue</name>
+        <qualifiedname>tracktable::PropertyConverter::NullValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="192" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_property_converter_1a6c1d1b9292f9d6435a76fcbeecdad969" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_timestamp_converter" kindref="compound">TimestampConverter</ref></type>
+        <definition>TimestampConverter tracktable::PropertyConverter::TimestampReadWrite</definition>
+        <argsstring></argsstring>
+        <name>TimestampReadWrite</name>
+        <qualifiedname>tracktable::PropertyConverter::TimestampReadWrite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="193" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_property_converter_1af0442589458e7eb91261cef7ba6519a2" prot="private" static="no" mutable="no">
+        <type>std::ostringstream</type>
+        <definition>std::ostringstream tracktable::PropertyConverter::OutputBuf</definition>
+        <argsstring></argsstring>
+        <name>OutputBuf</name>
+        <qualifiedname>tracktable::PropertyConverter::OutputBuf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="194" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_property_converter_1a0c496c05dbf968a12e5274fc97550693" prot="private" static="no" mutable="no">
+        <type>std::istringstream</type>
+        <definition>std::istringstream tracktable::PropertyConverter::InputBuf</definition>
+        <argsstring></argsstring>
+        <name>InputBuf</name>
+        <qualifiedname>tracktable::PropertyConverter::InputBuf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="195" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a3bdfc44303d8ee30691cd861f5f0426a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PropertyConverter::PropertyConverter</definition>
+        <argsstring>()</argsstring>
+        <name>PropertyConverter</name>
+        <qualifiedname>tracktable::PropertyConverter::PropertyConverter</qualifiedname>
+        <briefdescription>
+<para>Instantiate an default <ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="61" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="37" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a2994b8383a15988651e6c66d58a09c32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PropertyConverter::PropertyConverter</definition>
+        <argsstring>(PropertyConverter const &amp;other)</argsstring>
+        <name>PropertyConverter</name>
+        <qualifiedname>tracktable::PropertyConverter::PropertyConverter</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a <ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="67" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="49" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a1ae801d283bc259303eb2ab365850ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>tracktable::PropertyConverter::~PropertyConverter</definition>
+        <argsstring>()</argsstring>
+        <name>~PropertyConverter</name>
+        <qualifiedname>tracktable::PropertyConverter::~PropertyConverter</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="70" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a029767c6cb43660739be4f1d95b651b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> &amp;</type>
+        <definition>PropertyConverter &amp; tracktable::PropertyConverter::operator=</definition>
+        <argsstring>(PropertyConverter const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::PropertyConverter::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="77" column="21" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="58" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1ab092999b9c0611bfaea0158da5ef5b61" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PropertyConverter::operator==</definition>
+        <argsstring>(PropertyConverter const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::PropertyConverter::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one <ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> is equal to another by comparing the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two items are equal if all of their properties are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="86" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="69" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a949f64dcc0f37f12178a5448b12a2715" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PropertyConverter::operator!=</definition>
+        <argsstring>(PropertyConverter const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::PropertyConverter::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two <ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="93" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a56df0ac1b4dc7aac01b15c0ff1c659e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PropertyConverter::set_timestamp_input_format</definition>
+        <argsstring>(string_type const &amp;format)</argsstring>
+        <name>set_timestamp_input_format</name>
+        <qualifiedname>tracktable::PropertyConverter::set_timestamp_input_format</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+<para>Set format string for parsing timestamps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This format string must adhere to the guidelines in the documentation for Boost&apos;s date/time input format. See the following page:</para>
+<para><ulink url="http://www.boost.org/doc/libs/master/doc/html/date_time/date_time_io.html">http://www.boost.org/doc/libs/master/doc/html/date_time/date_time_io.html</ulink></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format string for timestamp parsing </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="105" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a3cf6f6545b46ace9c1715bb3acb7da9c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PropertyConverter::timestamp_input_format</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp_input_format</name>
+        <qualifiedname>tracktable::PropertyConverter::timestamp_input_format</qualifiedname>
+        <briefdescription>
+<para>Return the current input format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Format string for timestamp parsing </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="112" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a991bf8a2c8715ddfb069ea12ed7f2ced" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PropertyConverter::set_timestamp_output_format</definition>
+        <argsstring>(string_type const &amp;format)</argsstring>
+        <name>set_timestamp_output_format</name>
+        <qualifiedname>tracktable::PropertyConverter::set_timestamp_output_format</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+<para>Set format string for writing timestamps to strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This format string must adhere to the guidelines in the documentation for Boost&apos;s date/time input format. See the following page:</para>
+<para><ulink url="http://www.boost.org/doc/libs/master/doc/html/date_time/date_time_io.html">http://www.boost.org/doc/libs/master/doc/html/date_time/date_time_io.html</ulink></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format string for timestamp output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="125" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="189" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a8c8d86d23cbf01a6392649fc082d4c41" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PropertyConverter::timestamp_output_format</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp_output_format</name>
+        <qualifiedname>tracktable::PropertyConverter::timestamp_output_format</qualifiedname>
+        <briefdescription>
+<para>Return the current output format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Format string for timestamp output </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="132" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="203" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a6fb60af6bb774124e6325cd3b0f4be30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PropertyConverter::set_null_value</definition>
+        <argsstring>(string_type const &amp;null_value)</argsstring>
+        <name>set_null_value</name>
+        <qualifiedname>tracktable::PropertyConverter::set_null_value</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>null_value</declname>
+        </param>
+        <briefdescription>
+<para>Set string that represents null values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">null_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to stand in for nulls </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="139" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a3b0c233327398c1f5b06c2b4f465f36a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PropertyConverter::null_value</definition>
+        <argsstring>() const</argsstring>
+        <name>null_value</name>
+        <qualifiedname>tracktable::PropertyConverter::null_value</qualifiedname>
+        <briefdescription>
+<para>Get string that represents null values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String representing null </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="146" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="224" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1acdacb1a80c5beaa0cb0d636c9b234124" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PropertyConverter::set_decimal_precision</definition>
+        <argsstring>(std::size_t digits)</argsstring>
+        <name>set_decimal_precision</name>
+        <qualifiedname>tracktable::PropertyConverter::set_decimal_precision</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>digits</declname>
+        </param>
+        <briefdescription>
+<para>Set number of digits of precision for writing real numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">digits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of digits to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="153" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="167" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a12eca2da62165c43747e78d408e5a4ee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::PropertyConverter::decimal_precision</definition>
+        <argsstring>() const</argsstring>
+        <name>decimal_precision</name>
+        <qualifiedname>tracktable::PropertyConverter::decimal_precision</qualifiedname>
+        <briefdescription>
+<para>Get number of digits of precision for writing real numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of digits in use </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="161" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="175" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a30569e719232ca74f1df6b1a78708ca6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PropertyConverter::property_to_string</definition>
+        <argsstring>(PropertyValueT const &amp;property)</argsstring>
+        <name>property_to_string</name>
+        <qualifiedname>tracktable::PropertyConverter::property_to_string</qualifiedname>
+        <param>
+          <type>PropertyValueT const &amp;</type>
+          <declname>property</declname>
+        </param>
+        <briefdescription>
+<para>Convert a property to a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Convert a property to a string according to the current output format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">property</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation of timestamp </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="171" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="83" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1ada826b2bdc201347b7720d73764a2636" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyValueT</type>
+        <definition>PropertyValueT tracktable::PropertyConverter::property_from_string</definition>
+        <argsstring>(string_type const &amp;prop_string, PropertyUnderlyingType prop_type)</argsstring>
+        <name>property_from_string</name>
+        <qualifiedname>tracktable::PropertyConverter::property_from_string</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>prop_string</declname>
+        </param>
+        <param>
+          <type>PropertyUnderlyingType</type>
+          <declname>prop_type</declname>
+        </param>
+        <briefdescription>
+<para>Convert a string and type ID to a property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse a string to create a property value according to the current input formats and the requested output type.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">prop_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Property represented as string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">prop_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Property type (see tracktable::PropertyUnderlyingType) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property parsed from string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="182" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="115" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_property_converter_1a8c178281a38a7a84f84eadfb8a5390f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_timestamp_converter" kindref="compound">TimestampConverter</ref> *</type>
+        <definition>TimestampConverter * tracktable::PropertyConverter::timestamp_converter</definition>
+        <argsstring>()</argsstring>
+        <name>timestamp_converter</name>
+        <qualifiedname>tracktable::PropertyConverter::timestamp_converter</qualifiedname>
+        <briefdescription>
+<para>Convert a timestamp to read/write. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="188" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.cpp" bodystart="210" bodyend="213"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref> - PropertyValueT to/from string. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>We need to be able to convert strings to PropertyValueT instances and the reverse while using custom settings for decimal precision and time format. There are enough differences in the way locales are implemented across platforms that I insist on encapsulating it in this class. We will use this in readers and writers. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" line="56" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyConverter.h" bodystart="57" bodyend="196"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_property_converter_1a12eca2da62165c43747e78d408e5a4ee" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>decimal_precision</name></member>
+      <member refid="classtracktable_1_1_property_converter_1add67c6d6f97c11f9554f40775dbfc17c" prot="private" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>DecimalPrecision</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a0c496c05dbf968a12e5274fc97550693" prot="private" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>InputBuf</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a3b0c233327398c1f5b06c2b4f465f36a" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>null_value</name></member>
+      <member refid="classtracktable_1_1_property_converter_1ada2e7d39c7702991c78d2f1391c37855" prot="private" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>NullValue</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a949f64dcc0f37f12178a5448b12a2715" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a029767c6cb43660739be4f1d95b651b4" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_property_converter_1ab092999b9c0611bfaea0158da5ef5b61" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_property_converter_1af0442589458e7eb91261cef7ba6519a2" prot="private" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>OutputBuf</name></member>
+      <member refid="classtracktable_1_1_property_converter_1ada826b2bdc201347b7720d73764a2636" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>property_from_string</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a30569e719232ca74f1df6b1a78708ca6" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>property_to_string</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a3bdfc44303d8ee30691cd861f5f0426a" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>PropertyConverter</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a2994b8383a15988651e6c66d58a09c32" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>PropertyConverter</name></member>
+      <member refid="classtracktable_1_1_property_converter_1acdacb1a80c5beaa0cb0d636c9b234124" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>set_decimal_precision</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a6fb60af6bb774124e6325cd3b0f4be30" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>set_null_value</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a56df0ac1b4dc7aac01b15c0ff1c659e6" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>set_timestamp_input_format</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a991bf8a2c8715ddfb069ea12ed7f2ced" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>set_timestamp_output_format</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a8c178281a38a7a84f84eadfb8a5390f2" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>timestamp_converter</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a3cf6f6545b46ace9c1715bb3acb7da9c" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>timestamp_input_format</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a8c8d86d23cbf01a6392649fc082d4c41" prot="public" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>timestamp_output_format</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a6c1d1b9292f9d6435a76fcbeecdad969" prot="private" virt="non-virtual"><scope>tracktable::PropertyConverter</scope><name>TimestampReadWrite</name></member>
+      <member refid="classtracktable_1_1_property_converter_1a1ae801d283bc259303eb2ab365850ddc" prot="public" virt="virtual"><scope>tracktable::PropertyConverter</scope><name>~PropertyConverter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

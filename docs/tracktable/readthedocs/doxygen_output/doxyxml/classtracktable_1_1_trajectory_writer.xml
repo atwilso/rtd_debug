@@ -1,0 +1,875 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_trajectory_writer" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::TrajectoryWriter</compoundname>
+    <includes refid="_trajectory_writer_8h" local="no">TrajectoryWriter.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_writer_1aead5a5f75488472fda51c82df46150ac" prot="private" static="no">
+        <type>std::vector&lt; tracktable::settings::string_type &gt;</type>
+        <definition>typedef std::vector&lt;tracktable::settings::string_type&gt; tracktable::TrajectoryWriter::string_vector_type</definition>
+        <argsstring></argsstring>
+        <name>string_vector_type</name>
+        <qualifiedname>tracktable::TrajectoryWriter::string_vector_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="355" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_writer_1a1024fa5ac99c7b13931d69a5a4b3dedd" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::TrajectoryWriter::CoordinatePrecision</definition>
+        <argsstring></argsstring>
+        <name>CoordinatePrecision</name>
+        <qualifiedname>tracktable::TrajectoryWriter::CoordinatePrecision</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="357" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_writer_1a5a9116b4721182b1eef266bd5407945c" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::FieldDelimiter</definition>
+        <argsstring></argsstring>
+        <name>FieldDelimiter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::FieldDelimiter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="358" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_writer_1a4436b2e0d9da2f389760da92a0fccac9" prot="private" static="no" mutable="no">
+        <type>std::ostream *</type>
+        <definition>std::ostream* tracktable::TrajectoryWriter::OutputStream</definition>
+        <argsstring></argsstring>
+        <name>OutputStream</name>
+        <qualifiedname>tracktable::TrajectoryWriter::OutputStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="359" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_writer_1a4ef0f93832ef24234f319b9c0b7eb992" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::QuoteCharacter</definition>
+        <argsstring></argsstring>
+        <name>QuoteCharacter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::QuoteCharacter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="360" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="360" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_writer_1a2734efa48441577f26067c5c4a3ff068" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::RecordDelimiter</definition>
+        <argsstring></argsstring>
+        <name>RecordDelimiter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::RecordDelimiter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="361" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_writer_1af88e4202d612a086c83d54c5bcfbab98" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::TimestampFormat</definition>
+        <argsstring></argsstring>
+        <name>TimestampFormat</name>
+        <qualifiedname>tracktable::TrajectoryWriter::TimestampFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="362" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="362" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_writer_1a9ddb12d5ce69b66882406ad84ae88f6f" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref></type>
+        <definition>PointWriter tracktable::TrajectoryWriter::TrajectoryPointWriter</definition>
+        <argsstring></argsstring>
+        <name>TrajectoryPointWriter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::TrajectoryPointWriter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="363" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_writer_1a44d9a679dd4a9ce8881926bf314e88cf" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_trajectory_header" kindref="compound">rw::detail::TrajectoryHeader</ref></type>
+        <definition>rw::detail::TrajectoryHeader tracktable::TrajectoryWriter::_TrajectoryHeader</definition>
+        <argsstring></argsstring>
+        <name>_TrajectoryHeader</name>
+        <qualifiedname>tracktable::TrajectoryWriter::_TrajectoryHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="364" column="32" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="364" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a94c2cff044ab12274ab483317c9951dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryWriter::TrajectoryWriter</definition>
+        <argsstring>()</argsstring>
+        <name>TrajectoryWriter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::TrajectoryWriter</qualifiedname>
+        <briefdescription>
+<para>Instantiate <ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> using a default configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the default configuration values of the writer.   </para>
+<para>Defaults:<itemizedlist>
+<listitem><para>coordinate_precision = 8</para>
+</listitem><listitem><para>field_delimiter = &quot;,&quot;</para>
+</listitem><listitem><para>quote_character = &quot;&quot;&quot;
+   * record_delimiter = &quot;\n&quot;
+   * timestamp_format = &quot;Y-m-d H:M:S"    </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="69" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="69" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1abf55f1349bc2a8a78332fbb06ac01104" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryWriter::TrajectoryWriter</definition>
+        <argsstring>(std::ostream &amp;_output)</argsstring>
+        <name>TrajectoryWriter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::TrajectoryWriter</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_output</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a <ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> using a <computeroutput>std::ostream</computeroutput> and default configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the default configuration values of the writer.   </para>
+<para>Defaults:<itemizedlist>
+<listitem><para>coordinate_precision = 8</para>
+</listitem><listitem><para>field_delimiter = &quot;,&quot;</para>
+</listitem><listitem><para>quote_character = &quot;&quot;&quot;
+   * record_delimiter = &quot;\n&quot;
+   * timestamp_format = &quot;Y-m-d H:M:S"   </para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream to output to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="81" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="81" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a4e1576a1acc6e71a4568cc2d4d056d6c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryWriter::TrajectoryWriter</definition>
+        <argsstring>(TrajectoryWriter const &amp;other)</argsstring>
+        <name>TrajectoryWriter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::TrajectoryWriter</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a writer with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="91" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="91" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a9602b0047536958442aec00c78faf312" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::TrajectoryWriter::~TrajectoryWriter</definition>
+        <argsstring>()</argsstring>
+        <name>~TrajectoryWriter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::~TrajectoryWriter</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="102" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="102" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1afe95a6edbfa764143f13229654afbd01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> &amp;</type>
+        <definition>TrajectoryWriter &amp; tracktable::TrajectoryWriter::operator=</definition>
+        <argsstring>(TrajectoryWriter const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::TrajectoryWriter::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Writer with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="110" column="20" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="110" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a71ac0f19e3ad066d35401261e2f0e851" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryWriter::operator==</definition>
+        <argsstring>(TrajectoryWriter const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::TrajectoryWriter::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one writer is equal to another by comparing all the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two writers are equal if all of their streams are properties.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="129" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="129" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a0113a25d2b84549d254bdec849b407cf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryWriter::operator!=</definition>
+        <argsstring>(TrajectoryWriter const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::TrajectoryWriter::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two TrajectoryWriters are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="147" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="147" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1aa8ff8270edd21a42c977be4c920f113c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::set_output</definition>
+        <argsstring>(std::ostream &amp;out)</argsstring>
+        <name>set_output</name>
+        <qualifiedname>tracktable::TrajectoryWriter::set_output</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+<para>Set the stream where points will be written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be any <computeroutput>std::ostream</computeroutput>.</para>
+<para><simplesect kind="note"><para>You are resposible for ensuring that the stream does not go out of scope until you are done writing points.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream where points will be written </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="162" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a28fd9fcaeaa831f338eaa1f12b3e589c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; tracktable::TrajectoryWriter::output</definition>
+        <argsstring>() const</argsstring>
+        <name>output</name>
+        <qualifiedname>tracktable::TrajectoryWriter::output</qualifiedname>
+        <briefdescription>
+<para>Return the stream where points will be written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>output stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="171" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a1636dea52bf798cc97b926f61edcc637" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::set_field_delimiter</definition>
+        <argsstring>(string_type const &amp;delim)</argsstring>
+        <name>set_field_delimiter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::set_field_delimiter</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+<para>Set the field delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This string will be inserted between each field as points are written.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delimiter string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="183" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a80dd02f34ac4912a8997e480ba9743dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::field_delimiter</definition>
+        <argsstring>() const</argsstring>
+        <name>field_delimiter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::field_delimiter</qualifiedname>
+        <briefdescription>
+<para>Return the field delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Field delimiter </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="192" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1ab9f1a375a436a7a9349164818fa59ad3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::set_record_delimiter</definition>
+        <argsstring>(string_type const &amp;delim)</argsstring>
+        <name>set_record_delimiter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::set_record_delimiter</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+<para>Set the record separator (end-of-line string) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This string will be written after each point. By default it&apos;s <computeroutput>std::endl</computeroutput> (the newline string).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String separator </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="204" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="204" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a3c470aee070bc4c5ee5b6ae031381d63" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::record_delimiter</definition>
+        <argsstring>() const</argsstring>
+        <name>record_delimiter</name>
+        <qualifiedname>tracktable::TrajectoryWriter::record_delimiter</qualifiedname>
+        <briefdescription>
+<para>Retrieve the record separator (end-of-line string) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Return the record separator (end-of-line string) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="213" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="213" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1ac0d3c4fe92d1897e344a28c3128a3942" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::set_quote_character</definition>
+        <argsstring>(string_type const &amp;quote)</argsstring>
+        <name>set_quote_character</name>
+        <qualifiedname>tracktable::TrajectoryWriter::set_quote_character</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>quote</declname>
+        </param>
+        <briefdescription>
+<para>Set the quote character. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This character <emphasis>may</emphasis> be used to enclose a field containing lots of characters that would otherwise need to be escaped. We have to know what it is so that we can escape it ourselves when we encounter the quote character inside fields.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">quotes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Zero or one character to be used as quotation marks </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="228" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="228" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a21cb30b495bb89e0722d7173036ed7f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::quote_character</definition>
+        <argsstring>() const</argsstring>
+        <name>quote_character</name>
+        <qualifiedname>tracktable::TrajectoryWriter::quote_character</qualifiedname>
+        <briefdescription>
+<para>Return the current quote characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current quote character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="237" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="237" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a84feb0dfb27a8fa41395bd71929bdecf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::set_timestamp_format</definition>
+        <argsstring>(string_type const &amp;format)</argsstring>
+        <name>set_timestamp_format</name>
+        <qualifiedname>tracktable::TrajectoryWriter::set_timestamp_format</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+<para>Set format for writing timestamps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There are as many ways to write timestamps as there are programs to write them. We have our default (YYYY-MM-DD HH:MM:SS) but sometimes you will need to specify some other format for interoperability.</para>
+<para>This method sets a format string for timestamps using the flags in <computeroutput>boost::date_time::time_facet</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format string for timestamps </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="254" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="254" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1aaa21b35b964cefaddcbd249e45b8cc3e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::timestamp_format</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp_format</name>
+        <qualifiedname>tracktable::TrajectoryWriter::timestamp_format</qualifiedname>
+        <briefdescription>
+<para>Retrieve the timestamp format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The time timestamp format </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="265" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="265" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a2c6d8b49f89f56cba996e364ed1bb762" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::set_null_value</definition>
+        <argsstring>(string_type const &amp;new_null_value)</argsstring>
+        <name>set_null_value</name>
+        <qualifiedname>tracktable::TrajectoryWriter::set_null_value</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>new_null_value</declname>
+        </param>
+        <briefdescription>
+<para>Set the string representation for nulls. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Property values that were never set are considered to hold a null value. This method lets you set how nulls will be written to disk. The default value is the empty string &quot;&quot;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">new_null_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired string representation of nulls </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="279" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="279" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a3cc7c04896691284f259365a8d322dc9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::TrajectoryWriter::null_value</definition>
+        <argsstring>() const</argsstring>
+        <name>null_value</name>
+        <qualifiedname>tracktable::TrajectoryWriter::null_value</qualifiedname>
+        <briefdescription>
+<para>Retreive the null value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The representation of the null value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="289" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="289" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1aa2402709b44f2390f366dc6165c31672" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename trajectory_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::write</definition>
+        <argsstring>(trajectory_type const &amp;trajectory)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::TrajectoryWriter::write</qualifiedname>
+        <param>
+          <type>trajectory_type const &amp;</type>
+          <declname>trajectory</declname>
+        </param>
+        <briefdescription>
+<para>Write a single trajectory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">trajectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> to write our </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="299" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="299" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a1fc012df4d1f9256aa7a2f50f67d7765" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename source_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::write</definition>
+        <argsstring>(source_iter_type traj_begin, source_iter_type traj_end)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::TrajectoryWriter::write</qualifiedname>
+        <param>
+          <type>source_iter_type</type>
+          <declname>traj_begin</declname>
+        </param>
+        <param>
+          <type>source_iter_type</type>
+          <declname>traj_end</declname>
+        </param>
+        <briefdescription>
+<para>Write many trajectories. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">traj_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start of trajectories to write out </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">traj_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End of trajectories to write out </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="321" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="321" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1ac7a3d524e14e7d40585e4abcbf70e17d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::set_coordinate_precision</definition>
+        <argsstring>(std::size_t num_digits)</argsstring>
+        <name>set_coordinate_precision</name>
+        <qualifiedname>tracktable::TrajectoryWriter::set_coordinate_precision</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>num_digits</declname>
+        </param>
+        <briefdescription>
+<para>Set the decimal precision for writing coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Internally, Tracktable stores coordinates as double-precision floating numbers. It is highly unlikely that trajectory data needs absolutely all of that precision. Since it takes up lots of space when we write data to disk, it is useful to be able to ask for reduced (or increased) precision.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">num_digits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of digits of precision </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="339" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="339" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a469e6d19a818c35ace7bb6fcb0a442d6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::TrajectoryWriter::coordinate_precision</definition>
+        <argsstring>() const</argsstring>
+        <name>coordinate_precision</name>
+        <qualifiedname>tracktable::TrajectoryWriter::coordinate_precision</qualifiedname>
+        <briefdescription>
+<para>Retreive the coordinate decimal precision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The decimal precision </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="349" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="349" bodyend="352"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a6961331fd3ae1d0ddbafd80c2c64ef03" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename trajectory_type</type>
+          </param>
+          <param>
+            <type>typename out_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::write_trajectory_header</definition>
+        <argsstring>(trajectory_type const &amp;trajectory, out_iter_type output_iter)</argsstring>
+        <name>write_trajectory_header</name>
+        <qualifiedname>tracktable::TrajectoryWriter::write_trajectory_header</qualifiedname>
+        <param>
+          <type>trajectory_type const &amp;</type>
+          <declname>trajectory</declname>
+        </param>
+        <param>
+          <type>out_iter_type</type>
+          <declname>output_iter</declname>
+        </param>
+        <briefdescription>
+<para>Write tokens out the header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">trajectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> with tokens to write to header </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to write out </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="372" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="372" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_writer_1a9f21809e67bcb3964cb933a23bc30800" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryWriter::set_default_configuration</definition>
+        <argsstring>()</argsstring>
+        <name>set_default_configuration</name>
+        <qualifiedname>tracktable::TrajectoryWriter::set_default_configuration</qualifiedname>
+        <briefdescription>
+<para>Set the default configuration values of the writer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defaults:<itemizedlist>
+<listitem><para>coordinate_precision = 8</para>
+</listitem><listitem><para>field_delimiter = &quot;,&quot;</para>
+</listitem><listitem><para>quote_character = &quot;&quot;&quot;
+   * record_delimiter = &quot;\n&quot;
+   * timestamp_format = &quot;Y-m-d H:M:S" </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="388" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="388" bodyend="395"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Write trajectories of any type as delimited text. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class writes subclasses of <ref refid="classtracktable_1_1_trajectory" kindref="compound">tracktable::Trajectory</ref> (including the domain classes) to a stream as delimited text. It will write one trajectory per line. The resulting file will contain enough header information to reconstruct the trajectory exactly as long as the user asks for the correct class. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" line="62" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/TrajectoryWriter.h" bodystart="63" bodyend="397"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_trajectory_writer_1a44d9a679dd4a9ce8881926bf314e88cf" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>_TrajectoryHeader</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a469e6d19a818c35ace7bb6fcb0a442d6" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>coordinate_precision</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a1024fa5ac99c7b13931d69a5a4b3dedd" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>CoordinatePrecision</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a80dd02f34ac4912a8997e480ba9743dd" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>field_delimiter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a5a9116b4721182b1eef266bd5407945c" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>FieldDelimiter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a3cc7c04896691284f259365a8d322dc9" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>null_value</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a0113a25d2b84549d254bdec849b407cf" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1afe95a6edbfa764143f13229654afbd01" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a71ac0f19e3ad066d35401261e2f0e851" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a28fd9fcaeaa831f338eaa1f12b3e589c" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>output</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a4436b2e0d9da2f389760da92a0fccac9" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>OutputStream</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a21cb30b495bb89e0722d7173036ed7f1" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>quote_character</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a4ef0f93832ef24234f319b9c0b7eb992" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>QuoteCharacter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a3c470aee070bc4c5ee5b6ae031381d63" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>record_delimiter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a2734efa48441577f26067c5c4a3ff068" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>RecordDelimiter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1ac7a3d524e14e7d40585e4abcbf70e17d" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>set_coordinate_precision</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a9f21809e67bcb3964cb933a23bc30800" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>set_default_configuration</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a1636dea52bf798cc97b926f61edcc637" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>set_field_delimiter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a2c6d8b49f89f56cba996e364ed1bb762" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>set_null_value</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1aa8ff8270edd21a42c977be4c920f113c" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>set_output</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1ac0d3c4fe92d1897e344a28c3128a3942" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>set_quote_character</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1ab9f1a375a436a7a9349164818fa59ad3" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>set_record_delimiter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a84feb0dfb27a8fa41395bd71929bdecf" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>set_timestamp_format</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1aead5a5f75488472fda51c82df46150ac" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>string_vector_type</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1aaa21b35b964cefaddcbd249e45b8cc3e" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>timestamp_format</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1af88e4202d612a086c83d54c5bcfbab98" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>TimestampFormat</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a9ddb12d5ce69b66882406ad84ae88f6f" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>TrajectoryPointWriter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a94c2cff044ab12274ab483317c9951dc" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>TrajectoryWriter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1abf55f1349bc2a8a78332fbb06ac01104" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>TrajectoryWriter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a4e1576a1acc6e71a4568cc2d4d056d6c" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>TrajectoryWriter</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1aa2402709b44f2390f366dc6165c31672" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>write</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a1fc012df4d1f9256aa7a2f50f67d7765" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>write</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a6961331fd3ae1d0ddbafd80c2c64ef03" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryWriter</scope><name>write_trajectory_header</name></member>
+      <member refid="classtracktable_1_1_trajectory_writer_1a9602b0047536958442aec00c78faf312" prot="public" virt="virtual"><scope>tracktable::TrajectoryWriter</scope><name>~TrajectoryWriter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

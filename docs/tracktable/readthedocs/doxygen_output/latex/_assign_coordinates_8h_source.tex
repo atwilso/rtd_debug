@@ -1,0 +1,103 @@
+\doxysection{Assign\+Coordinates.\+h}
+\hypertarget{_assign_coordinates_8h_source}{}\label{_assign_coordinates_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/detail/points/AssignCoordinates.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/detail/points/AssignCoordinates.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_detail\_points\_AssignCoordinates\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_detail\_points\_AssignCoordinates\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <boost/geometry/core/coordinate\_dimension.hpp>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <boost/geometry/core/coordinate\_type.hpp>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/point.hpp>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/register/point.hpp>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <boost/mpl/int.hpp>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ i>}
+\DoxyCodeLine{00050\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates}{assign\_coordinates}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ dest\_po\textcolor{keywordtype}{int}\_type,\ \textcolor{keyword}{class}\ source\_po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates_a1048f11c8888a25cda776403fb3af9e9}{apply}}(dest\_point\_type\ \&\ dest,\ source\_point\_type\ \textcolor{keyword}{const}\&\ source)}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ boost::geometry::assert\_dimension\_equal<dest\_point\_type,\ source\_point\_type>();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ dest.template\ set<i-\/1>(source.template\ get<i-\/1>());}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates_a1048f11c8888a25cda776403fb3af9e9}{assign\_coordinates<i-\/1>::apply}}(dest,\ source);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00068\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates}{assign\_coordinates}}<0>}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ dest\_po\textcolor{keywordtype}{int}\_type,\ \textcolor{keyword}{class}\ source\_po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates_3_010_01_4_a0b3868885e6e2024f2cbde79e185ba2b}{apply}}(dest\_point\_type\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*dest*/},\ source\_point\_type\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*source*/})}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ i>}
+\DoxyCodeLine{00084\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates__from__array}{assign\_coordinates\_from\_array}}}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ dest\_po\textcolor{keywordtype}{int}\_type,\ \textcolor{keyword}{typename}\ input\_coordinate\_type>}
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates__from__array_a3bf1ce14ad9ff8b04c6a6c24019aff05}{apply}}(dest\_point\_type\ \&\ dest,\ \textcolor{keyword}{const}\ input\_coordinate\_type\ *\ source)}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ dest.template\ set<i-\/1>(source[i-\/1]);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates_a1048f11c8888a25cda776403fb3af9e9}{assign\_coordinates<i-\/1>::apply}}(dest,\ source);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00102\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates__from__array}{assign\_coordinates\_from\_array}}<0>}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ dest\_po\textcolor{keywordtype}{int}\_type,\ \textcolor{keyword}{typename}\ input\_coordinate\_type>}
+\DoxyCodeLine{00106\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structtracktable_1_1detail_1_1assign__coordinates__from__array_3_010_01_4_ab2291467d64bf069edab02f0662e587d}{apply}}(dest\_point\_type\ \textcolor{keyword}{const}\&,\ \textcolor{keyword}{const}\ input\_coordinate\_type\ *)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \}\ \}\ \textcolor{comment}{//\ end\ namespace\ tracktable::detail}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

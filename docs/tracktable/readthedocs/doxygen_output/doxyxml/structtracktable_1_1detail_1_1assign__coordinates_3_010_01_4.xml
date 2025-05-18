@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1detail_1_1assign__coordinates_3_010_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::detail::assign_coordinates&lt; 0 &gt;</compoundname>
+    <includes refid="_assign_coordinates_8h" local="no">AssignCoordinates.h</includes>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1detail_1_1assign__coordinates_3_010_01_4_1a0b3868885e6e2024f2cbde79e185ba2b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class dest_point_type</type>
+          </param>
+          <param>
+            <type>class source_point_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void tracktable::detail::assign_coordinates&lt; 0 &gt;::apply</definition>
+        <argsstring>(dest_point_type const &amp;, source_point_type const &amp;)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::detail::assign_coordinates&lt; 0 &gt;::apply</qualifiedname>
+        <param>
+          <type>dest_point_type const &amp;</type>
+        </param>
+        <param>
+          <type>source_point_type const &amp;</type>
+        </param>
+        <briefdescription>
+<para>Terminate the compile-time unrolling for assignment. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points/AssignCoordinates.h" line="72" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points/AssignCoordinates.h" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="structtracktable_1_1detail_1_1assign__coordinates_1a1048f11c8888a25cda776403fb3af9e9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tracktable::detail::assign_coordinates&lt; i &gt;::apply</definition>
+        <argsstring>(dest_point_type &amp;dest, source_point_type const &amp;source)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::detail::assign_coordinates&lt; 0 &gt;::apply</qualifiedname>
+        <param>
+          <type>dest_point_type &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>source_point_type const &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Run the compile-time loop unrolling to perform assignment. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points/AssignCoordinates.h" line="54" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points/AssignCoordinates.h" bodystart="54" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper object that implements a = b. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is for boost::geometry. You will not need to use it directly. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points/AssignCoordinates.h" line="68" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/points/AssignCoordinates.h" bodystart="69" bodyend="76"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1detail_1_1assign__coordinates_3_010_01_4_1a0b3868885e6e2024f2cbde79e185ba2b" prot="public" virt="non-virtual"><scope>tracktable::detail::assign_coordinates&lt; 0 &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1detail_1_1assign__coordinates_1a1048f11c8888a25cda776403fb3af9e9" prot="public" virt="non-virtual"><scope>tracktable::detail::assign_coordinates&lt; 0 &gt;</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1point__to__trajectory__distance" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::point_to_trajectory_distance</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class PointT</type>
+      </param>
+      <param>
+        <type>template&lt; class &gt; class</type>
+        <declname>TrajectoryT</declname>
+        <defname>TrajectoryT</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1point__to__trajectory__distance_1afbf965fff2860c5fccbae958e7bad5bb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double tracktable::algorithms::point_to_trajectory_distance&lt; PointT, TrajectoryT &gt;::apply</definition>
+        <argsstring>(PointT const &amp;from, TrajectoryT&lt; PointT &gt; const &amp;to)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::point_to_trajectory_distance::apply</qualifiedname>
+        <param>
+          <type>PointT const &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref>&lt; PointT &gt; const &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" line="948" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" bodystart="948" bodyend="951"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" line="946" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" bodystart="947" bodyend="952"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1point__to__trajectory__distance_1afbf965fff2860c5fccbae958e7bad5bb" prot="public" virt="non-virtual"><scope>tracktable::algorithms::point_to_trajectory_distance</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

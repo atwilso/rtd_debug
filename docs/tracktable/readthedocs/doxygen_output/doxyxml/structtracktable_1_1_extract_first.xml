@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1_extract_first" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::ExtractFirst</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class pair_type</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1_extract_first_1aa33940805b063fc17cbdf57607c8fd6f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>pair_type::first_type</type>
+        <definition>pair_type::first_type tracktable::ExtractFirst&lt; pair_type &gt;::operator()</definition>
+        <argsstring>(pair_type const &amp;input) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>tracktable::ExtractFirst::operator()</qualifiedname>
+        <param>
+          <type>pair_type const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/extract_pair_member.h" line="12" column="34" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/extract_pair_member.h" bodystart="12" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/extract_pair_member.h" line="10" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/detail/extract_pair_member.h" bodystart="11" bodyend="16"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1_extract_first_1aa33940805b063fc17cbdf57607c8fd6f" prot="public" virt="non-virtual"><scope>tracktable::ExtractFirst</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

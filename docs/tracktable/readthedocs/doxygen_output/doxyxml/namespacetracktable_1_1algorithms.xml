@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1algorithms" kind="namespace" language="C++">
+    <compoundname>tracktable::algorithms</compoundname>
+    <innerclass refid="structtracktable_1_1algorithms_1_1bearing" prot="public">tracktable::algorithms::bearing</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1bearing_3_01_point_lon_lat_01_4" prot="public">tracktable::algorithms::bearing&lt; PointLonLat &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1bearing_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::bearing&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1compute__convex__hull__area" prot="public">tracktable::algorithms::compute_convex_hull_area</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1compute__convex__hull__aspect__ratio" prot="public">tracktable::algorithms::compute_convex_hull_aspect_ratio</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1compute__convex__hull__centroid" prot="public">tracktable::algorithms::compute_convex_hull_centroid</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1compute__convex__hull__perimeter" prot="public">tracktable::algorithms::compute_convex_hull_perimeter</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1current__length" prot="public">tracktable::algorithms::current_length</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1current__length__fraction" prot="public">tracktable::algorithms::current_length_fraction</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1current__time__fraction" prot="public">tracktable::algorithms::current_time_fraction</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1distance" prot="public">tracktable::algorithms::distance</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1distance_3_01tracktable_1_1traits_1_1domains_1_1generic_01_4" prot="public">tracktable::algorithms::distance&lt; tracktable::traits::domains::generic &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1end__to__end__distance" prot="public">tracktable::algorithms::end_to_end_distance</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1end__to__end__distance_3_01_trajectory_3_01_point_t_01_4_01_4" prot="public">tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate" prot="public">tracktable::algorithms::extrapolate</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_point_cartesian_3_01_dimension_01_4_01_4" prot="public">tracktable::algorithms::extrapolate&lt; PointCartesian&lt; Dimension &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_point_lon_lat_01_4" prot="public">tracktable::algorithms::extrapolate&lt; PointLonLat &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_property_map_01_4" prot="public">tracktable::algorithms::extrapolate&lt; PropertyMap &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_timestamp_01_4" prot="public">tracktable::algorithms::extrapolate&lt; Timestamp &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::extrapolate&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate__linear" prot="public">tracktable::algorithms::extrapolate_linear</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate" prot="public">tracktable::algorithms::interpolate</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate_3_01_point_cartesian_3_01_dimension_01_4_01_4" prot="public">tracktable::algorithms::interpolate&lt; PointCartesian&lt; Dimension &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate_3_01_point_lon_lat_01_4" prot="public">tracktable::algorithms::interpolate&lt; PointLonLat &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate_3_01_property_map_01_4" prot="public">tracktable::algorithms::interpolate&lt; PropertyMap &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate_3_01std_1_1string_01_4" prot="public">tracktable::algorithms::interpolate&lt; std::string &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4" prot="public">tracktable::algorithms::interpolate&lt; Timestamp &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::interpolate&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate__linear" prot="public">tracktable::algorithms::interpolate_linear</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor" prot="public">tracktable::algorithms::interpolate_nearest_neighbor</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1length" prot="public">tracktable::algorithms::length</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1point__at__length__fraction" prot="public">tracktable::algorithms::point_at_length_fraction</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1point__at__length__fraction_3_01_trajectory_3_01_point_t_01_4_01_4" prot="public">tracktable::algorithms::point_at_length_fraction&lt; Trajectory&lt; PointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1point__at__time" prot="public">tracktable::algorithms::point_at_time</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1point__at__time_3_01_trajectory_3_01_point_t_01_4_01_4" prot="public">tracktable::algorithms::point_at_time&lt; Trajectory&lt; PointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1point__at__time__fraction" prot="public">tracktable::algorithms::point_at_time_fraction</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1point__at__time__fraction_3_01_trajectory_3_01_point_t_01_4_01_4" prot="public">tracktable::algorithms::point_at_time_fraction&lt; Trajectory&lt; PointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1point__to__trajectory__distance" prot="public">tracktable::algorithms::point_to_trajectory_distance</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1radius__of__gyration" prot="public">tracktable::algorithms::radius_of_gyration</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1signed__turn__angle" prot="public">tracktable::algorithms::signed_turn_angle</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1signed__turn__angle_3_01_point_lon_lat_01_4" prot="public">tracktable::algorithms::signed_turn_angle&lt; PointLonLat &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1signed__turn__angle_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::signed_turn_angle&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1simplify__linestring" prot="public">tracktable::algorithms::simplify_linestring</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1simplify__linestring_3_01_point_lon_lat_01_4" prot="public">tracktable::algorithms::simplify_linestring&lt; PointLonLat &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1simplify__linestring_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::simplify_linestring&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1speed__between" prot="public">tracktable::algorithms::speed_between</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1speed__between_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1spherical__coordinate__access" prot="public">tracktable::algorithms::spherical_coordinate_access</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1spherical__coordinate__access_3_01_point_lon_lat_01_4" prot="public">tracktable::algorithms::spherical_coordinate_access&lt; PointLonLat &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1spherical__coordinate__access_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::spherical_coordinate_access&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1subset__during__interval" prot="public">tracktable::algorithms::subset_during_interval</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1subset__during__interval_3_01_trajectory_3_01_point_t_01_4_01_4" prot="public">tracktable::algorithms::subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1time__at__fraction" prot="public">tracktable::algorithms::time_at_fraction</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1time__at__fraction_3_01_trajectory_3_01_point_t_01_4_01_4" prot="public">tracktable::algorithms::time_at_fraction&lt; Trajectory&lt; PointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1transfer__properties" prot="public">tracktable::algorithms::transfer_properties</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1transfer__properties_3_01true_01_4" prot="public">tracktable::algorithms::transfer_properties&lt; true &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1unsigned__turn__angle" prot="public">tracktable::algorithms::unsigned_turn_angle</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1unsigned__turn__angle_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::unsigned_turn_angle&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_property_value_8cpp_1a9c193981abd1a20214158d783adca903" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyValueT</type>
+        <definition>TRACKTABLE_CORE_EXPORT PropertyValue tracktable::algorithms::interpolate_property</definition>
+        <argsstring>(PropertyValueT const &amp;first, PropertyValueT const &amp;second, double t)</argsstring>
+        <name>interpolate_property</name>
+        <qualifiedname>tracktable::algorithms::interpolate_property</qualifiedname>
+        <param>
+          <type>PropertyValueT const &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>PropertyValueT const &amp;</type>
+          <declname>second</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Interpolate between two properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For timestamps and numeric properties, this function will give you a linear interpolation between the start and end points. For strings, this function will give you the first string at less than 0.5 and the second string at greater than 0.5.</para>
+<para>You will probably never need to call this function directly. It will be invoked when you try to interpolate between two points that have property maps attached.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">first</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting value for interpolation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">second</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending value for interpolation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interpolant; 0 means first value, 1 means second value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Linearly-interpolated version of property </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="357" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="357" bodyend="371" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" declline="289" declcolumn="38"/>
+      </memberdef>
+      <memberdef kind="function" id="_property_value_8cpp_1a949770871e5c14d43dca8fda8b0eabc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyValueT</type>
+        <definition>TRACKTABLE_CORE_EXPORT PropertyValue tracktable::algorithms::extrapolate_property</definition>
+        <argsstring>(PropertyValueT const &amp;first, PropertyValueT const &amp;second, double t)</argsstring>
+        <name>extrapolate_property</name>
+        <qualifiedname>tracktable::algorithms::extrapolate_property</qualifiedname>
+        <param>
+          <type>PropertyValueT const &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>PropertyValueT const &amp;</type>
+          <declname>second</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="373" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="373" bodyend="384" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" declline="292" declcolumn="38"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/Bearing.h" line="42" column="20"/>
+  </compounddef>
+</doxygen>

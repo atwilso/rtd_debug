@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_cb67a804209b7942b94963489c089a6d" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW</compoundname>
+    <innerdir refid="dir_aa75e50a40b0972b6401514fd560b745">/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail</innerdir>
+    <innerfile refid="_generic_reader_8h">GenericReader.h</innerfile>
+    <innerfile refid="_kml_out_8cpp">KmlOut.cpp</innerfile>
+    <innerfile refid="_kml_out_8h">KmlOut.h</innerfile>
+    <innerfile refid="_line_reader_8h">LineReader.h</innerfile>
+    <innerfile refid="_parse_exceptions_8h">ParseExceptions.h</innerfile>
+    <innerfile refid="_point_from_tokens_reader_8h">PointFromTokensReader.h</innerfile>
+    <innerfile refid="_point_reader_8h">PointReader.h</innerfile>
+    <innerfile refid="_point_writer_8h">PointWriter.h</innerfile>
+    <innerfile refid="_skip_comments_reader_8h">SkipCommentsReader.h</innerfile>
+    <innerfile refid="_string_tokenizing_reader_8h">StringTokenizingReader.h</innerfile>
+    <innerfile refid="_token_writer_8h">TokenWriter.h</innerfile>
+    <innerfile refid="_trajectory_reader_8h">TrajectoryReader.h</innerfile>
+    <innerfile refid="_trajectory_writer_8h">TrajectoryWriter.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/"/>
+  </compounddef>
+</doxygen>

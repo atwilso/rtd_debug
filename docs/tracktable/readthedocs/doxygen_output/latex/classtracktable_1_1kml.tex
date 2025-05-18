@@ -1,0 +1,412 @@
+\doxysection{tracktable\+::kml Class Reference}
+\hypertarget{classtracktable_1_1kml}{}\label{classtracktable_1_1kml}\index{tracktable::kml@{tracktable::kml}}
+
+
+Handles writing tracks as kml Has lots of internal structure to make the following use cases work\+:  
+
+
+
+
+{\ttfamily \#include $<$Kml\+Out.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1box}{box}}
+\begin{DoxyCompactList}\small\item\em Helper struct that allows for for. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1color}{color}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s color This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1linepoints}{linepoints}}
+\begin{DoxyCompactList}\small\item\em Helper struct that allows for for. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1linestring}{linestring}}
+\begin{DoxyCompactList}\small\item\em Helper struct that allows for. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1multipoint}{multipoint}}
+\begin{DoxyCompactList}\small\item\em Helper struct that allows for for. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1name}{name}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s name This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1point}{point}}
+\begin{DoxyCompactList}\small\item\em Helper struct that allows for for. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1startmulti}{startmulti}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s starting Multigeometry This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1startpm}{startpm}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s starting Placemark This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1stopmulti}{stopmulti}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s stopping Multigeometry This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1stoppm}{stoppm}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s stopping Placemark This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1style}{style}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s style This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1style__id}{style\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s style id This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1time__span}{time\+\_\+span}}
+\begin{DoxyCompactList}\small\item\em Helper struct that allows for for. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtracktable_1_1kml_1_1width}{width}}
+\begin{DoxyCompactList}\small\item\em Helper struct that sets the KML object\textquotesingle{}s width This will be missing some header/footer neccesary for full kml rendering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1kml_a79a5cbe92394d0eaf2a56c41ef1f224d}\label{classtracktable_1_1kml_a79a5cbe92394d0eaf2a56c41ef1f224d} 
+using {\bfseries TrajectoryT} = \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::domain\+::terrestrial\+::trajectory\+\_\+type}}
+\item 
+\Hypertarget{classtracktable_1_1kml_ac35a6422f0977788199f83ce31551879}\label{classtracktable_1_1kml_ac35a6422f0977788199f83ce31551879} 
+using {\bfseries Trajectory\+VectorT} = std\+::vector$<$\mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$
+\item 
+\Hypertarget{classtracktable_1_1kml_af145eb61de501b4751e4790111e5de76}\label{classtracktable_1_1kml_af145eb61de501b4751e4790111e5de76} 
+using {\bfseries PointerT} = std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$
+\item 
+\Hypertarget{classtracktable_1_1kml_a9da902fa39222e9a13f49844a892c9d4}\label{classtracktable_1_1kml_a9da902fa39222e9a13f49844a892c9d4} 
+using {\bfseries Pointer\+VectorT} = std\+::vector$<$PointerT$>$
+\item 
+\Hypertarget{classtracktable_1_1kml_afb92b9e1a286b2f455cdf004bb91022e}\label{classtracktable_1_1kml_afb92b9e1a286b2f455cdf004bb91022e} 
+using {\bfseries VectorT} = std\+::vector$<$\mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}}$>$
+\item 
+\Hypertarget{classtracktable_1_1kml_a3c103d240a49f1d2a70b84c727f57f9d}\label{classtracktable_1_1kml_a3c103d240a49f1d2a70b84c727f57f9d} 
+using {\bfseries PointT} = \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{Trajectory\+T\+::point\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Overloaded KML Methods}\par
+{\em These methods generate kml objects for output for a given tracjectory or point. If a file is specified, the header and footer are automatically written. If a stream is specified, the header and footer are NOT automatically written. Write can be called with either a single trajectory or a vector. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1kml_a867590607e982c4e6fe05ff3a6523b4a}\label{classtracktable_1_1kml_a867590607e982c4e6fe05ff3a6523b4a} 
+{\bfseries kml} (const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&\+\_\+t)
+\item 
+\Hypertarget{classtracktable_1_1kml_a675dd8f47d67d3a41c076cb0156e03b9}\label{classtracktable_1_1kml_a675dd8f47d67d3a41c076cb0156e03b9} 
+{\bfseries kml} (const Trajectory\+VectorT \&\+\_\+v)
+\item 
+\Hypertarget{classtracktable_1_1kml_ad6c30e202ba8ed713f530a5c37d67752}\label{classtracktable_1_1kml_ad6c30e202ba8ed713f530a5c37d67752} 
+{\bfseries kml} (const PointerT \&\+\_\+p)
+\item 
+\Hypertarget{classtracktable_1_1kml_a1ec7c605ef2a64cff2a7e997450d0fe2}\label{classtracktable_1_1kml_a1ec7c605ef2a64cff2a7e997450d0fe2} 
+{\bfseries kml} (const Pointer\+VectorT \&\+\_\+vp)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1kml_aa63ac89e8115e74872b0612d7175aa21}\label{classtracktable_1_1kml_aa63ac89e8115e74872b0612d7175aa21} 
+static std\+::string {\bfseries generate\+Color\+String} ()
+\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_a876063afd20e0a26d4ac9688802d3be9}{write\+Style}} (std\+::ostream \&\+\_\+o, const std\+::string \&\+\_\+id, const std\+::string \&\+\_\+color, double \+\_\+width)
+\begin{DoxyCompactList}\small\item\em Writes a style. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_a58248de374580ffb43a09f070bc349ce}{write\+Linestring}} (std\+::ostream \&\+\_\+o, const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&\+\_\+trajectory)
+\begin{DoxyCompactList}\small\item\em Writes a placemark that renders as lines. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_ab3993c25dc56d8bc6841eb0af8d5ffc1}{write\+Multipoint}} (std\+::ostream \&\+\_\+o, const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&\+\_\+trajectory)
+\begin{DoxyCompactList}\small\item\em Writes a placemark that renders as points. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_adb54d5157195d9171387c9b02e183b19}{write\+Point}} (std\+::ostream \&\+\_\+o, const PointT \&\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Writes a placemark that renders as a single point. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_af263bc25d67503441ab88b37ef492092}{write\+Line\+And\+Points}} (std\+::ostream \&\+\_\+o, const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&\+\_\+trajectory)
+\begin{DoxyCompactList}\small\item\em Writes a placemark that uses multigeomtry to render a line with points. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_a531795b5bd22489da0615820706dd653}{write\+Box}} (std\+::ostream \&\+\_\+o, const \mbox{\hyperlink{structtracktable_1_1kml_1_1box}{box}} \&\+\_\+box)
+\begin{DoxyCompactList}\small\item\em Writes a placemark that uses multigeomtry to render a line with points. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_a9be99c2dbf0c469e1e7e2aa6d09db7eb}{write\+Coords}} (std\+::ostream \&\+\_\+o, const PointT \&\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Utility to minimize maintenance on writing points as coordinates. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_aab53b1fec355a02d7e8d9ab602275806}{write\+To\+Separate\+Kmls}} (const Trajectory\+VectorT \&\+\_\+trajectories, const std\+::string \&\+\_\+output\+\_\+dir)
+\begin{DoxyCompactList}\small\item\em This simplifies writing individual files for a set of trajectories The directory to write the files is specified instead of a filename. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_aef665959137e55d25ed582ced8386f58}{write\+Placemark\+Header}} (std\+::ostream \&\+\_\+o)
+\begin{DoxyCompactList}\small\item\em Writes a default Placemark header tag. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_a18350f54d3201816a54150339969015b}{write\+Placemark\+Footer}} (std\+::ostream \&\+\_\+o)
+\begin{DoxyCompactList}\small\item\em Writes a default Placemark footer tag. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_aac2d31ca24cd114be2e698453c18a76a}{write\+Multi\+Geometry\+Header}} (std\+::ostream \&\+\_\+o)
+\begin{DoxyCompactList}\small\item\em Writes a default Multi\+Geometry header tag. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtracktable_1_1kml_a8c3b42a0edf3b3058ce805febfe44f85}{write\+Multi\+Geometry\+Footer}} (std\+::ostream \&\+\_\+o)
+\begin{DoxyCompactList}\small\item\em Writes a default Multi\+Geometry footer tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Overloaded Write Methods}\par
+{\em These methods output kml. If a file is specified, the header and footer are automatically written. If a stream is specified, the header and footer are NOT automatically written. Write can be called with either a single trajectory or a vector. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1kml_a123790b795f5c66773c666cfc595a303}\label{classtracktable_1_1kml_a123790b795f5c66773c666cfc595a303} 
+static void {\bfseries write} (const std\+::string \&\+\_\+filename, const Trajectory\+VectorT \&\+\_\+trajectories)
+\item 
+\Hypertarget{classtracktable_1_1kml_ad5d9ba92b3205d3b5fdd1bed29845bdb}\label{classtracktable_1_1kml_ad5d9ba92b3205d3b5fdd1bed29845bdb} 
+static void {\bfseries write} (std\+::ostream \&\+\_\+o, const Trajectory\+VectorT \&\+\_\+trajectories)
+\item 
+\Hypertarget{classtracktable_1_1kml_aeb79bb91787b115587d49d4e8d1b8ce7}\label{classtracktable_1_1kml_aeb79bb91787b115587d49d4e8d1b8ce7} 
+static void {\bfseries write} (std\+::ostream \&\+\_\+o, const Pointer\+VectorT \&\+\_\+trajectories)
+\item 
+\Hypertarget{classtracktable_1_1kml_a595f52daa6eb5c7ffa4f6e3787936441}\label{classtracktable_1_1kml_a595f52daa6eb5c7ffa4f6e3787936441} 
+static void {\bfseries write} (const std\+::string \&\+\_\+filename, const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&\+\_\+trajectory)
+\item 
+\Hypertarget{classtracktable_1_1kml_ad766bbb6909761783b37fa69efe2e298}\label{classtracktable_1_1kml_ad766bbb6909761783b37fa69efe2e298} 
+static void {\bfseries write} (const std\+::string \&\+\_\+filename, const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&\+\_\+trajectory, const std\+::string \&\+\_\+color, const double \&\+\_\+width)
+\item 
+\Hypertarget{classtracktable_1_1kml_a45612c4a07d04d1103dbb3b971c04f45}\label{classtracktable_1_1kml_a45612c4a07d04d1103dbb3b971c04f45} 
+static void {\bfseries write} (std\+::ostream \&\+\_\+o, const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&\+\_\+trajectory, const std\+::string \&\+\_\+color, const double \&\+\_\+width)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1kml_aef604ca49b5baca6ef588d786e56f1e6}\label{classtracktable_1_1kml_aef604ca49b5baca6ef588d786e56f1e6} 
+static double {\bfseries \+\_\+width} = 3
+\item 
+\Hypertarget{classtracktable_1_1kml_a0de30023e2d80af78c3615bbae0d340d}\label{classtracktable_1_1kml_a0de30023e2d80af78c3615bbae0d340d} 
+static std\+::string {\bfseries \+\_\+color} = "{}FFFFFFFF"{}
+\item 
+\Hypertarget{classtracktable_1_1kml_ab043f9b9c63b3a862bfb273303ed296f}\label{classtracktable_1_1kml_ab043f9b9c63b3a862bfb273303ed296f} 
+static std\+::string {\bfseries \+\_\+name} = "{}UNIDFENTIFIED"{}
+\item 
+\Hypertarget{classtracktable_1_1kml_a6c9d9d395c628f90d3c556e1e2287afe}\label{classtracktable_1_1kml_a6c9d9d395c628f90d3c556e1e2287afe} 
+static std\+::string {\bfseries \+\_\+styleid} = "{}tracktable\+\_\+style"{}
+\item 
+\Hypertarget{classtracktable_1_1kml_a5fd5d2732d15ad14b812c928f8f074ea}\label{classtracktable_1_1kml_a5fd5d2732d15ad14b812c928f8f074ea} 
+static bool {\bfseries \+\_\+is\+Inside\+Placemark} = false
+\item 
+\Hypertarget{classtracktable_1_1kml_a09acb47744a79032bbe97161b8b03d6f}\label{classtracktable_1_1kml_a09acb47744a79032bbe97161b8b03d6f} 
+static bool {\bfseries \+\_\+is\+Inside\+Multi\+Geometry} = false
+\item 
+\Hypertarget{classtracktable_1_1kml_a5fcaa8cef58da26a71f94234500f7f7b}\label{classtracktable_1_1kml_a5fcaa8cef58da26a71f94234500f7f7b} 
+static \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{tracktable\+::\+Timestamp}} {\bfseries \+\_\+start}
+\item 
+\Hypertarget{classtracktable_1_1kml_a255e97132f328d236870313c1049f0b0}\label{classtracktable_1_1kml_a255e97132f328d236870313c1049f0b0} 
+static \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{tracktable\+::\+Timestamp}} {\bfseries \+\_\+stop}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1kml_a870af019c7c5ccfe02d3281d9b6c86a4}\label{classtracktable_1_1kml_a870af019c7c5ccfe02d3281d9b6c86a4} 
+std\+::ostream \& {\bfseries operator$<$$<$)} (std\+::ostream \&\+\_\+o, const \mbox{\hyperlink{classtracktable_1_1kml}{tracktable\+::kml}} \&\+\_\+kml)
+\item 
+\Hypertarget{classtracktable_1_1kml_a8f2bf2a27b1d7aa2470dd7ad950f00c6}\label{classtracktable_1_1kml_a8f2bf2a27b1d7aa2470dd7ad950f00c6} 
+std\+::ofstream \& {\bfseries operator$<$$<$)} (std\+::ofstream \&\+\_\+o, const \mbox{\hyperlink{classtracktable_1_1kml}{tracktable\+::kml}} \&\+\_\+kml)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles writing tracks as kml Has lots of internal structure to make the following use cases work\+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout\ <<\ kml::header;}
+\DoxyCodeLine{std::cout\ <<\ kml(t);}
+\DoxyCodeLine{std::cout\ <<\ kml::footer;}
+\DoxyCodeLine{}
+\DoxyCodeLine{out\ =\ ofstream;}
+\DoxyCodeLine{out\ <<\ kml(t);}
+
+\end{DoxyCode}
+
+
+For both of the above a default style will be used (green, width = 3) in the case of a single trajectory and a random color will be used with the same default \hypertarget{classtracktable_1_1kml_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{width = 3 for a vector of trajectories.}{width = 3 for a vector of trajectories.}}\label{classtracktable_1_1kml_autotoc_md0}
+To control color and width\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout\ <<\ kml::header;}
+\DoxyCodeLine{kml::write(std::cout,\ t,\ \textcolor{stringliteral}{"{}AABBGGRR"{}},\ 4)}
+\DoxyCodeLine{std::cout\ <<\ kml::footer;}
+\DoxyCodeLine{}
+\DoxyCodeLine{kml::write(\textcolor{stringliteral}{"{}filname"{}},\ t,\ \textcolor{stringliteral}{"{}AABBGGRR"{}},\ 5)}
+
+\end{DoxyCode}
+
+
+These are the limits of style control at this time.
+
+TODO\+: Simplify use of multipoint and linepoint methods (requires placemark) TODO\+: Implement placemark manipulation TODO\+: Implement style manipulation 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1kml_a531795b5bd22489da0615820706dd653}\index{tracktable::kml@{tracktable::kml}!writeBox@{writeBox}}
+\index{writeBox@{writeBox}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeBox()}{writeBox()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_a531795b5bd22489da0615820706dd653} 
+void tracktable\+::kml\+::write\+Box (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{, }\item[{const \mbox{\hyperlink{structtracktable_1_1kml_1_1box}{box}} \&}]{\+\_\+box}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a placemark that uses multigeomtry to render a line with points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+{\em \+\_\+trajectory} & what to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_a9be99c2dbf0c469e1e7e2aa6d09db7eb}\index{tracktable::kml@{tracktable::kml}!writeCoords@{writeCoords}}
+\index{writeCoords@{writeCoords}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeCoords()}{writeCoords()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_a9be99c2dbf0c469e1e7e2aa6d09db7eb} 
+void tracktable\+::kml\+::write\+Coords (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{, }\item[{const PointT \&}]{\+\_\+point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Utility to minimize maintenance on writing points as coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+{\em \+\_\+point} & what to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_af263bc25d67503441ab88b37ef492092}\index{tracktable::kml@{tracktable::kml}!writeLineAndPoints@{writeLineAndPoints}}
+\index{writeLineAndPoints@{writeLineAndPoints}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeLineAndPoints()}{writeLineAndPoints()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_af263bc25d67503441ab88b37ef492092} 
+void tracktable\+::kml\+::write\+Line\+And\+Points (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{, }\item[{const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&}]{\+\_\+trajectory}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a placemark that uses multigeomtry to render a line with points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+{\em \+\_\+trajectory} & what to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_a58248de374580ffb43a09f070bc349ce}\index{tracktable::kml@{tracktable::kml}!writeLinestring@{writeLinestring}}
+\index{writeLinestring@{writeLinestring}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeLinestring()}{writeLinestring()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_a58248de374580ffb43a09f070bc349ce} 
+void tracktable\+::kml\+::write\+Linestring (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{, }\item[{const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&}]{\+\_\+trajectory}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a placemark that renders as lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+{\em \+\_\+trajectory} & what to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_a8c3b42a0edf3b3058ce805febfe44f85}\index{tracktable::kml@{tracktable::kml}!writeMultiGeometryFooter@{writeMultiGeometryFooter}}
+\index{writeMultiGeometryFooter@{writeMultiGeometryFooter}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeMultiGeometryFooter()}{writeMultiGeometryFooter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_a8c3b42a0edf3b3058ce805febfe44f85} 
+void tracktable\+::kml\+::write\+Multi\+Geometry\+Footer (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a default Multi\+Geometry footer tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_aac2d31ca24cd114be2e698453c18a76a}\index{tracktable::kml@{tracktable::kml}!writeMultiGeometryHeader@{writeMultiGeometryHeader}}
+\index{writeMultiGeometryHeader@{writeMultiGeometryHeader}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeMultiGeometryHeader()}{writeMultiGeometryHeader()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_aac2d31ca24cd114be2e698453c18a76a} 
+void tracktable\+::kml\+::write\+Multi\+Geometry\+Header (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a default Multi\+Geometry header tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_ab3993c25dc56d8bc6841eb0af8d5ffc1}\index{tracktable::kml@{tracktable::kml}!writeMultipoint@{writeMultipoint}}
+\index{writeMultipoint@{writeMultipoint}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeMultipoint()}{writeMultipoint()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_ab3993c25dc56d8bc6841eb0af8d5ffc1} 
+void tracktable\+::kml\+::write\+Multipoint (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{, }\item[{const \mbox{\hyperlink{classtracktable_1_1_trajectory}{TrajectoryT}} \&}]{\+\_\+trajectory}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a placemark that renders as points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+{\em \+\_\+trajectory} & what to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_a18350f54d3201816a54150339969015b}\index{tracktable::kml@{tracktable::kml}!writePlacemarkFooter@{writePlacemarkFooter}}
+\index{writePlacemarkFooter@{writePlacemarkFooter}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writePlacemarkFooter()}{writePlacemarkFooter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_a18350f54d3201816a54150339969015b} 
+void tracktable\+::kml\+::write\+Placemark\+Footer (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a default Placemark footer tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_aef665959137e55d25ed582ced8386f58}\index{tracktable::kml@{tracktable::kml}!writePlacemarkHeader@{writePlacemarkHeader}}
+\index{writePlacemarkHeader@{writePlacemarkHeader}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writePlacemarkHeader()}{writePlacemarkHeader()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_aef665959137e55d25ed582ced8386f58} 
+void tracktable\+::kml\+::write\+Placemark\+Header (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a default Placemark header tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_adb54d5157195d9171387c9b02e183b19}\index{tracktable::kml@{tracktable::kml}!writePoint@{writePoint}}
+\index{writePoint@{writePoint}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writePoint()}{writePoint()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_adb54d5157195d9171387c9b02e183b19} 
+void tracktable\+::kml\+::write\+Point (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{, }\item[{const PointT \&}]{\+\_\+point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a placemark that renders as a single point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & where to write \\
+\hline
+{\em \+\_\+point} & what to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_a876063afd20e0a26d4ac9688802d3be9}\index{tracktable::kml@{tracktable::kml}!writeStyle@{writeStyle}}
+\index{writeStyle@{writeStyle}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeStyle()}{writeStyle()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_a876063afd20e0a26d4ac9688802d3be9} 
+void tracktable\+::kml\+::write\+Style (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+o}{, }\item[{const std\+::string \&}]{\+\_\+id}{, }\item[{const std\+::string \&}]{\+\_\+color}{, }\item[{double}]{\+\_\+width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+o} & Where to write \\
+\hline
+{\em \+\_\+id} & The id to use for the style, referenced by placemarks later \\
+\hline
+{\em \+\_\+color} & ABGR hex value for color \\
+\hline
+{\em \+\_\+width} & pixel width to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1kml_aab53b1fec355a02d7e8d9ab602275806}\index{tracktable::kml@{tracktable::kml}!writeToSeparateKmls@{writeToSeparateKmls}}
+\index{writeToSeparateKmls@{writeToSeparateKmls}!tracktable::kml@{tracktable::kml}}
+\doxysubsubsection{\texorpdfstring{writeToSeparateKmls()}{writeToSeparateKmls()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1kml_aab53b1fec355a02d7e8d9ab602275806} 
+void tracktable\+::kml\+::write\+To\+Separate\+Kmls (\begin{DoxyParamCaption}\item[{const Trajectory\+VectorT \&}]{\+\_\+trajectories}{, }\item[{const std\+::string \&}]{\+\_\+output\+\_\+dir}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This simplifies writing individual files for a set of trajectories The directory to write the files is specified instead of a filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+trajectories} & trajectories to write \\
+\hline
+{\em \+\_\+output\+\_\+dir} & directory to write to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Kml\+Out.\+h\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Kml\+Out.\+cpp\end{DoxyCompactItemize}

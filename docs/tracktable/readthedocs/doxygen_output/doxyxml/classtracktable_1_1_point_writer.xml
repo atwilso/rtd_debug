@@ -1,0 +1,1003 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_point_writer" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::PointWriter</compoundname>
+    <includes refid="_point_writer_8h" local="no">PointWriter.h</includes>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classtracktable_1_1_point_writer_1a05042e52380b35f4fbbaf5ef0e36e021" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class TrajectoryWriter</definition>
+        <argsstring></argsstring>
+        <name>TrajectoryWriter</name>
+        <qualifiedname>tracktable::PointWriter::TrajectoryWriter</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_writer" kindref="compound">TrajectoryWriter</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="442" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="442" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_point_writer_1a1a874890d72c37a980de1474904c674e" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::PointWriter::CoordinatePrecision</definition>
+        <argsstring></argsstring>
+        <name>CoordinatePrecision</name>
+        <qualifiedname>tracktable::PointWriter::CoordinatePrecision</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="444" column="32" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="444" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_writer_1a94e12dddfd14dc44ef6dda8699679219" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_property_converter" kindref="compound">PropertyConverter</ref></type>
+        <definition>PropertyConverter tracktable::PointWriter::PropertyWriter</definition>
+        <argsstring></argsstring>
+        <name>PropertyWriter</name>
+        <qualifiedname>tracktable::PointWriter::PropertyWriter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="445" column="32" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="445" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_writer_1ab46de9041fcb68ae000c9f8260c45196" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::PointWriter::TimestampFormat</definition>
+        <argsstring></argsstring>
+        <name>TimestampFormat</name>
+        <qualifiedname>tracktable::PointWriter::TimestampFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="446" column="32" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="446" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_writer_1a4877063d7c5f1618949030cf1e7a826b" prot="private" static="no" mutable="no">
+        <type><ref refid="classtracktable_1_1_token_writer" kindref="compound">TokenWriter</ref></type>
+        <definition>TokenWriter tracktable::PointWriter::TokenSink</definition>
+        <argsstring></argsstring>
+        <name>TokenSink</name>
+        <qualifiedname>tracktable::PointWriter::TokenSink</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="447" column="32" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="447" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_point_writer_1a47adc5f125835c7efb3f6bc5eb57b485" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::PointWriter::WriteHeader</definition>
+        <argsstring></argsstring>
+        <name>WriteHeader</name>
+        <qualifiedname>tracktable::PointWriter::WriteHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="448" column="32" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a957008e7125156b8fa0358a9eb684bd8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointWriter::PointWriter</definition>
+        <argsstring>()</argsstring>
+        <name>PointWriter</name>
+        <qualifiedname>tracktable::PointWriter::PointWriter</qualifiedname>
+        <briefdescription>
+<para>Instantiate <ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> using a default configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the default configuration values of the writer.   </para>
+<para>Defaults:<itemizedlist>
+<listitem><para>coordinate_precision = 8</para>
+</listitem><listitem><para>field_delimiter = &quot;,&quot;</para>
+</listitem><listitem><para>null_value = &quot;&quot;</para>
+</listitem><listitem><para>quote_character = &quot;&quot;&quot;
+   * record_delimiter = &quot;\n&quot;
+   * timestamp_format = &quot;Y-m-d H:M:S"</para>
+</listitem><listitem><para>write_header = true    </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="124" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a01019ec8920ecb300aff8276bd4318e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointWriter::PointWriter</definition>
+        <argsstring>(PointWriter const &amp;other)</argsstring>
+        <name>PointWriter</name>
+        <qualifiedname>tracktable::PointWriter::PointWriter</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, <ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="133" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="133" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a5090008ec9ed242889424566bed44c75" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointWriter::PointWriter</definition>
+        <argsstring>(std::ostream &amp;_output)</argsstring>
+        <name>PointWriter</name>
+        <qualifiedname>tracktable::PointWriter::PointWriter</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_output</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a <ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> using a <computeroutput>std::ostream</computeroutput> and default configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the default configuration values of the writer.   </para>
+<para>Defaults:<itemizedlist>
+<listitem><para>coordinate_precision = 8</para>
+</listitem><listitem><para>field_delimiter = &quot;,&quot;</para>
+</listitem><listitem><para>null_value = &quot;&quot;</para>
+</listitem><listitem><para>quote_character = &quot;&quot;&quot;
+   * record_delimiter = &quot;\n&quot;
+   * timestamp_format = &quot;Y-m-d H:M:S"</para>
+</listitem><listitem><para>write_header = true   </para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output to write points to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="148" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="148" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a4a1a020bfbb8d5a878fcdce58518bde0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> &amp;</type>
+        <definition>PointWriter &amp; tracktable::PointWriter::operator=</definition>
+        <argsstring>(PointWriter const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::PointWriter::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="159" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="159" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a4c68059c02604c2b1eb32b1d44fb8093" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointWriter::operator==</definition>
+        <argsstring>(PointWriter const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::PointWriter::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one <ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> is equal to another by comparing the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two items are equal if all of their properties are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="176" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="176" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1adc2cc53a862e1804c1ecdb6fcf7319f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointWriter::operator!=</definition>
+        <argsstring>(PointWriter const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::PointWriter::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two <ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_point_writer" kindref="compound">PointWriter</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="192" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a534eae204732d8b6b3a03944dbf659f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_output</definition>
+        <argsstring>(std::ostream &amp;out)</argsstring>
+        <name>set_output</name>
+        <qualifiedname>tracktable::PointWriter::set_output</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+<para>Set the stream where points will be written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be any <computeroutput>std::ostream</computeroutput>.</para>
+<para><simplesect kind="note"><para>You are resposible for ensuring that the stream does not go out of scope until you are done writing points.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream where points will be written </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="208" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1aca0b05528608e9c0d6ac841789b2bb19" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; tracktable::PointWriter::output</definition>
+        <argsstring>() const</argsstring>
+        <name>output</name>
+        <qualifiedname>tracktable::PointWriter::output</qualifiedname>
+        <briefdescription>
+<para>Return the stream where points will be written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>output stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="218" column="16" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="218" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1ac0aca27fffbd805461ec7cf584d2cb7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_field_delimiter</definition>
+        <argsstring>(string_type const &amp;delim)</argsstring>
+        <name>set_field_delimiter</name>
+        <qualifiedname>tracktable::PointWriter::set_field_delimiter</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+<para>Set the field delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This string will be inserted between each field as points are written.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delimiter string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="231" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="231" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a523d7845d1940a257b1ea68e4a62f0b5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PointWriter::field_delimiter</definition>
+        <argsstring>() const</argsstring>
+        <name>field_delimiter</name>
+        <qualifiedname>tracktable::PointWriter::field_delimiter</qualifiedname>
+        <briefdescription>
+<para>Return the field delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Field delimiter </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="241" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a264c58caa014175546fb432b30932bb6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_record_delimiter</definition>
+        <argsstring>(string_type const &amp;sep)</argsstring>
+        <name>set_record_delimiter</name>
+        <qualifiedname>tracktable::PointWriter::set_record_delimiter</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>sep</declname>
+        </param>
+        <briefdescription>
+<para>Set the record separator (end-of-line string) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This string will be written after each point. By default it&apos;s <computeroutput>std::endl</computeroutput> (the newline string).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String separator </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="253" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="253" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a4ab2e0b93d8a78661484ff820c46d5b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_timestamp_format</definition>
+        <argsstring>(string_type const &amp;format)</argsstring>
+        <name>set_timestamp_format</name>
+        <qualifiedname>tracktable::PointWriter::set_timestamp_format</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+<para>Set format for writing timestamps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There are as many ways to write timestamps as there are programs to write them. We have our default (YYYY-MM-DD HH:MM:SS) but sometimes you will need to specify some other format for interoperability.</para>
+<para>This method sets a format string for timestamps using the flags in <computeroutput>boost::date_time::time_facet</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format string for timestamps </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="271" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="271" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a63015327c516523f19eaeac3d9f1b9e3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PointWriter::timestamp_format</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp_format</name>
+        <qualifiedname>tracktable::PointWriter::timestamp_format</qualifiedname>
+        <briefdescription>
+<para>Retrieve the timestamp format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The time timestamp format </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="281" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="281" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1acd06560ec03550620a216dffe5250b74" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PointWriter::record_delimiter</definition>
+        <argsstring>() const</argsstring>
+        <name>record_delimiter</name>
+        <qualifiedname>tracktable::PointWriter::record_delimiter</qualifiedname>
+        <briefdescription>
+<para>Retrieve the record separator (end-of-line string) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Return the record separator (end-of-line string) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="291" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="291" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a93d4c234af9f3cce86306af20cb0923f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_quote_character</definition>
+        <argsstring>(string_type const &amp;quotes)</argsstring>
+        <name>set_quote_character</name>
+        <qualifiedname>tracktable::PointWriter::set_quote_character</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>quotes</declname>
+        </param>
+        <briefdescription>
+<para>Set the quote character. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This character <emphasis>may</emphasis> be used to enclose a field containing lots of characters that would otherwise need to be escaped. We have to know what it is so that we can escape it ourselves when we encounter the quote character inside fields.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">quotes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Zero or one character to be used as quotation marks </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="306" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="306" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1aa7b979b6bf10c071ad71b10a4d29ab1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PointWriter::quote_character</definition>
+        <argsstring>() const</argsstring>
+        <name>quote_character</name>
+        <qualifiedname>tracktable::PointWriter::quote_character</qualifiedname>
+        <briefdescription>
+<para>Return the current quote characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current quote character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="316" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="316" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a2bde8e3c541c5092ce028d370e19477b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_write_header</definition>
+        <argsstring>(bool onoff)</argsstring>
+        <name>set_write_header</name>
+        <qualifiedname>tracktable::PointWriter::set_write_header</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>onoff</declname>
+        </param>
+        <briefdescription>
+<para>Set whether or not to write a header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The header string describes the contents of a point: coordinate system, properties (if any), number of coordinates. By default it will be written at the beginning of a sequence of points. You can turn it off with this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">onoff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean flag </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="330" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="330" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1ab3a954cac81e5ca71c4cd7ba46e32284" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::PointWriter::write_header</definition>
+        <argsstring>() const</argsstring>
+        <name>write_header</name>
+        <qualifiedname>tracktable::PointWriter::write_header</qualifiedname>
+        <briefdescription>
+<para>Return whether or not the header will be written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The flag indicating to write the header or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="339" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="339" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a133853de43a3633501dbeb81d216658b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int tracktable::PointWriter::write</definition>
+        <argsstring>(point_iter_type point_begin, point_iter_type point_end)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::PointWriter::write</qualifiedname>
+        <param>
+          <type>point_iter_type</type>
+          <declname>point_begin</declname>
+        </param>
+        <param>
+          <type>point_iter_type</type>
+          <declname>point_end</declname>
+        </param>
+        <briefdescription>
+<para>Write out the points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The difference between <computeroutput><ref refid="classtracktable_1_1_point_writer_1a133853de43a3633501dbeb81d216658b" kindref="member">write()</ref></computeroutput> and <computeroutput>write_point_header_tokens()</computeroutput> is that <computeroutput><ref refid="classtracktable_1_1_point_writer_1a133853de43a3633501dbeb81d216658b" kindref="member">write()</ref></computeroutput> inserts a record seperator after the header and after each point</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">point_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to start writing from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Last point to write out </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of points written </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="354" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="354" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1ae1b33f94e049673ba38496b3a3bdf28e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_coordinate_precision</definition>
+        <argsstring>(std::size_t num_digits)</argsstring>
+        <name>set_coordinate_precision</name>
+        <qualifiedname>tracktable::PointWriter::set_coordinate_precision</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>num_digits</declname>
+        </param>
+        <briefdescription>
+<para>Set the decimal precision for writing coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Internally, Tracktable stores coordinates as double-precision floating numbers. It is highly unlikely that trajectory data needs absolutely all of that precision. Since it takes up lots of space when we write data to disk, it is useful to be able to ask for reduced (or increased) precision.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">num_digits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of digits of precision </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="403" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="403" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a981fbdacda8f121a522a49bbb3b4abca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::PointWriter::coordinate_precision</definition>
+        <argsstring>() const</argsstring>
+        <name>coordinate_precision</name>
+        <qualifiedname>tracktable::PointWriter::coordinate_precision</qualifiedname>
+        <briefdescription>
+<para>Retreive the coordinate decimal precision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The decimal precision </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="413" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="413" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a55d6bacf54a64a2c3d7cf41181fea04b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_null_value</definition>
+        <argsstring>(string_type const &amp;_null_value)</argsstring>
+        <name>set_null_value</name>
+        <qualifiedname>tracktable::PointWriter::set_null_value</qualifiedname>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>_null_value</declname>
+        </param>
+        <briefdescription>
+<para>Set the string representation for nulls. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Property values that were never set are considered to hold a null value. This method lets you set how nulls will be written to disk. The default value is the empty string &quot;&quot;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_null_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired string representation of nulls </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="427" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="427" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1af50112bd2e202d7269ce0ca95ee31163" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>string_type tracktable::PointWriter::null_value</definition>
+        <argsstring>() const</argsstring>
+        <name>null_value</name>
+        <qualifiedname>tracktable::PointWriter::null_value</qualifiedname>
+        <briefdescription>
+<para>Retreive the null value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The representation of the null value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="436" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="436" bodyend="439"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a8513b5a4fc0089d88e1bdcf6856e663a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointWriter::set_default_configuration</definition>
+        <argsstring>()</argsstring>
+        <name>set_default_configuration</name>
+        <qualifiedname>tracktable::PointWriter::set_default_configuration</qualifiedname>
+        <briefdescription>
+<para>Set the default configuration values of the writer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defaults:<itemizedlist>
+<listitem><para>coordinate_precision = 8</para>
+</listitem><listitem><para>field_delimiter = &quot;,&quot;</para>
+</listitem><listitem><para>null_value = &quot;&quot;</para>
+</listitem><listitem><para>quote_character = &quot;&quot;&quot;
+   * record_delimiter = &quot;\n&quot;
+   * timestamp_format = &quot;Y-m-d H:M:S"</para>
+</listitem><listitem><para>write_header = true </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="461" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="461" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a15806ced3b936a007146c53d10513992" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_type</type>
+          </param>
+          <param>
+            <type>typename out_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::PointWriter::write_point_header_tokens</definition>
+        <argsstring>(point_type const &amp;example_point, out_iter_type _output)</argsstring>
+        <name>write_point_header_tokens</name>
+        <qualifiedname>tracktable::PointWriter::write_point_header_tokens</qualifiedname>
+        <param>
+          <type>point_type const &amp;</type>
+          <declname>example_point</declname>
+        </param>
+        <param>
+          <type>out_iter_type</type>
+          <declname>_output</declname>
+        </param>
+        <briefdescription>
+<para>Write tokens out the header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Header structure:<orderedlist>
+<listitem><para>Header token (currently <emphasis>P</emphasis>)</para>
+</listitem><listitem><para>Domain</para>
+</listitem><listitem><para>Dimension</para>
+</listitem><listitem><para>HasObjectId</para>
+</listitem><listitem><para>HasTimestamp</para>
+</listitem><listitem><para>Number of properties 7, 8: name, type of custom property #1 9, 10: name, type of custom property #2 (etc)</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">example_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to generate an example output from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where to write the tokens to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="489" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="489" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1ac00f20aa5a911070d73591ef38590999" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_iter_type</type>
+          </param>
+          <param>
+            <type>typename out_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int tracktable::PointWriter::write_many_points_to_tokens</definition>
+        <argsstring>(point_iter_type point_begin, point_iter_type point_end, out_iter_type _output)</argsstring>
+        <name>write_many_points_to_tokens</name>
+        <qualifiedname>tracktable::PointWriter::write_many_points_to_tokens</qualifiedname>
+        <param>
+          <type>point_iter_type</type>
+          <declname>point_begin</declname>
+        </param>
+        <param>
+          <type>point_iter_type</type>
+          <declname>point_end</declname>
+        </param>
+        <param>
+          <type>out_iter_type</type>
+          <declname>_output</declname>
+        </param>
+        <briefdescription>
+<para>Write out multiple point tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">point_begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to start writing from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Last point to write out </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where to write the tokens to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="506" column="7" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="506" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a60a7b94b5f36aed48090d9429155303f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_type</type>
+          </param>
+          <param>
+            <type>typename out_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::PointWriter::write_point_tokens</definition>
+        <argsstring>(point_type const &amp;point, out_iter_type _output, std::size_t num_properties_expected)</argsstring>
+        <name>write_point_tokens</name>
+        <qualifiedname>tracktable::PointWriter::write_point_tokens</qualifiedname>
+        <param>
+          <type>point_type const &amp;</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>out_iter_type</type>
+          <declname>_output</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>num_properties_expected</declname>
+        </param>
+        <briefdescription>
+<para>Write out point tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to write out </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where to write the tokens to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_properties_expected</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of properties the point has </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="538" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="538" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_writer_1a35eaa299c6cf04e9d0bd602ff2d6132c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename token_iter_type</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::PointWriter::write_tokens_to_stream</definition>
+        <argsstring>(token_iter_type begin, token_iter_type end)</argsstring>
+        <name>write_tokens_to_stream</name>
+        <qualifiedname>tracktable::PointWriter::write_tokens_to_stream</qualifiedname>
+        <param>
+          <type>token_iter_type</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>token_iter_type</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="549" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="549" bodyend="552"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Write points of any type as delimited text. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class writes a sequence of points to a file in delimited text format. You can control the destination, the delimiter, the record separator (usually newline) and whether or not a header line is written.</para>
+<para>The header line contains information about the point&apos;s dimension, coordinate system, object ID and timestamp (for trajectory points) and custom properties (if any). </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" line="112" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/PointWriter.h" bodystart="113" bodyend="554"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_point_writer_1a981fbdacda8f121a522a49bbb3b4abca" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>coordinate_precision</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a1a874890d72c37a980de1474904c674e" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>CoordinatePrecision</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a523d7845d1940a257b1ea68e4a62f0b5" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>field_delimiter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1af50112bd2e202d7269ce0ca95ee31163" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>null_value</name></member>
+      <member refid="classtracktable_1_1_point_writer_1adc2cc53a862e1804c1ecdb6fcf7319f1" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a4a1a020bfbb8d5a878fcdce58518bde0" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a4c68059c02604c2b1eb32b1d44fb8093" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_writer_1aca0b05528608e9c0d6ac841789b2bb19" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>output</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a957008e7125156b8fa0358a9eb684bd8" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>PointWriter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a01019ec8920ecb300aff8276bd4318e7" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>PointWriter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a5090008ec9ed242889424566bed44c75" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>PointWriter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a94e12dddfd14dc44ef6dda8699679219" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>PropertyWriter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1aa7b979b6bf10c071ad71b10a4d29ab1a" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>quote_character</name></member>
+      <member refid="classtracktable_1_1_point_writer_1acd06560ec03550620a216dffe5250b74" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>record_delimiter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1ae1b33f94e049673ba38496b3a3bdf28e" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_coordinate_precision</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a8513b5a4fc0089d88e1bdcf6856e663a" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_default_configuration</name></member>
+      <member refid="classtracktable_1_1_point_writer_1ac0aca27fffbd805461ec7cf584d2cb7a" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_field_delimiter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a55d6bacf54a64a2c3d7cf41181fea04b" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_null_value</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a534eae204732d8b6b3a03944dbf659f5" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_output</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a93d4c234af9f3cce86306af20cb0923f" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_quote_character</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a264c58caa014175546fb432b30932bb6" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_record_delimiter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a4ab2e0b93d8a78661484ff820c46d5b5" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_timestamp_format</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a2bde8e3c541c5092ce028d370e19477b" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>set_write_header</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a63015327c516523f19eaeac3d9f1b9e3" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>timestamp_format</name></member>
+      <member refid="classtracktable_1_1_point_writer_1ab46de9041fcb68ae000c9f8260c45196" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>TimestampFormat</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a4877063d7c5f1618949030cf1e7a826b" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>TokenSink</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a05042e52380b35f4fbbaf5ef0e36e021" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>TrajectoryWriter</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a133853de43a3633501dbeb81d216658b" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>write</name></member>
+      <member refid="classtracktable_1_1_point_writer_1ab3a954cac81e5ca71c4cd7ba46e32284" prot="public" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>write_header</name></member>
+      <member refid="classtracktable_1_1_point_writer_1ac00f20aa5a911070d73591ef38590999" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>write_many_points_to_tokens</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a15806ced3b936a007146c53d10513992" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>write_point_header_tokens</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a60a7b94b5f36aed48090d9429155303f" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>write_point_tokens</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a35eaa299c6cf04e9d0bd602ff2d6132c" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>write_tokens_to_stream</name></member>
+      <member refid="classtracktable_1_1_point_writer_1a47adc5f125835c7efb3f6bc5eb57b485" prot="private" virt="non-virtual"><scope>tracktable::PointWriter</scope><name>WriteHeader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1end__to__end__distance_3_01_trajectory_3_01_point_t_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;</compoundname>
+    <includes refid="_trajectory_8h" local="no">Trajectory.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class PointT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structtracktable_1_1algorithms_1_1end__to__end__distance_3_01_trajectory_3_01_point_t_01_4_01_4_1a99bdc65ec60c881c3674ba85bcec7682" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref>&lt; PointT &gt;</type>
+        <definition>typedef Trajectory&lt;PointT&gt; tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;::trajectory_type</definition>
+        <argsstring></argsstring>
+        <name>trajectory_type</name>
+        <qualifiedname>tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;::trajectory_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" line="964" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" bodystart="964" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1end__to__end__distance_3_01_trajectory_3_01_point_t_01_4_01_4_1aa6af7d791feac81c382fd6f0230dcb3a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;::apply</definition>
+        <argsstring>(trajectory_type const &amp;path)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;::apply</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory" kindref="compound">trajectory_type</ref> const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" line="966" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" bodystart="966" bodyend="978"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1end__to__end__distance_1a48703fe2ca180eeba8406f92092ab488" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;::BOOST_MPL_ASSERT_MSG</definition>
+        <argsstring>(sizeof(Trajectory&lt; PointT &gt;)==0, END_TO_END_DISTANCE_NOT_IMPLEMENTED_FOR_THIS_TRAJECTORY_TYPE,(types&lt; Trajectory&lt; PointT &gt; &gt;))</argsstring>
+        <name>BOOST_MPL_ASSERT_MSG</name>
+        <qualifiedname>tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;::BOOST_MPL_ASSERT_MSG</qualifiedname>
+        <param>
+          <type>sizeof(<ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref>&lt; PointT &gt;)</type>
+          <defval>=0</defval>
+        </param>
+        <param>
+          <type>END_TO_END_DISTANCE_NOT_IMPLEMENTED_FOR_THIS_TRAJECTORY_TYPE</type>
+        </param>
+        <param>
+          <type>(types&lt; <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref>&lt; PointT &gt; &gt;)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/EndToEndDistance.h" line="46" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Default implementation of <ref refid="structtracktable_1_1algorithms_1_1end__to__end__distance" kindref="compound">end_to_end_distance</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This uses tracktable::distance to compute the distance between the first and last points of the trajectory. We will probably never need to override this implementation. </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" line="962" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" bodystart="963" bodyend="979"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1end__to__end__distance_3_01_trajectory_3_01_point_t_01_4_01_4_1aa6af7d791feac81c382fd6f0230dcb3a" prot="public" virt="non-virtual"><scope>tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1end__to__end__distance_1a48703fe2ca180eeba8406f92092ab488" prot="public" virt="non-virtual"><scope>tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;</scope><name>BOOST_MPL_ASSERT_MSG</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1end__to__end__distance_3_01_trajectory_3_01_point_t_01_4_01_4_1a99bdc65ec60c881c3674ba85bcec7682" prot="public" virt="non-virtual"><scope>tracktable::algorithms::end_to_end_distance&lt; Trajectory&lt; PointT &gt; &gt;</scope><name>trajectory_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

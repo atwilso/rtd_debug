@@ -1,0 +1,208 @@
+\doxysection{UUID.\+h}
+\hypertarget{_u_u_i_d_8h_source}{}\label{_u_u_i_d_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/UUID.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/UUID.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_UUID\_h}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_UUID\_h}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCoreWindowsHeader.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PlatformDetect.h>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ BOOST\_ALLOW\_DEPRECATED\_HEADERS}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <boost/enable\_shared\_from\_this.hpp>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <boost/uuid/uuid.hpp>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <boost/uuid/uuid\_io.hpp>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <boost/uuid/random\_generator.hpp>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <boost/random/mersenne\_twister.hpp>}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \#include\ <boost/thread.hpp>}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \#include\ <pthread.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#undef\ BOOST\_ALLOW\_DEPRECATED\_HEADERS}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ boost::uuids::uuid\ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a826bd81dc691eab1b70bb67473b35431}{UUIDGenerator}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{typedef}\ boost::shared\_ptr<UUIDGenerator>\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{pointer}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a826bd81dc691eab1b70bb67473b35431}{UUIDGenerator}}()\ \{}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ this-\/>mutex\ =\ \textcolor{keyword}{new}\ boost::mutex();}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ \ \#else\ }\textcolor{comment}{//\ not\ defined\ TT\_WINDOWS}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ this-\/>mutex\_initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pthread\_mutex\_init(\&(this-\/>mutex),\ NULL)\ ==\ 0)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ this-\/>mutex\_initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00088\ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a0ee9609860d5cf10ea07b9d80e7810a9}{\string~UUIDGenerator}}()\ \{}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keyword}{delete}\ this-\/>mutex;}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00095\ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_aac98e7815be4c78b3491a8df09026b37}{generate\_uuid}}()\ =\ 0;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a05b3d479eebdd38def058906cd60c07e}{lock\_mutex}}()\ \{}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00105\ \ \ \ \ this-\/>mutex-\/>lock();}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \#else\ }\textcolor{comment}{//\ not\ defined\ TT\_WINDOWS}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>mutex\_initialized)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ pthread\_mutex\_lock(\&(this-\/>mutex));}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00110\ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_aa6e377da272a0fc708fccc852d12a5d0}{unlock\_mutex}}()\ \{}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00115\ \ \ \ \ this-\/>mutex-\/>unlock();}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ \#else\ }\textcolor{comment}{//\ not\ defined\ TT\_WINDOWS}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>mutex\_initialized)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ pthread\_mutex\_unlock(\&(this-\/>mutex));}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00120\ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \#ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00125\ \ \ \ \ boost::mutex*\ mutex;}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \#else\ }\textcolor{comment}{//\ not\ defined\ TT\_WINDOWS}}
+\DoxyCodeLine{00127\ \ \ \ \ pthread\_mutex\_t\ mutex;}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ mutex\_initialized;}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{//\ ifdef\ TT\_WINDOWS}}
+\DoxyCodeLine{00130\ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ UniformRandomNumberGenerator=boost::random::mt19937>}
+\DoxyCodeLine{00145\ \textcolor{keyword}{class\ }TRACKTABLE\_CORE\_EXPORT\ BoostRandomUUIDGenerator\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a826bd81dc691eab1b70bb67473b35431}{UUIDGenerator}}}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00151\ \ \ BoostRandomUUIDGenerator()}
+\DoxyCodeLine{00152\ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ this-\/>\_generator\ =\ \textcolor{keyword}{new}\ random\_generator\_type();}
+\DoxyCodeLine{00154\ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00159\ \ \ BoostRandomUUIDGenerator\ (\ UniformRandomNumberGenerator\&\ gen\ )}
+\DoxyCodeLine{00160\ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ this-\/>\_generator\ =\ \textcolor{keyword}{new}\ random\_generator\_type(gen);}
+\DoxyCodeLine{00162\ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00167\ \ \ BoostRandomUUIDGenerator\ (\ UniformRandomNumberGenerator*\ pGen\ )}
+\DoxyCodeLine{00168\ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ this-\/>\_generator\ =\ \textcolor{keyword}{new}\ random\_generator\_type(pGen);}
+\DoxyCodeLine{00170\ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00173\ \ \ \textcolor{keyword}{typedef}\ boost::uuids::basic\_random\_generator<UniformRandomNumberGenerator>\ random\_generator\_type;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_ad2642bfdba88e24a17f1d2ce20991fcc}{\string~BoostRandomUUIDGenerator}}()\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{delete}\ \_generator;}
+\DoxyCodeLine{00178\ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00192\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}\ \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_ae650f39971837126d734a93a3fcfa6eb}{create}}()\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}(\textcolor{keyword}{new}\ BoostRandomUUIDGenerator());}
+\DoxyCodeLine{00194\ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00200\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}\ \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_a54561b25d81fd0b7d50e5a4f0008a239}{create}}(\ UniformRandomNumberGenerator\&\ gen\ )\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}(\textcolor{keyword}{new}\ BoostRandomUUIDGenerator(gen));}
+\DoxyCodeLine{00202\ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00208\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}\ \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_a9bf7db31c4159db232169e0a566f1775}{create}}(\ UniformRandomNumberGenerator*\ pGen\ )\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}(\textcolor{keyword}{new}\ BoostRandomUUIDGenerator(pGen));}
+\DoxyCodeLine{00210\ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00216\ \ \ \textcolor{keyword}{inline}}
+\DoxyCodeLine{00217\ \ \ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\ \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_ac513c28fa485e624e559a757d43a2d33}{generate\_uuid}}()}
+\DoxyCodeLine{00218\ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a05b3d479eebdd38def058906cd60c07e}{lock\_mutex}}();}
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\ new\_uuid\ =\ this-\/>\_generator-\/>operator()();}
+\DoxyCodeLine{00221\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_aa6e377da272a0fc708fccc852d12a5d0}{unlock\_mutex}}();}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ new\_uuid;}
+\DoxyCodeLine{00223\ \ \ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00226\ \ \ random\_generator\_type*\ \_generator;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \};}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00236\ \textcolor{keyword}{class\ }TRACKTABLE\_CORE\_EXPORT\ BoostRandomUUIDGeneratorPure\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a826bd81dc691eab1b70bb67473b35431}{UUIDGenerator}}}
+\DoxyCodeLine{00237\ \{}
+\DoxyCodeLine{00238\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00241\ \ \ BoostRandomUUIDGeneratorPure()\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \_generator\ =\ \textcolor{keyword}{new}\ random\_generator\_type();}
+\DoxyCodeLine{00243\ \ \ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00246\ \ \ \textcolor{keyword}{typedef}\ boost::uuids::random\_generator\ random\_generator\_type;}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00260\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}\ \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a1f51b940cd66f49c444cc9fc9f15400f}{create}}()\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}(\textcolor{keyword}{new}\ BoostRandomUUIDGeneratorPure());}
+\DoxyCodeLine{00262\ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00265\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a6d98ce2fea02909fd68dde5c44d603ff}{\string~BoostRandomUUIDGeneratorPure}}()\ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keyword}{delete}\ \_generator;}
+\DoxyCodeLine{00267\ \ \ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00273\ \ \ \textcolor{keyword}{inline}}
+\DoxyCodeLine{00274\ \ \ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\ \mbox{\hyperlink{classtracktable_1_1_boost_random_u_u_i_d_generator_pure_a2a471d3deca5d775e8d6871bbf4de8de}{generate\_uuid}}()}
+\DoxyCodeLine{00275\ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a05b3d479eebdd38def058906cd60c07e}{lock\_mutex}}();}
+\DoxyCodeLine{00277\ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\ new\_uuid\ =\ this-\/>\_generator-\/>operator()();}
+\DoxyCodeLine{00278\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_aa6e377da272a0fc708fccc852d12a5d0}{unlock\_mutex}}();}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordflow}{return}\ new\_uuid;}
+\DoxyCodeLine{00280\ \ \ \}}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00283\ \ \ random\_generator\_type*\ \_generator;}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \};}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00295\ TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}\ \mbox{\hyperlink{namespacetracktable_ad719bb5f2c724e6033e6e894230250a9}{automatic\_uuid\_generator}}();}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00308\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_a619756d3896d84d4e6e8293fb58889fa}{set\_automatic\_uuid\_generator}}\ (\ \mbox{\hyperlink{classtracktable_1_1_u_u_i_d_generator_a84f75235f9634d619b6aff6dde218d85}{UUIDGenerator::pointer}}\ new\_random\_generator\ );}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \}\ \textcolor{comment}{//\ namespace\ tracktable}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_tracktable\_UUID\_h}}
+
+\end{DoxyCode}

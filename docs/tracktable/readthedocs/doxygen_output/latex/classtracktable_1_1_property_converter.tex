@@ -1,0 +1,301 @@
+\doxysection{tracktable\+::Property\+Converter Class Reference}
+\hypertarget{classtracktable_1_1_property_converter}{}\label{classtracktable_1_1_property_converter}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+
+
+\doxylink{classtracktable_1_1_property_converter}{Property\+Converter} -\/ Property\+ValueT to/from string.  
+
+
+
+
+{\ttfamily \#include $<$Property\+Converter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_property_converter_a3bdfc44303d8ee30691cd861f5f0426a}\label{classtracktable_1_1_property_converter_a3bdfc44303d8ee30691cd861f5f0426a} 
+{\bfseries Property\+Converter} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an default \doxylink{classtracktable_1_1_property_converter}{Property\+Converter}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_property_converter_a2994b8383a15988651e6c66d58a09c32}{Property\+Converter}} (\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} with a copy of another. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_property_converter_a1ae801d283bc259303eb2ab365850ddc}\label{classtracktable_1_1_property_converter_a1ae801d283bc259303eb2ab365850ddc} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Property\+Converter} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} \& \mbox{\hyperlink{classtracktable_1_1_property_converter_a029767c6cb43660739be4f1d95b651b4}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_property_converter_ab092999b9c0611bfaea0158da5ef5b61}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} is equal to another by comparing the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_property_converter_a949f64dcc0f37f12178a5448b12a2715}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} are unequal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_property_converter_a56df0ac1b4dc7aac01b15c0ff1c659e6}{set\+\_\+timestamp\+\_\+input\+\_\+format}} (string\+\_\+type const \&format)
+\begin{DoxyCompactList}\small\item\em Set format string for parsing timestamps. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_property_converter_a3cf6f6545b46ace9c1715bb3acb7da9c}{timestamp\+\_\+input\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Return the current input format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_property_converter_a991bf8a2c8715ddfb069ea12ed7f2ced}{set\+\_\+timestamp\+\_\+output\+\_\+format}} (string\+\_\+type const \&format)
+\begin{DoxyCompactList}\small\item\em Set format string for writing timestamps to strings. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_property_converter_a8c8d86d23cbf01a6392649fc082d4c41}{timestamp\+\_\+output\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Return the current output format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_property_converter_a6fb60af6bb774124e6325cd3b0f4be30}{set\+\_\+null\+\_\+value}} (string\+\_\+type const \&\mbox{\hyperlink{classtracktable_1_1_property_converter_a3b0c233327398c1f5b06c2b4f465f36a}{null\+\_\+value}})
+\begin{DoxyCompactList}\small\item\em Set string that represents null values. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_property_converter_a3b0c233327398c1f5b06c2b4f465f36a}{null\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Get string that represents null values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_property_converter_acdacb1a80c5beaa0cb0d636c9b234124}{set\+\_\+decimal\+\_\+precision}} (std\+::size\+\_\+t digits)
+\begin{DoxyCompactList}\small\item\em Set number of digits of precision for writing real numbers. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_property_converter_a12eca2da62165c43747e78d408e5a4ee}{decimal\+\_\+precision}} () const
+\begin{DoxyCompactList}\small\item\em Get number of digits of precision for writing real numbers. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_property_converter_a30569e719232ca74f1df6b1a78708ca6}{property\+\_\+to\+\_\+string}} (Property\+ValueT const \&\mbox{\hyperlink{namespacetracktable_a03ceda2323963939b94d8d82e67d5052}{property}})
+\begin{DoxyCompactList}\small\item\em Convert a property to a string. \end{DoxyCompactList}\item 
+Property\+ValueT \mbox{\hyperlink{classtracktable_1_1_property_converter_ada826b2bdc201347b7720d73764a2636}{property\+\_\+from\+\_\+string}} (string\+\_\+type const \&prop\+\_\+string, Property\+Underlying\+Type prop\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Convert a string and type ID to a property. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_property_converter_a8c178281a38a7a84f84eadfb8a5390f2}\label{classtracktable_1_1_property_converter_a8c178281a38a7a84f84eadfb8a5390f2} 
+\mbox{\hyperlink{classtracktable_1_1_timestamp_converter}{Timestamp\+Converter}} \texorpdfstring{$\ast$}{*} {\bfseries timestamp\+\_\+converter} ()
+\begin{DoxyCompactList}\small\item\em Convert a timestamp to read/write. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classtracktable_1_1_property_converter}{Property\+Converter} -\/ Property\+ValueT to/from string. 
+
+We need to be able to convert strings to Property\+ValueT instances and the reverse while using custom settings for decimal precision and time format. There are enough differences in the way locales are implemented across platforms that I insist on encapsulating it in this class. We will use this in readers and writers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_property_converter_a2994b8383a15988651e6c66d58a09c32}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!PropertyConverter@{PropertyConverter}}
+\index{PropertyConverter@{PropertyConverter}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{PropertyConverter()}{PropertyConverter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a2994b8383a15988651e6c66d58a09c32} 
+tracktable\+::\+Property\+Converter\+::\+Property\+Converter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} const \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy contructor, create a \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_property_converter_a12eca2da62165c43747e78d408e5a4ee}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!decimal\_precision@{decimal\_precision}}
+\index{decimal\_precision@{decimal\_precision}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{decimal\_precision()}{decimal\_precision()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a12eca2da62165c43747e78d408e5a4ee} 
+std\+::size\+\_\+t tracktable\+::\+Property\+Converter\+::decimal\+\_\+precision (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get number of digits of precision for writing real numbers. 
+
+\begin{DoxyReturn}{Returns}
+Number of digits in use 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_property_converter_a3b0c233327398c1f5b06c2b4f465f36a}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!null\_value@{null\_value}}
+\index{null\_value@{null\_value}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{null\_value()}{null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a3b0c233327398c1f5b06c2b4f465f36a} 
+string\+\_\+type tracktable\+::\+Property\+Converter\+::null\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get string that represents null values. 
+
+\begin{DoxyReturn}{Returns}
+String representing null 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_property_converter_a949f64dcc0f37f12178a5448b12a2715}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a949f64dcc0f37f12178a5448b12a2715} 
+bool tracktable\+::\+Property\+Converter\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} const \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Check whether two \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_property_converter_a029767c6cb43660739be4f1d95b651b4}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a029767c6cb43660739be4f1d95b651b4} 
+\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} \& tracktable\+::\+Property\+Converter\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} const \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Assign a \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classtracktable_1_1_property_converter}{Property\+Converter} with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_property_converter_ab092999b9c0611bfaea0158da5ef5b61}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_ab092999b9c0611bfaea0158da5ef5b61} 
+bool tracktable\+::\+Property\+Converter\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} const \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Check whether one \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} is equal to another by comparing the properties. 
+
+Two items are equal if all of their properties are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_property_converter}{Property\+Converter} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_property_converter_ada826b2bdc201347b7720d73764a2636}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!property\_from\_string@{property\_from\_string}}
+\index{property\_from\_string@{property\_from\_string}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{property\_from\_string()}{property\_from\_string()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_ada826b2bdc201347b7720d73764a2636} 
+Property\+ValueT tracktable\+::\+Property\+Converter\+::property\+\_\+from\+\_\+string (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{prop\+\_\+string}{, }\item[{Property\+Underlying\+Type}]{prop\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Convert a string and type ID to a property. 
+
+Parse a string to create a property value according to the current input formats and the requested output type.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em prop\+\_\+string} & Property represented as string \\
+\hline
+\mbox{\texttt{ in}}  & {\em prop\+\_\+type} & Property type (see tracktable\+::\+Property\+Underlying\+Type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Property parsed from string 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_property_converter_a30569e719232ca74f1df6b1a78708ca6}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!property\_to\_string@{property\_to\_string}}
+\index{property\_to\_string@{property\_to\_string}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{property\_to\_string()}{property\_to\_string()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a30569e719232ca74f1df6b1a78708ca6} 
+string\+\_\+type tracktable\+::\+Property\+Converter\+::property\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{Property\+ValueT const \&}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Convert a property to a string. 
+
+Convert a property to a string according to the current output format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em property} & Value to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of timestamp 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_property_converter_acdacb1a80c5beaa0cb0d636c9b234124}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!set\_decimal\_precision@{set\_decimal\_precision}}
+\index{set\_decimal\_precision@{set\_decimal\_precision}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{set\_decimal\_precision()}{set\_decimal\_precision()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_acdacb1a80c5beaa0cb0d636c9b234124} 
+void tracktable\+::\+Property\+Converter\+::set\+\_\+decimal\+\_\+precision (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{digits}{}\end{DoxyParamCaption})}
+
+
+
+Set number of digits of precision for writing real numbers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em digits} & Number of digits to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_property_converter_a6fb60af6bb774124e6325cd3b0f4be30}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!set\_null\_value@{set\_null\_value}}
+\index{set\_null\_value@{set\_null\_value}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{set\_null\_value()}{set\_null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a6fb60af6bb774124e6325cd3b0f4be30} 
+void tracktable\+::\+Property\+Converter\+::set\+\_\+null\+\_\+value (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{null\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Set string that represents null values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em null\+\_\+value} & String to stand in for nulls \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_property_converter_a56df0ac1b4dc7aac01b15c0ff1c659e6}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!set\_timestamp\_input\_format@{set\_timestamp\_input\_format}}
+\index{set\_timestamp\_input\_format@{set\_timestamp\_input\_format}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{set\_timestamp\_input\_format()}{set\_timestamp\_input\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a56df0ac1b4dc7aac01b15c0ff1c659e6} 
+void tracktable\+::\+Property\+Converter\+::set\+\_\+timestamp\+\_\+input\+\_\+format (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{format}{}\end{DoxyParamCaption})}
+
+
+
+Set format string for parsing timestamps. 
+
+This format string must adhere to the guidelines in the documentation for Boost\textquotesingle{}s date/time input format. See the following page\+:
+
+\href{http://www.boost.org/doc/libs/master/doc/html/date_time/date_time_io.html}{\texttt{ http\+://www.\+boost.\+org/doc/libs/master/doc/html/date\+\_\+time/date\+\_\+time\+\_\+io.\+html}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & Format string for timestamp parsing \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_property_converter_a991bf8a2c8715ddfb069ea12ed7f2ced}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!set\_timestamp\_output\_format@{set\_timestamp\_output\_format}}
+\index{set\_timestamp\_output\_format@{set\_timestamp\_output\_format}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{set\_timestamp\_output\_format()}{set\_timestamp\_output\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a991bf8a2c8715ddfb069ea12ed7f2ced} 
+void tracktable\+::\+Property\+Converter\+::set\+\_\+timestamp\+\_\+output\+\_\+format (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{format}{}\end{DoxyParamCaption})}
+
+
+
+Set format string for writing timestamps to strings. 
+
+This format string must adhere to the guidelines in the documentation for Boost\textquotesingle{}s date/time input format. See the following page\+:
+
+\href{http://www.boost.org/doc/libs/master/doc/html/date_time/date_time_io.html}{\texttt{ http\+://www.\+boost.\+org/doc/libs/master/doc/html/date\+\_\+time/date\+\_\+time\+\_\+io.\+html}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & Format string for timestamp output \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_property_converter_a3cf6f6545b46ace9c1715bb3acb7da9c}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!timestamp\_input\_format@{timestamp\_input\_format}}
+\index{timestamp\_input\_format@{timestamp\_input\_format}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{timestamp\_input\_format()}{timestamp\_input\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a3cf6f6545b46ace9c1715bb3acb7da9c} 
+string\+\_\+type tracktable\+::\+Property\+Converter\+::timestamp\+\_\+input\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the current input format. 
+
+\begin{DoxyReturn}{Returns}
+Format string for timestamp parsing 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_property_converter_a8c8d86d23cbf01a6392649fc082d4c41}\index{tracktable::PropertyConverter@{tracktable::PropertyConverter}!timestamp\_output\_format@{timestamp\_output\_format}}
+\index{timestamp\_output\_format@{timestamp\_output\_format}!tracktable::PropertyConverter@{tracktable::PropertyConverter}}
+\doxysubsubsection{\texorpdfstring{timestamp\_output\_format()}{timestamp\_output\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_property_converter_a8c8d86d23cbf01a6392649fc082d4c41} 
+string\+\_\+type tracktable\+::\+Property\+Converter\+::timestamp\+\_\+output\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the current output format. 
+
+\begin{DoxyReturn}{Returns}
+Format string for timestamp output 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Property\+Converter.\+h\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Property\+Converter.\+cpp\end{DoxyCompactItemize}

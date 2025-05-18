@@ -1,0 +1,535 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_r_tree_8h" kind="file" language="C++">
+    <compoundname>RTree.h</compoundname>
+    <includes local="no">tracktable/Core/TracktableCommon.h</includes>
+    <includes local="no">tracktable/Core/Box.h</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">utility</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">boost/tuple/tuple.hpp</includes>
+    <includes local="no">boost/tuple/tuple_comparison.hpp</includes>
+    <includes local="no">tracktable/Analysis/GuardedBoostGeometryRTreeHeader.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h</label>
+        <link refid="_r_tree_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>algorithm</label>
+      </node>
+      <node id="7">
+        <label>boost/tuple/tuple.hpp</label>
+      </node>
+      <node id="8">
+        <label>boost/tuple/tuple_comparison.hpp</label>
+      </node>
+      <node id="9">
+        <label>tracktable/Analysis/GuardedBoostGeometryRTreeHeader.h</label>
+      </node>
+      <node id="3">
+        <label>tracktable/Core/Box.h</label>
+      </node>
+      <node id="2">
+        <label>tracktable/Core/TracktableCommon.h</label>
+      </node>
+      <node id="5">
+        <label>utility</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtracktable_1_1_r_tree" prot="public">tracktable::RTree</innerclass>
+    <innernamespace refid="namespacetracktable">tracktable</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2023<sp/>National<sp/>Technology<sp/>and<sp/>Engineering</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC.<sp/>Under<sp/>the<sp/>terms<sp/>of<sp/>Contract<sp/>DE-NA0003525</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>with<sp/>National<sp/>Technology<sp/>and<sp/>Engineering<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC,</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>the<sp/>U.S.<sp/>Government<sp/>retains<sp/>certain<sp/>rights<sp/>in<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__tracktable_RTree_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__tracktable_RTree_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/TracktableCommon.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/Box.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/tuple/tuple.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/tuple/tuple_comparison.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Analysis/GuardedBoostGeometryRTreeHeader.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">bgi<sp/>=<sp/>boost::geometry::index;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>value_type,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>rtree_algorithm_type<sp/>=<sp/>bgi::quadratic&lt;16&gt;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>&gt;</highlight></codeline>
+<codeline lineno="108" refid="classtracktable_1_1_r_tree" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" kindref="member">RTree</ref></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>bgi::rtree&lt;value_type,<sp/>rtree_algorithm_type&gt;<sp/>rtree_type;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>rtree_type::const_query_iterator<sp/>query_result_iterator_type;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::pair&lt;query_result_iterator_type,<sp/>query_result_iterator_type&gt;<sp/>query_result_range_type;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>rtree_type::size_type<sp/>size_type;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" kindref="member">RTree</ref>()<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classtracktable_1_1_r_tree_1a7c22f1b748713b8134a5c11932770a0b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a7c22f1b748713b8134a5c11932770a0b" kindref="member">~RTree</ref>()<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classtracktable_1_1_r_tree_1a7630549cb78849e4ecee30b40ebffa7c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a7630549cb78849e4ecee30b40ebffa7c" kindref="member">RTree</ref>(<ref refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" kindref="member">RTree</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>_RTree(other._RTree)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="classtracktable_1_1_r_tree_1a92542c35d882c293b1a57727e47c8d28" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" kindref="member">RTree</ref>&amp;<sp/><ref refid="classtracktable_1_1_r_tree_1a92542c35d882c293b1a57727e47c8d28" kindref="member">operator=</ref>(<ref refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" kindref="member">RTree</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree<sp/>=<sp/>rtree_type(other._RTree);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="classtracktable_1_1_r_tree_1acde0305c32820f1d9a6b349340e36c33" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1acde0305c32820f1d9a6b349340e36c33" kindref="member">operator==</ref>(<ref refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" kindref="member">RTree</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="148"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;_RTree<sp/>==<sp/>other._RTree);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="classtracktable_1_1_r_tree_1a5439cc51e315c8e7bed034e4ff7f22a0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1a5439cc51e315c8e7bed034e4ff7f22a0" kindref="member">operator!=</ref>(<ref refid="classtracktable_1_1_r_tree_1a91930d61ca98e6c3883e0aa531757a1d" kindref="member">RTree</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="158"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>other);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>value_iterator_type&gt;</highlight></codeline>
+<codeline lineno="172" refid="classtracktable_1_1_r_tree_1a9a8babe8e6e6f16665fb9a318df3a71c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a9a8babe8e6e6f16665fb9a318df3a71c" kindref="member">RTree</ref>(value_iterator_type<sp/>range_begin,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value_iterator_type<sp/>range_end)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.insert(range_begin,<sp/>range_end);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="classtracktable_1_1_r_tree_1a1c0d28fa8b5ab6e1bed885c61608d5a4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1a1c0d28fa8b5ab6e1bed885c61608d5a4" kindref="member">insert</ref>(value_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.insert(value);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>value_iterator_type&gt;</highlight></codeline>
+<codeline lineno="193" refid="classtracktable_1_1_r_tree_1af3cc4c4d0d3da06b02d1ecc1c09ab479" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1af3cc4c4d0d3da06b02d1ecc1c09ab479" kindref="member">insert</ref>(value_iterator_type<sp/>range_begin,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value_iterator_type<sp/>range_end)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.insert(range_begin,<sp/>range_end);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203" refid="classtracktable_1_1_r_tree_1ad5378e07e120012a956938277ecf3583" refkind="member"><highlight class="normal"><sp/><sp/>size_type<sp/><ref refid="classtracktable_1_1_r_tree_1ad5378e07e120012a956938277ecf3583" kindref="member">remove</ref>(value_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_RTree.remove(value);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>value_iterator_type&gt;</highlight></codeline>
+<codeline lineno="215" refid="classtracktable_1_1_r_tree_1a61b36d7dcf65e847c435e55b6a3ae437" refkind="member"><highlight class="normal"><sp/><sp/>size_type<sp/><ref refid="classtracktable_1_1_r_tree_1a61b36d7dcf65e847c435e55b6a3ae437" kindref="member">remove</ref>(value_iterator_type<sp/>range_begin,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value_iterator_type<sp/>range_end)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_RTree.remove(range_begin,<sp/>range_end);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="classtracktable_1_1_r_tree_1ab40f76380d04533bb877ff2ddcd885ba" refkind="member"><highlight class="normal"><sp/><sp/>std::size_t<sp/><ref refid="classtracktable_1_1_r_tree_1ab40f76380d04533bb877ff2ddcd885ba" kindref="member">size</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="226"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_RTree.size();</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="classtracktable_1_1_r_tree_1af35a8e17379c378537fd8ef99e4591c2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1af35a8e17379c378537fd8ef99e4591c2" kindref="member">empty</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="235"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_RTree.empty();</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="classtracktable_1_1_r_tree_1af37c8a3e169e5959bbe7c9dfcdfc2377" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1af37c8a3e169e5959bbe7c9dfcdfc2377" kindref="member">clear</ref>()</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.clear();</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="283" refid="classtracktable_1_1_r_tree_1ad9db01644b2fc6f4624c4b97a13eb0da" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1ad9db01644b2fc6f4624c4b97a13eb0da" kindref="member">find_points_inside_box</ref>(corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="286"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_points_inside_box(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="295" refid="classtracktable_1_1_r_tree_1ac10179eb32a9dbd675e852aa4819963f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1ac10179eb32a9dbd675e852aa4819963f" kindref="member">find_points_inside_box</ref>(std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="298"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.first,<sp/>max_corner.first);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_points_inside_box(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type,</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T3,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T4,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T5,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T6,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T7,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T8,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T9</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>&gt;</highlight></codeline>
+<codeline lineno="311" refid="classtracktable_1_1_r_tree_1a70cf89c2cfb56a0770643a40f2814904" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1a70cf89c2cfb56a0770643a40f2814904" kindref="member">find_points_inside_box</ref>(</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="316"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.template<sp/>get&lt;0&gt;(),</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_corner.template<sp/>get&lt;0&gt;());</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_points_inside_box(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type&gt;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="366" refid="classtracktable_1_1_r_tree_1a9ad92501b4d73c3f5b14adeef74ad51a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a9ad92501b4d73c3f5b14adeef74ad51a" kindref="member">find_points_inside_box</ref>(corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="368"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_points_inside_box(search_box);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="378" refid="classtracktable_1_1_r_tree_1aae269c86d534f5033059a35b761c0528" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1aae269c86d534f5033059a35b761c0528" kindref="member">find_points_inside_box</ref>(std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="380"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.first,<sp/>max_corner.first);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_points_inside_box(search_box);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T3,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T4,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T5,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T6,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T7,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T8,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T9,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T10&gt;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="391" refid="classtracktable_1_1_r_tree_1a8dbad2eb78a96bf893e76008f6c46575" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a8dbad2eb78a96bf893e76008f6c46575" kindref="member">find_points_inside_box</ref>(</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.template<sp/>get&lt;0&gt;(),</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_corner.template<sp/>get&lt;0&gt;());</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_points_inside_box(search_box);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="434" refid="classtracktable_1_1_r_tree_1a8f8468f8f1eb87db589344e56f7e92d6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1a8f8468f8f1eb87db589344e56f7e92d6" kindref="member">find_points_strictly_inside_box</ref>(corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="437"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_points_strictly_inside_box(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="446" refid="classtracktable_1_1_r_tree_1ae8384a976db2a41d4683ad937aee4e9e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1ae8384a976db2a41d4683ad937aee4e9e" kindref="member">find_points_strictly_inside_box</ref>(std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="449"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.first,<sp/>max_corner.first);</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_points_strictly_inside_box(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type,</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T3,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T4,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T5,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T6,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T7,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T8,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T9,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T10</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/>&gt;</highlight></codeline>
+<codeline lineno="462" refid="classtracktable_1_1_r_tree_1aefe7f59745f329e4d68a687212eb7806" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1aefe7f59745f329e4d68a687212eb7806" kindref="member">find_points_strictly_inside_box</ref>(</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="467"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.template<sp/>get&lt;0&gt;(),</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_corner.template<sp/>get&lt;0&gt;());</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_points_strictly_inside_box(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type&gt;</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="509" refid="classtracktable_1_1_r_tree_1ac97005693221725362d07039764bf007" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1ac97005693221725362d07039764bf007" kindref="member">find_points_strictly_inside_box</ref>(corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="511"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_points_strictly_inside_box(search_box);</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="522" refid="classtracktable_1_1_r_tree_1a2b985ccc874035c6b94641236804c98d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a2b985ccc874035c6b94641236804c98d" kindref="member">find_points_strictly_inside_box</ref>(std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="524"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.first,<sp/>max_corner.first);</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_points_strictly_inside_box(search_box);</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"></highlight></codeline>
+<codeline lineno="529"><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T3,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T4,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T5,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T6,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T7,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T8,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T9,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T10&gt;</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="536" refid="classtracktable_1_1_r_tree_1aeb4fb879eda067f10d194279dba7916f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1aeb4fb879eda067f10d194279dba7916f" kindref="member">find_points_strictly_inside_box</ref>(</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.template<sp/>get&lt;0&gt;(),</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_corner.template<sp/>get&lt;0&gt;());</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_points_strictly_inside_box(search_box);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="580" refid="classtracktable_1_1_r_tree_1a64f627d50b35af0ea65a9996c776f8d5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1a64f627d50b35af0ea65a9996c776f8d5" kindref="member">intersects</ref>(corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="583"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_intersects(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="592" refid="classtracktable_1_1_r_tree_1aea5798afd6953685f0ceefd42b8806f6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1aea5798afd6953685f0ceefd42b8806f6" kindref="member">intersects</ref>(std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="595"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.first,<sp/>max_corner.first);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_intersects(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"></highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type,</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T3,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T4,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T5,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T6,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T7,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T8,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T9</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/>&gt;</highlight></codeline>
+<codeline lineno="608" refid="classtracktable_1_1_r_tree_1adb9aea469ca3de53694d33a0ae1cc0d4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1adb9aea469ca3de53694d33a0ae1cc0d4" kindref="member">intersects</ref>(</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner,</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="613"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.template<sp/>get&lt;0&gt;(),</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_corner.template<sp/>get&lt;0&gt;());</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_intersects(search_box,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type&gt;</highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="663" refid="classtracktable_1_1_r_tree_1addb090a79f95f583e4439952b6f772fb" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1addb090a79f95f583e4439952b6f772fb" kindref="member">intersects</ref>(corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="665"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner,<sp/>max_corner);</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_intersects(search_box);</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"></highlight></codeline>
+<codeline lineno="673"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="675" refid="classtracktable_1_1_r_tree_1a86ea20f84e89e90fb22c185d998a5ccd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a86ea20f84e89e90fb22c185d998a5ccd" kindref="member">intersects</ref>(std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;corner_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="677"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.first,<sp/>max_corner.first);</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_intersects(search_box);</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="681"><highlight class="normal"></highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>corner_type,</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T3,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T4,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T5,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T6,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T7,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T8,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T9,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T10&gt;</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="688" refid="classtracktable_1_1_r_tree_1ae42382e204da0b0f067bfef3f601ef92" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1ae42382e204da0b0f067bfef3f601ef92" kindref="member">intersects</ref>(</highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>min_corner,</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;corner_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>max_corner</highlight></codeline>
+<codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtracktable_1_1_box" kindref="compound">tracktable::Box&lt;corner_type&gt;</ref><sp/>search_box(min_corner.template<sp/>get&lt;0&gt;(),</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_corner.template<sp/>get&lt;0&gt;());</highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_intersects(search_box);</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"></highlight></codeline>
+<codeline lineno="725"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>search_po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="726" refid="classtracktable_1_1_r_tree_1af4e6525ed1833f4f1275c8121ffac9e3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1af4e6525ed1833f4f1275c8121ffac9e3" kindref="member">find_nearest_neighbors</ref>(search_point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_point,</highlight></codeline>
+<codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_neighbors,</highlight></codeline>
+<codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="729"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_nearest_neighbors(search_point,<sp/>num_neighbors,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="732"><highlight class="normal"></highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>search_po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="737" refid="classtracktable_1_1_r_tree_1a3b94b5ec1d1eeee17ffda25cef4e714e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1a3b94b5ec1d1eeee17ffda25cef4e714e" kindref="member">find_nearest_neighbors</ref>(std::pair&lt;search_point_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_point,</highlight></codeline>
+<codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_neighbors,</highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="740"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_nearest_neighbors(search_point.first,<sp/>num_neighbors,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="743"><highlight class="normal"></highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>search_point_type,</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T3,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T4,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T5,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T6,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T7,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T8,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T9,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T10,</highlight></codeline>
+<codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="750"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_r_tree_1af4e6525ed1833f4f1275c8121ffac9e3" kindref="member">find_nearest_neighbors</ref>(</highlight></codeline>
+<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;search_point_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_point,</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_neighbors,</highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="755"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_find_nearest_neighbors(search_point.template<sp/>get&lt;0&gt;(),<sp/>num_neighbors,<sp/>result_sink);</highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="758"><highlight class="normal"></highlight></codeline>
+<codeline lineno="789"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>search_po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">_type&gt;</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="791" refid="classtracktable_1_1_r_tree_1a11bc832e8ba5836f8a8ae0d050833d97" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1a11bc832e8ba5836f8a8ae0d050833d97" kindref="member">find_nearest_neighbors</ref>(search_point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_point,</highlight></codeline>
+<codeline lineno="792"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_neighbors)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="793"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_nearest_neighbors(search_point,<sp/>num_neighbors);</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="796"><highlight class="normal"></highlight></codeline>
+<codeline lineno="800"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>search_po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
+<codeline lineno="801"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="802" refid="classtracktable_1_1_r_tree_1aa11bb09355a975de9bf8f94d1dfe8bb4" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1aa11bb09355a975de9bf8f94d1dfe8bb4" kindref="member">find_nearest_neighbors</ref>(std::pair&lt;search_point_type,<sp/>T2&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_point,</highlight></codeline>
+<codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_neighbors)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="804"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="805"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_nearest_neighbors(search_point.first,<sp/>num_neighbors);</highlight></codeline>
+<codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="807"><highlight class="normal"></highlight></codeline>
+<codeline lineno="811"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>search_point_type,</highlight></codeline>
+<codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T3,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T4,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T5,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T6,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T7,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T8,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T9,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T10&gt;</highlight></codeline>
+<codeline lineno="813"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="814" refid="classtracktable_1_1_r_tree_1af4dbc5cfd097519d52e43ae94ee292fd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_r_tree_1af4dbc5cfd097519d52e43ae94ee292fd" kindref="member">find_nearest_neighbors</ref>(</highlight></codeline>
+<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::tuple&lt;search_point_type,<sp/>T2,<sp/>T3,<sp/>T4,<sp/>T5,<sp/>T6,<sp/>T7,<sp/>T8,<sp/>T9,<sp/>T10&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_point,</highlight></codeline>
+<codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_neighbors</highlight></codeline>
+<codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;_find_nearest_neighbors(search_point.template<sp/>get&lt;0&gt;(),<sp/>num_neighbors);</highlight></codeline>
+<codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="821"><highlight class="normal"></highlight></codeline>
+<codeline lineno="822"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/>rtree_type<sp/>_RTree;</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"></highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>box_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_find_points_inside_box(box_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_box,</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="830"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_copy_range_to_output(this-&gt;_find_points_inside_box(search_box),<sp/>result_sink);</highlight></codeline>
+<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="833"><highlight class="normal"></highlight></codeline>
+<codeline lineno="836"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>box_type&gt;</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/>query_result_range_type<sp/>_find_points_inside_box(box_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_box)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="838"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>query_result_range_type(</highlight></codeline>
+<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.qbegin(bgi::covered_by(search_box)),</highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.qend()</highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="844"><highlight class="normal"></highlight></codeline>
+<codeline lineno="847"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>box_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_intersects(box_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_box,</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>result_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="850"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_copy_range_to_output(this-&gt;_intersects(search_box),<sp/>result_sink);</highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="853"><highlight class="normal"></highlight></codeline>
+<codeline lineno="856"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>box_type&gt;</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"><sp/><sp/>query_result_range_type<sp/>_intersects(box_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_box)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="858"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>query_result_range_type(</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.qbegin(bgi::intersects(search_box)),</highlight></codeline>
+<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.qend()</highlight></codeline>
+<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="864"><highlight class="normal"></highlight></codeline>
+<codeline lineno="867"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>box_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="868"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_find_points_strictly_inside_box(box_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_box,<sp/>insert_iter_type<sp/>output_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="869"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_copy_range_to_output(this-&gt;_find_points_strictly_inside_box(search_box),</highlight></codeline>
+<codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output_sink);</highlight></codeline>
+<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="873"><highlight class="normal"></highlight></codeline>
+<codeline lineno="876"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>box_type&gt;</highlight></codeline>
+<codeline lineno="877"><highlight class="normal"><sp/><sp/>query_result_range_type</highlight></codeline>
+<codeline lineno="878"><highlight class="normal"><sp/><sp/>_find_points_strictly_inside_box(box_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_box)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="879"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>query_result_range_type(this-&gt;_RTree.qbegin(bgi::within(search_box)),</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.qend());</highlight></codeline>
+<codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="883"><highlight class="normal"></highlight></codeline>
+<codeline lineno="886"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>search_po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">_type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>insert_iter_type&gt;</highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_find_nearest_neighbors(search_point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_point,</highlight></codeline>
+<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_neighbors,</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insert_iter_type<sp/>output_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="890"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_copy_range_to_output(this-&gt;_find_nearest_neighbors(search_point,<sp/>num_neighbors),</highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output_sink);</highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"></highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>search_po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">_type&gt;</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/>query_result_range_type<sp/>_find_nearest_neighbors(search_point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>search_point,</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_neighbors)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="900"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>query_result_range_type(this-&gt;_RTree.qbegin(bgi::nearest(search_point,<sp/>num_neighbors)),</highlight></codeline>
+<codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;_RTree.qend());</highlight></codeline>
+<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="904"><highlight class="normal"></highlight></codeline>
+<codeline lineno="907"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>iterator_range_type,</highlight></codeline>
+<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>output_iterator_type&gt;</highlight></codeline>
+<codeline lineno="909"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_copy_range_to_output(iterator_range_type<sp/>range,</highlight></codeline>
+<codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output_iterator_type<sp/>output_sink)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="911"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="912"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(range.first<sp/>!=<sp/>range.second)</highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="914"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output_sink<sp/>=<sp/>*(range.first);</highlight></codeline>
+<codeline lineno="915"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++output_sink;</highlight></codeline>
+<codeline lineno="916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++(range.first);</highlight></codeline>
+<codeline lineno="917"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="918"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="919"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="920"><highlight class="normal"></highlight></codeline>
+<codeline lineno="921"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>close<sp/>namespace<sp/>tracktable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="922"><highlight class="normal"></highlight></codeline>
+<codeline lineno="923"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/RTree.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,32 @@
+\doxysection{tracktable\+::detail\+::check\+\_\+coordinate\+\_\+equality\texorpdfstring{$<$}{<} 0 \texorpdfstring{$>$}{>} Struct Reference}
+\hypertarget{structtracktable_1_1detail_1_1check__coordinate__equality_3_010_01_4}{}\label{structtracktable_1_1detail_1_1check__coordinate__equality_3_010_01_4}\index{tracktable::detail::check\_coordinate\_equality$<$ 0 $>$@{tracktable::detail::check\_coordinate\_equality$<$ 0 $>$}}
+
+
+Helper object for checking equality between points.  
+
+
+
+
+{\ttfamily \#include $<$Check\+Coordinate\+Equality.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structtracktable_1_1detail_1_1check__coordinate__equality_3_010_01_4_ac219b17f70f76a57c889948d611619a2}\label{structtracktable_1_1detail_1_1check__coordinate__equality_3_010_01_4_ac219b17f70f76a57c889948d611619a2} 
+{\footnotesize template$<$class left\+\_\+point\+\_\+type, class right\+\_\+point\+\_\+type$>$ }\\static bool {\bfseries apply} (left\+\_\+point\+\_\+type const \&, right\+\_\+point\+\_\+type const \&)
+\item 
+\Hypertarget{structtracktable_1_1detail_1_1check__coordinate__equality_a932496c19f11cbc0137be77cad78c03d}\label{structtracktable_1_1detail_1_1check__coordinate__equality_a932496c19f11cbc0137be77cad78c03d} 
+static bool {\bfseries apply} (left\+\_\+point\+\_\+type const \&left, right\+\_\+point\+\_\+type const \&right)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper object for checking equality between points. 
+
+Compare two points for equality by comparing all of their coordinates.
+
+You will definitely not need to instantiate this object directly. This is the base case for the iteration over the coordinates of a point that causes the template instantiation to stop after looping over all of the dimensions at compile time. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/detail/points/Check\+Coordinate\+Equality.\+h\end{DoxyCompactItemize}

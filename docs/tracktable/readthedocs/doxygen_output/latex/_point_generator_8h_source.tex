@@ -1,0 +1,311 @@
+\doxysection{Point\+Generator.\+h}
+\hypertarget{_point_generator_8h_source}{}\label{_point_generator_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PointGenerator\_h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PointGenerator\_h}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Timestamp.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/Terrestrial.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ PRINT(X)\ std::cout\ <<\ \#X\ "{}:\ "{}\ <<\ (X)\ <<\ std::endl;}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}\_T>}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_point_generator_a7d25517db0e8a1f2c2e9cbe2a0dcc561}{PointGenerator}}\ \{}
+\DoxyCodeLine{00022\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{using\ }PointT\ =\ Point\_T;}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{using\ }DurationT\ =\ tracktable::Duration;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_generator_a7d25517db0e8a1f2c2e9cbe2a0dcc561}{PointGenerator}}()\ :\ \mbox{\hyperlink{classtracktable_1_1_point_generator_a7d25517db0e8a1f2c2e9cbe2a0dcc561}{PointGenerator}}(PointT())\ \{\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd794557403ea49baefe22bdf6c006}{PointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position)\ :\ \mbox{\hyperlink{classtracktable_1_1_point_generator_a7d25517db0e8a1f2c2e9cbe2a0dcc561}{PointGenerator}}(\_position,\ \mbox{\hyperlink{namespacetracktable}{tracktable}}::\mbox{\hyperlink{namespacetracktable_a7f915c14e8fe5ac6b656336fbeb88d6f}{seconds}}(60))\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_generator_a49834831409348f9d3fcd243c3e9c9e1}{PointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a}{interval}}(\_interval),\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}}(\_position)\ \{\}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_point_generator}{\string~PointGenerator}}()\{\}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{virtual}\ PointT\ \mbox{\hyperlink{classtracktable_1_1_point_generator_acbfb85c761c3930dce74ff1b9c25340c}{next}}()\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtracktable_1_1_point_generator_a1e2ebe6afd720d55387e7df12b50bace}{count}}++\ !=\ 0)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}}.set\_timestamp(\mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}}.timestamp()\ +\ \mbox{\hyperlink{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a}{interval}});}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}};}
+\DoxyCodeLine{00055\ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ DurationT\ \mbox{\hyperlink{classtracktable_1_1_point_generator_aa291abc32990ef10fc0bf7d65dda75c2}{getInterval}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a}{interval}};\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_adc799f7c47a6916ed7f141653be654c9}{setInterval}}(\textcolor{keyword}{const}\ DurationT\&\ \_interval)\ \{\ \mbox{\hyperlink{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a}{interval}}\ =\ \_interval;\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ std::string\ \mbox{\hyperlink{classtracktable_1_1_point_generator_a424a7ae1ced68046bbef5edc9aa29d55}{getObjectId}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}}.object\_id();\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ae6fa66422a88e3fb99d34154a531e38f}{setObjectId}}(\textcolor{keyword}{const}\ std::string\&\ \_id)\ \{\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}}.set\_object\_id(\_id);\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00078\ \ \ DurationT\ \mbox{\hyperlink{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a}{interval}};\ \ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_a1e2ebe6afd720d55387e7df12b50bace}{count}}\ =\ 0;\ \ \ \ }
+\DoxyCodeLine{00080\ \ \ PointT\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}};\ \ \ \ \ }
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a8f8f9df20775fb52cee53199c3dd44ae}{ConstantSpeedPointGenerator}}}
+\DoxyCodeLine{00087\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_a7d25517db0e8a1f2c2e9cbe2a0dcc561}{PointGenerator}}<tracktable::domain::terrestrial::trajectory\_type::point\_type>\ \{}
+\DoxyCodeLine{00088\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{using\ }ThisType\ =\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a8f8f9df20775fb52cee53199c3dd44ae}{ConstantSpeedPointGenerator}};}
+\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{using\ }BaseType\ =\ \mbox{\hyperlink{classtracktable_1_1_point_generator_a7d25517db0e8a1f2c2e9cbe2a0dcc561}{PointGenerator<tracktable::domain::terrestrial::trajectory\_type::point\_type>}};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{using\ }DurationT\ =\ BaseType::DurationT;}
+\DoxyCodeLine{00094\ \ \ \textcolor{keyword}{using\ }PointT\ =\ BaseType::PointT;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{static}\ PointT\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ac98516185e80982ce279dc289d3655b9}{reckon}}(PointT\ \_origin,\ \textcolor{keywordtype}{double}\ \_distance,\ \textcolor{keywordtype}{double}\ \_heading)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{using\ }tracktable::conversions::degrees;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{using\ }tracktable::conversions::radians;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ R\ =\ tracktable::conversions::constants::EARTH\_RADIUS\_IN\_KM;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//\ TODO:\ convert\ math\ for\ elipsoid??}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ h\ =\ radians(\_heading);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ latR\ =\ radians(\_origin.latitude());\ \ \ \textcolor{comment}{//\ rad}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ lonR\ =\ radians(\_origin.longitude());\ \ \textcolor{comment}{//\ rad}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{auto}\ d\ =\ (\textcolor{keywordtype}{long}\ double)(\_distance\ /\ 1000.0);\ \ \ \ \ \ \ \textcolor{comment}{//\ km}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{auto}\ dR\ =\ d\ /\ R;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ radial\ distance}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{auto}\ cdR\ =\ std::cos(dR);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{auto}\ sdR\ =\ std::sin(dR);}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{auto}\ slatR\ =\ std::sin(latR);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{auto}\ lat2\ =\ std::asin(slatR\ *\ cdR\ +\ std::cos(latR)\ *\ sdR\ *\ std::cos(h));}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{auto}\ lon2\ =\ lonR\ +\ std::atan2(std::sin(h)\ *\ sdR\ *\ std::cos(latR),\ cdR\ -\/\ slatR\ *\ std::sin(lat2));}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{auto}\ lon2d\ =\ degrees(lon2);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{auto}\ lat2d\ =\ degrees(lat2);}
+\DoxyCodeLine{00126\ \ \ \ \ PointT\ result(\_origin);}
+\DoxyCodeLine{00127\ \ \ \ \ result.set\_latitude(lat2d);}
+\DoxyCodeLine{00128\ \ \ \ \ result.set\_longitude(lon2d);}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00130\ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{static}\ PointT\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a4523e000bab74be2491b496788c3004e}{reckon2}}(\textcolor{keyword}{const}\ PointT\&\ \_origin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_speed,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_heading,\ \textcolor{keyword}{const}\ DurationT\&\ \_dt)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{using\ }tracktable::conversions::degrees;}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{using\ }tracktable::conversions::radians;}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ R\ =\ tracktable::conversions::constants::EARTH\_RADIUS\_IN\_KM;}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{auto}\ speed\ =\ \_speed\ /\ 1000.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ m/s\ -\/>\ km/s}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{auto}\ heading\ =\ radians(-\/(\_heading\ -\/\ 90.0));\ \ \ \textcolor{comment}{//\ rad}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{auto}\ dt\ =\ \_dt.total\_milliseconds()\ /\ 1000.0;\ \ \textcolor{comment}{//\ seconds}}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{auto}\ sLo\ =\ std::cos(heading)\ *\ speed;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ lon\ tangental\ speed}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{auto}\ sLa\ =\ std::sin(heading)\ *\ speed;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ lat\ tangental\ speed}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{auto}\ wLo\ =\ sLo\ /\ R;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ lon\ radial\ speed}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{auto}\ wLa\ =\ sLa\ /\ R;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ lat\ radial\ speed}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ PointT\ result(\_origin);}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{auto}\ lat\ =\ \_origin.latitude()\ +\ degrees(wLa\ *\ dt);}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{auto}\ lon\ =\ \_origin.longitude()\ +\ degrees(wLo\ *\ dt);}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{if}\ (lon\ >\ 180.0)\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ lon\ -\/=\ 360;}
+\DoxyCodeLine{00160\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (lon\ <\ -\/180.0)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ lon\ +=\ 360;}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{if}\ (lat\ >\ 90.0)\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ lat\ =\ 180\ -\/\ lat;}
+\DoxyCodeLine{00165\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (lat\ <\ -\/90.0)\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ lat\ =\ -\/180\ +\ lat;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{comment}{//\ TODO:\ address\ need\ for\ speed\ reversal\ if\ lat\ crosses\ over?}}
+\DoxyCodeLine{00169\ \ \ \ \ result.set\_latitude(lat);}
+\DoxyCodeLine{00170\ \ \ \ \ result.set\_longitude(lon);}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00172\ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00176\ \ \ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a8f8f9df20775fb52cee53199c3dd44ae}{ConstantSpeedPointGenerator}}()\ :\ BaseType()\ \{\}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ae6a4ac201ac2d4a056fe362f05cc4c46}{ConstantSpeedPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position)\ :\ BaseType(\_position)\ \{\}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00188\ \ \ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ad7dd400c0ae1ea36737136862a96e36a}{ConstantSpeedPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval)}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ :\ BaseType(\_position,\ \_interval)\ \{\}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00198\ \ \ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ad3ab170eebb2494a8c1a5dbd366e45de}{ConstantSpeedPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_speed,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_heading)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ :\ BaseType(\_position,\ \_interval),\ speed(\_speed),\ heading(\_heading)\ \{\}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00206\ \ \ PointT\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_aa18f661298741ceedd6a5f0030ff0c31}{next}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_point_generator_acbfb85c761c3930dce74ff1b9c25340c}{BaseType::next}}();}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtracktable_1_1_point_generator_a1e2ebe6afd720d55387e7df12b50bace}{count}}\ >\ 1)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}}\ =\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a4523e000bab74be2491b496788c3004e}{reckon2}}(\mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}},\ speed,\ heading,\ \mbox{\hyperlink{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a}{interval}});}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}};}
+\DoxyCodeLine{00212\ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_acdeb0379497c5a16898f6a3c0675eea5}{getSpeed}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ speed;\ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00222\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a70db0c8186b19febdf72c3262006aa50}{setSpeed}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_speed)\ \{\ speed\ =\ \_speed;\ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00228\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ac5faa0d4e5ff36cb142184a6f62cce55}{getHeading}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ heading;\ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00232\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a91fbb43ef9ca94f8efba00a38caa1422}{setHeading}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_heading)\ \{\ heading\ =\ \_heading;\ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00235\ \ \ \textcolor{keywordtype}{double}\ speed\ =\ 44.704;\ \ }
+\DoxyCodeLine{00236\ \ \ \textcolor{keywordtype}{double}\ heading\ =\ 0.0;\ \ \ }
+\DoxyCodeLine{00237\ \};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_circular_point_generator_a88d2c135907fac3bc946d885b554651f}{CircularPointGenerator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a8f8f9df20775fb52cee53199c3dd44ae}{ConstantSpeedPointGenerator}}\ \{}
+\DoxyCodeLine{00243\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00244\ \ \ \textcolor{keyword}{using\ }ThisType\ =\ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_a88d2c135907fac3bc946d885b554651f}{CircularPointGenerator}};}
+\DoxyCodeLine{00245\ \ \ \textcolor{keyword}{using\ }BaseType\ =\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a8f8f9df20775fb52cee53199c3dd44ae}{ConstantSpeedPointGenerator}};}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00248\ \ \ \textcolor{keyword}{using\ }DurationT\ =\ BaseType::DurationT;}
+\DoxyCodeLine{00249\ \ \ \textcolor{keyword}{using\ }PointT\ =\ BaseType::PointT;}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00255\ \ \ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_a88d2c135907fac3bc946d885b554651f}{CircularPointGenerator}}()\ :\ BaseType()\ \{\}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00260\ \ \ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_aea982657103b64cd9e22fac129ed7591}{CircularPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position)\ :\ BaseType(\_position)\ \{\}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00267\ \ \ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_a6b5cffb20a2aa835fe3ba6f9f5ff07d2}{CircularPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval)}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ :\ BaseType(\_position,\ \_interval)\ \{\}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00277\ \ \ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_a8cf476b6f5f5a4bc3e39a7379fff58a1}{CircularPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_speed,}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_heading)}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ :\ BaseType(\_position,\ \_interval,\ \_speed,\ \_heading)\ \{\}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00289\ \ \ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_a834f398572dfcc0ecac549e166af042e}{CircularPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_speed,}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_heading,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_turnRate)}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ :\ BaseType(\_position,\ \_interval,\ \_speed,\ \_heading),\ turnRate(\_turnRate)\ \{\}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00297\ \ \ PointT\ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_abbdc3fac4a3814ae857d2f57d3137883}{next}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{comment}{//\ flies\ straight\ and\ adjust\ heading\ at\ next\ point}}
+\DoxyCodeLine{00299\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_aa18f661298741ceedd6a5f0030ff0c31}{BaseType::next}}();}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtracktable_1_1_point_generator_a1e2ebe6afd720d55387e7df12b50bace}{count}}\ >\ 1)\ \{\ \ \textcolor{comment}{//\ Base\ will\ already\ increment\ it}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ h\ =\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ac5faa0d4e5ff36cb142184a6f62cce55}{getHeading}}();}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ h\ +=\ turnRate\ *\ (\mbox{\hyperlink{classtracktable_1_1_point_generator_abd8d8b844e62e23a398828c49119071a}{interval}}.total\_milliseconds()\ /\ 1000.0);}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ >=\ 360.0)\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ h\ -\/=\ 360;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a91fbb43ef9ca94f8efba00a38caa1422}{setHeading}}(h);}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}};}
+\DoxyCodeLine{00309\ \ \ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00315\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_aa503a6a43a1386ac929f6658d50db4f7}{getTurnRate}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ turnRate;\ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00319\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_circular_point_generator_ab75244ee81bfa3e7906b8f79d3214908}{setTurnRate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_rate)\ \{\ turnRate\ =\ \_rate;\ \}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00322\ \ \ \textcolor{keywordtype}{double}\ turnRate\ =\ .6;\ \ }
+\DoxyCodeLine{00323\ \};}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00335\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_grid_point_generator_a0761a1ba8c84996ba7c2ab808d620da6}{GridPointGenerator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a8f8f9df20775fb52cee53199c3dd44ae}{ConstantSpeedPointGenerator}}\ \{}
+\DoxyCodeLine{00336\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00337\ \ \ \textcolor{keyword}{using\ }ThisType\ =\ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_a0761a1ba8c84996ba7c2ab808d620da6}{GridPointGenerator}};}
+\DoxyCodeLine{00338\ \ \ \textcolor{keyword}{using\ }BaseType\ =\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a8f8f9df20775fb52cee53199c3dd44ae}{ConstantSpeedPointGenerator}};}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00341\ \ \ \textcolor{keyword}{using\ }DurationT\ =\ BaseType::DurationT;}
+\DoxyCodeLine{00342\ \ \ \textcolor{keyword}{using\ }PointT\ =\ BaseType::PointT;}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00348\ \ \ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_a0761a1ba8c84996ba7c2ab808d620da6}{GridPointGenerator}}()\ :\ BaseType()\ \{\}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00353\ \ \ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_a61d47ece6199fdbb7909783892de9933}{GridPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position)\ :\ BaseType(\_position)\ \{\}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00360\ \ \ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_a20b668084e50716155d87bfe02cc6b67}{GridPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval)\ :\ BaseType(\_position,\ \_interval)\ \{\}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00369\ \ \ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aef018457d13b0de937792f619d5a8455}{GridPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_speed,}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_heading)}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ :\ BaseType(\_position,\ \_interval,\ \_speed,\ \_heading)\ \{\}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00381\ \ \ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aee10fec01122f74c19c60a83014d925c}{GridPointGenerator}}(\textcolor{keyword}{const}\ PointT\&\ \_position,\ \textcolor{keyword}{const}\ DurationT\&\ \_interval,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_speed,}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_heading,\ std::vector<int>\ \_lengths)}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ :\ BaseType(\_position,\ \_interval,\ \_speed,\ \_heading),\ lengths(\_lengths)\ \{\}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00389\ \ \ PointT\ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aa71b27ec947cdf2999f82c2fd859aa46}{next}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{comment}{//\ flies\ straight\ and\ adjust\ heading\ at\ next\ point}}
+\DoxyCodeLine{00391\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_aa18f661298741ceedd6a5f0030ff0c31}{BaseType::next}}();}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtracktable_1_1_point_generator_a1e2ebe6afd720d55387e7df12b50bace}{count}}\ >\ 1)\ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ l\ =\ lengths[current];}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (++gridCount\ ==\ \textcolor{keyword}{static\_cast<}std::make\_unsigned<decltype(l)\textcolor{keyword}{>}::type>(std::abs(l)))\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ h\ =\ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_ac5faa0d4e5ff36cb142184a6f62cce55}{getHeading}}();}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ h\ +=\ ((l\ >\ 0)\ ?\ 90\ :\ -\/90);\ \ \textcolor{comment}{//\ if\ negative,\ turn\ left,\ otherwise\ right}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ >=\ 360.0)\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ h\ -\/=\ 360;}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_constant_speed_point_generator_a91fbb43ef9ca94f8efba00a38caa1422}{setHeading}}(h);}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (++current\ >=\ lengths.size())\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ current\ =\ 0;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ gridCount\ =\ 0;}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00406\ \ \ \ \ \}}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtracktable_1_1_point_generator_ad6fd1aaa40f1535b7c07191cfae01ab7}{position}};}
+\DoxyCodeLine{00408\ \ \ \}}
+\DoxyCodeLine{00413\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_aeca36f6d46b756bdc7839f3dc0027005}{getTurnRate}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ turnRate;\ \}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00417\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_grid_point_generator_a9190e8833d9d50cbd9546803a3ed2c79}{setTurnRate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \_rate)\ \{\ turnRate\ =\ \_rate;\ \}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00420\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00421\ \ \ \textcolor{keywordtype}{size\_t}\ current\ =\ 0;}
+\DoxyCodeLine{00422\ \ \ \textcolor{keywordtype}{size\_t}\ gridCount\ =\ 0;}
+\DoxyCodeLine{00423\ \ \ \textcolor{keywordtype}{double}\ turnRate\ =\ .6;}
+\DoxyCodeLine{00424\ \ \ std::vector<int>\ lengths\ =\ \{10\};\ \ }
+\DoxyCodeLine{00425\ \};}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00439\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}\_T>}
+\DoxyCodeLine{00440\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator}{MultipleGeneratorCollator}}\ \{}
+\DoxyCodeLine{00441\ \ \ \textcolor{keyword}{using\ }PointT\ =\ Point\_T;}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00447\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_a8b8752a73510fdf5fb91f252c311a324}{addGenerator}}(std::shared\_ptr<\mbox{\hyperlink{classtracktable_1_1_point_generator}{PointGenerator<PointT>}}>\ \_generator)\ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_generator\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Pointer\ is\ nullptr"{}});}
+\DoxyCodeLine{00450\ \ \ \ \ \}}
+\DoxyCodeLine{00451\ \ \ \ \ generators.push\_back(\_generator);}
+\DoxyCodeLine{00452\ \ \ \}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00458\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_adffbedecd5bf9133851733a5ba355427}{getGeneratorCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ generators.size();\ \}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00464\ \ \ PointT\ \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_a42bee66ccaee4e8679b03f5bcafeef90}{next}}()\ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ points.size())\ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}No\ generated\ points"{}});}
+\DoxyCodeLine{00467\ \ \ \ \ \}}
+\DoxyCodeLine{00468\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ points.back();}
+\DoxyCodeLine{00469\ \ \ \ \ points.pop\_back();}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00471\ \ \ \}}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00475\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_ae53519b714ac494bbbf02fd19aec14f7}{generate}}()\ \{\ \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_ae53519b714ac494bbbf02fd19aec14f7}{generate}}(10);\ \}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00481\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_multiple_generator_collator_a7c802c256cb01acea0352a75181440ea}{generate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \_count)\ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ generators.size())\ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}No\ generators"{}});}
+\DoxyCodeLine{00484\ \ \ \ \ \}}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ 0u;\ i\ <\ \_count;\ ++i)\ \{}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ g\ :\ generators)\ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ points.push\_back(g-\/>next());}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00489\ \ \ \ \ \}}
+\DoxyCodeLine{00490\ \ \ \ \ std::sort(points.begin(),\ points.end(),}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ PointT\&\ \_lhs,\ \textcolor{keyword}{const}\ PointT\&\ \_rhs)\ \{\ return\ \_lhs.timestamp()\ >\ \_rhs.timestamp();\ \});}
+\DoxyCodeLine{00492\ \ \ \}}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00495\ \ \ std::vector<std::shared\_ptr<PointGenerator<PointT>>>\ generators;}
+\DoxyCodeLine{00496\ \ \ std::vector<PointT>\ points;}
+\DoxyCodeLine{00497\ \};}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \}\textcolor{comment}{//namespace\ tracktable}}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#undef\ PRINT}}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,224 @@
+\doxysection{tracktable\+::Line\+Reader\texorpdfstring{$<$}{<} StringT \texorpdfstring{$>$}{>}\+::Line\+Reader\+Iterator Class Reference}
+\hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+
+
+Line Reader iterator class.  
+
+
+
+
+{\ttfamily \#include $<$Line\+Reader.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad417d805ffcf5f7a549f4e1a1e008f3a}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad417d805ffcf5f7a549f4e1a1e008f3a} 
+using {\bfseries iterator\+\_\+category} = std\+::input\+\_\+iterator\+\_\+tag
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a134b6e4d29d1b1bc2d4bf347c263a9c0}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a134b6e4d29d1b1bc2d4bf347c263a9c0} 
+using {\bfseries value\+\_\+type} = StringT
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a8c5fa4b323ecf6fccdbf5df6e67cfa4e}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a8c5fa4b323ecf6fccdbf5df6e67cfa4e} 
+using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a6f4175a5b6bd94fdd202c6245ec9c381}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a6f4175a5b6bd94fdd202c6245ec9c381} 
+using {\bfseries pointer} = StringT\texorpdfstring{$\ast$}{*}
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad9138eb66ca5d02d09f09826649d0a71}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad9138eb66ca5d02d09f09826649d0a71} 
+using {\bfseries reference} = StringT\&
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad64aa77ed94320cc993a75345568a4f3}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad64aa77ed94320cc993a75345568a4f3} 
+using {\bfseries char\+\_\+type} = typename String\+T\+::value\+\_\+type
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a20460a4c734f1cfbcead615ad69e63be}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a20460a4c734f1cfbcead615ad69e63be} 
+using {\bfseries traits\+\_\+type} = typename String\+T\+::traits\+\_\+type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670} 
+{\bfseries Line\+Reader\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty reader iterator. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a41c1593cc534f1ef0c2e73ccc8cfcc29}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a41c1593cc534f1ef0c2e73ccc8cfcc29} 
+{\bfseries Line\+Reader\+Iterator} (istream\+\_\+type \texorpdfstring{$\ast$}{*}stream)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a line reader iterator with a copy of a {\ttfamily std\+::basic\+\_\+istream} \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a02893e475c48879275f197dd84e395aa}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a02893e475c48879275f197dd84e395aa} 
+{\bfseries Line\+Reader\+Iterator} (\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a line reader iterator with a copy of another. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a0da931074e271ca4d8d8eea47fc99daf}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a0da931074e271ca4d8d8eea47fc99daf} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Line\+Reader\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Destructor for a line reader iterator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad5314b75a73363247776e8e17ce2a562}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator} to the value of another. \end{DoxyCompactList}\item 
+value\+\_\+type const \& \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a10512795d327ce8afaa7e7a3b89f1b66}{operator\texorpdfstring{$\ast$}{*}}} () const
+\begin{DoxyCompactList}\small\item\em Multiply an iterator. \end{DoxyCompactList}\item 
+value\+\_\+type \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a3799053f3cd9cc5f71b6d9a614e6d981}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Get the current iterator value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_aa70759dbcc3dbb0eb952f6137708572a}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Advance the iterator to the next line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad286954ad62e362ea2cf47b5fa2032ac}{operator++}} (int)
+\begin{DoxyCompactList}\small\item\em Advance the iterator to the next line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a98103c9fec08fa65076f772ab50f3ec7}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one iterator is equal to another by comparing the values and streams. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a861af9149ee71258dd5c81c39191e87b}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two iterators are unequal. \end{DoxyCompactList}\item 
+value\+\_\+type \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a00d93294c19c3d5e7edcd5c8003c5ca9}{get\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Get the stored value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_afd632793ca305b87f961e0edf0557e4a}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_afd632793ca305b87f961e0edf0557e4a} 
+istream\+\_\+type \texorpdfstring{$\ast$}{*} {\bfseries Stream}
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a4f3c905771b78950645403ccd81a96cd}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a4f3c905771b78950645403ccd81a96cd} 
+value\+\_\+type {\bfseries Value}
+\item 
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a9c48060cec5173ad7ebc897080f0e0b2}\label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a9c48060cec5173ad7ebc897080f0e0b2} 
+int {\bfseries Counter}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class StringT = std\+::string$>$\newline
+class tracktable\+::\+Line\+Reader$<$ String\+T $>$\+::\+Line\+Reader\+Iterator}
+Line Reader iterator class. 
+
+Generates a iterator that can traverse the given parent \doxylink{classtracktable_1_1_line_reader}{Line\+Reader} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a00d93294c19c3d5e7edcd5c8003c5ca9}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a00d93294c19c3d5e7edcd5c8003c5ca9} 
+template$<$class StringT = std\+::string$>$ \\
+value\+\_\+type \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable\+::\+Line\+Reader}}$<$ StringT $>$\+::\+Line\+Reader\+Iterator\+::get\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the stored value. 
+
+This is to handle the case where the stream is NULL but there wasn\textquotesingle{}t a new line at the end of the file. In that case we return an empty value so that comparisons evaluate properly.
+
+\begin{DoxyReturn}{Returns}
+Value unless the Stream is Null, in which case we return an empty value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a861af9149ee71258dd5c81c39191e87b}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a861af9149ee71258dd5c81c39191e87b} 
+template$<$class StringT = std\+::string$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable\+::\+Line\+Reader}}$<$ StringT $>$\+::\+Line\+Reader\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two iterators are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Iterator for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a10512795d327ce8afaa7e7a3b89f1b66}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a10512795d327ce8afaa7e7a3b89f1b66} 
+template$<$class StringT = std\+::string$>$ \\
+value\+\_\+type const  \& \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable\+::\+Line\+Reader}}$<$ StringT $>$\+::\+Line\+Reader\+Iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply an iterator. 
+
+\begin{DoxyReturn}{Returns}
+Result of the multiplication 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_aa70759dbcc3dbb0eb952f6137708572a}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_aa70759dbcc3dbb0eb952f6137708572a} 
+template$<$class StringT = std\+::string$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable\+::\+Line\+Reader}}$<$ StringT $>$\+::\+Line\+Reader\+Iterator\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advance the iterator to the next line. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next line 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad286954ad62e362ea2cf47b5fa2032ac}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad286954ad62e362ea2cf47b5fa2032ac} 
+template$<$class StringT = std\+::string$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable\+::\+Line\+Reader}}$<$ StringT $>$\+::\+Line\+Reader\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advance the iterator to the next line. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next line 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a3799053f3cd9cc5f71b6d9a614e6d981}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a3799053f3cd9cc5f71b6d9a614e6d981} 
+template$<$class StringT = std\+::string$>$ \\
+value\+\_\+type \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable\+::\+Line\+Reader}}$<$ StringT $>$\+::\+Line\+Reader\+Iterator\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current iterator value. 
+
+\begin{DoxyReturn}{Returns}
+Current iterator value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad5314b75a73363247776e8e17ce2a562}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad5314b75a73363247776e8e17ce2a562} 
+template$<$class StringT = std\+::string$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable\+::\+Line\+Reader}}$<$ StringT $>$\+::\+Line\+Reader\+Iterator\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a98103c9fec08fa65076f772ab50f3ec7}\index{tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::LineReader$<$ StringT $>$::LineReaderIterator@{tracktable::LineReader$<$ StringT $>$::LineReaderIterator}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a98103c9fec08fa65076f772ab50f3ec7} 
+template$<$class StringT = std\+::string$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable\+::\+Line\+Reader}}$<$ StringT $>$\+::\+Line\+Reader\+Iterator\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator}{Line\+Reader\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one iterator is equal to another by comparing the values and streams. 
+
+Two items are equal if all of their values and streams are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Iterator for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Line\+Reader.\+h\end{DoxyCompactItemize}

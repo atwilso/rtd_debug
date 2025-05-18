@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="bug" kind="page">
+    <compoundname>bug</compoundname>
+    <title>Bug List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Member <ref refid="classtracktable_1_1_point_reader_1af579f3b6366705e58565f87c32779433" kindref="member">tracktable::PointReader&lt; PointT &gt;::input</ref>  () const</term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000001"/> We currently have no way to indicate whether the stream is valid. </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classtracktable_1_1_trajectory_reader_1a9da4fdcfe6eb712498752d0e00333e3d" kindref="member">tracktable::TrajectoryReader&lt; TrajectoryT &gt;::input</ref>  () const</term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000002"/> We currently have no way to indicate whether the stream is valid.</para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="bug"/>
+  </compounddef>
+</doxygen>

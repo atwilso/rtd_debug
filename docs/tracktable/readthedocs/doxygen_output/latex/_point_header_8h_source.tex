@@ -1,0 +1,181 @@
+\doxysection{Point\+Header.\+h}
+\hypertarget{_point_header_8h_source}{}\label{_point_header_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/detail/PointHeader.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/detail/PointHeader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_rw\_point\_header\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_rw\_point\_header\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointTraits.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <tracktable/RW/detail/HeaderStrings.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tracktable/RW/detail/PropertyMapReadWrite.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }rw\ \{\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }PointHeader}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ string\_type\ MagicString;}
+\DoxyCodeLine{00050\ \ \ string\_type\ Domain;}
+\DoxyCodeLine{00051\ \ \ std::size\_t\ Dimension;}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ HasObjectId;}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ HasTimestamp;}
+\DoxyCodeLine{00054\ \ \ string\_vector\_type\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PropertyNames;}
+\DoxyCodeLine{00055\ \ \ std::vector<PropertyUnderlyingType>\ PropertyTypes;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ PointHeader()}
+\DoxyCodeLine{00058\ \ \ \ \ :\ MagicString(PointFileMagicString)}
+\DoxyCodeLine{00059\ \ \ \ \ ,\ Domain(\textcolor{stringliteral}{"{}unknown"{}})}
+\DoxyCodeLine{00060\ \ \ \ \ ,\ Dimension(0)}
+\DoxyCodeLine{00061\ \ \ \ \ ,\ HasObjectId(\textcolor{keyword}{false})}
+\DoxyCodeLine{00062\ \ \ \ \ ,\ HasTimestamp(\textcolor{keyword}{false})}
+\DoxyCodeLine{00063\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ PointHeader(PointHeader\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00066\ \ \ \ \ :\ MagicString(other.MagicString)}
+\DoxyCodeLine{00067\ \ \ \ \ ,\ Domain(other.Domain)}
+\DoxyCodeLine{00068\ \ \ \ \ ,\ Dimension(other.Dimension)}
+\DoxyCodeLine{00069\ \ \ \ \ ,\ HasObjectId(other.HasObjectId)}
+\DoxyCodeLine{00070\ \ \ \ \ ,\ HasTimestamp(other.HasTimestamp)}
+\DoxyCodeLine{00071\ \ \ \ \ ,\ PropertyNames(other.PropertyNames)}
+\DoxyCodeLine{00072\ \ \ \ \ ,\ PropertyTypes(other.PropertyTypes)}
+\DoxyCodeLine{00073\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{virtual}\ \string~PointHeader()\ \{\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ PointHeader\&\ operator=(PointHeader\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ this-\/>MagicString\ \ \ =\ other.MagicString;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ this-\/>Domain\ \ \ \ \ \ \ \ =\ other.Domain;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ this-\/>Dimension\ \ \ \ \ =\ other.Dimension;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ this-\/>HasObjectId\ \ \ =\ other.HasObjectId;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ this-\/>HasTimestamp\ \ =\ other.HasTimestamp;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ this-\/>PropertyNames\ =\ other.PropertyNames;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ this-\/>PropertyTypes\ =\ other.PropertyTypes;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{bool}\ operator==(PointHeader\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ this-\/>MagicString\ \ \ \ \ \ ==\ other.MagicString}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \&\&\ this-\/>Domain\ \ \ \ \ \ \ \ ==\ other.Domain}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \&\&\ this-\/>Dimension\ \ \ \ \ ==\ other.Dimension}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \&\&\ this-\/>HasObjectId\ \ \ ==\ other.HasObjectId}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \&\&\ this-\/>HasTimestamp\ \ ==\ other.HasTimestamp}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \&\&\ this-\/>PropertyNames\ ==\ other.PropertyNames}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \&\&\ this-\/>PropertyTypes\ ==\ other.PropertyTypes}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \textcolor{keywordtype}{bool}\ operator!=(PointHeader\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00103\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{void}\ populate\_from\_point(point\_type\ \textcolor{keyword}{const}\&\ example\_point)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ this-\/>Domain\ =\ traits::point\_domain\_name<point\_type>::apply();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ this-\/>Dimension\ =\ traits::dimension<point\_type>::value;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ this-\/>HasObjectId\ =\ \mbox{\hyperlink{structtracktable_1_1traits_1_1has__object__id}{traits::has\_object\_id<point\_type>::value}};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ this-\/>HasTimestamp\ =\ \mbox{\hyperlink{structtracktable_1_1traits_1_1has__timestamp}{traits::has\_timestamp<point\_type>::value}};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ this-\/>populate\_properties(example\_point);}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{void}\ populate\_properties(point\_type\ \textcolor{keyword}{const}\&\ example\_point)}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1write__property__info__to__header}{write\_property\_info\_to\_header}}<}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1traits_1_1has__properties}{traits::has\_properties<point\_type>::value}}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ >::apply(example\_point,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::back\_inserter(this-\/>PropertyNames),}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::back\_inserter(this-\/>PropertyTypes)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ out\_iter\_type>}
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{void}\ write\_as\_tokens(out\_iter\_type\ destination)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ (*destination++)\ =\ this-\/>MagicString;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ (*destination++)\ =\ this-\/>Domain;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(this-\/>Dimension);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(this-\/>HasObjectId);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(this-\/>HasTimestamp);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(this-\/>PropertyNames.size());}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ this-\/>PropertyNames.size();\ ++i)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ (*destination++)\ =\ this-\/>PropertyNames[i];}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(this-\/>PropertyTypes[i]);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ in\_iter\_type>}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{void}\ read\_from\_tokens(in\_iter\_type\ current\_token,\ in\_iter\_type\ \textcolor{comment}{/*last\_token*/})}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ std::size\_t\ stage\ =\ 0;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ std::size\_t\ expected\_num\_properties\ =\ 0;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ this-\/>MagicString\ =\ (*current\_token++);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ this-\/>Domain\ \ \ \ \ \ =\ (*current\_token++);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ this-\/>Dimension\ \ \ =\ boost::lexical\_cast<std::size\_t>(*current\_token++);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ this-\/>HasObjectId\ =\ boost::lexical\_cast<bool>(*current\_token++);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ this-\/>HasTimestamp\ =\ boost::lexical\_cast<bool>(*current\_token++);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ expected\_num\_properties\ =\ boost::lexical\_cast<std::size\_t>(*current\_token++);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ expected\_num\_properties;\ ++i)}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ this-\/>PropertyNames.push\_back(*current\_token++);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ this-\/>PropertyTypes.push\_back(\mbox{\hyperlink{namespacetracktable_a56356945c2bca38b921dd7ef7a75f538}{string\_to\_property\_type}}(*current\_token++));}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \}\ \}\ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

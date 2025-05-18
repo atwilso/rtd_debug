@@ -1,0 +1,98 @@
+\doxysection{Platform\+Detect.\+h}
+\hypertarget{_platform_detect_8h_source}{}\label{_platform_detect_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PlatformDetect.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PlatformDetect.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ tracktable/Core/PlatformDetect.h\ -\/\ Macros\ to\ identify\ what\ platform\ we're\ on}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ In\ order\ to\ provide\ platform-\/dependent\ features\ like\ a\ check\ on}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ memory\ usage,\ we\ need\ to\ determine\ what\ platform\ (operating\ system)}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ we're\ on.\ The\ cleanest\ way\ to\ do\ that\ at\ compile\ time\ is\ to\ look}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ at\ the\ different\ symbols\ defined\ by\ the\ preprocessor.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ The\ checks\ in\ this\ header\ file\ were\ written\ with\ reference\ to\ the}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ following\ web\ pages:}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ http://beefchunk.com/documentation/lang/c/pre-\/defined-\/c/precomp.html}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *\ https://sourceforge.net/p/predef/wiki/OperatingSystems}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_PlatformDetect\_h}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_PlatformDetect\_h}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#\ define\ TT\_VISUAL\_STUDIO\ 1}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#\ define\ TT\_WINDOWS\ 1}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \#\ pragma\ message("{}Detected\ Windows\ and\ Visual\ Studio."{})}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#if\ defined(\_\_MINGW32\_\_)\ ||\ defined(\_\_MINGW64\_\_)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#\ define\ TT\_MINGW\ 1}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#\ define\ TT\_WINDOWS\ 1}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ \#\ pragma\ message\ "{}Detected\ Windows\ and\ MinGW."{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#if\ defined(\_\_linux)\ ||\ defined(linux)\ ||\ defined(\_\_linux\_\_)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#\ define\ TT\_UNIX\ 1}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#\ define\ TT\_LINUX\ 1}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ \#\ pragma\ message\ "{}Detected\ Linux."{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#if\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#\ define\ TT\_OSX\ 1}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#\ define\ TT\_UNIX\ 1}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ \#\ pragma\ message\ "{}Detected\ Mac\ OS\ X."{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#if\ defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#\ define\ TT\_CYGWIN\ 1}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#\ define\ TT\_WINDOWS\ 1}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ \#\ warning\ "{}Detected\ Windows\ and\ Cygwin."{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#if\ defined(\_AIX)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#\ define\ TT\_AIX\ 1}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#\ define\ TT\_UNIX\ 1}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ \#\ warning\ "{}Detected\ AIX."{}}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#if\ defined(\_\_FreeBSD\_\_)\ ||\ defined(\_\_NetBSD\_\_)\ ||\ defined(\_\_OpenBSD\_\_)\ ||\ defined(\_\_bsdi\_\_)\ ||\ defined(\_\_DragonFly\_\_)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#\ define\ TT\_BSD\ 1}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#\ define\ TT\_UNIX\ 1}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ \#\ warning\ "{}Detected\ BSD."{}}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,189 @@
+\doxysection{Geometric\+Median.\+h}
+\hypertarget{_geometric_median_8h_source}{}\label{_geometric_median_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/GeometricMedian.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/GeometricMedian.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_GeometricMedian\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_GeometricMedian\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointArithmetic.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <tracktable/Core/GeometricMean.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointTraits.h>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Distance.h>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable_1_1arithmetic}{arithmetic}}\ \{}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ forward\_iterator\_type>}
+\DoxyCodeLine{00065\ \textcolor{keyword}{typename}\ std::iterator\_traits<forward\_iterator\_type>::value\_type}
+\DoxyCodeLine{00066\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aa0118fe069513e917ecc5b82f9d93de3}{geometric\_median}}(}
+\DoxyCodeLine{00067\ \ \ forward\_iterator\_type\ input\_begin,}
+\DoxyCodeLine{00068\ \ \ forward\_iterator\_type\ input\_end}
+\DoxyCodeLine{00069\ \ \ )}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ std::iterator\_traits<forward\_iterator\_type>::value\_type\ point\_type;}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{typedef}\ std::vector<double>\ double\_vector;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{double}\ max\_coordinate\_span\ =\ 0;}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordflow}{for}\ (forward\_iterator\_type\ point\_iter\ =\ input\_begin;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ point\_iter\ !=\ input\_end;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ ++point\_iter)}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{double}\ coord\_min\ =\ std::numeric\_limits<double>::max();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ coord\_max\ =\ -\/\ std::numeric\_limits<double>::max();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ d\ =\ 0;\ d\ <\ tracktable::traits::dimension<point\_type>::value;\ ++d)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ coord\_min\ =\ std::min(coord\_min,\ (*point\_iter)[d]);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ coord\_max\ =\ std::max(coord\_max,\ (*point\_iter)[d]);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ max\_coordinate\_span\ =\ std::max(max\_coordinate\_span,\ coord\_max\ -\/\ coord\_min);}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{double}\ tolerance\ =\ 1e-\/9\ *\ max\_coordinate\_span;}
+\DoxyCodeLine{00091\ \ \ point\_type\ median,\ new\_median,\ median\_estimate;}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{double}\ distance\_moved\ =\ std::numeric\_limits<double>::max();}
+\DoxyCodeLine{00093\ \ \ std::size\_t\ num\_points\ =\ std::distance(input\_begin,\ input\_end);}
+\DoxyCodeLine{00094\ \ \ assert(num\_points\ >=\ 0);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordflow}{if}\ (input\_begin\ ==\ input\_end)}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ point\_type();\ \textcolor{comment}{//\ no\ points\ -\/\ degenerate\ solution}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{comment}{//\ The\ median\ starts\ out\ at\ the\ geometric\ mean\ of\ all\ the\ points.}}
+\DoxyCodeLine{00102\ \ \ median\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ae72858352d309ed946e2e61b5f59a1da}{tracktable::arithmetic::geometric\_mean}}(input\_begin,\ input\_end);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ std::vector<double>\ weights(num\_points,\ 0);}
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{double}\ inverse\_distance\_sum\ =\ 0;}
+\DoxyCodeLine{00106\ \ \ std::size\_t\ num\_zeros\ =\ 0;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordflow}{while}\ (distance\_moved\ >\ tolerance)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ inverse\_distance\_sum\ =\ 0;}
+\DoxyCodeLine{00111\ \ \ \ \ num\_zeros\ =\ 0;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ inverse\ distance\ from\ the\ current\ estimate\ of\ the}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ median\ to\ all\ the\ sample\ points}}
+\DoxyCodeLine{00115\ \ \ \ \ forward\_iterator\_type\ point\_iter\ =\ input\_begin;}
+\DoxyCodeLine{00116\ \ \ \ \ double\_vector::iterator\ weight\_iter\ =\ weights.begin();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{for}\ (}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ ;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ point\_iter\ !=\ input\_end\ \&\&\ weight\_iter\ !=\ weights.end();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ ++point\_iter,\ ++weight\_iter}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ )}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ tracktable::distance(median,\ *point\_iter);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{comment}{//\ We\ adopt\ the\ convention\ that\ 0/0\ ==\ 0}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ >\ 0)}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ distance\ =\ 1.0\ /\ distance;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ ++num\_zeros;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ inverse\_distance\_sum\ +=\ distance;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ *weight\_iter\ =\ distance;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{//\ Normalize\ the\ inverse\ distances\ to\ get\ a\ set\ of\ weights\ for\ the}}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ points}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{for}\ (double\_vector::iterator\ normalize\_weight\_iter\ =\ weights.begin();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ normalize\_weight\_iter\ !=\ weights.end();}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ ++normalize\_weight\_iter)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ *normalize\_weight\_iter\ /=\ inverse\_distance\_sum;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ median\_estimate\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a0398c0539a5b1cb52dcd11e52a093df7}{tracktable::arithmetic::weighted\_sum}}(input\_begin,\ input\_end,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ weights.begin(),\ weights.end());}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Are\ we\ done?\ (all\ points\ at\ same\ location)}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_zeros\ ==\ num\_points)}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ median;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//\ No.\ Compute\ a\ better\ estimate\ for\ the\ median.}}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_zeros\ ==\ 0)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ new\_median\ =\ median\_estimate;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \textcolor{comment}{//\ We're\ sitting\ on\ top\ of\ one\ or\ more\ of\ the\ points\ -\/-\/\ adjust}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ new\ estimate\ of\ the\ median\ accordingly}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ point\_type\ normalized\_motion;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ normalized\_motion\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a1b5177e895f1986f3ee6da9f0bcb8765}{tracktable::arithmetic::subtract}}(median\_estimate,\ median);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a41ddc2b0d0664a6e086950f74ce141be}{tracktable::arithmetic::multiply\_scalar\_in\_place}}(normalized\_motion,\ inverse\_distance\_sum);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ residual\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aef3dd337b69af60555ba8d576fb8bc05}{tracktable::arithmetic::norm}}(normalized\_motion);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ residual\_inverse\ =\ 0;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (residual\ >\ 0)}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ residual\_inverse\ =\ num\_zeros\ /\ residual;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ point\_type\ a,\ b;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aeeed551f1737041ad3248ff471aa0d69}{tracktable::arithmetic::multiply\_scalar}}(median\_estimate,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::max(0.0,\ 1.0\ -\/\ residual\_inverse));}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ b\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_aeeed551f1737041ad3248ff471aa0d69}{tracktable::arithmetic::multiply\_scalar}}(median,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::min(1.0,\ residual\_inverse));}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ new\_median\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a13b5723e0b27add384afb9634212ff47}{tracktable::arithmetic::add}}(a,\ b);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ distance\_moved\ =\ tracktable::distance(median,\ new\_median);}
+\DoxyCodeLine{00188\ \ \ \ \ median\ =\ new\_median;}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \textcolor{keywordflow}{return}\ median;}
+\DoxyCodeLine{00192\ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \}\ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

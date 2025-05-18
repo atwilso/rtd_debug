@@ -1,0 +1,238 @@
+\doxysection{Line\+Reader.\+h}
+\hypertarget{_line_reader_8h_source}{}\label{_line_reader_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/LineReader.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/LineReader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_TRACKTABLE\_LINE\_READER\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_TRACKTABLE\_LINE\_READER\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ StringT\ =\ std::\textcolor{keywordtype}{string}>}
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_line_reader_a85d80a4d2cc62f8d570296405bf6f2f5}{LineReader}}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{typedef}\ StringT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\_type;}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ StringT::value\_type\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ char\_type;}
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ StringT::traits\_type\ \ \ \ \ \ \ \ \ \ \ \ \ \ traits\_type;}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{typedef}\ std::basic\_istream<char\_type,\ traits\_type>\ istream\_type;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_a85d80a4d2cc62f8d570296405bf6f2f5}{LineReader}}()}
+\DoxyCodeLine{00069\ \ \ \ \ :\ Stream(nullptr)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_abc3e9448b03742248648e1a1dbdd5e7e}{LineReader}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1_line_reader_a85d80a4d2cc62f8d570296405bf6f2f5}{LineReader}}\&\ other)}
+\DoxyCodeLine{00078\ \ \ \ \ :\ Stream(other.Stream)}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_a4df8829abf12b3e820ddda9b14f59d91}{LineReader}}(istream\_type\&\ stream)}
+\DoxyCodeLine{00087\ \ \ \ \ :\ Stream(\&stream)}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_line_reader_a3d882cd7fd4e4d34507b64e0d5796616}{\string~LineReader}}()}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_a85d80a4d2cc62f8d570296405bf6f2f5}{LineReader}}\&\ \mbox{\hyperlink{classtracktable_1_1_line_reader_aa5d96a31e82f861e85e266b1b54eac1b}{operator=}}(\mbox{\hyperlink{classtracktable_1_1_line_reader_a85d80a4d2cc62f8d570296405bf6f2f5}{LineReader}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ this-\/>Stream\ =\ other.Stream;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_line_reader_a01b85b8e2fd013c85c5025fcbc7e4660}{set\_input}}(istream\_type\&\ stream)}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ this-\/>Stream\ =\ \&stream;}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \ \ istream\_type\&\ \mbox{\hyperlink{classtracktable_1_1_line_reader_ab250353a3f72a64e1e4e82c7c08c067b}{input}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00121\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{return}\ *(this-\/>Stream);}
+\DoxyCodeLine{00123\ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_line_reader_a2a8fcd718bf00ae47991986cae4d2500}{operator==}}(\mbox{\hyperlink{classtracktable_1_1_line_reader_a85d80a4d2cc62f8d570296405bf6f2f5}{LineReader}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00133\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>Stream\ ==\ other.Stream);}
+\DoxyCodeLine{00135\ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_line_reader_ae454926123ed8f3532d9dad6e9094c8c}{operator!=}}(\mbox{\hyperlink{classtracktable_1_1_line_reader_a85d80a4d2cc62f8d570296405bf6f2f5}{LineReader}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00143\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00145\ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00148\ \ \ istream\_type*\ Stream;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}}
+\DoxyCodeLine{00157\ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{using\ }iterator\_category\ =\ std::input\_iterator\_tag;}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{using\ }value\_type\ \ \ \ \ \ \ \ =\ StringT;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{using\ }difference\_type\ \ \ =\ std::ptrdiff\_t;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{using\ }pointer\ \ \ \ \ \ \ \ \ \ \ =\ StringT*;}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{using\ }reference\ \ \ \ \ \ \ \ \ =\ StringT\&;}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{using\ }char\_type\ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{typename}\ StringT::value\_type;}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{using\ }traits\_type\ \ \ \ \ =\ \textcolor{keyword}{typename}\ StringT::traits\_type;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}()}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ :\ Stream(nullptr),}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ Value(\textcolor{stringliteral}{"{}"{}}),}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ Counter(0)}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a41c1593cc534f1ef0c2e73ccc8cfcc29}{LineReaderIterator}}(istream\_type*\ stream)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ :\ Stream(stream),}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ Value(\textcolor{stringliteral}{"{}"{}}),}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ Counter(0)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ When\ first\ constructed,\ the\ stream\ has\ not\ been\ read\ at}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ all.\ This\ corresponds\ to\ an\ iterator\ state\ before\ the}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ beginning\ of\ the\ data.\ We\ need\ to\ advance\ once\ to\ get\ to}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ first\ record.}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stream)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_aa70759dbcc3dbb0eb952f6137708572a}{operator++}}();}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a02893e475c48879275f197dd84e395aa}{LineReaderIterator}}(\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ :\ Stream(other.Stream),}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ Value(other.Value),}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ Counter(other.Counter)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a0da931074e271ca4d8d8eea47fc99daf}{\string~LineReaderIterator}}()}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}\&\ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad5314b75a73363247776e8e17ce2a562}{operator=}}(\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ this-\/>Stream\ =\ other.Stream;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ this-\/>Value\ =\ other.Value;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ this-\/>Counter\ =\ other.Counter;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00219\ \ \ \ \ value\_type\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a10512795d327ce8afaa7e7a3b89f1b66}{operator*}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00220\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>Value;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00228\ \ \ \ \ value\_type*\ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a3799053f3cd9cc5f71b6d9a614e6d981}{operator-\/>}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00229\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&(this-\/>Value);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}\&\ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_aa70759dbcc3dbb0eb952f6137708572a}{operator++}}()}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!getline(*this-\/>Stream,\ this-\/>Value))}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>Stream\ =\ NULL;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(tracktable::log::debug)\ <<\ \textcolor{stringliteral}{"{}Read\ Line\ \#"{}}\ <<\ ++(this-\/>Counter);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}\&\ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_ad286954ad62e362ea2cf47b5fa2032ac}{operator++}}(\textcolor{keywordtype}{int})}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}\ prev(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_aa70759dbcc3dbb0eb952f6137708572a}{operator++}}();}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prev;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a98103c9fec08fa65076f772ab50f3ec7}{operator==}}(\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00269\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>Stream\ ==\ other.Stream\ \&\&}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>get\_value()\ ==\ other.\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a00d93294c19c3d5e7edcd5c8003c5ca9}{get\_value}}());}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a861af9149ee71258dd5c81c39191e87b}{operator!=}}(\mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a1a954ff8ddf59a31384158da30d9b670}{LineReaderIterator}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00280\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\ !(*\textcolor{keyword}{this}\ ==\ other)\ );}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00294\ \ \ \ \ value\_type\ \mbox{\hyperlink{classtracktable_1_1_line_reader_1_1_line_reader_iterator_a00d93294c19c3d5e7edcd5c8003c5ca9}{get\_value}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00295\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>Stream\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>Value;}
+\DoxyCodeLine{00298\ \ \ \ \ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00301\ \ \ \ \ istream\_type*\ Stream;}
+\DoxyCodeLine{00302\ \ \ \ \ value\_type\ Value;}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{int}\ Counter;}
+\DoxyCodeLine{00304\ \ \ \};}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00307\ \ \ \textcolor{keyword}{typedef}\ LineReaderIterator\ iterator;}
+\DoxyCodeLine{00308\ \ \ \textcolor{keyword}{typedef}\ LineReaderIterator\ \textcolor{keyword}{const}\ const\_iterator;}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00314\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_line_reader_a864257d94318e0daed77b7ebb8176780}{begin}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00315\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(this-\/>Stream);}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00323\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_line_reader_acb58f65460586189ffd5c15410b0b0f0}{end}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00324\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(NULL);}
+\DoxyCodeLine{00326\ \ \ \ \ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00332\ \ \ const\_iterator\ \mbox{\hyperlink{classtracktable_1_1_line_reader_a22f89a5e9204f7ce53b2c80204aaad24}{const\_begin}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00333\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(this-\/>Stream);}
+\DoxyCodeLine{00335\ \ \ \ \ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00341\ \ \ const\_iterator\ \mbox{\hyperlink{classtracktable_1_1_line_reader_a00fdb38627ee428238030cbf3ce08977}{const\_end}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00342\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(NULL);}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \};}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_retrieve_underlying_type" kind="class" language="C++" prot="public">
+    <compoundname>RetrieveUnderlyingType</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">boost::static_visitor&lt; tracktable::PropertyUnderlyingType &gt;</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_retrieve_underlying_type_1ae08287036b1e262f13d1824d93688c83" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>tracktable::PropertyUnderlyingType</type>
+        <definition>tracktable::PropertyUnderlyingType RetrieveUnderlyingType::operator()</definition>
+        <argsstring>(double) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>RetrieveUnderlyingType::operator()</qualifiedname>
+        <param>
+          <type>double</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="158" column="38" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_retrieve_underlying_type_1a32a24e8ff8a00f3e780995bbfefc1929" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>tracktable::PropertyUnderlyingType</type>
+        <definition>tracktable::PropertyUnderlyingType RetrieveUnderlyingType::operator()</definition>
+        <argsstring>(tracktable::string_type const &amp;) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>RetrieveUnderlyingType::operator()</qualifiedname>
+        <param>
+          <type>tracktable::string_type const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="163" column="38" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="163" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_retrieve_underlying_type_1ae4318387e19b82ecdcf97b62f884f817" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>tracktable::PropertyUnderlyingType</type>
+        <definition>tracktable::PropertyUnderlyingType RetrieveUnderlyingType::operator()</definition>
+        <argsstring>(tracktable::Timestamp const &amp;) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>RetrieveUnderlyingType::operator()</qualifiedname>
+        <param>
+          <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">tracktable::Timestamp</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="168" column="38" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_retrieve_underlying_type_1ad3e70cfb7231f9d51496be24ca33dd4e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>tracktable::PropertyUnderlyingType</type>
+        <definition>tracktable::PropertyUnderlyingType RetrieveUnderlyingType::operator()</definition>
+        <argsstring>(const tracktable::NullValue &amp;) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>RetrieveUnderlyingType::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_null_value" kindref="compound">tracktable::NullValue</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="173" column="38" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_retrieve_underlying_type_1aa0add371b7197441b6e3ec292c8d1ed2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>tracktable::PropertyUnderlyingType</type>
+        <definition>tracktable::PropertyUnderlyingType RetrieveUnderlyingType::operator()</definition>
+        <argsstring>(const T &amp;) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>RetrieveUnderlyingType::operator()</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="179" column="38" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="179" bodyend="182"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>RetrieveUnderlyingType</label>
+        <link refid="class_retrieve_underlying_type"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::static_visitor&lt; tracktable::PropertyUnderlyingType &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>RetrieveUnderlyingType</label>
+        <link refid="class_retrieve_underlying_type"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::static_visitor&lt; tracktable::PropertyUnderlyingType &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" line="155" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.cpp" bodystart="156" bodyend="184"/>
+    <listofallmembers>
+      <member refid="class_retrieve_underlying_type_1ae08287036b1e262f13d1824d93688c83" prot="public" virt="non-virtual"><scope>RetrieveUnderlyingType</scope><name>operator()</name></member>
+      <member refid="class_retrieve_underlying_type_1a32a24e8ff8a00f3e780995bbfefc1929" prot="public" virt="non-virtual"><scope>RetrieveUnderlyingType</scope><name>operator()</name></member>
+      <member refid="class_retrieve_underlying_type_1ae4318387e19b82ecdcf97b62f884f817" prot="public" virt="non-virtual"><scope>RetrieveUnderlyingType</scope><name>operator()</name></member>
+      <member refid="class_retrieve_underlying_type_1ad3e70cfb7231f9d51496be24ca33dd4e" prot="public" virt="non-virtual"><scope>RetrieveUnderlyingType</scope><name>operator()</name></member>
+      <member refid="class_retrieve_underlying_type_1aa0add371b7197441b6e3ec292c8d1ed2" prot="public" virt="non-virtual"><scope>RetrieveUnderlyingType</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

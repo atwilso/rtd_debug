@@ -1,0 +1,307 @@
+\doxysection{tracktable\+::String\+Tokenizing\+Reader\texorpdfstring{$<$}{<} Input\+Line\+IteratorT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_string_tokenizing_reader}{}\label{classtracktable_1_1_string_tokenizing_reader}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+
+
+Iterate over a range of input strings and tokenize each one.  
+
+
+
+
+{\ttfamily \#include $<$String\+Tokenizing\+Reader.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}}
+\begin{DoxyCompactList}\small\item\em Class for the tokenized string iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a4c48904eb3ea6ce84379757c45f8dd64}\label{classtracktable_1_1_string_tokenizing_reader_a4c48904eb3ea6ce84379757c45f8dd64} 
+typedef Input\+Line\+IteratorT {\bfseries input\+\_\+line\+\_\+iter\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_ac9b02faa2f776a341492e8f61be9ff8c}\label{classtracktable_1_1_string_tokenizing_reader_ac9b02faa2f776a341492e8f61be9ff8c} 
+typedef Input\+Line\+Iterator\+T\+::value\+\_\+type {\bfseries string\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a7ef3eb9e91da481d2ee73868f35f6570}\label{classtracktable_1_1_string_tokenizing_reader_a7ef3eb9e91da481d2ee73868f35f6570} 
+typedef \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} {\bfseries iterator}
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a08c92ae072c4729dd3d5f4083768e3f1}\label{classtracktable_1_1_string_tokenizing_reader_a08c92ae072c4729dd3d5f4083768e3f1} 
+typedef \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{Tokenized\+String\+Iterator}} const {\bfseries const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa}\label{classtracktable_1_1_string_tokenizing_reader_ae5b38bd16a6ed1c6a49a9bcf08c88dfa} 
+{\bfseries String\+Tokenizing\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Initialize an empty reader with default delimiters (space, tab). \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_ac408549c6963d46731fd41918412e6da}\label{classtracktable_1_1_string_tokenizing_reader_ac408549c6963d46731fd41918412e6da} 
+{\bfseries String\+Tokenizing\+Reader} (input\+\_\+line\+\_\+iter\+\_\+type Start, input\+\_\+line\+\_\+iter\+\_\+type Finish)
+\begin{DoxyCompactList}\small\item\em Initialize a tokenizer with an input range and default delimiters. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a4e7ec4a2910a0d0f2c6cbc01e0e88b36}\label{classtracktable_1_1_string_tokenizing_reader_a4e7ec4a2910a0d0f2c6cbc01e0e88b36} 
+{\bfseries String\+Tokenizing\+Reader} (input\+\_\+line\+\_\+iter\+\_\+type Start, input\+\_\+line\+\_\+iter\+\_\+type Finish, string\+\_\+type const \&Delim)
+\begin{DoxyCompactList}\small\item\em Initialize a tokenizer with an input range and your own delimiters. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a3c8b8538f0742d3e12a320415e6ebe08}\label{classtracktable_1_1_string_tokenizing_reader_a3c8b8538f0742d3e12a320415e6ebe08} 
+{\bfseries String\+Tokenizing\+Reader} (\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy state from another tokenizer. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a9d8b8490b187cee9e0497dde3161562c}\label{classtracktable_1_1_string_tokenizing_reader_a9d8b8490b187cee9e0497dde3161562c} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+String\+Tokenizing\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a8eae929bc9222f47a9c95ec374bb585f}{set\+\_\+field\+\_\+delimiter}} (string\+\_\+type const \&delim)
+\begin{DoxyCompactList}\small\item\em Set the delimiter character to use in tokenization. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a29b7cef3f45f43a812c8b4850613cafb}\label{classtracktable_1_1_string_tokenizing_reader_a29b7cef3f45f43a812c8b4850613cafb} 
+string\+\_\+type {\bfseries field\+\_\+delimiter} () const
+\begin{DoxyCompactList}\small\item\em Return the delimiter character currently in use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a8c0ad03f9082c6654837376d53670f36}{set\+\_\+escape\+\_\+character}} (string\+\_\+type const \&escape)
+\begin{DoxyCompactList}\small\item\em Set the escape character to use in tokenization. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a1be07a13fe38dd1c7445011b1d259723}{escape\+\_\+character}} () const
+\item 
+void \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_aba9df9bf4af3787d46af59032ad24e6f}{set\+\_\+quote\+\_\+character}} (string\+\_\+type const \&quote)
+\begin{DoxyCompactList}\small\item\em Set the quote character to use in tokenization. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a6579ae289362c0f78bc8057101bdf1df}{quote\+\_\+character}} () const
+\item 
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}} \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a8333d4d20d296b765374813928c7c5d0}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a005c819200db166e8d7b5d30c618f665}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one reader is equal to another by comparing all the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a38b06bf1823aa1e28f04cd20a7d09e73}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two \doxylink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader} are unequal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a0e1cddf9acc864855effcf0beac9f22c}{set\+\_\+input\+\_\+range}} (input\+\_\+line\+\_\+iter\+\_\+type const \&start, input\+\_\+line\+\_\+iter\+\_\+type const \&finish)
+\begin{DoxyCompactList}\small\item\em Set the beginning and the end of the input range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{iterator}} \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a03a5003d1ebb990599534d157b4c3840}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Return an iterator to the first parsed point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{iterator}} \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a75267a61fad060bf9c6676ac9e76fb33}{end}} () const
+\begin{DoxyCompactList}\small\item\em Return an iterator to detect when parsing has ended. \end{DoxyCompactList}\item 
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a7956e50ca9949fe6e8d17d872a3a0567}{const\+\_\+begin}} () const
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing to the beginning of the stream. \end{DoxyCompactList}\item 
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_a2224bed36a3e9dfaa4ad27a458257b0d}{const\+\_\+end}} () const
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing to the end of the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Line\+IteratorT$>$\newline
+class tracktable\+::\+String\+Tokenizing\+Reader$<$ Input\+Line\+Iterator\+T $>$}
+Iterate over a range of input strings and tokenize each one. 
+
+This is the third of four steps in the pipeline of reading points in from a file. The first is to read in a file line-\/by-\/line. The second is to filter out those lines that are comments. The third is to tokenize the lines that survive into little bits that we can then use to populate a point. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a03a5003d1ebb990599534d157b4c3840}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!begin@{begin}}
+\index{begin@{begin}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a03a5003d1ebb990599534d157b4c3840} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{iterator}} \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator to the first parsed point. 
+
+This will take the parameters you\textquotesingle{}ve established for the input stream, comment character, delimiters and field/column mapping and start up the whole parsing pipeline. You can iterate through in the standard C++ fashion until you reach the {\ttfamily \doxylink{classtracktable_1_1_string_tokenizing_reader_a75267a61fad060bf9c6676ac9e76fb33}{end()}}.
+
+\begin{DoxyNote}{Note}
+Any changes you make to the parser configuration will invalidate existing iterators.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Iterator to first parsed point 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a7956e50ca9949fe6e8d17d872a3a0567}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!const\_begin@{const\_begin}}
+\index{const\_begin@{const\_begin}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{const\_begin()}{const\_begin()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a7956e50ca9949fe6e8d17d872a3a0567} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::const\+\_\+begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an iterator pointing to the beginning of the stream. 
+
+\begin{DoxyReturn}{Returns}
+Iterator pointing to current stream 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a2224bed36a3e9dfaa4ad27a458257b0d}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!const\_end@{const\_end}}
+\index{const\_end@{const\_end}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{const\_end()}{const\_end()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a2224bed36a3e9dfaa4ad27a458257b0d} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::const\+\_\+end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an iterator pointing to the end of the stream. 
+
+\begin{DoxyReturn}{Returns}
+Iterator pointing to end of current stream 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a75267a61fad060bf9c6676ac9e76fb33}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!end@{end}}
+\index{end@{end}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a75267a61fad060bf9c6676ac9e76fb33} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator}{iterator}} \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator to detect when parsing has ended. 
+
+This iterator is guaranteed to not point at any valid \doxylink{classtracktable_1_1_trajectory_point}{Trajectory\+Point}. The only time when {\ttfamily \doxylink{classtracktable_1_1_string_tokenizing_reader_a03a5003d1ebb990599534d157b4c3840}{begin()} == \doxylink{classtracktable_1_1_string_tokenizing_reader_a75267a61fad060bf9c6676ac9e76fb33}{end()}} will be when all points have been parsed from the input stream.
+
+\begin{DoxyReturn}{Returns}
+Iterator past end of point sequence 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a1be07a13fe38dd1c7445011b1d259723}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!escape\_character@{escape\_character}}
+\index{escape\_character@{escape\_character}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{escape\_character()}{escape\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a1be07a13fe38dd1c7445011b1d259723} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::escape\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The escape characters currently in use. 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a38b06bf1823aa1e28f04cd20a7d09e73}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a38b06bf1823aa1e28f04cd20a7d09e73} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two \doxylink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader} are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a8333d4d20d296b765374813928c7c5d0}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a8333d4d20d296b765374813928c7c5d0} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}} \& \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reader with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a005c819200db166e8d7b5d30c618f665}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a005c819200db166e8d7b5d30c618f665} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one reader is equal to another by comparing all the properties. 
+
+Two readers are equal if all of their properties are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_string_tokenizing_reader}{String\+Tokenizing\+Reader} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a6579ae289362c0f78bc8057101bdf1df}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!quote\_character@{quote\_character}}
+\index{quote\_character@{quote\_character}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{quote\_character()}{quote\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a6579ae289362c0f78bc8057101bdf1df} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::quote\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the quote characters currently in use. 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a8c0ad03f9082c6654837376d53670f36}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!set\_escape\_character@{set\_escape\_character}}
+\index{set\_escape\_character@{set\_escape\_character}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_escape\_character()}{set\_escape\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a8c0ad03f9082c6654837376d53670f36} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::set\+\_\+escape\+\_\+character (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{escape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the escape character to use in tokenization. 
+
+You must supply a string with either 0 or 1 character to be used as an escape character. The escape character removes the special properties of whatever character follows, usually a newline, separator or quote character.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em escape} & Escape character to be set \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a8eae929bc9222f47a9c95ec374bb585f}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!set\_field\_delimiter@{set\_field\_delimiter}}
+\index{set\_field\_delimiter@{set\_field\_delimiter}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_field\_delimiter()}{set\_field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a8eae929bc9222f47a9c95ec374bb585f} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::set\+\_\+field\+\_\+delimiter (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{delim}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the delimiter character to use in tokenization. 
+
+The single character in the string you supply will be used as a field delimiter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em delim} & Delimiter character to be set \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_a0e1cddf9acc864855effcf0beac9f22c}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!set\_input\_range@{set\_input\_range}}
+\index{set\_input\_range@{set\_input\_range}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_input\_range()}{set\_input\_range()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_a0e1cddf9acc864855effcf0beac9f22c} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::set\+\_\+input\+\_\+range (\begin{DoxyParamCaption}\item[{input\+\_\+line\+\_\+iter\+\_\+type const \&}]{start}{, }\item[{input\+\_\+line\+\_\+iter\+\_\+type const \&}]{finish}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the beginning and the end of the input range. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start} & The iterator to use for the start of input \\
+\hline
+\mbox{\texttt{ in}}  & {\em finish} & The iterator to use for the end of input \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_string_tokenizing_reader_aba9df9bf4af3787d46af59032ad24e6f}\index{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}!set\_quote\_character@{set\_quote\_character}}
+\index{set\_quote\_character@{set\_quote\_character}!tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$@{tracktable::StringTokenizingReader$<$ InputLineIteratorT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_quote\_character()}{set\_quote\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_string_tokenizing_reader_aba9df9bf4af3787d46af59032ad24e6f} 
+template$<$typename Input\+Line\+IteratorT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable\+::\+String\+Tokenizing\+Reader}}$<$ Input\+Line\+IteratorT $>$\+::set\+\_\+quote\+\_\+character (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{quote}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quote character to use in tokenization. 
+
+The single character in the string you supply (assuming it is not empty) will be used as a quote character. Inside a quoted string (a string that begins and ends with the quote character), field delimiters (e.\+g. comma) will be ignored. Also, inside a quoted string, embedded quote characters must be escaped.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em quote} & Quote character to be set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/String\+Tokenizing\+Reader.\+h\end{DoxyCompactItemize}

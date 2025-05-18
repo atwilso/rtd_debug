@@ -1,0 +1,686 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_trajectory_point_8h" kind="file" language="C++">
+    <compoundname>TrajectoryPoint.h</compoundname>
+    <includes local="no">tracktable/Core/TracktableCommon.h</includes>
+    <includes local="no">tracktable/Core/Timestamp.h</includes>
+    <includes local="no">tracktable/Core/PropertyMap.h</includes>
+    <includes local="no">tracktable/Core/PointBase.h</includes>
+    <includes local="no">tracktable/Core/detail/trait_signatures/HasObjectId.h</includes>
+    <includes local="no">tracktable/Core/detail/trait_signatures/HasProperties.h</includes>
+    <includes local="no">tracktable/Core/detail/trait_signatures/HasTimestamp.h</includes>
+    <includes local="no">tracktable/Core/detail/trait_signatures/ObjectId.h</includes>
+    <includes local="no">tracktable/Core/detail/trait_signatures/Tag.h</includes>
+    <includes local="no">tracktable/Core/detail/trait_signatures/Timestamp.h</includes>
+    <includes local="no">tracktable/Core/detail/trait_signatures/PointDomainName.h</includes>
+    <includes local="no">tracktable/Core/detail/algorithm_signatures/Bearing.h</includes>
+    <includes local="no">tracktable/Core/detail/algorithm_signatures/Distance.h</includes>
+    <includes local="no">tracktable/Core/detail/algorithm_signatures/Interpolate.h</includes>
+    <includes local="no">tracktable/Core/detail/algorithm_signatures/Extrapolate.h</includes>
+    <includes local="no">tracktable/Core/detail/algorithm_signatures/SimplifyLinestring.h</includes>
+    <includes local="no">tracktable/Core/detail/algorithm_signatures/SpeedBetween.h</includes>
+    <includes local="no">tracktable/Core/detail/algorithm_signatures/SphericalCoordinateAccess.h</includes>
+    <includes local="no">tracktable/Core/detail/algorithm_signatures/TurnAngle.h</includes>
+    <includes local="no">ostream</includes>
+    <includes local="no">cassert</includes>
+    <includes local="no">boost/mpl/bool.hpp</includes>
+    <includes local="no">boost/geometry/strategies/strategies.hpp</includes>
+    <includes local="no">boost/serialization/map.hpp</includes>
+    <includes local="no">boost/serialization/string.hpp</includes>
+    <includes local="no">boost/serialization/vector.hpp</includes>
+    <includes local="no">boost/serialization/variant.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h</label>
+        <link refid="_trajectory_point_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>boost/geometry/strategies/strategies.hpp</label>
+      </node>
+      <node id="23">
+        <label>boost/mpl/bool.hpp</label>
+      </node>
+      <node id="25">
+        <label>boost/serialization/map.hpp</label>
+      </node>
+      <node id="26">
+        <label>boost/serialization/string.hpp</label>
+      </node>
+      <node id="28">
+        <label>boost/serialization/variant.hpp</label>
+      </node>
+      <node id="27">
+        <label>boost/serialization/vector.hpp</label>
+      </node>
+      <node id="22">
+        <label>cassert</label>
+      </node>
+      <node id="21">
+        <label>ostream</label>
+      </node>
+      <node id="5">
+        <label>tracktable/Core/PointBase.h</label>
+      </node>
+      <node id="4">
+        <label>tracktable/Core/PropertyMap.h</label>
+      </node>
+      <node id="3">
+        <label>tracktable/Core/Timestamp.h</label>
+      </node>
+      <node id="2">
+        <label>tracktable/Core/TracktableCommon.h</label>
+      </node>
+      <node id="13">
+        <label>tracktable/Core/detail/algorithm_signatures/Bearing.h</label>
+      </node>
+      <node id="14">
+        <label>tracktable/Core/detail/algorithm_signatures/Distance.h</label>
+      </node>
+      <node id="16">
+        <label>tracktable/Core/detail/algorithm_signatures/Extrapolate.h</label>
+      </node>
+      <node id="15">
+        <label>tracktable/Core/detail/algorithm_signatures/Interpolate.h</label>
+      </node>
+      <node id="17">
+        <label>tracktable/Core/detail/algorithm_signatures/SimplifyLinestring.h</label>
+      </node>
+      <node id="18">
+        <label>tracktable/Core/detail/algorithm_signatures/SpeedBetween.h</label>
+      </node>
+      <node id="19">
+        <label>tracktable/Core/detail/algorithm_signatures/SphericalCoordinateAccess.h</label>
+      </node>
+      <node id="20">
+        <label>tracktable/Core/detail/algorithm_signatures/TurnAngle.h</label>
+      </node>
+      <node id="6">
+        <label>tracktable/Core/detail/trait_signatures/HasObjectId.h</label>
+      </node>
+      <node id="7">
+        <label>tracktable/Core/detail/trait_signatures/HasProperties.h</label>
+      </node>
+      <node id="8">
+        <label>tracktable/Core/detail/trait_signatures/HasTimestamp.h</label>
+      </node>
+      <node id="9">
+        <label>tracktable/Core/detail/trait_signatures/ObjectId.h</label>
+      </node>
+      <node id="12">
+        <label>tracktable/Core/detail/trait_signatures/PointDomainName.h</label>
+      </node>
+      <node id="10">
+        <label>tracktable/Core/detail/trait_signatures/Tag.h</label>
+      </node>
+      <node id="11">
+        <label>tracktable/Core/detail/trait_signatures/Timestamp.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtracktable_1_1_trajectory_point" prot="public">tracktable::TrajectoryPoint</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::interpolate&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::extrapolate&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1speed__between_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::speed_between&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1bearing_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::bearing&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1signed__turn__angle_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::signed_turn_angle&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1unsigned__turn__angle_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::unsigned_turn_angle&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1spherical__coordinate__access_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::spherical_coordinate_access&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1algorithms_1_1simplify__linestring_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::algorithms::simplify_linestring&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1domain_3_01tracktable_1_1_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::domain&lt; tracktable::TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__properties_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::has_properties&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__object__id_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::has_object_id&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1has__timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::has_timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1object__id_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::object_id&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1point__domain__name_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::point_domain_name&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innerclass refid="structtracktable_1_1traits_1_1undecorated__point_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" prot="public">tracktable::traits::undecorated_point&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</innerclass>
+    <innernamespace refid="namespacetracktable">tracktable</innernamespace>
+    <innernamespace refid="namespacetracktable_1_1algorithms">tracktable::algorithms</innernamespace>
+    <innernamespace refid="namespacetracktable_1_1traits">tracktable::traits</innernamespace>
+    <innernamespace refid="namespaceboost">boost</innernamespace>
+    <innernamespace refid="namespaceboost_1_1geometry">boost::geometry</innernamespace>
+    <innernamespace refid="namespaceboost_1_1geometry_1_1traits">boost::geometry::traits</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2023<sp/>National<sp/>Technology<sp/>and<sp/>Engineering</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC.<sp/>Under<sp/>the<sp/>terms<sp/>of<sp/>Contract<sp/>DE-NA0003525</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>with<sp/>National<sp/>Technology<sp/>and<sp/>Engineering<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC,</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>the<sp/>U.S.<sp/>Government<sp/>retains<sp/>certain<sp/>rights<sp/>in<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__tracktable_TrajectoryPoint_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__tracktable_TrajectoryPoint_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/TracktableCommon.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/Timestamp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/PropertyMap.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/PointBase.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/trait_signatures/HasObjectId.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/trait_signatures/HasProperties.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/trait_signatures/HasTimestamp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/trait_signatures/ObjectId.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/trait_signatures/Tag.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/trait_signatures/Timestamp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/trait_signatures/PointDomainName.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/algorithm_signatures/Bearing.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/algorithm_signatures/Distance.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/algorithm_signatures/Interpolate.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/algorithm_signatures/Extrapolate.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/algorithm_signatures/SimplifyLinestring.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/algorithm_signatures/SpeedBetween.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/algorithm_signatures/SphericalCoordinateAccess.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/detail/algorithm_signatures/TurnAngle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/mpl/bool.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/geometry/strategies/strategies.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/serialization/map.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/serialization/string.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/serialization/vector.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/serialization/variant.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>pragma<sp/>warning(<sp/>push<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>pragma<sp/>warning(<sp/>disable<sp/>:<sp/>4251<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="99" refid="classtracktable_1_1_trajectory_point" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" kindref="member">TrajectoryPoint</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>BasePointT</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>BasePointT<sp/>Superclass;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">boost::serialization::access;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" kindref="member">TrajectoryPoint</ref>()</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>Superclass()</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>,<ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref>(-1)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>,<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>,<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref>(<ref refid="namespacetracktable" kindref="compound">tracktable</ref>::BeginningOfTime)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classtracktable_1_1_trajectory_point_1a18f9b530bb921e646eac0699bd624d12" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a18f9b530bb921e646eac0699bd624d12" kindref="member">~TrajectoryPoint</ref>()</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="classtracktable_1_1_trajectory_point_1acd0a4b6aa3d2d4624f82d54c753eef1a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_trajectory_point_1acd0a4b6aa3d2d4624f82d54c753eef1a" kindref="member">TrajectoryPoint</ref>(<ref refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" kindref="member">TrajectoryPoint</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>Superclass(other)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>,<ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref>(other.<ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref>)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>,<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref>(other.<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref>)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>,<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>(other.<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>,<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref>(other.<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref>)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="classtracktable_1_1_trajectory_point_1a1af139c66f2b92233123a382a4bdeca6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_trajectory_point_1a1af139c66f2b92233123a382a4bdeca6" kindref="member">TrajectoryPoint</ref>(Superclass<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>Superclass(other)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classtracktable_1_1_trajectory_point_1a1ba3d96ae654750b1254eeb1e9b8131e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_trajectory_point_1a1ba3d96ae654750b1254eeb1e9b8131e" kindref="member">TrajectoryPoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>coords)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>Superclass(coords)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="classtracktable_1_1_trajectory_point_1ac2e2ca3f1c11138a5ec2594d2a7efaca" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" kindref="member">TrajectoryPoint</ref><sp/><ref refid="classtracktable_1_1_trajectory_point_1ac2e2ca3f1c11138a5ec2594d2a7efaca" kindref="member">operator=</ref>(<ref refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" kindref="member">TrajectoryPoint</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;Superclass::operator=(other);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref><sp/>=<sp/>other.<ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref>;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref><sp/>=<sp/>other.<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref><sp/>=<sp/>other.<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref><sp/>=<sp/>other.<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="classtracktable_1_1_trajectory_point_1a6096611658ea18df80b5454ac0388d0c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a6096611658ea18df80b5454ac0388d0c" kindref="member">operator==</ref>(<ref refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" kindref="member">TrajectoryPoint</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="176"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>this-&gt;Superclass::operator==(other)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&amp;&amp;<sp/>this-&gt;CurrentLength<sp/>==<sp/>other.CurrentLength</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref><sp/>==<sp/>other.<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>this-&gt;Properties<sp/>==<sp/>other.<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>this-&gt;UpdateTime<sp/>==<sp/>other.<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="classtracktable_1_1_trajectory_point_1a22ddaffccd5df1b2e486686ff0f1be4f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a22ddaffccd5df1b2e486686ff0f1be4f" kindref="member">operator!=</ref>(<ref refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" kindref="member">TrajectoryPoint</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="191"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>other)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198" refid="classtracktable_1_1_trajectory_point_1aa8affe83ef9703be33610b22b2bacc26" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classtracktable_1_1_trajectory_point_1aa8affe83ef9703be33610b22b2bacc26" kindref="member">object_id</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/><ref refid="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" kindref="member">timestamp</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="classtracktable_1_1_trajectory_point_1a7820570b2aee1ec50afb3e9292f52cc3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a7820570b2aee1ec50afb3e9292f52cc3" kindref="member">set_object_id</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>new_id)<sp/>{<sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref><sp/>=<sp/>new_id;<sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="classtracktable_1_1_trajectory_point_1ae4ca21c7f35bdffc0fa821107b780ae2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1ae4ca21c7f35bdffc0fa821107b780ae2" kindref="member">set_timestamp</ref>(<ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ts)<sp/>{<sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref><sp/>=<sp/>ts;<sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="classtracktable_1_1_trajectory_point_1a25ed78c6fe86cf5584c38d0d23e51dd7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a25ed78c6fe86cf5584c38d0d23e51dd7" kindref="member">set_property</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/>PropertyValueT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1acb4a04cbbe10c0f9ed4370d28dd7238d" kindref="member">::tracktable::set_property</ref>(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>value);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="classtracktable_1_1_trajectory_point_1af5a93c754e028116f6c01278b417cf57" refkind="member"><highlight class="normal"><sp/><sp/>PropertyValueT<sp/><ref refid="classtracktable_1_1_trajectory_point_1af5a93c754e028116f6c01278b417cf57" kindref="member">property</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*ok=0)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="234"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::property(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>ok);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="classtracktable_1_1_trajectory_point_1a84c92f4397228ae99159e5e3ac33284b" refkind="member"><highlight class="normal"><sp/><sp/>PropertyValueT<sp/><ref refid="classtracktable_1_1_trajectory_point_1a84c92f4397228ae99159e5e3ac33284b" kindref="member">property</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/>PropertyValueT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>default_value)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="245"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::property_with_default(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>default_value);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="classtracktable_1_1_trajectory_point_1adbef9f3e71509e47416985b54ee11812" refkind="member"><highlight class="normal"><sp/><sp/>PropertyValueT<sp/><ref refid="classtracktable_1_1_trajectory_point_1adbef9f3e71509e47416985b54ee11812" kindref="member">property_without_checking</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="258"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ok;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::property(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>&amp;ok);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="classtracktable_1_1_trajectory_point_1a03fe1bd5e6a7cf7c485befeefef4c4f3" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classtracktable_1_1_trajectory_point_1a03fe1bd5e6a7cf7c485befeefef4c4f3" kindref="member">string_property</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*ok=0)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="270"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::string_property(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>ok);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="classtracktable_1_1_trajectory_point_1a530d7ec9f72a870e18d4885be12d2f3a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a530d7ec9f72a870e18d4885be12d2f3a" kindref="member">real_property</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*ok=0)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="281"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::real_property(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>ok);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291" refid="classtracktable_1_1_trajectory_point_1a48603e1015c8ab64a7a8691cdb9b37df" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/><ref refid="classtracktable_1_1_trajectory_point_1a48603e1015c8ab64a7a8691cdb9b37df" kindref="member">timestamp_property</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*ok=0)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="292"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::timestamp_property(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>ok);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302" refid="classtracktable_1_1_trajectory_point_1a981da2fabb228ab1f6ba3d55596e532b" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classtracktable_1_1_trajectory_point_1a981da2fabb228ab1f6ba3d55596e532b" kindref="member">string_property_with_default</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>default_value)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="303"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::string_property_with_default(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>default_value);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313" refid="classtracktable_1_1_trajectory_point_1a2b878d8adc203d2c3c535eaf605823a8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a2b878d8adc203d2c3c535eaf605823a8" kindref="member">real_property_with_default</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>default_value)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="314"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::real_property_with_default(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>default_value);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325" refid="classtracktable_1_1_trajectory_point_1a68a6f44cbd16f7ef7d0d29514750a9e1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/><ref refid="classtracktable_1_1_trajectory_point_1a68a6f44cbd16f7ef7d0d29514750a9e1" kindref="member">timestamp_property_with_default</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>default_value)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="326"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::timestamp_property_with_default(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name,<sp/>default_value);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335" refid="classtracktable_1_1_trajectory_point_1a9f4c9195e6de83a5a80f0d1da42cad58" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a9f4c9195e6de83a5a80f0d1da42cad58" kindref="member">has_property</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="336"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::tracktable::has_property(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>,<sp/>name);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344" refid="classtracktable_1_1_trajectory_point_1a43424c218646d0952b111fd16e63201b" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classtracktable_1_1_trajectory_point_1a43424c218646d0952b111fd16e63201b" kindref="member">to_string</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="345"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::ostringstream<sp/>outbuf;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1aa74215060fda695080e79d7990e4b617" kindref="member">imbue_stream_with_timestamp_output_format</ref>(outbuf,<sp/><ref refid="namespacetracktable_1aaa4f2c20a79f221485406a892f4ee5db" kindref="member">default_timestamp_output_format</ref>());</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>outbuf<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>outbuf<sp/>&lt;&lt;<sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1aa8affe83ef9703be33610b22b2bacc26" kindref="member">object_id</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;@<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>outbuf<sp/>&lt;&lt;<sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" kindref="member">timestamp</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>outbuf<sp/>&lt;&lt;<sp/>this-&gt;Superclass::to_string();</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>outbuf<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>outbuf<sp/>&lt;&lt;<sp/><ref refid="namespacetracktable_1a00e54925770f86a28d15e6142682bbde" kindref="member">property_map_to_string</ref>(this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>outbuf<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>outbuf.str();</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370" refid="classtracktable_1_1_trajectory_point_1a57d67138ca4ad62e9f0fd0c0a336b3aa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a57d67138ca4ad62e9f0fd0c0a336b3aa" kindref="member">current_length</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="371"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref>;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383" refid="classtracktable_1_1_trajectory_point_1a12a681d6781e7d00f3712b641a30be01" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a12a681d6781e7d00f3712b641a30be01" kindref="member">set_current_length</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>length)</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref><sp/>=<sp/>length;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400" refid="classtracktable_1_1_trajectory_point_1ab32c1d5c07b77856065c529c0d6f3dd8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1ab32c1d5c07b77856065c529c0d6f3dd8" kindref="member">current_length_fraction</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="401"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1aeedbb5b51924c0b6989db6cb180a02ab" kindref="member">CurrentLengthFraction</ref>;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="413" refid="classtracktable_1_1_trajectory_point_1a503c43a983051c1494d336e92cb40e7f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a503c43a983051c1494d336e92cb40e7f" kindref="member">set_current_length_fraction</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>fraction)</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1aeedbb5b51924c0b6989db6cb180a02ab" kindref="member">CurrentLengthFraction</ref><sp/>=<sp/>fraction;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430" refid="classtracktable_1_1_trajectory_point_1a02bed94d3ff14b5511e40e784937aff1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a02bed94d3ff14b5511e40e784937aff1" kindref="member">current_time_fraction</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="431"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a5cbe94298c39d457a27e5473e4d07d6b" kindref="member">CurrentTimeFraction</ref>;</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="443" refid="classtracktable_1_1_trajectory_point_1a297785acfb3b1ff62bce46b8d0f261a4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a297785acfb3b1ff62bce46b8d0f261a4" kindref="member">set_current_time_fraction</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>fraction)</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a5cbe94298c39d457a27e5473e4d07d6b" kindref="member">CurrentTimeFraction</ref><sp/>=<sp/>fraction;</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref>&amp;<sp/>__non_const_properties()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>__properties()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__set_properties(<ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>props)<sp/>{<sp/>this-&gt;<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref><sp/>=<sp/>props;<sp/>}</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/>operator&lt;&lt;(std::ostream&amp;<sp/>out,<sp/><ref refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" kindref="member">TrajectoryPoint</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>point)</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>&lt;&lt;<sp/>point.to_string();</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out;</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="478" refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref>;</highlight></codeline>
+<codeline lineno="480" refid="classtracktable_1_1_trajectory_point_1aeedbb5b51924c0b6989db6cb180a02ab" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1aeedbb5b51924c0b6989db6cb180a02ab" kindref="member">CurrentLengthFraction</ref>;</highlight></codeline>
+<codeline lineno="482" refid="classtracktable_1_1_trajectory_point_1a5cbe94298c39d457a27e5473e4d07d6b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point_1a5cbe94298c39d457a27e5473e4d07d6b" kindref="member">CurrentTimeFraction</ref>;</highlight></codeline>
+<codeline lineno="484" refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref>;</highlight></codeline>
+<codeline lineno="486" refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref><sp/><ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>;</highlight></codeline>
+<codeline lineno="488" refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref><sp/><ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref>;</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>archive_t&gt;</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>serialize(archive_t&amp;<sp/>archive,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*version*/</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="500"><highlight class="comment"><sp/><sp/><sp/><sp/>archive<sp/>&amp;<sp/>boost::serialization::make_nvp(&quot;Superclass&quot;,</highlight></codeline>
+<codeline lineno="501"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_cast&lt;Superclass*&gt;(*this));</highlight></codeline>
+<codeline lineno="502"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/>archive<sp/>&amp;<sp/>BOOST_SERIALIZATION_BASE_OBJECT_NVP(Superclass);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/>archive<sp/>&amp;<sp/>BOOST_SERIALIZATION_NVP(<ref refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" kindref="member">CurrentLength</ref>);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/>archive<sp/>&amp;<sp/>BOOST_SERIALIZATION_NVP(<ref refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" kindref="member">ObjectId</ref>);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/>archive<sp/>&amp;<sp/>BOOST_SERIALIZATION_NVP(<ref refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" kindref="member">UpdateTime</ref>);</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/>archive<sp/>&amp;<sp/>BOOST_SERIALIZATION_NVP(<ref refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" kindref="member">Properties</ref>);</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"></highlight></codeline>
+<codeline lineno="510"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>tracktable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="513"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>pragma<sp/>warning(<sp/>pop<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"></highlight></codeline>
+<codeline lineno="518"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="519"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ALGORITHM<sp/>TRAITS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="521"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Except<sp/>for<sp/>things<sp/>that<sp/>involve<sp/>timestamps<sp/>or<sp/>property<sp/>maps,<sp/>we</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"></highlight><highlight class="comment">//<sp/>delegate<sp/>algorithms<sp/>to<sp/>the<sp/>implementations<sp/>for<sp/>the<sp/>base<sp/>point<sp/>type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{<sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">algorithms<sp/>{</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"></highlight></codeline>
+<codeline lineno="529"><highlight class="normal"></highlight></codeline>
+<codeline lineno="540"><highlight class="normal"></highlight></codeline>
+<codeline lineno="541"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="542" refid="structtracktable_1_1algorithms_1_1interpolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1interpolate" kindref="compound">interpolate</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="543"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>BasePointT<sp/>Superclass;</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>trajectory_po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">_type&gt;</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>trajectory_point_type</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/>apply(trajectory_point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trajectory_point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right,</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>&lt;=<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>left;</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>&gt;=<sp/>1)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>right;</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"></highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>off<sp/>by<sp/>interpolating<sp/>the<sp/>coordinates<sp/>with<sp/>whatever</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>scheme<sp/>the<sp/>base<sp/>point<sp/>class<sp/>provides</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trajectory_point_type<sp/>result(</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolate&lt;Superclass&gt;::apply(</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>left,<sp/>right,<sp/>t</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>interpolate<sp/>the<sp/>things<sp/>specific<sp/>to<sp/>TrajectoryPoint</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>result.set_timestamp(</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolate&lt;Timestamp&gt;::apply(left.timestamp(),<sp/>right.timestamp(),<sp/>t)</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>result.set_object_id(</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolate&lt;std::string&gt;::apply(left.object_id(),<sp/>right.object_id(),<sp/>t)</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"></highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>result.__set_properties(</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolate&lt;PropertyMap&gt;::apply(left.__properties(),<sp/>right.__properties(),<sp/>t)</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="577"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="580" refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1extrapolate" kindref="compound">extrapolate</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="581"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>BasePointT<sp/>Superclass;</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"></highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>trajectory_po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">_type&gt;</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>trajectory_point_type</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apply(trajectory_point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trajectory_point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right,</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>off<sp/>by<sp/>extrapolating<sp/>the<sp/>coordinates<sp/>with<sp/>whatever</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>scheme<sp/>the<sp/>base<sp/>point<sp/>class<sp/>provides</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trajectory_point_type<sp/>result(</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>extrapolate&lt;Superclass&gt;::apply(</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>left,<sp/>right,<sp/>t</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"></highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>extrapolate<sp/>the<sp/>things<sp/>specific<sp/>to<sp/>TrajectoryPoint</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.set_timestamp(</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>extrapolate&lt;Timestamp&gt;::apply(left.timestamp(),<sp/>right.timestamp(),<sp/>t)</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"></highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.set_object_id(</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolate&lt;std::string&gt;::apply(left.object_id(),<sp/>right.object_id(),<sp/>t)</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.__set_properties(</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>extrapolate&lt;PropertyMap&gt;::apply(left.__properties(),<sp/>right.__properties(),<sp/>t)</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="612"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"></highlight></codeline>
+<codeline lineno="617"><highlight class="normal"></highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="619" refid="structtracktable_1_1algorithms_1_1speed__between_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1speed__between" kindref="compound">speed_between</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="620"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint&lt;BasePointT&gt;</ref><sp/>point_type;</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>apply(point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>start,<sp/>point_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>finish)</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>units_traveled<sp/>=<sp/>::tracktable::distance(start,<sp/>finish);</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>duration<sp/>=<sp/>(finish.<ref refid="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" kindref="member">timestamp</ref>()<sp/>-<sp/>start.<ref refid="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" kindref="member">timestamp</ref>()).total_seconds();</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::abs(duration)<sp/>&lt;<sp/>0.001)</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>units_traveled<sp/>/<sp/>duration;</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="635"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight></codeline>
+<codeline lineno="637"><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>can&apos;t<sp/>blithely<sp/>delegate<sp/>these<sp/>because<sp/>they&apos;re<sp/>not<sp/>full</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal"></highlight><highlight class="comment">//<sp/>specializations.<sp/>Still,<sp/>this<sp/>gets<sp/>the<sp/>job<sp/>done.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="639"><highlight class="normal"></highlight></codeline>
+<codeline lineno="640"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="641" refid="structtracktable_1_1algorithms_1_1bearing_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1bearing" kindref="compound">bearing</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1algorithms_1_1bearing" kindref="compound">bearing</ref>&lt;BasePointT&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"></highlight></codeline>
+<codeline lineno="643"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="644" refid="structtracktable_1_1algorithms_1_1signed__turn__angle_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1signed__turn__angle" kindref="compound">signed_turn_angle</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1algorithms_1_1signed__turn__angle" kindref="compound">signed_turn_angle</ref>&lt;BasePointT&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"></highlight></codeline>
+<codeline lineno="646"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="647" refid="structtracktable_1_1algorithms_1_1unsigned__turn__angle_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1unsigned__turn__angle" kindref="compound">unsigned_turn_angle</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1algorithms_1_1unsigned__turn__angle" kindref="compound">unsigned_turn_angle</ref>&lt;BasePointT&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"></highlight></codeline>
+<codeline lineno="649"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="650" refid="structtracktable_1_1algorithms_1_1spherical__coordinate__access_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1spherical__coordinate__access" kindref="compound">spherical_coordinate_access</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1algorithms_1_1spherical__coordinate__access" kindref="compound">spherical_coordinate_access</ref>&lt;BasePointT&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"></highlight></codeline>
+<codeline lineno="652"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="653" refid="structtracktable_1_1algorithms_1_1simplify__linestring_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1algorithms_1_1simplify__linestring" kindref="compound">simplify_linestring</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1algorithms_1_1simplify__linestring" kindref="compound">simplify_linestring</ref>&lt;BasePointT&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"></highlight></codeline>
+<codeline lineno="655"><highlight class="normal">}<sp/>}<sp/></highlight><highlight class="comment">//<sp/>exit<sp/>namespace<sp/>tracktable::algorithms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="656"><highlight class="normal"></highlight></codeline>
+<codeline lineno="657"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{<sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">traits<sp/>{</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"></highlight></codeline>
+<codeline lineno="659"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">dimension&lt;<sp/><ref refid="namespacetracktable" kindref="compound">tracktable</ref>::TrajectoryPoint&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>dimension&lt;<sp/>BasePointT<sp/>&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="661"><highlight class="normal"></highlight></codeline>
+<codeline lineno="662"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="663" refid="structtracktable_1_1traits_1_1domain_3_01tracktable_1_1_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1traits_1_1domain" kindref="compound">domain</ref>&lt;<sp/><ref refid="namespacetracktable" kindref="compound">tracktable</ref>::<ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1traits_1_1domain" kindref="compound">domain</ref>&lt;BasePointT&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"></highlight></codeline>
+<codeline lineno="665"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tag&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>tag&lt;BasePointT&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"></highlight></codeline>
+<codeline lineno="668"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="669" refid="structtracktable_1_1traits_1_1has__properties_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1traits_1_1has__properties" kindref="compound">has_properties</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>boost::mpl::bool_&lt;true&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"></highlight></codeline>
+<codeline lineno="671"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="672" refid="structtracktable_1_1traits_1_1has__object__id_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1traits_1_1has__object__id" kindref="compound">has_object_id</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>boost::mpl::bool_&lt;true&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="673"><highlight class="normal"></highlight></codeline>
+<codeline lineno="674"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="675" refid="structtracktable_1_1traits_1_1has__timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1traits_1_1has__timestamp" kindref="compound">has_timestamp</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>boost::mpl::bool_&lt;true&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"></highlight></codeline>
+<codeline lineno="677"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="678" refid="structtracktable_1_1traits_1_1object__id_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1traits_1_1object__id" kindref="compound">object_id</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1traits_1_1object__id__is__member" kindref="compound">object_id_is_member</ref>&lt;<sp/>TrajectoryPoint&lt;BasePointT&gt;<sp/>&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"></highlight></codeline>
+<codeline lineno="680"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="681" refid="structtracktable_1_1traits_1_1timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1traits_1_1timestamp" kindref="compound">timestamp</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1traits_1_1timestamp__is__member" kindref="compound">timestamp_is_member</ref>&lt;<sp/>TrajectoryPoint&lt;BasePointT&gt;<sp/>&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"></highlight></codeline>
+<codeline lineno="683"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="684" refid="structtracktable_1_1traits_1_1point__domain__name_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1traits_1_1point__domain__name" kindref="compound">point_domain_name</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1traits_1_1point__domain__name" kindref="compound">point_domain_name</ref>&lt;BasePointT&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"></highlight></codeline>
+<codeline lineno="686"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="687" refid="structtracktable_1_1traits_1_1undecorated__point_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtracktable_1_1traits_1_1undecorated__point" kindref="compound">undecorated_point</ref>&lt;<sp/><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/><ref refid="structtracktable_1_1traits_1_1undecorated__point" kindref="compound">undecorated_point</ref>&lt;BasePointT&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="688"><highlight class="normal"></highlight></codeline>
+<codeline lineno="689"><highlight class="normal">}<sp/>}</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"></highlight></codeline>
+<codeline lineno="691"><highlight class="normal"></highlight></codeline>
+<codeline lineno="692"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="693"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="694"><highlight class="normal"></highlight><highlight class="comment">//<sp/>BOOST<sp/>GEOMETRY<sp/>TRAITS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="695"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="696"><highlight class="normal"></highlight><highlight class="comment">//<sp/>As<sp/>before,<sp/>we<sp/>delegate<sp/>to<sp/>the<sp/>base<sp/>point<sp/>class<sp/>where</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="697"><highlight class="normal"></highlight><highlight class="comment">//<sp/>boost::geometry<sp/>is<sp/>concerned.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="698"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="699"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="700"><highlight class="normal"></highlight></codeline>
+<codeline lineno="701"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">boost<sp/>{<sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">geometry<sp/>{<sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">traits<sp/>{</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"></highlight></codeline>
+<codeline lineno="703"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="704"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tag&lt;<sp/><ref refid="namespacetracktable" kindref="compound">tracktable</ref>::TrajectoryPoint&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>tag&lt;BasePointT&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"></highlight></codeline>
+<codeline lineno="706"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">coordinate_type&lt;<sp/>tracktable::TrajectoryPoint&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>coordinate_type&lt;BasePointT&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="708"><highlight class="normal"></highlight></codeline>
+<codeline lineno="709"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">coordinate_system&lt;<sp/>tracktable::TrajectoryPoint&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>coordinate_system&lt;BasePointT&gt;<sp/>{<sp/>};</highlight></codeline>
+<codeline lineno="711"><highlight class="normal"></highlight></codeline>
+<codeline lineno="712"><highlight class="normal"></highlight></codeline>
+<codeline lineno="713"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">dimension&lt;<sp/>tracktable::TrajectoryPoint&lt;BasePointT&gt;<sp/>&gt;<sp/>:<sp/>dimension&lt;BasePointT&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="715"><highlight class="normal"></highlight></codeline>
+<codeline lineno="716"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>BasePo</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>dim<sp/>&gt;</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">access&lt;<sp/>tracktable::TrajectoryPoint&lt;BasePointT&gt;,<sp/>dim<sp/>&gt;<sp/>:<sp/>access&lt;BasePointT,<sp/>dim&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"></highlight></codeline>
+<codeline lineno="719"><highlight class="normal">}<sp/>}<sp/>}<sp/></highlight><highlight class="comment">//<sp/>exit<sp/>boost::geometry::traits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="720"><highlight class="normal"></highlight></codeline>
+<codeline lineno="721"><highlight class="normal"></highlight></codeline>
+<codeline lineno="722"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h"/>
+  </compounddef>
+</doxygen>

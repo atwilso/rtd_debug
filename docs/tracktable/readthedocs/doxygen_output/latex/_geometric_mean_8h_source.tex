@@ -1,0 +1,126 @@
+\doxysection{Geometric\+Mean.\+h}
+\hypertarget{_geometric_mean_8h_source}{}\label{_geometric_mean_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/GeometricMean.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/GeometricMean.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Geometric\ mean\ for\ all\ point\ types.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ This\ is\ the\ familiar\ mean\ in\ both\ weighted\ and\ un-\/weighted}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ varieties.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_GeometricMean\_h}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_GeometricMean\_h}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointArithmetic.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable_1_1arithmetic}{arithmetic}}\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ forward\_iterator\_type>}
+\DoxyCodeLine{00059\ \textcolor{keyword}{typename}\ std::iterator\_traits<forward\_iterator\_type>::value\_type}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ae72858352d309ed946e2e61b5f59a1da}{geometric\_mean}}(}
+\DoxyCodeLine{00061\ \ \ forward\_iterator\_type\ input\_begin,}
+\DoxyCodeLine{00062\ \ \ forward\_iterator\_type\ input\_end}
+\DoxyCodeLine{00063\ \ \ )}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ std::iterator\_traits<forward\_iterator\_type>::value\_type\ point\_type;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ point\_type\ mean\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a059bd4cb9293d460f98b089a402b116e}{tracktable::arithmetic::zero<point\_type>}}();}
+\DoxyCodeLine{00068\ \ \ std::size\_t\ num\_points\ =\ 0;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordflow}{if}\ (input\_begin\ ==\ input\_end)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ point\_type();\ \textcolor{comment}{//\ no\ points\ -\/\ degenerate\ solution}}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordflow}{for}\ (forward\_iterator\_type\ iter\ =\ input\_begin;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ iter\ !=\ input\_end;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ae9bfcfbefc7ddb42b19b5c3b27687aaf}{tracktable::arithmetic::add\_in\_place}}(mean,\ *iter);}
+\DoxyCodeLine{00080\ \ \ \ \ ++num\_points;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a41ddc2b0d0664a6e086950f74ce141be}{tracktable::arithmetic::multiply\_scalar\_in\_place}}(mean,\ 1.0\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(num\_points));}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordflow}{return}\ mean;}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_iterator\_type,\ \textcolor{keyword}{typename}\ weight\_iterator\_type>}
+\DoxyCodeLine{00105\ \textcolor{keyword}{typename}\ std::iterator\_traits<point\_iterator\_type>::value\_type}
+\DoxyCodeLine{00106\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a0398c0539a5b1cb52dcd11e52a093df7}{weighted\_sum}}(}
+\DoxyCodeLine{00107\ \ \ point\_iterator\_type\ point\_begin,}
+\DoxyCodeLine{00108\ \ \ point\_iterator\_type\ point\_end,}
+\DoxyCodeLine{00109\ \ \ weight\_iterator\_type\ weight\_begin,}
+\DoxyCodeLine{00110\ \ \ weight\_iterator\_type\ weight\_end}
+\DoxyCodeLine{00111\ \ \ )}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ std::iterator\_traits<point\_iterator\_type>::value\_type\ point\_type;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ point\_type\ mean\ =\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a059bd4cb9293d460f98b089a402b116e}{tracktable::arithmetic::zero<point\_type>}}();}
+\DoxyCodeLine{00116\ \ \ std::size\_t\ num\_points\ =\ 0;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordflow}{if}\ (point\_begin\ ==\ point\_end)}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ point\_type();\ \textcolor{comment}{//\ no\ points\ -\/\ degenerate\ solution}}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ point\_iterator\_type\ point\_iter\ =\ point\_begin;}
+\DoxyCodeLine{00124\ \ \ weight\_iterator\_type\ weight\_iter\ =\ weight\_begin;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordflow}{for}\ (}
+\DoxyCodeLine{00127\ \ \ \ \ ;}
+\DoxyCodeLine{00128\ \ \ \ \ point\_iter\ !=\ point\_end\ \&\&\ weight\_iter\ !=\ weight\_end;}
+\DoxyCodeLine{00129\ \ \ \ \ ++point\_iter,\ ++weight\_iter}
+\DoxyCodeLine{00130\ \ \ \ \ )}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ point\_type\ next\_point(*point\_iter);}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a41ddc2b0d0664a6e086950f74ce141be}{tracktable::arithmetic::multiply\_scalar\_in\_place}}(next\_point,\ *weight\_iter);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_ae9bfcfbefc7ddb42b19b5c3b27687aaf}{tracktable::arithmetic::add\_in\_place}}(mean,\ next\_point);}
+\DoxyCodeLine{00136\ \ \ \ \ ++num\_points;}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \textcolor{keywordflow}{return}\ mean;}
+\DoxyCodeLine{00140\ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \}\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable::arithmetic}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

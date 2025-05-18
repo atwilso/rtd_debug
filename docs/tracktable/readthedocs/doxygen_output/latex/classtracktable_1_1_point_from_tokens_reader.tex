@@ -1,0 +1,977 @@
+\doxysection{tracktable\+::Point\+From\+Tokens\+Reader\texorpdfstring{$<$}{<} PointT, Source\+IterT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_point_from_tokens_reader}{}\label{classtracktable_1_1_point_from_tokens_reader}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+
+
+Read points from lists of tokens.  
+
+
+
+
+{\ttfamily \#include $<$Point\+From\+Tokens\+Reader.\+h$>$}
+
+Inheritance diagram for tracktable\+::Point\+From\+Tokens\+Reader\texorpdfstring{$<$}{<} PointT, Source\+IterT \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtracktable_1_1_point_from_tokens_reader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a927353483076657a72dbdd28a6e704a3}\label{classtracktable_1_1_point_from_tokens_reader_a927353483076657a72dbdd28a6e704a3} 
+typedef PointT {\bfseries point\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ab61b46a6bea4dbcf2f11505537846424}\label{classtracktable_1_1_point_from_tokens_reader_ab61b46a6bea4dbcf2f11505537846424} 
+typedef Source\+IterT {\bfseries source\+\_\+iterator\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a462d629481f3608d5b6dc700220e5dba}\label{classtracktable_1_1_point_from_tokens_reader_a462d629481f3608d5b6dc700220e5dba} 
+typedef boost\+::shared\+\_\+ptr$<$ point\+\_\+type $>$ {\bfseries point\+\_\+shared\+\_\+ptr\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_generic_reader}{tracktable\+::\+Generic\+Reader$<$ Point\+T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef Generic\+Input\+Iterator {\bfseries iterator}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ad6187b6da048f7abbb470b470d1aec91}\label{classtracktable_1_1_point_from_tokens_reader_ad6187b6da048f7abbb470b470d1aec91} 
+{\bfseries Point\+From\+Tokens\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Instantiate a default \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a754612e361d2ceb4e053a8922e665283}{Point\+From\+Tokens\+Reader}} (const \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a reader with a copy of another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ac6cda4679a117dad64e3df606209aac5}{Point\+From\+Tokens\+Reader}} (source\+\_\+iterator\+\_\+type const \&start, source\+\_\+iterator\+\_\+type const \&finish)
+\begin{DoxyCompactList}\small\item\em Instantiate a reader with a start and finish points. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a6bfb33f6bca74c4eaf5099a50b62e09e}\label{classtracktable_1_1_point_from_tokens_reader_a6bfb33f6bca74c4eaf5099a50b62e09e} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Point\+From\+Tokens\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}} \& \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a54907cf57205c8d92098d5424260d5de}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a0b3a48649ce724c2ad0035f15f9516fb}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one reader is equal to another by comparing all the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_aa825e42f2ceb4ad39ea1bc139cf351d0}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} are unequal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a4c1e7d91726e9129c9ccacc6cdce044a}{set\+\_\+object\+\_\+id\+\_\+column}} (int column)
+\begin{DoxyCompactList}\small\item\em Set the column that will be used for object IDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a46a3dca5669a85c788818bc1303e58a2}{set\+\_\+timestamp\+\_\+column}} (int column)
+\begin{DoxyCompactList}\small\item\em Set the column that will be used for timestamps. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a12b735e22cc5e81de67042f07b4d5bef}{object\+\_\+id\+\_\+column}} () const
+\begin{DoxyCompactList}\small\item\em Identify the column that will be used for object IDs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ad8dc5db6521746bb522c751c18850f27}{timestamp\+\_\+column}} () const
+\begin{DoxyCompactList}\small\item\em Identify the column that will be used for timestamps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a2c74adc415f96c6f3d1cb61bfcc76b30}{set\+\_\+coordinate\+\_\+column}} (int coordinate, int column)
+\begin{DoxyCompactList}\small\item\em Configure the mapping from columns to coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a61a9ee3f0f701af991fb3529cde6ebf2}{set\+\_\+real\+\_\+field\+\_\+column}} (std\+::string const \&field, int column)
+\begin{DoxyCompactList}\small\item\em Configure the mapping from columns to data fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a2e5ba7348f5d5a31bc2f14b13ecae535}{set\+\_\+time\+\_\+field\+\_\+column}} (std\+::string const \&field, int column)
+\begin{DoxyCompactList}\small\item\em Configure the mapping from columns to data fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_aef992da112fcb471446d1eb8103066e7}{set\+\_\+string\+\_\+field\+\_\+column}} (std\+::string const \&field, int column)
+\begin{DoxyCompactList}\small\item\em Configure the mapping from columns to data fields. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a90deb27f205b2375f36b1b6a5f0bfdd8}{coordinate\+\_\+column}} (int coordinate) const
+\begin{DoxyCompactList}\small\item\em Return which column has the given corrdinate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a1f3d76004028cbfaba20ac4a09d7982d}{real\+\_\+field\+\_\+column}} (std\+::string const \&field) const
+\begin{DoxyCompactList}\small\item\em Retrieve the column assignment for a real-\/valued field. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a2e61f1d077715d435927ccc95a4cea81}{string\+\_\+field\+\_\+column}} (std\+::string const \&field) const
+\begin{DoxyCompactList}\small\item\em Retrieve the column assignment for a string field. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a8d1cdef919ddf14e988e551b263f6860}{time\+\_\+field\+\_\+column}} (std\+::string const \&field) const
+\begin{DoxyCompactList}\small\item\em Retrieve the column assignment for a time field. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a06037a975d2db338f0ebcdfa3662b4b4}{has\+\_\+coordinate\+\_\+column}} (int coordinate) const
+\begin{DoxyCompactList}\small\item\em Check to see if there is a coordindate column. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a7ae462902f457ca8a76aa9c8b3395caa}{has\+\_\+real\+\_\+field\+\_\+column}} (std\+::string const \&field) const
+\begin{DoxyCompactList}\small\item\em Check to see where a real field is present in the field map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a04069a50d3423035942edd9e15fef744}{has\+\_\+string\+\_\+field\+\_\+column}} (std\+::string const \&field) const
+\begin{DoxyCompactList}\small\item\em Check to see where a string field is present in the field map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a0e15c818439fda24984027c073903503}{has\+\_\+time\+\_\+field\+\_\+column}} (std\+::string const \&field) const
+\begin{DoxyCompactList}\small\item\em Check to see where a time field is present in the field map. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a21e3c9e7e7c1125aa6dd7d4ed6d49a4f}\label{classtracktable_1_1_point_from_tokens_reader_a21e3c9e7e7c1125aa6dd7d4ed6d49a4f} 
+void {\bfseries clear\+\_\+coordinate\+\_\+assignments} ()
+\begin{DoxyCompactList}\small\item\em Clear all of the coordinate assignments. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_afa11cdec34c31f48e83460edf2fd3944}{set\+\_\+warnings\+\_\+enabled}} (bool onoff)
+\begin{DoxyCompactList}\small\item\em Enable/disable warnings during parsing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a32d68f57d75ec4b0902fed0625f86bdd}{warnings\+\_\+enabled}} () const
+\begin{DoxyCompactList}\small\item\em Check whether warnings are enable. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_aaace277fbb902127c583eb9700f061b4}{ignore\+\_\+header}} () const
+\begin{DoxyCompactList}\small\item\em Check whether to see if the header should be ignored when reading input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a8961455161100693c2b9b3421f26611f}{set\+\_\+ignore\+\_\+header}} (bool onoff)
+\begin{DoxyCompactList}\small\item\em Enable/disable ignoring the header during parsing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a4ebdd7f2184a371aec657574b0538adc}{set\+\_\+input\+\_\+range}} (source\+\_\+iterator\+\_\+type my\+\_\+begin, source\+\_\+iterator\+\_\+type my\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Set the beginning and the end of the input range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ac5eeccbba60d6bc820a8a4ed8a83681c}{set\+\_\+timestamp\+\_\+format}} (string\+\_\+type const \&format)
+\begin{DoxyCompactList}\small\item\em Set the format of the timestamp. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_aaf5643d3adf986ec203b1e833f51b0fb}{timestamp\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the format of the timestamp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a96c4fd3eeb80b5a1d8328e7052cc7240}{set\+\_\+null\+\_\+value}} (string\+\_\+type const \&value)
+\begin{DoxyCompactList}\small\item\em Set the format of the timestamp. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_af83d03b02e9b940e2f3e052c3a384347}{null\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the null value. \end{DoxyCompactList}\item 
+tracktable\+::\+Int\+Int\+Map \& \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a5f1fb3d391dbef207d36d24ce0e95556}{\+\_\+\+\_\+coordinate\+\_\+assignments}} ()
+\begin{DoxyCompactList}\small\item\em This method is for the Python wrappers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a98c0f8e5096fe87c341a2520005311c2}{\+\_\+\+\_\+set\+\_\+coordinate\+\_\+assignments}} (tracktable\+::\+Int\+Int\+Map const \&cmap)
+\begin{DoxyCompactList}\small\item\em This method is for the Python wrappers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_abc415c991701d1244e55167d832a79d3}{set\+\_\+point\+\_\+count\+\_\+log\+\_\+enabled}} (bool onoff)
+\begin{DoxyCompactList}\small\item\em Enable/disable logging of point count on read. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a7eb3bffe4e1855e94fd1faae1f9ffdec}{point\+\_\+count\+\_\+log\+\_\+enabled}} () const
+\begin{DoxyCompactList}\small\item\em Get the status of the point count log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_generic_reader}{tracktable\+::\+Generic\+Reader$<$ Point\+T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Generic\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty reader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_generic_reader_a539fe1509e67ae1b2581c1d7da3c8c85}{Generic\+Reader}} (\mbox{\hyperlink{classtracktable_1_1_generic_reader}{Generic\+Reader}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a reader with a copy of another. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generic\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Destructor for a generic reader. \end{DoxyCompactList}\item 
+Generic\+Input\+Iterator \mbox{\hyperlink{classtracktable_1_1_generic_reader_a13329272db0aded06cbc9dd85ed0f32d}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing to the current sequence. \end{DoxyCompactList}\item 
+Generic\+Input\+Iterator \mbox{\hyperlink{classtracktable_1_1_generic_reader_a91506b62c3fbcb3f747a70e621a921f9}{end}} ()
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing past the end of the sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a7e2aa26408333bde0f0ad6690a39eb2a}\label{classtracktable_1_1_point_from_tokens_reader_a7e2aa26408333bde0f0ad6690a39eb2a} 
+typedef rw\+::detail\+::\+Property\+Assignment\+Map {\bfseries Property\+Assignment\+Map}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a7464481b19ff66805466890c1d90a4cd}\label{classtracktable_1_1_point_from_tokens_reader_a7464481b19ff66805466890c1d90a4cd} 
+typedef std\+::vector$<$ settings\+::string\+\_\+type $>$ {\bfseries string\+\_\+vector\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+point\+\_\+shared\+\_\+ptr\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ad3fef0262393b316e536ee16ce9088f2}{next\+\_\+item}} ()
+\begin{DoxyCompactList}\small\item\em Increment the iterator the next item to be read in. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_ac29c6686bf0a34dea5d371d0a86b4e28}{configure\+\_\+reader\+\_\+from\+\_\+header}} (string\+\_\+vector\+\_\+type const \&tokens)
+\begin{DoxyCompactList}\small\item\em Configure the reader based on information contained in the input header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_af8cefab055ae9cff09a378fbf8df2af8}{configure\+\_\+coordinate\+\_\+assignments}} (bool object\+\_\+id\+\_\+present, bool timestamp\+\_\+present, std\+::size\+\_\+t expected\+\_\+dimension)
+\begin{DoxyCompactList}\small\item\em Configure the coordinates based on information parsed from the input header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_af6d73e4bf537ccf9e1b9e21e38147fa3}{configure\+\_\+field\+\_\+assignments}} (\mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_point_header}{rw\+::detail\+::\+Point\+Header}} const \&header, std\+::size\+\_\+t first\+\_\+property\+\_\+column)
+\begin{DoxyCompactList}\small\item\em Configure the fields based on information parsed from the input header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a780a76227c472e1c2d9033258b3d6808}{get\+\_\+tokens\+\_\+from\+\_\+input}} (string\+\_\+vector\+\_\+type \&tokens)
+\begin{DoxyCompactList}\small\item\em Get specified tokens from the input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a8a8464ddd85a3de5b78a8be48dd5d1f8}{populate\+\_\+coordinates\+\_\+from\+\_\+tokens}} (string\+\_\+vector\+\_\+type const \&tokens, point\+\_\+shared\+\_\+ptr\+\_\+type point)
+\begin{DoxyCompactList}\small\item\em Populated the coordinates from input tokens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader_a83dc546c91be93bf72739888b85853c3}{populate\+\_\+properties\+\_\+from\+\_\+tokens}} (string\+\_\+vector\+\_\+type const \&tokens, point\+\_\+shared\+\_\+ptr\+\_\+type point)
+\begin{DoxyCompactList}\small\item\em Populated the properties from input tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ab6a12922c7f5c428e3b229c802aad769}\label{classtracktable_1_1_point_from_tokens_reader_ab6a12922c7f5c428e3b229c802aad769} 
+Int\+Int\+Map {\bfseries Coordinate\+Map}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ae5bb680249e176613916bdc820391019}\label{classtracktable_1_1_point_from_tokens_reader_ae5bb680249e176613916bdc820391019} 
+Property\+Assignment\+Map {\bfseries Field\+Map}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a2f0a61db5d1084a3368af4adbf695edd}\label{classtracktable_1_1_point_from_tokens_reader_a2f0a61db5d1084a3368af4adbf695edd} 
+source\+\_\+iterator\+\_\+type {\bfseries Source\+Begin}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a8a17c486d3294d3e8109ada9d385d38f}\label{classtracktable_1_1_point_from_tokens_reader_a8a17c486d3294d3e8109ada9d385d38f} 
+source\+\_\+iterator\+\_\+type {\bfseries Source\+End}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a9da7c4abc756dcce2529161f67f2088c}\label{classtracktable_1_1_point_from_tokens_reader_a9da7c4abc756dcce2529161f67f2088c} 
+int {\bfseries Object\+Id\+Column}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a84ed21511755776e6eb8d16919e9621b}\label{classtracktable_1_1_point_from_tokens_reader_a84ed21511755776e6eb8d16919e9621b} 
+int {\bfseries Timestamp\+Column}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_acba513bda006ad159845364ea0407deb}\label{classtracktable_1_1_point_from_tokens_reader_acba513bda006ad159845364ea0407deb} 
+bool {\bfseries Ignore\+Header}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a31f43d939e7c1d4c0f8b5cbac6132338}\label{classtracktable_1_1_point_from_tokens_reader_a31f43d939e7c1d4c0f8b5cbac6132338} 
+bool {\bfseries Warnings\+Enabled}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ac9455e90d31f80c8f938814d5d72e49e}\label{classtracktable_1_1_point_from_tokens_reader_ac9455e90d31f80c8f938814d5d72e49e} 
+bool {\bfseries Point\+Count\+Log\+Enabled}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a959ce069e482c274af228425c4369652}\label{classtracktable_1_1_point_from_tokens_reader_a959ce069e482c274af228425c4369652} 
+\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} {\bfseries Property\+Read\+Write}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_accd09992b0a36e6cd97c43ad85d9ff6a}\label{classtracktable_1_1_point_from_tokens_reader_accd09992b0a36e6cd97c43ad85d9ff6a} 
+int {\bfseries Num\+Points}
+\item 
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_aabd564ee32621ad76daf9129738eeb7f}\label{classtracktable_1_1_point_from_tokens_reader_aabd564ee32621ad76daf9129738eeb7f} 
+int {\bfseries Num\+Parse\+Errors}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename PointT, typename Source\+IterT$>$\newline
+class tracktable\+::\+Point\+From\+Tokens\+Reader$<$ Point\+T, Source\+Iter\+T $>$}
+Read points from lists of tokens. 
+
+\doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} expects as its input an iterator that will yield iterator ranges. That is, each value of the iterator is a (begin, end) pair of iterators that will produce a set of tokens for one point.
+
+Think of it with this common use case. Somewhere upstream you are reading lines from a text file. Your reader takes lines from the file and separates each line into a list of tokens using some delimiter. \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} takes each of those lists of tokens, one list at a time, and turns it into a point of some user-\/requested type. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a754612e361d2ceb4e053a8922e665283}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!PointFromTokensReader@{PointFromTokensReader}}
+\index{PointFromTokensReader@{PointFromTokensReader}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{PointFromTokensReader()}{PointFromTokensReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a754612e361d2ceb4e053a8922e665283} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::\+Point\+From\+Tokens\+Reader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create a reader with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} to copy from \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ac6cda4679a117dad64e3df606209aac5}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!PointFromTokensReader@{PointFromTokensReader}}
+\index{PointFromTokensReader@{PointFromTokensReader}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{PointFromTokensReader()}{PointFromTokensReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_ac6cda4679a117dad64e3df606209aac5} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::\+Point\+From\+Tokens\+Reader (\begin{DoxyParamCaption}\item[{source\+\_\+iterator\+\_\+type const \&}]{start}{, }\item[{source\+\_\+iterator\+\_\+type const \&}]{finish}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate a reader with a start and finish points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start} & Iterator to start from \\
+\hline
+\mbox{\texttt{ in}}  & {\em finish} & Iterator to end at \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a5f1fb3d391dbef207d36d24ce0e95556}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!\_\_coordinate\_assignments@{\_\_coordinate\_assignments}}
+\index{\_\_coordinate\_assignments@{\_\_coordinate\_assignments}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{\_\_coordinate\_assignments()}{\_\_coordinate\_assignments()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a5f1fb3d391dbef207d36d24ce0e95556} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+tracktable\+::\+Int\+Int\+Map \& \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::\+\_\+\+\_\+coordinate\+\_\+assignments (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method is for the Python wrappers. 
+
+In C++-\/land this explicitly breaks encapsulation. DON\textquotesingle{}T USE IT!
+
+In Python-\/land it make for a much more Pythonic interface. \Hypertarget{classtracktable_1_1_point_from_tokens_reader_a98c0f8e5096fe87c341a2520005311c2}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!\_\_set\_coordinate\_assignments@{\_\_set\_coordinate\_assignments}}
+\index{\_\_set\_coordinate\_assignments@{\_\_set\_coordinate\_assignments}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{\_\_set\_coordinate\_assignments()}{\_\_set\_coordinate\_assignments()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a98c0f8e5096fe87c341a2520005311c2} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::\+\_\+\+\_\+set\+\_\+coordinate\+\_\+assignments (\begin{DoxyParamCaption}\item[{tracktable\+::\+Int\+Int\+Map const \&}]{cmap}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method is for the Python wrappers. 
+
+In C++-\/land this explicitly breaks encapsulation. DON\textquotesingle{}T USE IT!
+
+In Python-\/land it make for a much more Pythonic interface. \Hypertarget{classtracktable_1_1_point_from_tokens_reader_af8cefab055ae9cff09a378fbf8df2af8}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!configure\_coordinate\_assignments@{configure\_coordinate\_assignments}}
+\index{configure\_coordinate\_assignments@{configure\_coordinate\_assignments}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{configure\_coordinate\_assignments()}{configure\_coordinate\_assignments()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_af8cefab055ae9cff09a378fbf8df2af8} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::configure\+\_\+coordinate\+\_\+assignments (\begin{DoxyParamCaption}\item[{bool}]{object\+\_\+id\+\_\+present}{, }\item[{bool}]{timestamp\+\_\+present}{, }\item[{std\+::size\+\_\+t}]{expected\+\_\+dimension}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Configure the coordinates based on information parsed from the input header. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em object\+\_\+id\+\_\+present} & Boolean indicating if object ID is present \\
+\hline
+\mbox{\texttt{ in}}  & {\em timestamp\+\_\+present} & Boolean indicating if timestamp is present \\
+\hline
+\mbox{\texttt{ in}}  & {\em expected\+\_\+dimension} & Dimension coordinates are expected to be in \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_af6d73e4bf537ccf9e1b9e21e38147fa3}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!configure\_field\_assignments@{configure\_field\_assignments}}
+\index{configure\_field\_assignments@{configure\_field\_assignments}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{configure\_field\_assignments()}{configure\_field\_assignments()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_af6d73e4bf537ccf9e1b9e21e38147fa3} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::configure\+\_\+field\+\_\+assignments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_point_header}{rw\+::detail\+::\+Point\+Header}} const \&}]{header}{, }\item[{std\+::size\+\_\+t}]{first\+\_\+property\+\_\+column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Configure the fields based on information parsed from the input header. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em header} & Header containing the field information \\
+\hline
+\mbox{\texttt{ in}}  & {\em first\+\_\+property\+\_\+column} & First column containing a property \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ac29c6686bf0a34dea5d371d0a86b4e28}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!configure\_reader\_from\_header@{configure\_reader\_from\_header}}
+\index{configure\_reader\_from\_header@{configure\_reader\_from\_header}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{configure\_reader\_from\_header()}{configure\_reader\_from\_header()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_ac29c6686bf0a34dea5d371d0a86b4e28} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::configure\+\_\+reader\+\_\+from\+\_\+header (\begin{DoxyParamCaption}\item[{string\+\_\+vector\+\_\+type const \&}]{tokens}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Configure the reader based on information contained in the input header. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tokens} & Tokens from the header to be read in \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a90deb27f205b2375f36b1b6a5f0bfdd8}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!coordinate\_column@{coordinate\_column}}
+\index{coordinate\_column@{coordinate\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{coordinate\_column()}{coordinate\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a90deb27f205b2375f36b1b6a5f0bfdd8} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::coordinate\+\_\+column (\begin{DoxyParamCaption}\item[{int}]{coordinate}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return which column has the given corrdinate. 
+
+\begin{DoxyReturn}{Returns}
+Column that contains the given coordinate 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a780a76227c472e1c2d9033258b3d6808}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!get\_tokens\_from\_input@{get\_tokens\_from\_input}}
+\index{get\_tokens\_from\_input@{get\_tokens\_from\_input}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{get\_tokens\_from\_input()}{get\_tokens\_from\_input()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a780a76227c472e1c2d9033258b3d6808} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::get\+\_\+tokens\+\_\+from\+\_\+input (\begin{DoxyParamCaption}\item[{string\+\_\+vector\+\_\+type \&}]{tokens}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Get specified tokens from the input. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tokens} & Tokens to get from input \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a06037a975d2db338f0ebcdfa3662b4b4}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!has\_coordinate\_column@{has\_coordinate\_column}}
+\index{has\_coordinate\_column@{has\_coordinate\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{has\_coordinate\_column()}{has\_coordinate\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a06037a975d2db338f0ebcdfa3662b4b4} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::has\+\_\+coordinate\+\_\+column (\begin{DoxyParamCaption}\item[{int}]{coordinate}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check to see if there is a coordindate column. 
+
+\begin{DoxyReturn}{Returns}
+Boolean indicating that there exists a coordinate column 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a7ae462902f457ca8a76aa9c8b3395caa}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!has\_real\_field\_column@{has\_real\_field\_column}}
+\index{has\_real\_field\_column@{has\_real\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{has\_real\_field\_column()}{has\_real\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a7ae462902f457ca8a76aa9c8b3395caa} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::has\+\_\+real\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check to see where a real field is present in the field map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & String name of field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily True}/{\ttfamily False} depending on whether field is present or not 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a04069a50d3423035942edd9e15fef744}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!has\_string\_field\_column@{has\_string\_field\_column}}
+\index{has\_string\_field\_column@{has\_string\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{has\_string\_field\_column()}{has\_string\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a04069a50d3423035942edd9e15fef744} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::has\+\_\+string\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check to see where a string field is present in the field map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & String name of field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily True}/{\ttfamily False} depending on whether field is present or not 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a0e15c818439fda24984027c073903503}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!has\_time\_field\_column@{has\_time\_field\_column}}
+\index{has\_time\_field\_column@{has\_time\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{has\_time\_field\_column()}{has\_time\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a0e15c818439fda24984027c073903503} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::has\+\_\+time\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check to see where a time field is present in the field map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & String name of field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily True}/{\ttfamily False} depending on whether field is present or not 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_aaace277fbb902127c583eb9700f061b4}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!ignore\_header@{ignore\_header}}
+\index{ignore\_header@{ignore\_header}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{ignore\_header()}{ignore\_header()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_aaace277fbb902127c583eb9700f061b4} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::ignore\+\_\+header (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether to see if the header should be ignored when reading input. 
+
+\begin{DoxyReturn}{Returns}
+Boolean whether or not the header should be ignored 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ad3fef0262393b316e536ee16ce9088f2}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!next\_item@{next\_item}}
+\index{next\_item@{next\_item}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{next\_item()}{next\_item()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_ad3fef0262393b316e536ee16ce9088f2} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+point\+\_\+shared\+\_\+ptr\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::next\+\_\+item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Increment the iterator the next item to be read in. 
+
+\begin{DoxyReturn}{Returns}
+The next item 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtracktable_1_1_generic_reader_a0d92677380ac73f7b919c323b8115608}{tracktable\+::\+Generic\+Reader$<$ Point\+T $>$}}.
+
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_af83d03b02e9b940e2f3e052c3a384347}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!null\_value@{null\_value}}
+\index{null\_value@{null\_value}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{null\_value()}{null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_af83d03b02e9b940e2f3e052c3a384347} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::null\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the null value. 
+
+\begin{DoxyReturn}{Returns}
+The null value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a12b735e22cc5e81de67042f07b4d5bef}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!object\_id\_column@{object\_id\_column}}
+\index{object\_id\_column@{object\_id\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{object\_id\_column()}{object\_id\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a12b735e22cc5e81de67042f07b4d5bef} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::object\+\_\+id\+\_\+column (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Identify the column that will be used for object IDs. 
+
+Column indices start at zero.
+
+\begin{DoxyReturn}{Returns}
+The column containing the object ID 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_aa825e42f2ceb4ad39ea1bc139cf351d0}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_aa825e42f2ceb4ad39ea1bc139cf351d0} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a54907cf57205c8d92098d5424260d5de}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a54907cf57205c8d92098d5424260d5de} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}} \& \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reader with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a0b3a48649ce724c2ad0035f15f9516fb}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a0b3a48649ce724c2ad0035f15f9516fb} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one reader is equal to another by comparing all the properties. 
+
+Two readers are equal if all of their properties are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_point_from_tokens_reader}{Point\+From\+Tokens\+Reader} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a7eb3bffe4e1855e94fd1faae1f9ffdec}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!point\_count\_log\_enabled@{point\_count\_log\_enabled}}
+\index{point\_count\_log\_enabled@{point\_count\_log\_enabled}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{point\_count\_log\_enabled()}{point\_count\_log\_enabled()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a7eb3bffe4e1855e94fd1faae1f9ffdec} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::point\+\_\+count\+\_\+log\+\_\+enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the status of the point count log. 
+
+Retrieve Point\+Count\+Log\+Enabled. When set to true, this flag will print out how many points are read successfully and how many are lost due to error.
+
+\begin{DoxyReturn}{Returns}
+Whether or not point count logging is enabled 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a8a8464ddd85a3de5b78a8be48dd5d1f8}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!populate\_coordinates\_from\_tokens@{populate\_coordinates\_from\_tokens}}
+\index{populate\_coordinates\_from\_tokens@{populate\_coordinates\_from\_tokens}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{populate\_coordinates\_from\_tokens()}{populate\_coordinates\_from\_tokens()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a8a8464ddd85a3de5b78a8be48dd5d1f8} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::populate\+\_\+coordinates\+\_\+from\+\_\+tokens (\begin{DoxyParamCaption}\item[{string\+\_\+vector\+\_\+type const \&}]{tokens}{, }\item[{point\+\_\+shared\+\_\+ptr\+\_\+type}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Populated the coordinates from input tokens. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tokens} & Tokens to use for population \\
+\hline
+\mbox{\texttt{ in}}  & {\em point} & Point containing coordinates \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a83dc546c91be93bf72739888b85853c3}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!populate\_properties\_from\_tokens@{populate\_properties\_from\_tokens}}
+\index{populate\_properties\_from\_tokens@{populate\_properties\_from\_tokens}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{populate\_properties\_from\_tokens()}{populate\_properties\_from\_tokens()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a83dc546c91be93bf72739888b85853c3} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::populate\+\_\+properties\+\_\+from\+\_\+tokens (\begin{DoxyParamCaption}\item[{string\+\_\+vector\+\_\+type const \&}]{tokens}{, }\item[{point\+\_\+shared\+\_\+ptr\+\_\+type}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Populated the properties from input tokens. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tokens} & Tokens to use for population \\
+\hline
+\mbox{\texttt{ in}}  & {\em point} & Point containing properties \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a1f3d76004028cbfaba20ac4a09d7982d}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!real\_field\_column@{real\_field\_column}}
+\index{real\_field\_column@{real\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{real\_field\_column()}{real\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a1f3d76004028cbfaba20ac4a09d7982d} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::real\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the column assignment for a real-\/valued field. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & String name of field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer column index for field or -\/1 if not present 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a2c74adc415f96c6f3d1cb61bfcc76b30}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_coordinate\_column@{set\_coordinate\_column}}
+\index{set\_coordinate\_column@{set\_coordinate\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_coordinate\_column()}{set\_coordinate\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a2c74adc415f96c6f3d1cb61bfcc76b30} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+coordinate\+\_\+column (\begin{DoxyParamCaption}\item[{int}]{coordinate}{, }\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Configure the mapping from columns to coordinates. 
+
+This is the lowest-\/level interface to setting coordinates in the reader. Use {\ttfamily set\+\_\+x\+\_\+coordinate\+\_\+column}/{\ttfamily set\+\_\+longitude\+\_\+column} and friends if possible (i.\+e. if you\textquotesingle{}re in the terrestrial or 2D Cartesian domain).
+
+Let\textquotesingle{}s suppose that your X coordinate is in column 12 of your file, your Y coordinate is in column 20 and your Z coordinate is in column 32. The following code snippet illustrates how to set this up in the reader\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{tracktable::PointReader<MyPoint3D>\ reader;}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(0,\ 12);\ \textcolor{comment}{//\ X\ coordinate}}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(1,\ 20);\ \textcolor{comment}{//\ Y\ coordinate}}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(2,\ 32);\ \textcolor{comment}{//\ Z\ coordinate}}
+
+\end{DoxyCode}
+
+
+Calling this function invalidates any outstanding iterators.
+
+\begin{DoxyNote}{Note}
+Column and coordinate indices start at zero.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em coordinate} & Index of coordinate to set \\
+\hline
+\mbox{\texttt{ in}}  & {\em column} & Index of column in list of tokens \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a8961455161100693c2b9b3421f26611f}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_ignore\_header@{set\_ignore\_header}}
+\index{set\_ignore\_header@{set\_ignore\_header}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_ignore\_header()}{set\_ignore\_header()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a8961455161100693c2b9b3421f26611f} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+ignore\+\_\+header (\begin{DoxyParamCaption}\item[{bool}]{onoff}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/disable ignoring the header during parsing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em onoff} & Header parsing on / off \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a4ebdd7f2184a371aec657574b0538adc}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_input\_range@{set\_input\_range}}
+\index{set\_input\_range@{set\_input\_range}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_input\_range()}{set\_input\_range()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a4ebdd7f2184a371aec657574b0538adc} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+input\+\_\+range (\begin{DoxyParamCaption}\item[{source\+\_\+iterator\+\_\+type}]{my\+\_\+begin}{, }\item[{source\+\_\+iterator\+\_\+type}]{my\+\_\+end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the beginning and the end of the input range. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em my\+\_\+begin} & The iterator to use for the start of input \\
+\hline
+\mbox{\texttt{ in}}  & {\em my\+\_\+end} & The iterator to use for the end of input \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a96c4fd3eeb80b5a1d8328e7052cc7240}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_null\_value@{set\_null\_value}}
+\index{set\_null\_value@{set\_null\_value}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_null\_value()}{set\_null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a96c4fd3eeb80b5a1d8328e7052cc7240} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+null\+\_\+value (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the format of the timestamp. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & String value to use for NULL \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a4c1e7d91726e9129c9ccacc6cdce044a}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_object\_id\_column@{set\_object\_id\_column}}
+\index{set\_object\_id\_column@{set\_object\_id\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_object\_id\_column()}{set\_object\_id\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a4c1e7d91726e9129c9ccacc6cdce044a} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+object\+\_\+id\+\_\+column (\begin{DoxyParamCaption}\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the column that will be used for object IDs. 
+
+This column in the input stream will be used to populate the {\ttfamily object\+\_\+id} field in trajectory points. Column indices start at zero.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em column} & Which column contains object IDs \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_abc415c991701d1244e55167d832a79d3}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_point\_count\_log\_enabled@{set\_point\_count\_log\_enabled}}
+\index{set\_point\_count\_log\_enabled@{set\_point\_count\_log\_enabled}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_point\_count\_log\_enabled()}{set\_point\_count\_log\_enabled()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_abc415c991701d1244e55167d832a79d3} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+point\+\_\+count\+\_\+log\+\_\+enabled (\begin{DoxyParamCaption}\item[{bool}]{onoff}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/disable logging of point count on read. 
+
+When set to true (the default), the point reader will print out the number of points successfully read and the number of errors to the info log channel when the end of the input is reached.
+
+This function is provided because there are cases like the trajectory reader where this results in thousands of lines of spam because the reader is invoked for every trajectory separately.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em onoff} & Boolean flag\+: \textquotesingle{}true\textquotesingle{} means \textquotesingle{}yes, log statistics\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a61a9ee3f0f701af991fb3529cde6ebf2}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_real\_field\_column@{set\_real\_field\_column}}
+\index{set\_real\_field\_column@{set\_real\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_real\_field\_column()}{set\_real\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a61a9ee3f0f701af991fb3529cde6ebf2} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+real\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{, }\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Configure the mapping from columns to data fields. 
+
+Some points have the ability to store named properties. Use this method to assign columns in the data file to named properties on points.
+
+The following lines of code show an example.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{tracktable::PointReader<MyPointType>\ reader;}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a306a3a531b7c17ea809d8e75927c5fc8}{set\_object\_id\_column}}(0);}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a11b9b725dbb5157202752e9de3c06a1e}{set\_real\_field\_column}}(\textcolor{stringliteral}{"{}mileage"{}},\ 4);}
+
+\end{DoxyCode}
+
+
+This function invalidates any outstanding iterators.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & Name of field to populate on point object \\
+\hline
+\mbox{\texttt{ in}}  & {\em column} & Index of column in list of tokens \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_aef992da112fcb471446d1eb8103066e7}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_string\_field\_column@{set\_string\_field\_column}}
+\index{set\_string\_field\_column@{set\_string\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_string\_field\_column()}{set\_string\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_aef992da112fcb471446d1eb8103066e7} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+string\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{, }\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Configure the mapping from columns to data fields. 
+
+Some points have the ability to store named properties. Use this method to assign columns in the data file to named properties on points.
+
+The following lines of code show an example.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{tracktable::PointReader<MyPointType>\ reader;}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a306a3a531b7c17ea809d8e75927c5fc8}{set\_object\_id\_column}}(0);}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a3ece3b3c6764b2a1a14bebf8c985b8c3}{set\_string\_field\_column}}(\textcolor{stringliteral}{"{}model\_name"{}},\ 3);}
+
+\end{DoxyCode}
+
+
+This function invalidates any outstanding iterators.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & Name of field to populate on point object \\
+\hline
+\mbox{\texttt{ in}}  & {\em column} & Index of column in list of tokens \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a2e5ba7348f5d5a31bc2f14b13ecae535}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_time\_field\_column@{set\_time\_field\_column}}
+\index{set\_time\_field\_column@{set\_time\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_time\_field\_column()}{set\_time\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a2e5ba7348f5d5a31bc2f14b13ecae535} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+time\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{, }\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Configure the mapping from columns to data fields. 
+
+Some points have the ability to store named properties. Use this method to assign columns in the data file to named properties on points.
+
+The following lines of code show an example.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{tracktable::PointReader<MyPointType>\ reader;}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a306a3a531b7c17ea809d8e75927c5fc8}{set\_object\_id\_column}}(0);}
+\DoxyCodeLine{reader.\mbox{\hyperlink{classtracktable_1_1_point_reader_a251d483cbec9163592cf8cff170187f9}{set\_time\_field\_column}}(\textcolor{stringliteral}{"{}last\_seen"{}},\ 2);}
+
+\end{DoxyCode}
+
+
+This function invalidates any outstanding iterators.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & Name of field to populate on point object \\
+\hline
+\mbox{\texttt{ in}}  & {\em column} & Index of column in list of tokens \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a46a3dca5669a85c788818bc1303e58a2}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_timestamp\_column@{set\_timestamp\_column}}
+\index{set\_timestamp\_column@{set\_timestamp\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_timestamp\_column()}{set\_timestamp\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a46a3dca5669a85c788818bc1303e58a2} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+timestamp\+\_\+column (\begin{DoxyParamCaption}\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the column that will be used for timestamps. 
+
+This column in the input stream will be used to populate the timestamp field in trajectory points. Column indices start at zero.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em column} & Which column contains timestamps \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ac5eeccbba60d6bc820a8a4ed8a83681c}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_timestamp\_format@{set\_timestamp\_format}}
+\index{set\_timestamp\_format@{set\_timestamp\_format}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_timestamp\_format()}{set\_timestamp\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_ac5eeccbba60d6bc820a8a4ed8a83681c} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+timestamp\+\_\+format (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the format of the timestamp. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & String containing the format of the time stamp \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_afa11cdec34c31f48e83460edf2fd3944}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!set\_warnings\_enabled@{set\_warnings\_enabled}}
+\index{set\_warnings\_enabled@{set\_warnings\_enabled}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{set\_warnings\_enabled()}{set\_warnings\_enabled()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_afa11cdec34c31f48e83460edf2fd3944} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::set\+\_\+warnings\+\_\+enabled (\begin{DoxyParamCaption}\item[{bool}]{onoff}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/disable warnings during parsing. 
+
+We may run into type mismatches and bad casts while we\textquotesingle{}re parsing headers and data. This flag determines whether or not warnings will be printed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em onoff} & Warnings are on / off \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a2e61f1d077715d435927ccc95a4cea81}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!string\_field\_column@{string\_field\_column}}
+\index{string\_field\_column@{string\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{string\_field\_column()}{string\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a2e61f1d077715d435927ccc95a4cea81} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::string\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the column assignment for a string field. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & String name of field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer column index for field or -\/1 if not present 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a8d1cdef919ddf14e988e551b263f6860}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!time\_field\_column@{time\_field\_column}}
+\index{time\_field\_column@{time\_field\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{time\_field\_column()}{time\_field\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a8d1cdef919ddf14e988e551b263f6860} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::time\+\_\+field\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{field}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the column assignment for a time field. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & String name of field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer column index for field or -\/1 if not present 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_ad8dc5db6521746bb522c751c18850f27}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!timestamp\_column@{timestamp\_column}}
+\index{timestamp\_column@{timestamp\_column}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{timestamp\_column()}{timestamp\_column()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_ad8dc5db6521746bb522c751c18850f27} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+int \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::timestamp\+\_\+column (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Identify the column that will be used for timestamps. 
+
+Column indices start at zero.
+
+\begin{DoxyReturn}{Returns}
+The column containing the timestamo 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_aaf5643d3adf986ec203b1e833f51b0fb}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!timestamp\_format@{timestamp\_format}}
+\index{timestamp\_format@{timestamp\_format}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{timestamp\_format()}{timestamp\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_aaf5643d3adf986ec203b1e833f51b0fb} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::timestamp\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the format of the timestamp. 
+
+\begin{DoxyReturn}{Returns}
+The timestamp format 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_point_from_tokens_reader_a32d68f57d75ec4b0902fed0625f86bdd}\index{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}!warnings\_enabled@{warnings\_enabled}}
+\index{warnings\_enabled@{warnings\_enabled}!tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$@{tracktable::PointFromTokensReader$<$ PointT, SourceIterT $>$}}
+\doxysubsubsection{\texorpdfstring{warnings\_enabled()}{warnings\_enabled()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_point_from_tokens_reader_a32d68f57d75ec4b0902fed0625f86bdd} 
+template$<$typename PointT, typename Source\+IterT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable\+::\+Point\+From\+Tokens\+Reader}}$<$ PointT, Source\+IterT $>$\+::warnings\+\_\+enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether warnings are enable. 
+
+\begin{DoxyReturn}{Returns}
+Whether or not warnings are on 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Point\+From\+Tokens\+Reader.\+h\end{DoxyCompactItemize}

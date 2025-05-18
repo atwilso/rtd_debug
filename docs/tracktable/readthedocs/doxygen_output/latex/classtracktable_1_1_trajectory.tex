@@ -1,0 +1,865 @@
+\doxysection{tracktable\+::Trajectory\texorpdfstring{$<$}{<} PointT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_trajectory}{}\label{classtracktable_1_1_trajectory}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+
+
+Ordered sequence of points.  
+
+
+
+
+{\ttfamily \#include $<$Trajectory.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}\label{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320} 
+typedef PointT {\bfseries point\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Convenient aliases for template parameters and types from internal storage. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a73fa08b29cadca24af236594956f3ea0}\label{classtracktable_1_1_trajectory_a73fa08b29cadca24af236594956f3ea0} 
+typedef std\+::vector$<$ PointT $>$ {\bfseries point\+\_\+vector\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a07f06b436de231da58fb8f2735823b88}\label{classtracktable_1_1_trajectory_a07f06b436de231da58fb8f2735823b88} 
+typedef point\+\_\+vector\+\_\+type\+::iterator {\bfseries iterator}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_aa2d5a106b7a5b6fe29bc4a3d779b6f7e}\label{classtracktable_1_1_trajectory_aa2d5a106b7a5b6fe29bc4a3d779b6f7e} 
+typedef point\+\_\+vector\+\_\+type\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a14c161101e15b2f44a50aad4d28c1488}\label{classtracktable_1_1_trajectory_a14c161101e15b2f44a50aad4d28c1488} 
+typedef point\+\_\+vector\+\_\+type\+::reverse\+\_\+iterator {\bfseries reverse\+\_\+iterator}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a01bad1da87b5cccd2dd3f43808731246}\label{classtracktable_1_1_trajectory_a01bad1da87b5cccd2dd3f43808731246} 
+typedef point\+\_\+vector\+\_\+type\+::const\+\_\+reverse\+\_\+iterator {\bfseries const\+\_\+reverse\+\_\+iterator}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a8ed037c7bf1b9ffae63619500e0796ad}\label{classtracktable_1_1_trajectory_a8ed037c7bf1b9ffae63619500e0796ad} 
+typedef point\+\_\+vector\+\_\+type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_aab89b32a0791cd66fdc03627b9ddb498}\label{classtracktable_1_1_trajectory_aab89b32a0791cd66fdc03627b9ddb498} 
+typedef point\+\_\+vector\+\_\+type\+::value\+\_\+type {\bfseries value\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a5f2ee54e1262fed48b1277bb5e69510b}\label{classtracktable_1_1_trajectory_a5f2ee54e1262fed48b1277bb5e69510b} 
+typedef point\+\_\+vector\+\_\+type\+::difference\+\_\+type {\bfseries difference\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_aa5a56f6eb44650fe023f9669a6b5fda1}\label{classtracktable_1_1_trajectory_aa5a56f6eb44650fe023f9669a6b5fda1} 
+typedef point\+\_\+vector\+\_\+type\+::reference {\bfseries reference}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a352ebc5675bb16dce33ecef4041c8417}\label{classtracktable_1_1_trajectory_a352ebc5675bb16dce33ecef4041c8417} 
+typedef point\+\_\+vector\+\_\+type\+::const\+\_\+reference {\bfseries const\+\_\+reference}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}\label{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378} 
+{\bfseries Trajectory} (bool generate\+\_\+uuid=true)
+\begin{DoxyCompactList}\small\item\em Instantiate an empty trajectory. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_ac8f5760f0bc365e09c09d3eadb3beea4}\label{classtracktable_1_1_trajectory_ac8f5760f0bc365e09c09d3eadb3beea4} 
+{\bfseries Trajectory} (const \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}} \&other)
+\begin{DoxyCompactList}\small\item\em Create a trajectory a copy of another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_aad93ebf2d800f63bf94fc9776677a48d}{Trajectory}} (size\+\_\+type n, \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} initial\+\_\+value=\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}}(), bool generate\+\_\+uuid=true)
+\begin{DoxyCompactList}\small\item\em Create a new trajectory with pre-\/specified length. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Input\+Iterator$>$ }\\\mbox{\hyperlink{classtracktable_1_1_trajectory_a3d90961ebefbf370d6bfd359af704928}{Trajectory}} (Input\+Iterator first, Input\+Iterator last, bool generate\+\_\+uuid=true)
+\begin{DoxyCompactList}\small\item\em Create a new trajectory from a range of points. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a8cacf65b606e48c326f8032f94c6b775}\label{classtracktable_1_1_trajectory_a8cacf65b606e48c326f8032f94c6b775} 
+{\footnotesize template$<$class Input\+Iterator$>$ }\\{\bfseries Trajectory} (Input\+Iterator first, Input\+Iterator last, const \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}} \&original)
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a60f8897f65414fd4384d2fdd9b9ea8e1}\label{classtracktable_1_1_trajectory_a60f8897f65414fd4384d2fdd9b9ea8e1} 
+\mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}} \&other)
+\begin{DoxyCompactList}\small\item\em Make this trajectory a copy of another. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_ab84c3cdff0cf6aee5bbfe8fe5802bcae}\label{classtracktable_1_1_trajectory_ab84c3cdff0cf6aee5bbfe8fe5802bcae} 
+\mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}} \& {\bfseries clone} () const
+\begin{DoxyCompactList}\small\item\em Make this trajectory a clone of another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} \mbox{\hyperlink{classtracktable_1_1_trajectory_af57579863e004d634ec4f8ac730c32a6}{start\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Return the start time if available. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} \mbox{\hyperlink{classtracktable_1_1_trajectory_a08e6282c3ddeef676944d325d67c9b15}{end\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Return the end time if available. \end{DoxyCompactList}\item 
+Duration \mbox{\hyperlink{classtracktable_1_1_trajectory_afcc4248cc99101b40fc741835b5bb0ae}{duration}} () const
+\begin{DoxyCompactList}\small\item\em Return the duration, if available. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_accf9738423068531d0d112b6e5d5be2b}\label{classtracktable_1_1_trajectory_accf9738423068531d0d112b6e5d5be2b} 
+const \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\+\_\+type}} \& {\bfseries uuid} () const
+\begin{DoxyCompactList}\small\item\em Return the UUID (RFC 4122 or variant) of the trajectory. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a1e23aa8cd61b5c62117b1cda4adcc31c}\label{classtracktable_1_1_trajectory_a1e23aa8cd61b5c62117b1cda4adcc31c} 
+void {\bfseries set\+\_\+uuid} (const \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\+\_\+type}} \&new\+\_\+uuid)
+\begin{DoxyCompactList}\small\item\em Set the UUID of the trajectory. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a2a1a461d43fdf0b0585334df25edb3a5}\label{classtracktable_1_1_trajectory_a2a1a461d43fdf0b0585334df25edb3a5} 
+void {\bfseries set\+\_\+uuid} ()
+\begin{DoxyCompactList}\small\item\em Set the UUID of the trajectory to a random UUID using the systemwide generator. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtracktable_1_1_trajectory_aff9cf81befecb8320230800cb46e3daf}{object\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Return the ID of the moving object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtracktable_1_1_trajectory_a56bf2815b7cd0bc1fab46e5fac015000}{trajectory\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Return a human-\/readable ID for the trajectory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Methods related to properties}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_abe36bfa081b2a4c7ce0d269026e84548}\label{classtracktable_1_1_trajectory_abe36bfa081b2a4c7ce0d269026e84548} 
+void {\bfseries set\+\_\+property} (std\+::string const \&name, Property\+ValueT const \&value)
+\begin{DoxyCompactList}\small\item\em Set a named property with a variant value (let the caller handle the type) \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a2564230d0eef53b3718b3c21fd740417}\label{classtracktable_1_1_trajectory_a2564230d0eef53b3718b3c21fd740417} 
+Property\+ValueT {\bfseries property} (std\+::string const \&name, bool \texorpdfstring{$\ast$}{*}ok=0) const
+\begin{DoxyCompactList}\small\item\em Retrieve a named property with checking. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a939785a4ca2762caadacb3599f17521c}\label{classtracktable_1_1_trajectory_a939785a4ca2762caadacb3599f17521c} 
+Property\+ValueT {\bfseries property\+\_\+without\+\_\+checking} (std\+::string const \&name) const
+\begin{DoxyCompactList}\small\item\em Retrieve a named property without safety checking. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_ace0d5d108ad9c23448aaf45650f3aca4}\label{classtracktable_1_1_trajectory_ace0d5d108ad9c23448aaf45650f3aca4} 
+std\+::string {\bfseries string\+\_\+property} (std\+::string const \&name, bool \texorpdfstring{$\ast$}{*}ok=0) const
+\begin{DoxyCompactList}\small\item\em Safely retrieve a named property with a string value. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a419e778d8ca7edc1c6527064a4748e1c}\label{classtracktable_1_1_trajectory_a419e778d8ca7edc1c6527064a4748e1c} 
+double {\bfseries real\+\_\+property} (std\+::string const \&name, bool \texorpdfstring{$\ast$}{*}ok=0) const
+\begin{DoxyCompactList}\small\item\em Safely retrieve a named property with a floating-\/point value. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a792da0d196cd48722b3c8beacf3fdc95}\label{classtracktable_1_1_trajectory_a792da0d196cd48722b3c8beacf3fdc95} 
+\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} {\bfseries timestamp\+\_\+property} (std\+::string const \&name, bool \texorpdfstring{$\ast$}{*}ok=0) const
+\begin{DoxyCompactList}\small\item\em Safely retrieve a named property with a timestamp value. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_ad0d641889c42340be22ac62f32300eaa}\label{classtracktable_1_1_trajectory_ad0d641889c42340be22ac62f32300eaa} 
+bool {\bfseries has\+\_\+property} (std\+::string const \&name) const
+\begin{DoxyCompactList}\small\item\em Check whether a property is present. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_ac9a9434a75ac7499d19f8d0c53251e75}\label{classtracktable_1_1_trajectory_ac9a9434a75ac7499d19f8d0c53251e75} 
+\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{Property\+Map}} const \& {\bfseries \+\_\+\+\_\+properties} () const
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a4d1171ba9c693f94a176d802db4d0e14}\label{classtracktable_1_1_trajectory_a4d1171ba9c693f94a176d802db4d0e14} 
+\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{Property\+Map}} \& {\bfseries \+\_\+\+\_\+non\+\_\+const\+\_\+properties} ()
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a12ef65e8d611c20d8695a05f2eee24a1}\label{classtracktable_1_1_trajectory_a12ef65e8d611c20d8695a05f2eee24a1} 
+void {\bfseries \+\_\+\+\_\+set\+\_\+properties} (\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{Property\+Map}} const \&props)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Methods that allow a Trajectory to be used like std\+::vector}
+Here are all the methods that make this container usable just like a std\+::vector.
+
+There\textquotesingle{}s no magic here -- all we do is forward to the Points vector. \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}\label{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99} 
+\mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\+\_\+type}} {\bfseries UUID}
+\begin{DoxyCompactList}\small\item\em Internal storage for the trajectory UUID. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}\label{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707} 
+point\+\_\+vector\+\_\+type {\bfseries Points}
+\begin{DoxyCompactList}\small\item\em Internal storage for the points in the trajectory. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_aadcc6f6b16f9a7de58a064b4450ec95c}\label{classtracktable_1_1_trajectory_aadcc6f6b16f9a7de58a064b4450ec95c} 
+\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{Property\+Map}} {\bfseries Properties}
+\item 
+\Hypertarget{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}\label{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a} 
+size\+\_\+type {\bfseries size} () const
+\begin{DoxyCompactList}\small\item\em Return the length of the trajectory in points. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a2e8d6eaa3fda858c43bcfadeaf1e9386}\label{classtracktable_1_1_trajectory_a2e8d6eaa3fda858c43bcfadeaf1e9386} 
+size\+\_\+type {\bfseries max\+\_\+size} () const
+\begin{DoxyCompactList}\small\item\em Return the maximum number of entries the points array can hold. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a0db842f3b69bb7bc31f0dbfe14b0db51}\label{classtracktable_1_1_trajectory_a0db842f3b69bb7bc31f0dbfe14b0db51} 
+size\+\_\+type {\bfseries capacity} () const
+\begin{DoxyCompactList}\small\item\em Return the current allocated capacity of the points array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_afca0d56029e01e620feaf8df4c6ce9bb}{resize}} (size\+\_\+type new\+\_\+size, \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} default\+\_\+value=\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}}())
+\begin{DoxyCompactList}\small\item\em Resize the points array to contain exactly the number of entries requested. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a00e26c610525256edc1901bccf8ede3c}\label{classtracktable_1_1_trajectory_a00e26c610525256edc1901bccf8ede3c} 
+bool {\bfseries empty} () const
+\begin{DoxyCompactList}\small\item\em Return whether or not the trajectory is empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_a474e8824c8f8dd9d0fc1b87bf3fd6e66}{reserve}} (size\+\_\+type n)
+\begin{DoxyCompactList}\small\item\em Preallocate enough space in the array for the specified number of entries. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_aac6c72fc0d8cc08368827c951e871462}{operator==}} (const \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}} \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one trajectory is equal to another by comparing all the points. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_a826bac1333e2207e1a9c5323abc206d2}{operator!=}} (const \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}} \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two trajectories are unequal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \& \mbox{\hyperlink{classtracktable_1_1_trajectory_a34023182a6215ab2b3097263c37fdbb6}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+type i) const
+\begin{DoxyCompactList}\small\item\em Return a given point from the trajectory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory_a551d6da43c7b35f7d58c4d2429cbd7d5}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+type i)
+\begin{DoxyCompactList}\small\item\em Return a mutable reference to a given point in the trajectory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_a6365f4c2d2450fe0b2a00a828b6365bc}{push\+\_\+back}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \&pt)
+\begin{DoxyCompactList}\small\item\em Append a point to the trajectory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory_ad78c438f70565341f3b2667230f9d331}{at}} (size\+\_\+type i)
+\begin{DoxyCompactList}\small\item\em Retrieve the point at a given index with bounds checking. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \& \mbox{\hyperlink{classtracktable_1_1_trajectory_a1f6546dd74e8fa0464bfa1238690b8db}{at}} (size\+\_\+type i) const
+\begin{DoxyCompactList}\small\item\em Retrieve the point at a given index with bounds checking. \end{DoxyCompactList}\item 
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a3cc235f0bbb2205f0d5a2b3d6e4a6d23}{erase}} (iterator position)
+\begin{DoxyCompactList}\small\item\em Remove a point from the trajectory. \end{DoxyCompactList}\item 
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a66fa66bb0fe57ef60d06ae2a73eddbf2}{erase}} (iterator first, iterator last)
+\begin{DoxyCompactList}\small\item\em Remove a range of points from the trajectory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_a9166d1bda8d4791f68bc49e3cdd6a17e}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Reset the trajectory to an empty state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory_ac54fa8e8176246a99095e9a468a889f5}{front}} ()
+\begin{DoxyCompactList}\small\item\em Return the first point in the trajectory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \& \mbox{\hyperlink{classtracktable_1_1_trajectory_a13ed8aec90926f87f30ad83f64f18385}{front}} () const
+\begin{DoxyCompactList}\small\item\em Return the (immutable) first point in the trajectory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory_a5a89075c7122aea5f48b60b5b2d6270c}{back}} ()
+\begin{DoxyCompactList}\small\item\em Return the last point in the trajectory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \& \mbox{\hyperlink{classtracktable_1_1_trajectory_af069ff91341a497850f8abca7a6127a3}{back}} () const
+\begin{DoxyCompactList}\small\item\em Return the (immutable) last point in the trajectory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_aab2cf5b98b136dd6823a258c54ffb5ad}{insert}} (int index, \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \&value)
+\begin{DoxyCompactList}\small\item\em Insert a single element into the trajectory at an arbitrary index. \end{DoxyCompactList}\item 
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_aaeb6b042b0d9eab09cee25be46af4bac}{insert}} (iterator position, \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \&value)
+\begin{DoxyCompactList}\small\item\em Insert a single element into the trajectory at an arbitrary position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_a0dc27fdb26050a75ceba18932f32c46b}{insert}} (iterator position, size\+\_\+type n, \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \&value)
+\begin{DoxyCompactList}\small\item\em Fill a range in the trajectory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Input\+Iterator$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_trajectory_ad1593fae980c55b29a9ecf11aeb0e31f}{insert}} (iterator position, Input\+Iterator first, Input\+Iterator last)
+\begin{DoxyCompactList}\small\item\em Insert a range of points into the trajectory. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_a9081b15769ca2fe1599c2d70fb8f45f2}\label{classtracktable_1_1_trajectory_a9081b15769ca2fe1599c2d70fb8f45f2} 
+void {\bfseries compute\+\_\+current\+\_\+features} (std\+::size\+\_\+t start\+\_\+index)
+\item 
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing to the beginning of the trajectory. \end{DoxyCompactList}\item 
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_ac16a3959f6a4fe5165a62c75cba7fa97}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing to the beginning of the trajectory. \end{DoxyCompactList}\item 
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_aa9fe5930da929365d69ae129a18cfee3}{cbegin}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing to the beginning of the trajectory. \end{DoxyCompactList}\item 
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a272cb092a6237a6a639bb27e4508a393}{end}} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing beyond the last point in the trajectory. \end{DoxyCompactList}\item 
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a9737d62062786f4db2b1dce2e81a30bc}{end}} () const
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing beyond the last point in the trajectory. \end{DoxyCompactList}\item 
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a5c17c687b2766a3e24a93763af16630e}{cend}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing beyond the last point in the trajectory. \end{DoxyCompactList}\item 
+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a37f9f846b049ec45f2c8be32bcfea9cb}{rbegin}} ()
+\begin{DoxyCompactList}\small\item\em Return a reverse\+\_\+iterator pointing to the end of the trajectory. \end{DoxyCompactList}\item 
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_ab5e2899a4dc182cd71c598ff4648df4e}{rbegin}} () const
+\begin{DoxyCompactList}\small\item\em Return a reverse\+\_\+iterator pointing to the end of the trajectory. \end{DoxyCompactList}\item 
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_ac1977a39c952c3ed234f19354e67423c}{crbegin}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Return a reverse\+\_\+iterator pointing to the end of the trajectory. \end{DoxyCompactList}\item 
+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a8364467dad32d7920df980a9fc43ba75}{rend}} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing beyond the first point in the trajectory. \end{DoxyCompactList}\item 
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_a7d69b49a3e1b4564522e53fc8d873e83}{rend}} () const
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing beyond the last point in the trajectory. \end{DoxyCompactList}\item 
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory_ab325a986344d021314d91d13fde1873e}{crend}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Return an iterator pointing beyond the last point in the trajectory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class PointT$>$\newline
+class tracktable\+::\+Trajectory$<$ Point\+T $>$}
+Ordered sequence of points. 
+
+This class is the heart of most of what Tracktable does. It implements an ordered sequence of \doxylink{classtracktable_1_1_trajectory_point}{Trajectory\+Point} objects, each of which has an ID, coordinates and a timestamp. Those compose a trajectory.
+
+We provide accessors so that you can treat a \doxylink{classtracktable_1_1_trajectory}{Trajectory} as if it were a std\+::vector. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_trajectory_aad93ebf2d800f63bf94fc9776677a48d}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!Trajectory@{Trajectory}}
+\index{Trajectory@{Trajectory}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{Trajectory()}{Trajectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_aad93ebf2d800f63bf94fc9776677a48d} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::\+Trajectory (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n}{, }\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}}}]{initial\+\_\+value}{ = {\ttfamily \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}}()}, }\item[{bool}]{generate\+\_\+uuid}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a new trajectory with pre-\/specified length. 
+
+Create a new trajectory with n elements. You may also supply a point that will be copied into each element.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & Length of the trajectory \\
+\hline
+\mbox{\texttt{ in}}  & {\em initial\+\_\+value} & Point to be used to fill the new vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em generate\+\_\+uuid} & Flag to generate a UUID for the trajectory \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_a3d90961ebefbf370d6bfd359af704928}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!Trajectory@{Trajectory}}
+\index{Trajectory@{Trajectory}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{Trajectory()}{Trajectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a3d90961ebefbf370d6bfd359af704928} 
+template$<$class PointT$>$ \\
+template$<$class Input\+Iterator$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::\+Trajectory (\begin{DoxyParamCaption}\item[{Input\+Iterator}]{first}{, }\item[{Input\+Iterator}]{last}{, }\item[{bool}]{generate\+\_\+uuid}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a new trajectory from a range of points. 
+
+Create a new trajectory by copying points from \mbox{[}first, last).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em first} & Iterator pointing to the first point for the new trajectory \\
+\hline
+\mbox{\texttt{ in}}  & {\em last} & Iterator pointing past the last point for the new trajectory \\
+\hline
+\mbox{\texttt{ in}}  & {\em generate\+\_\+uuid} & Flag to generate a UUID for the trajectory \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_trajectory_ad78c438f70565341f3b2667230f9d331}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!at@{at}}
+\index{at@{at}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_ad78c438f70565341f3b2667230f9d331} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the point at a given index with bounds checking. 
+
+Retrieve a point. Unlike operator\mbox{[}\mbox{]}, \doxylink{classtracktable_1_1_trajectory_ad78c438f70565341f3b2667230f9d331}{at()} does bounds checking and will throw an exception if you ask for a point outside the range \mbox{[}0, num\+\_\+points).
+
+This version of the function will be called if you try to modify the point. For example\+:
+
+my\+\_\+trajectory.\+at(3).set\+\_\+latitude(15);
+
+\begin{DoxyNote}{Note}
+If you modify the point\textquotesingle{}s coordinates, you are responsible for calling trajectory-\/\texorpdfstring{$>$}{>}update\+\_\+current\+\_\+length(i).
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i} & Which point to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Mutable reference to the requested point 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_a1f6546dd74e8fa0464bfa1238690b8db}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!at@{at}}
+\index{at@{at}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a1f6546dd74e8fa0464bfa1238690b8db} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const  \& \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the point at a given index with bounds checking. 
+
+Retrieve a point. Unlike operator\mbox{[}\mbox{]}, \doxylink{classtracktable_1_1_trajectory_ad78c438f70565341f3b2667230f9d331}{at()} does bounds checking and will throw an exception if you ask for a point outside the range \mbox{[}0, num\+\_\+points).
+
+This version of the function will be called if the compiler can tell that you\textquotesingle{}re not trying to modify the point. For example\+:
+
+\doxylink{classtracktable_1_1_trajectory_point}{Trajectory\+Point} my\+\_\+point = my\+\_\+trajectory.\+at(3);
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i} & Which point to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Immutable reference to the requested point 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_a5a89075c7122aea5f48b60b5b2d6270c}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!back@{back}}
+\index{back@{back}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a5a89075c7122aea5f48b60b5b2d6270c} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the last point in the trajectory. 
+
+\begin{DoxyReturn}{Returns}
+Last point in trajectory (mutable reference)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you call this on an empty trajectory the behavior is undefined. Dereferencing \doxylink{classtracktable_1_1_trajectory_a5a89075c7122aea5f48b60b5b2d6270c}{back()} on an empty trajectory will probably crash your program. 
+\end{DoxyNote}
+\Hypertarget{classtracktable_1_1_trajectory_af069ff91341a497850f8abca7a6127a3}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!back@{back}}
+\index{back@{back}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_af069ff91341a497850f8abca7a6127a3} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const  \& \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the (immutable) last point in the trajectory. 
+
+\begin{DoxyReturn}{Returns}
+Last point in trajectory (immutable reference)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you call this on an empty trajectory the behavior is undefined. Dereferencing \doxylink{classtracktable_1_1_trajectory_a5a89075c7122aea5f48b60b5b2d6270c}{back()} on an empty trajectory will probably crash your program. 
+\end{DoxyNote}
+\Hypertarget{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!begin@{begin}}
+\index{begin@{begin}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581} 
+template$<$class PointT$>$ \\
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator pointing to the beginning of the trajectory. 
+
+The point underneath this iterator can be changed. \Hypertarget{classtracktable_1_1_trajectory_ac16a3959f6a4fe5165a62c75cba7fa97}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!begin@{begin}}
+\index{begin@{begin}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_ac16a3959f6a4fe5165a62c75cba7fa97} 
+template$<$class PointT$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator pointing to the beginning of the trajectory. 
+
+The point underneath this iterator cannot be changed. \Hypertarget{classtracktable_1_1_trajectory_aa9fe5930da929365d69ae129a18cfee3}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_aa9fe5930da929365d69ae129a18cfee3} 
+template$<$class PointT$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::cbegin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Return an iterator pointing to the beginning of the trajectory. 
+
+The point underneath this iterator cannot be changed. \Hypertarget{classtracktable_1_1_trajectory_a5c17c687b2766a3e24a93763af16630e}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!cend@{cend}}
+\index{cend@{cend}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a5c17c687b2766a3e24a93763af16630e} 
+template$<$class PointT$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::cend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Return an iterator pointing beyond the last point in the trajectory. 
+
+The point underneath this iterator, if there is one, cannot be changed. \Hypertarget{classtracktable_1_1_trajectory_a9166d1bda8d4791f68bc49e3cdd6a17e}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!clear@{clear}}
+\index{clear@{clear}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a9166d1bda8d4791f68bc49e3cdd6a17e} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reset the trajectory to an empty state. 
+
+This clears out the vector of points. \Hypertarget{classtracktable_1_1_trajectory_ac1977a39c952c3ed234f19354e67423c}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!crbegin@{crbegin}}
+\index{crbegin@{crbegin}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{crbegin()}{crbegin()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_ac1977a39c952c3ed234f19354e67423c} 
+template$<$class PointT$>$ \\
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::crbegin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Return a reverse\+\_\+iterator pointing to the end of the trajectory. 
+
+The point underneath this iterator cannot be changed. \Hypertarget{classtracktable_1_1_trajectory_ab325a986344d021314d91d13fde1873e}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!crend@{crend}}
+\index{crend@{crend}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{crend()}{crend()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_ab325a986344d021314d91d13fde1873e} 
+template$<$class PointT$>$ \\
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::crend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Return an iterator pointing beyond the last point in the trajectory. 
+
+The point underneath this iterator, if there is one, cannot be changed. \Hypertarget{classtracktable_1_1_trajectory_afcc4248cc99101b40fc741835b5bb0ae}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!duration@{duration}}
+\index{duration@{duration}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{duration()}{duration()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_afcc4248cc99101b40fc741835b5bb0ae} 
+template$<$class PointT$>$ \\
+Duration \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::duration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the duration, if available. 
+
+If there are any points in the trajectory, this method will return the duration of the trajectory. If not it will return a duration of 0.
+
+\begin{DoxyReturn}{Returns}
+the difference of end\+\_\+time and start\+\_\+time or 0 if no points. 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_a272cb092a6237a6a639bb27e4508a393}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!end@{end}}
+\index{end@{end}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a272cb092a6237a6a639bb27e4508a393} 
+template$<$class PointT$>$ \\
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator pointing beyond the last point in the trajectory. 
+
+The point underneath this iterator, if there is one, can be changed. \Hypertarget{classtracktable_1_1_trajectory_a9737d62062786f4db2b1dce2e81a30bc}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!end@{end}}
+\index{end@{end}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a9737d62062786f4db2b1dce2e81a30bc} 
+template$<$class PointT$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator pointing beyond the last point in the trajectory. 
+
+The point underneath this iterator, if there is one, cannot be changed. \Hypertarget{classtracktable_1_1_trajectory_a08e6282c3ddeef676944d325d67c9b15}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!end\_time@{end\_time}}
+\index{end\_time@{end\_time}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{end\_time()}{end\_time()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a08e6282c3ddeef676944d325d67c9b15} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::end\+\_\+time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the end time if available. 
+
+If there are any points in the trajectory this method will return the timestamp on the last point. If not, it will return an invalid \doxylink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}. \Hypertarget{classtracktable_1_1_trajectory_a66fa66bb0fe57ef60d06ae2a73eddbf2}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!erase@{erase}}
+\index{erase@{erase}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a66fa66bb0fe57ef60d06ae2a73eddbf2} 
+template$<$class PointT$>$ \\
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::erase (\begin{DoxyParamCaption}\item[{iterator}]{first}{, }\item[{iterator}]{last}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove a range of points from the trajectory. 
+
+Delete points from trajectories starting at \textquotesingle{}first\textquotesingle{} and ending at the point just before \textquotesingle{}last\textquotesingle{}. Points after the deleted range will be moved up to fill the gap.
+
+\begin{DoxyNote}{Note}
+This operation takes linear time in the number of points in the trajectory.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em first} & Iterator pointing at the first point to erase \\
+\hline
+\mbox{\texttt{ in}}  & {\em last} & Iterator pointing to the location after the last point to erase \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_a3cc235f0bbb2205f0d5a2b3d6e4a6d23}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!erase@{erase}}
+\index{erase@{erase}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a3cc235f0bbb2205f0d5a2b3d6e4a6d23} 
+template$<$class PointT$>$ \\
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::erase (\begin{DoxyParamCaption}\item[{iterator}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove a point from the trajectory. 
+
+Delete the point at the specified position (specified by an iterator). The points after the one deleted will be moved up one spot to fill the gap.
+
+\begin{DoxyNote}{Note}
+This operation takes linear time in the number of points in the trajectory.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em position} & Iterator pointing at the location to erase. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_ac54fa8e8176246a99095e9a468a889f5}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!front@{front}}
+\index{front@{front}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_ac54fa8e8176246a99095e9a468a889f5} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::front (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the first point in the trajectory. 
+
+\begin{DoxyReturn}{Returns}
+First point in trajectory (mutable reference)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you call this on an empty trajectory the behavior is undefined. 
+\end{DoxyNote}
+\Hypertarget{classtracktable_1_1_trajectory_a13ed8aec90926f87f30ad83f64f18385}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!front@{front}}
+\index{front@{front}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a13ed8aec90926f87f30ad83f64f18385} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const  \& \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::front (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the (immutable) first point in the trajectory. 
+
+\begin{DoxyReturn}{Returns}
+First point in trajectory (immutable reference)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you call this on an empty trajectory the behavior is undefined. 
+\end{DoxyNote}
+\Hypertarget{classtracktable_1_1_trajectory_aab2cf5b98b136dd6823a258c54ffb5ad}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!insert@{insert}}
+\index{insert@{insert}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_aab2cf5b98b136dd6823a258c54ffb5ad} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::insert (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert a single element into the trajectory at an arbitrary index. 
+
+Insert a point into any index in the trajectory. All points after this location will be moved farther down.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & Location to insert the point \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Point to insert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_ad1593fae980c55b29a9ecf11aeb0e31f}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!insert@{insert}}
+\index{insert@{insert}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_ad1593fae980c55b29a9ecf11aeb0e31f} 
+template$<$class PointT$>$ \\
+template$<$class Input\+Iterator$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::insert (\begin{DoxyParamCaption}\item[{iterator}]{position}{, }\item[{Input\+Iterator}]{first}{, }\item[{Input\+Iterator}]{last}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert a range of points into the trajectory. 
+
+Insert all points in the range \mbox{[}first, last) into the trajectory. All points after this location will be moved farther down in the trajectory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em position} & Where to start inserting the points \\
+\hline
+\mbox{\texttt{ in}}  & {\em first} & The first point to insert \\
+\hline
+\mbox{\texttt{ in}}  & {\em last} & The location after the last point to insert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_aaeb6b042b0d9eab09cee25be46af4bac}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!insert@{insert}}
+\index{insert@{insert}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_aaeb6b042b0d9eab09cee25be46af4bac} 
+template$<$class PointT$>$ \\
+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::insert (\begin{DoxyParamCaption}\item[{iterator}]{position}{, }\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert a single element into the trajectory at an arbitrary position. 
+
+Insert a point into any position in the trajectory. All points after this location will be moved farther down.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em position} & Location to insert the point \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Point to insert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_a0dc27fdb26050a75ceba18932f32c46b}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!insert@{insert}}
+\index{insert@{insert}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a0dc27fdb26050a75ceba18932f32c46b} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::insert (\begin{DoxyParamCaption}\item[{iterator}]{position}{, }\item[{size\+\_\+type}]{n}{, }\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fill a range in the trajectory. 
+
+Insert n copes of the point specified as \textquotesingle{}value\textquotesingle{} starting at the specified \textquotesingle{}position\textquotesingle{}. All points after this location will be moved farther down in the trajectory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em position} & Where to insert the points \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & How many points to insert \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & What point to insert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_aff9cf81befecb8320230800cb46e3daf}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!object\_id@{object\_id}}
+\index{object\_id@{object\_id}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{object\_id()}{object\_id()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_aff9cf81befecb8320230800cb46e3daf} 
+template$<$class PointT$>$ \\
+std\+::string \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::object\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the ID of the moving object. 
+
+If there are any points in the trajectory, return the object ID of the first one. Otherwise return the string "{}(empty)"{}. \Hypertarget{classtracktable_1_1_trajectory_a826bac1333e2207e1a9c5323abc206d2}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a826bac1333e2207e1a9c5323abc206d2} 
+template$<$class PointT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}$<$ PointT $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two trajectories are unequal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{classtracktable_1_1_trajectory}{Trajectory} for comparison \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_aac6c72fc0d8cc08368827c951e871462}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_aac6c72fc0d8cc08368827c951e871462} 
+template$<$class PointT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}$<$ PointT $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one trajectory is equal to another by comparing all the points. 
+
+Two trajectories are equal if all of their points are equal.
+
+This method does not check whether the UUID\textquotesingle{}s of the trajectories are equal. It only checks the points of the trajectories.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{classtracktable_1_1_trajectory}{Trajectory} for comparison \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_a551d6da43c7b35f7d58c4d2429cbd7d5}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a551d6da43c7b35f7d58c4d2429cbd7d5} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a mutable reference to a given point in the trajectory. 
+
+As with the const version of operator\mbox{[}\mbox{]}, it is the caller\textquotesingle{}s responsibility to ensure that a valid index has been requested.
+
+\begin{DoxyNote}{Note}
+If you change the point\textquotesingle{}s coordinates you are responsible for calling trajectory-\/\texorpdfstring{$>$}{>}compute\+\_\+current\+\_\+length(i) to update the points\textquotesingle{} current\+\_\+length parameter.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of desired point \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_a34023182a6215ab2b3097263c37fdbb6}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a34023182a6215ab2b3097263c37fdbb6} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const  \& \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a given point from the trajectory. 
+
+Return the requested point from the trajectory. It is the caller\textquotesingle{}s responsibility to ensure that a valid index has been requested.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of desired point \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_a6365f4c2d2450fe0b2a00a828b6365bc}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a6365f4c2d2450fe0b2a00a828b6365bc} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}} const \&}]{pt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a point to the trajectory. 
+
+Note that this uses copy semantics rather than move semantics. Since move semantics are part of C++11 we will not use them until we can be reasonable sure that suitable compilers are available in all environments that we care about.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & Point to append\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Why do we have this alias? 
+\end{DoxyNote}
+\Hypertarget{classtracktable_1_1_trajectory_a37f9f846b049ec45f2c8be32bcfea9cb}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!rbegin@{rbegin}}
+\index{rbegin@{rbegin}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{rbegin()}{rbegin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a37f9f846b049ec45f2c8be32bcfea9cb} 
+template$<$class PointT$>$ \\
+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::rbegin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a reverse\+\_\+iterator pointing to the end of the trajectory. 
+
+The point underneath this iterator can be changed. \Hypertarget{classtracktable_1_1_trajectory_ab5e2899a4dc182cd71c598ff4648df4e}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!rbegin@{rbegin}}
+\index{rbegin@{rbegin}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{rbegin()}{rbegin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_ab5e2899a4dc182cd71c598ff4648df4e} 
+template$<$class PointT$>$ \\
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::rbegin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a reverse\+\_\+iterator pointing to the end of the trajectory. 
+
+The point underneath this iterator cannot be changed. \Hypertarget{classtracktable_1_1_trajectory_a8364467dad32d7920df980a9fc43ba75}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!rend@{rend}}
+\index{rend@{rend}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{rend()}{rend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a8364467dad32d7920df980a9fc43ba75} 
+template$<$class PointT$>$ \\
+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::rend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator pointing beyond the first point in the trajectory. 
+
+The point underneath this iterator, if there is one, can be changed. \Hypertarget{classtracktable_1_1_trajectory_a7d69b49a3e1b4564522e53fc8d873e83}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!rend@{rend}}
+\index{rend@{rend}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{rend()}{rend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a7d69b49a3e1b4564522e53fc8d873e83} 
+template$<$class PointT$>$ \\
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::rend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an iterator pointing beyond the last point in the trajectory. 
+
+The point underneath this iterator, if there is one, cannot be changed. \Hypertarget{classtracktable_1_1_trajectory_a474e8824c8f8dd9d0fc1b87bf3fd6e66}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a474e8824c8f8dd9d0fc1b87bf3fd6e66} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::reserve (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Preallocate enough space in the array for the specified number of entries. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & Allocate space for this many points. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_afca0d56029e01e620feaf8df4c6ce9bb}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!resize@{resize}}
+\index{resize@{resize}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_afca0d56029e01e620feaf8df4c6ce9bb} 
+template$<$class PointT$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{new\+\_\+size}{, }\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}}}]{default\+\_\+value}{ = {\ttfamily \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\+\_\+type}}()}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resize the points array to contain exactly the number of entries requested. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+size} & Desired length of the vector \\
+\hline
+{\em default\+\_\+value} & Value for newly allocated entries \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_af57579863e004d634ec4f8ac730c32a6}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!start\_time@{start\_time}}
+\index{start\_time@{start\_time}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{start\_time()}{start\_time()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_af57579863e004d634ec4f8ac730c32a6} 
+template$<$class PointT$>$ \\
+\mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::start\+\_\+time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the start time if available. 
+
+If there are any points in the trajectory this method will return the timestamp on the first point. If not, it will return an invalid \doxylink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}. \Hypertarget{classtracktable_1_1_trajectory_a56bf2815b7cd0bc1fab46e5fac015000}\index{tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}!trajectory\_id@{trajectory\_id}}
+\index{trajectory\_id@{trajectory\_id}!tracktable::Trajectory$<$ PointT $>$@{tracktable::Trajectory$<$ PointT $>$}}
+\doxysubsubsection{\texorpdfstring{trajectory\_id()}{trajectory\_id()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_a56bf2815b7cd0bc1fab46e5fac015000} 
+template$<$class PointT$>$ \\
+std\+::string \mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory}}$<$ PointT $>$\+::trajectory\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a human-\/readable ID for the trajectory. 
+
+Return a mostly-\/unique ID for the trajectory incorporating its object ID, start time and end time. If the trajectory is empty then we return the string "{}(empty)"{}.
+
+Note that if you have multiple trajectories with the same object ID, start time and end time, this identifier will not be unique. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Trajectory.\+h\end{DoxyCompactItemize}

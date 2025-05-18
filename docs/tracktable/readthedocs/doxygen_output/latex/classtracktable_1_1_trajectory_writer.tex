@@ -1,0 +1,438 @@
+\doxysection{tracktable\+::Trajectory\+Writer Class Reference}
+\hypertarget{classtracktable_1_1_trajectory_writer}{}\label{classtracktable_1_1_trajectory_writer}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+
+
+Write trajectories of any type as delimited text.  
+
+
+
+
+{\ttfamily \#include $<$Trajectory\+Writer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a94c2cff044ab12274ab483317c9951dc}{Trajectory\+Writer}} ()
+\begin{DoxyCompactList}\small\item\em Instantiate \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} using a default configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_writer_abf55f1349bc2a8a78332fbb06ac01104}{Trajectory\+Writer}} (std\+::ostream \&\+\_\+output)
+\begin{DoxyCompactList}\small\item\em Instantiate a \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} using a {\ttfamily std\+::ostream} and default configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a4e1576a1acc6e71a4568cc2d4d056d6c}{Trajectory\+Writer}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a writer with a copy of another. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_trajectory_writer_a9602b0047536958442aec00c78faf312}\label{classtracktable_1_1_trajectory_writer_a9602b0047536958442aec00c78faf312} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Trajectory\+Writer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} \& \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_afe95a6edbfa764143f13229654afbd01}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a71ac0f19e3ad066d35401261e2f0e851}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one writer is equal to another by comparing all the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a0113a25d2b84549d254bdec849b407cf}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two Trajectory\+Writers are unequal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_aa8ff8270edd21a42c977be4c920f113c}{set\+\_\+output}} (std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Set the stream where points will be written. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a28fd9fcaeaa831f338eaa1f12b3e589c}{output}} () const
+\begin{DoxyCompactList}\small\item\em Return the stream where points will be written. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a1636dea52bf798cc97b926f61edcc637}{set\+\_\+field\+\_\+delimiter}} (string\+\_\+type const \&delim)
+\begin{DoxyCompactList}\small\item\em Set the field delimiter. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a80dd02f34ac4912a8997e480ba9743dd}{field\+\_\+delimiter}} () const
+\begin{DoxyCompactList}\small\item\em Return the field delimiter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_ab9f1a375a436a7a9349164818fa59ad3}{set\+\_\+record\+\_\+delimiter}} (string\+\_\+type const \&delim)
+\begin{DoxyCompactList}\small\item\em Set the record separator (end-\/of-\/line string) \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a3c470aee070bc4c5ee5b6ae031381d63}{record\+\_\+delimiter}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the record separator (end-\/of-\/line string) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_ac0d3c4fe92d1897e344a28c3128a3942}{set\+\_\+quote\+\_\+character}} (string\+\_\+type const \&quote)
+\begin{DoxyCompactList}\small\item\em Set the quote character. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a21cb30b495bb89e0722d7173036ed7f1}{quote\+\_\+character}} () const
+\begin{DoxyCompactList}\small\item\em Return the current quote characters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a84feb0dfb27a8fa41395bd71929bdecf}{set\+\_\+timestamp\+\_\+format}} (string\+\_\+type const \&format)
+\begin{DoxyCompactList}\small\item\em Set format for writing timestamps. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_aaa21b35b964cefaddcbd249e45b8cc3e}{timestamp\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the timestamp format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a2c6d8b49f89f56cba996e364ed1bb762}{set\+\_\+null\+\_\+value}} (string\+\_\+type const \&new\+\_\+null\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the string representation for nulls. \end{DoxyCompactList}\item 
+string\+\_\+type \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a3cc7c04896691284f259365a8d322dc9}{null\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Retreive the null value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename trajectory\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_aa2402709b44f2390f366dc6165c31672}{write}} (trajectory\+\_\+type const \&trajectory)
+\begin{DoxyCompactList}\small\item\em Write a single trajectory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename source\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a1fc012df4d1f9256aa7a2f50f67d7765}{write}} (source\+\_\+iter\+\_\+type traj\+\_\+begin, source\+\_\+iter\+\_\+type traj\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Write many trajectories. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_ac7a3d524e14e7d40585e4abcbf70e17d}{set\+\_\+coordinate\+\_\+precision}} (std\+::size\+\_\+t num\+\_\+digits)
+\begin{DoxyCompactList}\small\item\em Set the decimal precision for writing coordinates. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_trajectory_writer_a469e6d19a818c35ace7bb6fcb0a442d6}{coordinate\+\_\+precision}} () const
+\begin{DoxyCompactList}\small\item\em Retreive the coordinate decimal precision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Write trajectories of any type as delimited text. 
+
+This class writes subclasses of \doxylink{classtracktable_1_1_trajectory}{tracktable\+::\+Trajectory} (including the domain classes) to a stream as delimited text. It will write one trajectory per line. The resulting file will contain enough header information to reconstruct the trajectory exactly as long as the user asks for the correct class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a94c2cff044ab12274ab483317c9951dc}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!TrajectoryWriter@{TrajectoryWriter}}
+\index{TrajectoryWriter@{TrajectoryWriter}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{TrajectoryWriter()}{TrajectoryWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a94c2cff044ab12274ab483317c9951dc} 
+tracktable\+::\+Trajectory\+Writer\+::\+Trajectory\+Writer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} using a default configuration. 
+
+Set the default configuration values of the writer.   
+
+Defaults\+:
+\begin{DoxyItemize}
+\item coordinate\+\_\+precision = 8
+\item field\+\_\+delimiter = "{},"{}
+\item quote\+\_\+character = "{}"{}"{}    \texorpdfstring{$\ast$}{*} record\+\_\+delimiter = "{}\textbackslash{}n"{}    \texorpdfstring{$\ast$}{*} timestamp\+\_\+format = "{}Y-\/m-\/d H\+:M\+:S"{}    
+\end{DoxyItemize}\Hypertarget{classtracktable_1_1_trajectory_writer_abf55f1349bc2a8a78332fbb06ac01104}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!TrajectoryWriter@{TrajectoryWriter}}
+\index{TrajectoryWriter@{TrajectoryWriter}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{TrajectoryWriter()}{TrajectoryWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_abf55f1349bc2a8a78332fbb06ac01104} 
+tracktable\+::\+Trajectory\+Writer\+::\+Trajectory\+Writer (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate a \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} using a {\ttfamily std\+::ostream} and default configuration. 
+
+Set the default configuration values of the writer.   
+
+Defaults\+:
+\begin{DoxyItemize}
+\item coordinate\+\_\+precision = 8
+\item field\+\_\+delimiter = "{},"{}
+\item quote\+\_\+character = "{}"{}"{}    \texorpdfstring{$\ast$}{*} record\+\_\+delimiter = "{}\textbackslash{}n"{}    \texorpdfstring{$\ast$}{*} timestamp\+\_\+format = "{}Y-\/m-\/d H\+:M\+:S"{}   
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+output} & Stream to output to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a4e1576a1acc6e71a4568cc2d4d056d6c}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!TrajectoryWriter@{TrajectoryWriter}}
+\index{TrajectoryWriter@{TrajectoryWriter}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{TrajectoryWriter()}{TrajectoryWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a4e1576a1acc6e71a4568cc2d4d056d6c} 
+tracktable\+::\+Trajectory\+Writer\+::\+Trajectory\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create a writer with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a469e6d19a818c35ace7bb6fcb0a442d6}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!coordinate\_precision@{coordinate\_precision}}
+\index{coordinate\_precision@{coordinate\_precision}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{coordinate\_precision()}{coordinate\_precision()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a469e6d19a818c35ace7bb6fcb0a442d6} 
+std\+::size\+\_\+t tracktable\+::\+Trajectory\+Writer\+::coordinate\+\_\+precision (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retreive the coordinate decimal precision. 
+
+\begin{DoxyReturn}{Returns}
+The decimal precision 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a80dd02f34ac4912a8997e480ba9743dd}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!field\_delimiter@{field\_delimiter}}
+\index{field\_delimiter@{field\_delimiter}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{field\_delimiter()}{field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a80dd02f34ac4912a8997e480ba9743dd} 
+string\+\_\+type tracktable\+::\+Trajectory\+Writer\+::field\+\_\+delimiter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the field delimiter. 
+
+\begin{DoxyReturn}{Returns}
+Field delimiter 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a3cc7c04896691284f259365a8d322dc9}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!null\_value@{null\_value}}
+\index{null\_value@{null\_value}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{null\_value()}{null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a3cc7c04896691284f259365a8d322dc9} 
+string\+\_\+type tracktable\+::\+Trajectory\+Writer\+::null\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retreive the null value. 
+
+\begin{DoxyReturn}{Returns}
+The representation of the null value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a0113a25d2b84549d254bdec849b407cf}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a0113a25d2b84549d254bdec849b407cf} 
+bool tracktable\+::\+Trajectory\+Writer\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two Trajectory\+Writers are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_afe95a6edbfa764143f13229654afbd01}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_afe95a6edbfa764143f13229654afbd01} 
+\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} \& tracktable\+::\+Trajectory\+Writer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Writer with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a71ac0f19e3ad066d35401261e2f0e851}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a71ac0f19e3ad066d35401261e2f0e851} 
+bool tracktable\+::\+Trajectory\+Writer\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one writer is equal to another by comparing all the properties. 
+
+Two writers are equal if all of their streams are properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_trajectory_writer}{Trajectory\+Writer} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a28fd9fcaeaa831f338eaa1f12b3e589c}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!output@{output}}
+\index{output@{output}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a28fd9fcaeaa831f338eaa1f12b3e589c} 
+std\+::ostream \& tracktable\+::\+Trajectory\+Writer\+::output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the stream where points will be written. 
+
+\begin{DoxyReturn}{Returns}
+output stream 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a21cb30b495bb89e0722d7173036ed7f1}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!quote\_character@{quote\_character}}
+\index{quote\_character@{quote\_character}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{quote\_character()}{quote\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a21cb30b495bb89e0722d7173036ed7f1} 
+string\+\_\+type tracktable\+::\+Trajectory\+Writer\+::quote\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the current quote characters. 
+
+\begin{DoxyReturn}{Returns}
+Current quote character 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a3c470aee070bc4c5ee5b6ae031381d63}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!record\_delimiter@{record\_delimiter}}
+\index{record\_delimiter@{record\_delimiter}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{record\_delimiter()}{record\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a3c470aee070bc4c5ee5b6ae031381d63} 
+string\+\_\+type tracktable\+::\+Trajectory\+Writer\+::record\+\_\+delimiter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the record separator (end-\/of-\/line string) 
+
+\begin{DoxyReturn}{Returns}
+Return the record separator (end-\/of-\/line string) 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_ac7a3d524e14e7d40585e4abcbf70e17d}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!set\_coordinate\_precision@{set\_coordinate\_precision}}
+\index{set\_coordinate\_precision@{set\_coordinate\_precision}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{set\_coordinate\_precision()}{set\_coordinate\_precision()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_ac7a3d524e14e7d40585e4abcbf70e17d} 
+void tracktable\+::\+Trajectory\+Writer\+::set\+\_\+coordinate\+\_\+precision (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+\_\+digits}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the decimal precision for writing coordinates. 
+
+Internally, Tracktable stores coordinates as double-\/precision floating numbers. It is highly unlikely that trajectory data needs absolutely all of that precision. Since it takes up lots of space when we write data to disk, it is useful to be able to ask for reduced (or increased) precision.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+\_\+digits} & Number of digits of precision \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a1636dea52bf798cc97b926f61edcc637}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!set\_field\_delimiter@{set\_field\_delimiter}}
+\index{set\_field\_delimiter@{set\_field\_delimiter}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{set\_field\_delimiter()}{set\_field\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a1636dea52bf798cc97b926f61edcc637} 
+void tracktable\+::\+Trajectory\+Writer\+::set\+\_\+field\+\_\+delimiter (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{delim}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the field delimiter. 
+
+This string will be inserted between each field as points are written.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em delim} & Delimiter string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a2c6d8b49f89f56cba996e364ed1bb762}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!set\_null\_value@{set\_null\_value}}
+\index{set\_null\_value@{set\_null\_value}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{set\_null\_value()}{set\_null\_value()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a2c6d8b49f89f56cba996e364ed1bb762} 
+void tracktable\+::\+Trajectory\+Writer\+::set\+\_\+null\+\_\+value (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{new\+\_\+null\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the string representation for nulls. 
+
+Property values that were never set are considered to hold a null value. This method lets you set how nulls will be written to disk. The default value is the empty string "{}"{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+null\+\_\+value} & Desired string representation of nulls \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_aa8ff8270edd21a42c977be4c920f113c}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!set\_output@{set\_output}}
+\index{set\_output@{set\_output}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{set\_output()}{set\_output()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_aa8ff8270edd21a42c977be4c920f113c} 
+void tracktable\+::\+Trajectory\+Writer\+::set\+\_\+output (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the stream where points will be written. 
+
+This can be any {\ttfamily std\+::ostream}.
+
+\begin{DoxyNote}{Note}
+You are resposible for ensuring that the stream does not go out of scope until you are done writing points.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out} & Stream where points will be written \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_ac0d3c4fe92d1897e344a28c3128a3942}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!set\_quote\_character@{set\_quote\_character}}
+\index{set\_quote\_character@{set\_quote\_character}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{set\_quote\_character()}{set\_quote\_character()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_ac0d3c4fe92d1897e344a28c3128a3942} 
+void tracktable\+::\+Trajectory\+Writer\+::set\+\_\+quote\+\_\+character (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{quote}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quote character. 
+
+This character {\itshape may} be used to enclose a field containing lots of characters that would otherwise need to be escaped. We have to know what it is so that we can escape it ourselves when we encounter the quote character inside fields.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em quotes} & Zero or one character to be used as quotation marks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_ab9f1a375a436a7a9349164818fa59ad3}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!set\_record\_delimiter@{set\_record\_delimiter}}
+\index{set\_record\_delimiter@{set\_record\_delimiter}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{set\_record\_delimiter()}{set\_record\_delimiter()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_ab9f1a375a436a7a9349164818fa59ad3} 
+void tracktable\+::\+Trajectory\+Writer\+::set\+\_\+record\+\_\+delimiter (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{delim}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the record separator (end-\/of-\/line string) 
+
+This string will be written after each point. By default it\textquotesingle{}s {\ttfamily std\+::endl} (the newline string).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sep} & String separator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a84feb0dfb27a8fa41395bd71929bdecf}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!set\_timestamp\_format@{set\_timestamp\_format}}
+\index{set\_timestamp\_format@{set\_timestamp\_format}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{set\_timestamp\_format()}{set\_timestamp\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a84feb0dfb27a8fa41395bd71929bdecf} 
+void tracktable\+::\+Trajectory\+Writer\+::set\+\_\+timestamp\+\_\+format (\begin{DoxyParamCaption}\item[{string\+\_\+type const \&}]{format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set format for writing timestamps. 
+
+There are as many ways to write timestamps as there are programs to write them. We have our default (YYYY-\/\+MM-\/\+DD HH\+:\+MM\+:SS) but sometimes you will need to specify some other format for interoperability.
+
+This method sets a format string for timestamps using the flags in {\ttfamily boost\+::date\+\_\+time\+::time\+\_\+facet}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & Format string for timestamps \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_aaa21b35b964cefaddcbd249e45b8cc3e}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!timestamp\_format@{timestamp\_format}}
+\index{timestamp\_format@{timestamp\_format}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{timestamp\_format()}{timestamp\_format()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_aaa21b35b964cefaddcbd249e45b8cc3e} 
+string\+\_\+type tracktable\+::\+Trajectory\+Writer\+::timestamp\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the timestamp format. 
+
+\begin{DoxyReturn}{Returns}
+The time timestamp format 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_trajectory_writer_a1fc012df4d1f9256aa7a2f50f67d7765}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!write@{write}}
+\index{write@{write}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_a1fc012df4d1f9256aa7a2f50f67d7765} 
+template$<$typename source\+\_\+iter\+\_\+type$>$ \\
+void tracktable\+::\+Trajectory\+Writer\+::write (\begin{DoxyParamCaption}\item[{source\+\_\+iter\+\_\+type}]{traj\+\_\+begin}{, }\item[{source\+\_\+iter\+\_\+type}]{traj\+\_\+end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write many trajectories. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em traj\+\_\+begin} & Start of trajectories to write out \\
+\hline
+\mbox{\texttt{ in}}  & {\em traj\+\_\+end} & End of trajectories to write out \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_trajectory_writer_aa2402709b44f2390f366dc6165c31672}\index{tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}!write@{write}}
+\index{write@{write}!tracktable::TrajectoryWriter@{tracktable::TrajectoryWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_trajectory_writer_aa2402709b44f2390f366dc6165c31672} 
+template$<$typename trajectory\+\_\+type$>$ \\
+void tracktable\+::\+Trajectory\+Writer\+::write (\begin{DoxyParamCaption}\item[{trajectory\+\_\+type const \&}]{trajectory}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write a single trajectory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em trajectory} & \doxylink{classtracktable_1_1_trajectory}{Trajectory} to write our \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Trajectory\+Writer.\+h\end{DoxyCompactItemize}

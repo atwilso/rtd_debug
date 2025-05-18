@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structboost_1_1geometry_1_1traits_1_1point__type_3_01tracktable_1_1_box_3_01_point_t_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>boost::geometry::traits::point_type&lt; tracktable::Box&lt; PointT &gt; &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">point_type&lt; boost::geometry::model::box&lt; PointT &gt; &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename PointT</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>boost::geometry::traits::point_type&lt; tracktable::Box&lt; PointT &gt; &gt;</label>
+        <link refid="structboost_1_1geometry_1_1traits_1_1point__type_3_01tracktable_1_1_box_3_01_point_t_01_4_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>point_type&lt; boost::geometry::model::box&lt; PointT &gt; &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>boost::geometry::traits::point_type&lt; tracktable::Box&lt; PointT &gt; &gt;</label>
+        <link refid="structboost_1_1geometry_1_1traits_1_1point__type_3_01tracktable_1_1_box_3_01_point_t_01_4_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>point_type&lt; boost::geometry::model::box&lt; PointT &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" line="78" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" bodystart="78" bodyend="78"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

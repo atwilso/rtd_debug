@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_box" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::Box</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">boost::geometry::model::box&lt; point_type &gt;</basecompoundref>
+    <includes refid="_box_8h" local="no">Box.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename point_type</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_box_1a1fdff4e6c16be0a741c32d140aa526f6" prot="public" static="no">
+        <type>boost::geometry::model::box&lt; point_type &gt;</type>
+        <definition>typedef boost::geometry::model::box&lt;point_type&gt; tracktable::Box&lt; point_type &gt;::Superclass</definition>
+        <argsstring></argsstring>
+        <name>Superclass</name>
+        <qualifiedname>tracktable::Box::Superclass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" line="58" column="39" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_box_1aed1d2ce4879d2f7b912943bdf1684b07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::Box&lt; point_type &gt;::Box</definition>
+        <argsstring>(point_type const &amp;low_corner, point_type const &amp;high_corner)</argsstring>
+        <name>Box</name>
+        <qualifiedname>tracktable::Box::Box</qualifiedname>
+        <param>
+          <type>point_type const &amp;</type>
+          <declname>low_corner</declname>
+        </param>
+        <param>
+          <type>point_type const &amp;</type>
+          <declname>high_corner</declname>
+        </param>
+        <briefdescription>
+<para>Construct the bounding box using <computeroutput>boost::geometry::model::box</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">low_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum corner to use for creation of the box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">high_corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum corner to use for creation of the box </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" line="65" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" bodystart="65" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_box_1ae2f14f3ad806fe3e25f01484cfda30c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::Box&lt; point_type &gt;::~Box</definition>
+        <argsstring>()</argsstring>
+        <name>~Box</name>
+        <qualifiedname>tracktable::Box::~Box</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" line="70" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" bodystart="70" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Axis-aligned bounding box. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is a thin wrapper around <computeroutput>boost::geometry::model::box</computeroutput> that holds two points representing opposite corners.</para>
+<para><simplesect kind="warning"><para>Don&apos;t instantiate this class directly. Instead, use <computeroutput>&quot;tracktable::domain::&lt;name&gt;::box_type&quot;</computeroutput> so that you get the correct distance functions. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::geometry::model::box&lt; point_type &gt;</label>
+      </node>
+      <node id="1">
+        <label>tracktable::Box&lt; point_type &gt;</label>
+        <link refid="classtracktable_1_1_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::geometry::model::box&lt; point_type &gt;</label>
+      </node>
+      <node id="1">
+        <label>tracktable::Box&lt; point_type &gt;</label>
+        <link refid="classtracktable_1_1_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" line="55" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Box.h" bodystart="56" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_box_1aed1d2ce4879d2f7b912943bdf1684b07" prot="public" virt="non-virtual"><scope>tracktable::Box</scope><name>Box</name></member>
+      <member refid="classtracktable_1_1_box_1a1fdff4e6c16be0a741c32d140aa526f6" prot="public" virt="non-virtual"><scope>tracktable::Box</scope><name>Superclass</name></member>
+      <member refid="classtracktable_1_1_box_1ae2f14f3ad806fe3e25f01484cfda30c7" prot="public" virt="non-virtual"><scope>tracktable::Box</scope><name>~Box</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

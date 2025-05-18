@@ -1,0 +1,244 @@
+\doxysection{Generic\+Reader.\+h}
+\hypertarget{_generic_reader_8h_source}{}\label{_generic_reader_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/GenericReader.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/GenericReader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_rw\_GenericReader\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_rw\_GenericReader\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <boost/shared\_ptr.hpp>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ sequence\_\textcolor{keywordtype}{object}\_type>}
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_generic_reader_a3f6a790b8f1937222c8694696d3791fd}{GenericReader}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classtracktable_1_1_generic_reader_a3f6a790b8f1937222c8694696d3791fd}{GenericReader}}()\ \{\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classtracktable_1_1_generic_reader_a539fe1509e67ae1b2581c1d7da3c8c85}{GenericReader}}(\mbox{\hyperlink{classtracktable_1_1_generic_reader_a3f6a790b8f1937222c8694696d3791fd}{GenericReader}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00069\ \ \ \ \ :\ CurrentSequenceObject(other.CurrentSequenceObject)}
+\DoxyCodeLine{00070\ \ \ \ \ ,\ PreviousSequenceObject(other.PreviousSequenceObject)}
+\DoxyCodeLine{00071\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_generic_reader_a4dafc916191825cbbef2d67d500135b6}{\string~GenericReader}}()\ \{\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{typedef}\ boost::shared\_ptr<sequence\_object\_type>\ sequence\_object\_ptr;}
+\DoxyCodeLine{00078\ \ \ sequence\_object\_ptr\ CurrentSequenceObject;}
+\DoxyCodeLine{00079\ \ \ sequence\_object\_ptr\ PreviousSequenceObject;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ advance()}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ this-\/>PreviousSequenceObject\ =\ this-\/>CurrentSequenceObject;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ this-\/>CurrentSequenceObject\ =\ sequence\_object\_ptr(this-\/>\mbox{\hyperlink{classtracktable_1_1_generic_reader_a0d92677380ac73f7b919c323b8115608}{next\_item}}());}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ sequence\_is\_finished()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00094\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>CurrentSequenceObject\ ==\ 0);}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ sequence\_object\_ptr\ \mbox{\hyperlink{classtracktable_1_1_generic_reader_a0d92677380ac73f7b919c323b8115608}{next\_item}}()\ =\ 0;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{class\ }GenericInputIterator}
+\DoxyCodeLine{00110\ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{using\ }iterator\_category\ =\ std::input\_iterator\_tag;}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{using\ }value\_type\ \ \ \ \ \ \ \ =\ sequence\_object\_type;}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{using\ }difference\_type\ \ \ =\ std::ptrdiff\_t;}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ This\ looks\ wrong:\ we\ expect\ reference\ to\ be\ 'value\_type\ \&'\ without}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ the\ const.\ \ If\ we\ do\ that,\ though,\ we\ get\ a\ compilation\ error\ in}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ Examples/FilterTime/filter\_by\_time.cpp\ where\ something\ deep\ in}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//\ Boost\ tries\ to\ bind\ a\ const\ value\ to\ a\ non-\/const\ reference.}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//\ That's\ an\ issue\ to\ investigate\ another\ time.}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{using\ }reference\ \ \ \ \ \ \ \ \ =\ value\_type\ \textcolor{keyword}{const}\ \&;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{using\ }const\_reference\ \ \ =\ value\_type\ \textcolor{keyword}{const}\ \&;}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{using\ }pointer\ \ \ \ \ \ \ \ \ \ \ =\ value\_type\ *;}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{using\ }const\_pointer\ \ \ \ \ =\ \textcolor{keyword}{const}\ value\_type\ *;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \ \ \ \ GenericInputIterator()}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ :\ Parent(0)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ \ \ GenericInputIterator(\mbox{\hyperlink{classtracktable_1_1_generic_reader_a3f6a790b8f1937222c8694696d3791fd}{GenericReader}}*\ parent)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ :\ Parent(parent)}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>Parent)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ this-\/>CurrentSequenceObject\ =\ this-\/>Parent-\/>CurrentSequenceObject;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ GenericInputIterator(GenericInputIterator\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ :\ CurrentSequenceObject(other.CurrentSequenceObject)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ ,\ Parent(other.Parent)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~GenericInputIterator()\ \{\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ GenericInputIterator\&\ operator=(GenericInputIterator\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ this-\/>CurrentSequenceObject\ =\ other.CurrentSequenceObject;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ this-\/>Parent\ =\ other.Parent;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacetracktable_a73853fb1816c05b8a0337695ef0de7be}{operator==}}(GenericInputIterator\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>Parent\ ==\ other.Parent)}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>Parent\ ==\ 0)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Both\ iterators\ are\ past-\/the-\/end\ and\ therefore\ equal.}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Neither\ iterator\ is\ past\ the\ end.}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>CurrentSequenceObject\ ==\ other.CurrentSequenceObject);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ sources\ are\ not\ equal.\ The\ iterators\ cannot\ be}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ equal.}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(GenericInputIterator\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00193\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00201\ \ \ \ \ reference\ operator*()}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *this-\/>CurrentSequenceObject;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00210\ \ \ \ \ const\_reference\ operator*()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00211\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *this-\/>CurrentSequenceObject;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00219\ \ \ \ \ pointer\ operator-\/>()}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>CurrentSequenceObject;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00228\ \ \ \ \ const\_pointer\ operator-\/>()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00229\ \textcolor{keyword}{\ \ \ \ \ \ }\{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>CurrentSequenceObject;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00238\ \ \ \ \ GenericInputIterator\&\ operator++()}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>Parent\ ==\ 0)}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ advance\ iterator\ past\ end"{}});}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>Parent-\/>sequence\_is\_finished())}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ it\ might\ already\ know}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>Parent\ =\ 0;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>Parent-\/>advance();}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>Parent-\/>sequence\_is\_finished())}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ it\ might\ have\ just\ found\ out}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>Parent\ =\ 0;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>CurrentSequenceObject\ =\ this-\/>Parent-\/>CurrentSequenceObject;}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00273\ \ \ \ \ GenericInputIterator\ operator++(\textcolor{keywordtype}{int})}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ GenericInputIterator\ old(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ this-\/>operator++();}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{typedef}\ boost::shared\_ptr<sequence\_object\_type>\ sequence\_object\_ptr;}
+\DoxyCodeLine{00282\ \ \ \ \ sequence\_object\_ptr\ CurrentSequenceObject;}
+\DoxyCodeLine{00283\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_generic_reader_a3f6a790b8f1937222c8694696d3791fd}{GenericReader}}*\ \ \ \ \ \ Parent;}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \};\ \textcolor{comment}{//\ end\ iterator\ class}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00288\ \ \ \textcolor{keyword}{typedef}\ GenericInputIterator\ iterator;}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ GenericInputIterator\ \mbox{\hyperlink{classtracktable_1_1_generic_reader_a13329272db0aded06cbc9dd85ed0f32d}{begin}}()}
+\DoxyCodeLine{00304\ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ this-\/>advance();}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>sequence\_is\_finished())}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GenericInputIterator(\textcolor{keyword}{this});}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GenericInputIterator(0);}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00320\ \ \ GenericInputIterator\ \mbox{\hyperlink{classtracktable_1_1_generic_reader_a91506b62c3fbcb3f747a70e621a921f9}{end}}()}
+\DoxyCodeLine{00321\ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GenericInputIterator(0);}
+\DoxyCodeLine{00323\ \ \ \ \ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \};}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1rw_1_1detail_1_1write__timestamp_3_01true_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::rw::detail::write_timestamp&lt; true &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1rw_1_1detail_1_1write__timestamp_3_01true_01_4_1a80781f9e82f7c33d55969b23f84ef107" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_t</type>
+          </param>
+          <param>
+            <type>typename out_iter_t</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void tracktable::rw::detail::write_timestamp&lt; true &gt;::apply</definition>
+        <argsstring>(point_t const &amp;thing, TimestampConverter &amp;formatter, out_iter_t &amp;where_to_write)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::rw::detail::write_timestamp&lt; true &gt;::apply</qualifiedname>
+        <param>
+          <type>point_t const &amp;</type>
+          <declname>thing</declname>
+        </param>
+        <param>
+          <type><ref refid="classtracktable_1_1_timestamp_converter" kindref="compound">TimestampConverter</ref> &amp;</type>
+          <declname>formatter</declname>
+        </param>
+        <param>
+          <type>out_iter_t &amp;</type>
+          <declname>where_to_write</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" line="62" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="structtracktable_1_1rw_1_1detail_1_1write__timestamp_1a37d5e9f9b6740605efbf9b7852011871" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tracktable::rw::detail::write_timestamp&lt; has_timestamp &gt;::apply</definition>
+        <argsstring>(point_t const &amp;, TimestampConverter &amp;, out_iter_t &amp;)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::rw::detail::write_timestamp&lt; true &gt;::apply</qualifiedname>
+        <param>
+          <type>point_t const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classtracktable_1_1_timestamp_converter" kindref="compound">TimestampConverter</ref> &amp;</type>
+        </param>
+        <param>
+          <type>out_iter_t &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" line="46" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" bodystart="46" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" line="59" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/WriteTimestamp.h" bodystart="60" bodyend="66"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1rw_1_1detail_1_1write__timestamp_3_01true_01_4_1a80781f9e82f7c33d55969b23f84ef107" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::write_timestamp&lt; true &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1rw_1_1detail_1_1write__timestamp_1a37d5e9f9b6740605efbf9b7852011871" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::write_timestamp&lt; true &gt;</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

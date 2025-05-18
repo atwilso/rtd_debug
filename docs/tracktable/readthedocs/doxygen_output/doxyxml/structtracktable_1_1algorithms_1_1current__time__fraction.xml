@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1current__time__fraction" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::current_time_fraction</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename P</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1current__time__fraction_1a441c61a0decfdff4008d5d158435539c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::algorithms::current_time_fraction&lt; P &gt;::BOOST_MPL_ASSERT_MSG</definition>
+        <argsstring>(sizeof(P)==0, CURRENT_TIME_FRACTION_NOT_IMPLEMENTED_FOR_THIS_TRAJECTORY_POINT_TYPE,(types&lt; P &gt;))</argsstring>
+        <name>BOOST_MPL_ASSERT_MSG</name>
+        <qualifiedname>tracktable::algorithms::current_time_fraction::BOOST_MPL_ASSERT_MSG</qualifiedname>
+        <param>
+          <type>sizeof(P)</type>
+          <defval>=0</defval>
+        </param>
+        <param>
+          <type>CURRENT_TIME_FRACTION_NOT_IMPLEMENTED_FOR_THIS_TRAJECTORY_POINT_TYPE</type>
+        </param>
+        <param>
+          <type>(types&lt; P &gt;)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/TimeFractionAtPoint.h" line="45" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/TimeFractionAtPoint.h" line="43" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/TimeFractionAtPoint.h" bodystart="44" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1current__time__fraction_1a441c61a0decfdff4008d5d158435539c" prot="public" virt="non-virtual"><scope>tracktable::algorithms::current_time_fraction</scope><name>BOOST_MPL_ASSERT_MSG</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

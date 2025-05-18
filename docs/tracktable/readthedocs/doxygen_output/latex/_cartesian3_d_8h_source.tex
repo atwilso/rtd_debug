@@ -1,0 +1,355 @@
+\doxysection{Cartesian3\+D.\+h}
+\hypertarget{_cartesian3_d_8h_source}{}\label{_cartesian3_d_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Domain/Cartesian3D.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Domain/Cartesian3D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ Cartesian3D\ Domain\ -\/\ objects\ in\ a\ flat\ 3D\ space}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ The\ Cartesian\ domain\ measures\ distances\ in\ dimensionless\ units\ and}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ speeds\ in\ units\ per\ second.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_domain\_Cartesian3D\_h}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_domain\_Cartesian3D\_h}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Box.h>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <tracktable/Core/FloatingPointComparison.h>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointCartesian.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TrajectoryPoint.h>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Trajectory.h>}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/DomainMacros.h>}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/TracktableDomainWindowsHeader.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <tracktable/RW/PointReader.h>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <tracktable/RW/TrajectoryReader.h>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <boost/geometry/algorithms/length.hpp>}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }domain\ \{\ \textcolor{keyword}{namespace\ }cartesian3d\ \{}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_a5e537e0fa6ec121a774f74f0c12d2d22}{CartesianPoint3D}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_point_cartesian_a1ffa5d8bbba92af933da04fe02ce64b9}{PointCartesian}}<3>}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_point_cartesian_a1ffa5d8bbba92af933da04fe02ce64b9}{PointCartesian<3>}}\ Superclass;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_a5e537e0fa6ec121a774f74f0c12d2d22}{CartesianPoint3D}}()\ \{\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_a1ee930ceb3171223560c919e38b4e02d}{CartesianPoint3D}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<0>}}(x);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<1>}}(y);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set<2>}}(z);}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_ad71d9949387cbb8b8ef28d96336f1add}{CartesianPoint3D}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_a5e537e0fa6ec121a774f74f0c12d2d22}{CartesianPoint3D}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00101\ \ \ \ \ :\ Superclass(other)}
+\DoxyCodeLine{00102\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_ad8dc97932c0c84d18a5189ef22755f0b}{CartesianPoint3D}}(Superclass\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00113\ \ \ \ \ :\ Superclass(other)}
+\DoxyCodeLine{00114\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_a4c8e5323584c831760039a8a75d73d08}{\string~CartesianPoint3D}}()\ \{\ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_a5e537e0fa6ec121a774f74f0c12d2d22}{CartesianPoint3D}}\&\ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_aa77baffcffb5c8f42fbd223798121abd}{operator=}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d_a5e537e0fa6ec121a774f74f0c12d2d22}{CartesianPoint3D}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594}{Superclass::operator=}}(other);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00136\ \ \ \textcolor{keywordtype}{void}\ serialize(Archive\&\ ar,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00137\ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ ar\ \&\ BOOST\_SERIALIZATION\_BASE\_OBJECT\_NVP(Superclass);}
+\DoxyCodeLine{00139\ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{//\ Everything\ else\ -\/-\/\ operator==,\ operator!=,\ operator<<\ -\/-\/}}
+\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ delegated\ implicitly\ to\ the\ superclass}}
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ If\ you\ write\ libraries\ for\ Microsoft\ platforms\ you\ will\ have\ to}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ care\ about\ this\ warning\ sooner\ or\ later.\ Warning\ \#4251\ says}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ "{}This\ type\ must\ have\ a\ DLL\ interface\ in\ order\ to\ be\ used\ by}}
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ clients\ of\ <class>"{}.\ After\ you\ dig\ through\ the\ layers,\ this}}
+\DoxyCodeLine{00151\ \textcolor{comment}{//\ ends\ up\ meaning\ "{}You\ cannot\ use\ STL\ classes\ in\ the\ interface\ of\ a}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ method\ or\ function\ if\ you\ expect\ your\ library\ to\ work\ with\ any}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ compiler\ other\ than\ the\ one\ you're\ using\ right\ now."{}}}
+\DoxyCodeLine{00154\ \textcolor{comment}{//}}
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ This\ is\ a\ symptom\ of\ a\ bigger\ problem.\ Since\ the\ STL\ does\ not\ have}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ a\ single\ standard\ implementation\ (for\ good\ reason)\ you\ cannot\ assume}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ that\ my\ std::map\ is\ the\ same\ on\ the\ inside\ as\ your\ std::map.\ Idioms}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ such\ as\ PIMPL\ are\ one\ approach\ to\ minimizing\ the\ impact.}}
+\DoxyCodeLine{00159\ \textcolor{comment}{//}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ The\ bottom\ line\ is\ that\ yea,\ verily,\ you\ cannot\ use\ STL\ classes\ as}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//\ arguments\ or\ return\ values\ in\ your\ library's\ interface\ unless\ it\ will}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ only\ ever\ be\ used\ by\ the\ same\ compiler\ that\ built\ it.\ We\ are\ going\ to}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ proclaim\ that\ this\ is\ the\ case\ for\ Tracktable\ and\ put\ great\ big\ warnings}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ in\ the\ developer\ documentation\ to\ that\ effect.}}
+\DoxyCodeLine{00165\ \textcolor{comment}{//}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ Meanwhile,\ we\ use\ \#pragma\ warning(disable)\ to\ hush\ the\ compiler\ up}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ so\ that\ people\ who\ just\ want\ to\ use\ the\ library\ don't\ have\ to\ care}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ about\ the\ arcana\ of\ \_\_declspec(dllimport)\ and\ friends.}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#if\ defined(WIN32)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#\ pragma\ warning(\ push\ )}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#\ pragma\ warning(\ disable\ :\ 4251\ )}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_a6600517d5ee8011bc666a7826af0e0d3}{CartesianTrajectoryPoint3D}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_point_a14b701595c0f394f9b99cb53d3e2bca5}{TrajectoryPoint}}<\ CartesianPoint3D\ >}
+\DoxyCodeLine{00187\ \{}
+\DoxyCodeLine{00188\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00189\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_point}{TrajectoryPoint<\ CartesianPoint3D\ >}}\ Superclass;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_a6600517d5ee8011bc666a7826af0e0d3}{CartesianTrajectoryPoint3D}}()\ \{\ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00207\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_ae6f820a635874fc81f973dc2d889843a}{CartesianTrajectoryPoint3D}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{00208\ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ (*this)[0]\ =\ x;}
+\DoxyCodeLine{00210\ \ \ \ \ (*this)[1]\ =\ y;}
+\DoxyCodeLine{00211\ \ \ \ \ (*this)[2]\ =\ z;}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00218\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_ad3b63d7b37d7526a6d2ae97e6a206db7}{CartesianTrajectoryPoint3D}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_a6600517d5ee8011bc666a7826af0e0d3}{CartesianTrajectoryPoint3D}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00219\ \ \ \ \ :\ Superclass(other)}
+\DoxyCodeLine{00220\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00230\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_a58b34032d84c97ef01c25b434f6a6b61}{CartesianTrajectoryPoint3D}}(Superclass\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00231\ \ \ \ \ :\ Superclass(other)}
+\DoxyCodeLine{00232\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00239\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_ac1606fcafbc8323fa1dab9d699f90add}{\string~CartesianTrajectoryPoint3D}}()\ \{\ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00246\ \ \ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_a6600517d5ee8011bc666a7826af0e0d3}{CartesianTrajectoryPoint3D}}\&\ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_ab285f4fd383d8f071c20bc42f64729a3}{operator=}}(\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_a6600517d5ee8011bc666a7826af0e0d3}{CartesianTrajectoryPoint3D}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00247\ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_point_ac2e2ca3f1c11138a5ec2594d2a7efaca}{Superclass::operator=}}(other);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00258\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00259\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d_afc89168d672f5667f28d840e724f82be}{serialize}}(Archive\&\ ar,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00260\ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ ar\ \&\ BOOST\_SERIALIZATION\_BASE\_OBJECT\_NVP(Superclass);}
+\DoxyCodeLine{00262\ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \textcolor{comment}{//\ Everything\ else\ -\/-\/\ operator==,\ operator!=,\ operator<<\ -\/-\/}}
+\DoxyCodeLine{00265\ \ \ \textcolor{comment}{//\ delegated\ to\ the\ superclass}}
+\DoxyCodeLine{00266\ \};}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#if\ defined(WIN32)}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#\ pragma\ warning(\ pop\ )}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \textcolor{keyword}{typedef}\ CartesianPoint3D\ base\_point\_type;}
+\DoxyCodeLine{00274\ \textcolor{keyword}{typedef}\ std::vector<base\_point\_type>\ linestring\_type;}
+\DoxyCodeLine{00275\ \textcolor{keyword}{typedef}\ CartesianTrajectoryPoint3D\ trajectory\_point\_type;}
+\DoxyCodeLine{00276\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory<trajectory\_point\_type>}}\ trajectory\_type;}
+\DoxyCodeLine{00277\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_point_reader}{PointReader<base\_point\_type>}}\ base\_point\_reader\_type;}
+\DoxyCodeLine{00278\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_point_reader}{PointReader<trajectory\_point\_type>}}\ trajectory\_point\_reader\_type;}
+\DoxyCodeLine{00279\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_reader}{TrajectoryReader<trajectory\_type>}}\ trajectory\_reader\_type;}
+\DoxyCodeLine{00280\ \textcolor{keyword}{typedef}\ boost::geometry::model::box<base\_point\_type>\ box\_type;}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ TRACKTABLE\_DOMAIN\_EXPORT\ std::ostream\&\ \mbox{\hyperlink{namespacetracktable_adede362c73ae0a3314510cfd9a748fea}{operator<<}}(std::ostream\&\ out,\ base\_point\_type\ \textcolor{keyword}{const}\&\ pt);}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ TRACKTABLE\_DOMAIN\_EXPORT\ std::ostream\&\ \mbox{\hyperlink{namespacetracktable_adede362c73ae0a3314510cfd9a748fea}{operator<<}}(std::ostream\&\ out,\ trajectory\_point\_type\ \textcolor{keyword}{const}\&\ pt);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \}\ \}\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable::domain::cartesian3d}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#ifndef\ DOXYGEN\_SHOULD\_SKIP\_THIS}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00292\ \textcolor{comment}{//}}
+\DoxyCodeLine{00293\ \textcolor{comment}{//\ TRAIT\ DELEGATION}}
+\DoxyCodeLine{00294\ \textcolor{comment}{//}}
+\DoxyCodeLine{00295\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }traits\ \{}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \textcolor{keyword}{namespace\ }domains\ \{}
+\DoxyCodeLine{00300\ \ \ \textcolor{keyword}{struct\ }cartesian3d\ \{\ \};}
+\DoxyCodeLine{00301\ \}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00304\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1point__domain__name}{point\_domain\_name}}<tracktable::domain::cartesian3d::CartesianPoint3D>}
+\DoxyCodeLine{00305\ \{}
+\DoxyCodeLine{00306\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ string\_type\ apply()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}cartesian3d"{}};\ \}}
+\DoxyCodeLine{00307\ \};}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \}\ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ TRACKTABLE\_DELEGATE\_BOOST\_POINT\_TRAITS(\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d}{tracktable::domain::cartesian3d::CartesianPoint3D}},}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_point_cartesian}{tracktable::PointCartesian<3>}})}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ TRACKTABLE\_DELEGATE\_BOOST\_POINT\_TRAITS(\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d}{tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D}},}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_point}{tracktable::TrajectoryPoint<\ tracktable::domain::cartesian3d::CartesianPoint3D\ >}})}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ TRACKTABLE\_DELEGATE\_BASE\_POINT\_TRAITS(\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d}{tracktable::domain::cartesian3d::CartesianPoint3D}},}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_point_cartesian}{tracktable::PointCartesian<3>}})}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ TRACKTABLE\_DELEGATE\_TRAJECTORY\_POINT\_TRAITS(\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_trajectory_point3_d}{tracktable::domain::cartesian3d::CartesianTrajectoryPoint3D}},}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_point}{tracktable::TrajectoryPoint<\ tracktable::domain::cartesian3d::CartesianPoint3D\ >}})}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ TRACKTABLE\_DELEGATE\_DOMAIN\_TRAIT(tracktable::domain::cartesian3d,}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tracktable::traits::domains::cartesian3d)}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ TRACKTABLE\_DELEGATE\_POINT\_DOMAIN\_NAME\_TRAIT(tracktable::domain::cartesian3d)}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00329\ \textcolor{comment}{//}}
+\DoxyCodeLine{00330\ \textcolor{comment}{//\ ALGORITHM\ DELEGATION}}
+\DoxyCodeLine{00331\ \textcolor{comment}{//}}
+\DoxyCodeLine{00332\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM}}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_TP\_ALGORITHM}}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_TRAJECTORY\_ALGORITHM}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#undef\ TT\_DOMAIN}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ TT\_DOMAIN\ tracktable::domain::cartesian3d}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(ALGORITHM)\ \(\backslash\)}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ \(\backslash\)}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\ \ \ \ TT\_DOMAIN::base\_point\_type,\ \(\backslash\)}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\ \ \ \ tracktable::PointCartesian<3>,\ \(\backslash\)}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\ \ \ \ ALGORITHM\ \(\backslash\)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\ \ \ \ )}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(ALGORITHM)\ \(\backslash\)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ \(\backslash\)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\ \ \ \ TT\_DOMAIN::trajectory\_point\_type,\ \(\backslash\)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\ \ \ \ tracktable::TrajectoryPoint<TT\_DOMAIN::base\_point\_type>,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\ \ \ \ ALGORITHM\ \(\backslash\)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\ \ \ \ )}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ TT\_DELEGATE\_TRAJECTORY\_ALGORITHM(ALGORITHM)\ \(\backslash\)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\ \ TRACKTABLE\_DELEGATE(\ \(\backslash\)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\ \ \ \ TT\_DOMAIN::trajectory\_type,\ \(\backslash\)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\ \ \ \ tracktable::Trajectory<TT\_DOMAIN::trajectory\_point\_type>,\ \(\backslash\)}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\ \ \ \ ALGORITHM\ \(\backslash\)}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\ \ \ \ )}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00365\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1distance}{distance}}<traits::domains::cartesian3d>}
+\DoxyCodeLine{00366\ \{}
+\DoxyCodeLine{00367\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Geom1,\ \textcolor{keyword}{typename}\ Geom2>}
+\DoxyCodeLine{00368\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ apply(Geom1\ \textcolor{keyword}{const}\&\ from,\ Geom2\ \textcolor{keyword}{const}\&\ to)}
+\DoxyCodeLine{00369\ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{return}\ boost::geometry::distance(from,\ to);}
+\DoxyCodeLine{00371\ \ \ \}}
+\DoxyCodeLine{00372\ \};}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00376\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1unsigned__turn__angle}{unsigned\_turn\_angle}}<domain::cartesian3d::base\_point\_type>}
+\DoxyCodeLine{00377\ \{}
+\DoxyCodeLine{00378\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a36188ac4575d9b4a07551acfe15bb82f}{dot}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ ab[3],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ bc[3])}
+\DoxyCodeLine{00379\ \ \ \ \ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (ab[0]\ *\ bc[0]\ +\ ab[1]\ *\ bc[1]\ +\ ab[2]\ *\ bc[2]);}
+\DoxyCodeLine{00381\ \ \ \ \ \}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ magnitude(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ p[3])}
+\DoxyCodeLine{00384\ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(p[0]*p[0]\ +\ p[1]*p[1]\ +\ p[2]*p[2]);}
+\DoxyCodeLine{00386\ \ \ \ \ \}}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a9157db9730b7e9a0e9ed33837e97e6da}{normalize}}(\textcolor{keywordtype}{double}\ p[3])}
+\DoxyCodeLine{00389\ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mag\ =\ magnitude(p);}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{namespacetracktable_acb87c8fbc5ee252b33ffb70068548483}{tracktable::almost\_zero}}(mag))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ p[0]\ /=\ mag;}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ p[1]\ /=\ mag;}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ p[2]\ /=\ mag;}
+\DoxyCodeLine{00395\ \ \ \ \ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00398\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ apply(PointT\ \textcolor{keyword}{const}\&\ a,\ PointT\ \textcolor{keyword}{const}\&\ b,\ PointT\ \textcolor{keyword}{const}\&\ c)}
+\DoxyCodeLine{00399\ \ \ \ \ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ab[3],\ bc[3];}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ \ \ ab[0]\ =\ b.template\ get<0>()\ -\/\ a.template\ get<0>();}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ ab[1]\ =\ b.template\ get<1>()\ -\/\ a.template\ get<1>();}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ ab[2]\ =\ 0;}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \ \ bc[0]\ =\ c.template\ get<0>()\ -\/\ a.template\ get<0>();}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ bc[1]\ =\ c.template\ get<1>()\ -\/\ a.template\ get<1>();}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ bc[2]\ =\ 0;}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a9157db9730b7e9a0e9ed33837e97e6da}{normalize}}(ab);}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_1_1arithmetic_a9157db9730b7e9a0e9ed33837e97e6da}{normalize}}(bc);}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ angle\_in\_radians\ =\ acos(\mbox{\hyperlink{namespacetracktable_1_1arithmetic_a36188ac4575d9b4a07551acfe15bb82f}{dot}}(ab,\ bc));}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle\_in\_radians;}
+\DoxyCodeLine{00414\ \ \ \ \ \}}
+\DoxyCodeLine{00415\ \};}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate}{interpolate}})}
+\DoxyCodeLine{00418\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1extrapolate}{extrapolate}})}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate}{interpolate}})}
+\DoxyCodeLine{00421\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1extrapolate}{extrapolate}})}
+\DoxyCodeLine{00422\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1speed__between}{speed\_between}})}
+\DoxyCodeLine{00423\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM(\mbox{\hyperlink{structtracktable_1_1algorithms_1_1unsigned__turn__angle}{unsigned\_turn\_angle}})}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00426\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1length}{length}}<TT\_DOMAIN::trajectory\_type>}
+\DoxyCodeLine{00427\ \{}
+\DoxyCodeLine{00428\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ apply(TT\_DOMAIN::trajectory\_type\ \textcolor{keyword}{const}\&\ path)}
+\DoxyCodeLine{00429\ \ \ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ boost::geometry::length(path);}
+\DoxyCodeLine{00431\ \ \ \ \ \}}
+\DoxyCodeLine{00432\ \};}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \}\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable::algorithms}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#undef\ TT\_DOMAIN}}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_BASE\_POINT\_ALGORITHM}}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_TRAJECTORY\_POINT\_ALGORITHM}}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_TRAJECTORY\_ALGORITHM}}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#undef\ TT\_DELEGATE\_TRAJECTORY\_POINT\_TRAIT}}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOXYGEN\_SHOULD\_SKIP\_THIS}}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

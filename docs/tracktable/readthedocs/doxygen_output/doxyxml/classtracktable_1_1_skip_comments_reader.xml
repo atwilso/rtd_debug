@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_skip_comments_reader" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::SkipCommentsReader</compoundname>
+    <includes refid="_skip_comments_reader_8h" local="no">SkipCommentsReader.h</includes>
+    <innerclass refid="classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator" prot="protected">tracktable::SkipCommentsReader::SkipCommentsIterator</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename IteratorT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_skip_comments_reader_1a4013f6291cf8906708c1fe1da11171db" prot="public" static="no">
+        <type>IteratorT</type>
+        <definition>typedef IteratorT tracktable::SkipCommentsReader&lt; IteratorT &gt;::inner_iterator_type</definition>
+        <argsstring></argsstring>
+        <name>inner_iterator_type</name>
+        <qualifiedname>tracktable::SkipCommentsReader::inner_iterator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="70" column="49" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_skip_comments_reader_1ae1fe645f8d991304274d301c3b07be12" prot="public" static="no">
+        <type>IteratorT::value_type</type>
+        <definition>typedef IteratorT::value_type tracktable::SkipCommentsReader&lt; IteratorT &gt;::value_type</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>tracktable::SkipCommentsReader::value_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="71" column="49" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_skip_comments_reader_1a35f10d994cfb81448279dcd91b3c79e2" prot="public" static="no">
+        <type>value_type::value_type</type>
+        <definition>typedef value_type::value_type tracktable::SkipCommentsReader&lt; IteratorT &gt;::char_type</definition>
+        <argsstring></argsstring>
+        <name>char_type</name>
+        <qualifiedname>tracktable::SkipCommentsReader::char_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="72" column="49" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_skip_comments_reader_1a646fa1376971ad98292c7856e3821fcc" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator" kindref="compound">SkipCommentsIterator</ref></type>
+        <definition>typedef SkipCommentsIterator tracktable::SkipCommentsReader&lt; IteratorT &gt;::iterator</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>tracktable::SkipCommentsReader::iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="421" column="32" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="421" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_skip_comments_reader_1a0a906258a8328260130e8a47617555ec" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator" kindref="compound">SkipCommentsIterator</ref> const</type>
+        <definition>typedef SkipCommentsIterator const tracktable::SkipCommentsReader&lt; IteratorT &gt;::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>const_iterator</name>
+        <qualifiedname>tracktable::SkipCommentsReader::const_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="422" column="38" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="422" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_skip_comments_reader_1a28c6c189e808957d73cc2929684c3737" prot="private" static="no" mutable="no">
+        <type>inner_iterator_type</type>
+        <definition>inner_iterator_type tracktable::SkipCommentsReader&lt; IteratorT &gt;::InnerBegin</definition>
+        <argsstring></argsstring>
+        <name>InnerBegin</name>
+        <qualifiedname>tracktable::SkipCommentsReader::InnerBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="228" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_skip_comments_reader_1ad573fe00300bb32a1969e707cc656b80" prot="private" static="no" mutable="no">
+        <type>inner_iterator_type</type>
+        <definition>inner_iterator_type tracktable::SkipCommentsReader&lt; IteratorT &gt;::InnerEnd</definition>
+        <argsstring></argsstring>
+        <name>InnerEnd</name>
+        <qualifiedname>tracktable::SkipCommentsReader::InnerEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="229" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_skip_comments_reader_1a70d0bfa98fd593e2cddd9aae814dac74" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string tracktable::SkipCommentsReader&lt; IteratorT &gt;::CommentCharacter</definition>
+        <argsstring></argsstring>
+        <name>CommentCharacter</name>
+        <qualifiedname>tracktable::SkipCommentsReader::CommentCharacter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="230" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_skip_comments_reader_1aaa6a942f9d2cae02728ec0a843f35f69" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tracktable::SkipCommentsReader&lt; IteratorT &gt;::NumLinesToSkip</definition>
+        <argsstring></argsstring>
+        <name>NumLinesToSkip</name>
+        <qualifiedname>tracktable::SkipCommentsReader::NumLinesToSkip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="231" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1a332a8b4eaff738594f2a386020f774ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::SkipCommentsReader&lt; IteratorT &gt;::SkipCommentsReader</definition>
+        <argsstring>()</argsstring>
+        <name>SkipCommentsReader</name>
+        <qualifiedname>tracktable::SkipCommentsReader::SkipCommentsReader</qualifiedname>
+        <briefdescription>
+<para>Instantiate a default <ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="75" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="75" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1ae05f4ad3b7c95f6dfbba58058e99bcb2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::SkipCommentsReader&lt; IteratorT &gt;::SkipCommentsReader</definition>
+        <argsstring>(const SkipCommentsReader &amp;other)</argsstring>
+        <name>SkipCommentsReader</name>
+        <qualifiedname>tracktable::SkipCommentsReader::SkipCommentsReader</qualifiedname>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a reader with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="85" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="85" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1a10159ee6bdfeaed19b6daa0cdd308794" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::SkipCommentsReader&lt; IteratorT &gt;::SkipCommentsReader</definition>
+        <argsstring>(inner_iterator_type const &amp;start, inner_iterator_type const &amp;finish, std::string const &amp;comment=&quot;#&quot;)</argsstring>
+        <name>SkipCommentsReader</name>
+        <qualifiedname>tracktable::SkipCommentsReader::SkipCommentsReader</qualifiedname>
+        <param>
+          <type>inner_iterator_type const &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>inner_iterator_type const &amp;</type>
+          <declname>finish</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>comment</declname>
+          <defval>&quot;#&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Instantiate a reader with a start and finish points along with a comment delimter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to start from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">finish</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to end at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">comment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character signifying a comment </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="99" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="99" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1aa760ee33751024eccba56ac296f29a4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::SkipCommentsReader&lt; IteratorT &gt;::SkipCommentsReader</definition>
+        <argsstring>(inner_iterator_type const &amp;start, inner_iterator_type const &amp;finish, int const &amp;skip)</argsstring>
+        <name>SkipCommentsReader</name>
+        <qualifiedname>tracktable::SkipCommentsReader::SkipCommentsReader</qualifiedname>
+        <param>
+          <type>inner_iterator_type const &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>inner_iterator_type const &amp;</type>
+          <declname>finish</declname>
+        </param>
+        <param>
+          <type>int const &amp;</type>
+          <declname>skip</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a reader with a start and finish points along with number of header lines to skip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to start from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">finish</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to end at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">skip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of header lines to skip </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="113" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="113" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1a330bef82fcab58018ebf97ad693dbe93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::SkipCommentsReader&lt; IteratorT &gt;::~SkipCommentsReader</definition>
+        <argsstring>()</argsstring>
+        <name>~SkipCommentsReader</name>
+        <qualifiedname>tracktable::SkipCommentsReader::~SkipCommentsReader</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="122" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1aee8d9104a43506efbde9a63579347a3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::SkipCommentsReader&lt; IteratorT &gt;::set_comment_character</definition>
+        <argsstring>(std::string const &amp;c)</argsstring>
+        <name>set_comment_character</name>
+        <qualifiedname>tracktable::SkipCommentsReader::set_comment_character</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Specify comment character for skipping lines. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A line is a comment if and only if its first non-whitespace character is the comment character (<computeroutput>#</computeroutput> by default). We will skip such lines entirely. We do not handle inline or trailing comments: a line will either be included in its entirety or skipped completely.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">comment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Single character </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="136" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1ac7d73b220e78bf0da6361f16db8e92e6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string const &amp;</type>
+        <definition>std::string const  &amp; tracktable::SkipCommentsReader&lt; IteratorT &gt;::comment_character</definition>
+        <argsstring>() const</argsstring>
+        <name>comment_character</name>
+        <qualifiedname>tracktable::SkipCommentsReader::comment_character</qualifiedname>
+        <briefdescription>
+<para>Retrieve current value of comment character. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function invalidates any outstanding iterators.</para>
+<para><simplesect kind="return"><para>Current value of comment character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="147" column="21" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="147" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1a1372eea68e9ddcb40cda925200e1a6c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::SkipCommentsReader&lt; IteratorT &gt;::set_skip_n_lines</definition>
+        <argsstring>(int const &amp;skips)</argsstring>
+        <name>set_skip_n_lines</name>
+        <qualifiedname>tracktable::SkipCommentsReader::set_skip_n_lines</qualifiedname>
+        <param>
+          <type>int const &amp;</type>
+          <declname>skips</declname>
+        </param>
+        <briefdescription>
+<para>Specify number of header lines to skip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In the case where headers are not delimited with a comment character we allow the user to specify how many lines are skipped at the beginning of a file.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">skips</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of lines to skip </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="160" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="160" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1ab77b4f50b6ed49fe8df448d4ae85ba3f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int const &amp;</type>
+        <definition>int const  &amp; tracktable::SkipCommentsReader&lt; IteratorT &gt;::num_skips</definition>
+        <argsstring>() const</argsstring>
+        <name>num_skips</name>
+        <qualifiedname>tracktable::SkipCommentsReader::num_skips</qualifiedname>
+        <briefdescription>
+<para>Retrieve number of header lines to skip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function invalidates any outstanding iterators.</para>
+<para><simplesect kind="return"><para>Current value of number of lines to skip </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="171" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1a22f667af5961f4f44ec8b2113a4145a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> &amp;</type>
+        <definition>SkipCommentsReader &amp; tracktable::SkipCommentsReader&lt; IteratorT &gt;::operator=</definition>
+        <argsstring>(SkipCommentsReader const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::SkipCommentsReader::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reader with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="181" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="181" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1ad7c7d17d57e4315594104ace27f1505c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::SkipCommentsReader&lt; IteratorT &gt;::operator==</definition>
+        <argsstring>(SkipCommentsReader const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::SkipCommentsReader::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one reader is equal to another by comparing all the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two readers are equal if all of their properties are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="197" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="197" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1aa1043f70cce253331ec1a692a5225922" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::SkipCommentsReader&lt; IteratorT &gt;::operator!=</definition>
+        <argsstring>(SkipCommentsReader const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::SkipCommentsReader::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two <ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_skip_comments_reader" kindref="compound">SkipCommentsReader</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="210" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1aff4f7acbddb9ad4ea4f84890bf8a39ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::SkipCommentsReader&lt; IteratorT &gt;::set_input_range</definition>
+        <argsstring>(inner_iterator_type const &amp;start, inner_iterator_type const &amp;finish)</argsstring>
+        <name>set_input_range</name>
+        <qualifiedname>tracktable::SkipCommentsReader::set_input_range</qualifiedname>
+        <param>
+          <type>inner_iterator_type const &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>inner_iterator_type const &amp;</type>
+          <declname>finish</declname>
+        </param>
+        <briefdescription>
+<para>Set the beginning and the end of the input range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iterator to use for the start of input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">finish</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iterator to use for the end of input </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="220" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="220" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1acb5806ee6df6726561b1fe86666b05ee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator tracktable::SkipCommentsReader&lt; IteratorT &gt;::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <qualifiedname>tracktable::SkipCommentsReader::begin</qualifiedname>
+        <briefdescription>
+<para>Get an iterator pointing to the current sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Iterator pointing to current sequence </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="428" column="12" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="428" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1a6c5d47bb6df6842a4c3611b4eb948154" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator tracktable::SkipCommentsReader&lt; IteratorT &gt;::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <qualifiedname>tracktable::SkipCommentsReader::end</qualifiedname>
+        <briefdescription>
+<para>Get an iterator pointing past the end of the sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Iterator pointing to end of sequence </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="437" column="12" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="437" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1a7382140ec70682867fe3f23a32cc6bd9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const_iterator</type>
+        <definition>const_iterator tracktable::SkipCommentsReader&lt; IteratorT &gt;::const_begin</definition>
+        <argsstring>() const</argsstring>
+        <name>const_begin</name>
+        <qualifiedname>tracktable::SkipCommentsReader::const_begin</qualifiedname>
+        <briefdescription>
+<para>Get an iterator pointing to the beginning of the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Iterator pointing to current stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="446" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="446" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_skip_comments_reader_1a1459be2e828b0f6809129ba259b2816b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const_iterator</type>
+        <definition>const_iterator tracktable::SkipCommentsReader&lt; IteratorT &gt;::const_end</definition>
+        <argsstring>() const</argsstring>
+        <name>const_end</name>
+        <qualifiedname>tracktable::SkipCommentsReader::const_end</qualifiedname>
+        <briefdescription>
+<para>Get an iterator pointing to the end of the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Iterator pointing to end of current stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="455" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="455" bodyend="458"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Loop over a set of lines and skip comments. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Comments in a text file are often denoted by some special character like &apos;#&apos; as the first non-whitespace character on a line. This filter takes a stream of lines and produces a stream that omits all comment lines.</para>
+<para>Note that we only intercept lines where the comment character is at the beginning of the line. This filter will not detect lines where you attempt to remove data at the end by putting the comment character somewhere in the middle.</para>
+<para>We do not expect that you will instantiate this class directly. Its main purpose is to be part of the stack that makes up <ref refid="classtracktable_1_1_point_reader" kindref="compound">PointReader</ref>.</para>
+<para><simplesect kind="note"><para>Although the CommentCharacter member is a string and can have arbitrary length, we only care about the first character. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" line="67" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/SkipCommentsReader.h" bodystart="68" bodyend="459"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_skip_comments_reader_1acb5806ee6df6726561b1fe86666b05ee" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>begin</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a35f10d994cfb81448279dcd91b3c79e2" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>char_type</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1ac7d73b220e78bf0da6361f16db8e92e6" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>comment_character</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a70d0bfa98fd593e2cddd9aae814dac74" prot="private" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>CommentCharacter</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a7382140ec70682867fe3f23a32cc6bd9" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>const_begin</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a1459be2e828b0f6809129ba259b2816b" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>const_end</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a0a906258a8328260130e8a47617555ec" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>const_iterator</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a6c5d47bb6df6842a4c3611b4eb948154" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>end</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a4013f6291cf8906708c1fe1da11171db" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>inner_iterator_type</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a28c6c189e808957d73cc2929684c3737" prot="private" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>InnerBegin</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1ad573fe00300bb32a1969e707cc656b80" prot="private" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>InnerEnd</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a646fa1376971ad98292c7856e3821fcc" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>iterator</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1ab77b4f50b6ed49fe8df448d4ae85ba3f" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>num_skips</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1aaa6a942f9d2cae02728ec0a843f35f69" prot="private" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>NumLinesToSkip</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1aa1043f70cce253331ec1a692a5225922" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a22f667af5961f4f44ec8b2113a4145a0" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1ad7c7d17d57e4315594104ace27f1505c" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1aee8d9104a43506efbde9a63579347a3c" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>set_comment_character</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1aff4f7acbddb9ad4ea4f84890bf8a39ef" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>set_input_range</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a1372eea68e9ddcb40cda925200e1a6c2" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>set_skip_n_lines</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a332a8b4eaff738594f2a386020f774ca" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>SkipCommentsReader</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1ae05f4ad3b7c95f6dfbba58058e99bcb2" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>SkipCommentsReader</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a10159ee6bdfeaed19b6daa0cdd308794" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>SkipCommentsReader</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1aa760ee33751024eccba56ac296f29a4d" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>SkipCommentsReader</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1ae1fe645f8d991304274d301c3b07be12" prot="public" virt="non-virtual"><scope>tracktable::SkipCommentsReader</scope><name>value_type</name></member>
+      <member refid="classtracktable_1_1_skip_comments_reader_1a330bef82fcab58018ebf97ad693dbe93" prot="public" virt="virtual"><scope>tracktable::SkipCommentsReader</scope><name>~SkipCommentsReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

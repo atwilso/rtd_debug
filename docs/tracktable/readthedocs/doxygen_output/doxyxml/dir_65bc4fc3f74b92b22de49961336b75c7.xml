@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_65bc4fc3f74b92b22de49961336b75c7" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures</compoundname>
+    <innerfile refid="_dimension_8h">Dimension.h</innerfile>
+    <innerfile refid="_domain_8h">Domain.h</innerfile>
+    <innerfile refid="_has_object_id_8h">HasObjectId.h</innerfile>
+    <innerfile refid="_has_properties_8h">HasProperties.h</innerfile>
+    <innerfile refid="_has_timestamp_8h">HasTimestamp.h</innerfile>
+    <innerfile refid="_object_id_8h">ObjectId.h</innerfile>
+    <innerfile refid="_point_domain_name_8h">PointDomainName.h</innerfile>
+    <innerfile refid="_tag_8h">Tag.h</innerfile>
+    <innerfile refid="detail_2trait__signatures_2_timestamp_8h">Timestamp.h</innerfile>
+    <innerfile refid="_undecorated_point_8h">UndecoratedPoint.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/"/>
+  </compounddef>
+</doxygen>

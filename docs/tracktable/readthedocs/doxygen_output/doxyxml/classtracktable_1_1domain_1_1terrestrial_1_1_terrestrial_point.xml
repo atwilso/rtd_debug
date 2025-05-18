@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::domain::terrestrial::TerrestrialPoint</compoundname>
+    <basecompoundref refid="classtracktable_1_1_point_lon_lat" prot="public" virt="non-virtual">tracktable::PointLonLat</basecompoundref>
+    <includes refid="_terrestrial_8h" local="no">Terrestrial.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a4a2a99d7bb4ebe2447d9e88a1f30a836" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">PointLonLat</ref></type>
+        <definition>using tracktable::domain::terrestrial::TerrestrialPoint::Superclass =  PointLonLat</definition>
+        <argsstring></argsstring>
+        <name>Superclass</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::Superclass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="118" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a3a55e7a1165f109ca378defb2cd1761b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</definition>
+        <argsstring>()=default</argsstring>
+        <name>TerrestrialPoint</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</qualifiedname>
+        <briefdescription>
+<para>Create an uninitialized point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="121" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1af9faca4e1aa26eff92575b8d481524c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</definition>
+        <argsstring>(TerrestrialPoint const &amp;other)=default</argsstring>
+        <name>TerrestrialPoint</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" kindref="compound">TerrestrialPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor: make this point like another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Const point to make a copy of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="127" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a15bc351a0d14b61abc0a218394c88b8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</definition>
+        <argsstring>(TerrestrialPoint &amp;&amp;other)=default</argsstring>
+        <name>TerrestrialPoint</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" kindref="compound">TerrestrialPoint</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor: make this point like another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Const point to make a copy of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="133" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a5d81b01851de5bc7afdd13987d8d9ef5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</definition>
+        <argsstring>(Superclass const &amp;other)</argsstring>
+        <name>TerrestrialPoint</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">Superclass</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor: use <ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">PointLonLat</ref> instances as if they were <ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" kindref="compound">TerrestrialPoint</ref> instances. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Const point to make a copy of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="139" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1ab79761c0ad693465afa5070bf21ec1ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::terrestrial::TerrestrialPoint::~TerrestrialPoint</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~TerrestrialPoint</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::~TerrestrialPoint</qualifiedname>
+        <briefdescription>
+<para>Empty destructor - nothing to do here. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="142" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a9c0b4f70c74a004e0a58155600679a91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" kindref="compound">TerrestrialPoint</ref> &amp;</type>
+        <definition>TerrestrialPoint &amp; tracktable::domain::terrestrial::TerrestrialPoint::operator=</definition>
+        <argsstring>(TerrestrialPoint const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" kindref="compound">TerrestrialPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Explicitly delegate assignment to prevent compiler hijinks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="145" column="20" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" bodystart="145" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a146c8eefb560725673954de512c6689e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" kindref="compound">TerrestrialPoint</ref> &amp;</type>
+        <definition>TerrestrialPoint &amp; tracktable::domain::terrestrial::TerrestrialPoint::operator=</definition>
+        <argsstring>(TerrestrialPoint &amp;&amp;other)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" kindref="compound">TerrestrialPoint</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="149" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1aebe7465964eb9b72017ef7202c1a30d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</definition>
+        <argsstring>(double _longitude, double _latitude)</argsstring>
+        <name>TerrestrialPoint</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::TerrestrialPoint</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>_longitude</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_latitude</declname>
+        </param>
+        <briefdescription>
+<para>Convenience constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_longitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude in degrees </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_latitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitude in degrees </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="156" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a353ff67f7ce9ca4897d57cd4bee8054e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Archive</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::domain::terrestrial::TerrestrialPoint::serialize</definition>
+        <argsstring>(Archive &amp;ar, const unsigned int)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::serialize</qualifiedname>
+        <param>
+          <type>Archive &amp;</type>
+          <declname>ar</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+        </param>
+        <briefdescription>
+<para>Serialize the points to an archive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Archive to serialize to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Version of the archive </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="167" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" bodystart="167" bodyend="169"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a8c2a33c5713a138438ed32d3182d5b63" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d" kindref="compound">CartesianPoint3D</ref></type>
+        <definition>static CartesianPoint3D tracktable::domain::terrestrial::TerrestrialPoint::ECEF_from_km</definition>
+        <argsstring>(const coord_type _longitude, const coord_type _latitude, const double _altitude)</argsstring>
+        <name>ECEF_from_km</name>
+        <qualifiedname>tracktable::domain::terrestrial::TerrestrialPoint::ECEF_from_km</qualifiedname>
+        <param>
+          <type>const coord_type</type>
+          <declname>_longitude</declname>
+        </param>
+        <param>
+          <type>const coord_type</type>
+          <declname>_latitude</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>_altitude</declname>
+        </param>
+        <briefdescription>
+<para>Returns ECEF values for lon, lat, and altitude. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses a km convention.</para>
+<para><simplesect kind="note"><para>this expects an altitude in km (not ft or m).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_longitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude in degrees </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_latitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitude in degrees </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">_altitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Altitude in km</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>3D Earth Centered, Earth Fixed point in km </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="181" column="27" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" bodystart="181" bodyend="193"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>2D point on a sphere </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class represents a point on a sphere. Its coordinates are measured in degrees of longitude and latitude.</para>
+<para>Distances between <computeroutput>TerrestrialPoints</computeroutput> are measured in kilometers. Speeds between two <computeroutput>TerrestrialTrajectoryPoints</computeroutput> will be measured in kilometers per hour. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>tracktable::PointBase&lt; 2 &gt;</label>
+        <link refid="classtracktable_1_1_point_base"/>
+      </node>
+      <node id="2">
+        <label>tracktable::PointLonLat</label>
+        <link refid="classtracktable_1_1_point_lon_lat"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::domain::terrestrial::TerrestrialPoint</label>
+        <link refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>tracktable::PointBase&lt; 2 &gt;</label>
+        <link refid="classtracktable_1_1_point_base"/>
+      </node>
+      <node id="2">
+        <label>tracktable::PointLonLat</label>
+        <link refid="classtracktable_1_1_point_lon_lat"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::domain::terrestrial::TerrestrialPoint</label>
+        <link refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" line="114" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/Terrestrial.h" bodystart="115" bodyend="194"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_point_lon_lat_1ab3f66355e6b134863d954adf7a9f4a8c" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>coord_type</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2aba212a90c51c5f4e9fa76fe679146a" prot="protected" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>Coordinates</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2aba212a90c51c5f4e9fa76fe679146a" prot="protected" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>Coordinates</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a8c2a33c5713a138438ed32d3182d5b63" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>ECEF_from_km</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2b5d66d132636bb41831a09667f6e640" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>element_type</name></member>
+      <member refid="classtracktable_1_1_point_base_1a7918dde3ef618e4497d9949e515a5fd5" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>get</name></member>
+      <member refid="classtracktable_1_1_point_base_1a7918dde3ef618e4497d9949e515a5fd5" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>get</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a71577e3a60ae41e63bccfeb5a9695317" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>latitude</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1ac9c21d5063b716c783b3b1acffa3d624" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>longitude</name></member>
+      <member refid="classtracktable_1_1_point_base_1ac225c66d4cfab081b67f95d4411b0fdd" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_point_base_1ac225c66d4cfab081b67f95d4411b0fdd" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a9c0b4f70c74a004e0a58155600679a91" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a146c8eefb560725673954de512c6689e" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_base_1a236bf3c4a5a1128bea753ad59f7d2594" prot="public" virt="non-virtual" ambiguityscope="tracktable::PointLonLat::"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_base_1a35cfaef9ac15a33040e2458d99d980e3" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_base_1a35cfaef9ac15a33040e2458d99d980e3" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1c2237aff8b2b8dec8b934feb10d79c6" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1ea12444b1425cf2462e2920cac1b499" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1c2237aff8b2b8dec8b934feb10d79c6" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1ea12444b1425cf2462e2920cac1b499" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1ae25b06b76872599f16950c866529d096" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1aab715197cb725a115bdbae588649f795" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1ae25b06b76872599f16950c866529d096" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1aab715197cb725a115bdbae588649f795" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a32518d4d3231e491bace6b70eeb3901d" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a79da0e5c26f50ec1afb818dfd8f17a14" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a8b4e30e32c3bfa6a9e0b1cfb4f1cd0ef" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a888bdb157648a9a3dff763b37f88928d" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a28d6f1ff21f6df387a6cf1099495b548" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a353ff67f7ce9ca4897d57cd4bee8054e" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>serialize</name></member>
+      <member refid="classtracktable_1_1_point_base_1aece26ecf39982722de53187fe0e1531b" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>set</name></member>
+      <member refid="classtracktable_1_1_point_base_1aece26ecf39982722de53187fe0e1531b" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>set</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1ad73365869fdd0bcc96c918ce7d66490d" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>set_latitude</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a403df11f0c49a8d0d02ac3cdb1635ffa" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>set_longitude</name></member>
+      <member refid="classtracktable_1_1_point_base_1a00baacc4de3a9c9cf3f3f39af19aa7de" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>size</name></member>
+      <member refid="classtracktable_1_1_point_base_1a00baacc4de3a9c9cf3f3f39af19aa7de" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>size</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a4a2a99d7bb4ebe2447d9e88a1f30a836" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>Superclass</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a3a55e7a1165f109ca378defb2cd1761b" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>TerrestrialPoint</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1af9faca4e1aa26eff92575b8d481524c9" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>TerrestrialPoint</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a15bc351a0d14b61abc0a218394c88b8a" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>TerrestrialPoint</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1a5d81b01851de5bc7afdd13987d8d9ef5" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>TerrestrialPoint</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1aebe7465964eb9b72017ef7202c1a30d9" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>TerrestrialPoint</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a379153b44191c37a93f4514814cd19e7" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>to_string</name></member>
+      <member refid="classtracktable_1_1_point_base_1af616577253186b1d80c7ab90338640e2" prot="public" virt="virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>~PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1af616577253186b1d80c7ab90338640e2" prot="public" virt="virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>~PointBase</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1aeac3a38ec37f736cf2dfbb6d2f2cb1ec" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>~PointLonLat</name></member>
+      <member refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_1ab79761c0ad693465afa5070bf21ec1ed" prot="public" virt="non-virtual"><scope>tracktable::domain::terrestrial::TerrestrialPoint</scope><name>~TerrestrialPoint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

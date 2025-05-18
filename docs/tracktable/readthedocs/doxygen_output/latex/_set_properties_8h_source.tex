@@ -1,0 +1,220 @@
+\doxysection{Set\+Properties.\+h}
+\hypertarget{_set_properties_8h_source}{}\label{_set_properties_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/detail/SetProperties.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/detail/SetProperties.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_rw\_SetProperties\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_rw\_SetProperties\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Timestamp.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PropertyConverter.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}PropertyMapReadWrite.h"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }rw\ \{\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ std::vector<std::string>\ string\_vector\_type;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}T,\ \textcolor{keywordtype}{bool}\ HasProperties>}
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1set__properties}{set\_properties}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{typedef}\ PointT\ point\_type;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ apply(}
+\DoxyCodeLine{00051\ \ \ \ \ point\_type\&\ point,}
+\DoxyCodeLine{00052\ \ \ \ \ string\_vector\_type\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*tokens*/},}
+\DoxyCodeLine{00053\ \ \ \ \ PropertyAssignmentMap\ \textcolor{keyword}{const}\&\ field\_map,}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_property_converter}{PropertyConverter}}\&\ \textcolor{comment}{/*converter*/}}
+\DoxyCodeLine{00055\ \ \ \ \ )}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (field\_map.size()\ >\ 0)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}You\ are\ attempting\ to\ set\ "{}}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}properties\ on\ a\ point\ of\ type\ "{}}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{typeid}(point).name()}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ which\ does\ not\ have\ properties\ "{}}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}(or\ at\ least\ does\ not\ have\ the\ "{}}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}has\_properties\ tag\ defined)."{}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00073\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1set__properties}{set\_properties}}<PointT,\ true>}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{typedef}\ PointT\ point\_type;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ apply(point\_type\&\ point,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ string\_vector\_type\ \textcolor{keyword}{const}\&\ tokens,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PropertyAssignmentMap\ \textcolor{keyword}{const}\&\ field\_map,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_property_converter}{PropertyConverter}}\&\ converter)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (PropertyAssignmentMap::const\_iterator\ iter\ =\ field\_map.begin();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ iter\ !=\ field\_map.end();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::string\ field\_name((*iter).first);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::size\_t\ column((*iter).second.column);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ tracktable::PropertyUnderlyingType\ type((*iter).second.type);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::string\ raw\_value(tokens.at(column));}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ point.set\_property(field\_name,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ converter.\mbox{\hyperlink{classtracktable_1_1_property_converter_ada826b2bdc201347b7720d73764a2636}{property\_from\_string}}(raw\_value,\ type));}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::debug)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}WARNING:\ Parse\ error\ while\ trying\ to\ set\ field\ '"{}}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ field\_name\ <<\ \textcolor{stringliteral}{"{}'\ from\ string\ '"{}}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ raw\_value\ <<\ \textcolor{stringliteral}{"{}':\ "{}}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ e.what();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}T,\ \textcolor{keywordtype}{bool}\ HasProperties>}
+\DoxyCodeLine{00112\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1set__object__id}{set\_object\_id}}}
+\DoxyCodeLine{00113\ \{}
+\DoxyCodeLine{00114\ \ \ \textcolor{keyword}{typedef}\ PointT\ point\_type;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ apply(}
+\DoxyCodeLine{00117\ \ \ \ \ point\_type\&\ point,}
+\DoxyCodeLine{00118\ \ \ \ \ string\_vector\_type\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*tokens*/},}
+\DoxyCodeLine{00119\ \ \ \ \ std::size\_t\ ObjectIdColumn}
+\DoxyCodeLine{00120\ \ \ \ \ )}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{comment}{/*TODO::\ The\ is\ the\ 'HasProperties'\ ==\ false\ implementation,\ do\ we\ need\ to\ bother\ checking}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ \ \ \ \ \ if\ the\ column,\ which\ is\ already\ checked\ in\ the\ calling\ function\ */}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ObjectIdColumn\ !=\ std::numeric\_limits<\textcolor{keyword}{decltype}(ObjectIdColumn)>::max())}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}WARNING:\ You\ are\ attempting\ to\ set\ "{}}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}an\ object\ ID\ on\ a\ point\ of\ type\ "{}}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{typeid}(point).name()}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ which\ does\ not\ have\ properties\ "{}}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}(or\ at\ least\ does\ not\ have\ the\ "{}}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}has\_object\_id\ tag\ defined)."{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00138\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1set__object__id}{set\_object\_id}}<PointT,\ true>}
+\DoxyCodeLine{00139\ \{}
+\DoxyCodeLine{00140\ \ \ \textcolor{keyword}{typedef}\ PointT\ point\_type;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ apply(}
+\DoxyCodeLine{00143\ \ \ \ \ point\_type\&\ point,}
+\DoxyCodeLine{00144\ \ \ \ \ string\_vector\_type\ \textcolor{keyword}{const}\&\ tokens,}
+\DoxyCodeLine{00145\ \ \ \ \ std::size\_t\ ObjectIdColumn}
+\DoxyCodeLine{00146\ \ \ \ \ )}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ point.set\_object\_id(tokens[ObjectIdColumn]);}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}T,\ \textcolor{keywordtype}{bool}\ HasProperties>}
+\DoxyCodeLine{00155\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1set__timestamp}{set\_timestamp}}}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \textcolor{keyword}{typedef}\ PointT\ point\_type;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ apply(}
+\DoxyCodeLine{00160\ \ \ \ \ point\_type\&\ point,}
+\DoxyCodeLine{00161\ \ \ \ \ string\_vector\_type\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*tokens*/},}
+\DoxyCodeLine{00162\ \ \ \ \ std::size\_t\ TimestampColumn,}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_timestamp_converter}{TimestampConverter}}*\ \textcolor{comment}{/*converter*/}}
+\DoxyCodeLine{00164\ \ \ \ \ )}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \textcolor{comment}{/*TODO::\ The\ is\ the\ 'HasProperties'\ ==\ false\ implementation,\ do\ we\ need\ to\ bother\ checking}}
+\DoxyCodeLine{00167\ \textcolor{comment}{\ \ \ \ \ \ if\ the\ timestamp\ column,\ which\ is\ already\ checked\ in\ the\ calling\ function\ */}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TimestampColumn\ !=\ std::numeric\_limits<\textcolor{keyword}{decltype}(TimestampColumn)>::max())}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}WARNING:\ You\ are\ attempting\ to\ set\ "{}}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}a\ timestamp\ on\ a\ point\ of\ type\ "{}}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{typeid}(point).name()}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ which\ does\ not\ have\ properties\ "{}}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}(or\ at\ least\ does\ not\ have\ the\ "{}}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}has\_timestamp\ tag\ defined)."{}};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00182\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1set__timestamp}{set\_timestamp}}<PointT,\ true>}
+\DoxyCodeLine{00183\ \{}
+\DoxyCodeLine{00184\ \ \ \textcolor{keyword}{typedef}\ PointT\ point\_type;}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ apply(}
+\DoxyCodeLine{00187\ \ \ \ \ point\_type\&\ point,}
+\DoxyCodeLine{00188\ \ \ \ \ string\_vector\_type\ \textcolor{keyword}{const}\&\ tokens,}
+\DoxyCodeLine{00189\ \ \ \ \ std::size\_t\ TimestampColumn,}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_timestamp_converter}{TimestampConverter}}*\ converter}
+\DoxyCodeLine{00191\ \ \ \ \ )}
+\DoxyCodeLine{00192\ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ string\_type\ raw\_value(tokens[TimestampColumn]);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ timestamp(converter-\/>\mbox{\hyperlink{classtracktable_1_1_timestamp_converter_a533fba38ed9c63e95cc1fcb853305d00}{timestamp\_from\_string}}(raw\_value));}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ point.set\_timestamp(timestamp);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Error\ while\ setting\ timestamp:\ "{}}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Timestamp\ string\ was\ '"{}}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ tokens[TimestampColumn]}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'."{}};}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \};}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \}\ \}\ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00214\ }
+
+\end{DoxyCode}

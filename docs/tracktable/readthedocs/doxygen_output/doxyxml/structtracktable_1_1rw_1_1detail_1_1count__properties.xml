@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1rw_1_1detail_1_1count__properties" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::rw::detail::count_properties</compoundname>
+    <templateparamlist>
+      <param>
+        <type>bool</type>
+        <declname>point_has_properties</declname>
+        <defname>point_has_properties</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1rw_1_1detail_1_1count__properties_1a76ad93614b1800006e7722ea1b874c24" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename point_type</type>
+          </param>
+        </templateparamlist>
+        <type>std::size_t</type>
+        <definition>static std::size_t tracktable::rw::detail::count_properties&lt; point_has_properties &gt;::apply</definition>
+        <argsstring>(point_type const &amp;)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::rw::detail::count_properties::apply</qualifiedname>
+        <param>
+          <type>point_type const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/CountProperties.h" line="40" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/CountProperties.h" bodystart="40" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/CountProperties.h" line="37" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/CountProperties.h" bodystart="38" bodyend="44"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1rw_1_1detail_1_1count__properties_1a76ad93614b1800006e7722ea1b874c24" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::count_properties</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

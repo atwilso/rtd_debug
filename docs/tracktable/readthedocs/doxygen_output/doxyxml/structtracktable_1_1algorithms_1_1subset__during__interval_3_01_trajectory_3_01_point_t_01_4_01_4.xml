@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1subset__during__interval_3_01_trajectory_3_01_point_t_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">implementations::generic_subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class PointT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1subset__during__interval_1a6853e3f5ed45699009ad96b045d1e9c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::algorithms::subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;::BOOST_MPL_ASSERT_MSG</definition>
+        <argsstring>(sizeof(Trajectory&lt; PointT &gt;)==0, SUBSET_NOT_IMPLEMENTED_FOR_THIS_TRAJECTORY_TYPE,(types&lt; Trajectory&lt; PointT &gt; &gt;))</argsstring>
+        <name>BOOST_MPL_ASSERT_MSG</name>
+        <qualifiedname>tracktable::algorithms::subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;::BOOST_MPL_ASSERT_MSG</qualifiedname>
+        <param>
+          <type>sizeof(<ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref>&lt; PointT &gt;)</type>
+          <defval>=0</defval>
+        </param>
+        <param>
+          <type>SUBSET_NOT_IMPLEMENTED_FOR_THIS_TRAJECTORY_TYPE</type>
+        </param>
+        <param>
+          <type>(types&lt; <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref>&lt; PointT &gt; &gt;)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/SubsetDuringInterval.h" line="47" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>implementations::generic_subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;</label>
+      </node>
+      <node id="1">
+        <label>tracktable::algorithms::subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1subset__during__interval_3_01_trajectory_3_01_point_t_01_4_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>implementations::generic_subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;</label>
+      </node>
+      <node id="1">
+        <label>tracktable::algorithms::subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1subset__during__interval_3_01_trajectory_3_01_point_t_01_4_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" line="941" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Trajectory.h" bodystart="942" bodyend="942"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1subset__during__interval_1a6853e3f5ed45699009ad96b045d1e9c0" prot="public" virt="non-virtual"><scope>tracktable::algorithms::subset_during_interval&lt; Trajectory&lt; PointT &gt; &gt;</scope><name>BOOST_MPL_ASSERT_MSG</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

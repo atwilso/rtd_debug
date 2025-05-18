@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::interpolate&lt; Timestamp &gt;</compoundname>
+    <basecompoundref refid="structtracktable_1_1algorithms_1_1interpolate__linear" prot="public" virt="non-virtual">tracktable::algorithms::interpolate_linear&lt; Timestamp &gt;</basecompoundref>
+    <includes refid="_timestamp_8h" local="no">Timestamp.h</includes>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4_1a9ff0b63f430c03872e2408b977a523df" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></type>
+        <definition>static Timestamp tracktable::algorithms::interpolate&lt; Timestamp &gt;::apply</definition>
+        <argsstring>(Timestamp const &amp;first, Timestamp const &amp;second, double t)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::interpolate&lt; Timestamp &gt;::apply</qualifiedname>
+        <param>
+          <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> const &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> const &amp;</type>
+          <declname>second</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Timestamp.h" line="346" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Timestamp.h" bodystart="346" bodyend="365"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interpolate between two timestamps. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Standard linear interpolation. At <computeroutput>t &lt;= 0</computeroutput> you get back the first value. At <computeroutput>t &gt;= 1</computeroutput> you get the second value. Anywhere in between, you get <computeroutput>(1-t) * first + t * second</computeroutput>.</para>
+<para>This specializes the template in tracktable/Core/detail/algorithm_signatures/Interpolate.h. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tracktable::algorithms::interpolate&lt; Timestamp &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::algorithms::interpolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate__linear"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tracktable::algorithms::interpolate&lt; Timestamp &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::algorithms::interpolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate__linear"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Timestamp.h" line="343" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Timestamp.h" bodystart="344" bodyend="366"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1interpolate_3_01_timestamp_01_4_1a9ff0b63f430c03872e2408b977a523df" prot="public" virt="non-virtual"><scope>tracktable::algorithms::interpolate&lt; Timestamp &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1interpolate__linear_1ab8002db0072dc50297fe4cd910716050" prot="public" virt="non-virtual" ambiguityscope="tracktable::algorithms::interpolate_linear::"><scope>tracktable::algorithms::interpolate&lt; Timestamp &gt;</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

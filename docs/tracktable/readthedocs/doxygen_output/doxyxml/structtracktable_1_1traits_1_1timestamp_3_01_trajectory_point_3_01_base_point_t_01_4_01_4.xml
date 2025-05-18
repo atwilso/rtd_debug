@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1traits_1_1timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</compoundname>
+    <basecompoundref refid="structtracktable_1_1traits_1_1timestamp__is__member" prot="public" virt="non-virtual">tracktable::traits::timestamp_is_member&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class BasePointT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1traits_1_1timestamp_1a50b74b9eca5f9434a8ea05b0b2f7691b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;::BOOST_MPL_ASSERT_MSG</definition>
+        <argsstring>(sizeof(TrajectoryPoint&lt; BasePointT &gt;)==0, OBJECT_ID_NOT_DEFINED_FOR_THIS_TYPE,(types&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;))</argsstring>
+        <name>BOOST_MPL_ASSERT_MSG</name>
+        <qualifiedname>tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;::BOOST_MPL_ASSERT_MSG</qualifiedname>
+        <param>
+          <type>sizeof(<ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt; BasePointT &gt;)</type>
+          <defval>=0</defval>
+        </param>
+        <param>
+          <type>OBJECT_ID_NOT_DEFINED_FOR_THIS_TYPE</type>
+        </param>
+        <param>
+          <type>(types&lt; <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref>&lt; BasePointT &gt; &gt;)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Timestamp.h" line="50" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::traits::timestamp_is_member&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1timestamp__is__member"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1timestamp_3_01_trajectory_point_3_01_base_point_t_01_4_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::traits::timestamp_is_member&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1timestamp__is__member"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="681" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="681" bodyend="681"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1traits_1_1timestamp_1a50b74b9eca5f9434a8ea05b0b2f7691b" prot="public" virt="non-virtual"><scope>tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</scope><name>BOOST_MPL_ASSERT_MSG</name></member>
+      <member refid="structtracktable_1_1traits_1_1timestamp__is__member_1a50d50a7dfd781eb0da78f5abcf8f5177" prot="public" virt="non-virtual"><scope>tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</scope><name>get</name></member>
+      <member refid="structtracktable_1_1traits_1_1timestamp__is__member_1af412910cca5522d5f6f89abbe57c61e8" prot="public" virt="non-virtual"><scope>tracktable::traits::timestamp&lt; TrajectoryPoint&lt; BasePointT &gt; &gt;</scope><name>set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

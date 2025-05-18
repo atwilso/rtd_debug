@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1kml_1_1style__id" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::kml::style_id</compoundname>
+    <includes refid="_kml_out_8h" local="no">KmlOut.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtracktable_1_1kml_1_1style__id_1a254f84ed2bd961b78607bec2c758f520" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::style_id::style_id</definition>
+        <argsstring>(const std::string &amp;_id)</argsstring>
+        <name>style_id</name>
+        <qualifiedname>tracktable::kml::style_id::style_id</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="260" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="260" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="structtracktable_1_1kml_1_1style__id_1a6d6058a4884dfffa26cfd5f9f893ff9a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::style_id::operator std::string</definition>
+        <argsstring>()</argsstring>
+        <name>operator std::string</name>
+        <qualifiedname>tracktable::kml::style_id::string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="261" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="261" bodyend="261"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper struct that sets the KML object&apos;s style id This will be missing some header/footer neccesary for full kml rendering. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="259" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="259" bodyend="262"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1kml_1_1style__id_1a6d6058a4884dfffa26cfd5f9f893ff9a" prot="public" virt="non-virtual"><scope>tracktable::kml::style_id</scope><name>operator std::string</name></member>
+      <member refid="structtracktable_1_1kml_1_1style__id_1a254f84ed2bd961b78607bec2c758f520" prot="public" virt="non-virtual"><scope>tracktable::kml::style_id</scope><name>style_id</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

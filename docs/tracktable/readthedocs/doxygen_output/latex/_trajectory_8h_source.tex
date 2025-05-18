@@ -1,0 +1,635 @@
+\doxysection{Trajectory.\+h}
+\hypertarget{_trajectory_8h_source}{}\label{_trajectory_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/Trajectory.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/Trajectory.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_Trajectory\_h}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_Trajectory\_h}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PropertyMap.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Timestamp.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tracktable/Core/UUID.h>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/EndToEndDistance.h>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Length.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/LengthFractionAtPoint.h>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/PointAtFraction.h>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/PointAtTime.h>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/TimeAtFraction.h>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/TimeFractionAtPoint.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/SubsetDuringInterval.h>}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/implementations/PointAtFraction.h>}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/implementations/PointAtTime.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/implementations/TimeAtFraction.h>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/implementations/SubsetDuringInterval.h>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/HasProperties.h>}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <tracktable/Core/GuardedBoostGeometryHeaders.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <boost/geometry/geometries/register/linestring.hpp>}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <boost/serialization/string.hpp>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <boost/serialization/map.hpp>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <boost/serialization/vector.hpp>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <boost/serialization/variant.hpp>}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <typeinfo>}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{template}<\ \textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T\ >}
+\DoxyCodeLine{00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }boost::serialization::access;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00093\ \ \ \textcolor{comment}{//\ These\ typedefs\ make\ this\ class\ look\ almost\ exactly\ like\ a}}
+\DoxyCodeLine{00094\ \ \ \textcolor{comment}{//\ std::vector\ so\ that\ you\ can\ cleanly\ use\ it\ as\ such\ with\ the\ C++}}
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ STL.}}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{typedef}\ PointT\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}};}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{typedef}\ std::vector<PointT>\ point\_vector\_type;}
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::iterator\ iterator;}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::const\_iterator\ const\_iterator;}
+\DoxyCodeLine{00100\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::reverse\_iterator\ reverse\_iterator;}
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::const\_reverse\_iterator\ const\_reverse\_iterator;}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::size\_type\ size\_type;}
+\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::value\_type\ value\_type;}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::difference\_type\ difference\_type;}
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::reference\ reference;}
+\DoxyCodeLine{00106\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_vector\_type::const\_reference\ const\_reference;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}(\textcolor{keywordtype}{bool}\ generate\_uuid=\textcolor{keyword}{true}):\ \mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}()\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (generate\_uuid)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2a1a461d43fdf0b0585334df25edb3a5}{set\_uuid}}();}
+\DoxyCodeLine{00114\ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory}{\string~Trajectory}}()\ \{\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ac8f5760f0bc365e09c09d3eadb3beea4}{Trajectory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}\&\ other)\ :}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}(other.\mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}),}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}(other.\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}),}
+\DoxyCodeLine{00123\ \ \ \ \ Properties(other.Properties)}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_aad93ebf2d800f63bf94fc9776677a48d}{Trajectory}}(size\_type\ n,\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ initial\_value=\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}(),\ \textcolor{keywordtype}{bool}\ generate\_uuid=\textcolor{keyword}{true})}
+\DoxyCodeLine{00138\ \ \ \ \ :\ \mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}(),}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}(n,\ initial\_value)}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (generate\_uuid)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2a1a461d43fdf0b0585334df25edb3a5}{set\_uuid}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ InputIterator>}
+\DoxyCodeLine{00154\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a3d90961ebefbf370d6bfd359af704928}{Trajectory}}(InputIterator\ first,\ InputIterator\ last,\ \textcolor{keywordtype}{bool}\ generate\_uuid=\textcolor{keyword}{true})}
+\DoxyCodeLine{00155\ \ \ \ \ :\ \mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}(),}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}(first,\ last)}
+\DoxyCodeLine{00157\ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (generate\_uuid)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2a1a461d43fdf0b0585334df25edb3a5}{set\_uuid}}();}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ this-\/>compute\_current\_features(0);}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ InputIterator>}
+\DoxyCodeLine{00164\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}(InputIterator\ first,\ InputIterator\ last,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}\&\ original)}
+\DoxyCodeLine{00165\ \ \ \ \ \ :\ \mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}(),}
+\DoxyCodeLine{00166\ \ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}(first,\ last),}
+\DoxyCodeLine{00167\ \ \ \ \ \ Properties(original.Properties)}
+\DoxyCodeLine{00168\ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2a1a461d43fdf0b0585334df25edb3a5}{set\_uuid}}();}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ this-\/>compute\_current\_features(0);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00174\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a60f8897f65414fd4384d2fdd9b9ea8e1}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}\&\ other)}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}\ =\ other.\mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}\ =\ other.\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ this-\/>Properties\ =\ other.Properties;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ab84c3cdff0cf6aee5bbfe8fe5802bcae}{clone}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00184\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{new}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}(*\textcolor{keyword}{this}));}
+\DoxyCodeLine{00186\ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00194\ \ \ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_af57579863e004d634ec4f8ac730c32a6}{start\_time}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00195\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.size())}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}[0].timestamp();}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ return\ ::tracktable::no\_such\_timestamp();}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00212\ \ \ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a08e6282c3ddeef676944d325d67c9b15}{end\_time}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00213\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.size())}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}[this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.size()\ -\/\ 1].timestamp();}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ return\ ::tracktable::no\_such\_timestamp();}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00231\ \ \ Duration\ \mbox{\hyperlink{classtracktable_1_1_trajectory_afcc4248cc99101b40fc741835b5bb0ae}{duration}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00232\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.size())}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}[this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.size()\ -\/\ 1].timestamp()\ -\/}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}[0].timestamp();}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Duration(0,0,0,0);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00246\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_accf9738423068531d0d112b6e5d5be2b}{uuid}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}};}
+\DoxyCodeLine{00248\ \ \ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00252\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a1e23aa8cd61b5c62117b1cda4adcc31c}{set\_uuid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\&\ new\_uuid)\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}\ =\ new\_uuid;}
+\DoxyCodeLine{00254\ \ \ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00258\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a2a1a461d43fdf0b0585334df25edb3a5}{set\_uuid}}()\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacetracktable_ad719bb5f2c724e6033e6e894230250a9}{automatic\_uuid\_generator}}())\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}}\ =\ \mbox{\hyperlink{namespacetracktable_ad719bb5f2c724e6033e6e894230250a9}{automatic\_uuid\_generator}}()-\/>generate\_uuid();}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00269\ \ \ std::string\ \mbox{\hyperlink{classtracktable_1_1_trajectory_aff9cf81befecb8320230800cb46e3daf}{object\_id}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00270\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.size()\ ==\ 0)}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(\textcolor{stringliteral}{"{}(empty)"{}});}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}[0].object\_id();}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00291\ \ \ std::string\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a56bf2815b7cd0bc1fab46e5fac015000}{trajectory\_id}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00292\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.size()\ ==\ 0)}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(\textcolor{stringliteral}{"{}(empty)"{}});}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ std::ostringstream\ outbuf;}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_aa74215060fda695080e79d7990e4b617}{imbue\_stream\_with\_timestamp\_output\_format}}(outbuf,\ \textcolor{stringliteral}{"{}\%Y\%m\%d\%H\%M\%S"{}});}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ outbuf\ <<\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_aff9cf81befecb8320230800cb46e3daf}{object\_id}}()\ <<\ \textcolor{stringliteral}{"{}\_"{}}}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_af57579863e004d634ec4f8ac730c32a6}{start\_time}}()\ <<\ \textcolor{stringliteral}{"{}\_"{}}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a08e6282c3ddeef676944d325d67c9b15}{end\_time}}();}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ outbuf.str();}
+\DoxyCodeLine{00305\ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \textcolor{comment}{//\ ************************************************************}}
+\DoxyCodeLine{00309\ \ \ \textcolor{comment}{//\ ***\ BEGIN\ doxygen\ group\ for\ property\ related\ methods}}
+\DoxyCodeLine{00310\ \ \ \textcolor{comment}{//\ ************************************************************}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00317\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_abe36bfa081b2a4c7ce0d269026e84548}{set\_property}}(std::string\ \textcolor{keyword}{const}\&\ name,\ PropertyValueT\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00318\ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_acb4a04cbbe10c0f9ed4370d28dd7238d}{::tracktable::set\_property}}(this-\/>Properties,\ name,\ value);}
+\DoxyCodeLine{00320\ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00323\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00324\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ name\ Name\ of\ property\ to\ retrieve}}
+\DoxyCodeLine{00325\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ ok\ If\ specified,\ this\ will\ be\ set\ to\ true\ or\ false\ as\ the\ property\ is\ found/not\ found}}
+\DoxyCodeLine{00326\ \ \ \textcolor{comment}{//\ \(\backslash\)return\ Property\ as\ a\ boost::variant}}
+\DoxyCodeLine{00327\ \ \ PropertyValueT\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a2564230d0eef53b3718b3c21fd740417}{property}}(std::string\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}\ *ok=0)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00328\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ return\ ::tracktable::property(this-\/>Properties,\ name,\ ok);}
+\DoxyCodeLine{00330\ \ \ \ \ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00333\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00334\ \ \ \textcolor{comment}{//\ It\ is\ the\ caller's\ responsibility\ to\ know\ whether\ the\ requested}}
+\DoxyCodeLine{00335\ \ \ \textcolor{comment}{//\ property\ actually\ exists\ when\ using\ this\ function.}}
+\DoxyCodeLine{00336\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00337\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ name\ Name\ of\ property\ to\ retrieve}}
+\DoxyCodeLine{00338\ \ \ \textcolor{comment}{//\ \(\backslash\)return\ Property\ as\ a\ boost::variant}}
+\DoxyCodeLine{00339\ \ \ PropertyValueT\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a939785a4ca2762caadacb3599f17521c}{property\_without\_checking}}(std::string\ \textcolor{keyword}{const}\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00340\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ok;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ return\ ::tracktable::property(this-\/>Properties,\ name,\ \&ok);}
+\DoxyCodeLine{00343\ \ \ \ \ \}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00346\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00347\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ name\ Name\ of\ property\ to\ retrieve}}
+\DoxyCodeLine{00348\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ ok\ If\ specified,\ this\ will\ be\ set\ to\ true\ or\ false\ as\ the\ property\ is\ found/not\ found}}
+\DoxyCodeLine{00349\ \ \ \textcolor{comment}{//\ \(\backslash\)return\ Property\ as\ a\ std::string}}
+\DoxyCodeLine{00350\ \ \ std::string\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ace0d5d108ad9c23448aaf45650f3aca4}{string\_property}}(std::string\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}\ *ok=0)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00351\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ return\ ::tracktable::string\_property(this-\/>Properties,\ name,\ ok);}
+\DoxyCodeLine{00353\ \ \ \ \ \}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00356\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00357\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ name\ Name\ of\ property\ to\ retrieve}}
+\DoxyCodeLine{00358\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ ok\ If\ specified,\ this\ will\ be\ set\ to\ true\ or\ false\ as\ the\ property\ is\ found/not\ found}}
+\DoxyCodeLine{00359\ \ \ \textcolor{comment}{//\ \(\backslash\)return\ Property\ as\ a\ double}}
+\DoxyCodeLine{00360\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a419e778d8ca7edc1c6527064a4748e1c}{real\_property}}(std::string\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}\ *ok=0)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00361\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ return\ ::tracktable::real\_property(this-\/>Properties,\ name,\ ok);}
+\DoxyCodeLine{00363\ \ \ \ \ \}}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00366\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00367\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ name\ Name\ of\ property\ to\ retrieve}}
+\DoxyCodeLine{00368\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ ok\ If\ specified,\ this\ will\ be\ set\ to\ true\ or\ false\ as\ the\ property\ is\ found/not\ found}}
+\DoxyCodeLine{00369\ \ \ \textcolor{comment}{//\ \(\backslash\)return\ Property\ as\ a\ timestamp}}
+\DoxyCodeLine{00370\ \ \ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a792da0d196cd48722b3c8beacf3fdc95}{timestamp\_property}}(std::string\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}\ *ok=0)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00371\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ return\ ::tracktable::timestamp\_property(this-\/>Properties,\ name,\ ok);}
+\DoxyCodeLine{00373\ \ \ \ \ \}}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00376\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00377\ \ \ \textcolor{comment}{//\ \(\backslash\)param\ name\ Name\ of\ desired\ property}}
+\DoxyCodeLine{00378\ \ \ \textcolor{comment}{//\ \(\backslash\)return\ True\ if\ present,\ false\ if\ not}}
+\DoxyCodeLine{00379\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ad0d641889c42340be22ac62f32300eaa}{has\_property}}(std::string\ \textcolor{keyword}{const}\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00380\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ return\ ::tracktable::has\_property(this-\/>Properties,\ name);}
+\DoxyCodeLine{00382\ \ \ \ \ \}}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00389\ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ \_\_properties()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>Properties;\ \}}
+\DoxyCodeLine{00390\ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ \_\_non\_const\_properties()\ \{\ \textcolor{keywordflow}{return}\ this-\/>Properties;\ \}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00397\ \ \ \textcolor{keywordtype}{void}\ \_\_set\_properties(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ props)\ \{\ this-\/>Properties\ =\ props;\ \}}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00400\ \ \ \textcolor{comment}{//\ ************************************************************}}
+\DoxyCodeLine{00401\ \ \ \textcolor{comment}{//\ ***\ END\ doxygen\ group\ for\ property\ related\ methods}}
+\DoxyCodeLine{00402\ \ \ \textcolor{comment}{//\ ************************************************************}}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \textcolor{comment}{//\ ************************************************************}}
+\DoxyCodeLine{00406\ \ \ \textcolor{comment}{//\ ***\ BEGIN\ doxygen\ group\ for\ std::vector\ related\ methods}}
+\DoxyCodeLine{00407\ \ \ \textcolor{comment}{//\ ************************************************************}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00419\ \ \ size\_type\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}{size}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00420\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.size();}
+\DoxyCodeLine{00422\ \ \ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00426\ \ \ size\_type\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a2e8d6eaa3fda858c43bcfadeaf1e9386}{max\_size}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00427\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.max\_size();}
+\DoxyCodeLine{00429\ \ \ \ \ \}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00433\ \ \ size\_type\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a0db842f3b69bb7bc31f0dbfe14b0db51}{capacity}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00434\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.capacity();}
+\DoxyCodeLine{00436\ \ \ \ \ \}}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00443\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_afca0d56029e01e620feaf8df4c6ce9bb}{resize}}(size\_type\ new\_size,\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ default\_value=\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}())}
+\DoxyCodeLine{00444\ \ \ \ \ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.resize(new\_size,\ default\_value);}
+\DoxyCodeLine{00446\ \ \ \ \ \}}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00450\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a00e26c610525256edc1901bccf8ede3c}{empty}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00451\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.empty();}
+\DoxyCodeLine{00453\ \ \ \ \ \}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00459\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a474e8824c8f8dd9d0fc1b87bf3fd6e66}{reserve}}(size\_type\ n)}
+\DoxyCodeLine{00460\ \ \ \ \ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.reserve(n);}
+\DoxyCodeLine{00462\ \ \ \ \ \}}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00469\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ iter\_type>}
+\DoxyCodeLine{00470\ \ \ \textcolor{keywordtype}{void}\ assign(iter\_type\ iter\_begin,\ iter\_type\ iter\_end)}
+\DoxyCodeLine{00471\ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.assign(iter\_begin,\ iter\_end);}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ this-\/>compute\_current\_features(0);}
+\DoxyCodeLine{00474\ \ \ \ \ \}}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_aac6c72fc0d8cc08368827c951e871462}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00487\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}\ ==\ other.\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}\ \&\&}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>Properties\ ==\ other.Properties);}
+\DoxyCodeLine{00490\ \ \ \ \ \}}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a826bac1333e2207e1a9c5323abc206d2}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a50cb43be3a885825823ca6e8785e1378}{Trajectory}}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00498\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((*\textcolor{keyword}{this}\ ==\ other)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00500\ \ \ \ \ \}}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00510\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a34023182a6215ab2b3097263c37fdbb6}{operator[]}}(size\_type\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00511\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}[i];}
+\DoxyCodeLine{00513\ \ \ \ \ \}}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00526\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a551d6da43c7b35f7d58c4d2429cbd7d5}{operator[]}}(size\_type\ i)}
+\DoxyCodeLine{00527\ \ \ \ \ \{}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}[i];}
+\DoxyCodeLine{00529\ \ \ \ \ \}}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00542\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a6365f4c2d2450fe0b2a00a828b6365bc}{push\_back}}(\mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ \textcolor{keyword}{const}\&\ pt)}
+\DoxyCodeLine{00543\ \ \ \ \ \{}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.push\_back(pt);}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ this-\/>compute\_current\_features(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}{size}}()\ -\/\ 1);}
+\DoxyCodeLine{00546\ \ \ \ \ \}}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00565\ \ \ point\_type\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ad78c438f70565341f3b2667230f9d331}{at}}(size\_type\ i)}
+\DoxyCodeLine{00566\ \ \ \ \ \{}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.at(i);}
+\DoxyCodeLine{00568\ \ \ \ \ \}}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00584\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a1f6546dd74e8fa0464bfa1238690b8db}{at}}(size\_type\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00585\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.at(i);}
+\DoxyCodeLine{00587\ \ \ \ \ \}}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00600\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a3cc235f0bbb2205f0d5a2b3d6e4a6d23}{erase}}(iterator\ position)}
+\DoxyCodeLine{00601\ \ \ \ \ \{}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ iterator\ result(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.erase(position));}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ !=\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a272cb092a6237a6a639bb27e4508a393}{end}}())}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ XXX\ CHECK\ THIS}}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ this-\/>compute\_current\_features(std::distance(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}(),\ result));}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00609\ \ \ \ \ \}}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00624\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a66fa66bb0fe57ef60d06ae2a73eddbf2}{erase}}(iterator\ first,\ iterator\ last)}
+\DoxyCodeLine{00625\ \ \ \ \ \{}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ iterator\ result\ =\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.erase(first,\ last);}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ !=\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a272cb092a6237a6a639bb27e4508a393}{end}}())}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ XXX\ CHECK\ THIS}}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ this-\/>compute\_current\_features(std::distance(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}(),\ result));}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00633\ \ \ \ \ \}}
+\DoxyCodeLine{00634\ }
+\DoxyCodeLine{00639\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a9166d1bda8d4791f68bc49e3cdd6a17e}{clear}}()}
+\DoxyCodeLine{00640\ \ \ \ \ \{}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.clear();}
+\DoxyCodeLine{00642\ \ \ \ \ \}}
+\DoxyCodeLine{00643\ }
+\DoxyCodeLine{00651\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ac54fa8e8176246a99095e9a468a889f5}{front}}()}
+\DoxyCodeLine{00652\ \ \ \ \ \{}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.front();}
+\DoxyCodeLine{00654\ \ \ \ \ \}}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00663\ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a13ed8aec90926f87f30ad83f64f18385}{front}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00664\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.front();}
+\DoxyCodeLine{00666\ \ \ \ \ \}}
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00677\ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a5a89075c7122aea5f48b60b5b2d6270c}{back}}()}
+\DoxyCodeLine{00678\ \ \ \ \ \{}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.back();}
+\DoxyCodeLine{00680\ \ \ \ \ \}}
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00691\ \ \ \ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classtracktable_1_1_trajectory_af069ff91341a497850f8abca7a6127a3}{back}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00692\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.back();}
+\DoxyCodeLine{00694\ \ \ \ \ \}}
+\DoxyCodeLine{00695\ }
+\DoxyCodeLine{00704\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_aab2cf5b98b136dd6823a258c54ffb5ad}{insert}}(\textcolor{keywordtype}{int}\ index,\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00705\ \ \ \ \{}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.insert(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}()+\ index,\ value);}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ this-\/>compute\_current\_features(std::distance(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}(),\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}()\ +\ index));}
+\DoxyCodeLine{00708\ \ \ \ \}}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00718\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_aaeb6b042b0d9eab09cee25be46af4bac}{insert}}(iterator\ position,\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00719\ \ \ \ \ \{}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ iterator\ result(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.insert(position,\ value));}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ this-\/>compute\_current\_features(std::distance(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}(),\ position));}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00723\ \ \ \ \ \}}
+\DoxyCodeLine{00724\ }
+\DoxyCodeLine{00735\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a0dc27fdb26050a75ceba18932f32c46b}{insert}}(iterator\ position,\ size\_type\ n,\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8d3edcdda8ce1ad416c7daa81b016320}{point\_type}}\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00736\ \ \ \ \ \{}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.insert(position,\ n,\ value);}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ this-\/>compute\_current\_features(std::distance(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}(),\ position));}
+\DoxyCodeLine{00739\ \ \ \ \ \}}
+\DoxyCodeLine{00740\ }
+\DoxyCodeLine{00751\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ InputIterator>}
+\DoxyCodeLine{00752\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ad1593fae980c55b29a9ecf11aeb0e31f}{insert}}(iterator\ position,\ InputIterator\ first,\ InputIterator\ last)}
+\DoxyCodeLine{00753\ \ \ \ \ \{}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}}.insert(position,\ first,\ last);}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ this-\/>compute\_current\_features(std::distance(this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}(),\ position));}
+\DoxyCodeLine{00756\ \ \ \ \ \}}
+\DoxyCodeLine{00757\ }
+\DoxyCodeLine{00758\ \ \ \textcolor{keywordtype}{void}\ compute\_current\_features(std::size\_t\ start\_index)}
+\DoxyCodeLine{00759\ \ \ \ \ \{}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start\_index\ >=\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}{size}}())}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00764\ }
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ start\_index;\ i\ <\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}{size}}();\ ++i)}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ (*this)[i].set\_current\_length(0);}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ (*this)[i].set\_current\_length(}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ (*\textcolor{keyword}{this})[i-\/1].current\_length()\ +}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \ \ \ \ distance((*\textcolor{keyword}{this})[i-\/1],\ (*\textcolor{keyword}{this})[i])}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00779\ }
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}{size}}();\ ++i)}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ (*this)[i].set\_current\_length\_fraction(0.0);}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ (*this)[i].set\_current\_time\_fraction(0.0);}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \ \ (*this)[i].set\_current\_length\_fraction(}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ (*\textcolor{keyword}{this})[i].current\_length()\ /}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ (*\textcolor{keyword}{this})[this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}{size}}()-\/1].current\_length()}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ (*this)[i].set\_current\_time\_fraction(}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(((*\textcolor{keyword}{this})[i].timestamp()\ -\/}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ (*\textcolor{keyword}{this})[0].timestamp()).total\_seconds())\ /}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(((*\textcolor{keyword}{this})[this-\/>\mbox{\hyperlink{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}{size}}()-\/1].timestamp()\ -\/}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ (*\textcolor{keyword}{this})[0].timestamp()).total\_seconds())}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00800\ }
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00802\ \ \ \ \ \}}
+\DoxyCodeLine{00803\ \ \ \}}
+\DoxyCodeLine{00804\ }
+\DoxyCodeLine{00806\ \ \ \textcolor{comment}{//\ ************************************************************}}
+\DoxyCodeLine{00807\ \ \ \textcolor{comment}{//\ ***\ END\ doxygen\ group\ for\ std::vector\ related\ methods}}
+\DoxyCodeLine{00808\ \ \ \textcolor{comment}{//\ ************************************************************}}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00812\ \ \ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\ \mbox{\hyperlink{classtracktable_1_1_trajectory_acb1c7adb5d5ee5f0ed43dd91a82bae99}{UUID}};}
+\DoxyCodeLine{00813\ }
+\DoxyCodeLine{00815\ \ \ point\_vector\_type\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}};}
+\DoxyCodeLine{00816\ }
+\DoxyCodeLine{00817\ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ Properties;}
+\DoxyCodeLine{00818\ }
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00821\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00822\ \ \ \textcolor{keywordtype}{void}\ serialize(Archive\&\ ar,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00823\ \ \ \{}
+\DoxyCodeLine{00824\ \ \ \ \ ar\ \&\ BOOST\_SERIALIZATION\_NVP(\mbox{\hyperlink{classtracktable_1_1_trajectory_a52860f598486d0d654f9bd969059f707}{Points}});}
+\DoxyCodeLine{00825\ \ \ \ \ ar\ \&\ BOOST\_SERIALIZATION\_NVP(Properties);}
+\DoxyCodeLine{00826\ \ \ \}}
+\DoxyCodeLine{00827\ }
+\DoxyCodeLine{00828\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00834\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a9fe4d5edf449f7675d5cf9e187f3f581}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ this-\/>Points.begin();\ \}}
+\DoxyCodeLine{00835\ }
+\DoxyCodeLine{00840\ \ \ const\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ac16a3959f6a4fe5165a62c75cba7fa97}{begin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>Points.begin();\ \}}
+\DoxyCodeLine{00841\ }
+\DoxyCodeLine{00846\ \ \ const\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_aa9fe5930da929365d69ae129a18cfee3}{cbegin}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ this-\/>Points.cbegin();\ \}}
+\DoxyCodeLine{00847\ }
+\DoxyCodeLine{00852\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a272cb092a6237a6a639bb27e4508a393}{end}}()\ \{\ \textcolor{keywordflow}{return}\ this-\/>Points.end();\ \}}
+\DoxyCodeLine{00853\ }
+\DoxyCodeLine{00858\ \ \ const\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a9737d62062786f4db2b1dce2e81a30bc}{end}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>Points.end();\ \}}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00864\ \ \ const\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a5c17c687b2766a3e24a93763af16630e}{cend}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ this-\/>Points.cend();\ \}}
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00870\ \ \ reverse\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a37f9f846b049ec45f2c8be32bcfea9cb}{rbegin}}()\ \{\ \textcolor{keywordflow}{return}\ this-\/>Points.rbegin();\ \}}
+\DoxyCodeLine{00871\ }
+\DoxyCodeLine{00876\ \ \ const\_reverse\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ab5e2899a4dc182cd71c598ff4648df4e}{rbegin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>Points.rbegin();\ \}}
+\DoxyCodeLine{00877\ }
+\DoxyCodeLine{00882\ \ \ const\_reverse\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ac1977a39c952c3ed234f19354e67423c}{crbegin}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ this-\/>Points.crbegin();\ \}}
+\DoxyCodeLine{00883\ }
+\DoxyCodeLine{00888\ \ \ reverse\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a8364467dad32d7920df980a9fc43ba75}{rend}}()\ \{\ \textcolor{keywordflow}{return}\ this-\/>Points.rend();\ \}}
+\DoxyCodeLine{00889\ }
+\DoxyCodeLine{00894\ \ \ const\_reverse\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_a7d69b49a3e1b4564522e53fc8d873e83}{rend}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>Points.rend();\ \}}
+\DoxyCodeLine{00895\ }
+\DoxyCodeLine{00900\ \ \ const\_reverse\_iterator\ \mbox{\hyperlink{classtracktable_1_1_trajectory_ab325a986344d021314d91d13fde1873e}{crend}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ this-\/>Points.crend();\ \}}
+\DoxyCodeLine{00901\ }
+\DoxyCodeLine{00902\ \};}
+\DoxyCodeLine{00903\ }
+\DoxyCodeLine{00904\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable}}
+\DoxyCodeLine{00905\ }
+\DoxyCodeLine{00906\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }traits\ \{}
+\DoxyCodeLine{00907\ }
+\DoxyCodeLine{00908\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00909\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1has__properties}{has\_properties}}<\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<point\_type>\ >\ :\ boost::mpl::bool\_<true>\ \{\};}
+\DoxyCodeLine{00910\ }
+\DoxyCodeLine{00911\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00912\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1domain}{domain}}<\mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<point\_type>\ >\ :\ \mbox{\hyperlink{structtracktable_1_1traits_1_1domain}{domain}}<point\_type>\ \{\};}
+\DoxyCodeLine{00913\ }
+\DoxyCodeLine{00914\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00915\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1traits_1_1point__domain__name}{point\_domain\_name}}<\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<point\_type>\ >\ :\ \mbox{\hyperlink{structtracktable_1_1traits_1_1point__domain__name}{point\_domain\_name}}<point\_type>\ \{\};}
+\DoxyCodeLine{00916\ }
+\DoxyCodeLine{00917\ \}\ \}\ \textcolor{comment}{//\ end\ namespace\ tracktable::traits}}
+\DoxyCodeLine{00918\ }
+\DoxyCodeLine{00919\ \textcolor{comment}{//\ We\ get\ our\ implementations\ for\ trajectory\_subset\ and\ point\_at\_time}}
+\DoxyCodeLine{00920\ \textcolor{comment}{//\ from\ detail\ headers.}}
+\DoxyCodeLine{00921\ }
+\DoxyCodeLine{00922\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00923\ }
+\DoxyCodeLine{00924\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00925\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1point__at__time}{point\_at\_time}}<\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<\ PointT\ >\ >\ :\ implementations::generic\_point\_at\_time<\ Trajectory<PointT>\ >}
+\DoxyCodeLine{00926\ \{\ \};}
+\DoxyCodeLine{00927\ }
+\DoxyCodeLine{00928\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00929\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1point__at__time__fraction}{point\_at\_time\_fraction}}<\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<\ PointT\ >\ >\ :\ implementations::generic\_point\_at\_time\_fraction<\ Trajectory<PointT>\ >}
+\DoxyCodeLine{00930\ \{\ \};}
+\DoxyCodeLine{00931\ }
+\DoxyCodeLine{00932\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00933\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1point__at__length__fraction}{point\_at\_length\_fraction}}<\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<\ PointT\ >\ >\ :\ implementations::generic\_point\_at\_length\_fraction<\ Trajectory<PointT>\ >}
+\DoxyCodeLine{00934\ \{\ \};}
+\DoxyCodeLine{00935\ }
+\DoxyCodeLine{00936\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00937\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1time__at__fraction}{time\_at\_fraction}}<\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<\ PointT\ >\ >\ :\ implementations::generic\_time\_at\_fraction<\ Trajectory<PointT>\ >}
+\DoxyCodeLine{00938\ \{\ \};}
+\DoxyCodeLine{00939\ }
+\DoxyCodeLine{00940\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00941\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1subset__during__interval}{subset\_during\_interval}}<\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<PointT>\ >\ :\ implementations::generic\_subset\_during\_interval<\ Trajectory<PointT>\ >}
+\DoxyCodeLine{00942\ \{\ \};}
+\DoxyCodeLine{00943\ }
+\DoxyCodeLine{00944\ \textcolor{comment}{//Used\ when\ comparing\ a\ point\ to\ a\ compatible\ trajectory}}
+\DoxyCodeLine{00945\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T,\ \textcolor{keyword}{template}<\textcolor{keyword}{class}>\ \textcolor{keyword}{class\ }TrajectoryT>}
+\DoxyCodeLine{00946\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1point__to__trajectory__distance}{point\_to\_trajectory\_distance}}}
+\DoxyCodeLine{00947\ \{}
+\DoxyCodeLine{00948\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \textcolor{keyword}{inline}\ apply(PointT\ \textcolor{keyword}{const}\&\ from,\ TrajectoryT<PointT>\ \textcolor{keyword}{const}\&\ to)}
+\DoxyCodeLine{00949\ \ \ \ \{}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ boost::geometry::distance(from,\ to);}
+\DoxyCodeLine{00951\ \ \ \ \}}
+\DoxyCodeLine{00952\ \};}
+\DoxyCodeLine{00953\ }
+\DoxyCodeLine{00961\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00962\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1end__to__end__distance}{end\_to\_end\_distance}}<\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory}}<PointT>\ >}
+\DoxyCodeLine{00963\ \{}
+\DoxyCodeLine{00964\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_trajectory}{Trajectory<PointT>}}\ trajectory\_type;}
+\DoxyCodeLine{00965\ }
+\DoxyCodeLine{00966\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ apply(}
+\DoxyCodeLine{00967\ \ \ \ \ trajectory\_type\ \textcolor{keyword}{const}\&\ path}
+\DoxyCodeLine{00968\ \ \ \ \ )}
+\DoxyCodeLine{00969\ \ \ \ \ \{}
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.\mbox{\hyperlink{classtracktable_1_1_trajectory_a2e76b8bad09400b1462ee9135e1ae19a}{size}}()\ <\ 2)}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00972\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ return\ ::tracktable::distance(path.\mbox{\hyperlink{classtracktable_1_1_trajectory_ac54fa8e8176246a99095e9a468a889f5}{front}}(),\ path.\mbox{\hyperlink{classtracktable_1_1_trajectory_a5a89075c7122aea5f48b60b5b2d6270c}{back}}());}
+\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00978\ \ \ \ \ \}}
+\DoxyCodeLine{00979\ \};}
+\DoxyCodeLine{00980\ }
+\DoxyCodeLine{00981\ \}\ \}}
+\DoxyCodeLine{00982\ }
+\DoxyCodeLine{00983\ BOOST\_GEOMETRY\_REGISTER\_LINESTRING\_TEMPLATED(\mbox{\hyperlink{classtracktable_1_1_trajectory}{tracktable::Trajectory}})}
+\DoxyCodeLine{00984\ }
+\DoxyCodeLine{00985\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,280 @@
+\doxysection{tracktable\+::domain\+::terrestrial\+::Terrestrial\+Point Class Reference}
+\hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{}\label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}\index{tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}}
+
+
+2D point on a sphere  
+
+
+
+
+{\ttfamily \#include $<$Terrestrial.\+h$>$}
+
+Inheritance diagram for tracktable\+::domain\+::terrestrial\+::Terrestrial\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a4a2a99d7bb4ebe2447d9e88a1f30a836}\label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a4a2a99d7bb4ebe2447d9e88a1f30a836} 
+using {\bfseries Superclass} = \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{Point\+Lon\+Lat}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{tracktable\+::\+Point\+Lon\+Lat}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}}$<$ 2 $>$ {\bfseries Superclass}
+\begin{DoxyCompactList}\small\item\em Convenient alias for superclass. \end{DoxyCompactList}\item 
+typedef Superclass\+::coordinate\+\_\+type {\bfseries coord\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef tracktable\+::settings\+::point\+\_\+coordinate\+\_\+type {\bfseries element\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a3a55e7a1165f109ca378defb2cd1761b}\label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a3a55e7a1165f109ca378defb2cd1761b} 
+{\bfseries Terrestrial\+Point} ()=default
+\begin{DoxyCompactList}\small\item\em Create an uninitialized point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_af9faca4e1aa26eff92575b8d481524c9}{Terrestrial\+Point}} (\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point}} const \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor\+: make this point like another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a15bc351a0d14b61abc0a218394c88b8a}{Terrestrial\+Point}} (\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor\+: make this point like another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a5d81b01851de5bc7afdd13987d8d9ef5}{Terrestrial\+Point}} (\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{Superclass}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor\+: use \doxylink{classtracktable_1_1_point_lon_lat}{Point\+Lon\+Lat} instances as if they were \doxylink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point} instances. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_ab79761c0ad693465afa5070bf21ec1ed}\label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_ab79761c0ad693465afa5070bf21ec1ed} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Terrestrial\+Point} () override=default
+\begin{DoxyCompactList}\small\item\em Empty destructor -\/ nothing to do here. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a9c0b4f70c74a004e0a58155600679a91}\label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a9c0b4f70c74a004e0a58155600679a91} 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point}} \& {\bfseries operator=} (\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point}} const \&other)
+\begin{DoxyCompactList}\small\item\em Explicitly delegate assignment to prevent compiler hijinks. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a146c8eefb560725673954de512c6689e}\label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a146c8eefb560725673954de512c6689e} 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point}} \& {\bfseries operator=} (\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point}} \&\&other)=default
+\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_aebe7465964eb9b72017ef7202c1a30d9}{Terrestrial\+Point}} (double \+\_\+longitude, double \+\_\+latitude)
+\begin{DoxyCompactList}\small\item\em Convenience constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive$>$ }\\void \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a353ff67f7ce9ca4897d57cd4bee8054e}{serialize}} (Archive \&ar, const unsigned int)
+\begin{DoxyCompactList}\small\item\em Serialize the points to an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{tracktable\+::\+Point\+Lon\+Lat}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Point\+Lon\+Lat} ()
+\begin{DoxyCompactList}\small\item\em Create an uninitialized point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a79da0e5c26f50ec1afb818dfd8f17a14}{Point\+Lon\+Lat}} (coord\+\_\+type const \&a, coord\+\_\+type const \&b)
+\begin{DoxyCompactList}\small\item\em Create a 2D point on a sphere (convenience constructor) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a8b4e30e32c3bfa6a9e0b1cfb4f1cd0ef}{Point\+Lon\+Lat}} (const double \texorpdfstring{$\ast$}{*}coordinates)
+\begin{DoxyCompactList}\small\item\em Create a 2D point on a sphere (convenience constructor) \end{DoxyCompactList}\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Point\+Lon\+Lat} ()
+\begin{DoxyCompactList}\small\item\em Destructor for a point. \end{DoxyCompactList}\item 
+{\bfseries Point\+Lon\+Lat} (\mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ade511104466c74d766fdc9c376c87f25}{Superclass}} const \&other)
+\begin{DoxyCompactList}\small\item\em Make this point a copy of a generic 2D point. \end{DoxyCompactList}\item 
+{\bfseries Point\+Lon\+Lat} (\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{Point\+Lon\+Lat}} const \&other)
+\begin{DoxyCompactList}\small\item\em Make this point a copy of another. \end{DoxyCompactList}\item 
+coord\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ac9c21d5063b716c783b3b1acffa3d624}{longitude}} () const
+\begin{DoxyCompactList}\small\item\em Return this point\textquotesingle{}s longitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a403df11f0c49a8d0d02ac3cdb1635ffa}{set\+\_\+longitude}} (coord\+\_\+type const \&new\+\_\+longitude)
+\begin{DoxyCompactList}\small\item\em Set this point\textquotesingle{}s longitude. \end{DoxyCompactList}\item 
+coord\+\_\+type \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a71577e3a60ae41e63bccfeb5a9695317}{latitude}} () const
+\begin{DoxyCompactList}\small\item\em Return this point\textquotesingle{}s latitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_ad73365869fdd0bcc96c918ce7d66490d}{set\+\_\+latitude}} (coord\+\_\+type const \&new\+\_\+latitude)
+\begin{DoxyCompactList}\small\item\em Set this point\textquotesingle{}s latitude. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtracktable_1_1_point_lon_lat_a379153b44191c37a93f4514814cd19e7}{to\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Convert point coordinates to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Point\+Base} ()
+\begin{DoxyCompactList}\small\item\em Initialize an empty point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base_aab715197cb725a115bdbae588649f795}{Point\+Base}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a \doxylink{classtracktable_1_1_point_base}{Point\+Base} with a copy of another. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtracktable_1_1_point_base_af616577253186b1d80c7ab90338640e2}{\texorpdfstring{$\sim$}{\string~}\+Point\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for our descendants. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} const \& \mbox{\hyperlink{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5}{get}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of a particular coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} const \&new\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the value of a particular coordinate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} const \& \mbox{\hyperlink{classtracktable_1_1_point_base_a1c2237aff8b2b8dec8b934feb10d79c6}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t d) const
+\begin{DoxyCompactList}\small\item\em Get/set the value of a coordinate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_point_base_a1ea12444b1425cf2462e2920cac1b499}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t d)
+\begin{DoxyCompactList}\small\item\em Get/set the value of a coordinate. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_base_a35cfaef9ac15a33040e2458d99d980e3}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check two points for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_base_ac225c66d4cfab081b67f95d4411b0fdd}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check two points for inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} \& \mbox{\hyperlink{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other)
+\begin{DoxyCompactList}\small\item\em Make this point a copy of a different one. \end{DoxyCompactList}\item 
+{\bfseries Point\+Base} ()
+\begin{DoxyCompactList}\small\item\em Initialize an empty point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base_aab715197cb725a115bdbae588649f795}{Point\+Base}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a \doxylink{classtracktable_1_1_point_base}{Point\+Base} with a copy of another. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtracktable_1_1_point_base_af616577253186b1d80c7ab90338640e2}{\texorpdfstring{$\sim$}{\string~}\+Point\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for our descendants. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} const \& \mbox{\hyperlink{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5}{get}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of a particular coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} const \&new\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the value of a particular coordinate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} const \& \mbox{\hyperlink{classtracktable_1_1_point_base_a1c2237aff8b2b8dec8b934feb10d79c6}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t d) const
+\begin{DoxyCompactList}\small\item\em Get/set the value of a coordinate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} \& \mbox{\hyperlink{classtracktable_1_1_point_base_a1ea12444b1425cf2462e2920cac1b499}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t d)
+\begin{DoxyCompactList}\small\item\em Get/set the value of a coordinate. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_base_a35cfaef9ac15a33040e2458d99d980e3}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check two points for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_base_ac225c66d4cfab081b67f95d4411b0fdd}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check two points for inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} \& \mbox{\hyperlink{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other)
+\begin{DoxyCompactList}\small\item\em Make this point a copy of a different one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d}{Cartesian\+Point3D}} \mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a8c2a33c5713a138438ed32d3182d5b63}{ECEF\+\_\+from\+\_\+km}} (const coord\+\_\+type \+\_\+longitude, const coord\+\_\+type \+\_\+latitude, const double \+\_\+altitude)
+\begin{DoxyCompactList}\small\item\em Returns ECEF values for lon, lat, and altitude. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_point_base_a00baacc4de3a9c9cf3f3f39af19aa7de}{size}} ()
+\item 
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_point_base_a00baacc4de3a9c9cf3f3f39af19aa7de}{size}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_base_a8829a6c52e157dd0a28ad3148d89d587}{serialize}} (Archive \&ar, const unsigned int)
+\begin{DoxyCompactList}\small\item\em Serialize the coordinates to an archive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_base_a8829a6c52e157dd0a28ad3148d89d587}{serialize}} (Archive \&ar, const unsigned int)
+\begin{DoxyCompactList}\small\item\em Serialize the coordinates to an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} {\bfseries Coordinates} \mbox{[}Dimension\mbox{]}
+\begin{DoxyCompactList}\small\item\em Storage for the coordinate values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{coordinate\+\_\+type}} {\bfseries Coordinates} \mbox{[}Dimension\mbox{]}
+\begin{DoxyCompactList}\small\item\em Storage for the coordinate values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D point on a sphere 
+
+This class represents a point on a sphere. Its coordinates are measured in degrees of longitude and latitude.
+
+Distances between {\ttfamily Terrestrial\+Points} are measured in kilometers. Speeds between two {\ttfamily Terrestrial\+Trajectory\+Points} will be measured in kilometers per hour. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_af9faca4e1aa26eff92575b8d481524c9}\index{tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}!TerrestrialPoint@{TerrestrialPoint}}
+\index{TerrestrialPoint@{TerrestrialPoint}!tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}}
+\doxysubsubsection{\texorpdfstring{TerrestrialPoint()}{TerrestrialPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_af9faca4e1aa26eff92575b8d481524c9} 
+tracktable\+::domain\+::terrestrial\+::\+Terrestrial\+Point\+::\+Terrestrial\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor\+: make this point like another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Const point to make a copy of \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a15bc351a0d14b61abc0a218394c88b8a}\index{tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}!TerrestrialPoint@{TerrestrialPoint}}
+\index{TerrestrialPoint@{TerrestrialPoint}!tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}}
+\doxysubsubsection{\texorpdfstring{TerrestrialPoint()}{TerrestrialPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a15bc351a0d14b61abc0a218394c88b8a} 
+tracktable\+::domain\+::terrestrial\+::\+Terrestrial\+Point\+::\+Terrestrial\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor\+: make this point like another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Const point to make a copy of \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a5d81b01851de5bc7afdd13987d8d9ef5}\index{tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}!TerrestrialPoint@{TerrestrialPoint}}
+\index{TerrestrialPoint@{TerrestrialPoint}!tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}}
+\doxysubsubsection{\texorpdfstring{TerrestrialPoint()}{TerrestrialPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a5d81b01851de5bc7afdd13987d8d9ef5} 
+tracktable\+::domain\+::terrestrial\+::\+Terrestrial\+Point\+::\+Terrestrial\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_lon_lat}{Superclass}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor\+: use \doxylink{classtracktable_1_1_point_lon_lat}{Point\+Lon\+Lat} instances as if they were \doxylink{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point}{Terrestrial\+Point} instances. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Const point to make a copy of \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_aebe7465964eb9b72017ef7202c1a30d9}\index{tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}!TerrestrialPoint@{TerrestrialPoint}}
+\index{TerrestrialPoint@{TerrestrialPoint}!tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}}
+\doxysubsubsection{\texorpdfstring{TerrestrialPoint()}{TerrestrialPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_aebe7465964eb9b72017ef7202c1a30d9} 
+tracktable\+::domain\+::terrestrial\+::\+Terrestrial\+Point\+::\+Terrestrial\+Point (\begin{DoxyParamCaption}\item[{double}]{\+\_\+longitude}{, }\item[{double}]{\+\_\+latitude}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convenience constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+longitude} & Longitude in degrees \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+latitude} & Latitude in degrees \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a8c2a33c5713a138438ed32d3182d5b63}\index{tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}!ECEF\_from\_km@{ECEF\_from\_km}}
+\index{ECEF\_from\_km@{ECEF\_from\_km}!tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}}
+\doxysubsubsection{\texorpdfstring{ECEF\_from\_km()}{ECEF\_from\_km()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a8c2a33c5713a138438ed32d3182d5b63} 
+static \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d}{Cartesian\+Point3D}} tracktable\+::domain\+::terrestrial\+::\+Terrestrial\+Point\+::\+ECEF\+\_\+from\+\_\+km (\begin{DoxyParamCaption}\item[{const coord\+\_\+type}]{\+\_\+longitude}{, }\item[{const coord\+\_\+type}]{\+\_\+latitude}{, }\item[{const double}]{\+\_\+altitude}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns ECEF values for lon, lat, and altitude. 
+
+Uses a km convention.
+
+\begin{DoxyNote}{Note}
+this expects an altitude in km (not ft or m).
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+longitude} & Longitude in degrees \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+latitude} & Latitude in degrees \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+altitude} & Altitude in km\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3D Earth Centered, Earth Fixed point in km 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a353ff67f7ce9ca4897d57cd4bee8054e}\index{tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}!serialize@{serialize}}
+\index{serialize@{serialize}!tracktable::domain::terrestrial::TerrestrialPoint@{tracktable::domain::terrestrial::TerrestrialPoint}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point_a353ff67f7ce9ca4897d57cd4bee8054e} 
+template$<$class Archive$>$ \\
+void tracktable\+::domain\+::terrestrial\+::\+Terrestrial\+Point\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar}{, }\item[{const unsigned int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize the points to an archive. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ar} & Archive to serialize to \\
+\hline
+\mbox{\texttt{ in}}  & {\em version} & Version of the archive \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Domain/Terrestrial.\+h\end{DoxyCompactItemize}

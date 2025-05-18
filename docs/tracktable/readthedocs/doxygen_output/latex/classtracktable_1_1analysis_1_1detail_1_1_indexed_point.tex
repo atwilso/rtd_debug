@@ -1,0 +1,90 @@
+\doxysection{tracktable\+::analysis\+::detail\+::Indexed\+Point\texorpdfstring{$<$}{<} PointT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point}{}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point}\index{tracktable::analysis::detail::IndexedPoint$<$ PointT $>$@{tracktable::analysis::detail::IndexedPoint$<$ PointT $>$}}
+
+
+Point plus index and cluster ID.  
+
+
+
+
+{\ttfamily \#include $<$dbscan\+\_\+points.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a6c9e4484caa4b344b7173cbf324fc6d2}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a6c9e4484caa4b344b7173cbf324fc6d2} 
+typedef PointT {\bfseries point\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_ab6239445aa6f6ff6aebf1a955a5bd002}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_ab6239445aa6f6ff6aebf1a955a5bd002} 
+{\bfseries Indexed\+Point} (PointT const \&point\+\_\+to\+\_\+index)
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_aef1ad25536a12082c7b2f327378b991d}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_aef1ad25536a12082c7b2f327378b991d} 
+{\bfseries Indexed\+Point} (PointT const \&point\+\_\+to\+\_\+index, int index)
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a870ce8d095099b6739548527ed56efad}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a870ce8d095099b6739548527ed56efad} 
+{\bfseries Indexed\+Point} (\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1_indexed_point}{Indexed\+Point}} const \&other)
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a82512772eeaeda5fa416925a831689ad}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a82512772eeaeda5fa416925a831689ad} 
+\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1_indexed_point}{Indexed\+Point}} \& {\bfseries operator=} (\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1_indexed_point}{Indexed\+Point}} const \&other)
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_af099ceeb89520c5b1f23f7c578edec70}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_af099ceeb89520c5b1f23f7c578edec70} 
+bool {\bfseries operator==} (\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1_indexed_point}{Indexed\+Point}} const \&other) const
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_ad55467302a22548972c00f7d103b3e18}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_ad55467302a22548972c00f7d103b3e18} 
+PointT const \& {\bfseries point} () const
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a6e47fe467c06664e0e04999653e0ce6a}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a6e47fe467c06664e0e04999653e0ce6a} 
+int {\bfseries point\+\_\+id} () const
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_aeafe7da339d3562b1ac233bd34da6e1a}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_aeafe7da339d3562b1ac233bd34da6e1a} 
+int {\bfseries cluster\+\_\+id} () const
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a204f09f2bee408cfeb05077ed950c0b5}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a204f09f2bee408cfeb05077ed950c0b5} 
+bool {\bfseries visited} () const
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_af80fc8427f069f9e21a30476d8cf9786}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_af80fc8427f069f9e21a30476d8cf9786} 
+void {\bfseries set\+\_\+point} (PointT const \&pt)
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_aba22592dfe7516160aea8cb6b6b175a5}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_aba22592dfe7516160aea8cb6b6b175a5} 
+void {\bfseries set\+\_\+point\+\_\+id} (int id)
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_ad037a008270dd8256a44d8042366a35a}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_ad037a008270dd8256a44d8042366a35a} 
+void {\bfseries set\+\_\+cluster\+\_\+id} (int id)
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_abf679d372fae6a9a876e21b48d2b8aea}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_abf679d372fae6a9a876e21b48d2b8aea} 
+void {\bfseries set\+\_\+visited} (bool v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a1d029799c4df5782d526da775262e256}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a1d029799c4df5782d526da775262e256} 
+PointT {\bfseries Point}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_aeec5d5ad3e6ce49da80afe833c5a7f48}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_aeec5d5ad3e6ce49da80afe833c5a7f48} 
+int {\bfseries Point\+Id}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a7ea9de913c9cabb84d20171851e9fa95}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_a7ea9de913c9cabb84d20171851e9fa95} 
+int {\bfseries Cluster\+Id}
+\item 
+\Hypertarget{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_ad67170df57a3840bfc51141350eded7f}\label{classtracktable_1_1analysis_1_1detail_1_1_indexed_point_ad67170df57a3840bfc51141350eded7f} 
+bool {\bfseries Visited}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class PointT$>$\newline
+class tracktable\+::analysis\+::detail\+::\+Indexed\+Point$<$ Point\+T $>$}
+Point plus index and cluster ID. 
+
+We keep our own list of points internally in DBSCAN along with an index into the original list, a cluster ID (if set) and a flag to use while building clusters. This class encapsulates that function.
+
+It would take less memory to use pointers into the original list of points but at the cost of lots more places to trip ourselves up with layers of indirection. In the interest of working code, we\textquotesingle{}ll take the simpler-\/and-\/more-\/memory approach for now.
+
+Note that there is no particular intelligence in this class. It\textquotesingle{}s just a container. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Analysis/detail/dbscan\+\_\+points.\+h\end{DoxyCompactItemize}

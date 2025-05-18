@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_parse_error" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::ParseError</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::runtime_error</basecompoundref>
+    <derivedcompoundref refid="classtracktable_1_1_empty_coordinate_error" prot="public" virt="non-virtual">tracktable::EmptyCoordinateError</derivedcompoundref>
+    <derivedcompoundref refid="classtracktable_1_1_empty_field_error" prot="public" virt="non-virtual">tracktable::EmptyFieldError</derivedcompoundref>
+    <derivedcompoundref refid="classtracktable_1_1_lexical_cast_error" prot="public" virt="non-virtual">tracktable::LexicalCastError</derivedcompoundref>
+    <includes refid="_parse_exceptions_8h" local="no">ParseExceptions.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_parse_error_1a1dec1250728a70f7eee5f6eb6e5b388b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::ParseError::ParseError</definition>
+        <argsstring>()</argsstring>
+        <name>ParseError</name>
+        <qualifiedname>tracktable::ParseError::ParseError</qualifiedname>
+        <briefdescription>
+<para>Instantiate an unspecified parse exception. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="47" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_parse_error_1a185edc5f368ad836229e13bf754c4cc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::ParseError::ParseError</definition>
+        <argsstring>(std::string const &amp;err)</argsstring>
+        <name>ParseError</name>
+        <qualifiedname>tracktable::ParseError::ParseError</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate an parse exception for a give error string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String indicating the type of exception </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="55" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_parse_error_1a2221b72cfb33b0506eca2b6923d77430" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::ParseError::ParseError</definition>
+        <argsstring>(const char *err)</argsstring>
+        <name>ParseError</name>
+        <qualifiedname>tracktable::ParseError::ParseError</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate an parse exception for a give error string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Char array indicating the type of exception </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="63" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="63" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple class to encapsulate IO parsing errors. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="3">
+        <label>tracktable::EmptyCoordinateError</label>
+        <link refid="classtracktable_1_1_empty_coordinate_error"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tracktable::EmptyFieldError</label>
+        <link refid="classtracktable_1_1_empty_field_error"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tracktable::LexicalCastError</label>
+        <link refid="classtracktable_1_1_lexical_cast_error"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::ParseError</label>
+        <link refid="classtracktable_1_1_parse_error"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="1">
+        <label>tracktable::ParseError</label>
+        <link refid="classtracktable_1_1_parse_error"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="42" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="43" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_parse_error_1a1dec1250728a70f7eee5f6eb6e5b388b" prot="public" virt="non-virtual"><scope>tracktable::ParseError</scope><name>ParseError</name></member>
+      <member refid="classtracktable_1_1_parse_error_1a185edc5f368ad836229e13bf754c4cc8" prot="public" virt="non-virtual"><scope>tracktable::ParseError</scope><name>ParseError</name></member>
+      <member refid="classtracktable_1_1_parse_error_1a2221b72cfb33b0506eca2b6923d77430" prot="public" virt="non-virtual"><scope>tracktable::ParseError</scope><name>ParseError</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

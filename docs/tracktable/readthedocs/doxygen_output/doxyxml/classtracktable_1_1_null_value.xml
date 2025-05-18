@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_null_value" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::NullValue</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_null_value_1a729ea538cb83cd1763ca607eb6af4e30" prot="public" static="no" mutable="no">
+        <type>PropertyUnderlyingType</type>
+        <definition>PropertyUnderlyingType tracktable::NullValue::ExpectedType</definition>
+        <argsstring></argsstring>
+        <name>ExpectedType</name>
+        <qualifiedname>tracktable::NullValue::ExpectedType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="76" column="26" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_null_value_1ad93cad93ac1d3735ee38a17b9eb80736" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::NullValue::NullValue</definition>
+        <argsstring>()</argsstring>
+        <name>NullValue</name>
+        <qualifiedname>tracktable::NullValue::NullValue</qualifiedname>
+        <briefdescription>
+<para>Instantiate <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> using a default type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="80" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_null_value_1a804937bbe663557c97feded9e3c638ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::NullValue::NullValue</definition>
+        <argsstring>(PropertyUnderlyingType my_type)</argsstring>
+        <name>NullValue</name>
+        <qualifiedname>tracktable::NullValue::NullValue</qualifiedname>
+        <param>
+          <type>PropertyUnderlyingType</type>
+          <declname>my_type</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> with a specified value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">my_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set as null value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="88" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="88" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_null_value_1a8ba49edd177a8ba1e95d785c97af885c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::NullValue::NullValue</definition>
+        <argsstring>(NullValue const &amp;other)</argsstring>
+        <name>NullValue</name>
+        <qualifiedname>tracktable::NullValue::NullValue</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="96" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_null_value_1a1430cff1cda7e76d23232da1e89fdd60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::NullValue::operator=</definition>
+        <argsstring>(NullValue const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::NullValue::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="105" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_null_value_1a8d7eaeae4ae2d181e5f629dfddcd7f0f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::NullValue::operator==</definition>
+        <argsstring>(NullValue const &amp;) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::NullValue::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+<para>Check whether one <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> is equal to another by comparing the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two items are equal if all of their properties are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="117" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="117" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_null_value_1ac152be6abf3bcc2552161767339764b9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::NullValue::operator!=</definition>
+        <argsstring>(NullValue const &amp;) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::NullValue::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+<para>Check whether two <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="127" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="127" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_null_value_1ad20274db6801ea71472d2532d5f7e0c8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::NullValue::operator&lt;</definition>
+        <argsstring>(NullValue const &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>tracktable::NullValue::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether <ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> is less than another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_null_value" kindref="compound">NullValue</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="137" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="137" bodyend="140"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_null_value_1a4c14b3d1ad0f2192e9518f3f8f5f4b93" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Archive</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::NullValue::serialize</definition>
+        <argsstring>(Archive &amp;ar, const unsigned int)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>tracktable::NullValue::serialize</qualifiedname>
+        <param>
+          <type>Archive &amp;</type>
+          <declname>ar</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+        </param>
+        <briefdescription>
+<para>Serialize the coordinates to an archive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Archive to serialize to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Version of the archive </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="149" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="149" bodyend="152"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" line="71" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyValue.h" bodystart="72" bodyend="154"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_null_value_1a729ea538cb83cd1763ca607eb6af4e30" prot="public" virt="non-virtual"><scope>tracktable::NullValue</scope><name>ExpectedType</name></member>
+      <member refid="classtracktable_1_1_null_value_1ad93cad93ac1d3735ee38a17b9eb80736" prot="public" virt="non-virtual"><scope>tracktable::NullValue</scope><name>NullValue</name></member>
+      <member refid="classtracktable_1_1_null_value_1a804937bbe663557c97feded9e3c638ad" prot="public" virt="non-virtual"><scope>tracktable::NullValue</scope><name>NullValue</name></member>
+      <member refid="classtracktable_1_1_null_value_1a8ba49edd177a8ba1e95d785c97af885c" prot="public" virt="non-virtual"><scope>tracktable::NullValue</scope><name>NullValue</name></member>
+      <member refid="classtracktable_1_1_null_value_1ac152be6abf3bcc2552161767339764b9" prot="public" virt="non-virtual"><scope>tracktable::NullValue</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_null_value_1ad20274db6801ea71472d2532d5f7e0c8" prot="public" virt="non-virtual"><scope>tracktable::NullValue</scope><name>operator&lt;</name></member>
+      <member refid="classtracktable_1_1_null_value_1a1430cff1cda7e76d23232da1e89fdd60" prot="public" virt="non-virtual"><scope>tracktable::NullValue</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_null_value_1a8d7eaeae4ae2d181e5f629dfddcd7f0f" prot="public" virt="non-virtual"><scope>tracktable::NullValue</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_null_value_1a4c14b3d1ad0f2192e9518f3f8f5f4b93" prot="private" virt="non-virtual"><scope>tracktable::NullValue</scope><name>serialize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

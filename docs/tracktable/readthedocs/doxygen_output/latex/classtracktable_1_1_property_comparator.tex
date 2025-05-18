@@ -1,0 +1,59 @@
+\doxysection{tracktable\+::Property\+Comparator Class Reference}
+\hypertarget{classtracktable_1_1_property_comparator}{}\label{classtracktable_1_1_property_comparator}\index{tracktable::PropertyComparator@{tracktable::PropertyComparator}}
+
+
+Implements a static binary visitor for comparing two property values.  
+
+
+Inheritance diagram for tracktable\+::Property\+Comparator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtracktable_1_1_property_comparator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_property_comparator_af710d84927fc9c2fdd96efe7053f5903}\label{classtracktable_1_1_property_comparator_af710d84927fc9c2fdd96efe7053f5903} 
+{\bfseries Property\+Comparator} (double difference=1.\+0, bool is\+\_\+epsilon\+\_\+difference=true)
+\item 
+\Hypertarget{classtracktable_1_1_property_comparator_a482a36b224a200bb0b9b1701c19c0a96}\label{classtracktable_1_1_property_comparator_a482a36b224a200bb0b9b1701c19c0a96} 
+int {\bfseries operator()} (double v1, double v2) const
+\item 
+\Hypertarget{classtracktable_1_1_property_comparator_affeb9fe6bc2fb64291ad87edc7264c8f}\label{classtracktable_1_1_property_comparator_affeb9fe6bc2fb64291ad87edc7264c8f} 
+int {\bfseries operator()} (const \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} \&v1, const \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}} \&v2) const
+\item 
+\Hypertarget{classtracktable_1_1_property_comparator_a0cf2ed03e98210b101d3a69b9ebd6806}\label{classtracktable_1_1_property_comparator_a0cf2ed03e98210b101d3a69b9ebd6806} 
+int {\bfseries operator()} (const std\+::string \&v1, const std\+::string \&v2) const
+\item 
+\Hypertarget{classtracktable_1_1_property_comparator_a606b5396b244ead3808ed645f8bca85b}\label{classtracktable_1_1_property_comparator_a606b5396b244ead3808ed645f8bca85b} 
+int {\bfseries operator()} (const \mbox{\hyperlink{classtracktable_1_1_null_value}{Null\+Value}} \&, const \mbox{\hyperlink{classtracktable_1_1_null_value}{Null\+Value}} \&) const
+\item 
+\Hypertarget{classtracktable_1_1_property_comparator_a757a9c17a9a0c1a92bdb84c4be33e60c}\label{classtracktable_1_1_property_comparator_a757a9c17a9a0c1a92bdb84c4be33e60c} 
+{\footnotesize template$<$typename T1, typename T2$>$ }\\int {\bfseries operator()} (const T1 \&v1, const T2 \&v2) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_property_comparator_add230645ea6165204797ef77335876f0}\label{classtracktable_1_1_property_comparator_add230645ea6165204797ef77335876f0} 
+double {\bfseries difference}
+\item 
+\Hypertarget{classtracktable_1_1_property_comparator_a9bad1aed4a427898ee35f38f63c64760}\label{classtracktable_1_1_property_comparator_a9bad1aed4a427898ee35f38f63c64760} 
+bool {\bfseries is\+\_\+epsilon\+\_\+difference}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a static binary visitor for comparing two property values. 
+
+This class imposes a total ordering on all property comparisons.
+
+Logical comparisons are only performed between variants of the same type, although it would be possible to extend this class with comparisons between Timestamps and strings by supplying the appropriate overloaded operator().
+
+For each of the logical comparisons an overload of the binary operator() is supplied. For all other forms without a specific overload the template form will be selected that will use enums of the underlying types.
+
+Some local storage is necessary to allow for customization of the epsilon closeness or actual distance between two doubles. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Property\+Value.\+cpp\end{DoxyCompactItemize}

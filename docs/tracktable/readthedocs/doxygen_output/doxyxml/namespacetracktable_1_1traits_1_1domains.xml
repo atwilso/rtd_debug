@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1traits_1_1domains" kind="namespace" language="C++">
+    <compoundname>tracktable::traits::domains</compoundname>
+    <innerclass refid="structtracktable_1_1traits_1_1domains_1_1generic" prot="public">tracktable::traits::domains::generic</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/Domain.h" line="42" column="5"/>
+  </compounddef>
+</doxygen>

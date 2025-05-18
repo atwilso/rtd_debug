@@ -1,0 +1,142 @@
+\doxysection{Convex\+Hull.\+h}
+\hypertarget{_convex_hull_8h_source}{}\label{_convex_hull_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/detail/algorithm\_signatures/ConvexHull.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/detail/algorithm\_signatures/ConvexHull.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ ConvexHull\ -\/\ Signatures\ for\ algorithms\ that\ use\ the\ convex\ hull.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ We\ do\ not\ yet\ provide\ a\ way\ to\ get\ the\ convex\ hull\ itself.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_core\_detail\_algorithm\_signatures\_ConvexHull\_h}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_core\_detail\_algorithm\_signatures\_ConvexHull\_h}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <boost/mpl/assert.hpp>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/trait\_signatures/Dimension.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <boost/geometry/core/cs.hpp>}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ coord\_sys,\ std::\textcolor{keywordtype}{size\_t}\ dimension>}
+\DoxyCodeLine{00047\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1compute__convex__hull__aspect__ratio}{compute\_convex\_hull\_aspect\_ratio}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{sizeof}(coord\_sys)==0,}
+\DoxyCodeLine{00051\ \ \ \ \ CONVEX\_HULL\_ASPECT\_RATIO\_NOT\_IMPLEMENTED\_FOR\_THIS\_COORDINATE\_SYSTEM,}
+\DoxyCodeLine{00052\ \ \ \ \ (types<coord\_sys>)}
+\DoxyCodeLine{00053\ \ \ \ \ );}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ coord\_sys,\ std::\textcolor{keywordtype}{size\_t}\ dimension>}
+\DoxyCodeLine{00057\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1compute__convex__hull__perimeter}{compute\_convex\_hull\_perimeter}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{sizeof}(coord\_sys)==0,}
+\DoxyCodeLine{00061\ \ \ \ \ CONVEX\_HULL\_PERIMETER\_NOT\_IMPLEMENTED\_FOR\_THIS\_COORDINATE\_SYSTEM,}
+\DoxyCodeLine{00062\ \ \ \ \ (types<coord\_sys>)}
+\DoxyCodeLine{00063\ \ \ \ \ );}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ coord\_sys,\ std::\textcolor{keywordtype}{size\_t}\ dimension>}
+\DoxyCodeLine{00067\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1compute__convex__hull__area}{compute\_convex\_hull\_area}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{sizeof}(coord\_sys)==0,}
+\DoxyCodeLine{00071\ \ \ \ \ CONVEX\_HULL\_AREA\_NOT\_IMPLEMENTED\_FOR\_THIS\_COORDINATE\_SYSTEM,}
+\DoxyCodeLine{00072\ \ \ \ \ (types<coord\_sys>)}
+\DoxyCodeLine{00073\ \ \ \ \ );}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ coord\_sys,\ std::\textcolor{keywordtype}{size\_t}\ dimension>}
+\DoxyCodeLine{00077\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1compute__convex__hull__centroid}{compute\_convex\_hull\_centroid}}}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{sizeof}(coord\_sys)==0,}
+\DoxyCodeLine{00081\ \ \ \ \ CONVEX\_HULL\_CENTROID\_NOT\_IMPLEMENTED\_FOR\_THIS\_COORDINATE\_SYSTEM,}
+\DoxyCodeLine{00082\ \ \ \ \ (types<coord\_sys>)}
+\DoxyCodeLine{00083\ \ \ \ \ );}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \}\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable::algorithms}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ Now\ we\ include\ the\ driver\ functions\ that\ let\ us\ use\ the}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ implementations\ in\ functions\ instead\ of\ instantiating\ them\ manuall.}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TrajectoryT>}
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{double}\ convex\_hull\_aspect\_ratio(TrajectoryT\ \textcolor{keyword}{const}\&\ path)}
+\DoxyCodeLine{00095\ \{}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ TrajectoryT::value\_type\ point\_type;}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ boost::geometry::coordinate\_system<point\_type>::type\ coord\_system\_type;}
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{const}\ std::size\_t\ dimension(tracktable::traits::dimension<point\_type>::value);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \textcolor{keywordflow}{return}\ algorithms::compute\_convex\_hull\_aspect\_ratio<coord\_system\_type,\ dimension>::apply(path.begin(),\ path.end());}
+\DoxyCodeLine{00101\ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TrajectoryT>}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{double}\ convex\_hull\_perimeter(TrajectoryT\ \textcolor{keyword}{const}\&\ path)}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ TrajectoryT::value\_type\ point\_type;}
+\DoxyCodeLine{00107\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ boost::geometry::coordinate\_system<point\_type>::type\ coord\_system\_type;}
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{const}\ std::size\_t\ dimension(tracktable::traits::dimension<point\_type>::value);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structtracktable_1_1algorithms_1_1compute__convex__hull__perimeter}{algorithms::compute\_convex\_hull\_perimeter<coord\_system\_type,\ dimension>::apply}}(path.begin(),\ path.end());}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TrajectoryT>}
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{double}\ convex\_hull\_area(TrajectoryT\ \textcolor{keyword}{const}\&\ path)}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ TrajectoryT::value\_type\ point\_type;}
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ boost::geometry::coordinate\_system<point\_type>::type\ coord\_system\_type;}
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{const}\ std::size\_t\ dimension(tracktable::traits::dimension<point\_type>::value);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structtracktable_1_1algorithms_1_1compute__convex__hull__area}{algorithms::compute\_convex\_hull\_area<coord\_system\_type,\ dimension>::apply}}(path.begin(),\ path.end());}
+\DoxyCodeLine{00121\ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TrajectoryT>}
+\DoxyCodeLine{00124\ \textcolor{keyword}{typename}\ TrajectoryT::value\_type\ convex\_hull\_centroid(TrajectoryT\ \textcolor{keyword}{const}\&\ path)}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ TrajectoryT::value\_type\ point\_type;}
+\DoxyCodeLine{00127\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ boost::geometry::coordinate\_system<point\_type>::type\ coord\_system\_type;}
+\DoxyCodeLine{00128\ \ \ \textcolor{keyword}{const}\ std::size\_t\ dimension(tracktable::traits::dimension<point\_type>::value);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structtracktable_1_1algorithms_1_1compute__convex__hull__centroid}{algorithms::compute\_convex\_hull\_centroid<coord\_system\_type,\ dimension>::apply}}(path.begin(),\ path.end());}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

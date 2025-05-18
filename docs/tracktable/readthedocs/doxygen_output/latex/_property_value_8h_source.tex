@@ -1,0 +1,243 @@
+\doxysection{Property\+Value.\+h}
+\hypertarget{_property_value_8h_source}{}\label{_property_value_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PropertyValue.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PropertyValue.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ PropertyValueT\ -\/\ variant\ type\ for\ properties\ we\ attach\ to}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ points/trajectories}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ We\ allow\ the\ user\ to\ specify\ named\ properties\ on\ points\ and}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ trajectories\ that\ take\ one\ of\ four\ types:\ null,\ double-\/precision}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ floating\ point,\ string,\ and\ timestamp.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ NOTE:\ The\ name\ of\ this\ type\ will\ change\ from}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ tracktable::PropertyValueT\ to\ tracktable::PropertyValue\ in\ version}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ 1.2.}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_PropertyValue\_h}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_PropertyValue\_h}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCoreWindowsHeader.h>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Timestamp.h>}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Interpolate.h>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <tracktable/Core/detail/algorithm\_signatures/Extrapolate.h>}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <boost/variant.hpp>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <boost/serialization/variant.hpp>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <boost/math/special\_functions/relative\_difference.hpp>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00063\ \ \ TYPE\_UNKNOWN\ \ \ =\ 0,}
+\DoxyCodeLine{00064\ \ \ TYPE\_REAL\ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00065\ \ \ TYPE\_STRING\ \ \ \ =\ 2,}
+\DoxyCodeLine{00066\ \ \ TYPE\_TIMESTAMP\ =\ 3,}
+\DoxyCodeLine{00067\ \ \ TYPE\_NULL\ \ \ \ \ \ =\ 4}
+\DoxyCodeLine{00068\ \}\ PropertyUnderlyingType;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_null_value_ad93cad93ac1d3735ee38a17b9eb80736}{NullValue}}}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }boost::serialization::access;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ PropertyUnderlyingType\ ExpectedType;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classtracktable_1_1_null_value_ad93cad93ac1d3735ee38a17b9eb80736}{NullValue}}()}
+\DoxyCodeLine{00081\ \ \ \ \ :\ ExpectedType(TYPE\_UNKNOWN)}
+\DoxyCodeLine{00082\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{classtracktable_1_1_null_value_a804937bbe663557c97feded9e3c638ad}{NullValue}}(PropertyUnderlyingType\ my\_type)}
+\DoxyCodeLine{00089\ \ \ \ \ :\ ExpectedType(my\_type)}
+\DoxyCodeLine{00090\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \ \ \mbox{\hyperlink{classtracktable_1_1_null_value_a8ba49edd177a8ba1e95d785c97af885c}{NullValue}}(\mbox{\hyperlink{classtracktable_1_1_null_value_ad93cad93ac1d3735ee38a17b9eb80736}{NullValue}}\ \textcolor{keyword}{const}\&\ other)\ :}
+\DoxyCodeLine{00097\ \ \ \ \ ExpectedType(other.ExpectedType)}
+\DoxyCodeLine{00098\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_null_value_a1430cff1cda7e76d23232da1e89fdd60}{operator=}}(\mbox{\hyperlink{classtracktable_1_1_null_value_ad93cad93ac1d3735ee38a17b9eb80736}{NullValue}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ this-\/>ExpectedType\ =\ other.ExpectedType;}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_null_value_a8d7eaeae4ae2d181e5f629dfddcd7f0f}{operator==}}(\mbox{\hyperlink{classtracktable_1_1_null_value_ad93cad93ac1d3735ee38a17b9eb80736}{NullValue}}\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*other*/})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_null_value_ac152be6abf3bcc2552161767339764b9}{operator!=}}(\mbox{\hyperlink{classtracktable_1_1_null_value_ad93cad93ac1d3735ee38a17b9eb80736}{NullValue}}\ \textcolor{keyword}{const}\&\ \textcolor{comment}{/*other*/})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00128\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_null_value_ad20274db6801ea71472d2532d5f7e0c8}{operator<}}(\mbox{\hyperlink{classtracktable_1_1_null_value_ad93cad93ac1d3735ee38a17b9eb80736}{NullValue}}\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00138\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>ExpectedType\ <\ other.ExpectedType);}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00148\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Archive>}
+\DoxyCodeLine{00149\ \ \ \textcolor{keywordtype}{void}\ serialize(Archive\&\ ar,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00150\ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ ar\ \&\ BOOST\_SERIALIZATION\_NVP(this-\/>ExpectedType);}
+\DoxyCodeLine{00152\ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ TRACKTABLE\_CORE\_EXPORT\ std::ostream\&\ \mbox{\hyperlink{namespacetracktable_adede362c73ae0a3314510cfd9a748fea}{operator<<}}(std::ostream\&\ out,\ \mbox{\hyperlink{classtracktable_1_1_null_value}{NullValue}}\ \textcolor{keyword}{const}\&\ value);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{comment}{//\ typedef\ boost::variant<NullValue,\ int64\_t,\ double,\ string\_type,\ Timestamp>\ PropertyValueT;}}
+\DoxyCodeLine{00181\ \ \textcolor{keyword}{typedef}\ boost::variant<}
+\DoxyCodeLine{00182\ \ \ \ \mbox{\hyperlink{classtracktable_1_1_null_value}{NullValue}},}
+\DoxyCodeLine{00183\ \ \ \ double,}
+\DoxyCodeLine{00184\ \ \ \ string\_type,}
+\DoxyCodeLine{00185\ \ \ \ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}}
+\DoxyCodeLine{00186\ \ \ \ >}
+\DoxyCodeLine{00187\ \ \ \ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}};}
+\DoxyCodeLine{00188\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ PropertyValueT;}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ make\_null(PropertyUnderlyingType\ null\_type)}
+\DoxyCodeLine{00191\ \{}
+\DoxyCodeLine{00192\ \ \ \mbox{\hyperlink{classtracktable_1_1_null_value}{NullValue}}\ my\_value(null\_type);}
+\DoxyCodeLine{00193\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}(my\_value);}
+\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00222\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacetracktable_af6306ca41f5dd6a2eaf56b3f1cbdd2c6}{compare}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\&\ value1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\&\ value2,\ \textcolor{keywordtype}{double}\ difference=1.0,\ \textcolor{keywordtype}{bool}\ is\_epsilon\_difference=\textcolor{keyword}{true});}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacetracktable_aa7ddc3390fd5114ded0099f356dc2386}{is\_property\_null}}(\mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ \textcolor{keyword}{const}\&\ value);}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ TRACKTABLE\_CORE\_EXPORT\ PropertyUnderlyingType\ \mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}(\mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ \textcolor{keyword}{const}\&\ value);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ text\_type>}
+\DoxyCodeLine{00245\ PropertyUnderlyingType\ \mbox{\hyperlink{namespacetracktable_a56356945c2bca38b921dd7ef7a75f538}{string\_to\_property\_type}}(text\_type\ \textcolor{keyword}{const}\&\ input)}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \ \ \textcolor{keywordtype}{int}\ i\_property\_type\ =\ boost::lexical\_cast<int>(input);}
+\DoxyCodeLine{00248\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}PropertyUnderlyingType\textcolor{keyword}{>}(i\_property\_type);}
+\DoxyCodeLine{00249\ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ TRACKTABLE\_CORE\_EXPORT\ tracktable::string\_type\ \mbox{\hyperlink{namespacetracktable_a593c00aed52d24a976d061a5abb5b18e}{property\_type\_as\_string}}(\mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{tracktable::PropertyValue}}\ \textcolor{keyword}{const}\&\ p);}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ source\_type>}
+\DoxyCodeLine{00262\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ \mbox{\hyperlink{namespacetracktable_ab76139cfda2672d0f8ede94fce8e5ba8}{to\_property\_variant}}(source\_type\ \textcolor{keyword}{const}\&\ source,\ PropertyUnderlyingType\ thing\_type)}
+\DoxyCodeLine{00263\ \{}
+\DoxyCodeLine{00264\ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00265\ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{switch}\ (thing\_type)}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ TYPE\_STRING:}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}(boost::lexical\_cast<string\_type>(source));}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ TYPE\_REAL:}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}(boost::lexical\_cast<double>(source));}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ TYPE\_TIMESTAMP:}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}(\mbox{\hyperlink{namespacetracktable_a7c9e7e2fd894f0f01e980ad24ba558f2}{time\_from\_string}}(boost::lexical\_cast<string\_type>(source)));}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ TYPE\_NULL:}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ TYPE\_UNKNOWN:}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}();}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \textcolor{keywordflow}{catch}\ (boost::bad\_lexical\_cast\&)}
+\DoxyCodeLine{00280\ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{return}\ make\_null(thing\_type);}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00283\ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \}\ \textcolor{comment}{//\ namespace\ tracktable}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ interpolate\_property(\mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ \textcolor{keyword}{const}\&\ left,}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ \textcolor{keyword}{const}\&\ right,}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00292\ TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ extrapolate\_property(\mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ \textcolor{keyword}{const}\&\ left,}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_aa8b143903829a3cf16be557ebc3ea855}{PropertyValue}}\ \textcolor{keyword}{const}\&\ right,}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00295\ \}\ \}\ \textcolor{comment}{//\ namespace\ tracktable::algorithms}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \textcolor{keyword}{namespace\ }boost\ \{\ \textcolor{keyword}{namespace\ }serialization\ \{}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Archive>}
+\DoxyCodeLine{00301\ \textcolor{keywordtype}{void}\ save(Archive\&\ ar,\ tracktable::PropertyUnderlyingType\ \textcolor{keyword}{const}\&\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00302\ \{}
+\DoxyCodeLine{00303\ \ \ ar\ \&\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(value);}
+\DoxyCodeLine{00304\ \}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Archive>}
+\DoxyCodeLine{00307\ \textcolor{keywordtype}{void}\ load(Archive\&\ ar,\ tracktable::PropertyUnderlyingType\&\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*version*/})}
+\DoxyCodeLine{00308\ \{}
+\DoxyCodeLine{00309\ \ \ \textcolor{keywordtype}{int}\ value\_as\_int;}
+\DoxyCodeLine{00310\ \ \ ar\ \&\ value\_as\_int;}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \textcolor{keywordflow}{switch}\ (value\_as\_int)}
+\DoxyCodeLine{00313\ \ \ \ \ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ \{}
+\DoxyCodeLine{00315\ \ \ \ \ value\ =\ tracktable::TYPE\_UNKNOWN;}
+\DoxyCodeLine{00316\ \ \ \ \ \};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \{}
+\DoxyCodeLine{00318\ \ \ \ \ value\ =\ tracktable::TYPE\_REAL;}
+\DoxyCodeLine{00319\ \ \ \ \ \};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \{}
+\DoxyCodeLine{00321\ \ \ \ \ value\ =\ tracktable::TYPE\_STRING;}
+\DoxyCodeLine{00322\ \ \ \ \ \};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ \{}
+\DoxyCodeLine{00324\ \ \ \ \ value\ =\ tracktable::TYPE\_TIMESTAMP;}
+\DoxyCodeLine{00325\ \ \ \ \ \};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordflow}{case}\ 5:\ \{}
+\DoxyCodeLine{00327\ \ \ \ \ value\ =\ tracktable::TYPE\_NULL;}
+\DoxyCodeLine{00328\ \ \ \ \ \};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \}\ \}\ \textcolor{comment}{//\ namespace\ boost::serialization}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ BOOST\_SERIALIZATION\_SPLIT\_FREE(tracktable::PropertyUnderlyingType)}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

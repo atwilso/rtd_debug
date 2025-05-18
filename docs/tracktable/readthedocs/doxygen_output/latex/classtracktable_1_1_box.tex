@@ -1,0 +1,69 @@
+\doxysection{tracktable\+::Box\texorpdfstring{$<$}{<} point\+\_\+type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_box}{}\label{classtracktable_1_1_box}\index{tracktable::Box$<$ point\_type $>$@{tracktable::Box$<$ point\_type $>$}}
+
+
+Axis-\/aligned bounding box.  
+
+
+
+
+{\ttfamily \#include $<$Box.\+h$>$}
+
+Inheritance diagram for tracktable\+::Box\texorpdfstring{$<$}{<} point\+\_\+type \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtracktable_1_1_box}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_box_a1fdff4e6c16be0a741c32d140aa526f6}\label{classtracktable_1_1_box_a1fdff4e6c16be0a741c32d140aa526f6} 
+typedef boost\+::geometry\+::model\+::box$<$ point\+\_\+type $>$ {\bfseries Superclass}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtracktable_1_1_box_aed1d2ce4879d2f7b912943bdf1684b07}{Box}} (point\+\_\+type const \&low\+\_\+corner, point\+\_\+type const \&high\+\_\+corner)
+\begin{DoxyCompactList}\small\item\em Construct the bounding box using {\ttfamily boost\+::geometry\+::model\+::box} \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_box_ae2f14f3ad806fe3e25f01484cfda30c7}\label{classtracktable_1_1_box_ae2f14f3ad806fe3e25f01484cfda30c7} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Box} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename point\+\_\+type$>$\newline
+class tracktable\+::\+Box$<$ point\+\_\+type $>$}
+Axis-\/aligned bounding box. 
+
+This class is a thin wrapper around {\ttfamily boost\+::geometry\+::model\+::box} that holds two points representing opposite corners.
+
+\begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t instantiate this class directly. Instead, use {\ttfamily "{}tracktable\+::domain\+::$<$name$>$\+::box\+\_\+type"{}} so that you get the correct distance functions. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_box_aed1d2ce4879d2f7b912943bdf1684b07}\index{tracktable::Box$<$ point\_type $>$@{tracktable::Box$<$ point\_type $>$}!Box@{Box}}
+\index{Box@{Box}!tracktable::Box$<$ point\_type $>$@{tracktable::Box$<$ point\_type $>$}}
+\doxysubsubsection{\texorpdfstring{Box()}{Box()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_box_aed1d2ce4879d2f7b912943bdf1684b07} 
+template$<$typename point\+\_\+type$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_box}{tracktable\+::\+Box}}$<$ point\+\_\+type $>$\+::\+Box (\begin{DoxyParamCaption}\item[{point\+\_\+type const \&}]{low\+\_\+corner}{, }\item[{point\+\_\+type const \&}]{high\+\_\+corner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct the bounding box using {\ttfamily boost\+::geometry\+::model\+::box} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em low\+\_\+corner} & Minimum corner to use for creation of the box \\
+\hline
+\mbox{\texttt{ in}}  & {\em high\+\_\+corner} & Maximum corner to use for creation of the box \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Core/Box.\+h\end{DoxyCompactItemize}

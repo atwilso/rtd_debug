@@ -1,0 +1,1245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_trajectory_point" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::TrajectoryPoint</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BasePointT</basecompoundref>
+    <includes refid="_trajectory_point_8h" local="no">TrajectoryPoint.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class BasePointT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_trajectory_point_1a3d309edcdbe7b5cd92d15b0e3850465b" prot="public" static="no">
+        <type>BasePointT</type>
+        <definition>typedef BasePointT tracktable::TrajectoryPoint&lt; BasePointT &gt;::Superclass</definition>
+        <argsstring></argsstring>
+        <name>Superclass</name>
+        <qualifiedname>tracktable::TrajectoryPoint::Superclass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="102" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::TrajectoryPoint&lt; BasePointT &gt;::CurrentLength</definition>
+        <argsstring></argsstring>
+        <name>CurrentLength</name>
+        <qualifiedname>tracktable::TrajectoryPoint::CurrentLength</qualifiedname>
+        <briefdescription>
+<para>Length of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="478" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_point_1aeedbb5b51924c0b6989db6cb180a02ab" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::TrajectoryPoint&lt; BasePointT &gt;::CurrentLengthFraction</definition>
+        <argsstring></argsstring>
+        <name>CurrentLengthFraction</name>
+        <qualifiedname>tracktable::TrajectoryPoint::CurrentLengthFraction</qualifiedname>
+        <briefdescription>
+<para>Length fraction of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="480" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="480" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_point_1a5cbe94298c39d457a27e5473e4d07d6b" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::TrajectoryPoint&lt; BasePointT &gt;::CurrentTimeFraction</definition>
+        <argsstring></argsstring>
+        <name>CurrentTimeFraction</name>
+        <qualifiedname>tracktable::TrajectoryPoint::CurrentTimeFraction</qualifiedname>
+        <briefdescription>
+<para>Duration fraction of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="482" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="482" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string tracktable::TrajectoryPoint&lt; BasePointT &gt;::ObjectId</definition>
+        <argsstring></argsstring>
+        <name>ObjectId</name>
+        <qualifiedname>tracktable::TrajectoryPoint::ObjectId</qualifiedname>
+        <briefdescription>
+<para>Storage for a point&apos;s object ID. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="484" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="484" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref></type>
+        <definition>PropertyMap tracktable::TrajectoryPoint&lt; BasePointT &gt;::Properties</definition>
+        <argsstring></argsstring>
+        <name>Properties</name>
+        <qualifiedname>tracktable::TrajectoryPoint::Properties</qualifiedname>
+        <briefdescription>
+<para>Storage for a point&apos;s named properties. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="486" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="486" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></type>
+        <definition>Timestamp tracktable::TrajectoryPoint&lt; BasePointT &gt;::UpdateTime</definition>
+        <argsstring></argsstring>
+        <name>UpdateTime</name>
+        <qualifiedname>tracktable::TrajectoryPoint::UpdateTime</qualifiedname>
+        <briefdescription>
+<para>Storage for a point&apos;s timestamp. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="488" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="488" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryPoint&lt; BasePointT &gt;::TrajectoryPoint</definition>
+        <argsstring>()</argsstring>
+        <name>TrajectoryPoint</name>
+        <qualifiedname>tracktable::TrajectoryPoint::TrajectoryPoint</qualifiedname>
+        <briefdescription>
+<para>Instantiate an uninitialized point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="106" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="106" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a18f9b530bb921e646eac0699bd624d12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::TrajectoryPoint&lt; BasePointT &gt;::~TrajectoryPoint</definition>
+        <argsstring>()</argsstring>
+        <name>~TrajectoryPoint</name>
+        <qualifiedname>tracktable::TrajectoryPoint::~TrajectoryPoint</qualifiedname>
+        <briefdescription>
+<para>Destructor for a trajectory point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="115" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="115" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1acd0a4b6aa3d2d4624f82d54c753eef1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryPoint&lt; BasePointT &gt;::TrajectoryPoint</definition>
+        <argsstring>(TrajectoryPoint const &amp;other)</argsstring>
+        <name>TrajectoryPoint</name>
+        <qualifiedname>tracktable::TrajectoryPoint::TrajectoryPoint</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="123" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="123" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a1af139c66f2b92233123a382a4bdeca6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryPoint&lt; BasePointT &gt;::TrajectoryPoint</definition>
+        <argsstring>(Superclass const &amp;other)</argsstring>
+        <name>TrajectoryPoint</name>
+        <qualifiedname>tracktable::TrajectoryPoint::TrajectoryPoint</qualifiedname>
+        <param>
+          <type>Superclass const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> with a base point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Basepoint </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="136" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a1ba3d96ae654750b1254eeb1e9b8131e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::TrajectoryPoint&lt; BasePointT &gt;::TrajectoryPoint</definition>
+        <argsstring>(const double *coords)</argsstring>
+        <name>TrajectoryPoint</name>
+        <qualifiedname>tracktable::TrajectoryPoint::TrajectoryPoint</qualifiedname>
+        <param>
+          <type>const double *</type>
+          <declname>coords</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> using specified coordniates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">coords</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordinates to set in point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="145" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="145" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1ac2e2ca3f1c11138a5ec2594d2a7efaca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref></type>
+        <definition>TrajectoryPoint tracktable::TrajectoryPoint&lt; BasePointT &gt;::operator=</definition>
+        <argsstring>(TrajectoryPoint const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::TrajectoryPoint::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="154" column="19" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="154" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a6096611658ea18df80b5454ac0388d0c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryPoint&lt; BasePointT &gt;::operator==</definition>
+        <argsstring>(TrajectoryPoint const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::TrajectoryPoint::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check two points for equality. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two TrajectoryPoints are equal if and only if they have:<itemizedlist>
+<listitem><para>the same coordinates (base point)</para>
+</listitem><listitem><para>the same object ID</para>
+</listitem><listitem><para>the same timestamp</para>
+</listitem><listitem><para>the same user-defined properties</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="175" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="175" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a22ddaffccd5df1b2e486686ff0f1be4f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryPoint&lt; BasePointT &gt;::operator!=</definition>
+        <argsstring>(TrajectoryPoint const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::TrajectoryPoint::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="190" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="190" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1aa8affe83ef9703be33610b22b2bacc26" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string tracktable::TrajectoryPoint&lt; BasePointT &gt;::object_id</definition>
+        <argsstring>() const</argsstring>
+        <name>object_id</name>
+        <qualifiedname>tracktable::TrajectoryPoint::object_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>This point&apos;s object ID </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="198" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="198" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></type>
+        <definition>Timestamp tracktable::TrajectoryPoint&lt; BasePointT &gt;::timestamp</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp</name>
+        <qualifiedname>tracktable::TrajectoryPoint::timestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>This point&apos;s timestamp </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="203" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="203" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a7820570b2aee1ec50afb3e9292f52cc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryPoint&lt; BasePointT &gt;::set_object_id</definition>
+        <argsstring>(std::string const &amp;new_id)</argsstring>
+        <name>set_object_id</name>
+        <qualifiedname>tracktable::TrajectoryPoint::set_object_id</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>new_id</declname>
+        </param>
+        <briefdescription>
+<para>Set this point&apos;s object ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">new_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID to assign to object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="209" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="209" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1ae4ca21c7f35bdffc0fa821107b780ae2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryPoint&lt; BasePointT &gt;::set_timestamp</definition>
+        <argsstring>(Timestamp const &amp;ts)</argsstring>
+        <name>set_timestamp</name>
+        <qualifiedname>tracktable::TrajectoryPoint::set_timestamp</qualifiedname>
+        <param>
+          <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> const &amp;</type>
+          <declname>ts</declname>
+        </param>
+        <briefdescription>
+<para>Set this point&apos;s timestamp. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timestamp to assign to object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="215" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="215" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a25ed78c6fe86cf5584c38d0d23e51dd7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryPoint&lt; BasePointT &gt;::set_property</definition>
+        <argsstring>(std::string const &amp;name, PropertyValueT const &amp;value)</argsstring>
+        <name>set_property</name>
+        <qualifiedname>tracktable::TrajectoryPoint::set_property</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>PropertyValueT const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set a named property with a variant value (let the caller handle the type) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to assign to property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="222" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="222" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1af5a93c754e028116f6c01278b417cf57" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>PropertyValueT</type>
+        <definition>PropertyValueT tracktable::TrajectoryPoint&lt; BasePointT &gt;::property</definition>
+        <argsstring>(std::string const &amp;name, bool *ok=0) const</argsstring>
+        <name>property</name>
+        <qualifiedname>tracktable::TrajectoryPoint::property</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>ok</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Retrieve a named property with checking. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If specified, this will be set to true or false as the property is found/not found </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput>boost::variant</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="233" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a84c92f4397228ae99159e5e3ac33284b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>PropertyValueT</type>
+        <definition>PropertyValueT tracktable::TrajectoryPoint&lt; BasePointT &gt;::property</definition>
+        <argsstring>(std::string const &amp;name, PropertyValueT const &amp;default_value) const</argsstring>
+        <name>property</name>
+        <qualifiedname>tracktable::TrajectoryPoint::property</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>PropertyValueT const &amp;</type>
+          <declname>default_value</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve a named property or a default value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">default_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to return if property is not present </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput>boost::variant</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="244" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="244" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1adbef9f3e71509e47416985b54ee11812" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>PropertyValueT</type>
+        <definition>PropertyValueT tracktable::TrajectoryPoint&lt; BasePointT &gt;::property_without_checking</definition>
+        <argsstring>(std::string const &amp;name) const</argsstring>
+        <name>property_without_checking</name>
+        <qualifiedname>tracktable::TrajectoryPoint::property_without_checking</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve a named property without safety checking. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is the caller&apos;s responsibility to know whether the requested property actually exists when using this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput>boost::variant</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="257" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="257" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a03fe1bd5e6a7cf7c485befeefef4c4f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string tracktable::TrajectoryPoint&lt; BasePointT &gt;::string_property</definition>
+        <argsstring>(std::string const &amp;name, bool *ok=0) const</argsstring>
+        <name>string_property</name>
+        <qualifiedname>tracktable::TrajectoryPoint::string_property</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>ok</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Safely retrieve a named property with a string value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If specified, this will be set to true or false as the property is found/not found </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput>std::string</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="269" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="269" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a530d7ec9f72a870e18d4885be12d2f3a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::TrajectoryPoint&lt; BasePointT &gt;::real_property</definition>
+        <argsstring>(std::string const &amp;name, bool *ok=0) const</argsstring>
+        <name>real_property</name>
+        <qualifiedname>tracktable::TrajectoryPoint::real_property</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>ok</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Safely retrieve a named property with a floating-point value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If specified, this will be set to true or false as the property is found/not found </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput>double</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="280" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="280" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a48603e1015c8ab64a7a8691cdb9b37df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></type>
+        <definition>Timestamp tracktable::TrajectoryPoint&lt; BasePointT &gt;::timestamp_property</definition>
+        <argsstring>(std::string const &amp;name, bool *ok=0) const</argsstring>
+        <name>timestamp_property</name>
+        <qualifiedname>tracktable::TrajectoryPoint::timestamp_property</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>ok</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Safely retrieve a named property with a timestamp value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If specified, this will be set to true or false as the property is found/not found </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="291" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="291" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a981da2fabb228ab1f6ba3d55596e532b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string tracktable::TrajectoryPoint&lt; BasePointT &gt;::string_property_with_default</definition>
+        <argsstring>(std::string const &amp;name, std::string const &amp;default_value) const</argsstring>
+        <name>string_property_with_default</name>
+        <qualifiedname>tracktable::TrajectoryPoint::string_property_with_default</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>default_value</declname>
+        </param>
+        <briefdescription>
+<para>Safely retrieve a named property with a string value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">default_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String value to return if property is not present </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput>std::string</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="302" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="302" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a2b878d8adc203d2c3c535eaf605823a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::TrajectoryPoint&lt; BasePointT &gt;::real_property_with_default</definition>
+        <argsstring>(std::string const &amp;name, double default_value) const</argsstring>
+        <name>real_property_with_default</name>
+        <qualifiedname>tracktable::TrajectoryPoint::real_property_with_default</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>default_value</declname>
+        </param>
+        <briefdescription>
+<para>Safely retrieve a named property with a floating-point value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">default_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Double value to return if property is not present </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput>double</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="313" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="313" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a68a6f44cbd16f7ef7d0d29514750a9e1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></type>
+        <definition>Timestamp tracktable::TrajectoryPoint&lt; BasePointT &gt;::timestamp_property_with_default</definition>
+        <argsstring>(std::string const &amp;name, Timestamp const &amp;default_value) const</argsstring>
+        <name>timestamp_property_with_default</name>
+        <qualifiedname>tracktable::TrajectoryPoint::timestamp_property_with_default</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> const &amp;</type>
+          <declname>default_value</declname>
+        </param>
+        <briefdescription>
+<para>Safely retrieve a named property with a timestamp value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of property to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">default_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> value to return if property is not present </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Property as a <computeroutput><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref></computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="325" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="325" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a9f4c9195e6de83a5a80f0d1da42cad58" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::TrajectoryPoint&lt; BasePointT &gt;::has_property</definition>
+        <argsstring>(std::string const &amp;name) const</argsstring>
+        <name>has_property</name>
+        <qualifiedname>tracktable::TrajectoryPoint::has_property</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Check whether a property is present. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of desired property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>True</computeroutput> if present, <computeroutput>False</computeroutput> if not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="335" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="335" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a43424c218646d0952b111fd16e63201b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string tracktable::TrajectoryPoint&lt; BasePointT &gt;::to_string</definition>
+        <argsstring>() const</argsstring>
+        <name>to_string</name>
+        <qualifiedname>tracktable::TrajectoryPoint::to_string</qualifiedname>
+        <briefdescription>
+<para>Convert point to a human-readable string form. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The string representation of the point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="344" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="344" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a57d67138ca4ad62e9f0fd0c0a336b3aa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::TrajectoryPoint&lt; BasePointT &gt;::current_length</definition>
+        <argsstring>() const</argsstring>
+        <name>current_length</name>
+        <qualifiedname>tracktable::TrajectoryPoint::current_length</qualifiedname>
+        <briefdescription>
+<para>Get length of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When we build a trajectory this property will be set to the total length of the trajectory up to this point. This will be 0 at the very first point and some non-negative value thereafter.</para>
+<para>The initial value of current_length is -1 to indicate that it is not yet set.</para>
+<para><simplesect kind="return"><para><ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> length so far </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="370" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="370" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a12a681d6781e7d00f3712b641a30be01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryPoint&lt; BasePointT &gt;::set_current_length</definition>
+        <argsstring>(double length)</argsstring>
+        <name>set_current_length</name>
+        <qualifiedname>tracktable::TrajectoryPoint::set_current_length</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Set length of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>You will almost certainly not need to call this method yourself. It is the responsibility of the <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> class to compute and set the lengths.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length up to this point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="383" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="383" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1ab32c1d5c07b77856065c529c0d6f3dd8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::TrajectoryPoint&lt; BasePointT &gt;::current_length_fraction</definition>
+        <argsstring>() const</argsstring>
+        <name>current_length_fraction</name>
+        <qualifiedname>tracktable::TrajectoryPoint::current_length_fraction</qualifiedname>
+        <briefdescription>
+<para>Get fraction of total length of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When we build a trajectory this property will be set to the fraction of length of the trajectory up to this point. This will be 0.0 at the very first point and range up to 1.0 thereafter.</para>
+<para>The initial value of <computeroutput>current_length_fraction</computeroutput> is -1.0 to indicate that it is not yet set.</para>
+<para><simplesect kind="return"><para>fraction of <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> length so far </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="400" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="400" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a503c43a983051c1494d336e92cb40e7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryPoint&lt; BasePointT &gt;::set_current_length_fraction</definition>
+        <argsstring>(double fraction)</argsstring>
+        <name>set_current_length_fraction</name>
+        <qualifiedname>tracktable::TrajectoryPoint::set_current_length_fraction</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>fraction</declname>
+        </param>
+        <briefdescription>
+<para>Set fraction of total length of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>You will almost certainly not need to call this method yourself. It is the responsibility of the <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> class to compute and set the lengths.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fraction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fraction of <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> Length up to this point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="413" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="413" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a02bed94d3ff14b5511e40e784937aff1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double tracktable::TrajectoryPoint&lt; BasePointT &gt;::current_time_fraction</definition>
+        <argsstring>() const</argsstring>
+        <name>current_time_fraction</name>
+        <qualifiedname>tracktable::TrajectoryPoint::current_time_fraction</qualifiedname>
+        <briefdescription>
+<para>Get fraction of total duration of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When we build a trajectory this property will be set to the fraction of duration of the trajectory up to this point. This will be 0.0 at the very first point and range up to 1.0 thereafter.</para>
+<para>The initial value of <computeroutput>current_time_fraction</computeroutput> is -1.0 to indicate that it is not yet set.</para>
+<para><simplesect kind="return"><para>fraction of <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> duration so far </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="430" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="430" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a297785acfb3b1ff62bce46b8d0f261a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryPoint&lt; BasePointT &gt;::set_current_time_fraction</definition>
+        <argsstring>(double fraction)</argsstring>
+        <name>set_current_time_fraction</name>
+        <qualifiedname>tracktable::TrajectoryPoint::set_current_time_fraction</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>fraction</declname>
+        </param>
+        <briefdescription>
+<para>Set fraction of total duration of trajectory up to this point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>You will almost certainly not need to call this method yourself. It is the responsibility of the <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> class to compute and set the fractions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fraction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fraction of <ref refid="classtracktable_1_1_trajectory" kindref="compound">Trajectory</ref> Duration up to this point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="443" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="443" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a6c7dc24c8f61daf7cbbc057f5d1628da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref> &amp;</type>
+        <definition>PropertyMap &amp; tracktable::TrajectoryPoint&lt; BasePointT &gt;::__non_const_properties</definition>
+        <argsstring>()</argsstring>
+        <name>__non_const_properties</name>
+        <qualifiedname>tracktable::TrajectoryPoint::__non_const_properties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="454" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="454" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a20cdf3edd825c961e5a163c35df4c3f8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref> const &amp;</type>
+        <definition>PropertyMap const  &amp; tracktable::TrajectoryPoint&lt; BasePointT &gt;::__properties</definition>
+        <argsstring>() const</argsstring>
+        <name>__properties</name>
+        <qualifiedname>tracktable::TrajectoryPoint::__properties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="461" column="21" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="461" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1ac0e4b29e46206b3f7a698e3a11ce5aa4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::TrajectoryPoint&lt; BasePointT &gt;::__set_properties</definition>
+        <argsstring>(PropertyMap const &amp;props)</argsstring>
+        <name>__set_properties</name>
+        <qualifiedname>tracktable::TrajectoryPoint::__set_properties</qualifiedname>
+        <param>
+          <type><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref> const &amp;</type>
+          <declname>props</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="468" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="468" bodyend="468"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classtracktable_1_1_trajectory_point_1a4d060ac970f3ef6d1f9d8198585d50d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, TrajectoryPoint const &amp;point)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>tracktable::TrajectoryPoint::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type><ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> const &amp;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="470" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="470" bodyend="474"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_trajectory_point_1a6987a12f7860f17afa332fbbb9939cba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename archive_t</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::TrajectoryPoint&lt; BasePointT &gt;::serialize</definition>
+        <argsstring>(archive_t &amp;archive, const unsigned int)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>tracktable::TrajectoryPoint::serialize</qualifiedname>
+        <param>
+          <type>archive_t &amp;</type>
+          <declname>archive</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+        </param>
+        <briefdescription>
+<para>Serialize the points and properties to an archive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Archive to serialize to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Version of the archive </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="497" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="497" bodyend="508"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Add object ID, timestamp, property map. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class will add trajectory properties (a timestamp, an object ID and storage for named properties) to any point class.</para>
+<para><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">Timestamp</ref> is a <computeroutput><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">tracktable::Timestamp</ref></computeroutput> which (under the hood) is a <computeroutput>boost::posix_time::ptime</computeroutput>. Object ID is stored as a string.</para>
+<para>We also include an interface to set, get and enumerate arbitrary named properties. The only restriction is that the types of these properties are limited to timestamps, floating-point numbers and strings. If you need something more flexible than that please consider creating your own alternative point class either by subclassing <ref refid="classtracktable_1_1_trajectory_point" kindref="compound">TrajectoryPoint</ref> or by composition.</para>
+<para><simplesect kind="note"><para>Named property support is implemented using <computeroutput>boost::variant</computeroutput>. You can either use <computeroutput>boost::get&lt;&gt;</computeroutput> to cast it to your desired data type or call one of the <computeroutput>(type)_property_value</computeroutput> functions to retrieve it with no casting necessary. Take a look at tracktable/Core/Tests/test_trajectory_point_lonlat.cpp (XXX CHECK THIS) for a demonstration. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BasePointT</label>
+      </node>
+      <node id="1">
+        <label>tracktable::TrajectoryPoint&lt; BasePointT &gt;</label>
+        <link refid="classtracktable_1_1_trajectory_point"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BasePointT</label>
+      </node>
+      <node id="1">
+        <label>tracktable::TrajectoryPoint&lt; BasePointT &gt;</label>
+        <link refid="classtracktable_1_1_trajectory_point"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" line="99" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TrajectoryPoint.h" bodystart="100" bodyend="510"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_trajectory_point_1a6c7dc24c8f61daf7cbbc057f5d1628da" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>__non_const_properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a20cdf3edd825c961e5a163c35df4c3f8" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>__properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ac0e4b29e46206b3f7a698e3a11ce5aa4" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>__set_properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a57d67138ca4ad62e9f0fd0c0a336b3aa" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>current_length</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ab32c1d5c07b77856065c529c0d6f3dd8" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>current_length_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a02bed94d3ff14b5511e40e784937aff1" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>current_time_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a9cec9a08e429c7fdb2d1950f554521f3" prot="protected" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>CurrentLength</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aeedbb5b51924c0b6989db6cb180a02ab" prot="protected" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>CurrentLengthFraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a5cbe94298c39d457a27e5473e4d07d6b" prot="protected" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>CurrentTimeFraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a9f4c9195e6de83a5a80f0d1da42cad58" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>has_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aa8affe83ef9703be33610b22b2bacc26" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>object_id</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a260401afaae9b90b72fac1cbdca5c380" prot="protected" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>ObjectId</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a22ddaffccd5df1b2e486686ff0f1be4f" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a4d060ac970f3ef6d1f9d8198585d50d1" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ac2e2ca3f1c11138a5ec2594d2a7efaca" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a6096611658ea18df80b5454ac0388d0c" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a2ee5b704d7ba90cb052f3f6d112978bf" prot="protected" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>Properties</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1af5a93c754e028116f6c01278b417cf57" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a84c92f4397228ae99159e5e3ac33284b" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1adbef9f3e71509e47416985b54ee11812" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>property_without_checking</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a530d7ec9f72a870e18d4885be12d2f3a" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>real_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a2b878d8adc203d2c3c535eaf605823a8" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>real_property_with_default</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a6987a12f7860f17afa332fbbb9939cba" prot="private" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>serialize</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a12a681d6781e7d00f3712b641a30be01" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>set_current_length</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a503c43a983051c1494d336e92cb40e7f" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>set_current_length_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a297785acfb3b1ff62bce46b8d0f261a4" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>set_current_time_fraction</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a7820570b2aee1ec50afb3e9292f52cc3" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>set_object_id</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a25ed78c6fe86cf5584c38d0d23e51dd7" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>set_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ae4ca21c7f35bdffc0fa821107b780ae2" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>set_timestamp</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a03fe1bd5e6a7cf7c485befeefef4c4f3" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>string_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a981da2fabb228ab1f6ba3d55596e532b" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>string_property_with_default</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a3d309edcdbe7b5cd92d15b0e3850465b" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>Superclass</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1aa617a81857b337a4433d009f60afd595" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>timestamp</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a48603e1015c8ab64a7a8691cdb9b37df" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>timestamp_property</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a68a6f44cbd16f7ef7d0d29514750a9e1" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>timestamp_property_with_default</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a43424c218646d0952b111fd16e63201b" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>to_string</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a14b701595c0f394f9b99cb53d3e2bca5" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1acd0a4b6aa3d2d4624f82d54c753eef1a" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a1af139c66f2b92233123a382a4bdeca6" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a1ba3d96ae654750b1254eeb1e9b8131e" prot="public" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>TrajectoryPoint</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1ae20fb8f56ed5669e2f69047a88322625" prot="protected" virt="non-virtual"><scope>tracktable::TrajectoryPoint</scope><name>UpdateTime</name></member>
+      <member refid="classtracktable_1_1_trajectory_point_1a18f9b530bb921e646eac0699bd624d12" prot="public" virt="virtual"><scope>tracktable::TrajectoryPoint</scope><name>~TrajectoryPoint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,232 @@
+\doxysection{dbscan\+\_\+drivers.\+h}
+\hypertarget{dbscan__drivers_8h_source}{}\label{dbscan__drivers_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/dbscan\_drivers.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/dbscan\_drivers.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ DBSCAN\_Drivers\ -\/\ Dispatch\ machinery\ to\ handle\ point\ formats}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ ================================================================}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ Overview}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ We\ have\ two\ goals\ here.\ \ First,\ give\ you\ a\ one-\/function\ interface}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ to\ DBSCAN:\ pass\ in\ a\ list\ of\ points,\ a\ search\ box\ and\ a\ minimum}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ cluster\ size,\ get\ back\ a\ vector\ of\ cluster\ labels.\ \ Second,\ make\ it}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ easy\ to\ say\ "{}These\ points\ are\ actually\ on\ the\ surface\ of\ a\ sphere}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ but\ I\ want\ you\ to\ pretend\ that\ they're\ in\ Cartesian\ space."{}}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *\ Rationale}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ *\ Our\ implementation\ of\ DBSCAN\ is\ templated\ on\ point\ type\ and\ uses}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ *\ boost::geometry\ for\ all\ of\ its\ distance\ math.\ \ This\ means\ that\ it}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ will\ automatically\ adapt\ to\ whatever\ coordinate\ system\ you're\ using}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *\ for\ your\ points\ as\ long\ as\ Boost\ knows\ what\ to\ do\ with\ it.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ This\ is\ usually\ great.\ \ However,\ there\ are\ times\ when\ it\ will\ slow}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ you\ down\ tremendously.\ \ For\ example,\ if\ you're\ clustering\ a\ bunch}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ of\ points\ that\ are\ very\ close\ together\ on\ the\ surface\ of\ a\ sphere,}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ you\ might\ do\ just\ fine\ by\ pretending\ that\ the\ space\ is\ Cartesian}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ (flat)\ instead\ of\ spherical.\ \ That\ will\ run\ dramatically\ more}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ quickly\ and\ with\ greater\ precision\ than\ the\ trigonometry\ necessary}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ *\ for\ doing\ distance\ computations\ on\ a\ sphere.}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_dbscan\_drivers\_h}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_dbscan\_drivers\_h}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <tracktable/Analysis/detail/dbscan\_implementation.h>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <tracktable/Analysis/detail/transfer\_point\_coordinates.h>}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ <tracktable/Analysis/detail/extract\_pair\_member.h>}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ <boost/iterator/transform\_iterator.hpp>}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ <boost/mpl/assert.hpp>}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ <boost/type\_traits/is\_same.hpp>}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }analysis\ \{\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ This\ is\ the\ most\ specific\ version.\ \ We\ will\ fall\ through\ to\ this}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ sooner\ or\ later.\ \ We\ expect\ an\ undecorated\ point\ as\ input\ and\ an}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ InsertIterator\ for\ a\ container\ that\ takes\ std::pair<foo,\ bar>\ where}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ 'foo'\ and\ 'bar'\ are\ both\ integral\ types.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ We\ don't\ care\ precisely\ what\ the\ type\ of\ the\ search\ box\ is\ as\ long}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ as\ it's\ something\ that\ we\ can\ use\ with\ boost::assign.\ \ Any\ point}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ type\ registered\ with\ boost::geometry\ should\ be\ enough.}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ DispatchPo\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00091\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1analysis_1_1detail_1_1_d_b_s_c_a_n___driver}{DBSCAN\_Driver}}}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{class\ }PointInputIteratorT,}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{class\ }SearchBoxPointT,}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{class\ }LabelOutputIteratorT>}
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{int}\ operator()(}
+\DoxyCodeLine{00098\ \ \ \ \ PointInputIteratorT\ input\_begin,}
+\DoxyCodeLine{00099\ \ \ \ \ PointInputIteratorT\ input\_end,}
+\DoxyCodeLine{00100\ \ \ \ \ SearchBoxPointT\ search\_box\_half\_span,}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ minimum\_cluster\_size,}
+\DoxyCodeLine{00102\ \ \ \ \ LabelOutputIteratorT\ output\_sink}
+\DoxyCodeLine{00103\ \ \ )}
+\DoxyCodeLine{00104\ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ PointInputIteratorT::value\_type\ input\_point\_type;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{typedef}\ DispatchPointT\ dispatch\_point\_type;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ (boost::is\_same<input\_point\_type,\ dispatch\_point\_type>::value),}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ Tracktable\_INPUT\_POINT\_TYPE\_MUST\_MATCH\_TEMPLATE\_ARGUMENT,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ (input\_point\_type,\ dispatch\_point\_type)}
+\DoxyCodeLine{00112\ \ \ \ \ );}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ input\_point\_type\ actual\_search\_box;}
+\DoxyCodeLine{00115\ \ \ \ \ boost::geometry::assign(actual\_search\_box,\ search\_box\_half\_span);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n}{implementation::DBSCAN<input\_point\_type>}}\ dbscan;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_clusters\ =\ dbscan.\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aba949ba51c0aa80e9466101d85b9af5f}{learn\_clusters}}(}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ input\_begin,\ input\_end,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ actual\_search\_box,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ minimum\_cluster\_size}
+\DoxyCodeLine{00122\ \ \ \ \ );}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ std::vector<int>\ vertex\_cluster\_ids;}
+\DoxyCodeLine{00126\ \ \ \ \ dbscan.\mbox{\hyperlink{classtracktable_1_1analysis_1_1detail_1_1implementation_1_1_d_b_s_c_a_n_aefdcaa766b5a29d59fb592f1d8633707}{point\_cluster\_labels}}(vertex\_cluster\_ids);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ vertex\_cluster\_ids.size();\ ++i)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ *output\_sink\ =\ std::make\_pair(boost::numeric\_cast<int>(i),\ vertex\_cluster\_ids[i]);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ ++output\_sink;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordflow}{return}\ num\_clusters;}
+\DoxyCodeLine{00135\ \ \ \}}
+\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ MetadataT,\ \textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00141\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1analysis_1_1detail_1_1_d_b_s_c_a_n___driver}{DBSCAN\_Driver}}<}
+\DoxyCodeLine{00142\ \ \ std::pair<PointT,\ MetadataT>}
+\DoxyCodeLine{00143\ \ \ >}
+\DoxyCodeLine{00144\ \{}
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}InputIteratorT,\ \textcolor{keyword}{class}\ SearchBoxPo\textcolor{keywordtype}{int}T,\ \textcolor{keyword}{class}\ OutputIteratorT>}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{int}\ operator()(}
+\DoxyCodeLine{00147\ \ \ \ \ PointInputIteratorT\ input\_begin,}
+\DoxyCodeLine{00148\ \ \ \ \ PointInputIteratorT\ input\_end,}
+\DoxyCodeLine{00149\ \ \ \ \ SearchBoxPointT\ search\_box\_half\_span,}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{int}\ minimum\_cluster\_size,}
+\DoxyCodeLine{00151\ \ \ \ \ OutputIteratorT\ output\_sink}
+\DoxyCodeLine{00152\ \ \ )}
+\DoxyCodeLine{00153\ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<PointT,\ MetadataT>\ dispatch\_point\_type;}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ PointInputIteratorT::value\_type\ input\_point\_pair\_type;}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ input\_point\_pair\_type::first\_type\ input\_point\_type;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ input\_point\_pair\_type::second\_type\ input\_metadata\_type;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtracktable_1_1_extract_first}{ExtractFirst<input\_point\_pair\_type>}}\ point\_extractor\_type;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ (boost::is\_same<dispatch\_point\_type,\ input\_point\_pair\_type>::value),}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ Tracktable\_DBSCAN\_PAIR\_DISPATCH\_TYPE\_MUST\_MATCH\_INPUT\_VALUE\_TYPE,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ (dispatch\_point\_type,\ input\_point\_pair\_type)}
+\DoxyCodeLine{00165\ \ \ \ \ );}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ (boost::is\_same<input\_metadata\_type,\ MetadataT>::value),}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ Tracktable\_DBSCAN\_PAIR\_METADATA\_TYPES\_MUST\_MATCH,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ (input\_point\_pair\_type,\ input\_metadata\_type,\ MetadataT)}
+\DoxyCodeLine{00171\ \ \ \ \ );}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ (boost::is\_same<input\_point\_type,\ PointT>::value),}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ Tracktable\_INPUT\_POINT\_TYPE\_MUST\_MATCH\_TEMPLATE\_ARGUMENT,}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ (input\_point\_type,\ PointT)}
+\DoxyCodeLine{00177\ \ \ \ \ );}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#if\ 0}}
+\DoxyCodeLine{00180\ \ \ \ \ BOOST\_MPL\_ASSERT\_MSG(}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ (boost::is\_same<input\_metadata\_type,\ output\_metadata\_type>::value),}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ Tracktable\_DBSCAN\_PAIR\_OUTPUT\_FIRST\_MEMBER\_MUST\_MATCH\_INPUT\_METADATA,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ (input\_metadata\_type,\ output\_metadata\_type)}
+\DoxyCodeLine{00184\ \ \ \ \ );}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<int,\ int>\ raw\_vertex\_cluster\_label\_type;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ std::vector<raw\_vertex\_cluster\_label\_type>\ raw\_labels;}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1analysis_1_1detail_1_1_d_b_s_c_a_n___driver}{DBSCAN\_Driver<input\_point\_type>}}\ driver;}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_clusters\ =\ driver(}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ boost::make\_transform\_iterator(input\_begin,\ point\_extractor\_type()),}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ boost::make\_transform\_iterator(input\_end,\ point\_extractor\_type()),}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ search\_box\_half\_span,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ minimum\_cluster\_size,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ std::back\_inserter(raw\_labels)}
+\DoxyCodeLine{00197\ \ \ \ \ );}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<input\_metadata\_type>\ metadata\_vector\_t;}
+\DoxyCodeLine{00200\ \ \ \ \ metadata\_vector\_t\ saved\_metadata;}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ input\_begin\ !=\ input\_end;\ ++input\_begin)}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ saved\_metadata.push\_back(input\_begin-\/>second);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::vector<raw\_vertex\_cluster\_label\_type>::iterator\ iter\ =\ raw\_labels.begin();}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ iter\ !=\ raw\_labels.end();}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vertex\_id\ =\ iter-\/>first;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cluster\_id\ =\ iter-\/>second;}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ *output\_sink\ =\ std::make\_pair(}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ saved\_metadata[vertex\_id],\ cluster\_id}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ ++output\_sink;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{return}\ num\_clusters;}
+\DoxyCodeLine{00220\ \ \ \}}
+\DoxyCodeLine{00221\ \};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \}\ \}\ \}\ \textcolor{comment}{//\ namespace\ tracktable::analysis::detail}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1extrapolate_3_01_property_map_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::extrapolate&lt; PropertyMap &gt;</compoundname>
+    <basecompoundref refid="structtracktable_1_1algorithms_1_1extrapolate__linear" prot="public" virt="non-virtual">tracktable::algorithms::extrapolate_linear&lt; PropertyMap &gt;</basecompoundref>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1algorithms_1_1extrapolate_3_01_property_map_01_4_1a47a302e66ee156405cfda497ee07df6d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref></type>
+        <definition>static PropertyMap tracktable::algorithms::extrapolate&lt; PropertyMap &gt;::apply</definition>
+        <argsstring>(PropertyMap const &amp;first, PropertyMap const &amp;second, double t)</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::algorithms::extrapolate&lt; PropertyMap &gt;::apply</qualifiedname>
+        <param>
+          <type><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref> const &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacetracktable_1a1025d06e8ca7ebb7e66de16aa92fdc12" kindref="member">PropertyMap</ref> const &amp;</type>
+          <declname>second</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyMap.h" line="286" column="9" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyMap.h" bodystart="286" bodyend="329"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tracktable::algorithms::extrapolate&lt; PropertyMap &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_property_map_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::algorithms::extrapolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1extrapolate__linear"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tracktable::algorithms::extrapolate&lt; PropertyMap &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_property_map_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::algorithms::extrapolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1extrapolate__linear"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyMap.h" line="283" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PropertyMap.h" bodystart="284" bodyend="330"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1extrapolate_3_01_property_map_01_4_1a47a302e66ee156405cfda497ee07df6d" prot="public" virt="non-virtual"><scope>tracktable::algorithms::extrapolate&lt; PropertyMap &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1extrapolate__linear_1a714352af4b15f0b5ffc74a7ea10eb211" prot="public" virt="non-virtual" ambiguityscope="tracktable::algorithms::extrapolate_linear::"><scope>tracktable::algorithms::extrapolate&lt; PropertyMap &gt;</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

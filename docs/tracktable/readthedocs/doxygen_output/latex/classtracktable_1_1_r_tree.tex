@@ -1,0 +1,818 @@
+\doxysection{tracktable\+::RTree\texorpdfstring{$<$}{<} value\+\_\+type, rtree\+\_\+algorithm\+\_\+type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtracktable_1_1_r_tree}{}\label{classtracktable_1_1_r_tree}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+
+
+This is a wrapper for the Boost rtree implementation in boost\+::geometry\+::index.  
+
+
+
+
+{\ttfamily \#include $<$RTree.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_r_tree_a180434c72ab5c8817dabdba552233633}\label{classtracktable_1_1_r_tree_a180434c72ab5c8817dabdba552233633} 
+typedef bgi\+::rtree$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$ {\bfseries rtree\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_r_tree_a460c489389b918f9acdca708a5cdae61}\label{classtracktable_1_1_r_tree_a460c489389b918f9acdca708a5cdae61} 
+typedef rtree\+\_\+type\+::const\+\_\+query\+\_\+iterator {\bfseries query\+\_\+result\+\_\+iterator\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_r_tree_a48695e243d15da86d47eafb28f8e00e6}\label{classtracktable_1_1_r_tree_a48695e243d15da86d47eafb28f8e00e6} 
+typedef std\+::pair$<$ query\+\_\+result\+\_\+iterator\+\_\+type, query\+\_\+result\+\_\+iterator\+\_\+type $>$ {\bfseries query\+\_\+result\+\_\+range\+\_\+type}
+\item 
+\Hypertarget{classtracktable_1_1_r_tree_a9268e7e14cb8100433d92e375a7a90ad}\label{classtracktable_1_1_r_tree_a9268e7e14cb8100433d92e375a7a90ad} 
+typedef rtree\+\_\+type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_r_tree_a91930d61ca98e6c3883e0aa531757a1d}\label{classtracktable_1_1_r_tree_a91930d61ca98e6c3883e0aa531757a1d} 
+{\bfseries RTree} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an empty \doxylink{classtracktable_1_1_r_tree}{RTree}. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_r_tree_a7c22f1b748713b8134a5c11932770a0b}\label{classtracktable_1_1_r_tree_a7c22f1b748713b8134a5c11932770a0b} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+RTree} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_r_tree_a7630549cb78849e4ecee30b40ebffa7c}{RTree}} (\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create an \doxylink{classtracktable_1_1_r_tree}{RTree} with a copy of another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}} \& \mbox{\hyperlink{classtracktable_1_1_r_tree_a92542c35d882c293b1a57727e47c8d28}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_r_tree}{RTree} to the value of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_r_tree_acde0305c32820f1d9a6b349340e36c33}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one \doxylink{classtracktable_1_1_r_tree}{RTree} is equal to another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_r_tree_a5439cc51e315c8e7bed034e4ff7f22a0}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two RTrees are unequal. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename value\+\_\+iterator\+\_\+type$>$ }\\\mbox{\hyperlink{classtracktable_1_1_r_tree_a9a8babe8e6e6f16665fb9a318df3a71c}{RTree}} (value\+\_\+iterator\+\_\+type range\+\_\+begin, value\+\_\+iterator\+\_\+type range\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Create and populate an \doxylink{classtracktable_1_1_r_tree}{RTree} from a range of elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_r_tree_a1c0d28fa8b5ab6e1bed885c61608d5a4}{insert}} (value\+\_\+type const \&value)
+\begin{DoxyCompactList}\small\item\em Insert a single element into an \doxylink{classtracktable_1_1_r_tree}{RTree}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename value\+\_\+iterator\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_af3cc4c4d0d3da06b02d1ecc1c09ab479}{insert}} (value\+\_\+iterator\+\_\+type range\+\_\+begin, value\+\_\+iterator\+\_\+type range\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Insert multiple elements into an RTRee. \end{DoxyCompactList}\item 
+size\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_ad5378e07e120012a956938277ecf3583}{remove}} (value\+\_\+type const \&value)
+\begin{DoxyCompactList}\small\item\em Remove a single element from the \doxylink{classtracktable_1_1_r_tree}{RTree}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename value\+\_\+iterator\+\_\+type$>$ }\\size\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_a61b36d7dcf65e847c435e55b6a3ae437}{remove}} (value\+\_\+iterator\+\_\+type range\+\_\+begin, value\+\_\+iterator\+\_\+type range\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Remove many elements from the \doxylink{classtracktable_1_1_r_tree}{RTree}. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_r_tree_ab40f76380d04533bb877ff2ddcd885ba}{size}} () const
+\begin{DoxyCompactList}\small\item\em Return number of elements in \doxylink{classtracktable_1_1_r_tree}{RTree}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_r_tree_af35a8e17379c378537fd8ef99e4591c2}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Check whether an rtree is empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_r_tree_af37c8a3e169e5959bbe7c9dfcdfc2377}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Empty out an rtree. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_ad9db01644b2fc6f4624c4b97a13eb0da}{find\+\_\+points\+\_\+inside\+\_\+box}} (corner\+\_\+type const \&min\+\_\+corner, corner\+\_\+type const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\begin{DoxyCompactList}\small\item\em Find points inside a search box (output sink version) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2, typename insert\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_ac10179eb32a9dbd675e852aa4819963f}{find\+\_\+points\+\_\+inside\+\_\+box}} (std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&min\+\_\+corner, std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_a70cf89c2cfb56a0770643a40f2814904}{find\+\_\+points\+\_\+inside\+\_\+box}} (boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9 $>$ const \&min\+\_\+corner, boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9 $>$ const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_a9ad92501b4d73c3f5b14adeef74ad51a}{find\+\_\+points\+\_\+inside\+\_\+box}} (corner\+\_\+type const \&min\+\_\+corner, corner\+\_\+type const \&max\+\_\+corner) const
+\begin{DoxyCompactList}\small\item\em Find points inside a search box (iterator range version) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_aae269c86d534f5033059a35b761c0528}{find\+\_\+points\+\_\+inside\+\_\+box}} (std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&min\+\_\+corner, std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&max\+\_\+corner) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_a8dbad2eb78a96bf893e76008f6c46575}{find\+\_\+points\+\_\+inside\+\_\+box}} (boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&min\+\_\+corner, boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&max\+\_\+corner)
+\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_a8f8468f8f1eb87db589344e56f7e92d6}{find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}} (corner\+\_\+type const \&min\+\_\+corner, corner\+\_\+type const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\begin{DoxyCompactList}\small\item\em Find points strictly inside a search box. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2, typename insert\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_ae8384a976db2a41d4683ad937aee4e9e}{find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}} (std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&min\+\_\+corner, std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_aefe7f59745f329e4d68a687212eb7806}{find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}} (boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&min\+\_\+corner, boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_ac97005693221725362d07039764bf007}{find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}} (corner\+\_\+type const \&min\+\_\+corner, corner\+\_\+type const \&max\+\_\+corner) const
+\begin{DoxyCompactList}\small\item\em Find points inside a search box (iterator range version) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_a2b985ccc874035c6b94641236804c98d}{find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}} (std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&min\+\_\+corner, std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&max\+\_\+corner) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_aeb4fb879eda067f10d194279dba7916f}{find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}} (boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&min\+\_\+corner, boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&max\+\_\+corner)
+\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_a64f627d50b35af0ea65a9996c776f8d5}{intersects}} (corner\+\_\+type const \&min\+\_\+corner, corner\+\_\+type const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\begin{DoxyCompactList}\small\item\em Find points inside a search box (output sink version) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2, typename insert\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_aea5798afd6953685f0ceefd42b8806f6}{intersects}} (std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&min\+\_\+corner, std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_adb9aea469ca3de53694d33a0ae1cc0d4}{intersects}} (boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9 $>$ const \&min\+\_\+corner, boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9 $>$ const \&max\+\_\+corner, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_addb090a79f95f583e4439952b6f772fb}{intersects}} (corner\+\_\+type const \&min\+\_\+corner, corner\+\_\+type const \&max\+\_\+corner) const
+\begin{DoxyCompactList}\small\item\em Find points inside a search box (iterator range version) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_a86ea20f84e89e90fb22c185d998a5ccd}{intersects}} (std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&min\+\_\+corner, std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&max\+\_\+corner) const
+\item 
+{\footnotesize template$<$typename corner\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_ae42382e204da0b0f067bfef3f601ef92}{intersects}} (boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&min\+\_\+corner, boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&max\+\_\+corner)
+\item 
+{\footnotesize template$<$typename search\+\_\+point\+\_\+type, typename insert\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_af4e6525ed1833f4f1275c8121ffac9e3}{find\+\_\+nearest\+\_\+neighbors}} (search\+\_\+point\+\_\+type const \&search\+\_\+point, unsigned int num\+\_\+neighbors, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\begin{DoxyCompactList}\small\item\em Find points near a search point (output iterator version) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename search\+\_\+point\+\_\+type, typename T2, typename insert\+\_\+iter\+\_\+type$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_r_tree_a3b94b5ec1d1eeee17ffda25cef4e714e}{find\+\_\+nearest\+\_\+neighbors}} (std\+::pair$<$ search\+\_\+point\+\_\+type, T2 $>$ const \&search\+\_\+point, unsigned int num\+\_\+neighbors, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\item 
+\Hypertarget{classtracktable_1_1_r_tree_adfa3a4052e640452c2f9506cf060bdd4}\label{classtracktable_1_1_r_tree_adfa3a4052e640452c2f9506cf060bdd4} 
+{\footnotesize template$<$typename search\+\_\+point\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10, typename insert\+\_\+iter\+\_\+type$>$ }\\void {\bfseries find\+\_\+nearest\+\_\+neighbors} (boost\+::tuple$<$ search\+\_\+point\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&search\+\_\+point, unsigned int num\+\_\+neighbors, insert\+\_\+iter\+\_\+type result\+\_\+sink) const
+\item 
+{\footnotesize template$<$typename search\+\_\+point\+\_\+type$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_a11bc832e8ba5836f8a8ae0d050833d97}{find\+\_\+nearest\+\_\+neighbors}} (search\+\_\+point\+\_\+type const \&search\+\_\+point, unsigned int num\+\_\+neighbors) const
+\begin{DoxyCompactList}\small\item\em Find points near a search point (iterator range version) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename search\+\_\+point\+\_\+type, typename T2$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_aa11bb09355a975de9bf8f94d1dfe8bb4}{find\+\_\+nearest\+\_\+neighbors}} (std\+::pair$<$ search\+\_\+point\+\_\+type, T2 $>$ const \&search\+\_\+point, unsigned int num\+\_\+neighbors) const
+\item 
+{\footnotesize template$<$typename search\+\_\+point\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ }\\query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree_af4dbc5cfd097519d52e43ae94ee292fd}{find\+\_\+nearest\+\_\+neighbors}} (boost\+::tuple$<$ search\+\_\+point\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&search\+\_\+point, unsigned int num\+\_\+neighbors)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$\newline
+class tracktable\+::\+RTree$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$}
+This is a wrapper for the Boost rtree implementation in boost\+::geometry\+::index. 
+
+Its purpose is to insulate you, the user, from having to care about all the complexity (and power) involved in boost\+::geometry\+::index\+::rtree. You supply a value type (which can be a point, a pair or a tuple) and we do the rest.
+
+The disadvantage is that you\textquotesingle{}re restricted from using some of the more powerful query capabilities, including user-\/defined predicates and query combination.
+
+Quick Start\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ tracktable::RTree<my\_point\_type>\ rtree\_type;}
+\DoxyCodeLine{}
+\DoxyCodeLine{rtree\_type\ my\_tree;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ my\_points.size();\ ++i)}
+\DoxyCodeLine{\ \ my\_tree.insert(my\_points[i]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::vector<my\_point\_type>\ results;}
+\DoxyCodeLine{}
+\DoxyCodeLine{my\_tree.find\_points\_inside\_box(min\_corner,\ max\_corner,\ std::back\_inserter(results));}
+
+\end{DoxyCode}
+
+
+(your results vector now contains all the points inside the box)
+
+You can populate this R-\/tree with any point type known to Tracktable / boost\+::geometry. This includes base\+\_\+point\+\_\+type and trajectory\+\_\+point\+\_\+type from all the domains as well as any other point that you have registered with boost\+::geometry.
+
+You can also populate the R-\/tree with {\ttfamily std\+::pair\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}s and {\ttfamily boost\+::tuple\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}s where the first element of the pair / tuple is one of the point types listed above. Note that when you query the r-\/tree, {\itshape only} the geometry will be used in the query\+: the auxiliary information is preserved but never compared.
+
+When querying the r-\/tree, you must use the same geometric point type that you used to populate it. Like the values stored in the tree, you can specify the search point(s) as a point type, a {\ttfamily std\+::pair\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}} or a {\ttfamily boost\+::tuple\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}} whose first element is the geometry. This is just for convenience\+: the only part that will be used for the search is the geometry.
+
+You may only modify the contents of the R-\/tree with {\ttfamily \doxylink{classtracktable_1_1_r_tree_a1c0d28fa8b5ab6e1bed885c61608d5a4}{insert()}}, {\ttfamily \doxylink{classtracktable_1_1_r_tree_ad5378e07e120012a956938277ecf3583}{remove()}} and {\ttfamily \doxylink{classtracktable_1_1_r_tree_af37c8a3e169e5959bbe7c9dfcdfc2377}{clear()}}. There is no way to get a reference to an internal element and modify it directly as you can do with std\+::vector, std\+::map and friends. Doing so would break the search structure. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_r_tree_a7630549cb78849e4ecee30b40ebffa7c}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!RTree@{RTree}}
+\index{RTree@{RTree}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{RTree()}{RTree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a7630549cb78849e4ecee30b40ebffa7c} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::\+RTree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create an \doxylink{classtracktable_1_1_r_tree}{RTree} with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_r_tree}{RTree} to copy from \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_r_tree_a9a8babe8e6e6f16665fb9a318df3a71c}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!RTree@{RTree}}
+\index{RTree@{RTree}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{RTree()}{RTree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a9a8babe8e6e6f16665fb9a318df3a71c} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename value\+\_\+iterator\+\_\+type$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::\+RTree (\begin{DoxyParamCaption}\item[{value\+\_\+iterator\+\_\+type}]{range\+\_\+begin}{, }\item[{value\+\_\+iterator\+\_\+type}]{range\+\_\+end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create and populate an \doxylink{classtracktable_1_1_r_tree}{RTree} from a range of elements. 
+
+If you have a container of points you can use this constructor to create and populate the tree in one swell foop instead of adding elements one at a time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em range\+\_\+begin} & Iterator pointing to beginning of input points \\
+\hline
+\mbox{\texttt{ in}}  & {\em range\+\_\+end} & Iterator pointing past end of input points \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_r_tree_af37c8a3e169e5959bbe7c9dfcdfc2377}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!clear@{clear}}
+\index{clear@{clear}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_af37c8a3e169e5959bbe7c9dfcdfc2377} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty out an rtree. 
+
+This function will completely reset an rtree to its un-\/populated state. \Hypertarget{classtracktable_1_1_r_tree_af35a8e17379c378537fd8ef99e4591c2}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!empty@{empty}}
+\index{empty@{empty}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_af35a8e17379c378537fd8ef99e4591c2} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether an rtree is empty. 
+
+\begin{DoxyReturn}{Returns}
+Boolean explaining whether or not \doxylink{classtracktable_1_1_r_tree_ab40f76380d04533bb877ff2ddcd885ba}{size()} == 0 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_af4dbc5cfd097519d52e43ae94ee292fd}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_nearest\_neighbors@{find\_nearest\_neighbors}}
+\index{find\_nearest\_neighbors@{find\_nearest\_neighbors}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_nearest\_neighbors()}{find\_nearest\_neighbors()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_af4dbc5cfd097519d52e43ae94ee292fd} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename search\+\_\+point\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+nearest\+\_\+neighbors (\begin{DoxyParamCaption}\item[{boost\+::tuple$<$ search\+\_\+point\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{search\+\_\+point}{, }\item[{unsigned int}]{num\+\_\+neighbors}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_a11bc832e8ba5836f8a8ae0d050833d97}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_nearest\_neighbors@{find\_nearest\_neighbors}}
+\index{find\_nearest\_neighbors@{find\_nearest\_neighbors}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_nearest\_neighbors()}{find\_nearest\_neighbors()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a11bc832e8ba5836f8a8ae0d050833d97} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename search\+\_\+point\+\_\+type$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+nearest\+\_\+neighbors (\begin{DoxyParamCaption}\item[{search\+\_\+point\+\_\+type const \&}]{search\+\_\+point}{, }\item[{unsigned int}]{num\+\_\+neighbors}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find points near a search point (iterator range version) 
+
+This function finds the K nearest neighbors to a search point. Note that if the search point is already present in the R-\/tree then it will be one of the results returned.
+
+The result is returned as a pair of iterators.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ tracktable::RTree<my\_point>::query\_result\_range\_type\ query\_result\_type;}
+\DoxyCodeLine{tracktable::RTree<my\_point>\ tree;}
+\DoxyCodeLine{my\_point\ search\_point;}
+\DoxyCodeLine{std::vector<my\_point>\ neighbors;}
+\DoxyCodeLine{}
+\DoxyCodeLine{query\_result\_type\ result\_range\ =}
+\DoxyCodeLine{my\_tree.find\_nearest\_neighbors(search\_point,\ 10);}
+\DoxyCodeLine{}
+\DoxyCodeLine{neighbors.assign(result\_range.first,\ result\_range.second);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em search\+\_\+point} & Point whose neighbors you want to find \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+\_\+neighbors} & How many neighbors to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair of iterators pointing to neighboring points 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_af4e6525ed1833f4f1275c8121ffac9e3}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_nearest\_neighbors@{find\_nearest\_neighbors}}
+\index{find\_nearest\_neighbors@{find\_nearest\_neighbors}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_nearest\_neighbors()}{find\_nearest\_neighbors()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_af4e6525ed1833f4f1275c8121ffac9e3} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename search\+\_\+point\+\_\+type, typename insert\+\_\+iter\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+nearest\+\_\+neighbors (\begin{DoxyParamCaption}\item[{search\+\_\+point\+\_\+type const \&}]{search\+\_\+point}{, }\item[{unsigned int}]{num\+\_\+neighbors}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find points near a search point (output iterator version) 
+
+This function finds the K nearest neighbors to a search point. Note that if the search point is already present in the R-\/tree then it will be one of the results returned.
+
+You must provide an output iterator as a place to store the results.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{tracktable::RTree<my\_point>\ tree;}
+\DoxyCodeLine{my\_point\ search\_point;}
+\DoxyCodeLine{std::vector<my\_point>\ neighbors;}
+\DoxyCodeLine{}
+\DoxyCodeLine{tree.\mbox{\hyperlink{classtracktable_1_1_r_tree_af4e6525ed1833f4f1275c8121ffac9e3}{find\_nearest\_neighbors}}(search\_point,\ 10,\ std::back\_inserter(neighbors));}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em search\+\_\+point} & Point whose neighbors you want to find \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+\_\+neighbors} & How many neighbors to find \\
+\hline
+\mbox{\texttt{ in}}  & {\em result\+\_\+sink} & Where to write the results \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_r_tree_aa11bb09355a975de9bf8f94d1dfe8bb4}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_nearest\_neighbors@{find\_nearest\_neighbors}}
+\index{find\_nearest\_neighbors@{find\_nearest\_neighbors}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_nearest\_neighbors()}{find\_nearest\_neighbors()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_aa11bb09355a975de9bf8f94d1dfe8bb4} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename search\+\_\+point\+\_\+type, typename T2$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+nearest\+\_\+neighbors (\begin{DoxyParamCaption}\item[{std\+::pair$<$ search\+\_\+point\+\_\+type, T2 $>$ const \&}]{search\+\_\+point}{, }\item[{unsigned int}]{num\+\_\+neighbors}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_a3b94b5ec1d1eeee17ffda25cef4e714e}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_nearest\_neighbors@{find\_nearest\_neighbors}}
+\index{find\_nearest\_neighbors@{find\_nearest\_neighbors}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_nearest\_neighbors()}{find\_nearest\_neighbors()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a3b94b5ec1d1eeee17ffda25cef4e714e} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename search\+\_\+point\+\_\+type, typename T2, typename insert\+\_\+iter\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+nearest\+\_\+neighbors (\begin{DoxyParamCaption}\item[{std\+::pair$<$ search\+\_\+point\+\_\+type, T2 $>$ const \&}]{search\+\_\+point}{, }\item[{unsigned int}]{num\+\_\+neighbors}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_a70cf89c2cfb56a0770643a40f2814904}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_inside\_box@{find\_points\_inside\_box}}
+\index{find\_points\_inside\_box@{find\_points\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_inside\_box()}{find\_points\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a70cf89c2cfb56a0770643a40f2814904} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9 $>$ const \&}]{min\+\_\+corner}{, }\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9 $>$ const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_a8dbad2eb78a96bf893e76008f6c46575}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_inside\_box@{find\_points\_inside\_box}}
+\index{find\_points\_inside\_box@{find\_points\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_inside\_box()}{find\_points\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a8dbad2eb78a96bf893e76008f6c46575} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{min\+\_\+corner}{, }\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_a9ad92501b4d73c3f5b14adeef74ad51a}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_inside\_box@{find\_points\_inside\_box}}
+\index{find\_points\_inside\_box@{find\_points\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_inside\_box()}{find\_points\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a9ad92501b4d73c3f5b14adeef74ad51a} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{corner\+\_\+type const \&}]{min\+\_\+corner}{, }\item[{corner\+\_\+type const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find points inside a search box (iterator range version) 
+
+This function finds points inside a box specified as a \doxylink{classtracktable_1_1_box}{tracktable\+::\+Box} (also known as a tracktable\+::\+RTree$<$point\+\_\+type$>$\+::box\+\_\+type).
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ tracktable::RTree<my\_point>::query\_result\_range\_type\ query\_result\_type;}
+\DoxyCodeLine{my\_point\ min\_corner,\ max\_corner;}
+\DoxyCodeLine{}
+\DoxyCodeLine{query\_result\_type\ result\_range\ =}
+\DoxyCodeLine{my\_tree.find\_points\_inside\_box(min\_corner,\ max\_corner);}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::vector<my\_point>\ results(result\_range.first,\ result\_range.second);}
+
+\end{DoxyCode}
+
+
+Note that this function will return points that are exactly on the boundary of the search box as well as those in the interior. If you want only the points in the interior, use {\ttfamily find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}.
+
+As with all the other \doxylink{classtracktable_1_1_r_tree}{RTree} functions, you can use a point type, a {\ttfamily std\+::pair\texorpdfstring{$<$}{<}point\+\_\+type, X\texorpdfstring{$>$}{>}} or a {\ttfamily boost\+::tuple\texorpdfstring{$<$}{<}point, type, \mbox{[}other stuff\mbox{]}\texorpdfstring{$>$}{>}} for your searches. In the case of a {\ttfamily std\+::pair} or {\ttfamily boost\+::tuple}, your geometry type must be the first element.
+
+\begin{DoxyWarning}{Warning}
+This function is sensitive to numerical imprecision issues when points are (allegedly) right on the border of the search box. This is especially problematic in the terrestrial domain (longitude/latitude points) since we have to do trigonometry to compute point-\/in-\/polygon results.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min\+\_\+corner} & Corner at minimum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+corner} & Corner at maximum end of search box \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair of iterators pointing to query result range 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_ad9db01644b2fc6f4624c4b97a13eb0da}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_inside\_box@{find\_points\_inside\_box}}
+\index{find\_points\_inside\_box@{find\_points\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_inside\_box()}{find\_points\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_ad9db01644b2fc6f4624c4b97a13eb0da} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{corner\+\_\+type const \&}]{min\+\_\+corner}{, }\item[{corner\+\_\+type const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find points inside a search box (output sink version) 
+
+This function finds points inside a box specified as two corners. You must provide an Insert\+Iterator as the third argument. This iterator will be used to save the results.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{my\_point\ min\_corner,\ max\_corner;}
+\DoxyCodeLine{std::vector<my\_point>\ results;}
+\DoxyCodeLine{}
+\DoxyCodeLine{my\_tree.find\_points\_inside\_box(min\_corner,\ max\_corner,\ std::back\_inserter(results));}
+
+\end{DoxyCode}
+
+
+Note that this function will return points that are exactly on the boundary of the search box as well as those in the interior. If you want only the points in the interior, use {\ttfamily find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}.
+
+As with all the other \doxylink{classtracktable_1_1_r_tree}{RTree} functions, you can use a point type, a {\ttfamily std\+::pair\texorpdfstring{$<$}{<}point\+\_\+type, X\texorpdfstring{$>$}{>}} or a {\ttfamily boost\+::tuple\texorpdfstring{$<$}{<}point, type, \mbox{[}other stuff\mbox{]}\texorpdfstring{$>$}{>}} for your searches. In the case of a {\ttfamily std\+::pair} or {\ttfamily boost\+::tuple}, your geometry type must be the first element.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min\+\_\+corner} & Corner at minimum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+corner} & Corner at maximum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em result\+\_\+sink} & Insert\+Iterator where results will be stored \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_r_tree_aae269c86d534f5033059a35b761c0528}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_inside\_box@{find\_points\_inside\_box}}
+\index{find\_points\_inside\_box@{find\_points\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_inside\_box()}{find\_points\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_aae269c86d534f5033059a35b761c0528} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{min\+\_\+corner}{, }\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_ac10179eb32a9dbd675e852aa4819963f}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_inside\_box@{find\_points\_inside\_box}}
+\index{find\_points\_inside\_box@{find\_points\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_inside\_box()}{find\_points\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_ac10179eb32a9dbd675e852aa4819963f} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2, typename insert\+\_\+iter\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{min\+\_\+corner}{, }\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_aeb4fb879eda067f10d194279dba7916f}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}}
+\index{find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_strictly\_inside\_box()}{find\_points\_strictly\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_aeb4fb879eda067f10d194279dba7916f} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{min\+\_\+corner}{, }\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_aefe7f59745f329e4d68a687212eb7806}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}}
+\index{find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_strictly\_inside\_box()}{find\_points\_strictly\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_aefe7f59745f329e4d68a687212eb7806} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{min\+\_\+corner}{, }\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_ac97005693221725362d07039764bf007}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}}
+\index{find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_strictly\_inside\_box()}{find\_points\_strictly\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_ac97005693221725362d07039764bf007} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{corner\+\_\+type const \&}]{min\+\_\+corner}{, }\item[{corner\+\_\+type const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find points inside a search box (iterator range version) 
+
+This function finds points inside a box specified as a \doxylink{classtracktable_1_1_box}{tracktable\+::\+Box} (also known as a tracktable\+::\+RTree$<$point\+\_\+type$>$\+::box\+\_\+type).
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ tracktable::RTree<my\_point>::query\_result\_range\_type\ query\_result\_type;}
+\DoxyCodeLine{my\_point\ min\_corner,\ max\_corner;}
+\DoxyCodeLine{}
+\DoxyCodeLine{query\_result\_type\ result\_range\ =}
+\DoxyCodeLine{my\_tree.find\_points\_strictly\_inside\_box(min\_corner,\ max\_corner);}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::vector<my\_point>\ results(result\_range.first,\ result\_range.second);}
+
+\end{DoxyCode}
+
+
+Note that this function will return points that are strictly within the box. Points on the border will not be returned. If you want points on the border, use {\ttfamily find\+\_\+points\+\_\+inside\+\_\+box}.
+
+As with all the other \doxylink{classtracktable_1_1_r_tree}{RTree} functions, you can use a point type, a {\ttfamily std\+::pair\texorpdfstring{$<$}{<}point\+\_\+type, X\texorpdfstring{$>$}{>}} or a {\ttfamily boost\+::tuple\texorpdfstring{$<$}{<}point, type, \mbox{[}other stuff\mbox{]}\texorpdfstring{$>$}{>}} for your searches. In the case of a {\ttfamily std\+::pair} or {\ttfamily boost\+::tuple}, your geometry type must be the first element.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min\+\_\+corner} & Corner at minimum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+corner} & Corner at maximum end of search box \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair of iterators pointing to query result range 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_a8f8468f8f1eb87db589344e56f7e92d6}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}}
+\index{find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_strictly\_inside\_box()}{find\_points\_strictly\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a8f8468f8f1eb87db589344e56f7e92d6} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{corner\+\_\+type const \&}]{min\+\_\+corner}{, }\item[{corner\+\_\+type const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find points strictly inside a search box. 
+
+This function finds points inside a box specified as two corners. You must provide an Insert\+Iterator as the third argument. This iterator will be used to save the results.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{my\_point\ min\_corner,\ max\_corner;}
+\DoxyCodeLine{std::vector<my\_point>\ results;}
+\DoxyCodeLine{}
+\DoxyCodeLine{my\_tree.find\_points\_strictly\_inside\_box(min\_corner,\ max\_corner,\ std::back\_inserter(results));}
+
+\end{DoxyCode}
+
+
+Note that this function will return points that are strictly within the box. Points on the border will not be returned. If you want points on the border, use {\ttfamily find\+\_\+points\+\_\+inside\+\_\+box}.
+
+As with all the other \doxylink{classtracktable_1_1_r_tree}{RTree} functions, you can use a point type, a {\ttfamily std\+::pair\texorpdfstring{$<$}{<}point\+\_\+type, X\texorpdfstring{$>$}{>}} or a {\ttfamily boost\+::tuple\texorpdfstring{$<$}{<}point, type, \mbox{[}other stuff\mbox{]}\texorpdfstring{$>$}{>}} for your searches. In the case of a {\ttfamily std\+::pair} or {\ttfamily boost\+::tuple}, your geometry type must be the first element.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min\+\_\+corner} & Corner at minimum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+corner} & Corner at maximum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em result\+\_\+sink} & Insert\+Iterator where results will be stored \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_r_tree_a2b985ccc874035c6b94641236804c98d}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}}
+\index{find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_strictly\_inside\_box()}{find\_points\_strictly\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a2b985ccc874035c6b94641236804c98d} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{min\+\_\+corner}{, }\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_ae8384a976db2a41d4683ad937aee4e9e}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}}
+\index{find\_points\_strictly\_inside\_box@{find\_points\_strictly\_inside\_box}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{find\_points\_strictly\_inside\_box()}{find\_points\_strictly\_inside\_box()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_ae8384a976db2a41d4683ad937aee4e9e} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2, typename insert\+\_\+iter\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box (\begin{DoxyParamCaption}\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{min\+\_\+corner}{, }\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_af3cc4c4d0d3da06b02d1ecc1c09ab479}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!insert@{insert}}
+\index{insert@{insert}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_af3cc4c4d0d3da06b02d1ecc1c09ab479} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename value\+\_\+iterator\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::insert (\begin{DoxyParamCaption}\item[{value\+\_\+iterator\+\_\+type}]{range\+\_\+begin}{, }\item[{value\+\_\+iterator\+\_\+type}]{range\+\_\+end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert multiple elements into an RTRee. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em range\+\_\+begin} & Iterator pointing to beginning of input points \\
+\hline
+\mbox{\texttt{ in}}  & {\em range\+\_\+end} & Iterator pointing past end of input points \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_r_tree_a1c0d28fa8b5ab6e1bed885c61608d5a4}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!insert@{insert}}
+\index{insert@{insert}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a1c0d28fa8b5ab6e1bed885c61608d5a4} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::insert (\begin{DoxyParamCaption}\item[{value\+\_\+type const \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert a single element into an \doxylink{classtracktable_1_1_r_tree}{RTree}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Element to insert (will be copied) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_r_tree_adb9aea469ca3de53694d33a0ae1cc0d4}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!intersects@{intersects}}
+\index{intersects@{intersects}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_adb9aea469ca3de53694d33a0ae1cc0d4} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::intersects (\begin{DoxyParamCaption}\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9 $>$ const \&}]{min\+\_\+corner}{, }\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9 $>$ const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_ae42382e204da0b0f067bfef3f601ef92}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!intersects@{intersects}}
+\index{intersects@{intersects}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_ae42382e204da0b0f067bfef3f601ef92} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::intersects (\begin{DoxyParamCaption}\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{min\+\_\+corner}{, }\item[{boost\+::tuple$<$ corner\+\_\+type, T2, T3, T4, T5, T6, T7, T8, T9, T10 $>$ const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_addb090a79f95f583e4439952b6f772fb}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!intersects@{intersects}}
+\index{intersects@{intersects}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_addb090a79f95f583e4439952b6f772fb} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::intersects (\begin{DoxyParamCaption}\item[{corner\+\_\+type const \&}]{min\+\_\+corner}{, }\item[{corner\+\_\+type const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find points inside a search box (iterator range version) 
+
+This function finds points inside a box specified as a \doxylink{classtracktable_1_1_box}{tracktable\+::\+Box} (also known as a tracktable\+::\+RTree$<$point\+\_\+type$>$\+::box\+\_\+type).
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ tracktable::RTree<my\_point>::query\_result\_range\_type\ query\_result\_type;}
+\DoxyCodeLine{my\_point\ min\_corner,\ max\_corner;}
+\DoxyCodeLine{}
+\DoxyCodeLine{query\_result\_type\ result\_range\ =}
+\DoxyCodeLine{my\_tree.intersects(min\_corner,\ max\_corner);}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::vector<my\_point>\ results(result\_range.first,\ result\_range.second);}
+
+\end{DoxyCode}
+
+
+Note that this function will return points that are exactly on the boundary of the search box as well as those in the interior. If you want only the points in the interior, use {\ttfamily find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}.
+
+As with all the other \doxylink{classtracktable_1_1_r_tree}{RTree} functions, you can use a point type, a {\ttfamily std\+::pair\texorpdfstring{$<$}{<}point\+\_\+type, X\texorpdfstring{$>$}{>}} or a {\ttfamily boost\+::tuple\texorpdfstring{$<$}{<}point, type, \mbox{[}other stuff\mbox{]}\texorpdfstring{$>$}{>}} for your searches. In the case of a {\ttfamily std\+::pair} or {\ttfamily boost\+::tuple}, your geometry type must be the first element.
+
+\begin{DoxyWarning}{Warning}
+This function is sensitive to numerical imprecision issues when points are (allegedly) right on the border of the search box. This is especially problematic in the terrestrial domain (longitude/latitude points) since we have to do trigonometry to compute point-\/in-\/polygon results.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min\+\_\+corner} & Corner at minimum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+corner} & Corner at maximum end of search box \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair of iterators pointing to query result range 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_a64f627d50b35af0ea65a9996c776f8d5}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!intersects@{intersects}}
+\index{intersects@{intersects}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a64f627d50b35af0ea65a9996c776f8d5} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename insert\+\_\+iter\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::intersects (\begin{DoxyParamCaption}\item[{corner\+\_\+type const \&}]{min\+\_\+corner}{, }\item[{corner\+\_\+type const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find points inside a search box (output sink version) 
+
+This function finds points/objects that are not disjoint from the box You must provide an Insert\+Iterator as the third argument. This iterator will be used to save the results.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{my\_point\ min\_corner,\ max\_corner;}
+\DoxyCodeLine{std::vector<my\_point>\ results;}
+\DoxyCodeLine{}
+\DoxyCodeLine{my\_tree.intersects(min\_corner,\ max\_corner,\ std::back\_inserter(results));}
+
+\end{DoxyCode}
+
+
+Note that this function will return points that are exactly on the boundary of the search box as well as those in the interior. If you want only the points in the interior, use {\ttfamily find\+\_\+points\+\_\+strictly\+\_\+inside\+\_\+box}.
+
+As with all the other \doxylink{classtracktable_1_1_r_tree}{RTree} functions, you can use a point type, a {\ttfamily std\+::pair\texorpdfstring{$<$}{<}point\+\_\+type, X\texorpdfstring{$>$}{>}} or a {\ttfamily boost\+::tuple\texorpdfstring{$<$}{<}point, type, \mbox{[}other stuff\mbox{]}\texorpdfstring{$>$}{>}} for your searches. In the case of a {\ttfamily std\+::pair} or {\ttfamily boost\+::tuple}, your geometry type must be the first element.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min\+\_\+corner} & Corner at minimum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+corner} & Corner at maximum end of search box \\
+\hline
+\mbox{\texttt{ in}}  & {\em result\+\_\+sink} & Insert\+Iterator where results will be stored \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_r_tree_a86ea20f84e89e90fb22c185d998a5ccd}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!intersects@{intersects}}
+\index{intersects@{intersects}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a86ea20f84e89e90fb22c185d998a5ccd} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2$>$ \\
+query\+\_\+result\+\_\+range\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::intersects (\begin{DoxyParamCaption}\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{min\+\_\+corner}{, }\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{max\+\_\+corner}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_aea5798afd6953685f0ceefd42b8806f6}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!intersects@{intersects}}
+\index{intersects@{intersects}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_aea5798afd6953685f0ceefd42b8806f6} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename corner\+\_\+type, typename T2, typename insert\+\_\+iter\+\_\+type$>$ \\
+void \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::intersects (\begin{DoxyParamCaption}\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{min\+\_\+corner}{, }\item[{std\+::pair$<$ corner\+\_\+type, T2 $>$ const \&}]{max\+\_\+corner}{, }\item[{insert\+\_\+iter\+\_\+type}]{result\+\_\+sink}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \Hypertarget{classtracktable_1_1_r_tree_a5439cc51e315c8e7bed034e4ff7f22a0}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a5439cc51e315c8e7bed034e4ff7f22a0} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two RTrees are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_r_tree}{RTree} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_a92542c35d882c293b1a57727e47c8d28}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a92542c35d882c293b1a57727e47c8d28} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}} \& \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$ const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_r_tree}{RTree} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_r_tree}{RTree} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classtracktable_1_1_r_tree}{RTree} with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_acde0305c32820f1d9a6b349340e36c33}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_acde0305c32820f1d9a6b349340e36c33} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_r_tree}{RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$ const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one \doxylink{classtracktable_1_1_r_tree}{RTree} is equal to another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_r_tree}{RTree} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_a61b36d7dcf65e847c435e55b6a3ae437}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!remove@{remove}}
+\index{remove@{remove}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_a61b36d7dcf65e847c435e55b6a3ae437} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+template$<$typename value\+\_\+iterator\+\_\+type$>$ \\
+size\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::remove (\begin{DoxyParamCaption}\item[{value\+\_\+iterator\+\_\+type}]{range\+\_\+begin}{, }\item[{value\+\_\+iterator\+\_\+type}]{range\+\_\+end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove many elements from the \doxylink{classtracktable_1_1_r_tree}{RTree}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em range\+\_\+begin} & First element to remove \\
+\hline
+\mbox{\texttt{ in}}  & {\em range\+\_\+end} & Past last element to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of removed values 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_ad5378e07e120012a956938277ecf3583}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!remove@{remove}}
+\index{remove@{remove}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_ad5378e07e120012a956938277ecf3583} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+size\+\_\+type \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::remove (\begin{DoxyParamCaption}\item[{value\+\_\+type const \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove a single element from the \doxylink{classtracktable_1_1_r_tree}{RTree}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Element to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the element was removed, 0 otherwise 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_r_tree_ab40f76380d04533bb877ff2ddcd885ba}\index{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}!size@{size}}
+\index{size@{size}!tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$@{tracktable::RTree$<$ value\_type, rtree\_algorithm\_type $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_r_tree_ab40f76380d04533bb877ff2ddcd885ba} 
+template$<$typename value\+\_\+type, typename rtree\+\_\+algorithm\+\_\+type = bgi\+::quadratic$<$16$>$$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_r_tree}{tracktable\+::\+RTree}}$<$ value\+\_\+type, rtree\+\_\+algorithm\+\_\+type $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return number of elements in \doxylink{classtracktable_1_1_r_tree}{RTree}. 
+
+\begin{DoxyReturn}{Returns}
+Non-\/negative integer (number of elements) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Analysis/RTree.\+h\end{DoxyCompactItemize}

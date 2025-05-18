@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_empty_coordinate_error" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::EmptyCoordinateError</compoundname>
+    <basecompoundref refid="classtracktable_1_1_parse_error" prot="public" virt="non-virtual">tracktable::ParseError</basecompoundref>
+    <includes refid="_parse_exceptions_8h" local="no">ParseExceptions.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_empty_coordinate_error_1ad97574de64e922abcc5e3c8a7c2c50dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::EmptyCoordinateError::EmptyCoordinateError</definition>
+        <argsstring>(std::size_t which_coordinate)</argsstring>
+        <name>EmptyCoordinateError</name>
+        <qualifiedname>tracktable::EmptyCoordinateError::EmptyCoordinateError</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>which_coordinate</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a empty coordinate exception for a give error string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">which_coordinate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value indicating which coordinate was empty </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="80" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="80" bodyend="82"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classtracktable_1_1_empty_coordinate_error_1a953e1cfc3438940a268d148091c592f4" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string tracktable::EmptyCoordinateError::format_empty_coordinate_message</definition>
+        <argsstring>(std::size_t which_coordinate)</argsstring>
+        <name>format_empty_coordinate_message</name>
+        <qualifiedname>tracktable::EmptyCoordinateError::format_empty_coordinate_message</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>which_coordinate</declname>
+        </param>
+        <briefdescription>
+<para>Format the output error string for the empty coordinate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">which_coordinate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Which coordinate is empty </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="89" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="89" bodyend="94"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple class to encapsulate empty coordinate parsing error. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="1">
+        <label>tracktable::EmptyCoordinateError</label>
+        <link refid="classtracktable_1_1_empty_coordinate_error"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::ParseError</label>
+        <link refid="classtracktable_1_1_parse_error"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="1">
+        <label>tracktable::EmptyCoordinateError</label>
+        <link refid="classtracktable_1_1_empty_coordinate_error"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::ParseError</label>
+        <link refid="classtracktable_1_1_parse_error"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="73" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="74" bodyend="95"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_empty_coordinate_error_1ad97574de64e922abcc5e3c8a7c2c50dc" prot="public" virt="non-virtual"><scope>tracktable::EmptyCoordinateError</scope><name>EmptyCoordinateError</name></member>
+      <member refid="classtracktable_1_1_empty_coordinate_error_1a953e1cfc3438940a268d148091c592f4" prot="private" virt="non-virtual"><scope>tracktable::EmptyCoordinateError</scope><name>format_empty_coordinate_message</name></member>
+      <member refid="classtracktable_1_1_parse_error_1a1dec1250728a70f7eee5f6eb6e5b388b" prot="public" virt="non-virtual"><scope>tracktable::EmptyCoordinateError</scope><name>ParseError</name></member>
+      <member refid="classtracktable_1_1_parse_error_1a185edc5f368ad836229e13bf754c4cc8" prot="public" virt="non-virtual"><scope>tracktable::EmptyCoordinateError</scope><name>ParseError</name></member>
+      <member refid="classtracktable_1_1_parse_error_1a2221b72cfb33b0506eca2b6923d77430" prot="public" virt="non-virtual"><scope>tracktable::EmptyCoordinateError</scope><name>ParseError</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

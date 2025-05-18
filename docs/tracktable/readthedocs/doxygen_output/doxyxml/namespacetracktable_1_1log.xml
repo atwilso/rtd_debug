@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetracktable_1_1log" kind="namespace" language="C++">
+    <compoundname>tracktable::log</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_logging_8h_1abc9c8171a32dad98b74e4ef1f7294ac5" prot="public" static="no" strong="no">
+        <type></type>
+        <name>severity_level</name>
+        <qualifiedname>tracktable::log::severity_level</qualifiedname>
+        <enumvalue id="_logging_8h_1abc9c8171a32dad98b74e4ef1f7294ac5a3af82b7537f030ad7cf464ca622699ac" prot="public">
+          <name>trace</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_logging_8h_1abc9c8171a32dad98b74e4ef1f7294ac5a7bf634361f7f62443f8acf3a89f755ce" prot="public">
+          <name>debug</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_logging_8h_1abc9c8171a32dad98b74e4ef1f7294ac5a467dd798590e53cb09f600c7c08eda32" prot="public">
+          <name>info</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_logging_8h_1abc9c8171a32dad98b74e4ef1f7294ac5aeae1bb3f329f2764718742632d560c5e" prot="public">
+          <name>warning</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_logging_8h_1abc9c8171a32dad98b74e4ef1f7294ac5a9fae3fa4f45c7a126fc7ae95c0fdb41a" prot="public">
+          <name>error</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_logging_8h_1abc9c8171a32dad98b74e4ef1f7294ac5a84ef34c84d6de532857d4a8a1a4e46e5" prot="public">
+          <name>fatal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Logging.h" line="72" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Logging.h" bodystart="72" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/Logging.h" line="70" column="1"/>
+  </compounddef>
+</doxygen>

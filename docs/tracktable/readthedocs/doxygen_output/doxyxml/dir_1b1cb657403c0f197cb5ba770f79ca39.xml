@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_1b1cb657403c0f197cb5ba770f79ca39" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/WarningGuards</compoundname>
+    <innerfile refid="_common_boost_warnings_8h">CommonBoostWarnings.h</innerfile>
+    <innerfile refid="_deprecated_declaration_8h">DeprecatedDeclaration.h</innerfile>
+    <innerfile refid="_pop_warning_state_8h">PopWarningState.h</innerfile>
+    <innerfile refid="_pragma_messages_8h">PragmaMessages.h</innerfile>
+    <innerfile refid="_push_warning_state_8h">PushWarningState.h</innerfile>
+    <innerfile refid="_shadowed_declaration_8h">ShadowedDeclaration.h</innerfile>
+    <innerfile refid="_size_t_conversion_8h">SizeTConversion.h</innerfile>
+    <innerfile refid="_unused_typedef_8h">UnusedTypedef.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/WarningGuards/"/>
+  </compounddef>
+</doxygen>

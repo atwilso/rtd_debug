@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_point_arithmetic_8h" kind="file" language="C++">
+    <compoundname>PointArithmetic.h</compoundname>
+    <includes local="no">tracktable/Core/TracktableCommon.h</includes>
+    <includes local="no">boost/geometry/arithmetic/arithmetic.hpp</includes>
+    <includes local="no">boost/geometry/arithmetic/cross_product.hpp</includes>
+    <includes local="no">boost/geometry/arithmetic/dot_product.hpp</includes>
+    <includes local="no">boost/type_traits/is_base_of.hpp</includes>
+    <includes local="no">cmath</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h</label>
+        <link refid="_point_arithmetic_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>boost/geometry/arithmetic/arithmetic.hpp</label>
+      </node>
+      <node id="4">
+        <label>boost/geometry/arithmetic/cross_product.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/geometry/arithmetic/dot_product.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/type_traits/is_base_of.hpp</label>
+      </node>
+      <node id="7">
+        <label>cmath</label>
+      </node>
+      <node id="2">
+        <label>tracktable/Core/TracktableCommon.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacetracktable">tracktable</innernamespace>
+    <innernamespace refid="namespacetracktable_1_1arithmetic">tracktable::arithmetic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2023<sp/>National<sp/>Technology<sp/>and<sp/>Engineering</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC.<sp/>Under<sp/>the<sp/>terms<sp/>of<sp/>Contract<sp/>DE-NA0003525</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>with<sp/>National<sp/>Technology<sp/>and<sp/>Engineering<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC,</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>the<sp/>U.S.<sp/>Government<sp/>retains<sp/>certain<sp/>rights<sp/>in<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__tracktable_BasicPointMath_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__tracktable_BasicPointMath_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Core/TracktableCommon.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/geometry/arithmetic/arithmetic.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/geometry/arithmetic/cross_product.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/geometry/arithmetic/dot_product.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/type_traits/is_base_of.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable_1_1arithmetic" kindref="compound">arithmetic</ref><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="64" refid="namespacetracktable_1_1arithmetic_1a13b5723e0b27add384afb9634212ff47" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a13b5723e0b27add384afb9634212ff47" kindref="member">add</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>PointT<sp/>result(left);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>boost::geometry::add_point(result,<sp/>right);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="80" refid="namespacetracktable_1_1arithmetic_1ae9bfcfbefc7ddb42b19b5c3b27687aaf" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1ae9bfcfbefc7ddb42b19b5c3b27687aaf" kindref="member">add_in_place</ref>(PointT&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>boost::geometry::add_point(left,<sp/>right);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>left;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="95" refid="namespacetracktable_1_1arithmetic_1a1b5177e895f1986f3ee6da9f0bcb8765" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a1b5177e895f1986f3ee6da9f0bcb8765" kindref="member">subtract</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>PointT<sp/>result(left);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>boost::geometry::subtract_point(result,<sp/>right);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="111" refid="namespacetracktable_1_1arithmetic_1a7fe53e45d0b0073a82d0c98fd41950c2" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a7fe53e45d0b0073a82d0c98fd41950c2" kindref="member">subtract_in_place</ref>(PointT&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>boost::geometry::subtract_point(left,<sp/>right);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>left;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="126" refid="namespacetracktable_1_1arithmetic_1a7c71588aaa0745ed1d92fd471b3f4c5a" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a7c71588aaa0745ed1d92fd471b3f4c5a" kindref="member">multiply</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>PointT<sp/>result(left);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>boost::geometry::multiply_point(result,<sp/>right);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="142" refid="namespacetracktable_1_1arithmetic_1aaaec43825f930ec47f1f80f1728c50e6" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1aaaec43825f930ec47f1f80f1728c50e6" kindref="member">multiply_in_place</ref>(PointT&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>boost::geometry::multiply_point(left,<sp/>right);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>left;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ScalarT&gt;</highlight></codeline>
+<codeline lineno="157" refid="namespacetracktable_1_1arithmetic_1aeeed551f1737041ad3248ff471aa0d69" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1aeeed551f1737041ad3248ff471aa0d69" kindref="member">multiply_scalar</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,<sp/>ScalarT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>PointT<sp/>result(left);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>boost::geometry::multiply_value(result,<sp/>value);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ScalarT&gt;</highlight></codeline>
+<codeline lineno="173" refid="namespacetracktable_1_1arithmetic_1a41ddc2b0d0664a6e086950f74ce141be" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a41ddc2b0d0664a6e086950f74ce141be" kindref="member">multiply_scalar_in_place</ref>(PointT&amp;<sp/>left,<sp/>ScalarT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>boost::geometry::multiply_value(left,<sp/>value);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>left;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="188" refid="namespacetracktable_1_1arithmetic_1af80393fd93f2f52abfa9fb5e8a20697b" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1af80393fd93f2f52abfa9fb5e8a20697b" kindref="member">divide</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>PointT<sp/>result(left);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>boost::geometry::divide_point(result,<sp/>right);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="204" refid="namespacetracktable_1_1arithmetic_1adba5a13ec1361ec771ce5f3e7f74e988" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1adba5a13ec1361ec771ce5f3e7f74e988" kindref="member">divide_in_place</ref>(PointT&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>boost::geometry::divide_point(left,<sp/>right);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>left;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ScalarT&gt;</highlight></codeline>
+<codeline lineno="219" refid="namespacetracktable_1_1arithmetic_1a5e36e2d6f59f3294bbf6dfc2e8eafa75" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a5e36e2d6f59f3294bbf6dfc2e8eafa75" kindref="member">divide_scalar</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,<sp/>ScalarT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/>PointT<sp/>result(left);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>boost::geometry::divide_value(result,<sp/>value);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ScalarT&gt;</highlight></codeline>
+<codeline lineno="235" refid="namespacetracktable_1_1arithmetic_1ad43c067c45b1e30f203e4671ad399aae" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1ad43c067c45b1e30f203e4671ad399aae" kindref="member">divide_scalar_in_place</ref>(PointT&amp;<sp/>left,<sp/>ScalarT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>boost::geometry::divide_value(left,<sp/>value);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>left;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="250" refid="namespacetracktable_1_1arithmetic_1a36188ac4575d9b4a07551acfe15bb82f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1_1arithmetic_1a36188ac4575d9b4a07551acfe15bb82f" kindref="member">dot</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::geometry::dot_product(left,<sp/>right);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="comment">//TODO:<sp/>python<sp/>binding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="264" refid="namespacetracktable_1_1arithmetic_1a6597a20000678630a53cc30abe062be0" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a6597a20000678630a53cc30abe062be0" kindref="member">cross_product</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left,<sp/>PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>right)<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::geometry::cross_product(left,<sp/>right);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="276" refid="namespacetracktable_1_1arithmetic_1a27f00d531645f9c176cd87a5101fe520" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1_1arithmetic_1a27f00d531645f9c176cd87a5101fe520" kindref="member">norm_squared</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::geometry::dot_product(left,<sp/>left);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="289" refid="namespacetracktable_1_1arithmetic_1aef3dd337b69af60555ba8d576fb8bc05" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1_1arithmetic_1aef3dd337b69af60555ba8d576fb8bc05" kindref="member">norm</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>left)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sqrt(<ref refid="namespacetracktable_1_1arithmetic_1a27f00d531645f9c176cd87a5101fe520" kindref="member">norm_squared</ref>(left));</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="comment">//TODO:<sp/>Python<sp/>binding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="302" refid="namespacetracktable_1_1arithmetic_1a679813262775274a1ada18e3fb3cb297" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a679813262775274a1ada18e3fb3cb297" kindref="member">normalize_in_place</ref>(PointT&amp;<sp/>_p)<sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1_1arithmetic_1ad43c067c45b1e30f203e4671ad399aae" kindref="member">divide_scalar_in_place</ref>(_p,<sp/><ref refid="namespacetracktable_1_1arithmetic_1aef3dd337b69af60555ba8d576fb8bc05" kindref="member">norm</ref>(_p));</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="comment">//TODO:<sp/>Python<sp/>binding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="314" refid="namespacetracktable_1_1arithmetic_1a9157db9730b7e9a0e9ed33837e97e6da" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a9157db9730b7e9a0e9ed33837e97e6da" kindref="member">normalize</ref>(PointT<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>_p)<sp/>{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/>PointT<sp/>result(_p);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1_1arithmetic_1a679813262775274a1ada18e3fb3cb297" kindref="member">normalize_in_place</ref>(result);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="325" refid="namespacetracktable_1_1arithmetic_1a059bd4cb9293d460f98b089a402b116e" refkind="member"><highlight class="normal">PointT<sp/><ref refid="namespacetracktable_1_1arithmetic_1a059bd4cb9293d460f98b089a402b116e" kindref="member">zero</ref>()</highlight></codeline>
+<codeline lineno="326"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/>PointT<sp/>result;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>result.size();<sp/>++i)</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/>result[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Po</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">T&gt;</highlight></codeline>
+<codeline lineno="339" refid="namespacetracktable_1_1arithmetic_1adaea8f209e766874b917a5fb95fc8b38" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1_1arithmetic_1adaea8f209e766874b917a5fb95fc8b38" kindref="member">zeroize</ref>(PointT&amp;<sp/>_p)<sp/>{</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>_p.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>_p[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="343"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">}<sp/>}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointArithmetic.h"/>
+  </compounddef>
+</doxygen>

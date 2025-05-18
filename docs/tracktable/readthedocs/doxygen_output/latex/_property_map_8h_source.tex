@@ -1,0 +1,208 @@
+\doxysection{Property\+Map.\+h}
+\hypertarget{_property_map_8h_source}{}\label{_property_map_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PropertyMap.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Core/PropertyMap.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ PropertyMap\ -\/\ map\ from\ string\ to\ string,\ double,\ timestamp\ or\ null}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ Rather\ than\ clutter\ the\ point\ classes'\ API\ with\ lots\ of\ properties}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ that\ we\ might\ or\ might\ not\ ever\ use\ we're\ going\ to\ explicitly}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ define\ a\ few\ essentials\ and\ leave\ the\ rest\ in\ a\ property\ map}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ defined\ herein.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_PropertyMap\_h}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_PropertyMap\_h}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCoreWindowsHeader.h>}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PropertyValue.h>}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <boost/serialization/map.hpp>}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ std::map<std::string,\ PropertyValueT>\ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00073\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacetracktable_a565d58600a2c21ca00c7b3f39984f402}{has\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00092\ TRACKTABLE\_CORE\_EXPORT\ PropertyValueT\ \mbox{\hyperlink{namespacetracktable_a03ceda2323963939b94d8d82e67d5052}{property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}*\ is\_present=0);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ TRACKTABLE\_CORE\_EXPORT\ string\_type\ \mbox{\hyperlink{namespacetracktable_a8c1f4fe9794b6b170a1b0b56467d6aeb}{string\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}*\ is\_present=0);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetracktable_ad5e4d28ef7f22e6e0d0f4b31c8beff24}{real\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}*\ is\_present=0);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ \mbox{\hyperlink{namespacetracktable_a148d68ca8415703578fb7ee162023fb2}{timestamp\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ \ string\_type\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}*\ is\_present=0);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{classtracktable_1_1_null_value}{NullValue}}\ \mbox{\hyperlink{namespacetracktable_abc4cee72290a2cf445fcb1585ed37ee1}{nullvalue\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ \ string\_type\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{bool}*\ is\_present=0);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00178\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_acb4a04cbbe10c0f9ed4370d28dd7238d}{set\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00183\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_acb4a04cbbe10c0f9ed4370d28dd7238d}{set\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ string\_type\ \textcolor{keyword}{const}\&\ value);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00188\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_acb4a04cbbe10c0f9ed4370d28dd7238d}{set\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ \textcolor{keyword}{const}\&\ value);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00193\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_acb4a04cbbe10c0f9ed4370d28dd7238d}{set\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \mbox{\hyperlink{classtracktable_1_1_null_value}{NullValue}}\ \textcolor{keyword}{const}\&\ value);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00198\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_acb4a04cbbe10c0f9ed4370d28dd7238d}{set\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ int64\_t\ value);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00203\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_acb4a04cbbe10c0f9ed4370d28dd7238d}{set\_property}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ PropertyValueT\ \textcolor{keyword}{const}\&\ value);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00207\ TRACKTABLE\_CORE\_EXPORT\ PropertyValueT\ \mbox{\hyperlink{namespacetracktable_a5b7d7a4b2e65520ccadbc79f361e4b63}{property\_with\_default}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ PropertyValueT\ \textcolor{keyword}{const}\&\ default\_value);}
+\DoxyCodeLine{00208\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetracktable_a2f9de743cfe526a56da8f265c50ac02c}{real\_property\_with\_default}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \textcolor{keywordtype}{double}\ default\_value);}
+\DoxyCodeLine{00209\ TRACKTABLE\_CORE\_EXPORT\ string\_type\ \mbox{\hyperlink{namespacetracktable_ab21994b2954997ce32361071fb34a6d1}{string\_property\_with\_default}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ string\_type\ \textcolor{keyword}{const}\&\ default\_value);}
+\DoxyCodeLine{00210\ TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ \mbox{\hyperlink{namespacetracktable_a3b8557907d36a6e588718542dac1684b}{timestamp\_property\_with\_default}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \mbox{\hyperlink{namespacetracktable_a682e5fb98918f65770834e07ff51d21c}{Timestamp}}\ \textcolor{keyword}{const}\&\ default\_value);}
+\DoxyCodeLine{00211\ TRACKTABLE\_CORE\_EXPORT\ \mbox{\hyperlink{classtracktable_1_1_null_value}{NullValue}}\ \mbox{\hyperlink{namespacetracktable_a8384407ced81ac29e37c7694816252ec}{nullvalue\_property\_with\_default}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties,\ string\_type\ \textcolor{keyword}{const}\&\ name,\ \mbox{\hyperlink{classtracktable_1_1_null_value}{NullValue}}\ \textcolor{keyword}{const}\&\ default\_value);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ TRACKTABLE\_CORE\_EXPORT\ string\_type\ \mbox{\hyperlink{namespacetracktable_a00e54925770f86a28d15e6142682bbde}{property\_map\_to\_string}}(\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ properties);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00220\ TRACKTABLE\_CORE\_EXPORT\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacetracktable_a73853fb1816c05b8a0337695ef0de7be}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ pm1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\&\ pm2);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00233\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1interpolate}{interpolate}}<\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}>}
+\DoxyCodeLine{00234\ \{}
+\DoxyCodeLine{00235\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}}
+\DoxyCodeLine{00236\ \ \ apply(}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ first,}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ second,}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{double}\ t}
+\DoxyCodeLine{00240\ \ \ \ \ )}
+\DoxyCodeLine{00241\ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ PropertyMap::const\_iterator\ first\_iter,\ second\_iter;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ result;}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (first\_iter\ =\ first.begin();}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ first\_iter\ !=\ first.end();}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ ++first\_iter)}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ string\_type\ key((*first\_iter).first);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ second\_iter\ =\ second.find(key);}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (second\_iter\ !=\ second.end())}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ result[key]\ =\ interpolate\_property(}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*first\_iter).second,}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*second\_iter).second,}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (boost::bad\_get\&\ \textcolor{comment}{/*e*/})}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}WARNING:\ interpolate<PropertyMap>:\ "{}}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Couldn't\ retrieve\ property\ '"{}}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ key\ <<\ \textcolor{stringliteral}{"{}'\ (type\ "{}}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*first\_iter).second)}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{})\ "{}}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ from\ second\ map.\ "{}}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Property\ is\ present\ but\ has\ type\ "{}}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*second\_iter).second)}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}.\ "{}}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Re-\/using\ value\ from\ first\ point."{}};}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ result[key]\ =\ (*first\_iter).second;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \};}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00283\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtracktable_1_1algorithms_1_1extrapolate}{extrapolate}}<\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}>}
+\DoxyCodeLine{00284\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ apply(}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ first,}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ \textcolor{keyword}{const}\&\ second,}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00291\ \ \ \ \ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ PropertyMap::const\_iterator\ first\_iter,\ second\_iter;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ result;}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (first\_iter\ =\ first.begin();}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ first\_iter\ !=\ first.end();}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ ++first\_iter)}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ string\_type\ key((*first\_iter).first);}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ second\_iter\ =\ second.find(key);}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (second\_iter\ !=\ second.end())}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result[key]\ =\ extrapolate\_property(}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*first\_iter).second,}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*second\_iter).second,}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (boost::bad\_get\&\ \textcolor{comment}{/*e*/})}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}WARNING:\ extrapolate<PropertyMap>:\ "{}}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Couldn't\ retrieve\ property\ '"{}}}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ key\ <<\ \textcolor{stringliteral}{"{}'\ (type\ "{}}}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*first\_iter).second)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{})\ "{}}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ from\ second\ map.\ "{}}}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Property\ is\ present\ but\ has\ type\ "{}}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*second\_iter).second)}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}.\ "{}}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Re-\/using\ value\ from\ first\ point."{}};}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result[key]\ =\ (*first\_iter).second;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \};}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \}\ \}\ \textcolor{comment}{//\ exit\ namespace\ tracktable::algorithms}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

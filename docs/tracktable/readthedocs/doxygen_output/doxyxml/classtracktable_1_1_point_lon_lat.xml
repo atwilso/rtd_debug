@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_point_lon_lat" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::PointLonLat</compoundname>
+    <basecompoundref refid="classtracktable_1_1_point_base" prot="public" virt="non-virtual">tracktable::PointBase&lt; 2 &gt;</basecompoundref>
+    <derivedcompoundref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point" prot="public" virt="non-virtual">tracktable::domain::terrestrial::TerrestrialPoint</derivedcompoundref>
+    <includes refid="_point_lon_lat_8h" local="no">PointLonLat.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_point_lon_lat_1ade511104466c74d766fdc9c376c87f25" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_point_base" kindref="compound">PointBase</ref>&lt; 2 &gt;</type>
+        <definition>typedef PointBase&lt;2&gt; tracktable::PointLonLat::Superclass</definition>
+        <argsstring></argsstring>
+        <name>Superclass</name>
+        <qualifiedname>tracktable::PointLonLat::Superclass</qualifiedname>
+        <briefdescription>
+<para>Convenient alias for superclass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="83" column="21" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_point_lon_lat_1ab3f66355e6b134863d954adf7a9f4a8c" prot="public" static="no">
+        <type>Superclass::coordinate_type</type>
+        <definition>typedef Superclass::coordinate_type tracktable::PointLonLat::coord_type</definition>
+        <argsstring></argsstring>
+        <name>coord_type</name>
+        <qualifiedname>tracktable::PointLonLat::coord_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="84" column="39" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1a32518d4d3231e491bace6b70eeb3901d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointLonLat::PointLonLat</definition>
+        <argsstring>()</argsstring>
+        <name>PointLonLat</name>
+        <qualifiedname>tracktable::PointLonLat::PointLonLat</qualifiedname>
+        <briefdescription>
+<para>Create an uninitialized point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="87" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1a79da0e5c26f50ec1afb818dfd8f17a14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointLonLat::PointLonLat</definition>
+        <argsstring>(coord_type const &amp;a, coord_type const &amp;b)</argsstring>
+        <name>PointLonLat</name>
+        <qualifiedname>tracktable::PointLonLat::PointLonLat</qualifiedname>
+        <param>
+          <type>coord_type const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>coord_type const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Create a 2D point on a sphere (convenience constructor) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Since this class is explicitly about a point in a 2-dimensional domain we provide a convenience constructor to let you instantiate and populate one with one line. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="95" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="95" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1a8b4e30e32c3bfa6a9e0b1cfb4f1cd0ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointLonLat::PointLonLat</definition>
+        <argsstring>(const double *coordinates)</argsstring>
+        <name>PointLonLat</name>
+        <qualifiedname>tracktable::PointLonLat::PointLonLat</qualifiedname>
+        <param>
+          <type>const double *</type>
+          <declname>coordinates</declname>
+        </param>
+        <briefdescription>
+<para>Create a 2D point on a sphere (convenience constructor) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Populate the point from an array of coordinates. The caller is responsible for ensuring that the array is large enough to contain the right number of coordinates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="107" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="107" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1aeac3a38ec37f736cf2dfbb6d2f2cb1ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointLonLat::~PointLonLat</definition>
+        <argsstring>()</argsstring>
+        <name>~PointLonLat</name>
+        <qualifiedname>tracktable::PointLonLat::~PointLonLat</qualifiedname>
+        <briefdescription>
+<para>Destructor for a point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="114" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="114" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1a888bdb157648a9a3dff763b37f88928d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointLonLat::PointLonLat</definition>
+        <argsstring>(Superclass const &amp;other)</argsstring>
+        <name>PointLonLat</name>
+        <qualifiedname>tracktable::PointLonLat::PointLonLat</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_lon_lat_1ade511104466c74d766fdc9c376c87f25" kindref="member">Superclass</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Make this point a copy of a generic 2D point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="117" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="117" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1a28d6f1ff21f6df387a6cf1099495b548" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::PointLonLat::PointLonLat</definition>
+        <argsstring>(PointLonLat const &amp;other)</argsstring>
+        <name>PointLonLat</name>
+        <qualifiedname>tracktable::PointLonLat::PointLonLat</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_point_lon_lat" kindref="compound">PointLonLat</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Make this point a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="123" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="123" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1ac9c21d5063b716c783b3b1acffa3d624" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>coord_type</type>
+        <definition>coord_type tracktable::PointLonLat::longitude</definition>
+        <argsstring>() const</argsstring>
+        <name>longitude</name>
+        <qualifiedname>tracktable::PointLonLat::longitude</qualifiedname>
+        <briefdescription>
+<para>Return this point&apos;s longitude. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Longitude in degrees </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="133" column="14" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="133" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1a403df11f0c49a8d0d02ac3cdb1635ffa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointLonLat::set_longitude</definition>
+        <argsstring>(coord_type const &amp;new_longitude)</argsstring>
+        <name>set_longitude</name>
+        <qualifiedname>tracktable::PointLonLat::set_longitude</qualifiedname>
+        <param>
+          <type>coord_type const &amp;</type>
+          <declname>new_longitude</declname>
+        </param>
+        <briefdescription>
+<para>Set this point&apos;s longitude. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">new_longitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New value for longitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="139" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="139" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1a71577e3a60ae41e63bccfeb5a9695317" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>coord_type</type>
+        <definition>coord_type tracktable::PointLonLat::latitude</definition>
+        <argsstring>() const</argsstring>
+        <name>latitude</name>
+        <qualifiedname>tracktable::PointLonLat::latitude</qualifiedname>
+        <briefdescription>
+<para>Return this point&apos;s latitude. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Latitude in degrees </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="148" column="14" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1ad73365869fdd0bcc96c918ce7d66490d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::PointLonLat::set_latitude</definition>
+        <argsstring>(coord_type const &amp;new_latitude)</argsstring>
+        <name>set_latitude</name>
+        <qualifiedname>tracktable::PointLonLat::set_latitude</qualifiedname>
+        <param>
+          <type>coord_type const &amp;</type>
+          <declname>new_latitude</declname>
+        </param>
+        <briefdescription>
+<para>Set this point&apos;s latitude. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">new_latitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New value for latitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="154" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="154" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1a379153b44191c37a93f4514814cd19e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string tracktable::PointLonLat::to_string</definition>
+        <argsstring>() const</argsstring>
+        <name>to_string</name>
+        <qualifiedname>tracktable::PointLonLat::to_string</qualifiedname>
+        <briefdescription>
+<para>Convert point coordinates to a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Coordinates string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="163" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="163" bodyend="168"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_point_lon_lat_1acd29d2fc9526f5663ec04855d04b2068" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Archive</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void tracktable::PointLonLat::serialize</definition>
+        <argsstring>(Archive &amp;ar, const unsigned int)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>tracktable::PointLonLat::serialize</qualifiedname>
+        <param>
+          <type>Archive &amp;</type>
+          <declname>ar</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+        </param>
+        <briefdescription>
+<para>Serialize the coordinates to an archive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Archive to serialize to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Version of the archive </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="177" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="177" bodyend="180"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>2D point on a sphere </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class specializes <ref refid="classtracktable_1_1_point_base" kindref="compound">PointBase</ref> to use <computeroutput>boost::geometry</computeroutput> in a spherical-equatorial coordinate system <ndash/> the familiar longitude/latitude mapping onto a sphere. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tracktable::PointBase&lt; 2 &gt;</label>
+        <link refid="classtracktable_1_1_point_base"/>
+      </node>
+      <node id="1">
+        <label>tracktable::PointLonLat</label>
+        <link refid="classtracktable_1_1_point_lon_lat"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tracktable::domain::terrestrial::TerrestrialPoint</label>
+        <link refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_point"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>tracktable::PointBase&lt; 2 &gt;</label>
+        <link refid="classtracktable_1_1_point_base"/>
+      </node>
+      <node id="1">
+        <label>tracktable::PointLonLat</label>
+        <link refid="classtracktable_1_1_point_lon_lat"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" line="77" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/PointLonLat.h" bodystart="78" bodyend="181"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_point_lon_lat_1ab3f66355e6b134863d954adf7a9f4a8c" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>coord_type</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2aba212a90c51c5f4e9fa76fe679146a" prot="protected" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>Coordinates</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2aba212a90c51c5f4e9fa76fe679146a" prot="protected" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>Coordinates</name></member>
+      <member refid="classtracktable_1_1_point_base_1a2b5d66d132636bb41831a09667f6e640" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>element_type</name></member>
+      <member refid="classtracktable_1_1_point_base_1a7918dde3ef618e4497d9949e515a5fd5" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>get</name></member>
+      <member refid="classtracktable_1_1_point_base_1a7918dde3ef618e4497d9949e515a5fd5" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>get</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a71577e3a60ae41e63bccfeb5a9695317" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>latitude</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1ac9c21d5063b716c783b3b1acffa3d624" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>longitude</name></member>
+      <member refid="classtracktable_1_1_point_base_1ac225c66d4cfab081b67f95d4411b0fdd" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_point_base_1ac225c66d4cfab081b67f95d4411b0fdd" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_point_base_1a236bf3c4a5a1128bea753ad59f7d2594" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_base_1a236bf3c4a5a1128bea753ad59f7d2594" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_point_base_1a35cfaef9ac15a33040e2458d99d980e3" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_base_1a35cfaef9ac15a33040e2458d99d980e3" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1c2237aff8b2b8dec8b934feb10d79c6" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1ea12444b1425cf2462e2920cac1b499" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1c2237aff8b2b8dec8b934feb10d79c6" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1a1ea12444b1425cf2462e2920cac1b499" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>operator[]</name></member>
+      <member refid="classtracktable_1_1_point_base_1ae25b06b76872599f16950c866529d096" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1aab715197cb725a115bdbae588649f795" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1ae25b06b76872599f16950c866529d096" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1aab715197cb725a115bdbae588649f795" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointBase</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a32518d4d3231e491bace6b70eeb3901d" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a79da0e5c26f50ec1afb818dfd8f17a14" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a8b4e30e32c3bfa6a9e0b1cfb4f1cd0ef" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a888bdb157648a9a3dff763b37f88928d" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a28d6f1ff21f6df387a6cf1099495b548" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>PointLonLat</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1acd29d2fc9526f5663ec04855d04b2068" prot="private" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>serialize</name></member>
+      <member refid="classtracktable_1_1_point_base_1aece26ecf39982722de53187fe0e1531b" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>set</name></member>
+      <member refid="classtracktable_1_1_point_base_1aece26ecf39982722de53187fe0e1531b" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>set</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1ad73365869fdd0bcc96c918ce7d66490d" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>set_latitude</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a403df11f0c49a8d0d02ac3cdb1635ffa" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>set_longitude</name></member>
+      <member refid="classtracktable_1_1_point_base_1a00baacc4de3a9c9cf3f3f39af19aa7de" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>size</name></member>
+      <member refid="classtracktable_1_1_point_base_1a00baacc4de3a9c9cf3f3f39af19aa7de" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>size</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1ade511104466c74d766fdc9c376c87f25" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>Superclass</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1a379153b44191c37a93f4514814cd19e7" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>to_string</name></member>
+      <member refid="classtracktable_1_1_point_base_1af616577253186b1d80c7ab90338640e2" prot="public" virt="virtual"><scope>tracktable::PointLonLat</scope><name>~PointBase</name></member>
+      <member refid="classtracktable_1_1_point_base_1af616577253186b1d80c7ab90338640e2" prot="public" virt="virtual"><scope>tracktable::PointLonLat</scope><name>~PointBase</name></member>
+      <member refid="classtracktable_1_1_point_lon_lat_1aeac3a38ec37f736cf2dfbb6d2f2cb1ec" prot="public" virt="non-virtual"><scope>tracktable::PointLonLat</scope><name>~PointLonLat</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,147 @@
+\doxysection{dbscan\+\_\+points.\+h}
+\hypertarget{dbscan__points_8h_source}{}\label{dbscan__points_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/dbscan\_points.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/detail/dbscan\_points.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ copyright\ notice,\ this\ list\ of\ conditions\ and\ the\ following}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ disclaimer\ in\ the\ documentation\ and/or\ other\ materials\ provided}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ with\ the\ distribution.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ COPYRIGHT\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ STRICT\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_dbscan\_points\_h}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_dbscan\_points\_h}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <boost/tuple/tuple.hpp>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }analysis\ \{\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{template}<\ \textcolor{keyword}{class}\ ContainerT,\ \textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T\ >}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }DBSCAN\_IndexByIterator}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ ContainerT::iterator\ \ \ \ \ \ \ \ key\_type;}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ ContainerT::const\_reference\ const\_reference\_type;}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{typedef}\ PointT\ \textcolor{keyword}{const}\&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_type;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{explicit}\ DBSCAN\_IndexByIterator(ContainerT\ \textcolor{keyword}{const}\&\ c)\ :\ Container(c)\ \{\ \}}
+\DoxyCodeLine{00049\ \ \ result\_type\ operator()\ (key\_type\ iter)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (*iter).point();\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ ContainerT\ \textcolor{keyword}{const}\&\ Container;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }IndexedPoint}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{typedef}\ PointT\ point\_type;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ IndexedPoint()\ :\ PointId(-\/1),\ ClusterId(0)\ \{\ \}}
+\DoxyCodeLine{00080\ \ \ IndexedPoint(PointT\ \textcolor{keyword}{const}\&\ point\_to\_index)}
+\DoxyCodeLine{00081\ \ \ \ \ :\ Point(point\_to\_index)}
+\DoxyCodeLine{00082\ \ \ \ \ ,\ PointId(-\/1)}
+\DoxyCodeLine{00083\ \ \ \ \ ,\ ClusterId(0)}
+\DoxyCodeLine{00084\ \ \ \ \ ,\ Visited(\textcolor{keyword}{false})\ \{\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ IndexedPoint(PointT\ \textcolor{keyword}{const}\&\ point\_to\_index,\ \textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{00087\ \ \ \ \ :\ Point(point\_to\_index)}
+\DoxyCodeLine{00088\ \ \ \ \ ,\ PointId(index)}
+\DoxyCodeLine{00089\ \ \ \ \ ,\ ClusterId(0)}
+\DoxyCodeLine{00090\ \ \ \ \ ,\ Visited(\textcolor{keyword}{false})\ \{\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \string~IndexedPoint()\ \{\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ IndexedPoint(IndexedPoint\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00095\ \ \ \ \ :\ Point(other.Point),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ PointId(other.PointId),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ ClusterId(other.ClusterId),}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ Visited(\textcolor{keyword}{false})}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ IndexedPoint\&\ operator=(IndexedPoint\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ this-\/>Point\ =\ other.Point;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ this-\/>PointId\ =\ other.PointId;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ this-\/>ClusterId\ =\ other.ClusterId;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ this-\/>Visited\ =\ other.Visited;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{bool}\ operator==(IndexedPoint\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00112\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ this-\/>Point\ ==\ other.Point\ \&\&}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ this-\/>PointId\ ==\ other.PointId\ \&\&}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ this-\/>ClusterId\ ==\ other.ClusterId\ \&\&}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ this-\/>Visited\ ==\ other.Visited}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ PointT\ \textcolor{keyword}{const}\&\ point()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>Point;\ \}}
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordtype}{int}\ point\_id()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>PointId;\ \}}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordtype}{int}\ cluster\_id()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>ClusterId;\ \}}
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{bool}\ visited()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>Visited;\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{void}\ set\_point(PointT\ \textcolor{keyword}{const}\&\ pt)\ \{\ this-\/>Point\ =\ pt;\ \}}
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{void}\ set\_point\_id(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{\ this-\/>PointId\ =\ id;\ \}}
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordtype}{void}\ set\_cluster\_id(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{\ this-\/>ClusterId\ =\ id;\ \}}
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{void}\ set\_visited(\textcolor{keywordtype}{bool}\ v)\ \{\ this-\/>Visited\ =\ v;\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00132\ \ \ PointT\ Point;}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{int}\ PointId;}
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{int}\ ClusterId;}
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{bool}\ Visited;}
+\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00141\ boost::geometry::model::box<point\_type>\ make\_box(\textcolor{keyword}{const}\ point\_type\&\ center,\ \textcolor{keyword}{const}\ point\_type\&\ half\_span)}
+\DoxyCodeLine{00142\ \{}
+\DoxyCodeLine{00143\ \ \ \textcolor{keyword}{typedef}\ boost::geometry::model::box<point\_type>\ box\_type;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ point\_type\ min\_corner(center);}
+\DoxyCodeLine{00146\ \ \ point\_type\ max\_corner(center);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ boost::geometry::add\_point(max\_corner,\ half\_span);}
+\DoxyCodeLine{00149\ \ \ boost::geometry::subtract\_point(min\_corner,\ half\_span);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keywordflow}{return}\ box\_type(min\_corner,\ max\_corner);}
+\DoxyCodeLine{00152\ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \}\ \}\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable::analysis::detail}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

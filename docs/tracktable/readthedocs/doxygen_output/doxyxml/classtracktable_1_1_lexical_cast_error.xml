@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_lexical_cast_error" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::LexicalCastError</compoundname>
+    <basecompoundref refid="classtracktable_1_1_parse_error" prot="public" virt="non-virtual">tracktable::ParseError</basecompoundref>
+    <includes refid="_parse_exceptions_8h" local="no">ParseExceptions.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_lexical_cast_error_1aefe5cb762fbca1018e3bd68ee056fd7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::LexicalCastError::LexicalCastError</definition>
+        <argsstring>(std::string const &amp;field_name, std::string const &amp;string_value, std::string const &amp;expected_type)</argsstring>
+        <name>LexicalCastError</name>
+        <qualifiedname>tracktable::LexicalCastError::LexicalCastError</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field_name</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>string_value</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>expected_type</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a empty lexical cast exception for a give error string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field that was going to be ccoverted </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">string_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String that was going to be converted </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">expected_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type that the string_value was going to be coverted to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="140" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="140" bodyend="146"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classtracktable_1_1_lexical_cast_error_1ad2570b79a3e4675f63b2155ed6713af2" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string tracktable::LexicalCastError::format_convert_error_message</definition>
+        <argsstring>(std::string const &amp;field_name, std::string const &amp;string_value, std::string const &amp;expected_type)</argsstring>
+        <name>format_convert_error_message</name>
+        <qualifiedname>tracktable::LexicalCastError::format_convert_error_message</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>field_name</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>string_value</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>expected_type</declname>
+        </param>
+        <briefdescription>
+<para>Format the output error string for the lexical cast error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field that was going to be ccoverted </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">string_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String that was going to be converted </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">expected_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type that the string_value was going to be coverted to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="155" column="22" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="155" bodyend="168"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple class to encapsulate lexical cast error. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="1">
+        <label>tracktable::LexicalCastError</label>
+        <link refid="classtracktable_1_1_lexical_cast_error"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::ParseError</label>
+        <link refid="classtracktable_1_1_parse_error"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="1">
+        <label>tracktable::LexicalCastError</label>
+        <link refid="classtracktable_1_1_lexical_cast_error"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::ParseError</label>
+        <link refid="classtracktable_1_1_parse_error"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" line="131" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/ParseExceptions.h" bodystart="132" bodyend="169"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_lexical_cast_error_1ad2570b79a3e4675f63b2155ed6713af2" prot="private" virt="non-virtual"><scope>tracktable::LexicalCastError</scope><name>format_convert_error_message</name></member>
+      <member refid="classtracktable_1_1_lexical_cast_error_1aefe5cb762fbca1018e3bd68ee056fd7f" prot="public" virt="non-virtual"><scope>tracktable::LexicalCastError</scope><name>LexicalCastError</name></member>
+      <member refid="classtracktable_1_1_parse_error_1a1dec1250728a70f7eee5f6eb6e5b388b" prot="public" virt="non-virtual"><scope>tracktable::LexicalCastError</scope><name>ParseError</name></member>
+      <member refid="classtracktable_1_1_parse_error_1a185edc5f368ad836229e13bf754c4cc8" prot="public" virt="non-virtual"><scope>tracktable::LexicalCastError</scope><name>ParseError</name></member>
+      <member refid="classtracktable_1_1_parse_error_1a2221b72cfb33b0506eca2b6923d77430" prot="public" virt="non-virtual"><scope>tracktable::LexicalCastError</scope><name>ParseError</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

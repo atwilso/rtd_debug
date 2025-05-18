@@ -1,0 +1,29 @@
+\doxysection{tracktable\+::detail\+::Transfer\+Point\+Coordinates\texorpdfstring{$<$}{<} Input\+PointT, Output\+PointT \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structtracktable_1_1detail_1_1_transfer_point_coordinates}{}\label{structtracktable_1_1detail_1_1_transfer_point_coordinates}\index{tracktable::detail::TransferPointCoordinates$<$ InputPointT, OutputPointT $>$@{tracktable::detail::TransferPointCoordinates$<$ InputPointT, OutputPointT $>$}}
+
+
+Convert points from one coordinate system to another.  
+
+
+
+
+{\ttfamily \#include $<$transfer\+\_\+point\+\_\+coordinates.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structtracktable_1_1detail_1_1_transfer_point_coordinates_a9052039787098f4a92dfdd0b3a91b0c7}\label{structtracktable_1_1detail_1_1_transfer_point_coordinates_a9052039787098f4a92dfdd0b3a91b0c7} 
+Output\+PointT {\bfseries operator()} (Input\+PointT const \&input\+\_\+point) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Input\+PointT, class Output\+PointT$>$\newline
+struct tracktable\+::detail\+::\+Transfer\+Point\+Coordinates$<$ Input\+Point\+T, Output\+Point\+T $>$}
+Convert points from one coordinate system to another. 
+
+We take advantage of the fact that boost\+::geometry\+::assign only cares whether two points have the same number of dimensions. This function object will be used with boost\+::transform\+\_\+iterator. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Analysis/detail/transfer\+\_\+point\+\_\+coordinates.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,214 @@
+\doxysection{tracktable\+::Skip\+Comments\+Reader\texorpdfstring{$<$}{<} IteratorT \texorpdfstring{$>$}{>}\+::Skip\+Comments\+Iterator Class Reference}
+\hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a28b07b8ccef23aefc9aa4e8cfaaa79f7}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a28b07b8ccef23aefc9aa4e8cfaaa79f7} 
+using {\bfseries iterator\+\_\+category} = std\+::input\+\_\+iterator\+\_\+tag
+\item 
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a0aa828a783f7ba9479f1faaae68d0a51}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a0aa828a783f7ba9479f1faaae68d0a51} 
+using {\bfseries value\+\_\+type} = typename inner\+\_\+iterator\+\_\+type\+::value\+\_\+type
+\item 
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a38a0a7c04d15e5bbcc6371a682a10a28}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a38a0a7c04d15e5bbcc6371a682a10a28} 
+using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
+\item 
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a41c1890238bf3adec4b2c53f1c62fffd}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a41c1890238bf3adec4b2c53f1c62fffd} 
+using {\bfseries pointer} = const typename inner\+\_\+iterator\+\_\+type\+::value\+\_\+type\texorpdfstring{$\ast$}{*}
+\item 
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aa84cb993bf68898eedc02dcc3f8b6c66}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aa84cb993bf68898eedc02dcc3f8b6c66} 
+using {\bfseries reference} = const typename inner\+\_\+iterator\+\_\+type\+::value\+\_\+type\&
+\item 
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aac6f64e4c60e598998eaf403208f4535}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aac6f64e4c60e598998eaf403208f4535} 
+using {\bfseries char\+\_\+type} = typename inner\+\_\+iterator\+\_\+type\+::value\+\_\+type\+::value\+\_\+type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a864f8506fe5affdf590fae54136cee24}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a864f8506fe5affdf590fae54136cee24} 
+{\bfseries Skip\+Comments\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an default \doxylink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aa5be23254d0d37e2461da9915ef98008}{Skip\+Comments\+Iterator}} (inner\+\_\+iterator\+\_\+type Begin, inner\+\_\+iterator\+\_\+type End, std\+::string const \&Comment, int const \&Skips)
+\begin{DoxyCompactList}\small\item\em Instantiate a reader with a start and finish points along with a comment delimter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a1618bf0542c85dd86d7a1a4fe5045e22}{Skip\+Comments\+Iterator}} (\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a reader with a copy of another. \end{DoxyCompactList}\item 
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a274939bdba8b3b314096e69b53f7635b}\label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a274939bdba8b3b314096e69b53f7635b} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Skip\+Comments\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_afca37dfbfcb55bbc426fa5afa8abbf81}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assign a \doxylink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator} to the value of another. \end{DoxyCompactList}\item 
+value\+\_\+type const \& \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a00932f9b508250e5a1655d9b587fe1b2}{operator\texorpdfstring{$\ast$}{*}}} () const
+\begin{DoxyCompactList}\small\item\em Multiply an iterator. \end{DoxyCompactList}\item 
+value\+\_\+type const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a2eeff529964193e43304160084332db0}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Get the current iterator object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a69e6f735db78a65c9a670c88e0b41430}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Advance the iterator to the next position in the sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aebbfed848bd680bca3111629a781129f}{operator++}} (int)
+\begin{DoxyCompactList}\small\item\em Advance the iterator to the next position in the sequence. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a6ae8799d431a11b903759b7c13a83c68}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether one \doxylink{classtracktable_1_1_skip_comments_reader}{Skip\+Comments\+Reader} is equal to another by comparing all the properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a9fb3779398e3965b4e8294247cddded4}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check whether two iterators are unequal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aa5be23254d0d37e2461da9915ef98008}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!SkipCommentsIterator@{SkipCommentsIterator}}
+\index{SkipCommentsIterator@{SkipCommentsIterator}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{SkipCommentsIterator()}{SkipCommentsIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aa5be23254d0d37e2461da9915ef98008} 
+template$<$typename IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::\+Skip\+Comments\+Iterator (\begin{DoxyParamCaption}\item[{inner\+\_\+iterator\+\_\+type}]{Begin}{, }\item[{inner\+\_\+iterator\+\_\+type}]{End}{, }\item[{std\+::string const \&}]{Comment}{, }\item[{int const \&}]{Skips}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate a reader with a start and finish points along with a comment delimter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Begin} & Iterator to start from \\
+\hline
+\mbox{\texttt{ in}}  & {\em End} & Iterator to end at \\
+\hline
+\mbox{\texttt{ in}}  & {\em Comment} & Character signifying a comment \\
+\hline
+\mbox{\texttt{ in}}  & {\em Number} & of header lines to skip \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a1618bf0542c85dd86d7a1a4fe5045e22}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!SkipCommentsIterator@{SkipCommentsIterator}}
+\index{SkipCommentsIterator@{SkipCommentsIterator}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{SkipCommentsIterator()}{SkipCommentsIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a1618bf0542c85dd86d7a1a4fe5045e22} 
+template$<$typename IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::\+Skip\+Comments\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contructor, create a reader with a copy of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator} to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a9fb3779398e3965b4e8294247cddded4}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a9fb3779398e3965b4e8294247cddded4} 
+template$<$typename IteratorT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether two iterators are unequal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Iterator for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a00932f9b508250e5a1655d9b587fe1b2}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a00932f9b508250e5a1655d9b587fe1b2} 
+template$<$typename IteratorT$>$ \\
+value\+\_\+type const  \& \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply an iterator. 
+
+\begin{DoxyReturn}{Returns}
+Result of the multiplication 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a69e6f735db78a65c9a670c88e0b41430}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a69e6f735db78a65c9a670c88e0b41430} 
+template$<$typename IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advance the iterator to the next position in the sequence. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next iterator in the sequence 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aebbfed848bd680bca3111629a781129f}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_aebbfed848bd680bca3111629a781129f} 
+template$<$typename IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advance the iterator to the next position in the sequence. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next iterator in the sequence 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a2eeff529964193e43304160084332db0}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a2eeff529964193e43304160084332db0} 
+template$<$typename IteratorT$>$ \\
+value\+\_\+type const  \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current iterator object. 
+
+\begin{DoxyReturn}{Returns}
+Current iterator 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_afca37dfbfcb55bbc426fa5afa8abbf81}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_afca37dfbfcb55bbc426fa5afa8abbf81} 
+template$<$typename IteratorT$>$ \\
+\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} \& \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a \doxylink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator} to the value of another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_skip_comments_reader}{Skip\+Comments\+Reader} to assign value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reader with the new assigned value 
+\end{DoxyReturn}
+\Hypertarget{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a6ae8799d431a11b903759b7c13a83c68}\index{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}!operator==@{operator==}}
+\index{operator==@{operator==}!tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator@{tracktable::SkipCommentsReader$<$ IteratorT $>$::SkipCommentsIterator}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator_a6ae8799d431a11b903759b7c13a83c68} 
+template$<$typename IteratorT$>$ \\
+bool \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable\+::\+Skip\+Comments\+Reader}}$<$ IteratorT $>$\+::\+Skip\+Comments\+Iterator\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_skip_comments_reader_1_1_skip_comments_iterator}{Skip\+Comments\+Iterator}} const \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether one \doxylink{classtracktable_1_1_skip_comments_reader}{Skip\+Comments\+Reader} is equal to another by comparing all the properties. 
+
+Two Skip\+Comments\+Readers are equal if all of their properties are equal.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classtracktable_1_1_skip_comments_reader}{Skip\+Comments\+Reader} for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating equivalency 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/Skip\+Comments\+Reader.\+h\end{DoxyCompactItemize}

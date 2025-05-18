@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::rw::detail::ColumnTypeAssignment</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1a02b4d4458c95fd49495d757243542c05" prot="public" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t tracktable::rw::detail::ColumnTypeAssignment::column</definition>
+        <argsstring></argsstring>
+        <name>column</name>
+        <qualifiedname>tracktable::rw::detail::ColumnTypeAssignment::column</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="74" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1ac5ab2ab9ec9262f8bf0b49b632ddbb5c" prot="public" static="no" mutable="no">
+        <type>PropertyUnderlyingType</type>
+        <definition>PropertyUnderlyingType tracktable::rw::detail::ColumnTypeAssignment::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>tracktable::rw::detail::ColumnTypeAssignment::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="75" column="26" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1a32a9116bb3f62af148f70da150f1a065" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::rw::detail::ColumnTypeAssignment::ColumnTypeAssignment</definition>
+        <argsstring>()</argsstring>
+        <name>ColumnTypeAssignment</name>
+        <qualifiedname>tracktable::rw::detail::ColumnTypeAssignment::ColumnTypeAssignment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="51" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1ab61c7fe4c812034a612c5bdefb4bc92c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::rw::detail::ColumnTypeAssignment::ColumnTypeAssignment</definition>
+        <argsstring>(std::size_t _column, PropertyUnderlyingType _type)</argsstring>
+        <name>ColumnTypeAssignment</name>
+        <qualifiedname>tracktable::rw::detail::ColumnTypeAssignment::ColumnTypeAssignment</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>_column</declname>
+        </param>
+        <param>
+          <type>PropertyUnderlyingType</type>
+          <declname>_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="55" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="55" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1aae2a0a0b6a11d7a14e48353eb302ef0f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment" kindref="compound">ColumnTypeAssignment</ref></type>
+        <definition>static ColumnTypeAssignment tracktable::rw::detail::ColumnTypeAssignment::real</definition>
+        <argsstring>(std::size_t _column)</argsstring>
+        <name>real</name>
+        <qualifiedname>tracktable::rw::detail::ColumnTypeAssignment::real</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>_column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="59" column="31" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1a5f54f1dc6cc41a7f290e090833361529" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment" kindref="compound">ColumnTypeAssignment</ref></type>
+        <definition>static ColumnTypeAssignment tracktable::rw::detail::ColumnTypeAssignment::string</definition>
+        <argsstring>(std::size_t _column)</argsstring>
+        <name>string</name>
+        <qualifiedname>tracktable::rw::detail::ColumnTypeAssignment::string</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>_column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="64" column="31" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1aa6fa3f3ff4421632e8339d3b2f56719f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment" kindref="compound">ColumnTypeAssignment</ref></type>
+        <definition>static ColumnTypeAssignment tracktable::rw::detail::ColumnTypeAssignment::timestamp</definition>
+        <argsstring>(std::size_t _column)</argsstring>
+        <name>timestamp</name>
+        <qualifiedname>tracktable::rw::detail::ColumnTypeAssignment::timestamp</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>_column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="69" column="31" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="69" bodyend="72"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" line="48" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/detail/PropertyMapReadWrite.h" bodystart="49" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1a02b4d4458c95fd49495d757243542c05" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::ColumnTypeAssignment</scope><name>column</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1a32a9116bb3f62af148f70da150f1a065" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::ColumnTypeAssignment</scope><name>ColumnTypeAssignment</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1ab61c7fe4c812034a612c5bdefb4bc92c" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::ColumnTypeAssignment</scope><name>ColumnTypeAssignment</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1aae2a0a0b6a11d7a14e48353eb302ef0f" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::ColumnTypeAssignment</scope><name>real</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1a5f54f1dc6cc41a7f290e090833361529" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::ColumnTypeAssignment</scope><name>string</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1aa6fa3f3ff4421632e8339d3b2f56719f" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::ColumnTypeAssignment</scope><name>timestamp</name></member>
+      <member refid="classtracktable_1_1rw_1_1detail_1_1_column_type_assignment_1ac5ab2ab9ec9262f8bf0b49b632ddbb5c" prot="public" virt="non-virtual"><scope>tracktable::rw::detail::ColumnTypeAssignment</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

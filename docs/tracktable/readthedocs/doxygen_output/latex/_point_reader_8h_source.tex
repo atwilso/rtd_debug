@@ -1,0 +1,351 @@
+\doxysection{Point\+Reader.\+h}
+\hypertarget{_point_reader_8h_source}{}\label{_point_reader_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/PointReader.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/PointReader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_TRACKTABLE\_POINT\_READER\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_TRACKTABLE\_POINT\_READER\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointBase.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <tracktable/RW/LineReader.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tracktable/RW/SkipCommentsReader.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <tracktable/RW/StringTokenizingReader.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <tracktable/RW/PointFromTokensReader.h>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <tracktable/RW/detail/PointReaderDefaultConfiguration.h>}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int}T>}
+\DoxyCodeLine{00081\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtracktable_1_1_point_reader_a9904cf830867d37e9fda883d84a63229}{PointReader}}}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{typedef}\ PointT\ point\_type;}
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_line_reader}{tracktable::LineReader<>}}\ line\_reader\_type;}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{tracktable::SkipCommentsReader<line\_reader\_type::iterator>}}\ skip\_comments\_reader\_type;}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_string_tokenizing_reader}{tracktable::StringTokenizingReader<skip\_comments\_reader\_type::iterator>}}\ string\_tokenizer\_type;}
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classtracktable_1_1_point_from_tokens_reader}{tracktable::PointFromTokensReader<point\_type,\ string\_tokenizer\_type::iterator>}}\ point\_reader\_type;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ point\_reader\_type::iterator\ iterator;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_reader_a9904cf830867d37e9fda883d84a63229}{PointReader}}()}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a146309e895b9574b7a5166c82bd87895}{set\_default\_configuration}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_reader_ad8d1ca344c65f838c4b1947b8a0e3d4d}{PointReader}}(std::istream\&\ infile)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_aaf26666a2c3ee27589cbf0f29e35ac1d}{set\_input}}(infile);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a146309e895b9574b7a5166c82bd87895}{set\_default\_configuration}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{classtracktable_1_1_point_reader_a48f69a76955d5e41958b6a0262fceff4}{PointReader}}(\mbox{\hyperlink{classtracktable_1_1_point_reader_a9904cf830867d37e9fda883d84a63229}{PointReader}}\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00119\ \ \ \ \ :\ LineReader(other.LineReader),}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ SkipCommentsReader(other.SkipCommentsReader),}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ StringTokenizer(other.StringTokenizer),}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ PointTokenReader(other.PointTokenReader)}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a6865061285dd55b38a91500f0cd80a33}{\string~PointReader}}()}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a146309e895b9574b7a5166c82bd87895}{set\_default\_configuration}}()}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_adb3285845665222388f77ec3595a2cf0}{set\_field\_delimiter}}(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a28e567e4badcabd3d25c29d84258bef9}{set\_comment\_character}}(\textcolor{stringliteral}{"{}\#"{}});}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_ac7a8a6a1e1acbc6d4401246faf9e5db4}{set\_timestamp\_format}}(\textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}});}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1rw_1_1detail_1_1set__default__configuration}{rw::detail::set\_default\_configuration}}<}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtracktable_1_1traits_1_1has__properties}{traits::has\_properties<point\_type>::value}},}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ traits::dimension<point\_type>::value}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ ::apply(\textcolor{keyword}{this});}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a28e567e4badcabd3d25c29d84258bef9}{set\_comment\_character}}(std::string\ \textcolor{keyword}{const}\&\ comment)}
+\DoxyCodeLine{00169\ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ this-\/>SkipCommentsReader.set\_comment\_character(comment);}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00179\ \ \ std::string\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a4fa35d3c8eea9cc2190aadaaa4b1d44c}{comment\_character}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00180\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>SkipCommentsReader.comment\_character();}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00191\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_aaf26666a2c3ee27589cbf0f29e35ac1d}{set\_input}}(std::istream\&\ \_input)}
+\DoxyCodeLine{00192\ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ this-\/>LineReader.set\_input(\_input);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ this-\/>SkipCommentsReader.set\_input\_range(this-\/>LineReader.begin(),}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>LineReader.end());}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ this-\/>StringTokenizer.set\_input\_range(this-\/>SkipCommentsReader.begin(),}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>SkipCommentsReader.end());}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_input\_range(this-\/>StringTokenizer.begin(),}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>StringTokenizer.end());}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00209\ \ \ std::istream\&\ \mbox{\hyperlink{classtracktable_1_1_point_reader_af579f3b6366705e58565f87c32779433}{input}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00210\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>LineReader.input();}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00223\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_adb3285845665222388f77ec3595a2cf0}{set\_field\_delimiter}}(string\_type\ \textcolor{keyword}{const}\&\ delimiter)}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ this-\/>StringTokenizer.set\_field\_delimiter(delimiter);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_input\_range(this-\/>StringTokenizer.begin(),}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>StringTokenizer.end());}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_point_reader_adaa341baa2ea1b45419b4864fbc95e58}{field\_delimiter}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00234\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>StringTokenizer.field\_delimiter();}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a9c8830a1c718e315f8e559bc2baed850}{set\_x\_column}}(\textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00244\ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(0,\ column);}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_ac3ed57e5b5f28de84f86805084703d78}{set\_y\_column}}(\textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00254\ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(1,\ column);}
+\DoxyCodeLine{00256\ \ \ \ \ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a30ce66cd2d5896b70781834b3878f43a}{set\_z\_column}}(\textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00264\ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(2,\ column);}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a8d32fc71f01b86609ca346f7b9aaafac}{set\_longitude\_column}}(\textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(0,\ column);}
+\DoxyCodeLine{00276\ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_ab9b7b771bbbe9b3b672b881e1db9fc2c}{set\_latitude\_column}}(\textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00284\ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(1,\ column);}
+\DoxyCodeLine{00286\ \ \ \ \ \}}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a84be385ae664bc91ab74f7e6352ec215}{x\_column}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00294\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a1f670545b1dcdaa68d1e8af6631db6b1}{coordinate\_column}}(0);}
+\DoxyCodeLine{00296\ \ \ \ \ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_ab487883680648261cde60bb532d54a31}{y\_column}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00304\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a1f670545b1dcdaa68d1e8af6631db6b1}{coordinate\_column}}(1);}
+\DoxyCodeLine{00306\ \ \ \ \ \}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a6f2b009a6d7c955b105295a307219fc5}{z\_column}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00314\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a1f670545b1dcdaa68d1e8af6631db6b1}{coordinate\_column}}(2);}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_af1cc1e4c4d10aa998e8b036c8c8e1d00}{longitude\_column}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00324\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a1f670545b1dcdaa68d1e8af6631db6b1}{coordinate\_column}}(0);}
+\DoxyCodeLine{00326\ \ \ \ \ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a11f69b9758c2a86da715ae0b372f5ff0}{latitude\_column}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00334\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classtracktable_1_1_point_reader_a1f670545b1dcdaa68d1e8af6631db6b1}{coordinate\_column}}(1);}
+\DoxyCodeLine{00336\ \ \ \ \ \}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00366\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a8e70adc0c1ded127fcc5e8dd15543ae5}{set\_coordinate\_column}}(\textcolor{keywordtype}{int}\ coordinate,\ \textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00367\ \ \ \ \ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_coordinate\_column(coordinate,\ column);}
+\DoxyCodeLine{00369\ \ \ \ \ \}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00375\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a25775dc263cf374e2ddf46247be0488c}{has\_coordinate\_column}}(\textcolor{keywordtype}{int}\ coordinate)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00376\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.has\_coordinate\_column(coordinate);}
+\DoxyCodeLine{00378\ \ \ \ \ \}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00384\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a1f670545b1dcdaa68d1e8af6631db6b1}{coordinate\_column}}(\textcolor{keywordtype}{int}\ coordinate)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00385\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.coordinate\_column(coordinate);}
+\DoxyCodeLine{00387\ \ \ \ \ \}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00391\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_abb13b2d184bd03f7603ed7a39a495f78}{clear\_coordinate\_assignments}}()}
+\DoxyCodeLine{00392\ \ \ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ this-\/>PointTokenReader.clear\_coordinate\_assignments();}
+\DoxyCodeLine{00394\ \ \ \ \ \}}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a306a3a531b7c17ea809d8e75927c5fc8}{set\_object\_id\_column}}(\textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00406\ \ \ \ \ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_object\_id\_column(column);}
+\DoxyCodeLine{00408\ \ \ \ \ \}}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_ace0be4b4745d63611f385487deaceffd}{set\_timestamp\_column}}(\textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00420\ \ \ \ \ \{}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_timestamp\_column(column);}
+\DoxyCodeLine{00422\ \ \ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a91fcac98b4a13aa6ea97f0268d6dd5fa}{object\_id\_column}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00432\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.object\_id\_column();}
+\DoxyCodeLine{00434\ \ \ \ \ \}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a707f2f63680fadda5a79e4d51667855e}{timestamp\_column}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00444\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.timestamp\_column();}
+\DoxyCodeLine{00446\ \ \ \ \ \}}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a3ece3b3c6764b2a1a14bebf8c985b8c3}{set\_string\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field,\ \textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00471\ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_string\_field\_column(field,\ column);}
+\DoxyCodeLine{00473\ \ \ \ \ \}}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a11b9b725dbb5157202752e9de3c06a1e}{set\_real\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field,\ \textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00498\ \ \ \ \ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_real\_field\_column(field,\ column);}
+\DoxyCodeLine{00500\ \ \ \ \ \}}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00523\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a251d483cbec9163592cf8cff170187f9}{set\_time\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field,\ \textcolor{keywordtype}{int}\ column)}
+\DoxyCodeLine{00524\ \ \ \ \ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_time\_field\_column(field,\ column);}
+\DoxyCodeLine{00526\ \ \ \ \ \}}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00533\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a270c12d97932b0420b414683b398884a}{has\_string\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00534\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.has\_string\_field\_column(field);}
+\DoxyCodeLine{00536\ \ \ \ \ \}}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00543\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a3cea88c65e49db147e18fadb2e615f1b}{has\_real\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00544\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.has\_real\_field\_column(field);}
+\DoxyCodeLine{00546\ \ \ \ \ \}}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00553\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a3f58a03008fb745ac9fee4d0927c3f84}{has\_time\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00554\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.has\_time\_field\_column(field);}
+\DoxyCodeLine{00556\ \ \ \ \ \}}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00563\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a912b23b93e49ed557aeb4875011ef10c}{real\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00564\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.real\_field\_column(field);}
+\DoxyCodeLine{00566\ \ \ \ \ \}}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00573\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_adac9f49bfd5d0e6795b6362af30d25f5}{string\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00574\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.string\_field\_column(field);}
+\DoxyCodeLine{00576\ \ \ \ \ \}}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00583\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_afc968301c87ab9d67096fcbb64b0931b}{time\_field\_column}}(std::string\ \textcolor{keyword}{const}\&\ field)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00584\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.time\_field\_column(field);}
+\DoxyCodeLine{00586\ \ \ \ \ \}}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00600\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_point_reader_abbbfb6267a90f532207e06e2817d4a13}{begin}}()}
+\DoxyCodeLine{00601\ \ \ \ \ \{}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.begin();}
+\DoxyCodeLine{00603\ \ \ \ \ \}}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00613\ \ \ iterator\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a004d38d764e214da6985a7d3498fa0dc}{end}}()}
+\DoxyCodeLine{00614\ \ \ \ \ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.end();}
+\DoxyCodeLine{00616\ \ \ \ \ \}}
+\DoxyCodeLine{00617\ }
+\DoxyCodeLine{00622\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_ac7a8a6a1e1acbc6d4401246faf9e5db4}{set\_timestamp\_format}}(string\_type\ \textcolor{keyword}{const}\&\ format)}
+\DoxyCodeLine{00623\ \ \ \ \ \{}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_timestamp\_format(format);}
+\DoxyCodeLine{00625\ \ \ \ \ \}}
+\DoxyCodeLine{00626\ }
+\DoxyCodeLine{00631\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a498b0d3e2c6d3dfdf5d83240a01eee8e}{timestamp\_format}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00632\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.timestamp\_format();}
+\DoxyCodeLine{00634\ \ \ \ \ \}}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00640\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a255ef46a4c1432839c20776f4325e0f7}{set\_null\_value}}(string\_type\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00641\ \ \ \ \ \{}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ this-\/>PointTokenReader.set\_null\_value(value);}
+\DoxyCodeLine{00643\ \ \ \ \ \}}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00649\ \ \ string\_type\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a1367e286501a7fdb8470ddcb79c7e5a1}{null\_value}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00650\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.null\_value();}
+\DoxyCodeLine{00652\ \ \ \ \ \}}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00660\ \ \ IntIntMap\&\ \mbox{\hyperlink{classtracktable_1_1_point_reader_a0ae3b53abba644b84d2f9ee5d2956ac1}{\_\_coordinate\_assignments}}()}
+\DoxyCodeLine{00661\ \ \ \ \ \{}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PointTokenReader.\_\_coordinate\_assignments();}
+\DoxyCodeLine{00663\ \ \ \ \ \}}
+\DoxyCodeLine{00664\ }
+\DoxyCodeLine{00671\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtracktable_1_1_point_reader_aaa66123a0d031a1dcaa79f36d170c532}{\_\_set\_coordinate\_assignments}}(IntIntMap\ \textcolor{keyword}{const}\&\ cmap)}
+\DoxyCodeLine{00672\ \ \ \ \ \{}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ this-\/>PointTokenReader.\_\_set\_coordinate\_assignments(cmap);}
+\DoxyCodeLine{00674\ \ \ \ \ \}}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00676\ }
+\DoxyCodeLine{00677\ }
+\DoxyCodeLine{00678\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00679\ \ \ line\_reader\_type\ \mbox{\hyperlink{classtracktable_1_1_line_reader}{LineReader}};}
+\DoxyCodeLine{00680\ \ \ skip\_comments\_reader\_type\ \mbox{\hyperlink{classtracktable_1_1_skip_comments_reader}{SkipCommentsReader}};}
+\DoxyCodeLine{00681\ \ \ string\_tokenizer\_type\ StringTokenizer;}
+\DoxyCodeLine{00682\ \ \ point\_reader\_type\ PointTokenReader;}
+\DoxyCodeLine{00683\ \};}
+\DoxyCodeLine{00684\ }
+\DoxyCodeLine{00685\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

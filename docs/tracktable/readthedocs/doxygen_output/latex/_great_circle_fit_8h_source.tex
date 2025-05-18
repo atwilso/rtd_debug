@@ -1,0 +1,88 @@
+\doxysection{Great\+Circle\+Fit.\+h}
+\hypertarget{_great_circle_fit_8h_source}{}\label{_great_circle_fit_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/GreatCircleFit.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/GreatCircleFit.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ GreatCircleFit\_h}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ GreatCircleFit\_h}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <tracktable/Analysis/TracktableAnalysisWindowsHeader.h>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/Cartesian3D.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Domain/Terrestrial.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }TooFewPoints\ :\ \textcolor{keyword}{public}\ std::runtime\_error\ \{}
+\DoxyCodeLine{00041\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ TooFewPoints()\ :\ std::runtime\_error(\textcolor{stringliteral}{"{}Trajectory\ contains\ too\ few\ points"{}})\ \{\}}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }IdenticalPositions\ :\ \textcolor{keyword}{public}\ std::runtime\_error\ \{}
+\DoxyCodeLine{00049\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ IdenticalPositions()\ :\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ cross\ a\ vector\ with\ itself"{}})\ \{\}}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }ZeroNorm\ :\ \textcolor{keyword}{public}\ std::runtime\_error\ \{}
+\DoxyCodeLine{00057\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ ZeroNorm()\ :\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ define\ a\ plane\ with\ a\ normal\ of\ 0"{}})\ \{\}}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00070\ TRACKTABLE\_ANALYSIS\_EXPORT}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_ab3700f33f36b23ffad13cf2d707b3ca8}{great\_circle\_fit\_and\_project\_in\_place}}(tracktable::domain::terrestrial::trajectory\_type\ \&\_trajectory,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \_altitude\_string\ =\ \textcolor{stringliteral}{"{}altitude"{}},}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tracktable::domain::terrestrial::AltitudeUnits\ \_unit\ =}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tracktable::domain::terrestrial::AltitudeUnits::FEET);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ TRACKTABLE\_ANALYSIS\_EXPORT\ tracktable::domain::terrestrial::trajectory\_type\ \mbox{\hyperlink{namespacetracktable_ab3de14ffc04f1c383bc904fe663ccd95}{great\_circle\_fit\_and\_project}}(}
+\DoxyCodeLine{00084\ \ \ \ \ tracktable::domain::terrestrial::trajectory\_type\ \textcolor{keyword}{const}\ \&\_trajectory,}
+\DoxyCodeLine{00085\ \ \ \ \ std::string\ \_altitude\_string\ =\ \textcolor{stringliteral}{"{}altitude"{}},}
+\DoxyCodeLine{00086\ \ \ \ \ tracktable::domain::terrestrial::AltitudeUnits\ \_unit\ =}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ tracktable::domain::terrestrial::AltitudeUnits::FEET);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ TRACKTABLE\_ANALYSIS\_EXPORT}
+\DoxyCodeLine{00097\ tracktable::domain::cartesian3d::base\_point\_type\ \mbox{\hyperlink{namespacetracktable_a16563bb7d16de3ae1e8d44a4e2cef158}{find\_best\_fit\_plane}}(}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{const}\ tracktable::domain::terrestrial::trajectory\_type\ \&\_trajectory,}
+\DoxyCodeLine{00099\ \ \ \ \ std::string\ \_altitude\_string\ =\ \textcolor{stringliteral}{"{}altitude"{}},}
+\DoxyCodeLine{00100\ \ \ \ \ tracktable::domain::terrestrial::AltitudeUnits\ \_unit\ =}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ tracktable::domain::terrestrial::AltitudeUnits::FEET);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00110\ TRACKTABLE\_ANALYSIS\_EXPORT}
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetracktable_a5227e517080e119e0386564a0917ec09}{project\_trajectory\_onto\_plane}}(tracktable::domain::terrestrial::trajectory\_type\ \&\_trajectory,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ tracktable::domain::cartesian3d::base\_point\_type\ \&\_normal,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \_altitude\_string\ =\ \textcolor{stringliteral}{"{}altitude"{}},}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tracktable::domain::terrestrial::AltitudeUnits\ \_unit\ =}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tracktable::domain::terrestrial::AltitudeUnits::FEET);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \}\ \ \textcolor{comment}{//\ namespace\ tracktable}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,83 @@
+\doxysection{tracktable\+::rw\+::detail\+::Trajectory\+Header Class Reference}
+\hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header}{}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header}\index{tracktable::rw::detail::TrajectoryHeader@{tracktable::rw::detail::TrajectoryHeader}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a833db809a35752074820abd31b44b68b}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a833db809a35752074820abd31b44b68b} 
+{\bfseries Trajectory\+Header} (\mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_trajectory_header}{Trajectory\+Header}} const \&other)
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a6be71af9e03efc5a2f78055436695d1a}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a6be71af9e03efc5a2f78055436695d1a} 
+\mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_trajectory_header}{Trajectory\+Header}} \& {\bfseries operator=} (\mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_trajectory_header}{Trajectory\+Header}} const \&other)
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a0601d78468cd90b7a25051e923706b3f}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a0601d78468cd90b7a25051e923706b3f} 
+bool {\bfseries operator==} (\mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_trajectory_header}{Trajectory\+Header}} const \&other) const
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a504d11129465316e56466719277f354d}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a504d11129465316e56466719277f354d} 
+bool {\bfseries operator!=} (\mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_trajectory_header}{Trajectory\+Header}} const \&other) const
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a4325a565af8b217305b0ece1ba50896b}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a4325a565af8b217305b0ece1ba50896b} 
+void {\bfseries set\+\_\+timestamp\+\_\+input\+\_\+format} (string\+\_\+type const \&format)
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_afd94657b4953ebfa18b868d2f9ac259a}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_afd94657b4953ebfa18b868d2f9ac259a} 
+void {\bfseries set\+\_\+timestamp\+\_\+output\+\_\+format} (string\+\_\+type const \&format)
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a0a28e3d59d144e867969650eded76f7c}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a0a28e3d59d144e867969650eded76f7c} 
+void {\bfseries set\+\_\+decimal\+\_\+precision} (std\+::size\+\_\+t digits)
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a82949ad8024683d16e2acb9967add73a}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a82949ad8024683d16e2acb9967add73a} 
+void {\bfseries set\+\_\+null\+\_\+value} (string\+\_\+type const \&value)
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a18cae0d7430ce2dbd0a3f64f7ec98b9a}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a18cae0d7430ce2dbd0a3f64f7ec98b9a} 
+string\+\_\+type {\bfseries null\+\_\+value} () const
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_af20a2aa46a87af02596d276f65b406e7}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_af20a2aa46a87af02596d276f65b406e7} 
+{\footnotesize template$<$typename trajectory\+\_\+type$>$ }\\void {\bfseries populate\+\_\+from\+\_\+trajectory} (trajectory\+\_\+type const \&trajectory)
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_ac7cb6ab2503b12178867012dd5a5275c}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_ac7cb6ab2503b12178867012dd5a5275c} 
+{\footnotesize template$<$typename out\+\_\+iter\+\_\+type$>$ }\\void {\bfseries write\+\_\+as\+\_\+tokens} (out\+\_\+iter\+\_\+type destination)
+\item 
+{\footnotesize template$<$typename in\+\_\+iter\+\_\+type$>$ }\\std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a388fba3374fb601eef34348cec608d88}{read\+\_\+from\+\_\+tokens}} (in\+\_\+iter\+\_\+type current\+\_\+token, in\+\_\+iter\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Reads the header from a stream of tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a5a90721269c116abc3aa5fc3783406e8}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a5a90721269c116abc3aa5fc3783406e8} 
+string\+\_\+type {\bfseries Magic\+String}
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a37c8eb3eba9c8ca68c7df5318253c533}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a37c8eb3eba9c8ca68c7df5318253c533} 
+\mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\+\_\+type}} {\bfseries UUID}
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_af072cfaf5f8c17bd7452cad0d7b9171d}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_af072cfaf5f8c17bd7452cad0d7b9171d} 
+string\+\_\+type {\bfseries Domain}
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a1d5f9fa4f275f0386ce4590bad9ed92a}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a1d5f9fa4f275f0386ce4590bad9ed92a} 
+std\+::size\+\_\+t {\bfseries Num\+Points}
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a1f3337d9087298023239b2814c9e2565}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a1f3337d9087298023239b2814c9e2565} 
+\mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{Property\+Map}} {\bfseries Properties}
+\item 
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a5869c7bb511080cbf91a22d1ea1ce810}\label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a5869c7bb511080cbf91a22d1ea1ce810} 
+\mbox{\hyperlink{classtracktable_1_1_property_converter}{Property\+Converter}} {\bfseries Property\+Read\+Write}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a388fba3374fb601eef34348cec608d88}\index{tracktable::rw::detail::TrajectoryHeader@{tracktable::rw::detail::TrajectoryHeader}!read\_from\_tokens@{read\_from\_tokens}}
+\index{read\_from\_tokens@{read\_from\_tokens}!tracktable::rw::detail::TrajectoryHeader@{tracktable::rw::detail::TrajectoryHeader}}
+\doxysubsubsection{\texorpdfstring{read\_from\_tokens()}{read\_from\_tokens()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a388fba3374fb601eef34348cec608d88} 
+template$<$typename in\+\_\+iter\+\_\+type$>$ \\
+std\+::size\+\_\+t tracktable\+::rw\+::detail\+::\+Trajectory\+Header\+::read\+\_\+from\+\_\+tokens (\begin{DoxyParamCaption}\item[{in\+\_\+iter\+\_\+type}]{current\+\_\+token}{, }\item[{in\+\_\+iter\+\_\+type}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads the header from a stream of tokens. 
+
+\begin{DoxyReturn}{Returns}
+The number of tokens consumed 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+RW/detail/Trajectory\+Header.\+h\end{DoxyCompactItemize}

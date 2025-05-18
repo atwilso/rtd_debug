@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1traits_1_1point__domain__name" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::traits::point_domain_name</compoundname>
+    <derivedcompoundref refid="structtracktable_1_1traits_1_1point__domain__name_3_01_trajectory_3_01point__type_01_4_01_4" prot="public" virt="non-virtual">tracktable::traits::point_domain_name&lt; Trajectory&lt; point_type &gt; &gt;</derivedcompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename point_type</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1traits_1_1point__domain__name_1a09ff2be35286fa8ffdd5d3baa4ef9bd4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>static string_type tracktable::traits::point_domain_name&lt; point_type &gt;::apply</definition>
+        <argsstring>()</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::traits::point_domain_name::apply</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/PointDomainName.h" line="45" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/PointDomainName.h" bodystart="45" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tracktable::traits::point_domain_name&lt; Trajectory&lt; point_type &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1point__domain__name_3_01_trajectory_3_01point__type_01_4_01_4"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tracktable::traits::point_domain_name&lt; point_type &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1point__domain__name"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/PointDomainName.h" line="43" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/PointDomainName.h" bodystart="44" bodyend="49"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1traits_1_1point__domain__name_1a09ff2be35286fa8ffdd5d3baa4ef9bd4" prot="public" virt="non-virtual"><scope>tracktable::traits::point_domain_name</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

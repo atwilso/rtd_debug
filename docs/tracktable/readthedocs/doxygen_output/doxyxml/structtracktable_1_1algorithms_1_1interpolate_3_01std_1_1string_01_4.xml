@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1algorithms_1_1interpolate_3_01std_1_1string_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::algorithms::interpolate&lt; std::string &gt;</compoundname>
+    <basecompoundref refid="structtracktable_1_1algorithms_1_1interpolate__linear" prot="public" virt="non-virtual">tracktable::algorithms::interpolate_linear&lt; std::string &gt;</basecompoundref>
+    <basecompoundref refid="structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor" prot="public" virt="non-virtual">tracktable::algorithms::interpolate_nearest_neighbor&lt; std::string &gt;</basecompoundref>
+    <templateparamlist>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tracktable::algorithms::interpolate&lt; std::string &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01std_1_1string_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::algorithms::interpolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate__linear"/>
+      </node>
+      <node id="3">
+        <label>tracktable::algorithms::interpolate_nearest_neighbor&lt; std::string &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tracktable::algorithms::interpolate&lt; std::string &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate_3_01std_1_1string_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::algorithms::interpolate_linear&lt; T &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate__linear"/>
+      </node>
+      <node id="3">
+        <label>tracktable::algorithms::interpolate_nearest_neighbor&lt; std::string &gt;</label>
+        <link refid="structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TracktableCommon.h" line="95" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/TracktableCommon.h" bodystart="96" bodyend="96"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1algorithms_1_1interpolate__linear_1ab8002db0072dc50297fe4cd910716050" prot="public" virt="non-virtual" ambiguityscope="tracktable::"><scope>tracktable::algorithms::interpolate&lt; std::string &gt;</scope><name>apply</name></member>
+      <member refid="structtracktable_1_1algorithms_1_1interpolate__nearest__neighbor_1a054451afcc692159276bc16f2a773c15" prot="public" virt="non-virtual" ambiguityscope="tracktable::algorithms::interpolate_nearest_neighbor&lt; std::string &gt;::"><scope>tracktable::algorithms::interpolate&lt; std::string &gt;</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_boost_random_u_u_i_d_generator" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::BoostRandomUUIDGenerator</compoundname>
+    <basecompoundref refid="classtracktable_1_1_u_u_i_d_generator" prot="public" virt="non-virtual">tracktable::UUIDGenerator</basecompoundref>
+    <includes refid="_u_u_i_d_8h" local="no">UUID.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename UniformRandomNumberGenerator</type>
+        <defval>boost::random::mt19937</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1a381e27b1f357508b9c70af612a23bdba" prot="public" static="no">
+        <type>boost::uuids::basic_random_generator&lt; UniformRandomNumberGenerator &gt;</type>
+        <definition>typedef boost::uuids::basic_random_generator&lt;UniformRandomNumberGenerator&gt; tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::random_generator_type</definition>
+        <argsstring></argsstring>
+        <name>random_generator_type</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::random_generator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="173" column="48" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1a2659618e4a71f8bd53ab10784e0e8ac1" prot="private" static="no" mutable="no">
+        <type>random_generator_type *</type>
+        <definition>random_generator_type* tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::_generator</definition>
+        <argsstring></argsstring>
+        <name>_generator</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::_generator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="226" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1aa390ea6891f83ee91a7ebbcb8666bd52" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::BoostRandomUUIDGenerator</definition>
+        <argsstring>()</argsstring>
+        <name>BoostRandomUUIDGenerator</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::BoostRandomUUIDGenerator</qualifiedname>
+        <briefdescription>
+<para>Instantiate a Boost random UUID generator Use <ref refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1ae650f39971837126d734a93a3fcfa6eb" kindref="member">BoostRandomUUIDGenerator&lt;URNG type&gt;::create()</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="151" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="151" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1a0bbdcf9e09bdf3d03d2b7289c2c747c3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::BoostRandomUUIDGenerator</definition>
+        <argsstring>(UniformRandomNumberGenerator &amp;gen)</argsstring>
+        <name>BoostRandomUUIDGenerator</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::BoostRandomUUIDGenerator</qualifiedname>
+        <param>
+          <type>UniformRandomNumberGenerator &amp;</type>
+          <declname>gen</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a Boost random UUID generator Use BoostRandomUUIDGenerator&lt;URNG type&gt;::create(URNG type &amp;) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="159" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1a20b316cba514c6fee392097bc03b12d5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::BoostRandomUUIDGenerator</definition>
+        <argsstring>(UniformRandomNumberGenerator *pGen)</argsstring>
+        <name>BoostRandomUUIDGenerator</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::BoostRandomUUIDGenerator</qualifiedname>
+        <param>
+          <type>UniformRandomNumberGenerator *</type>
+          <declname>pGen</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a Boost random UUID generator Use BoostRandomUUIDGenerator&lt;URNG type&gt;::create(URNG type *) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="167" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="167" bodyend="170"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1ad2642bfdba88e24a17f1d2ce20991fcc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::~BoostRandomUUIDGenerator</definition>
+        <argsstring>()</argsstring>
+        <name>~BoostRandomUUIDGenerator</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::~BoostRandomUUIDGenerator</qualifiedname>
+        <briefdescription>
+<para>Destructor for the Boost Random UUID Generator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="176" column="11" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="176" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1ac513c28fa485e624e559a757d43a2d33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespacetracktable_1a1b220fef4a0f524b45d526c61a5fea6a" kindref="member">uuid_type</ref></type>
+        <definition>uuid_type tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::generate_uuid</definition>
+        <argsstring>()</argsstring>
+        <name>generate_uuid</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::generate_uuid</qualifiedname>
+        <reimplements refid="classtracktable_1_1_u_u_i_d_generator_1aac98e7815be4c78b3491a8df09026b37">generate_uuid</reimplements>
+        <briefdescription>
+<para>Generate a UUID for the given generator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The generated UUID </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="217" column="13" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="217" bodyend="223"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1ae650f39971837126d734a93a3fcfa6eb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_u_u_i_d_generator_1a84f75235f9634d619b6aff6dde218d85" kindref="member">UUIDGenerator::pointer</ref></type>
+        <definition>static UUIDGenerator::pointer tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::create</definition>
+        <argsstring>()</argsstring>
+        <name>create</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::create</qualifiedname>
+        <briefdescription>
+<para>Static method to create an instance using the default uniform random number generator type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Example setting a new default uuid generator with mt19937:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="namespacetracktable_1a619756d3896d84d4e6e8293fb58889fa" kindref="member">::tracktable::set_automatic_uuid_generator</ref>(<ref refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1ae650f39971837126d734a93a3fcfa6eb" kindref="member">::tracktable::BoostRandomUUIDGenerator&lt;boost::random::mt19937&gt;::create</ref>());</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Pointer to the new Boost random UUID generator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="192" column="33" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="192" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1a54561b25d81fd0b7d50e5a4f0008a239" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_u_u_i_d_generator_1a84f75235f9634d619b6aff6dde218d85" kindref="member">UUIDGenerator::pointer</ref></type>
+        <definition>static UUIDGenerator::pointer tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::create</definition>
+        <argsstring>(UniformRandomNumberGenerator &amp;gen)</argsstring>
+        <name>create</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::create</qualifiedname>
+        <param>
+          <type>UniformRandomNumberGenerator &amp;</type>
+          <declname>gen</declname>
+        </param>
+        <briefdescription>
+<para>Static method to create an instance using a supplied uniform random number generator type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the new Boost random UUID generator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="200" column="33" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="200" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_boost_random_u_u_i_d_generator_1a9bf7db31c4159db232169e0a566f1775" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_u_u_i_d_generator_1a84f75235f9634d619b6aff6dde218d85" kindref="member">UUIDGenerator::pointer</ref></type>
+        <definition>static UUIDGenerator::pointer tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;::create</definition>
+        <argsstring>(UniformRandomNumberGenerator *pGen)</argsstring>
+        <name>create</name>
+        <qualifiedname>tracktable::BoostRandomUUIDGenerator::create</qualifiedname>
+        <param>
+          <type>UniformRandomNumberGenerator *</type>
+          <declname>pGen</declname>
+        </param>
+        <briefdescription>
+<para>Static method to create an instance using a supplied uniform random number generator type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the new Boost random UUID generator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="208" column="33" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="208" bodyend="210"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Wraps a boost uuid random generator to act as a RandomUUIDGenerator. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The boost random number generator is templated to use various random number generation mechanisms. The default boost implementation is the mt19937 which is also the default template type of this class.</para>
+<para>However, any random number generator suitable for the boost classes can be used with this thin wrapper template.</para>
+<para>To create an instance of this class, use the various static <computeroutput><ref refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1ae650f39971837126d734a93a3fcfa6eb" kindref="member">create()</ref></computeroutput> methods that mimic the available boost random generator constructors. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;</label>
+        <link refid="classtracktable_1_1_boost_random_u_u_i_d_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::UUIDGenerator</label>
+        <link refid="classtracktable_1_1_u_u_i_d_generator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tracktable::BoostRandomUUIDGenerator&lt; UniformRandomNumberGenerator &gt;</label>
+        <link refid="classtracktable_1_1_boost_random_u_u_i_d_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tracktable::UUIDGenerator</label>
+        <link refid="classtracktable_1_1_u_u_i_d_generator"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" line="145" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/UUID.h" bodystart="146" bodyend="228"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1a2659618e4a71f8bd53ab10784e0e8ac1" prot="private" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>_generator</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1aa390ea6891f83ee91a7ebbcb8666bd52" prot="private" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>BoostRandomUUIDGenerator</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1a0bbdcf9e09bdf3d03d2b7289c2c747c3" prot="private" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>BoostRandomUUIDGenerator</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1a20b316cba514c6fee392097bc03b12d5" prot="private" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>BoostRandomUUIDGenerator</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1ae650f39971837126d734a93a3fcfa6eb" prot="public" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>create</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1a54561b25d81fd0b7d50e5a4f0008a239" prot="public" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>create</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1a9bf7db31c4159db232169e0a566f1775" prot="public" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>create</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1ac513c28fa485e624e559a757d43a2d33" prot="public" virt="virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>generate_uuid</name></member>
+      <member refid="classtracktable_1_1_u_u_i_d_generator_1a05b3d479eebdd38def058906cd60c07e" prot="protected" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>lock_mutex</name></member>
+      <member refid="classtracktable_1_1_u_u_i_d_generator_1a84f75235f9634d619b6aff6dde218d85" prot="public" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>pointer</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1a381e27b1f357508b9c70af612a23bdba" prot="public" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>random_generator_type</name></member>
+      <member refid="classtracktable_1_1_u_u_i_d_generator_1aa6e377da272a0fc708fccc852d12a5d0" prot="protected" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>unlock_mutex</name></member>
+      <member refid="classtracktable_1_1_u_u_i_d_generator_1a826bd81dc691eab1b70bb67473b35431" prot="public" virt="non-virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>UUIDGenerator</name></member>
+      <member refid="classtracktable_1_1_boost_random_u_u_i_d_generator_1ad2642bfdba88e24a17f1d2ce20991fcc" prot="public" virt="virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>~BoostRandomUUIDGenerator</name></member>
+      <member refid="classtracktable_1_1_u_u_i_d_generator_1a0ee9609860d5cf10ea07b9d80e7810a9" prot="public" virt="virtual"><scope>tracktable::BoostRandomUUIDGenerator</scope><name>~UUIDGenerator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

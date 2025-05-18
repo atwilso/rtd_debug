@@ -1,0 +1,549 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kind="class" language="C++" prot="protected">
+    <compoundname>tracktable::StringTokenizingReader::TokenizedStringIterator</compoundname>
+    <includes refid="_string_tokenizing_reader_8h" local="no">StringTokenizingReader.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1aeade1a208625a866b1c4c69847236977" prot="public" static="no">
+        <type>std::input_iterator_tag</type>
+        <definition>using tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::iterator_category =  std::input_iterator_tag</definition>
+        <argsstring></argsstring>
+        <name>iterator_category</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::iterator_category</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="255" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1ab2a00d6d60bedace1940db7f49b52023" prot="public" static="no">
+        <type>token_iterator_pair</type>
+        <definition>using tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::value_type =  token_iterator_pair</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::value_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="256" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1abb6043402d5071308f909f2a2d01b607" prot="public" static="no">
+        <type>std::ptrdiff_t</type>
+        <definition>using tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::difference_type =  std::ptrdiff_t</definition>
+        <argsstring></argsstring>
+        <name>difference_type</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::difference_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="257" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a3727f3d5293d7b89d925a6c51845bf74" prot="public" static="no">
+        <type>token_iterator_pair *</type>
+        <definition>using tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::pointer =  token_iterator_pair *</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::pointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="258" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a619f73bc7c99da429ee594c11f742bc1" prot="public" static="no">
+        <type>token_iterator_pair &amp;</type>
+        <definition>using tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::reference =  token_iterator_pair&amp;</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::reference</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="259" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a8cff6b80041ceb8990bca13b9dae2489" prot="public" static="no">
+        <type>typename tokenizer_type::iterator</type>
+        <definition>using tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::iterator =  typename tokenizer_type::iterator</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="260" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a7062f24b5bd7d0c1432073c8147915d9" prot="private" static="no" mutable="no">
+        <type>tokenizer_type *</type>
+        <definition>tokenizer_type* tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::Tokenizer</definition>
+        <argsstring></argsstring>
+        <name>Tokenizer</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::Tokenizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="263" column="20" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a22052cf37f97360517b6c158ce861ca7" prot="private" static="no" mutable="no">
+        <type>token_iterator_pair</type>
+        <definition>token_iterator_pair tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::TokenRangeCurrentString</definition>
+        <argsstring></argsstring>
+        <name>TokenRangeCurrentString</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::TokenRangeCurrentString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="264" column="25" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a8b83950f7cdf9cd3e518071b44d83036" prot="private" static="no" mutable="no">
+        <type>input_line_iter_type</type>
+        <definition>input_line_iter_type tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::InputLinesBegin</definition>
+        <argsstring></argsstring>
+        <name>InputLinesBegin</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::InputLinesBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="265" column="26" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1aedd5173a3cca4d26322154288a0ed571" prot="private" static="no" mutable="no">
+        <type>input_line_iter_type</type>
+        <definition>input_line_iter_type tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::InputLinesEnd</definition>
+        <argsstring></argsstring>
+        <name>InputLinesEnd</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::InputLinesEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="266" column="26" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a755030f07f3bd26c483cdfc623f95df6" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::FieldDelimiter</definition>
+        <argsstring></argsstring>
+        <name>FieldDelimiter</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::FieldDelimiter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="267" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a4ede4dcfe155a71d48d8ed02ac5d5b03" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::EscapeCharacter</definition>
+        <argsstring></argsstring>
+        <name>EscapeCharacter</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::EscapeCharacter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="268" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a83fbcd160704767e1b421a807139c6f8" prot="private" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::QuoteCharacter</definition>
+        <argsstring></argsstring>
+        <name>QuoteCharacter</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::QuoteCharacter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="269" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a0f0c5f7fd30140a531d146dd55acf69f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::_tokenize_this_line</definition>
+        <argsstring>()</argsstring>
+        <name>_tokenize_this_line</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::_tokenize_this_line</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="273" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="273" bodyend="283"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1aa6d2930c3db751dcc6eb717a23d70ad8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::TokenizedStringIterator</definition>
+        <argsstring>()</argsstring>
+        <name>TokenizedStringIterator</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::TokenizedStringIterator</qualifiedname>
+        <briefdescription>
+<para>Instantiate a default <ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="287" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="287" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a557db86c032e811786310eacffd8d301" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::~TokenizedStringIterator</definition>
+        <argsstring>()</argsstring>
+        <name>~TokenizedStringIterator</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::~TokenizedStringIterator</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="292" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="292" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a4e25e4af4d121076d4291300447d553f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::TokenizedStringIterator</definition>
+        <argsstring>(input_line_iter_type Begin, input_line_iter_type End, string_type const &amp;Delim, string_type const &amp;Escape, string_type const &amp;Quote)</argsstring>
+        <name>TokenizedStringIterator</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::TokenizedStringIterator</qualifiedname>
+        <param>
+          <type>input_line_iter_type</type>
+          <declname>Begin</declname>
+        </param>
+        <param>
+          <type>input_line_iter_type</type>
+          <declname>End</declname>
+        </param>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>Delim</declname>
+        </param>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>Escape</declname>
+        </param>
+        <param>
+          <type>string_type const &amp;</type>
+          <declname>Quote</declname>
+        </param>
+        <briefdescription>
+<para>Instantiate a <ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> using specified properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to start at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">End</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator to end at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character to use for delimiting </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Escape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character to use for escaping </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Quote</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character to use for quoting </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="305" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="305" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a7b4e359c8d8267224db2ad4cdf48e930" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::TokenizedStringIterator</definition>
+        <argsstring>(TokenizedStringIterator const &amp;other)</argsstring>
+        <name>TokenizedStringIterator</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::TokenizedStringIterator</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy contructor, create a <ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> with a copy of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="326" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="326" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a771b79247863f36f9ed5cd149d0d13b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> &amp;</type>
+        <definition>TokenizedStringIterator &amp; tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::operator=</definition>
+        <argsstring>(TokenizedStringIterator const &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assign a <ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> to the value of another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> to assign value of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> with the new assigned value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="346" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="346" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1aa72c1d2cf6896a42400beae1de1544a4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>token_iterator_pair const &amp;</type>
+        <definition>token_iterator_pair const  &amp; tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::operator*</qualifiedname>
+        <briefdescription>
+<para>Multiply an iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Result of the multiplication </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="361" column="31" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="361" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1ad0d1c42fbf1afd4f4fd5d30b438dfb13" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>token_iterator_pair const *</type>
+        <definition>token_iterator_pair const  * tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::operator-&gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-&gt;</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::operator-&gt;</qualifiedname>
+        <briefdescription>
+<para>Get the current iterator object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current iterator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="370" column="31" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="370" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1af8f870ea96e8ccc0e7fa328e9bde518c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> &amp;</type>
+        <definition>TokenizedStringIterator &amp; tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::operator++</qualifiedname>
+        <briefdescription>
+<para>Advance the iterator to the next position in the sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the next iterator in the sequence </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="379" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="379" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1ae274cec3faff1fb010b6062aeae657c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> &amp;</type>
+        <definition>TokenizedStringIterator &amp; tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::operator++</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator++</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::operator++</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>Advance the iterator to the next position in the sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the next iterator in the sequence </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="393" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="393" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1af2cafc30d8a7f9033c99f79db66b00dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::operator==</definition>
+        <argsstring>(TokenizedStringIterator const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether one <ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> is equal to another by comparing all the properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two TokenizedStringIterators are equal if all of their properties are equal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="407" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="407" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1ad04d7f31f61b48118739cbc3244c5b94" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tracktable::StringTokenizingReader&lt; InputLineIteratorT &gt;::TokenizedStringIterator::operator!=</definition>
+        <argsstring>(TokenizedStringIterator const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>tracktable::StringTokenizingReader::TokenizedStringIterator::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator" kindref="compound">TokenizedStringIterator</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check whether two iterators are unequal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator for comparison </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean indicating equivalency </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="421" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="421" bodyend="424"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class for the tokenized string iterator. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" line="252" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/StringTokenizingReader.h" bodystart="253" bodyend="425"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a0f0c5f7fd30140a531d146dd55acf69f" prot="private" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>_tokenize_this_line</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1abb6043402d5071308f909f2a2d01b607" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>difference_type</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a4ede4dcfe155a71d48d8ed02ac5d5b03" prot="private" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>EscapeCharacter</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a755030f07f3bd26c483cdfc623f95df6" prot="private" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>FieldDelimiter</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a8b83950f7cdf9cd3e518071b44d83036" prot="private" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>InputLinesBegin</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1aedd5173a3cca4d26322154288a0ed571" prot="private" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>InputLinesEnd</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a8cff6b80041ceb8990bca13b9dae2489" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>iterator</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1aeade1a208625a866b1c4c69847236977" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>iterator_category</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1ad04d7f31f61b48118739cbc3244c5b94" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>operator!=</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1aa72c1d2cf6896a42400beae1de1544a4" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>operator*</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1af8f870ea96e8ccc0e7fa328e9bde518c" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>operator++</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1ae274cec3faff1fb010b6062aeae657c5" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>operator++</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1ad0d1c42fbf1afd4f4fd5d30b438dfb13" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>operator-&gt;</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a771b79247863f36f9ed5cd149d0d13b9" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>operator=</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1af2cafc30d8a7f9033c99f79db66b00dd" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>operator==</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a3727f3d5293d7b89d925a6c51845bf74" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>pointer</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a83fbcd160704767e1b421a807139c6f8" prot="private" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>QuoteCharacter</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a619f73bc7c99da429ee594c11f742bc1" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>reference</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1aa6d2930c3db751dcc6eb717a23d70ad8" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>TokenizedStringIterator</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a4e25e4af4d121076d4291300447d553f" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>TokenizedStringIterator</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a7b4e359c8d8267224db2ad4cdf48e930" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>TokenizedStringIterator</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a7062f24b5bd7d0c1432073c8147915d9" prot="private" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>Tokenizer</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a22052cf37f97360517b6c158ce861ca7" prot="private" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>TokenRangeCurrentString</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1ab2a00d6d60bedace1940db7f49b52023" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>value_type</name></member>
+      <member refid="classtracktable_1_1_string_tokenizing_reader_1_1_tokenized_string_iterator_1a557db86c032e811786310eacffd8d301" prot="public" virt="non-virtual"><scope>tracktable::StringTokenizingReader::TokenizedStringIterator</scope><name>~TokenizedStringIterator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,167 @@
+\doxysection{Distance\+Geometry.\+h}
+\hypertarget{_distance_geometry_8h_source}{}\label{_distance_geometry_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/DistanceGeometry.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/Analysis/DistanceGeometry.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_analysis\_distance\_geometry\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_analysis\_distance\_geometry\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Trajectory.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <tracktable/Core/Logging.h>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ trajectory\_type>}
+\DoxyCodeLine{00067\ std::vector<double>}
+\DoxyCodeLine{00068\ \mbox{\hyperlink{namespacetracktable_ac26e7c9d3a8d12ceed4dd7b7f745765b}{distance\_geometry\_by\_distance}}(}
+\DoxyCodeLine{00069\ \ \ trajectory\_type\ \textcolor{keyword}{const}\&\ trajectory,}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ depth}
+\DoxyCodeLine{00071\ \ \ )}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordflow}{return}\ \_distance\_geometry(trajectory,\ depth,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ trajectory\_type>}
+\DoxyCodeLine{00102\ std::vector<double>}
+\DoxyCodeLine{00103\ \mbox{\hyperlink{namespacetracktable_ad311e0eda396d74a316f442c0d740e64}{distance\_geometry\_by\_time}}(}
+\DoxyCodeLine{00104\ \ \ trajectory\_type\ \textcolor{keyword}{const}\&\ trajectory,}
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ depth}
+\DoxyCodeLine{00106\ \ \ )}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordflow}{return}\ \_distance\_geometry(trajectory,\ depth,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ trajectory\_type>}
+\DoxyCodeLine{00130\ std::vector<double>}
+\DoxyCodeLine{00131\ \_distance\_geometry(}
+\DoxyCodeLine{00132\ \ \ trajectory\_type\ \textcolor{keyword}{const}\&\ trajectory,}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ depth,}
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{bool}\ sample\_by\_distance=\textcolor{keyword}{true}}
+\DoxyCodeLine{00135\ \ \ )}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \ \ \textcolor{keywordflow}{if}\ (depth\ <\ 1\ ||\ trajectory.size()\ ==\ 0)}
+\DoxyCodeLine{00138\ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<double>();}
+\DoxyCodeLine{00140\ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordtype}{double}\ travel\_distance\ =\ tracktable::length(trajectory);}
+\DoxyCodeLine{00143\ \ \ \textcolor{keyword}{const}\ std::size\_t\ result\_size\ =\ (depth\ *\ (depth+1))\ /\ 2;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{comment}{//\ If\ a\ trajectory\ has\ overall\ length\ zero,\ all\ of\ the\ distance\ geometry}}
+\DoxyCodeLine{00146\ \ \ \textcolor{comment}{//\ distances\ will\ be\ zero.\ Given\ the\ choice\ between\ returning\ a\ vector}}
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//\ of\ all\ zeros\ or\ a\ vector\ of\ all\ ones,\ we\ opt\ to\ return\ all\ ones\ for}}
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ cleanliness\ -\/-\/\ you\ won't\ get\ division-\/by-\/zero\ errors\ that\ way.}}
+\DoxyCodeLine{00149\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00150\ \ \ \textcolor{comment}{//\ As\ for\ the\ decision\ of\ whether\ or\ not\ the\ length\ is\ zero:\ since\ it\ is}}
+\DoxyCodeLine{00151\ \ \ \textcolor{comment}{//\ perfectly\ reasonable\ for\ Cartesian\ trajectories\ to\ have\ very\ small\ but}}
+\DoxyCodeLine{00152\ \ \ \textcolor{comment}{//\ non-\/zero\ lengths,\ we\ compare\ against\ exactly\ zero\ instead\ of\ almost\ zero.}}
+\DoxyCodeLine{00153\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00154\ \ \ \textcolor{comment}{//\ If\ we're\ sampling\ by\ time,\ we\ also\ need\ to\ consider\ whether\ or\ not\ the}}
+\DoxyCodeLine{00155\ \ \ \textcolor{comment}{//\ duration\ is\ zero.}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \textcolor{keywordflow}{if}\ (travel\_distance\ ==\ 0)}
+\DoxyCodeLine{00158\ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ TRACKTABLE\_LOG(log::warning)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}distance\_geometry:\ Total\ distance\ for\ trajectory\ is\ zero.\ "{}}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Distance\ geometry\ results\ may\ not\ be\ what\ you\ expect."{}};}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<double>(result\_size,\ 1.0);}
+\DoxyCodeLine{00163\ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordflow}{if}\ (!sample\_by\_distance)}
+\DoxyCodeLine{00166\ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ tracktable::Duration\ duration\ =}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ trajectory.back().timestamp()\ -\/\ trajectory.front().timestamp();}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{if}\ (duration.total\_seconds()\ ==\ 0)}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<double>(result\_size,\ 1.0);}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{comment}{//\ Since\ we\ know\ in\ advance\ how\ many\ values\ we'll\ generate,\ we\ can\ avoid}}
+\DoxyCodeLine{00176\ \ \ \textcolor{comment}{//\ memory\ reallocations\ later.}}
+\DoxyCodeLine{00177\ \ \ std::vector<double>\ distance\_geometry\_distances;}
+\DoxyCodeLine{00178\ \ \ distance\_geometry\_distances.reserve(result\_size);}
+\DoxyCodeLine{00179\ \ \ std::vector<typename\ trajectory\_type::point\_type>\ control\_points(depth\ +\ 1);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ d\ =\ 1;\ d\ <=\ depth;\ ++d)}
+\DoxyCodeLine{00182\ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ control\_points.clear();}
+\DoxyCodeLine{00184\ \ \ \ \ \_create\_control\_points(d,\ trajectory,\ sample\_by\_distance,\ control\_points);}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ d;\ ++i)}
+\DoxyCodeLine{00186\ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ control\_point\_distance\ =\ tracktable::distance(}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ control\_points[i],\ control\_points[i+1]}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ distance\_geometry\_distances.push\_back(control\_point\_distance\ /\ (travel\_distance\ /\ d));}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \textcolor{keywordflow}{return}\ distance\_geometry\_distances;}
+\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ trajectory\_type,\ \textcolor{keyword}{typename}\ po\textcolor{keywordtype}{int}\_type>}
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{void}\ \_create\_control\_points(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ depth,}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trajectory\_type\ \textcolor{keyword}{const}\&\ trajectory,}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ sample\_by\_distance,}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<point\_type>\&\ output)}
+\DoxyCodeLine{00219\ \{}
+\DoxyCodeLine{00220\ \ \ \textcolor{keywordtype}{double}\ step\_fraction\ =\ 1.0\ /\ depth;}
+\DoxyCodeLine{00221\ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ depth+1;\ ++i)}
+\DoxyCodeLine{00222\ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{double}\ here\ =\ i\ *\ step\_fraction;}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{if}\ (sample\_by\_distance)}
+\DoxyCodeLine{00225\ \ \ \ \ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ output.push\_back(tracktable::point\_at\_length\_fraction(trajectory,\ here));}
+\DoxyCodeLine{00227\ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00229\ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ output.push\_back(tracktable::point\_at\_time\_fraction(trajectory,\ here));}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \}}
+\DoxyCodeLine{00233\ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \}\ \textcolor{comment}{//\ close\ namespace\ tracktable}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_tracktable\_analysis\_distance\_geometry\_h}}
+
+\end{DoxyCode}

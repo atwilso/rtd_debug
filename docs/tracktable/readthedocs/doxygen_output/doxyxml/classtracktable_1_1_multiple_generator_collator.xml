@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1_multiple_generator_collator" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::MultipleGeneratorCollator</compoundname>
+    <includes refid="_point_generator_8h" local="no">PointGenerator.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Point_T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classtracktable_1_1_multiple_generator_collator_1ad5fa74bfcc0c440a727406d7b301f9d5" prot="private" static="no">
+        <type>Point_T</type>
+        <definition>using tracktable::MultipleGeneratorCollator&lt; Point_T &gt;::PointT =  Point_T</definition>
+        <argsstring></argsstring>
+        <name>PointT</name>
+        <qualifiedname>tracktable::MultipleGeneratorCollator::PointT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="441" column="3" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="441" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1_multiple_generator_collator_1a8cdbc019f5a7f993873a7d8e3d2115cb" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classtracktable_1_1_point_generator" kindref="compound">PointGenerator</ref>&lt; PointT &gt; &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;PointGenerator&lt;PointT&gt; &gt; &gt; tracktable::MultipleGeneratorCollator&lt; Point_T &gt;::generators</definition>
+        <argsstring></argsstring>
+        <name>generators</name>
+        <qualifiedname>tracktable::MultipleGeneratorCollator::generators</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="495" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="495" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1_multiple_generator_collator_1ae206b6a32f7bc3ef1bf27f9efbbc79d6" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; PointT &gt;</type>
+        <definition>std::vector&lt;PointT&gt; tracktable::MultipleGeneratorCollator&lt; Point_T &gt;::points</definition>
+        <argsstring></argsstring>
+        <name>points</name>
+        <qualifiedname>tracktable::MultipleGeneratorCollator::points</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="496" column="15" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="496" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtracktable_1_1_multiple_generator_collator_1a8b8752a73510fdf5fb91f252c311a324" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::MultipleGeneratorCollator&lt; Point_T &gt;::addGenerator</definition>
+        <argsstring>(std::shared_ptr&lt; PointGenerator&lt; PointT &gt; &gt; _generator)</argsstring>
+        <name>addGenerator</name>
+        <qualifiedname>tracktable::MultipleGeneratorCollator::addGenerator</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classtracktable_1_1_point_generator" kindref="compound">PointGenerator</ref>&lt; PointT &gt; &gt;</type>
+          <declname>_generator</declname>
+        </param>
+        <briefdescription>
+<para>Add a generator to the list of generators. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="447" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="447" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_multiple_generator_collator_1adffbedecd5bf9133851733a5ba355427" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t tracktable::MultipleGeneratorCollator&lt; Point_T &gt;::getGeneratorCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getGeneratorCount</name>
+        <qualifiedname>tracktable::MultipleGeneratorCollator::getGeneratorCount</qualifiedname>
+        <briefdescription>
+<para>Retrieve the number of created generators. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The numbers of generators </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="458" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="458" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_multiple_generator_collator_1a42bee66ccaee4e8679b03f5bcafeef90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PointT</type>
+        <definition>PointT tracktable::MultipleGeneratorCollator&lt; Point_T &gt;::next</definition>
+        <argsstring>()</argsstring>
+        <name>next</name>
+        <qualifiedname>tracktable::MultipleGeneratorCollator::next</qualifiedname>
+        <briefdescription>
+<para>Updates position and returns a point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>new point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="464" column="10" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="464" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_multiple_generator_collator_1ae53519b714ac494bbbf02fd19aec14f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::MultipleGeneratorCollator&lt; Point_T &gt;::generate</definition>
+        <argsstring>()</argsstring>
+        <name>generate</name>
+        <qualifiedname>tracktable::MultipleGeneratorCollator::generate</qualifiedname>
+        <briefdescription>
+<para>Generate a generator with 10 points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="475" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="475" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1_multiple_generator_collator_1a7c802c256cb01acea0352a75181440ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::MultipleGeneratorCollator&lt; Point_T &gt;::generate</definition>
+        <argsstring>(const size_t _count)</argsstring>
+        <name>generate</name>
+        <qualifiedname>tracktable::MultipleGeneratorCollator::generate</qualifiedname>
+        <param>
+          <type>const size_t</type>
+          <declname>_count</declname>
+        </param>
+        <briefdescription>
+<para>Generate a generator with n points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of points to create generator with </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="481" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="481" bodyend="492"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The collator lets you put together multiple generators and create a stream of points that is in chronological order. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Use <computeroutput><ref refid="classtracktable_1_1_multiple_generator_collator_1a8b8752a73510fdf5fb91f252c311a324" kindref="member">addGenerator()</ref></computeroutput> to add generators.</para>
+</listitem><listitem><para>Use <computeroutput>generate(COUNT)</computeroutput> to generate COUNT points for each generator and sort them.</para>
+</listitem><listitem><para>Use <computeroutput><ref refid="classtracktable_1_1_multiple_generator_collator_1a42bee66ccaee4e8679b03f5bcafeef90" kindref="member">next()</ref></computeroutput> to access each point as they come out.</para>
+</listitem></itemizedlist>
+</para>
+<para>Subsequent calls to generate will have the new points sorted into the list, but there are no rule that the <computeroutput>next</computeroutput> point is after any points retrieved prior to the call </para>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" line="440" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/DataGenerators/PointGenerator.h" bodystart="440" bodyend="497"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1_multiple_generator_collator_1a8b8752a73510fdf5fb91f252c311a324" prot="public" virt="non-virtual"><scope>tracktable::MultipleGeneratorCollator</scope><name>addGenerator</name></member>
+      <member refid="classtracktable_1_1_multiple_generator_collator_1ae53519b714ac494bbbf02fd19aec14f7" prot="public" virt="non-virtual"><scope>tracktable::MultipleGeneratorCollator</scope><name>generate</name></member>
+      <member refid="classtracktable_1_1_multiple_generator_collator_1a7c802c256cb01acea0352a75181440ea" prot="public" virt="non-virtual"><scope>tracktable::MultipleGeneratorCollator</scope><name>generate</name></member>
+      <member refid="classtracktable_1_1_multiple_generator_collator_1a8cdbc019f5a7f993873a7d8e3d2115cb" prot="private" virt="non-virtual"><scope>tracktable::MultipleGeneratorCollator</scope><name>generators</name></member>
+      <member refid="classtracktable_1_1_multiple_generator_collator_1adffbedecd5bf9133851733a5ba355427" prot="public" virt="non-virtual"><scope>tracktable::MultipleGeneratorCollator</scope><name>getGeneratorCount</name></member>
+      <member refid="classtracktable_1_1_multiple_generator_collator_1a42bee66ccaee4e8679b03f5bcafeef90" prot="public" virt="non-virtual"><scope>tracktable::MultipleGeneratorCollator</scope><name>next</name></member>
+      <member refid="classtracktable_1_1_multiple_generator_collator_1ae206b6a32f7bc3ef1bf27f9efbbc79d6" prot="private" virt="non-virtual"><scope>tracktable::MultipleGeneratorCollator</scope><name>points</name></member>
+      <member refid="classtracktable_1_1_multiple_generator_collator_1ad5fa74bfcc0c440a727406d7b301f9d5" prot="private" virt="non-virtual"><scope>tracktable::MultipleGeneratorCollator</scope><name>PointT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

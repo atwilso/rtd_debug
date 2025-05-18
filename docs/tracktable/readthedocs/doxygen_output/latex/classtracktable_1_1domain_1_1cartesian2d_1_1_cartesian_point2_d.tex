@@ -1,0 +1,233 @@
+\doxysection{tracktable\+::domain\+::cartesian2d\+::Cartesian\+Point2D Class Reference}
+\hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{}\label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}\index{tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}}
+
+
+Bare point in flat 2D space.  
+
+
+
+
+{\ttfamily \#include $<$Cartesian2\+D.\+h$>$}
+
+Inheritance diagram for tracktable\+::domain\+::cartesian2d\+::Cartesian\+Point2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_afc3a328d8672b916194e8adeccf1c5cf}\label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_afc3a328d8672b916194e8adeccf1c5cf} 
+typedef \mbox{\hyperlink{classtracktable_1_1_point_cartesian}{Point\+Cartesian}}$<$ 2 $>$ {\bfseries Superclass}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_point_cartesian}{tracktable\+::\+Point\+Cartesian$<$ 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}}$<$ Dimension $>$ {\bfseries Superclass}
+\begin{DoxyCompactList}\small\item\em Convenient alias for the parent class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ Dimension $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef tracktable\+::settings\+::point\+\_\+coordinate\+\_\+type {\bfseries element\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a57fc3856605d3632ea6b74295cce9f90}{Cartesian\+Point2D}} ()
+\begin{DoxyCompactList}\small\item\em Create an uninitialized point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a9eda317a20109cbfb462bf1534c478ef}{Cartesian\+Point2D}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Initialize a point with x, y coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a71f8375a34e4a4139280db399da5b0b2}{Cartesian\+Point2D}} (\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{Cartesian\+Point2D}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor\+: make this point like another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a24e82174dee97b79eda9b90a560563b3}{Cartesian\+Point2D}} (\mbox{\hyperlink{classtracktable_1_1_point_cartesian}{Superclass}} const \&other)
+\begin{DoxyCompactList}\small\item\em Initialize this point from its superclass. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a1f43dc0d8c9fa3498137a2cf1be59e56}{\texorpdfstring{$\sim$}{\string~}\+Cartesian\+Point2D}} ()
+\begin{DoxyCompactList}\small\item\em Empty destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{Cartesian\+Point2D}} \& \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_acaabfb2433e674d03331deace7461d8e}{operator=}} (\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{Cartesian\+Point2D}} const \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive$>$ }\\void \mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_ac27929119d3454bedc81fd1950fad106}{serialize}} (Archive \&ar, const unsigned int)
+\begin{DoxyCompactList}\small\item\em Serialize the point to an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_cartesian}{tracktable\+::\+Point\+Cartesian$<$ 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Point\+Cartesian} ()
+\begin{DoxyCompactList}\small\item\em Create an uninitialized point. \end{DoxyCompactList}\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Point\+Cartesian} ()
+\begin{DoxyCompactList}\small\item\em Destructor for a point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_cartesian_a4bf68e44702546c3949721ba6bbda4c4}{Point\+Cartesian}} (\mbox{\hyperlink{classtracktable_1_1_point_cartesian_acf85343e2503284e1136fc6d7f07b40d}{Superclass}} const \&other)
+\begin{DoxyCompactList}\small\item\em Make this point into a copy of another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_cartesian_a547d746df83a24e5fcde725f59a77939}{Point\+Cartesian}} (const double \texorpdfstring{$\ast$}{*}coordinates)
+\begin{DoxyCompactList}\small\item\em Create a point with user-\/supplied coordinates. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtracktable_1_1_point_cartesian_ad822ed356fb93328fb2d4dec0a5f7719}{to\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Convert point coordinates to a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_cartesian_aeea3b98171f3984dfe5114eac1c9d77a}{serialize}} (Archive \&ar, const unsigned int)
+\begin{DoxyCompactList}\small\item\em Serialize the coordinates to an archive. \end{DoxyCompactList}\item 
+{\bfseries Point\+Cartesian} ()
+\begin{DoxyCompactList}\small\item\em Create an uninitialized point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_cartesian_a4bf68e44702546c3949721ba6bbda4c4}{Point\+Cartesian}} (\mbox{\hyperlink{classtracktable_1_1_point_cartesian_acf85343e2503284e1136fc6d7f07b40d}{Superclass}} const \&other)
+\begin{DoxyCompactList}\small\item\em Make this point into a copy of another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_cartesian_a547d746df83a24e5fcde725f59a77939}{Point\+Cartesian}} (const double \texorpdfstring{$\ast$}{*}coordinates)
+\begin{DoxyCompactList}\small\item\em Create a point with user-\/supplied coordinates. \end{DoxyCompactList}\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Point\+Cartesian} ()
+\begin{DoxyCompactList}\small\item\em Destructor for a point. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtracktable_1_1_point_cartesian_ad822ed356fb93328fb2d4dec0a5f7719}{to\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Convert point coordinates to a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtracktable_1_1_point_cartesian_aeea3b98171f3984dfe5114eac1c9d77a}{serialize}} (Archive \&ar, const unsigned int)
+\begin{DoxyCompactList}\small\item\em Serialize the coordinates to an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ Dimension $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Point\+Base} ()
+\begin{DoxyCompactList}\small\item\em Initialize an empty point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base_aab715197cb725a115bdbae588649f795}{Point\+Base}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor, create a \doxylink{classtracktable_1_1_point_base}{Point\+Base} with a copy of another. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtracktable_1_1_point_base_af616577253186b1d80c7ab90338640e2}{\texorpdfstring{$\sim$}{\string~}\+Point\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for our descendants. \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t d$>$ }\\coordinate\+\_\+type const \& \mbox{\hyperlink{classtracktable_1_1_point_base_a7918dde3ef618e4497d9949e515a5fd5}{get}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of a particular coordinate. \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t d$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_point_base_aece26ecf39982722de53187fe0e1531b}{set}} (coordinate\+\_\+type const \&new\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the value of a particular coordinate. \end{DoxyCompactList}\item 
+coordinate\+\_\+type const \& \mbox{\hyperlink{classtracktable_1_1_point_base_a1c2237aff8b2b8dec8b934feb10d79c6}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t d) const
+\begin{DoxyCompactList}\small\item\em Get/set the value of a coordinate. \end{DoxyCompactList}\item 
+coordinate\+\_\+type \& \mbox{\hyperlink{classtracktable_1_1_point_base_a1ea12444b1425cf2462e2920cac1b499}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t d)
+\begin{DoxyCompactList}\small\item\em Get/set the value of a coordinate. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_base_a35cfaef9ac15a33040e2458d99d980e3}{operator==}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check two points for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtracktable_1_1_point_base_ac225c66d4cfab081b67f95d4411b0fdd}{operator!=}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other) const
+\begin{DoxyCompactList}\small\item\em Check two points for inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} \& \mbox{\hyperlink{classtracktable_1_1_point_base_a236bf3c4a5a1128bea753ad59f7d2594}{operator=}} (\mbox{\hyperlink{classtracktable_1_1_point_base}{Point\+Base}} const \&other)
+\begin{DoxyCompactList}\small\item\em Make this point a copy of a different one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ Dimension $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{classtracktable_1_1_point_base_a00baacc4de3a9c9cf3f3f39af19aa7de}{size}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ Dimension $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive$>$ }\\void \mbox{\hyperlink{classtracktable_1_1_point_base_a8829a6c52e157dd0a28ad3148d89d587}{serialize}} (Archive \&ar, const unsigned int)
+\begin{DoxyCompactList}\small\item\em Serialize the coordinates to an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtracktable_1_1_point_base}{tracktable\+::\+Point\+Base$<$ Dimension $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+coordinate\+\_\+type {\bfseries Coordinates} \mbox{[}Dimension\mbox{]}
+\begin{DoxyCompactList}\small\item\em Storage for the coordinate values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bare point in flat 2D space. 
+
+This class defines a point in 2D Euclidean space using Cartesian coordinates. Units have no real-\/world interpretation and (unlike the surface of the globe) space is isotropic.
+
+Use this class instead of instantiating the {\ttfamily \doxylink{classtracktable_1_1_point_cartesian}{Point\+Cartesian}} template yourself. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a57fc3856605d3632ea6b74295cce9f90}\index{tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}!CartesianPoint2D@{CartesianPoint2D}}
+\index{CartesianPoint2D@{CartesianPoint2D}!tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}}
+\doxysubsubsection{\texorpdfstring{CartesianPoint2D()}{CartesianPoint2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a57fc3856605d3632ea6b74295cce9f90} 
+tracktable\+::domain\+::cartesian2d\+::\+Cartesian\+Point2\+D\+::\+Cartesian\+Point2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an uninitialized point. 
+
+Assume that the coordinates will be initialized to garbage values when you use this constructor. \Hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a9eda317a20109cbfb462bf1534c478ef}\index{tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}!CartesianPoint2D@{CartesianPoint2D}}
+\index{CartesianPoint2D@{CartesianPoint2D}!tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}}
+\doxysubsubsection{\texorpdfstring{CartesianPoint2D()}{CartesianPoint2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a9eda317a20109cbfb462bf1534c478ef} 
+tracktable\+::domain\+::cartesian2d\+::\+Cartesian\+Point2\+D\+::\+Cartesian\+Point2D (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialize a point with x, y coordinates. 
+
+The coordinates will be initialized to whatever values you specify.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & Lon value to use for the point \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Lat value to use for the point \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a71f8375a34e4a4139280db399da5b0b2}\index{tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}!CartesianPoint2D@{CartesianPoint2D}}
+\index{CartesianPoint2D@{CartesianPoint2D}!tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}}
+\doxysubsubsection{\texorpdfstring{CartesianPoint2D()}{CartesianPoint2D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a71f8375a34e4a4139280db399da5b0b2} 
+tracktable\+::domain\+::cartesian2d\+::\+Cartesian\+Point2\+D\+::\+Cartesian\+Point2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{Cartesian\+Point2D}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor\+: make this point like another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Point to make a copy of \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a24e82174dee97b79eda9b90a560563b3}\index{tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}!CartesianPoint2D@{CartesianPoint2D}}
+\index{CartesianPoint2D@{CartesianPoint2D}!tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}}
+\doxysubsubsection{\texorpdfstring{CartesianPoint2D()}{CartesianPoint2D()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a24e82174dee97b79eda9b90a560563b3} 
+tracktable\+::domain\+::cartesian2d\+::\+Cartesian\+Point2\+D\+::\+Cartesian\+Point2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1_point_cartesian}{Superclass}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialize this point from its superclass. 
+
+If you happen to have {\ttfamily \doxylink{classtracktable_1_1_point_cartesian}{Point\+Cartesian}\texorpdfstring{$<$}{<}2\texorpdfstring{$>$}{>}} instances sitting around, this lets you use them as if they were {\ttfamily \doxylink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{Cartesian\+Point2D}} instances. This is more for the compiler\textquotesingle{}s benefit than the user\textquotesingle{}s.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Superclass to use as if it were a \doxylink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{Cartesian\+Point2D} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a1f43dc0d8c9fa3498137a2cf1be59e56}\index{tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}!````~CartesianPoint2D@{\texorpdfstring{$\sim$}{\string~}CartesianPoint2D}}
+\index{````~CartesianPoint2D@{\texorpdfstring{$\sim$}{\string~}CartesianPoint2D}!tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CartesianPoint2D()}{\string~CartesianPoint2D()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_a1f43dc0d8c9fa3498137a2cf1be59e56} 
+virtual tracktable\+::domain\+::cartesian2d\+::\+Cartesian\+Point2\+D\+::\texorpdfstring{$\sim$}{\string~}\+Cartesian\+Point2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Empty destructor. 
+
+All of our resources are on the stack. We don\textquotesingle{}t have any real work to do here. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_acaabfb2433e674d03331deace7461d8e}\index{tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}!operator=@{operator=}}
+\index{operator=@{operator=}!tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_acaabfb2433e674d03331deace7461d8e} 
+\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{Cartesian\+Point2D}} \& tracktable\+::domain\+::cartesian2d\+::\+Cartesian\+Point2\+D\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d}{Cartesian\+Point2D}} const \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment operator. 
+
+We delegate this explicitly to the superclass so that the compiler won\textquotesingle{}t try to do anything clever like copying pointers. \Hypertarget{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_ac27929119d3454bedc81fd1950fad106}\index{tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}!serialize@{serialize}}
+\index{serialize@{serialize}!tracktable::domain::cartesian2d::CartesianPoint2D@{tracktable::domain::cartesian2d::CartesianPoint2D}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classtracktable_1_1domain_1_1cartesian2d_1_1_cartesian_point2_d_ac27929119d3454bedc81fd1950fad106} 
+template$<$class Archive$>$ \\
+void tracktable\+::domain\+::cartesian2d\+::\+Cartesian\+Point2\+D\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar}{, }\item[{const unsigned int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize the point to an archive. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ar} & Archive to serialize to \\
+\hline
+\mbox{\texttt{ in}}  & {\em version} & Version of the archive \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/atwilso/projects/rtd\+\_\+debug/rtd\+\_\+debug/src/tracktable/cpp/\+Domain/Cartesian2\+D.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_52d67c3adaec672b3adf704616b2f519" kind="dir">
+    <compoundname>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures</compoundname>
+    <innerfile refid="_bearing_8h">Bearing.h</innerfile>
+    <innerfile refid="_convex_hull_8h">ConvexHull.h</innerfile>
+    <innerfile refid="_distance_8h">Distance.h</innerfile>
+    <innerfile refid="_end_to_end_distance_8h">EndToEndDistance.h</innerfile>
+    <innerfile refid="_extrapolate_8h">Extrapolate.h</innerfile>
+    <innerfile refid="_interpolate_8h">Interpolate.h</innerfile>
+    <innerfile refid="_intersects_8h">Intersects.h</innerfile>
+    <innerfile refid="_length_8h">Length.h</innerfile>
+    <innerfile refid="_length_fraction_at_point_8h">LengthFractionAtPoint.h</innerfile>
+    <innerfile refid="_point_at_fraction_8h">PointAtFraction.h</innerfile>
+    <innerfile refid="_point_at_time_8h">PointAtTime.h</innerfile>
+    <innerfile refid="_radius_of_gyration_8h">RadiusOfGyration.h</innerfile>
+    <innerfile refid="_simplify_linestring_8h">SimplifyLinestring.h</innerfile>
+    <innerfile refid="_speed_between_8h">SpeedBetween.h</innerfile>
+    <innerfile refid="_spherical_coordinate_access_8h">SphericalCoordinateAccess.h</innerfile>
+    <innerfile refid="_subset_during_interval_8h">SubsetDuringInterval.h</innerfile>
+    <innerfile refid="_time_at_fraction_8h">TimeAtFraction.h</innerfile>
+    <innerfile refid="_time_fraction_at_point_8h">TimeFractionAtPoint.h</innerfile>
+    <innerfile refid="_transfer_properties_8h">TransferProperties.h</innerfile>
+    <innerfile refid="_turn_angle_8h">TurnAngle.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/algorithm_signatures/"/>
+  </compounddef>
+</doxygen>

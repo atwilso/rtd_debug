@@ -1,0 +1,208 @@
+\doxysection{Trajectory\+Header.\+h}
+\hypertarget{_trajectory_header_8h_source}{}\label{_trajectory_header_8h_source}\index{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h@{/Users/atwilso/projects/rtd\_debug/rtd\_debug/src/tracktable/cpp/RW/detail/TrajectoryHeader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014-\/2023\ National\ Technology\ and\ Engineering}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Solutions\ of\ Sandia,\ LLC.\ Under\ the\ terms\ of\ Contract\ DE-\/NA0003525}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ with\ National\ Technology\ and\ Engineering\ Solutions\ of\ Sandia,\ LLC,}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ the\ U.S.\ Government\ retains\ certain\ rights\ in\ this\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_tracktable\_rw\_trajectory\_header\_h}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_tracktable\_rw\_trajectory\_header\_h}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <tracktable/Core/TracktableCommon.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PointTraits.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <tracktable/Core/PropertyConverter.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <tracktable/Core/UUID.h>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <tracktable/RW/detail/HeaderStrings.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <tracktable/RW/detail/PropertyMapReadWrite.h>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetracktable}{tracktable}}\ \{\ \textcolor{keyword}{namespace\ }rw\ \{\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }TrajectoryHeader}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ string\_type\ MagicString;}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{namespacetracktable_a1b220fef4a0f524b45d526c61a5fea6a}{uuid\_type}}\ UUID;}
+\DoxyCodeLine{00054\ \ \ string\_type\ Domain;}
+\DoxyCodeLine{00055\ \ \ std::size\_t\ NumPoints;}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{namespacetracktable_a1025d06e8ca7ebb7e66de16aa92fdc12}{PropertyMap}}\ Properties;}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{classtracktable_1_1_property_converter}{PropertyConverter}}\ PropertyReadWrite;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ TrajectoryHeader()}
+\DoxyCodeLine{00060\ \ \ \ \ :\ MagicString(TrajectoryFileMagicString),}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ UUID(),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ Domain(\textcolor{stringliteral}{"{}unknown"{}})}
+\DoxyCodeLine{00063\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ TrajectoryHeader(TrajectoryHeader\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00066\ \ \ \ \ :\ MagicString(other.MagicString),}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ UUID(),}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ Domain(other.Domain),}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ Properties(other.Properties),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ PropertyReadWrite(other.PropertyReadWrite)}
+\DoxyCodeLine{00071\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{virtual}\ \string~TrajectoryHeader()\ \{\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ TrajectoryHeader\&\ operator=(TrajectoryHeader\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ this-\/>MagicString\ \ \ \ =\ other.MagicString;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ this-\/>UUID\ \ \ \ \ \ \ \ \ \ \ =\ other.UUID;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ this-\/>Domain\ \ \ \ \ \ \ \ \ =\ other.Domain;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ this-\/>NumPoints\ \ \ \ \ \ =\ other.NumPoints;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ this-\/>Properties\ \ \ \ \ =\ other.Properties;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ this-\/>PropertyReadWrite\ =\ other.PropertyReadWrite;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{bool}\ operator==(TrajectoryHeader\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ this-\/>MagicString\ \ \ \ ==\ other.MagicString}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \&\&\ this-\/>UUID\ \ \ \ \ \ \ \ \ \ \ ==\ other.UUID}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \&\&\ this-\/>Domain\ \ \ \ \ \ \ \ \ ==\ other.Domain}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \&\&\ this-\/>NumPoints\ \ \ \ \ \ ==\ other.NumPoints}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \&\&\ this-\/>Properties\ \ \ \ \ ==\ other.Properties}
+\DoxyCodeLine{00094\ \ \ \ \ \&\&\ this-\/>PropertyReadWrite\ ==\ other.PropertyReadWrite}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{bool}\ operator!=(TrajectoryHeader\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00099\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordtype}{void}\ set\_timestamp\_input\_format(string\_type\ \textcolor{keyword}{const}\&\ format)}
+\DoxyCodeLine{00104\ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ this-\/>PropertyReadWrite.\mbox{\hyperlink{classtracktable_1_1_property_converter_a56df0ac1b4dc7aac01b15c0ff1c659e6}{set\_timestamp\_input\_format}}(format);}
+\DoxyCodeLine{00106\ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{void}\ set\_timestamp\_output\_format(string\_type\ \textcolor{keyword}{const}\&\ format)}
+\DoxyCodeLine{00109\ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ this-\/>PropertyReadWrite.\mbox{\hyperlink{classtracktable_1_1_property_converter_a991bf8a2c8715ddfb069ea12ed7f2ced}{set\_timestamp\_output\_format}}(format);}
+\DoxyCodeLine{00111\ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{void}\ set\_decimal\_precision(std::size\_t\ digits)}
+\DoxyCodeLine{00114\ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ this-\/>PropertyReadWrite.\mbox{\hyperlink{classtracktable_1_1_property_converter_acdacb1a80c5beaa0cb0d636c9b234124}{set\_decimal\_precision}}(digits);}
+\DoxyCodeLine{00116\ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{void}\ set\_null\_value(string\_type\ \textcolor{keyword}{const}\&\ value)}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ this-\/>PropertyReadWrite.\mbox{\hyperlink{classtracktable_1_1_property_converter_a6fb60af6bb774124e6325cd3b0f4be30}{set\_null\_value}}(value);}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ string\_type\ null\_value()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00124\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>PropertyReadWrite.\mbox{\hyperlink{classtracktable_1_1_property_converter_a3b0c233327398c1f5b06c2b4f465f36a}{null\_value}}();}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ trajectory\_type>}
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{void}\ populate\_from\_trajectory(trajectory\_type\ \textcolor{keyword}{const}\&\ trajectory)}
+\DoxyCodeLine{00130\ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ this-\/>UUID\ =\ trajectory.uuid();}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ this-\/>Domain\ =\ traits::point\_domain\_name<typename\ trajectory\_type::point\_type>::apply();}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ this-\/>NumPoints\ =\ trajectory.size();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ this-\/>Properties\ =\ trajectory.\_\_properties();}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ out\_iter\_type>}
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordtype}{void}\ write\_as\_tokens(out\_iter\_type\ destination)}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ (*destination++)\ =\ this-\/>MagicString;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(this-\/>UUID);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ (*destination++)\ =\ this-\/>Domain;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(this-\/>NumPoints);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(this-\/>Properties.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (PropertyMap::const\_iterator\ iter\ =\ this-\/>Properties.begin();}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ iter\ !=\ this-\/>Properties.end();}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ ++iter)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ (*destination++)\ =\ (*iter).first;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ (*destination++)\ =\ boost::lexical\_cast<string\_type>(\mbox{\hyperlink{namespacetracktable_acc66869025d3eba6afdee9e1a0b203aa}{property\_underlying\_type}}((*iter).second));}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ (*destination++)\ =\ this-\/>PropertyReadWrite.\mbox{\hyperlink{classtracktable_1_1_property_converter_a30569e719232ca74f1df6b1a78708ca6}{property\_to\_string}}((*iter).second);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ in\_iter\_type>}
+\DoxyCodeLine{00162\ \ \ std::size\_t\ \mbox{\hyperlink{classtracktable_1_1rw_1_1detail_1_1_trajectory_header_a388fba3374fb601eef34348cec608d88}{read\_from\_tokens}}(in\_iter\_type\ current\_token,\ in\_iter\_type\ \textcolor{comment}{/*last\_token*/})}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ std::size\_t\ stage\ =\ 0;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ std::size\_t\ consumed\ =\ 0;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ std::size\_t\ expected\_num\_properties\ =\ 0;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ this-\/>MagicString\ =\ (*current\_token++);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ consumed++;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ token\ can't\ be\ parsed\ as\ a\ UUID\ that\ means\ this\ is\ an\ older\ file\ without\ UUIDs}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ In\ that\ case\ we\ will\ handle\ the\ default\ UUID\ in\ the\ exception\ clause,\ but\ we\ won't}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ consume\ the\ token\ unless\ we\ successfully\ parse.}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ this-\/>UUID\ =\ boost::lexical\_cast<uuid\_type>(*current\_token);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ current\_token++;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ consumed++;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(boost::bad\_lexical\_cast\ \&)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ this\ is\ an\ older\ file\ without\ UUIDs,\ let's\ generate\ a\ new\ one\ moving\ forward}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ this-\/>UUID\ =\ \mbox{\hyperlink{namespacetracktable_ad719bb5f2c724e6033e6e894230250a9}{::tracktable::automatic\_uuid\_generator}}()-\/>generate\_uuid();}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ this-\/>Domain\ \ \ \ \ \ =\ (*current\_token++);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ consumed++;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ this-\/>NumPoints\ \ \ =\ boost::lexical\_cast<std::size\_t>(*current\_token++);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ consumed++;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ ++stage;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ expected\_num\_properties\ =\ boost::lexical\_cast<std::size\_t>(*current\_token++);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ this-\/>Properties.clear();}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ expected\_num\_properties;\ ++i)}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ string\_type\ prop\_name(*current\_token++);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ PropertyUnderlyingType\ prop\_type\ =\ \mbox{\hyperlink{namespacetracktable_a56356945c2bca38b921dd7ef7a75f538}{string\_to\_property\_type}}(*current\_token++);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ this-\/>Properties[prop\_name]\ =\ this-\/>PropertyReadWrite.\mbox{\hyperlink{classtracktable_1_1_property_converter_ada826b2bdc201347b7720d73764a2636}{property\_from\_string}}(*current\_token++,\ prop\_type);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ consumed\ +=\ 3;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ consumed;}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \}\ \}\ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

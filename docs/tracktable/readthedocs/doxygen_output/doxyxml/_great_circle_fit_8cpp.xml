@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_great_circle_fit_8cpp" kind="file" language="C++">
+    <compoundname>GreatCircleFit.cpp</compoundname>
+    <includes refid="_great_circle_fit_8h" local="yes">GreatCircleFit.h</includes>
+    <includes local="no">tracktable/Domain/Terrestrial.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp</label>
+        <link refid="_great_circle_fit_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GreatCircleFit.h</label>
+        <link refid="_great_circle_fit_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tracktable/Analysis/TracktableAnalysisWindowsHeader.h</label>
+      </node>
+      <node id="4">
+        <label>tracktable/Domain/Cartesian3D.h</label>
+      </node>
+      <node id="5">
+        <label>tracktable/Domain/Terrestrial.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacetracktable">tracktable</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_great_circle_fit_8cpp_1a7d4e4550bf29029a6896fa1ef96d1d42" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double constexpr</type>
+        <definition>double constexpr sqrt_recursion</definition>
+        <argsstring>(double _x, double _curr, double _prev)</argsstring>
+        <name>sqrt_recursion</name>
+        <param>
+          <type>double</type>
+          <declname>_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_curr</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_prev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" line="35" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="_great_circle_fit_8cpp_1aadc43b0752b3afeff63dc19bb0f9fc29" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double constexpr</type>
+        <definition>double constexpr constsqrt</definition>
+        <argsstring>(double _x)</argsstring>
+        <name>constsqrt</name>
+        <param>
+          <type>double</type>
+          <declname>_x</declname>
+        </param>
+        <briefdescription>
+<para>constexpr sqrt because sqrt are the spot to optimize and standard library lacks it for some reason </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Ternary(?) used because c++14 does not have constexpr_if </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number to take the square root of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double constexpr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" line="45" column="18" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="_great_circle_fit_8cpp_1ab59079d215a46030df2abb9b06553109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double opt_fun</definition>
+        <argsstring>(const tracktable::domain::cartesian3d::base_point_type &amp;_p, const tracktable::domain::terrestrial::trajectory_type &amp;_trajectory, std::string _altitude_string, tracktable::domain::terrestrial::AltitudeUnits _unit)</argsstring>
+        <name>opt_fun</name>
+        <param>
+          <type>const <ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d" kindref="compound">tracktable::domain::cartesian3d::base_point_type</ref> &amp;</type>
+          <declname>_p</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">tracktable::domain::terrestrial::trajectory_type</ref> &amp;</type>
+          <declname>_trajectory</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>_altitude_string</declname>
+        </param>
+        <param>
+          <type>tracktable::domain::terrestrial::AltitudeUnits</type>
+          <declname>_unit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" line="162" column="8" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" bodystart="162" bodyend="173" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" declline="51" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_great_circle_fit_8cpp_1af437040c97e61acb3200ded3cd5a1368" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d" kindref="compound">tracktable::domain::cartesian3d::base_point_type</ref></type>
+        <definition>tracktable::domain::cartesian3d::base_point_type add_scaled_vector</definition>
+        <argsstring>(const tracktable::domain::cartesian3d::base_point_type &amp;_v0, const tracktable::domain::cartesian3d::base_point_type &amp;_v1, double _fac)</argsstring>
+        <name>add_scaled_vector</name>
+        <param>
+          <type>const <ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d" kindref="compound">tracktable::domain::cartesian3d::base_point_type</ref> &amp;</type>
+          <declname>_v0</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d" kindref="compound">tracktable::domain::cartesian3d::base_point_type</ref> &amp;</type>
+          <declname>_v1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_fac</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" line="175" column="50" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" bodystart="175" bodyend="179" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" declline="54" declcolumn="50"/>
+      </memberdef>
+      <memberdef kind="function" id="_great_circle_fit_8cpp_1a51b81fdd47a0ead3c4e84cf8d86c3efd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void project_point_onto_plane_in_place</definition>
+        <argsstring>(tracktable::domain::terrestrial::trajectory_point_type &amp;_t_point, const tracktable::domain::cartesian3d::base_point_type &amp;_normal, std::string _altitude_string, tracktable::domain::terrestrial::AltitudeUnits _unit)</argsstring>
+        <name>project_point_onto_plane_in_place</name>
+        <param>
+          <type><ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point" kindref="compound">tracktable::domain::terrestrial::trajectory_point_type</ref> &amp;</type>
+          <declname>_t_point</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1domain_1_1cartesian3d_1_1_cartesian_point3_d" kindref="compound">tracktable::domain::cartesian3d::base_point_type</ref> &amp;</type>
+          <declname>_normal</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>_altitude_string</declname>
+        </param>
+        <param>
+          <type>tracktable::domain::terrestrial::AltitudeUnits</type>
+          <declname>_unit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" line="182" column="6" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" bodystart="182" bodyend="218" declfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp" declline="57" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>Copyright<sp/>(c)<sp/>2014-2023<sp/>National<sp/>Technology<sp/>and<sp/>Engineering</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC.<sp/>Under<sp/>the<sp/>terms<sp/>of<sp/>Contract<sp/>DE-NA0003525</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>with<sp/>National<sp/>Technology<sp/>and<sp/>Engineering<sp/>Solutions<sp/>of<sp/>Sandia,<sp/>LLC,</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>the<sp/>U.S.<sp/>Government<sp/>retains<sp/>certain<sp/>rights<sp/>in<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GreatCircleFit.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tracktable/Domain/Terrestrial.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>template/sfinae<sp/>for<sp/>double/float</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>sqrt_recursion(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_curr,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_prev)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_curr<sp/>==<sp/>_prev<sp/>?<sp/>_curr<sp/>:<sp/>sqrt_recursion(_x,<sp/>0.5<sp/>*<sp/>(_curr<sp/>+<sp/>_x<sp/>/<sp/>_curr),<sp/>_curr);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>constsqrt(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_x)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_x<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>_x<sp/>&lt;<sp/>std::numeric_limits&lt;double&gt;::infinity()<sp/>?<sp/>sqrt_recursion(_x,<sp/>_x,<sp/>0)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>std::numeric_limits&lt;double&gt;::quiet_NaN();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>optimization<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>opt_fun(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_p,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::terrestrial::trajectory_type<sp/>&amp;_trajectory,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>_altitude_string,<sp/>tracktable::domain::terrestrial::AltitudeUnits<sp/>_unit);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">tracktable::domain::cartesian3d::base_point_type<sp/>add_scaled_vector(</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_v0,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_v1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_fac);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>project_point_onto_plane_in_place(tracktable::domain::terrestrial::trajectory_point_type<sp/>&amp;_t_point,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_normal,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>_altitude_string,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tracktable::domain::terrestrial::AltitudeUnits<sp/>_unit);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetracktable" kindref="compound">tracktable</ref><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1ab3700f33f36b23ffad13cf2d707b3ca8" kindref="member">great_circle_fit_and_project_in_place</ref>(tracktable::domain::terrestrial::trajectory_type<sp/>&amp;_trajectory,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>_altitude_string,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tracktable::domain::terrestrial::AltitudeUnits<sp/>_unit)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>normal<sp/>=<sp/><ref refid="namespacetracktable_1a16563bb7d16de3ae1e8d44a4e2cef158" kindref="member">find_best_fit_plane</ref>(_trajectory);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1a5227e517080e119e0386564a0917ec09" kindref="member">project_trajectory_onto_plane</ref>(_trajectory,<sp/>normal,<sp/>_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">tracktable::domain::terrestrial::trajectory_type<sp/><ref refid="namespacetracktable_1ab3de14ffc04f1c383bc904fe663ccd95" kindref="member">great_circle_fit_and_project</ref>(</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>tracktable::domain::terrestrial::trajectory_type<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;_trajectory,<sp/>std::string<sp/>_altitude_string,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>tracktable::domain::terrestrial::AltitudeUnits<sp/>_unit)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>tracktable::domain::terrestrial::trajectory_type<sp/>result(_trajectory);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><ref refid="namespacetracktable_1ab3700f33f36b23ffad13cf2d707b3ca8" kindref="member">great_circle_fit_and_project_in_place</ref>(result,<sp/>_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>Does<sp/>not<sp/>work<sp/>well<sp/>with<sp/>trajectories<sp/>with<sp/>poor<sp/>aspect<sp/>ratio,<sp/>should<sp/>work<sp/>direction<sp/>of<sp/>travel<sp/>into<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">tracktable::domain::cartesian3d::base_point_type<sp/><ref refid="namespacetracktable_1a16563bb7d16de3ae1e8d44a4e2cef158" kindref="member">find_best_fit_plane</ref>(</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::terrestrial::trajectory_type<sp/>&amp;_trajectory,<sp/>std::string<sp/>_altitude_string,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>tracktable::domain::terrestrial::AltitudeUnits<sp/>_unit)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_trajectory.<ref refid="classtracktable_1_1_trajectory_1a2e76b8bad09400b1462ee9135e1ae19a" kindref="member">size</ref>()<sp/>&lt;<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>TooFewPoints();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>First<sp/>guess<sp/>at<sp/>the<sp/>perpendicular<sp/>to<sp/>the<sp/>plane!<sp/><sp/>There<sp/>are<sp/>a<sp/>couple<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ways<sp/>to<sp/>do<sp/>this,<sp/>but<sp/>this<sp/>is<sp/>the<sp/>easiest.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>First,<sp/>we<sp/>need<sp/>to<sp/>ensure<sp/>we<sp/>have<sp/>two<sp/>different<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>_trajectory.<ref refid="classtracktable_1_1_trajectory_1a9fe4d5edf449f7675d5cf9e187f3f581" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>v2<sp/>=<sp/>_trajectory.<ref refid="classtracktable_1_1_trajectory_1a5a89075c7122aea5f48b60b5b2d6270c" kindref="member">back</ref>().ECEF(_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>v1<sp/>=<sp/>(*p).ECEF(_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(std::next(p)<sp/>!=<sp/>_trajectory.<ref refid="classtracktable_1_1_trajectory_1a272cb092a6237a6a639bb27e4508a393" kindref="member">end</ref>()<sp/>&amp;&amp;<sp/>v1<sp/>==<sp/>v2)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>v1<sp/>=<sp/>(*(++p)).ECEF(_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(v1<sp/>==<sp/>v2)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>IdenticalPositions();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Then<sp/>we<sp/>can<sp/>use<sp/>them<sp/>to<sp/>make<sp/>a<sp/>first<sp/>guess</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>normal<sp/>=<sp/><ref refid="namespacetracktable_1_1arithmetic_1a9157db9730b7e9a0e9ed33837e97e6da" kindref="member">tracktable::arithmetic::normalize</ref>(<ref refid="namespacetracktable_1_1arithmetic_1a6597a20000678630a53cc30abe062be0" kindref="member">tracktable::arithmetic::cross_product</ref>(v1,<sp/>v2));</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Using<sp/>our<sp/>initial<sp/>guess,<sp/>see<sp/>our<sp/>optimization<sp/>value.<sp/><sp/>We<sp/>are<sp/>trying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>minimize<sp/>this.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>minSum<sp/>=<sp/>opt_fun(normal,<sp/>_trajectory,<sp/>_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Tools<sp/>for<sp/>our<sp/>optimization<sp/>routine.<sp/><sp/>The<sp/>first<sp/>two<sp/>give<sp/>us<sp/>a<sp/>way<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>find<sp/>a<sp/>neighborhood<sp/>of<sp/>points,<sp/>the<sp/>second<sp/>is<sp/>or<sp/>control<sp/>over<sp/>how</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>much<sp/>we<sp/>want<sp/>to<sp/>optimize</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>sqrt2<sp/>=<sp/>constsqrt(2.0);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>numDirections<sp/>=<sp/>8u;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::array&lt;double,<sp/>8&gt;<sp/>cyc<sp/>=<sp/>{0.0,<sp/>sqrt2,<sp/>1.0,<sp/>sqrt2,<sp/>0.0,<sp/>-sqrt2,<sp/>-1.0,<sp/>-sqrt2};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>eps<sp/>=<sp/>5.0e-8;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>implement<sp/>acceleration/deceleration<sp/>of<sp/>epsilon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>changed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>changed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>curPoint<sp/>=<sp/>normal;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>some<sp/>perpendiculars<sp/>to<sp/>our<sp/>point<sp/>on<sp/>the<sp/>sphere<sp/>so<sp/>we<sp/>can<sp/>walk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>around<sp/>it<sp/>in<sp/>a<sp/>systematic<sp/>way.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>v2<sp/>=<sp/><ref refid="namespacetracktable_1_1arithmetic_1a6597a20000678630a53cc30abe062be0" kindref="member">tracktable::arithmetic::cross_product</ref>(normal,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v1);<sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>maybe<sp/>point<sp/>this<sp/>at<sp/>the<sp/>point<sp/>of<sp/>greatest<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>v1<sp/>=<sp/><ref refid="namespacetracktable_1_1arithmetic_1a6597a20000678630a53cc30abe062be0" kindref="member">tracktable::arithmetic::cross_product</ref>(normal,<sp/>v2);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>value<sp/>of<sp/>the<sp/>optimization<sp/>function<sp/>in<sp/>points<sp/>around<sp/>us.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>are<sp/>done<sp/>we<sp/>all<sp/>of<sp/>the<sp/>values<sp/>are<sp/>larger.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0u;<sp/>i<sp/>&lt;<sp/>numDirections;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>temp<sp/>=<sp/>curPoint;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>add_scaled_vector(temp,<sp/>v1,<sp/>eps<sp/>*<sp/>cyc.at(i));</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>add_scaled_vector(temp,<sp/>v2,<sp/>eps<sp/>*<sp/>cyc.at((i<sp/>+<sp/>2u)<sp/>%<sp/>numDirections));</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1_1arithmetic_1a679813262775274a1ada18e3fb3cb297" kindref="member">tracktable::arithmetic::normalize_in_place</ref>(temp);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>sum<sp/>=<sp/>opt_fun(temp,<sp/>_trajectory,<sp/>_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sum<sp/>&lt;<sp/>minSum)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normal<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minSum<sp/>=<sp/>sum;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>changed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(changed);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>normal;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1a5227e517080e119e0386564a0917ec09" kindref="member">project_trajectory_onto_plane</ref>(tracktable::domain::terrestrial::trajectory_type<sp/>&amp;_trajectory,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_normal,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>_altitude_string,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tracktable::domain::terrestrial::AltitudeUnits<sp/>_unit)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_trajectory.<ref refid="classtracktable_1_1_trajectory_1a00e26c610525256edc1901bccf8ede3c" kindref="member">empty</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>TooFewPoints();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0.0<sp/>==<sp/><ref refid="namespacetracktable_1_1arithmetic_1a27f00d531645f9c176cd87a5101fe520" kindref="member">tracktable::arithmetic::norm_squared</ref>(_normal))<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>ZeroNorm();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;p<sp/>:<sp/>_trajectory)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>project_point_onto_plane_in_place(p,<sp/>_normal,<sp/>_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>tracktable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>opt_fun(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_p,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::terrestrial::trajectory_type<sp/>&amp;_trajectory,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>_altitude_string,<sp/>tracktable::domain::terrestrial::AltitudeUnits<sp/>_unit)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>sum<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;p<sp/>:<sp/>_trajectory)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>val<sp/>=</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetracktable_1_1arithmetic_1a36188ac4575d9b4a07551acfe15bb82f" kindref="member">tracktable::arithmetic::dot</ref>(_p,<sp/><ref refid="namespacetracktable_1_1arithmetic_1a9157db9730b7e9a0e9ed33837e97e6da" kindref="member">tracktable::arithmetic::normalize</ref>(p.ECEF(_altitude_string,<sp/>_unit)));</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>val<sp/>+=<sp/>val<sp/>*<sp/>val<sp/>*<sp/>val<sp/>/<sp/>6.0;<sp/><sp/>//<sp/>TODO:<sp/>Ask<sp/>Rintoul<sp/>to<sp/>confirm<sp/>the<sp/>+=</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>sum<sp/>+=<sp/>std::abs(val);<sp/><sp/></highlight><highlight class="comment">//<sp/>*<sp/>val;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sum;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal">tracktable::domain::cartesian3d::base_point_type<sp/>add_scaled_vector(</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_v0,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_v1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_fac)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacetracktable_1_1arithmetic_1a13b5723e0b27add384afb9634212ff47" kindref="member">tracktable::arithmetic::add</ref>(_v0,<sp/><ref refid="namespacetracktable_1_1arithmetic_1aeeed551f1737041ad3248ff471aa0d69" kindref="member">tracktable::arithmetic::multiply_scalar</ref>(_v1,<sp/>_fac));</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>create<sp/>a<sp/>fromECEF()<sp/>function<sp/>or<sp/>Trajectory<sp/>point<sp/>constructor<sp/>that<sp/>does<sp/>the<sp/>conversion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>project_point_onto_plane_in_place(tracktable::domain::terrestrial::trajectory_point_type<sp/>&amp;_t_point,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tracktable::domain::cartesian3d::base_point_type<sp/>&amp;_normal,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>_altitude_string,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tracktable::domain::terrestrial::AltitudeUnits<sp/>_unit)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>An<sp/>elegant<sp/>way<sp/>to<sp/>project<sp/>points.<sp/><sp/>Basically,<sp/>most<sp/>of<sp/>these<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>are<sp/>very<sp/>close<sp/>to<sp/>the<sp/>plane.<sp/><sp/>So<sp/>if<sp/>you<sp/>find<sp/>the<sp/>dot<sp/>product<sp/>between</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>trajectory<sp/>points<sp/>and<sp/>the<sp/>perpendicular,<sp/>that<sp/>will<sp/>be<sp/>a<sp/>tiny</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>that<sp/>essentially<sp/>represents<sp/>the<sp/>amount<sp/>you<sp/>have<sp/>to<sp/>move<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>point<sp/>to<sp/>get<sp/>it<sp/>to<sp/>the<sp/>plane.<sp/><sp/>There<sp/>are<sp/>some<sp/>small<sp/>angle<sp/>approximations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>happening<sp/>here,<sp/>but<sp/>to<sp/>second<sp/>order,<sp/>it&apos;s<sp/>all<sp/>good,<sp/>and<sp/>to<sp/>third<sp/>order,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>you<sp/>are<sp/>running<sp/>out<sp/>of<sp/>digits<sp/>on<sp/>your<sp/>double.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a<sp/>=<sp/>6378.137;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>e2<sp/>=<sp/>8.1819190842622e-2<sp/>*<sp/>8.1819190842622e-2;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a2<sp/>=<sp/>a<sp/>*<sp/>a;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b2<sp/>=<sp/>a2<sp/>*<sp/>(1.0<sp/>-<sp/>e2);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>constsqrt(b2);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ep2<sp/>=<sp/>(a2<sp/>-<sp/>b2)<sp/>/<sp/>b2;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pt<sp/>=<sp/>_t_point.<ref refid="classtracktable_1_1domain_1_1terrestrial_1_1_terrestrial_trajectory_point_1a628d7264fd2de1026e63f6b0f678464d" kindref="member">ECEF</ref>(_altitude_string,<sp/>_unit);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>pt<sp/>=<sp/>add_scaled_vector(pt,<sp/>_normal,<sp/>-1.0<sp/>*<sp/><ref refid="namespacetracktable_1_1arithmetic_1a36188ac4575d9b4a07551acfe15bb82f" kindref="member">tracktable::arithmetic::dot</ref>(pt,<sp/>_normal));</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>std::sqrt(pt[0]<sp/>*<sp/>pt[0]<sp/>+<sp/>pt[1]<sp/>*<sp/>pt[1]);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>th<sp/>=<sp/>std::atan2(a<sp/>*<sp/>pt[2],<sp/>b<sp/>*<sp/>p);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>sinTh<sp/>=<sp/>std::sin(th);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>cosTh<sp/>=<sp/>std::cos(th);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>lon<sp/>=<sp/>atan2(pt[1],<sp/>pt[0]);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>lat<sp/>=<sp/>atan2(pt[2]<sp/>+<sp/>ep2<sp/>*<sp/>b<sp/>*<sp/>sinTh<sp/>*<sp/>sinTh<sp/>*<sp/>sinTh,<sp/>p<sp/>-<sp/>e2<sp/>*<sp/>a<sp/>*<sp/>cosTh<sp/>*<sp/>cosTh<sp/>*<sp/>cosTh);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>_t_point.set_longitude(tracktable::conversions::degrees(lon));</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/>_t_point.set_latitude(tracktable::conversions::degrees(lat));</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>auto<sp/>sin_lat<sp/>=<sp/>std::sin(lat);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>auto<sp/>N<sp/>=<sp/>a<sp/>/<sp/>std::sqrt(1.0<sp/>-<sp/>e2<sp/>*<sp/>sin_lat<sp/>*<sp/>sin_lat);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>double<sp/>alt<sp/>=<sp/>p<sp/>/<sp/>cos(lat)<sp/>-<sp/>N;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//_tPoint.set_property(_altitudeString,alt);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Analysis/GreatCircleFit.cpp"/>
+  </compounddef>
+</doxygen>

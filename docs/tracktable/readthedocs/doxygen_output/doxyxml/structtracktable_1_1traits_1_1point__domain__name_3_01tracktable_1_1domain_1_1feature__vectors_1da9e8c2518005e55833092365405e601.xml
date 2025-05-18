@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structtracktable_1_1traits_1_1point__domain__name_3_01tracktable_1_1domain_1_1feature__vectors_1da9e8c2518005e55833092365405e601" kind="struct" language="C++" prot="public">
+    <compoundname>tracktable::traits::point_domain_name&lt; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt; &gt;</compoundname>
+    <basecompoundref refid="structtracktable_1_1traits_1_1point__domain__name" prot="public" virt="non-virtual">tracktable::traits::point_domain_name&lt; tracktable::PointCartesian&lt; dim &gt; &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>std::size_t</type>
+        <declname>dim</declname>
+        <defname>dim</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtracktable_1_1traits_1_1point__domain__name_1a09ff2be35286fa8ffdd5d3baa4ef9bd4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string_type</type>
+        <definition>static string_type tracktable::traits::point_domain_name&lt; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt; &gt;::apply</definition>
+        <argsstring>()</argsstring>
+        <name>apply</name>
+        <qualifiedname>tracktable::traits::point_domain_name&lt; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt; &gt;::apply</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/PointDomainName.h" line="45" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Core/detail/trait_signatures/PointDomainName.h" bodystart="45" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tracktable::traits::point_domain_name&lt; tracktable::PointCartesian&lt; dim &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1point__domain__name"/>
+      </node>
+      <node id="1">
+        <label>tracktable::traits::point_domain_name&lt; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1point__domain__name_3_01tracktable_1_1domain_1_1feature__vectors_1da9e8c2518005e55833092365405e601"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>tracktable::traits::point_domain_name&lt; tracktable::PointCartesian&lt; dim &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1point__domain__name"/>
+      </node>
+      <node id="1">
+        <label>tracktable::traits::point_domain_name&lt; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt; &gt;</label>
+        <link refid="structtracktable_1_1traits_1_1point__domain__name_3_01tracktable_1_1domain_1_1feature__vectors_1da9e8c2518005e55833092365405e601"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" line="212" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/Domain/FeatureVectors.h" bodystart="212" bodyend="212"/>
+    <listofallmembers>
+      <member refid="structtracktable_1_1traits_1_1point__domain__name_1a09ff2be35286fa8ffdd5d3baa4ef9bd4" prot="public" virt="non-virtual"><scope>tracktable::traits::point_domain_name&lt; tracktable::domain::feature_vectors::FeatureVector&lt; dim &gt; &gt;</scope><name>apply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classtracktable_1_1kml" kind="class" language="C++" prot="public">
+    <compoundname>tracktable::kml</compoundname>
+    <includes refid="_kml_out_8h" local="no">KmlOut.h</includes>
+    <innerclass refid="structtracktable_1_1kml_1_1box" prot="public">tracktable::kml::box</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1color" prot="public">tracktable::kml::color</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1linepoints" prot="public">tracktable::kml::linepoints</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1linestring" prot="public">tracktable::kml::linestring</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1multipoint" prot="public">tracktable::kml::multipoint</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1name" prot="public">tracktable::kml::name</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1point" prot="public">tracktable::kml::point</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1startmulti" prot="public">tracktable::kml::startmulti</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1startpm" prot="public">tracktable::kml::startpm</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1stopmulti" prot="public">tracktable::kml::stopmulti</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1stoppm" prot="public">tracktable::kml::stoppm</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1style" prot="public">tracktable::kml::style</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1style__id" prot="public">tracktable::kml::style_id</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1time__span" prot="public">tracktable::kml::time_span</innerclass>
+    <innerclass refid="structtracktable_1_1kml_1_1width" prot="public">tracktable::kml::width</innerclass>
+    <sectiondef kind="user-defined">
+      <header>Overloaded KML Methods</header>
+      <description><para>These methods generate kml objects for output for a given tracjectory or point. If a file is specified, the header and footer are automatically written. If a stream is specified, the header and footer are NOT automatically written. Write can be called with either a single trajectory or a vector. </para>
+</description>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a867590607e982c4e6fe05ff3a6523b4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::kml</definition>
+        <argsstring>(const TrajectoryT &amp;_t)</argsstring>
+        <name>kml</name>
+        <qualifiedname>tracktable::kml::kml</qualifiedname>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &amp;</type>
+          <declname>_t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="171" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="171" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a675dd8f47d67d3a41c076cb0156e03b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::kml</definition>
+        <argsstring>(const TrajectoryVectorT &amp;_v)</argsstring>
+        <name>kml</name>
+        <qualifiedname>tracktable::kml::kml</qualifiedname>
+        <param>
+          <type>const TrajectoryVectorT &amp;</type>
+          <declname>_v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="172" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="172" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1ad6c30e202ba8ed713f530a5c37d67752" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::kml</definition>
+        <argsstring>(const PointerT &amp;_p)</argsstring>
+        <name>kml</name>
+        <qualifiedname>tracktable::kml::kml</qualifiedname>
+        <param>
+          <type>const PointerT &amp;</type>
+          <declname>_p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="173" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="173" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a1ec7c605ef2a64cff2a7e997450d0fe2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tracktable::kml::kml</definition>
+        <argsstring>(const PointerVectorT &amp;_vp)</argsstring>
+        <name>kml</name>
+        <qualifiedname>tracktable::kml::kml</qualifiedname>
+        <param>
+          <type>const PointerVectorT &amp;</type>
+          <declname>_vp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="174" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="174" bodyend="174"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Overloaded Write Methods</header>
+      <description><para>These methods output kml. If a file is specified, the header and footer are automatically written. If a stream is specified, the header and footer are NOT automatically written. Write can be called with either a single trajectory or a vector. </para>
+</description>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a123790b795f5c66773c666cfc595a303" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::write</definition>
+        <argsstring>(const std::string &amp;_filename, const TrajectoryVectorT &amp;_trajectories)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::kml::write</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_filename</declname>
+        </param>
+        <param>
+          <type>const TrajectoryVectorT &amp;</type>
+          <declname>_trajectories</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="354" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="66" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1ad5d9ba92b3205d3b5fdd1bed29845bdb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::write</definition>
+        <argsstring>(std::ostream &amp;_o, const TrajectoryVectorT &amp;_trajectories)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::kml::write</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const TrajectoryVectorT &amp;</type>
+          <declname>_trajectories</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="355" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="77" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1aeb79bb91787b115587d49d4e8d1b8ce7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::write</definition>
+        <argsstring>(std::ostream &amp;_o, const PointerVectorT &amp;_trajectories)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::kml::write</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const PointerVectorT &amp;</type>
+          <declname>_trajectories</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="356" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="84" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a595f52daa6eb5c7ffa4f6e3787936441" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::write</definition>
+        <argsstring>(const std::string &amp;_filename, const TrajectoryT &amp;_trajectory)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::kml::write</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_filename</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &amp;</type>
+          <declname>_trajectory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="357" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1ad766bbb6909761783b37fa69efe2e298" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::write</definition>
+        <argsstring>(const std::string &amp;_filename, const TrajectoryT &amp;_trajectory, const std::string &amp;_color, const double &amp;_width)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::kml::write</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_filename</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &amp;</type>
+          <declname>_trajectory</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_color</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>_width</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="358" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="106" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a45612c4a07d04d1103dbb3b971c04f45" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::write</definition>
+        <argsstring>(std::ostream &amp;_o, const TrajectoryT &amp;_trajectory, const std::string &amp;_color, const double &amp;_width)</argsstring>
+        <name>write</name>
+        <qualifiedname>tracktable::kml::write</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &amp;</type>
+          <declname>_trajectory</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_color</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>_width</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="360" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="157" bodyend="173"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtracktable_1_1kml_1a79a5cbe92394d0eaf2a56c41ef1f224d" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory" kindref="compound">tracktable::domain::terrestrial::trajectory_type</ref></type>
+        <definition>using tracktable::kml::TrajectoryT =  tracktable::domain::terrestrial::trajectory_type</definition>
+        <argsstring></argsstring>
+        <name>TrajectoryT</name>
+        <qualifiedname>tracktable::kml::TrajectoryT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="89" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1kml_1ac35a6422f0977788199f83ce31551879" prot="public" static="no">
+        <type>std::vector&lt; <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &gt;</type>
+        <definition>using tracktable::kml::TrajectoryVectorT =  std::vector&lt;TrajectoryT&gt;</definition>
+        <argsstring></argsstring>
+        <name>TrajectoryVectorT</name>
+        <qualifiedname>tracktable::kml::TrajectoryVectorT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="90" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1kml_1af145eb61de501b4751e4790111e5de76" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &gt;</type>
+        <definition>using tracktable::kml::PointerT =  std::shared_ptr&lt;TrajectoryT&gt;</definition>
+        <argsstring></argsstring>
+        <name>PointerT</name>
+        <qualifiedname>tracktable::kml::PointerT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="91" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1kml_1a9da902fa39222e9a13f49844a892c9d4" prot="public" static="no">
+        <type>std::vector&lt; PointerT &gt;</type>
+        <definition>using tracktable::kml::PointerVectorT =  std::vector&lt;PointerT&gt;</definition>
+        <argsstring></argsstring>
+        <name>PointerVectorT</name>
+        <qualifiedname>tracktable::kml::PointerVectorT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="92" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1kml_1afb92b9e1a286b2f455cdf004bb91022e" prot="public" static="no">
+        <type>std::vector&lt; <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &gt;</type>
+        <definition>using tracktable::kml::VectorT =  std::vector&lt;TrajectoryT&gt;</definition>
+        <argsstring></argsstring>
+        <name>VectorT</name>
+        <qualifiedname>tracktable::kml::VectorT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="93" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classtracktable_1_1kml_1a3c103d240a49f1d2a70b84c727f57f9d" prot="public" static="no">
+        <type><ref refid="classtracktable_1_1_trajectory_1a8d3edcdda8ce1ad416c7daa81b016320" kindref="member">TrajectoryT::point_type</ref></type>
+        <definition>using tracktable::kml::PointT =  TrajectoryT::point_type</definition>
+        <argsstring></argsstring>
+        <name>PointT</name>
+        <qualifiedname>tracktable::kml::PointT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="94" column="5" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1kml_1aa6ecaed774e54225cc33ae7c336661b5" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> *</type>
+        <definition>const TrajectoryT* tracktable::kml::trajectoryPtr</definition>
+        <argsstring></argsstring>
+        <name>trajectoryPtr</name>
+        <qualifiedname>tracktable::kml::trajectoryPtr</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="341" column="23" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1a338fefc2889c668d843d8f1b3c5641ac" prot="private" static="no" mutable="no">
+        <type>const TrajectoryVectorT *</type>
+        <definition>const TrajectoryVectorT* tracktable::kml::trajectoryListPtr</definition>
+        <argsstring></argsstring>
+        <name>trajectoryListPtr</name>
+        <qualifiedname>tracktable::kml::trajectoryListPtr</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="342" column="29" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1a2bc15e532848b53b62915dbc9f31ca5f" prot="private" static="no" mutable="no">
+        <type>const PointerVectorT *</type>
+        <definition>const PointerVectorT* tracktable::kml::trajectorySmartListPtr</definition>
+        <argsstring></argsstring>
+        <name>trajectorySmartListPtr</name>
+        <qualifiedname>tracktable::kml::trajectorySmartListPtr</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="343" column="26" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classtracktable_1_1kml_1aef604ca49b5baca6ef588d786e56f1e6" prot="public" static="yes" mutable="no">
+        <type>double</type>
+        <definition>double tracktable::kml::_width</definition>
+        <argsstring></argsstring>
+        <name>_width</name>
+        <qualifiedname>tracktable::kml::_width</qualifiedname>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="437" column="19" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="437" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1a0de30023e2d80af78c3615bbae0d340d" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string tracktable::kml::_color</definition>
+        <argsstring></argsstring>
+        <name>_color</name>
+        <qualifiedname>tracktable::kml::_color</qualifiedname>
+        <initializer>= &quot;FFFFFFFF&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="438" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="438" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1ab043f9b9c63b3a862bfb273303ed296f" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string tracktable::kml::_name</definition>
+        <argsstring></argsstring>
+        <name>_name</name>
+        <qualifiedname>tracktable::kml::_name</qualifiedname>
+        <initializer>= &quot;UNIDFENTIFIED&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="439" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1a6c9d9d395c628f90d3c556e1e2287afe" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string tracktable::kml::_styleid</definition>
+        <argsstring></argsstring>
+        <name>_styleid</name>
+        <qualifiedname>tracktable::kml::_styleid</qualifiedname>
+        <initializer>= &quot;tracktable_style&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="440" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="440" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1a5fd5d2732d15ad14b812c928f8f074ea" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::kml::_isInsidePlacemark</definition>
+        <argsstring></argsstring>
+        <name>_isInsidePlacemark</name>
+        <qualifiedname>tracktable::kml::_isInsidePlacemark</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="441" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="441" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1a09acb47744a79032bbe97161b8b03d6f" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool tracktable::kml::_isInsideMultiGeometry</definition>
+        <argsstring></argsstring>
+        <name>_isInsideMultiGeometry</name>
+        <qualifiedname>tracktable::kml::_isInsideMultiGeometry</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="442" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1a5fcaa8cef58da26a71f94234500f7f7b" prot="public" static="yes" mutable="no">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">tracktable::Timestamp</ref></type>
+        <definition>tracktable::Timestamp tracktable::kml::_start</definition>
+        <argsstring></argsstring>
+        <name>_start</name>
+        <qualifiedname>tracktable::kml::_start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="443" column="34" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="443" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtracktable_1_1kml_1a255e97132f328d236870313c1049f0b0" prot="public" static="yes" mutable="no">
+        <type><ref refid="namespacetracktable_1a682e5fb98918f65770834e07ff51d21c" kindref="member">tracktable::Timestamp</ref></type>
+        <definition>tracktable::Timestamp tracktable::kml::_stop</definition>
+        <argsstring></argsstring>
+        <name>_stop</name>
+        <qualifiedname>tracktable::kml::_stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="444" column="34" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="444" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classtracktable_1_1kml_1a870af019c7c5ccfe02d3281d9b6c86a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; operator&lt;&lt;)</definition>
+        <argsstring>(std::ostream &amp;_o, const tracktable::kml &amp;_kml)</argsstring>
+        <name>operator&lt;&lt;)</name>
+        <qualifiedname>tracktable::kml::operator&lt;&lt;)</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1kml" kindref="compound">tracktable::kml</ref> &amp;</type>
+          <declname>_kml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="339" column="12"/>
+      </memberdef>
+      <memberdef kind="friend" id="classtracktable_1_1kml_1a8f2bf2a27b1d7aa2470dd7ad950f00c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ofstream &amp;</type>
+        <definition>std::ofstream &amp; operator&lt;&lt;)</definition>
+        <argsstring>(std::ofstream &amp;_o, const tracktable::kml &amp;_kml)</argsstring>
+        <name>operator&lt;&lt;)</name>
+        <qualifiedname>tracktable::kml::operator&lt;&lt;)</qualifiedname>
+        <param>
+          <type>std::ofstream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1kml" kindref="compound">tracktable::kml</ref> &amp;</type>
+          <declname>_kml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="340" column="12"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtracktable_1_1kml_1aa63ac89e8115e74872b0612d7175aa21" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string tracktable::kml::generateColorString</definition>
+        <argsstring>()</argsstring>
+        <name>generateColorString</name>
+        <qualifiedname>tracktable::kml::generateColorString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="346" column="24" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="55" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a876063afd20e0a26d4ac9688802d3be9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeStyle</definition>
+        <argsstring>(std::ostream &amp;_o, const std::string &amp;_id, const std::string &amp;_color, double _width)</argsstring>
+        <name>writeStyle</name>
+        <qualifiedname>tracktable::kml::writeStyle</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_color</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_width</declname>
+        </param>
+        <briefdescription>
+<para>Writes a style. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The id to use for the style, referenced by placemarks later </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ABGR hex value for color </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pixel width to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="370" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="176" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a58248de374580ffb43a09f070bc349ce" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeLinestring</definition>
+        <argsstring>(std::ostream &amp;_o, const TrajectoryT &amp;_trajectory)</argsstring>
+        <name>writeLinestring</name>
+        <qualifiedname>tracktable::kml::writeLinestring</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &amp;</type>
+          <declname>_trajectory</declname>
+        </param>
+        <briefdescription>
+<para>Writes a placemark that renders as lines. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_trajectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>what to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="377" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="186" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1ab3993c25dc56d8bc6841eb0af8d5ffc1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeMultipoint</definition>
+        <argsstring>(std::ostream &amp;_o, const TrajectoryT &amp;_trajectory)</argsstring>
+        <name>writeMultipoint</name>
+        <qualifiedname>tracktable::kml::writeMultipoint</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &amp;</type>
+          <declname>_trajectory</declname>
+        </param>
+        <briefdescription>
+<para>Writes a placemark that renders as points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_trajectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>what to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="383" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="196" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1adb54d5157195d9171387c9b02e183b19" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writePoint</definition>
+        <argsstring>(std::ostream &amp;_o, const PointT &amp;_point)</argsstring>
+        <name>writePoint</name>
+        <qualifiedname>tracktable::kml::writePoint</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const PointT &amp;</type>
+          <declname>_point</declname>
+        </param>
+        <briefdescription>
+<para>Writes a placemark that renders as a single point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>what to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="389" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="204" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1af263bc25d67503441ab88b37ef492092" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeLineAndPoints</definition>
+        <argsstring>(std::ostream &amp;_o, const TrajectoryT &amp;_trajectory)</argsstring>
+        <name>writeLineAndPoints</name>
+        <qualifiedname>tracktable::kml::writeLineAndPoints</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classtracktable_1_1_trajectory" kindref="compound">TrajectoryT</ref> &amp;</type>
+          <declname>_trajectory</declname>
+        </param>
+        <briefdescription>
+<para>Writes a placemark that uses multigeomtry to render a line with points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_trajectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>what to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="395" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="212" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a531795b5bd22489da0615820706dd653" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeBox</definition>
+        <argsstring>(std::ostream &amp;_o, const box &amp;_box)</argsstring>
+        <name>writeBox</name>
+        <qualifiedname>tracktable::kml::writeBox</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structtracktable_1_1kml_1_1box" kindref="compound">box</ref> &amp;</type>
+          <declname>_box</declname>
+        </param>
+        <briefdescription>
+<para>Writes a placemark that uses multigeomtry to render a line with points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_trajectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>what to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="401" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="219" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a9be99c2dbf0c469e1e7e2aa6d09db7eb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeCoords</definition>
+        <argsstring>(std::ostream &amp;_o, const PointT &amp;_point)</argsstring>
+        <name>writeCoords</name>
+        <qualifiedname>tracktable::kml::writeCoords</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <param>
+          <type>const PointT &amp;</type>
+          <declname>_point</declname>
+        </param>
+        <briefdescription>
+<para>Utility to minimize maintenance on writing points as coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>what to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="407" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="229" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1aab53b1fec355a02d7e8d9ab602275806" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeToSeparateKmls</definition>
+        <argsstring>(const TrajectoryVectorT &amp;_trajectories, const std::string &amp;_output_dir)</argsstring>
+        <name>writeToSeparateKmls</name>
+        <qualifiedname>tracktable::kml::writeToSeparateKmls</qualifiedname>
+        <param>
+          <type>const TrajectoryVectorT &amp;</type>
+          <declname>_trajectories</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_output_dir</declname>
+        </param>
+        <briefdescription>
+<para>This simplifies writing individual files for a set of trajectories The directory to write the files is specified instead of a filename. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_trajectories</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>trajectories to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_output_dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>directory to write to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="414" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="91" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1aef665959137e55d25ed582ced8386f58" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writePlacemarkHeader</definition>
+        <argsstring>(std::ostream &amp;_o)</argsstring>
+        <name>writePlacemarkHeader</name>
+        <qualifiedname>tracktable::kml::writePlacemarkHeader</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <briefdescription>
+<para>Writes a default Placemark header tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="419" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="142" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a18350f54d3201816a54150339969015b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writePlacemarkFooter</definition>
+        <argsstring>(std::ostream &amp;_o)</argsstring>
+        <name>writePlacemarkFooter</name>
+        <qualifiedname>tracktable::kml::writePlacemarkFooter</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <briefdescription>
+<para>Writes a default Placemark footer tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="424" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="149" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1aac2d31ca24cd114be2e698453c18a76a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeMultiGeometryHeader</definition>
+        <argsstring>(std::ostream &amp;_o)</argsstring>
+        <name>writeMultiGeometryHeader</name>
+        <qualifiedname>tracktable::kml::writeMultiGeometryHeader</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <briefdescription>
+<para>Writes a default MultiGeometry header tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="429" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="151" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classtracktable_1_1kml_1a8c3b42a0edf3b3058ce805febfe44f85" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tracktable::kml::writeMultiGeometryFooter</definition>
+        <argsstring>(std::ostream &amp;_o)</argsstring>
+        <name>writeMultiGeometryFooter</name>
+        <qualifiedname>tracktable::kml::writeMultiGeometryFooter</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>_o</declname>
+        </param>
+        <briefdescription>
+<para>Writes a default MultiGeometry footer tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="434" column="17" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.cpp" bodystart="155" bodyend="155"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Handles writing tracks as kml Has lots of internal structure to make the following use cases work: </para>
+    </briefdescription>
+    <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>kml::header;</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>kml(t);</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>kml::footer;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">out<sp/>=<sp/>ofstream;</highlight></codeline>
+<codeline><highlight class="normal">out<sp/>&lt;&lt;<sp/>kml(t);</highlight></codeline>
+</programlisting></para>
+<para>For both of the above a default style will be used (green, width = 3) in the case of a single trajectory and a random color will be used with the same default </para>
+<sect1 id="classtracktable_1_1kml_1autotoc_md0_1s1"><sect2 id="classtracktable_1_1kml_1autotoc_md0">
+<title>width = 3 for a vector of trajectories.</title><para>To control color and width:</para>
+<para><programlisting><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>kml::header;</highlight></codeline>
+<codeline><highlight class="normal">kml::write(std::cout,<sp/>t,<sp/></highlight><highlight class="stringliteral">&quot;AABBGGRR&quot;</highlight><highlight class="normal">,<sp/>4)</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>kml::footer;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">kml::write(</highlight><highlight class="stringliteral">&quot;filname&quot;</highlight><highlight class="normal">,<sp/>t,<sp/></highlight><highlight class="stringliteral">&quot;AABBGGRR&quot;</highlight><highlight class="normal">,<sp/>5)</highlight></codeline>
+</programlisting></para>
+<para>These are the limits of style control at this time.</para>
+<para>TODO: Simplify use of multipoint and linepoint methods (requires placemark) TODO: Implement placemark manipulation TODO: Implement style manipulation </para>
+</sect2></sect1>
+    </detaileddescription>
+    <location file="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" line="87" column="1" bodyfile="/Users/atwilso/projects/rtd_debug/rtd_debug/src/tracktable/cpp/RW/KmlOut.h" bodystart="87" bodyend="445"/>
+    <listofallmembers>
+      <member refid="classtracktable_1_1kml_1a0de30023e2d80af78c3615bbae0d340d" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>_color</name></member>
+      <member refid="classtracktable_1_1kml_1a09acb47744a79032bbe97161b8b03d6f" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>_isInsideMultiGeometry</name></member>
+      <member refid="classtracktable_1_1kml_1a5fd5d2732d15ad14b812c928f8f074ea" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>_isInsidePlacemark</name></member>
+      <member refid="classtracktable_1_1kml_1ab043f9b9c63b3a862bfb273303ed296f" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>_name</name></member>
+      <member refid="classtracktable_1_1kml_1a5fcaa8cef58da26a71f94234500f7f7b" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>_start</name></member>
+      <member refid="classtracktable_1_1kml_1a255e97132f328d236870313c1049f0b0" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>_stop</name></member>
+      <member refid="classtracktable_1_1kml_1a6c9d9d395c628f90d3c556e1e2287afe" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>_styleid</name></member>
+      <member refid="classtracktable_1_1kml_1aef604ca49b5baca6ef588d786e56f1e6" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>_width</name></member>
+      <member refid="classtracktable_1_1kml_1aa63ac89e8115e74872b0612d7175aa21" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>generateColorString</name></member>
+      <member refid="classtracktable_1_1kml_1a867590607e982c4e6fe05ff3a6523b4a" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>kml</name></member>
+      <member refid="classtracktable_1_1kml_1a675dd8f47d67d3a41c076cb0156e03b9" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>kml</name></member>
+      <member refid="classtracktable_1_1kml_1ad6c30e202ba8ed713f530a5c37d67752" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>kml</name></member>
+      <member refid="classtracktable_1_1kml_1a1ec7c605ef2a64cff2a7e997450d0fe2" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>kml</name></member>
+      <member refid="classtracktable_1_1kml_1a870af019c7c5ccfe02d3281d9b6c86a4" prot="private" virt="non-virtual"><scope>tracktable::kml</scope><name>operator&lt;&lt;)</name></member>
+      <member refid="classtracktable_1_1kml_1a8f2bf2a27b1d7aa2470dd7ad950f00c6" prot="private" virt="non-virtual"><scope>tracktable::kml</scope><name>operator&lt;&lt;)</name></member>
+      <member refid="classtracktable_1_1kml_1af145eb61de501b4751e4790111e5de76" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>PointerT</name></member>
+      <member refid="classtracktable_1_1kml_1a9da902fa39222e9a13f49844a892c9d4" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>PointerVectorT</name></member>
+      <member refid="classtracktable_1_1kml_1a3c103d240a49f1d2a70b84c727f57f9d" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>PointT</name></member>
+      <member refid="classtracktable_1_1kml_1a338fefc2889c668d843d8f1b3c5641ac" prot="private" virt="non-virtual"><scope>tracktable::kml</scope><name>trajectoryListPtr</name></member>
+      <member refid="classtracktable_1_1kml_1aa6ecaed774e54225cc33ae7c336661b5" prot="private" virt="non-virtual"><scope>tracktable::kml</scope><name>trajectoryPtr</name></member>
+      <member refid="classtracktable_1_1kml_1a2bc15e532848b53b62915dbc9f31ca5f" prot="private" virt="non-virtual"><scope>tracktable::kml</scope><name>trajectorySmartListPtr</name></member>
+      <member refid="classtracktable_1_1kml_1a79a5cbe92394d0eaf2a56c41ef1f224d" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>TrajectoryT</name></member>
+      <member refid="classtracktable_1_1kml_1ac35a6422f0977788199f83ce31551879" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>TrajectoryVectorT</name></member>
+      <member refid="classtracktable_1_1kml_1afb92b9e1a286b2f455cdf004bb91022e" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>VectorT</name></member>
+      <member refid="classtracktable_1_1kml_1a123790b795f5c66773c666cfc595a303" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>write</name></member>
+      <member refid="classtracktable_1_1kml_1ad5d9ba92b3205d3b5fdd1bed29845bdb" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>write</name></member>
+      <member refid="classtracktable_1_1kml_1aeb79bb91787b115587d49d4e8d1b8ce7" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>write</name></member>
+      <member refid="classtracktable_1_1kml_1a595f52daa6eb5c7ffa4f6e3787936441" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>write</name></member>
+      <member refid="classtracktable_1_1kml_1ad766bbb6909761783b37fa69efe2e298" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>write</name></member>
+      <member refid="classtracktable_1_1kml_1a45612c4a07d04d1103dbb3b971c04f45" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>write</name></member>
+      <member refid="classtracktable_1_1kml_1a531795b5bd22489da0615820706dd653" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeBox</name></member>
+      <member refid="classtracktable_1_1kml_1a9be99c2dbf0c469e1e7e2aa6d09db7eb" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeCoords</name></member>
+      <member refid="classtracktable_1_1kml_1af263bc25d67503441ab88b37ef492092" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeLineAndPoints</name></member>
+      <member refid="classtracktable_1_1kml_1a58248de374580ffb43a09f070bc349ce" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeLinestring</name></member>
+      <member refid="classtracktable_1_1kml_1a8c3b42a0edf3b3058ce805febfe44f85" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeMultiGeometryFooter</name></member>
+      <member refid="classtracktable_1_1kml_1aac2d31ca24cd114be2e698453c18a76a" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeMultiGeometryHeader</name></member>
+      <member refid="classtracktable_1_1kml_1ab3993c25dc56d8bc6841eb0af8d5ffc1" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeMultipoint</name></member>
+      <member refid="classtracktable_1_1kml_1a18350f54d3201816a54150339969015b" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writePlacemarkFooter</name></member>
+      <member refid="classtracktable_1_1kml_1aef665959137e55d25ed582ced8386f58" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writePlacemarkHeader</name></member>
+      <member refid="classtracktable_1_1kml_1adb54d5157195d9171387c9b02e183b19" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writePoint</name></member>
+      <member refid="classtracktable_1_1kml_1a876063afd20e0a26d4ac9688802d3be9" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeStyle</name></member>
+      <member refid="classtracktable_1_1kml_1aab53b1fec355a02d7e8d9ab602275806" prot="public" virt="non-virtual"><scope>tracktable::kml</scope><name>writeToSeparateKmls</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
