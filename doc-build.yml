@@ -7,7 +7,8 @@
 
 name: my-rtd-test-environemnt
 
-channels: conda-forge
+channels: 
+  - conda-forge
 
 dependencies:
   - python>=3.10
